@@ -17,7 +17,7 @@ public class Interior
     protected ILocationInteractable LocationInteractable;
     protected GameLocation InteractableLocation;
     protected ISettingsProvideable Settings;
-    private bool IsActive = false;
+    protected bool IsActive = false;
     private bool IsRunningInteriorUpdate = false;
     protected List<Rage.Object> SpawnedProps = new List<Rage.Object>();
     private int alarmSoundID;
@@ -63,9 +63,9 @@ public class Interior
         Name = name;
     }
     [XmlIgnore]
-    public int InternalID { get; private set; }
+    public int InternalID { get; protected set; }
     [XmlIgnore]
-    public int DisabledInteriorID { get; private set; }
+    public int DisabledInteriorID { get; protected set; }
     [XmlIgnore]
     public bool IsMenuInteracting { get; set; }
     public int LocalID { get; set; }
@@ -77,8 +77,10 @@ public class Interior
     public List<string> RequestIPLs { get; set; } = new List<string>();
     public List<string> RemoveIPLs { get; set; } = new List<string>();
     public List<string> InteriorSets { get; set; } = new List<string>();
+    public List<Vector3> LinkedInteriorCoords { get; set; } = new List<Vector3>();
     public int InteriorTintColor { get; set; } = -1;
     public int InteriorSetStyleID { get; set; } = -1;
+    public int InteriorWallpaperColor { get; set; } = -1;
     public Vector3 InteriorEgressPosition { get; set; }
     public float InteriorEgressHeading { get; set; }
     public bool NeedsActivation { get; set; } = false;
@@ -95,6 +97,7 @@ public class Interior
     public List<Vector3> ClearPositions { get; set; } = new List<Vector3>();
     public string ForceAutoInteractName { get; set; }
     public List<PropSpawn> PropSpawns { get; set; }
+    public List<AudioEmitter> AudioEmitters { get; set; } = new List<AudioEmitter>();
     public List<SpawnPlace> VendorLocations { get; set; } = new List<SpawnPlace>();
     public List<Vector3> SearchLocations { get; set; }
     [XmlIgnore]
@@ -139,7 +142,7 @@ public class Interior
             EntryPoint.WriteToConsole($"INTERIOR: {Name} {door.ModelHash} {door.Position} UNLOCKED");
         }
     }
-    public void Load(bool isOpen)
+    public virtual void Load(bool isOpen)
     {
         GameFiber.StartNew(delegate
         {
@@ -262,7 +265,7 @@ public class Interior
             }
         }
     }
-    public void Unload()
+    public virtual void Unload()
     {
         GameFiber.StartNew(delegate
             {
@@ -591,7 +594,7 @@ public class Interior
             player.Violations.AddViolating(StaticStrings.ArmedRobberyCrimeID);
         }
     }
-    private void RemoveSpawnedProps()
+    protected void RemoveSpawnedProps()
     {
         foreach(Rage.Object prop in SpawnedProps)
         {
@@ -607,6 +610,7 @@ public class Interior
     {
         InteriorTintColor = -1;
         InteriorSetStyleID = -1;
+        InteriorWallpaperColor = -1;
     }
 
     public virtual void AddLocation(PossibleInteriors lppInteriors)
@@ -650,5 +654,18 @@ public class Interior
         isAlarmActive = false;
         NativeFunction.Natives.STOP_SOUND(alarmSoundID);
         NativeFunction.Natives.RELEASE_SOUND_ID(alarmSoundID);
+    }
+
+    public virtual bool CheckMatchingIDs(int internalId)
+    {
+        return internalId == InternalID;
+    }
+
+    public virtual void OnStoredCashChanged(int storedCash)
+    {
+    }
+
+    public virtual void OnPlayerLoadedSave()
+    {
     }
 }

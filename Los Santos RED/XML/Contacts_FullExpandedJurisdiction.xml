@@ -1,0 +1,131 @@
+<PossibleContacts xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <GangContacts />
+  <GunDealerContacts>
+    <GunDealerContact>
+      <Name>Underground Guns</Name>
+      <Index>0</Index>
+      <Active>true</Active>
+      <DialTimeout>3000</DialTimeout>
+      <RandomizeDialTimeout>true</RandomizeDialTimeout>
+      <IconName>CHAR_BLANK_ENTRY</IconName>
+      <IsDefault>false</IsDefault>
+      <FullNumber />
+      <Number />
+    </GunDealerContact>
+  </GunDealerContacts>
+  <EmergencyServicesContact>
+    <Name>911 - Emergency Services</Name>
+    <Index>0</Index>
+    <Active>true</Active>
+    <DialTimeout>3000</DialTimeout>
+    <RandomizeDialTimeout>true</RandomizeDialTimeout>
+    <IconName>CHAR_CALL911</IconName>
+    <IsDefault>true</IsDefault>
+    <FullNumber>911</FullNumber>
+    <Number>911</Number>
+  </EmergencyServicesContact>
+  <CorruptCopContact>
+    <Name>Officer Friendly</Name>
+    <Index>0</Index>
+    <Active>true</Active>
+    <DialTimeout>3000</DialTimeout>
+    <RandomizeDialTimeout>true</RandomizeDialTimeout>
+    <IconName>CHAR_BLANK_ENTRY</IconName>
+    <IsDefault>false</IsDefault>
+    <FullNumber />
+    <Number />
+  </CorruptCopContact>
+  <KillerContacts />
+  <VehicleExporterContacts>
+    <VehicleExporterContact>
+      <Name>Vehicle Exports</Name>
+      <Index>0</Index>
+      <Active>true</Active>
+      <DialTimeout>3000</DialTimeout>
+      <RandomizeDialTimeout>true</RandomizeDialTimeout>
+      <IconName>CHAR_BLANK_ENTRY</IconName>
+      <IsDefault>false</IsDefault>
+      <FullNumber />
+      <Number />
+    </VehicleExporterContact>
+  </VehicleExporterContacts>
+  <TaxiServiceContacts>
+    <TaxiServiceContact>
+      <Name>Downtown Cab Co.</Name>
+      <Index>0</Index>
+      <Active>true</Active>
+      <DialTimeout>3000</DialTimeout>
+      <RandomizeDialTimeout>true</RandomizeDialTimeout>
+      <IconName>CHAR_TAXI</IconName>
+      <IsDefault>true</IsDefault>
+      <FullNumber>3235555555</FullNumber>
+      <Number>5555555</Number>
+    </TaxiServiceContact>
+    <TaxiServiceContact>
+      <Name>Hell Cab</Name>
+      <Index>0</Index>
+      <Active>true</Active>
+      <DialTimeout>3000</DialTimeout>
+      <RandomizeDialTimeout>true</RandomizeDialTimeout>
+      <IconName>CHAR_BLANK_ENTRY</IconName>
+      <IsDefault>false</IsDefault>
+      <FullNumber>8884355222</FullNumber>
+      <Number>4355222</Number>
+    </TaxiServiceContact>
+    <TaxiServiceContact>
+      <Name>Purple Cab Co.</Name>
+      <Index>0</Index>
+      <Active>true</Active>
+      <DialTimeout>3000</DialTimeout>
+      <RandomizeDialTimeout>true</RandomizeDialTimeout>
+      <IconName>CHAR_BLANK_ENTRY</IconName>
+      <IsDefault>false</IsDefault>
+      <FullNumber>5558008</FullNumber>
+      <Number>3235558008</Number>
+    </TaxiServiceContact>
+    <TaxiServiceContact>
+      <Name>Shiti Cab</Name>
+      <Index>0</Index>
+      <Active>true</Active>
+      <DialTimeout>3000</DialTimeout>
+      <RandomizeDialTimeout>true</RandomizeDialTimeout>
+      <IconName>CHAR_BLANK_ENTRY</IconName>
+      <IsDefault>false</IsDefault>
+      <FullNumber>4484222</FullNumber>
+      <Number>8874484222</Number>
+    </TaxiServiceContact>
+    <TaxiServiceContact>
+      <Name>Sundered Codependent Cab</Name>
+      <Index>0</Index>
+      <Active>true</Active>
+      <DialTimeout>3000</DialTimeout>
+      <RandomizeDialTimeout>true</RandomizeDialTimeout>
+      <IconName>CHAR_BLANK_ENTRY</IconName>
+      <IsDefault>false</IsDefault>
+      <FullNumber>5555050</FullNumber>
+      <Number>3235555050</Number>
+    </TaxiServiceContact>
+    <TaxiServiceContact>
+      <Name>RydeMe Rideshare</Name>
+      <Index>0</Index>
+      <Active>true</Active>
+      <DialTimeout>3000</DialTimeout>
+      <RandomizeDialTimeout>true</RandomizeDialTimeout>
+      <IconName>CHAR_BLANK_ENTRY</IconName>
+      <IsDefault>true</IsDefault>
+      <FullNumber>3235558295</FullNumber>
+      <Number>5558295</Number>
+    </TaxiServiceContact>
+    <TaxiServiceContact>
+      <Name>Schlecht Rideshare</Name>
+      <Index>0</Index>
+      <Active>true</Active>
+      <DialTimeout>3000</DialTimeout>
+      <RandomizeDialTimeout>true</RandomizeDialTimeout>
+      <IconName>CHAR_BLANK_ENTRY</IconName>
+      <IsDefault>true</IsDefault>
+      <FullNumber>3235552356</FullNumber>
+      <Number>5552356</Number>
+    </TaxiServiceContact>
+  </TaxiServiceContacts>
+</PossibleContacts>

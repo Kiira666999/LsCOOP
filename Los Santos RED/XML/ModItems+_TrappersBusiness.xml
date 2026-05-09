@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PossibleItems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FlashlightItems />
+  <CellphoneItems />
+  <ModItems />
+  <ShovelItems />   
+  <UmbrellaItems />
+  <LicensePlateItems />
+  <LighterItems />
+  <ScrewdriverItems />
+  <TapeItems />
+  <DrillItems />
+  <HammerItems />
+  <PliersItems />
+  <BongItems />
+  <PipeItems />
+  <RollingPapersItems />
+  <FoodItems />
+  <SmokeItems />
+  <PipeSmokeItems />
+  <DrinkItems />
+  <InhaleItems />
+  <IngestItems />
+  <InjectItems />
+  <HotelStayItems />
+  <WeaponItems />
+  <VehicleItems />
+  <BinocularsItems />
+  <RadioItems />
+  <RadarDetectorItems />
+  <ValuableItems>
+    <ValuableItem>
+      <Name>Trap day</Name>
+      <Description>Make your dealers work. Used on corners.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>None</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m24_1_prop_m41_notebook_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Hire dealer</Name>
+      <Description>You hired dealers. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Hire muscle</Name>
+      <Description>You hired muscles. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Manpower: Dealer</Name>
+      <Description>Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Unit</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Manpower: Muscle</Name>
+      <Description>Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Unit</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Buy crack recipe</Name>
+      <Description>Now that you bought the recipe, time to pratice. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Recipe</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m24_1_prop_m41_notebook_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Recipe: Crack</Name>
+      <Description>You learned to cook crack. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Skill</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m24_1_prop_m41_notebook_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Cooking day</Name>
+      <Description>Cook house yield. Used in cook house.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>None</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m24_1_prop_m41_notebook_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Recipe: Hash</Name>
+      <Description>You learned to make hash.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Skill</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m24_1_prop_m41_notebook_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Grow day</Name>
+      <Description>Grow house yield. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>None</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m24_1_prop_m41_notebook_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Prepare product</Name>
+      <Description>Stash house yield. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Product: Marijuana</Name>
+      <Description>Lost on death or arrest. Used on corners.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Product: Crack</Name>
+      <Description>Lost on death or arrest. Used on corners.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Product: Heroin</Name>
+      <Description>Lost on death or arrest. Used on corners.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Corner's money: Marijuana</Name>
+      <Description>Lost on death or arrest. Can be sold to a crew.</Description>
+      <ItemType>Valuables</ItemType>
+       <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Corner's money: Crack</Name>
+      <Description>Lost on death or arrest. Can be sold to a crew.</Description>
+      <ItemType>Valuables</ItemType>
+       <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Corner's money: Heroin</Name>
+      <Description>Lost on death or arrest. Can be sold to a crew.</Description>
+      <ItemType>Valuables</ItemType>
+       <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Tool</Name>
+      <Description>Lost on death or arrest. Used in stash house. "Tools" used for "work"</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>xm3_prop_xm3_pistol_xm3</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Stash info: Marijuana</Name>
+      <Description>Used in stash houses.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>xm3_prop_xm3_pistol_xm3</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Stash info: Crack</Name>
+      <Description>Used in stash houses.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>xm3_prop_xm3_pistol_xm3</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Stash info: Heroin</Name>
+      <Description>Used in stash houses.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>xm3_prop_xm3_pistol_xm3</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Stash info: Cocaine</Name>
+      <Description>Used in stash houses.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>xm3_prop_xm3_pistol_xm3</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Work day</Name>
+      <Description>Front yield. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>None</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m24_1_prop_m41_notebook_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Box of iFruit Cellphones</Name>
+      <Description>Can be sold.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>v_ret_gc_box1</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Box of Facade Cellphones</Name>
+      <Description>Can be sold.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>v_ret_gc_box1</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Box of Badger Cellphones</Name>
+      <Description>Can be sold.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>v_ret_gc_box1</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Box of fake ID</Name>
+      <Description>Can be sold.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>v_ret_gc_box1</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Gold chain</Name>
+      <Description>Can be sold.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>--</Name>
+      <Description>None</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>-</Name>
+      <Description>Empty</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+  <ValuableItem>
+      <Name>Corner's money: Cocaine</Name>
+      <Description>Money collected from a cocaine corner.</Description>
+      <ItemType>Valuables</ItemType>
+       <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem><ValuableItem>
+      <Name>Sample day</Name>
+      <Description>A short sample shift for a corner crew.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>None</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m24_1_prop_m41_notebook_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem><ValuableItem>
+      <Name>Workday</Name>
+      <Description>A full workday for a corner crew.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>None</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m24_1_prop_m41_notebook_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem></ValuableItems>
+  <EquipmentItems />
+  <BodyArmorItems />
+  <HardwareItems>
+    <HardwareItem>
+      <Name>Latex gloves</Name>
+      <Description>A must have in your line of work.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>20</AmountPerPackage>
+      <ModelItemID>v_med_latexgloveboxblue</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </HardwareItem>
+    <HardwareItem>
+      <Name>Detergent</Name>
+      <Description>A must have in your line of work.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_detergent_01b</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </HardwareItem>
+    </HardwareItems>
+</PossibleItems>

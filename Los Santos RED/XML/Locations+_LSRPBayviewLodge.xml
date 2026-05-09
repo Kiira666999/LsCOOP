@@ -1,0 +1,563 @@
+<PossibleLocations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DeadDrops />
+  <ScrapYards />
+  <BodyExports />
+  <CarCrushers />
+  <GangDens />
+  <GunStores />
+  <Hotels>
+    <Hotel>
+      <Name>Bayview Lodge</Name>
+      <FullName>Bayview Lodge</FullName>
+      <Description />
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>true</IsBlipEnabled>
+      <MapIcon>475</MapIcon>
+      <MapIconColorString>White</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>-689.3852</X>
+        <Y>5789.219</Y>
+        <Z>17.33094</Z>
+      </EntrancePosition>
+      <EntranceHeading>242.6541</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>-1</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnTaxi>true</ShowsOnTaxi>
+      <TypeName>Hotel</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>225</ActivateDistance>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <MenuID>CheapHotelMenu</MenuID>
+      <CameraPosition>
+        <X>-694.4455</X>
+        <Y>5848.519</Y>
+        <Z>21.94471</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0.09259738</X>
+        <Y>-0.9957009</Y>
+        <Z>-0.002323466</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>-0.1331249</Pitch>
+        <Roll>5.534535E-06</Roll>
+        <Yaw>-174.6869</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>false</CanInteractWhenWanted>
+      <ShowsMarker>true</ShowsMarker>
+      <VendorLocations />
+      <ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>VendorPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>20</VendorMeleePercent>
+      <VendorSidearmPercent>5</VendorSidearmPercent>
+      <VendorLongGunPercent>2</VendorLongGunPercent>
+      <VendorMoneyMin>-1</VendorMoneyMin>
+      <VendorMoneyMax>-1</VendorMoneyMax>
+      <VendorFightPercentage>-1</VendorFightPercentage>
+      <VendorCallPolicePercentage>-1</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>-1</VendorFightPolicePercentage>
+      <VendorCowerPercentage>-1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>-1</VendorSurrenderPercentage>
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations />
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>0</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>0</MaxPriceRefreshHours>
+      <MinRestockHours>0</MinRestockHours>
+      <MaxRestockHours>0</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>2000</RacketeeringAmountMin>
+      <RacketeeringAmountMax>5000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+      <PurchasePrice>1000000</PurchasePrice>
+      <PayoutFrequency>7</PayoutFrequency>
+      <PayoutMin>15000</PayoutMin>
+      <PayoutMax>25000</PayoutMax>
+      <SalesPrice>450000</SalesPrice>
+      <MaxSalesPrice>0</MaxSalesPrice>
+      <IsOwnable>false</IsOwnable>
+      <GrowthPercentage>20</GrowthPercentage>
+      <HotelRooms>
+	    <HotelRoom>
+          <RoomName>Room 1</RoomName>
+          <CameraPosition>
+            <X>-690.242</X>
+            <Y>5774.509</Y>
+            <Z>18.03601</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0.9077415</X>
+            <Y>-0.4194413</Y>
+            <Z>-0.008618983</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>-0.4938374</Pitch>
+            <Roll>-2.534735E-06</Roll>
+            <Yaw>-114.8003</Yaw>
+          </CameraRotation>
+        </HotelRoom>
+        <HotelRoom>
+          <RoomName>Room 2</RoomName>
+          <CameraPosition>
+            <X>-691.9355</X>
+            <Y>5770.887</Y>
+            <Z>18.03601</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0.8946205</X>
+            <Y>-0.4458876</Y>
+            <Z>-0.02895426</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>-1.659189</Pitch>
+            <Roll>-1.81503E-06</Roll>
+            <Yaw>-116.4921</Yaw>
+          </CameraRotation>
+        </HotelRoom>
+        <HotelRoom>
+          <RoomName>Room 8</RoomName>
+          <CameraPosition>
+            <X>-698.452</X>
+            <Y>5772.596</Y>
+            <Z>18.03601</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>-0.411523</X>
+            <Y>-0.9102386</Y>
+            <Z>-0.04598318</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>-2.635572</Pitch>
+            <Roll>-1.81619E-06</Roll>
+            <Yaw>155.6721</Yaw>
+          </CameraRotation>
+        </HotelRoom>
+        <HotelRoom>
+          <RoomName>Room 10</RoomName>
+          <CameraPosition>
+            <X>-705.7008</X>
+            <Y>5775.98</Y>
+            <Z>18.03601</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>-0.4479448</X>
+            <Y>-0.8925143</Y>
+            <Z>-0.05257162</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>-3.013521</Pitch>
+            <Roll>-5.343474E-07</Roll>
+            <Yaw>153.3483</Yaw>
+          </CameraRotation>
+        </HotelRoom>
+      </HotelRooms>
+    </Hotel>
+  </Hotels>///lsrp
+  <ApartmentBuildings />
+  <Residences>
+    <Residence>
+      <Name>Motel Room, 2</Name>
+      <FullName>Motel Room, 2</FullName>
+      <Description />
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>true</IsBlipEnabled>
+      <MapIcon>350</MapIcon>
+      <MapIconColorString>White</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>-683.6781</X>
+        <Y>5766.842</Y>
+        <Z>17.511</Z>
+      </EntrancePosition>
+      <EntranceHeading>63.2444</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>60162</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnTaxi>true</ShowsOnTaxi>
+      <TypeName>For Sale/Rental</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>225</ActivateDistance>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>false</CanInteractWhenWanted>
+      <ShowsMarker>true</ShowsMarker>
+      <VendorLocations />
+      <ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>VendorPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>20</VendorMeleePercent>
+      <VendorSidearmPercent>5</VendorSidearmPercent>
+      <VendorLongGunPercent>2</VendorLongGunPercent>
+      <VendorMoneyMin>-1</VendorMoneyMin>
+      <VendorMoneyMax>-1</VendorMoneyMax>
+      <VendorFightPercentage>-1</VendorFightPercentage>
+      <VendorCallPolicePercentage>-1</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>-1</VendorFightPolicePercentage>
+      <VendorCowerPercentage>-1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>-1</VendorSurrenderPercentage>
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations />
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>0</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>0</MaxPriceRefreshHours>
+      <MinRestockHours>0</MinRestockHours>
+      <MaxRestockHours>0</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>500</RacketeeringAmountMin>
+      <RacketeeringAmountMax>1000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+      <PurchasePrice>30000</PurchasePrice>
+      <PayoutFrequency>7</PayoutFrequency>
+      <PayoutMin>0</PayoutMin>
+      <PayoutMax>0</PayoutMax>
+      <SalesPrice>0</SalesPrice>
+      <MaxSalesPrice>0</MaxSalesPrice>
+      <IsOwnable>false</IsOwnable>
+      <GrowthPercentage>20</GrowthPercentage>
+      <RentalDays>28</RentalDays>
+      <RentalFee>790</RentalFee>
+      <ResidenceID>-999</ResidenceID>
+      <HasHeaderApartmentBuilding>false</HasHeaderApartmentBuilding>
+      <DisableInteractAfterPurchase>false</DisableInteractAfterPurchase>
+    </Residence>  
+  </Residences>
+  <CityHalls />
+  <VendingMachines />
+  <PoliceStations />
+  <Hospitals />
+  <FireStations />
+  <Restaurants />
+  <Businesses />
+  <Pharmacies />
+  <Dispensaries />
+  <HeadShops />
+  <HardwareStores />
+  <PawnShops />
+  <Landmarks />
+  <Banks />
+  <ConvenienceStores>
+    <ConvenienceStore>
+      <Name>Bayview Lodge</Name>
+      <FullName>Bayview General Store</FullName>
+      <Description />
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>true</IsBlipEnabled>
+      <MapIcon>52</MapIcon>
+      <MapIconColorString>White</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>-679.1183</X>
+        <Y>5834.511</Y>
+        <Z>17.33131</Z>
+      </EntrancePosition>
+      <EntranceHeading>135.9207</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>-1</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnTaxi>true</ShowsOnTaxi>
+      <TypeName>Convenience Store</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>225</ActivateDistance>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <MenuID>TwentyFourSevenMenu</MenuID>
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>false</CanInteractWhenWanted>
+      <ShowsMarker>true</ShowsMarker>
+      <VendorLocations />
+      <ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>VendorPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>20</VendorMeleePercent>
+      <VendorSidearmPercent>5</VendorSidearmPercent>
+      <VendorLongGunPercent>2</VendorLongGunPercent>
+      <VendorMoneyMin>-1</VendorMoneyMin>
+      <VendorMoneyMax>-1</VendorMoneyMax>
+      <VendorFightPercentage>-1</VendorFightPercentage>
+      <VendorCallPolicePercentage>-1</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>-1</VendorFightPolicePercentage>
+      <VendorCowerPercentage>-1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>-1</VendorSurrenderPercentage>
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations />
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>0</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>0</MaxPriceRefreshHours>
+      <MinRestockHours>0</MinRestockHours>
+      <MaxRestockHours>0</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>500</RacketeeringAmountMin>
+      <RacketeeringAmountMax>1000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+      <PurchasePrice>400000</PurchasePrice>
+      <PayoutFrequency>7</PayoutFrequency>
+      <PayoutMin>3000</PayoutMin>
+      <PayoutMax>7000</PayoutMax>
+      <SalesPrice>100000</SalesPrice>
+      <MaxSalesPrice>0</MaxSalesPrice>
+      <IsOwnable>true</IsOwnable>
+      <GrowthPercentage>20</GrowthPercentage>
+      <PricePerGallon>3</PricePerGallon>
+    </ConvenienceStore>  
+  </ConvenienceStores>
+  <GasStations />
+  <LiquorStores />
+  <FoodStands />
+  <CarDealerships />
+  <VehicleExporters />
+  <Forgers />
+  <GamblingDens />
+  <RepairGarages />
+  <Bars>
+    <Bar>
+      <Name>Bayview Lodge</Name>
+      <FullName>Bayview Lodge</FullName>
+      <Description />
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>true</IsBlipEnabled>
+      <MapIcon>889</MapIcon>
+      <MapIconColorString>White</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>-695.4841</X>
+        <Y>5802.147</Y>
+        <Z>17.33097</Z>
+      </EntrancePosition>
+      <EntranceHeading>65.46587</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>-1</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnTaxi>true</ShowsOnTaxi>
+      <TypeName>Bar</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>225</ActivateDistance>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <MenuID>BayviewBar</MenuID>
+      <CameraPosition>
+        <X>-723.776</X>
+        <Y>5797.492</Y>
+        <Z>23.90408</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0.9833221</X>
+        <Y>0.07752654</Y>
+        <Z>-0.1645216</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>-9.469446</Pitch>
+        <Roll>-3.083587E-06</Roll>
+        <Yaw>-85.49204</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>false</CanInteractWhenWanted>
+      <ShowsMarker>true</ShowsMarker>
+      <VendorLocations />
+      <ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>VendorPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>20</VendorMeleePercent>
+      <VendorSidearmPercent>5</VendorSidearmPercent>
+      <VendorLongGunPercent>2</VendorLongGunPercent>
+      <VendorMoneyMin>-1</VendorMoneyMin>
+      <VendorMoneyMax>-1</VendorMoneyMax>
+      <VendorFightPercentage>-1</VendorFightPercentage>
+      <VendorCallPolicePercentage>-1</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>-1</VendorFightPolicePercentage>
+      <VendorCowerPercentage>-1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>-1</VendorSurrenderPercentage>
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations />
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>0</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>0</MaxPriceRefreshHours>
+      <MinRestockHours>0</MinRestockHours>
+      <MaxRestockHours>0</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>500</RacketeeringAmountMin>
+      <RacketeeringAmountMax>1000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+      <PurchasePrice>900000</PurchasePrice>
+      <PayoutFrequency>7</PayoutFrequency>
+      <PayoutMin>15000</PayoutMin>
+      <PayoutMax>20000</PayoutMax>
+      <SalesPrice>350000</SalesPrice>
+      <MaxSalesPrice>0</MaxSalesPrice>
+      <IsOwnable>true</IsOwnable>
+      <GrowthPercentage>20</GrowthPercentage>
+    </Bar>
+  </Bars>
+  <DriveThrus />
+  <ClothingShops />
+  <BusStops />
+  <SubwayStations />
+  <Prisons />
+  <Morgues />
+  <SportingGoodsStores />
+  <Airports />
+  <IllicitMarketplaces />
+  <BlankLocations />
+  <MilitaryBases />
+  <ExteriorCraftingLocations />
+  <BarberShops />
+  <PlasticSurgeryClinics />
+  <TattooShops />
+  <RaceMeetups />
+  <ATMMachines />
+  <GasPumps />
+  <CashRegisters />
+  <StoredSpawns />
+  <PedCustomizerLocation />
+</PossibleLocations>

@@ -1,0 +1,35 @@
+<ArrayOfIntoxicant xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Intoxicant>
+    <Name>LSD</Name>
+    <IntoxicatingIntervalTime>25000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>10</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>DRUG_gas_huffin</OverLayEffect>
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving ImparesWalking</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Fish Scale</Name>
+    <IntoxicatingIntervalTime>10500</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>5</MaxEffectAllowed>
+    <SoberingIntervalTime>20300</SoberingIntervalTime>
+    <OverLayEffect>BikerFormFlash</OverLayEffect>
+    <EffectIntoxicationLimit>0.5</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving InfiniteStamina FastSpeed</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Bashed Coke</Name>
+    <IntoxicatingIntervalTime>20500</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>3</MaxEffectAllowed>
+    <SoberingIntervalTime>30000</SoberingIntervalTime>
+    <OverLayEffect>BikerFormFlash</OverLayEffect>
+    <EffectIntoxicationLimit>0.5</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving InfiniteStamina FastSpeed</Effects>
+  </Intoxicant>
+</ArrayOfIntoxicant>

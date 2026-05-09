@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AssemblyName>LsrCoop.Server</AssemblyName>
+    <RootNamespace>LsrCoop.Server</RootNamespace>
+    <GtaVInstallPath>O:\SteamLibrary\steamapps\common\Grand Theft Auto V</GtaVInstallPath>
+    <OutputPath>..\RageCoopServer\Resources\Server\LsrCoop.Server\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="RageCoop.Core">
+      <HintPath>$(GtaVInstallPath)\scripts\RageCoop\RageCoop.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <ProjectReference Include="..\LsrCoop.Server.Reference\LsrCoop.Server.Reference.csproj">
+      <Private>false</Private>
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+  <Target Name="RemoveCompileTimeServerStub" AfterTargets="Build">
+    <Delete Files="$(OutputPath)RageCoop.Server.dll;$(OutputPath)RageCoop.Server.pdb" />
+  </Target>
+</Project>

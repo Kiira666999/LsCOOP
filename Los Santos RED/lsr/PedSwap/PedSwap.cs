@@ -1,5 +1,6 @@
 ﻿using ExtensionsMethods;
 using LosSantosRED.lsr;
+using LosSantosRED.lsr.Coop.Core;
 using LosSantosRED.lsr.Helper;
 using LosSantosRED.lsr.Interface;
 using LSR.Vehicles;
@@ -53,10 +54,11 @@ public class PedSwap : IPedSwap
     private bool HasSetOffset;
     private bool IsDisposed;
     private ILocationInteractable LocationInteractable;
+    private CoopPermissionService CoopPermissionService;
 
     public PedSwap(ITimeControllable time, IPedSwappable player, ISettingsProvideable settings, IEntityProvideable entities, IWeapons weapons, ICrimes crimes, INameProvideable names, IModItems modItems, IEntityProvideable world, 
         IPedGroups pedGroups, IShopMenus shopMenus, IDispatchablePeople dispatchablePeople, IHeads heads, IClothesNames clothesNames, IGangs gangs, IAgencies agencies, ITattooNames tattooNames, 
-        IGameSaves gameSaves, ISavedOutfits savedOutfits, IInteractionable interactionable, ILocationInteractable locationInteractable)
+        IGameSaves gameSaves, ISavedOutfits savedOutfits, IInteractionable interactionable, ILocationInteractable locationInteractable, CoopPermissionService coopPermissionService = null)
     {
         Time = time;
         Player = player;
@@ -79,8 +81,20 @@ public class PedSwap : IPedSwap
         SavedOutfits = savedOutfits;
         Interactionable = interactionable;
         LocationInteractable = locationInteractable;
+        CoopPermissionService = coopPermissionService ?? new CoopPermissionService();
     }
     public int CurrentPedMoney { get; private set; }
+    private bool CanUsePedSwap()
+    {
+        if (CoopPermissionService == null || CoopPermissionService.CanUsePedSwap())
+        {
+            return true;
+        }
+
+        Game.DisplayHelp("Co-op Admin permission required for ped swap.");
+        return false;
+    }
+
     public void AddOffset()
     {
         SetPlayerOffset();
@@ -119,6 +133,11 @@ public class PedSwap : IPedSwap
     //}
     public void BecomeCreatorPed()
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         try
         {
 
@@ -129,7 +148,7 @@ public class PedSwap : IPedSwap
                     ResetOffsetForCurrentModel();
                     Player.IsCustomizingPed = true;
                     MenuPool menuPool = new MenuPool();
-                    PedCustomizer PedCustomizer = new PedCustomizer(menuPool, this, Names, Player, Entities, Settings, DispatchablePeople, Heads, ClothesNames, Gangs, Agencies, TattooNames, GameSaves, SavedOutfits, Interactionable, LocationInteractable);
+                    PedCustomizer PedCustomizer = new PedCustomizer(menuPool, this, Names, Player, Entities, Settings, DispatchablePeople, Heads, ClothesNames, Gangs, Agencies, TattooNames, GameSaves, SavedOutfits, Interactionable, LocationInteractable, CoopPermissionService);
                     PedCustomizer.Setup();
                     PedCustomizer.Start();
                     GameFiber.Yield();
@@ -172,6 +191,11 @@ public class PedSwap : IPedSwap
 
     public void BecomeKnownPed(PedExt toBecome, bool deleteOld, bool clearNearPolice)
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         try
         {
             if(toBecome == null || !toBecome.Pedestrian.Exists())
@@ -203,6 +227,11 @@ public class PedSwap : IPedSwap
 
     public void BecomeExistingPed(float radius, bool nearest, bool deleteOld, bool clearNearPolice, bool createRandomPedIfNoneReturned)
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         try
         {
             Game.FadeScreenOut(500, true);
@@ -236,6 +265,11 @@ public class PedSwap : IPedSwap
     }
     public void BecomeExistingPed(Ped TargetPed, string modelName, string fullName, int money, PedVariation variation, int speechSkill, string voiceName)
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         try
         {
             Game.FadeScreenOut(500, true);
@@ -266,6 +300,11 @@ public class PedSwap : IPedSwap
     }
     public void BecomeRandomCop()
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         ResetOffsetForCurrentModel();
         Cop toSwapWith = FindCopToSwapWith(2000f, true);
         if (toSwapWith == null || !toSwapWith.Pedestrian.Exists())
@@ -296,6 +335,11 @@ public class PedSwap : IPedSwap
     }
     public void BecomeRandomPed()
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         try
         {
             Game.FadeScreenOut(500, true);
@@ -360,6 +404,11 @@ public class PedSwap : IPedSwap
 
     public void BecomeSecurity(Agency agency)
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         try
         {
             if (agency == null)
@@ -424,6 +473,11 @@ public class PedSwap : IPedSwap
     }
     public void BecomeCop(Agency agency)
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         try
         {
             if(agency == null)
@@ -490,6 +544,11 @@ public class PedSwap : IPedSwap
     }
     public void BecomeGangMember(Gang gang)
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         try
         {
             if (gang == null)
@@ -555,6 +614,11 @@ public class PedSwap : IPedSwap
     }
     public void BecomeEMT(Agency agency)
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         try
         {
             if (agency == null)
@@ -617,6 +681,11 @@ public class PedSwap : IPedSwap
     }
     public void BecomeFireFighter(Agency agency)
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         try
         {
             if (agency == null)
@@ -681,6 +750,11 @@ public class PedSwap : IPedSwap
 
     public void BecomeSamePed(string modelName, string fullName, int money, PedVariation variation, string voiceName)
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         try
         {
             //Player.RemoveAgencyStatus();
@@ -713,6 +787,11 @@ public class PedSwap : IPedSwap
     }
     public void BecomeSavedPed(string playerName, string modelName, int money, PedVariation variation, int speechSkill, string voiceName)
     {
+        if (!CanUsePedSwap())
+        {
+            return;
+        }
+
         try
         {
             ResetOffsetForCurrentModel();

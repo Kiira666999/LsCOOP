@@ -1,0 +1,566 @@
+<ArrayOfGestureData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <GestureData>
+    <Name>The Finger Quick</Name>
+    <AnimationName>enter</AnimationName>
+    <AnimationDictionary>anim@mp_player_intselfiethe_bird</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>true</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>The Finger Alt Quick</Name>
+    <AnimationName>mp_player_int_finger_02_enter</AnimationName>
+    <AnimationDictionary>mp_player_int_upperfinger</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>true</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Double Finger Quick</Name>
+    <AnimationName>mp_player_int_finger_01_enter</AnimationName>
+    <AnimationDictionary>mp_player_int_upperfinger</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>true</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Thumbs Up Quick</Name>
+    <AnimationName>enter</AnimationName>
+    <AnimationDictionary>anim@mp_player_intselfiethumbs_up</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Wank Quick</Name>
+    <AnimationName>enter</AnimationName>
+    <AnimationDictionary>anim@mp_player_intselfiewank</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Bring It On</Name>
+    <AnimationName>gesture_bring_it_on</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>true</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Bye (Hard)</Name>
+    <AnimationName>gesture_bye_hard</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Bye (Soft)</Name>
+    <AnimationName>gesture_bye_soft</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>false</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Come Here (Hard)</Name>
+    <AnimationName>gesture_come_here_hard</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Come Here (Soft)</Name>
+    <AnimationName>gesture_come_here_soft</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>false</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Damn</Name>
+    <AnimationName>gesture_damn</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Displeased</Name>
+    <AnimationName>gesture_displeased</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Easy Now</Name>
+    <AnimationName>gesture_easy_now</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Hand Down</Name>
+    <AnimationName>gesture_hand_down</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Hand Left</Name>
+    <AnimationName>gesture_hand_left</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Hand Right</Name>
+    <AnimationName>gesture_hand_right</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Head No</Name>
+    <AnimationName>gesture_head_no</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Hello</Name>
+    <AnimationName>gesture_hello</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>I Will</Name>
+    <AnimationName>gesture_i_will</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>false</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Me</Name>
+    <AnimationName>gesture_me</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>false</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Me (Hard)</Name>
+    <AnimationName>gesture_me_hard</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>No Way</Name>
+    <AnimationName>gesture_no_way</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>false</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Nod No (Hard)</Name>
+    <AnimationName>gesture_nod_no_hard</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Nod No (Soft)</Name>
+    <AnimationName>gesture_nod_no_soft</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>false</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Nod Yes (Hard)</Name>
+    <AnimationName>gesture_nod_yes_hard</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Nod Yes (Soft)</Name>
+    <AnimationName>gesture_nod_yes_soft</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>false</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Pleased</Name>
+    <AnimationName>gesture_pleased</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>false</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Shrug (Soft)</Name>
+    <AnimationName>gesture_shrug_soft</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>false</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>What (Hard)</Name>
+    <AnimationName>gesture_what_hard</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>What (Soft)</Name>
+    <AnimationName>gesture_what_soft</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>false</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Why</Name>
+    <AnimationName>gesture_why</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Why Left</Name>
+    <AnimationName>gesture_why_left</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>false</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>You (Hard)</Name>
+    <AnimationName>gesture_you_hard</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>You (Soft)</Name>
+    <AnimationName>gesture_you_soft</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>false</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Its Mine</Name>
+    <AnimationName>getsure_its_mine</AnimationName>
+    <AnimationDictionary />
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Gesture</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Hair Touch</Name>
+    <AnimationName>idle_a_hairtouch</AnimationName>
+    <AnimationDictionary>amb@code_human_wander_idles@female@idle_a</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Idles</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Sneeze</Name>
+    <AnimationName>idle_b_sneeze</AnimationName>
+    <AnimationDictionary>amb@code_human_wander_idles@female@idle_a</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Idles</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Look Around</Name>
+    <AnimationName>idle_c_lookaround</AnimationName>
+    <AnimationDictionary>amb@code_human_wander_idles@female@idle_a</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Idles</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Trip</Name>
+    <AnimationName>idle_d_trip</AnimationName>
+    <AnimationDictionary>amb@code_human_wander_idles@female@idle_b</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Idles</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Wipe Forehead</Name>
+    <AnimationName>idle_e_wipeforehead</AnimationName>
+    <AnimationDictionary>amb@code_human_wander_idles@female@idle_b</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Idles</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Check Watch</Name>
+    <AnimationName>idle_f_checkwatch</AnimationName>
+    <AnimationDictionary>amb@code_human_wander_idles@female@idle_b</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Idles</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Wrist Watch</Name>
+    <AnimationName>idle_a_wristwatch</AnimationName>
+    <AnimationDictionary>amb@code_human_wander_idles@female@idle_a</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Idles</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Rub Nose</Name>
+    <AnimationName>idle_b_rubnose</AnimationName>
+    <AnimationDictionary>amb@code_human_wander_idles@female@idle_a</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Idles</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Back Scratch</Name>
+    <AnimationName>idle_c_backscratch</AnimationName>
+    <AnimationDictionary>amb@code_human_wander_idles@female@idle_a</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Idles</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Eye Rub</Name>
+    <AnimationName>idle_d_eyerub</AnimationName>
+    <AnimationDictionary>amb@code_human_wander_idles@male@idle_b</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Idles</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Look Around</Name>
+    <AnimationName>idle_e_lookaround</AnimationName>
+    <AnimationDictionary>amb@code_human_wander_idles@male@idle_b</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Idles</Category>
+  </GestureData>
+  <GestureData>
+    <Name>Knuckle Crack</Name>
+    <AnimationName>idle_f_knucklecrack</AnimationName>
+    <AnimationDictionary>amb@code_human_wander_idles@male@idle_b</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsOnActionWheel>true</IsOnActionWheel>
+    <SetRepeat>false</SetRepeat>
+    <IsWholeBody>false</IsWholeBody>
+    <Category>Idles</Category>
+  </GestureData>
+</ArrayOfGestureData>

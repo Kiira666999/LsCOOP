@@ -1,0 +1,506 @@
+<PossibleItems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FlashlightItems />
+  <CellphoneItems />
+  <ModItems />
+  <ShovelItems />   
+  <UmbrellaItems />
+  <LicensePlateItems />
+  <LighterItems />
+  <ScrewdriverItems />
+  <TapeItems />
+  <DrillItems />
+  <HammerItems />
+  <PliersItems />
+  <BongItems />
+  <PipeItems />
+  <RollingPapersItems />
+  <FoodItems />
+  <SmokeItems>
+    <SmokeItem>
+      <Name>Joint buds w/hash</Name>
+      <Description>You tested, He Approved</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Joint</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_cs_joint_01</ModelItemID>
+      <PackageItemID>p_cs_joint_01</PackageItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0.2</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>5</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName>Marijuana</IntoxicantName>
+      <IntoxicationPerInterval>0.4</IntoxicationPerInterval>
+      <HealthChangeAmount>25</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>-15</HungerChangeAmount>
+      <ThirstChangeAmount>-10</ThirstChangeAmount>
+      <SleepChangeAmount>-5</SleepChangeAmount>
+      <AlwaysChangesHealth>true</AlwaysChangesHealth>
+      <NeedsRollingPapers>false</NeedsRollingPapers>
+      <Duration>200000</Duration>
+    </SmokeItem>
+    <SmokeItem>
+      <Name>Hash</Name>
+      <Description>Little Jacob Tested, Truth Approved</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Gram</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_cs_joint_01</ModelItemID>
+      <PackageItemID>sf_prop_sf_bag_weed_01a</PackageItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName>Marijuana</IntoxicantName>
+      <IntoxicationPerInterval>0</IntoxicationPerInterval>
+      <HealthChangeAmount>0</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>0</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>true</AlwaysChangesHealth>
+      <NeedsRollingPapers>false</NeedsRollingPapers>
+      <Duration>0</Duration>
+    </SmokeItem>
+  </SmokeItems>
+  <PipeSmokeItems />
+  <DrinkItems />
+  <InhaleItems />
+  <IngestItems />
+  <InjectItems />
+  <HotelStayItems />
+  <WeaponItems />
+  <VehicleItems />
+  <BinocularsItems />
+  <RadioItems />
+  <RadarDetectorItems />
+  <ValuableItems>
+    <ValuableItem>
+      <Name>Small Baggie</Name>
+      <Description>Totally for legal purposes. Used in crafting</Description>
+      <ItemType>Paraphernalia</ItemType>
+      <ItemSubType>Paraphernalia</ItemSubType>
+      <MeasurementName>Bag</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_weed_bag_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Medium Baggie</Name>
+      <Description>Totally for legal purposes. Used in crafting</Description>
+      <ItemType>Paraphernalia</ItemType>
+      <ItemSubType>Paraphernalia</ItemSubType>
+      <MeasurementName>Bag</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_weed_bag_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Large Baggie</Name>
+      <Description>Totally for legal purposes. Used in crafting</Description>
+      <ItemType>Paraphernalia</ItemType>
+      <ItemSubType>Paraphernalia</ItemSubType>
+      <MeasurementName>Bag</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_weed_bag_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Package of Marijuana</Name>
+      <Description>100G</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_drug_package_02</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Package of Crack</Name>
+      <Description>100G</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>hei_prop_hei_drug_pack_01b</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Package of Heroin</Name>
+      <Description>100G</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m23_2_prop_m32_drug_pkg_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Package of Cocaine</Name>
+      <Description>100G</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m23_2_prop_m32_drug_pkg_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>1G Crack</Name>
+      <Description>A single rock. Can be sold in the street</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_meth_bag_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>5G Crack</Name>
+      <Description>A few rocks. Can be sold in the street</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_meth_bag_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>10G Crack</Name>
+      <Description>A big rock. Can be sold in the street</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_meth_bag_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>15G Crack</Name>
+      <Description>A big chunk. Can be sold in the street</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_meth_bag_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+	<ValuableItem>
+      <Name>1G Marijuana</Name>
+      <Description>Packaged 1G of weed. Can be sold to customers</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_bag_weed_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+	<ValuableItem>
+      <Name>5G Marijuana</Name>
+      <Description>Packaged 5G of weed. Can be sold to customers</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_bag_weed_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>10G Marijuana</Name>
+      <Description>Packaged 10G of weed. Can be sold to customers</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_bag_weed_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>15G Marijuana</Name>
+      <Description>Packaged 15G of weed. Can be sold to customers</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_bag_weed_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+	<ValuableItem>
+      <Name>1G Heroin</Name>
+      <Description>Packaged 1G of Heroin. Can be sold to customers</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_meth_bag_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+	<ValuableItem>
+      <Name>5G Heroin</Name>
+      <Description>Packaged 5G of Heroin. Can be sold to customers</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_meth_bag_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>10G Heroin</Name>
+      <Description>Packaged 10G of Heroin. Can be sold to customers</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_meth_bag_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>15G Heroin</Name>
+      <Description>Packaged 15G of Heroin. Can be sold to customers</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_meth_bag_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+	<ValuableItem>
+      <Name>1G Cocaine</Name>
+      <Description>Packaged 1G of Cocaine. Can be sold to customers</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_meth_bag_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+	<ValuableItem>
+      <Name>5G Cocaine</Name>
+      <Description>Packaged 5G of Cocaine. Can be sold to customers</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_meth_bag_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>10G Cocaine</Name>
+      <Description>Packaged 10G of Cocaine. Can be sold to customers</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_meth_bag_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>15G Cocaine</Name>
+      <Description>Packaged 15G of Cocaine. Can be sold to customers</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Bag(s)</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_meth_bag_01</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Phone number</Name>
+      <Description>A customer phone number. Used in crafting</Description>
+      <ItemType>Paraphernalia</ItemType>
+      <ItemSubType>Paraphernalia</ItemSubType>
+      <MeasurementName>Number</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_phone_ing</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Dealer phone</Name>
+      <Description>A phone with a list of customer's number. Can be sold or used in crafting.</Description>
+      <ItemType>Paraphernalia</ItemType>
+      <ItemSubType>Paraphernalia</ItemSubType>
+      <MeasurementName>Phone</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_phone_ing</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Give a free sample</Name>
+      <Description>You made sure that they'll come back addicted and loyal. Used in crafting</Description>
+      <ItemType>Paraphernalia</ItemType>
+      <ItemSubType>Paraphernalia</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_mk_boost</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+  </ValuableItems>
+  <EquipmentItems />
+  <BodyArmorItems />
+  <HardwareItems />
+</PossibleItems>

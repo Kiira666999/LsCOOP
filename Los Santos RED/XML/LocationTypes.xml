@@ -1,0 +1,107 @@
+<LocationTypeManager xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CountyList>
+    <GameCounty>
+      <CountyID>CityOfLosSantos</CountyID>
+      <CountyName>City of Los Santos</CountyName>
+      <CountyNameShort>LS</CountyNameShort>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>LosSantosCounty</CountyID>
+      <CountyName>Los Santos County</CountyName>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>BlaineCounty</CountyID>
+      <CountyName>Blaine County</CountyName>
+      <CountyNameShort>BC</CountyNameShort>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>PacificOcean</CountyID>
+      <CountyName>Pacific Ocean</CountyName>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>Crook</CountyID>
+      <CountyName>Crook County</CountyName>
+      <ColorPrefix>~b~</ColorPrefix>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>NorthYankton</CountyID>
+      <CountyName>North Yankton</CountyName>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>VenturaCounty</CountyID>
+      <CountyName>Ventura County</CountyName>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>MajesticCounty</CountyID>
+      <CountyName>Majestic County</CountyName>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>LibertyCity</CountyID>
+      <CountyName>Liberty City</CountyName>
+      <CountyNameShort>LC</CountyNameShort>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>Alderney</CountyID>
+      <CountyName>Alderney</CountyName>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>CityOfVice</CountyID>
+      <CountyName>City of Vice</CountyName>
+      <CountyNameShort>VC</CountyNameShort>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>Vice</CountyID>
+      <CountyName>Vice County</CountyName>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>Colombia</CountyID>
+      <CountyName>Columbia</CountyName>
+    </GameCounty>
+    <GameCounty>
+      <CountyID>Unknown</CountyID>
+      <CountyName>Unknown</CountyName>
+    </GameCounty>
+  </CountyList>
+  <StateList>
+    <GameState>
+      <StateID>SanAndreas</StateID>
+      <StateName>San Andreas</StateName>
+      <SisterStateIDs />
+    </GameState>
+    <GameState>
+      <StateID>NorthYankton</StateID>
+      <StateName>North Yankton</StateName>
+      <SisterStateIDs />
+    </GameState>
+    <GameState>
+      <StateID>Liberty</StateID>
+      <StateName>Liberty</StateName>
+      <SisterStateIDs>
+        <string>Alderney</string>
+      </SisterStateIDs>
+    </GameState>
+    <GameState>
+      <StateID>Alderney</StateID>
+      <StateName>Alderney</StateName>
+      <SisterStateIDs>
+        <string>Liberty</string>
+      </SisterStateIDs>
+    </GameState>
+    <GameState>
+      <StateID>Leonida</StateID>
+      <StateName>Leonida</StateName>
+      <SisterStateIDs />
+    </GameState>
+    <GameState>
+      <StateID>Colombia</StateID>
+      <StateName>Colombia</StateName>
+      <ColorPrefix>~p~</ColorPrefix>
+      <SisterStateIDs />
+    </GameState>
+    <GameState>
+      <StateID>Unknown</StateID>
+      <StateName>Unknown</StateName>
+      <SisterStateIDs />
+    </GameState>
+  </StateList>
+</LocationTypeManager>

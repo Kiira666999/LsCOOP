@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ShopMenuTypes>
+  <ShopMenuList>
+    <ShopMenu>
+      <ID>PharmacistMenu1</ID>
+      <Name>Shady Pharmacist</Name>
+      <GroupName />
+      <Items>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Pseudoephedrine</ModItemName>
+          <PurchasePrice>50</PurchasePrice>
+          <SalesPrice>0</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>1000</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Vitamin Powder</ModItemName>
+          <PurchasePrice>450</PurchasePrice>
+          <SalesPrice>0</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>1000</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Morphine</ModItemName>
+          <PurchasePrice>20</PurchasePrice>
+          <SalesPrice>0</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>1000</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Syringe</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>0</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>1000</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Chesty</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>8</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>30</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hingmyralgan</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>23</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>30</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Deludamol</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>50</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>30</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Wach-Auf Caffeine Pills</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>15</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>30</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Lax to the Max</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>10</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>30</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Bull Shark Testosterone</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>11</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>30</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>///lsrp
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Alco Patch</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>23</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>30</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Equanox</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>57</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>30</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Mollis</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>198</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>30</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Zombix</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>160</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>30</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Diazepam</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>100</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>///lsrp
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>30</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Medical Supplies</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>250</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>///lsrp
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>30</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+      </Items>
+    </ShopMenu>
+  </ShopMenuList>
+  <ShopMenuGroupList />
+  <ShopMenuGroupContainers />
+  <PropShopMenus />
+  <TreatmentOptionsList />
+  <PedVariationShopMenus />
+</ShopMenuTypes>

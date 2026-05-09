@@ -1,0 +1,84 @@
+<PossibleInteriors xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <GeneralInteriors>
+    <Interior>
+      <LocalID>11972805</LocalID>
+      <InternalInteriorCoordinates>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </InternalInteriorCoordinates>
+      <Name>Diamond Casino</Name>
+      <IsTeleportEntry>true</IsTeleportEntry>
+      <DisabledInteriorCoords>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </DisabledInteriorCoords>
+      <Doors />
+      <RequestIPLs>
+	    <string>vw_casino_main</string>
+		<string>hei_dlc_windows_casino</string>
+		<string>hei_dlc_casino_aircon</string>
+		<string>vw_dlc_casino_door</string>
+		<string>hei_dlc_casino_door</string>
+	  </RequestIPLs>
+      <RemoveIPLs />
+      <InteriorSets />
+      <InteriorTintColor>-1</InteriorTintColor>
+      <InteriorSetStyleID>-1</InteriorSetStyleID>
+      <InteriorEgressPosition>
+        <X>1110.20</X>
+        <Y>216.60</Y>
+        <Z>-49.45</Z>
+      </InteriorEgressPosition>
+      <InteriorEgressHeading>356.1043</InteriorEgressHeading>
+      <NeedsActivation>false</NeedsActivation>
+      <NeedsSetDisabled>false</NeedsSetDisabled>
+      <IsRestricted>false</IsRestricted>
+      <IsCivilianReactableRestricted>false</IsCivilianReactableRestricted>
+      <IsWeaponRestricted>false</IsWeaponRestricted>
+      <IsTunnel>false</IsTunnel>
+      <MaxUpdateDistance>50</MaxUpdateDistance>
+      <InteractPoints>
+	    <InteriorInteract xsi:type="ExitInteriorInteract">
+          <Name>DiamondCasinoExit</Name>
+          <Position>
+            <X>172.4488</X>
+            <Y>-1008.305</Y>
+            <Z>-98.99999</Z>
+          </Position>
+          <Heading>181.1808</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Exit</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>true</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+        </InteriorInteract>
+      </InteractPoints>
+      <ClearPositions />
+      <VendorLocations />
+    </Interior>
+  </GeneralInteriors>
+  <ResidenceInteriors />
+  <GangDenInteriors />
+  <BankInteriors />
+  <BarberShopInteriors />
+  <BusinessInteriors />
+</PossibleInteriors>

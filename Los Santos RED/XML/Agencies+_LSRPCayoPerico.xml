@@ -1,0 +1,71 @@
+<ArrayOfAgency xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Agency>
+    <ID>CPPD</ID>
+    <FullName>Cayo Perico Police Department</FullName>
+    <ShortName>CPPD</ShortName>
+    <MemberName>CPPD Officer</MemberName>
+    <Classification>Police</Classification>
+    <Division>97</Division>
+    <ColorPrefix>~Y~</ColorPrefix>
+    <ColorString>Yellow</ColorString>
+    <LicensePlatePrefix>CPPD </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>false</CanDispatchOffDuty>
+    <HeadDataGroupID />
+    <PersonnelID>CPPDPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>AllSidearms</SideArmsID>
+    <LongGunsID>AllLongGuns</LongGunsID>
+    <VehiclesID>CPPDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>-1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID />
+    <OffDutyVehiclesID />
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <CorruptMemberPercentage>30</CorruptMemberPercentage>
+    <CorruptMenuGroup>CorruptDealerMenu</CorruptMenuGroup>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+    <CorruptMoneyMin>400</CorruptMoneyMin>
+    <CorruptMoneyMax>8000</CorruptMoneyMax>
+  </Agency>
+  <Agency>
+    <ID>CPAS</ID>
+    <FullName>Cayo Perico Air Service</FullName>
+    <ShortName>CPAS</ShortName>
+    <MemberName>CPAS Serviceman</MemberName>
+    <Classification>Police</Classification>
+    <Division>96</Division>
+    <ColorPrefix>~p~</ColorPrefix>
+    <ColorString>Purple</ColorString>
+    <LicensePlatePrefix>CPAS </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+	<StateID>Colombia</StateID>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID />
+    <PersonnelID>CPASPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>HeliSidearms</SideArmsID>
+    <LongGunsID>HeliLongGuns</LongGunsID>
+    <VehiclesID>CPASVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <OffDutyPersonnelID />
+    <OffDutyVehiclesID />
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <CorruptMemberPercentage>30</CorruptMemberPercentage>
+    <CorruptMenuGroup>CorruptDealerMenu</CorruptMenuGroup>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+    <CorruptMoneyMin>400</CorruptMoneyMin>
+    <CorruptMoneyMax>8000</CorruptMoneyMax>
+  </Agency>
+</ArrayOfAgency>

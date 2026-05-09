@@ -1,0 +1,72 @@
+<ArrayOfIssuableWeaponsGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <IssuableWeaponsGroup>
+    <IssuableWeaponsID>JapSidearms</IssuableWeaponsID>
+    <IssuableWeapons>
+      <IssuableWeapon>
+        <ModelName>weapon_ceramicpistol</ModelName>
+        <Variation>
+          <Tint>0</Tint>
+          <Components>
+            <WeaponComponent>
+              <Hash>0</Hash>
+              <Name>Extended Clip</Name>
+              <ComponentSlot>Other</ComponentSlot>
+            </WeaponComponent>
+          </Components>
+		</Variation>
+        <SpawnChance>100</SpawnChance>
+      </IssuableWeapon>
+      <IssuableWeapon>
+        <ModelName>weapon_minismg</ModelName>
+        <Variation>
+          <Tint>0</Tint>
+          <Components>
+            <WeaponComponent>
+              <Hash>0</Hash>
+              <Name>Extended Clip</Name>
+              <ComponentSlot>Other</ComponentSlot>
+            </WeaponComponent>
+		  </Components>
+        </Variation>
+        <SpawnChance>100</SpawnChance>
+      </IssuableWeapon>
+    </IssuableWeapons>
+  </IssuableWeaponsGroup>
+  <IssuableWeaponsGroup>
+    <IssuableWeaponsID>JapLongGuns</IssuableWeaponsID>
+    <IssuableWeapons>
+      <IssuableWeapon>
+        <ModelName>weapon_sweepershotgun</ModelName>
+        <Variation>
+          <Tint>0</Tint>
+          <Components />
+        </Variation>
+        <SpawnChance>100</SpawnChance>
+      </IssuableWeapon>
+      <IssuableWeapon>
+        <ModelName>weapon_battlerifle</ModelName>
+        <Variation>
+          <Tint>0</Tint>
+          <Components />
+        </Variation>
+        <SpawnChance>100</SpawnChance>
+      </IssuableWeapon>
+      <IssuableWeapon>
+        <ModelName>weapon_servicecarbine</ModelName>
+        <Variation>
+          <Tint>0</Tint>
+          <Components />
+        </Variation>
+        <SpawnChance>100</SpawnChance>
+      </IssuableWeapon>
+      <IssuableWeapon>
+        <ModelName>weapon_assaultrifle_mk2</ModelName>
+        <Variation>
+          <Tint>0</Tint>
+          <Components />
+        </Variation>
+        <SpawnChance>100</SpawnChance>
+      </IssuableWeapon>
+    </IssuableWeapons>
+  </IssuableWeaponsGroup>
+</ArrayOfIssuableWeaponsGroup>

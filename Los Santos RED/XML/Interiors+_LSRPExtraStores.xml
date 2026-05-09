@@ -1,0 +1,217 @@
+<PossibleInteriors xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <GeneralInteriors>
+    <Interior>
+      <LocalID>196609</LocalID>
+      <InternalInteriorCoordinates>
+        <X>-209.759</X>
+        <Y>-1319.617</Y>
+        <Z>30.08367</Z>
+      </InternalInteriorCoordinates>
+      <Name>Bennys Workshop</Name>
+      <IsTeleportEntry>false</IsTeleportEntry>
+      <DisabledInteriorCoords>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </DisabledInteriorCoords>
+      <Doors />
+      <RequestIPLs>
+        <string>lr_supermod_int</string>
+      </RequestIPLs>
+      <RemoveIPLs />
+      <InteriorSets />
+      <InteriorColorStyle>-1</InteriorColorStyle>
+      <InteriorEgressPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </InteriorEgressPosition>
+      <InteriorEgressHeading>0</InteriorEgressHeading>
+      <NeedsActivation>false</NeedsActivation>
+      <NeedsSetDisabled>false</NeedsSetDisabled>
+      <IsRestricted>false</IsRestricted>
+      <IsCivilianReactableRestricted>false</IsCivilianReactableRestricted>
+      <IsWeaponRestricted>true</IsWeaponRestricted>
+      <IsTunnel>false</IsTunnel>
+      <MaxUpdateDistance>80</MaxUpdateDistance>
+      <InteractPoints />
+      <ClearPositions />
+      <VendorLocations />
+    </Interior>
+    <Interior>
+      <LocalID>2001</LocalID>
+      <InternalInteriorCoordinates>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </InternalInteriorCoordinates>
+      <Name>Diamond Casino Bar</Name>
+      <IsTeleportEntry>true</IsTeleportEntry>
+      <DisabledInteriorCoords>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </DisabledInteriorCoords>
+      <Doors />
+      <RequestIPLs />
+      <RemoveIPLs />
+      <InteriorSets />
+      <InteriorTintColor>-1</InteriorTintColor>
+      <InteriorSetStyleID>-1</InteriorSetStyleID>
+      <InteriorEgressPosition>
+        <X>965.1158</X>
+        <Y>58.39774</Y>
+        <Z>112.553</Z>
+      </InteriorEgressPosition>
+      <InteriorEgressHeading>55.5216</InteriorEgressHeading>
+      <NeedsActivation>false</NeedsActivation>
+      <NeedsSetDisabled>false</NeedsSetDisabled>
+      <IsRestricted>false</IsRestricted>
+      <IsCivilianReactableRestricted>false</IsCivilianReactableRestricted>
+      <IsWeaponRestricted>false</IsWeaponRestricted>
+      <IsTunnel>false</IsTunnel>
+      <MaxUpdateDistance>50</MaxUpdateDistance>
+      <InteractPoints>
+        <InteriorInteract xsi:type="ExitInteriorInteract">
+          <Name>casinobarExit1</Name>
+          <Position>
+            <X>965.0103</X>
+            <Y>58.42745</Y>
+            <Z>112.553</Z>
+          </Position>
+          <Heading>239.4053</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Exit</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>true</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+        </InteriorInteract>
+      </InteractPoints>
+      <ClearPositions />
+      <VendorLocations>
+        <SpawnPlace>
+          <Position>
+            <X>959.3892</X>
+            <Y>70.88705</Y>
+            <Z>112.5542</Z>
+          </Position>
+          <Heading>142.3451</Heading>
+        </SpawnPlace>
+      </VendorLocations>
+    </Interior>
+    <Interior>
+      <LocalID>281089</LocalID>
+      <InternalInteriorCoordinates>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </InternalInteriorCoordinates>
+      <Name>The Music Locker</Name>
+      <IsTeleportEntry>true</IsTeleportEntry>
+      <DisabledInteriorCoords>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </DisabledInteriorCoords>
+      <Doors />
+      <RequestIPLs>
+        <string>h4_int_placement_h4_interior_1_dlc_int_02_h4_milo_</string>
+      </RequestIPLs>  
+      <RemoveIPLs />
+      <InteriorSets>
+        <string>h4_clubposter_moodymann</string>
+        <string>int01_ba_equipment_setup</string>
+        <string>int01_ba_security_upgrade</string>
+        <string>int01_ba_equipment_upgrade</string>
+        <string>int01_ba_style02_podium</string>
+        <string>int01_ba_dj_moodyman</string>
+        <string>int01_ba_bar_content</string>
+        <string>int01_ba_lights_screen</string>
+        <string>int01_ba_screen</string>
+        <string>dj_03_lights_01</string>
+        <string>dj_01_lights_02</string>
+        <string>dj_04_lights_03</string>
+        <string>dj_02_lights_04</string>
+      </InteriorSets> 
+      <InteriorEgressPosition>
+        <X>1578.089</X>
+        <Y>253.4309</Y>
+        <Z>-46.0051</Z>
+      </InteriorEgressPosition>
+      <InteriorEgressHeading>176.3671</InteriorEgressHeading>
+      <NeedsActivation>false</NeedsActivation>
+      <NeedsSetDisabled>false</NeedsSetDisabled>
+      <IsRestricted>false</IsRestricted>
+      <IsCivilianReactableRestricted>false</IsCivilianReactableRestricted>
+      <IsWeaponRestricted>false</IsWeaponRestricted>
+      <IsTunnel>false</IsTunnel>
+      <MaxUpdateDistance>95</MaxUpdateDistance>
+      <InteractPoints>
+        <InteriorInteract xsi:type="ExitInteriorInteract">
+          <Name>MusicLockerExit1</Name>
+          <Position>
+            <X>1578.27</X>
+            <Y>254.0793</Y>
+            <Z>-46.0051</Z>
+          </Position>
+          <Heading>1.115498</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Exit</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>true</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+        </InteriorInteract>
+      </InteractPoints>
+      <ClearPositions />
+      <VendorLocations>
+        <SpawnPlace>
+          <Position>
+            <X>1569.873</X>
+            <Y>249.8337</Y>
+            <Z>-46.00504</Z>
+          </Position>
+          <Heading>89.56686</Heading>
+        </SpawnPlace>
+      </VendorLocations>
+    </Interior>
+  </GeneralInteriors>
+  <ResidenceInteriors />
+  <GangDenInteriors />
+  <BankInteriors />
+  <BarberShopInteriors />
+  <BusinessInteriors />
+</PossibleInteriors>

@@ -1,0 +1,313 @@
+<ArrayOfCraftableItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CraftableItem>
+    <Name>Crack</Name>
+    <Resultant>Crack</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_char02</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cocaine</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Bottle of Raine Water</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Baking Soda</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>800</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Traphouse Stove</string>
+    </CraftingFlags>
+  </CraftableItem>///lsrp
+    <CraftableItem>
+    <Name>Bashed Crack</Name>
+    <Resultant>Crack</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_char02</AnimationName>
+    <ResultantAmount>4</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Bashed Coke</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Bottle of Raine Water</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Baking Soda</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>800</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Traphouse Stove</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Molotov Cocktail</Name>
+    <Resultant>Improvised Incendiary</Resultant>
+    <AnimationDictionary>anim@scripted@player@freemode@ig4_chem_pour@male@</AnimationDictionary>
+    <AnimationName>action</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>NOGO Vodka</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>DIC Lighter</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>false</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Lean</Name>
+    <Resultant>Lean</Resultant>
+    <AnimationDictionary>anim@amb@nightclub@mini@drinking@drinking_shots@ped_d@normal</AnimationDictionary>
+    <AnimationName>pour_one</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cup of Sprunk</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>P's &amp; Q's</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chesty</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>4000</Cooldown>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>DIY pipe bomb</Name>
+    <Resultant>Pipe Bomb</Resultant>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Metal Tube</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Fuse</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Scrap Metal</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId>TerroristActivity</CrimeId>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Cooked Pizza</Name>
+    <Resultant>Cooked Pizza</Resultant>
+    <AnimationDictionary>anim@amb@business@coc@coc_unpack_cut@</AnimationDictionary>
+    <AnimationName>fullcut_cycle_v3_cokecutter</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Food</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Frozen Pizza</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>10000</Cooldown>
+    <CrimeId />
+    <CraftingFlags>
+      <string>Stove</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Cheese Burger</Name>
+    <Resultant>Cheese Burger</Resultant>
+    <AnimationDictionary>anim@amb@business@coc@coc_unpack_cut@</AnimationDictionary>
+    <AnimationName>fullcut_cycle_v3_cokecutter</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Food</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Burger Buns</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Minced Beef</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Cheese</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>10000</Cooldown>
+    <CrimeId />
+    <CraftingFlags>
+      <string>Stove</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Pasta &amp; Meatballs</Name>
+    <Resultant>Pasta &amp; Meatballs</Resultant>
+    <AnimationDictionary>anim@amb@business@coc@coc_unpack_cut@</AnimationDictionary>
+    <AnimationName>fullcut_cycle_v3_cokecutter</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Food</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Minced Beef</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Pasta</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Canned Tomatoes</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>10000</Cooldown>
+    <CrimeId />
+    <CraftingFlags>
+      <string>Stove</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>PB&amp;J</Name>
+    <Resultant>PB&amp;J</Resultant>
+    <AnimationDictionary>anim@amb@business@coc@coc_unpack_cut@</AnimationDictionary>
+    <AnimationName>fullcut_cycle_v3_cokecutter</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Food</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Peanut Butter</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Jam</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Bread</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>10000</Cooldown>
+    <CrimeId />
+    <CraftingFlags>
+      <string>Stove</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Breakfast Pancakes</Name>
+    <Resultant>Breakfast Pancakes</Resultant>
+    <AnimationDictionary>anim@amb@business@coc@coc_unpack_cut@</AnimationDictionary>
+    <AnimationName>fullcut_cycle_v3_cokecutter</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Food</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Pancakes</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Maple Syrup</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>10000</Cooldown>
+    <CrimeId />
+    <CraftingFlags>
+      <string>Stove</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Breakfast Sandwich</Name>
+    <Resultant>Breakfast Sandwich</Resultant>
+    <AnimationDictionary>anim@amb@business@coc@coc_unpack_cut@</AnimationDictionary>
+    <AnimationName>fullcut_cycle_v3_cokecutter</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Food</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Bacon</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Sausage</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Bread</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>10000</Cooldown>
+    <CrimeId />
+    <CraftingFlags>
+      <string>Stove</string>
+    </CraftingFlags>
+  </CraftableItem>
+</ArrayOfCraftableItem>

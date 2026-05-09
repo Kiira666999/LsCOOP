@@ -1,0 +1,1098 @@
+<ArrayOfStreet xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Street>
+    <Name>Joshua Rd</Name>
+    <SpeedLimit>50</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>East Joshua Road</Name>
+    <SpeedLimit>50</SpeedLimit>
+    <IsHighway>false</IsHighway>
+    <DisplayName>E Joshua Rd</DisplayName>
+  </Street>
+  <Street>
+    <Name>Marina Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Alhambra Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Niland Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Zancudo Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Armadillo Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Algonquin Blvd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Mountain View Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Cholla Springs Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Panorama Dr</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Lesbos Ln</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Calafia Rd</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>North Calafia Way</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Cassidy Trail</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Seaview Rd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Grapeseed Main St</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Grapeseed Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Joad Ln</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Union Rd</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>O'Neil Way</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Senora Fwy</Name>
+    <SpeedLimit>65</SpeedLimit>
+    <IsHighway>true</IsHighway>
+  </Street>
+  <Street>
+    <Name>Catfish View</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Great Ocean Hwy</Name>
+    <SpeedLimit>60</SpeedLimit>
+    <IsHighway>true</IsHighway>
+  </Street>
+  <Street>
+    <Name>Paleto Blvd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Duluoz Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Procopio Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Cascabel Ave</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Peaceful St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Procopio Promenade</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Pyrite Ave</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Fort Zancudo Approach Rd</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Barbareno Rd</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Ineseno Road</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>West Eclipse Blvd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Playa Vista</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Bay City Ave</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Del Perro Fwy</Name>
+    <SpeedLimit>65</SpeedLimit>
+    <IsHighway>true</IsHighway>
+  </Street>
+  <Street>
+    <Name>Equality Way</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Red Desert Ave</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Magellan Ave</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Sandcastle Way</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Vespucci Blvd</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Prosperity St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>San Andreas Ave</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>North Rockford Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>South Rockford Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Marathon Ave</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Boulevard Del Perro</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Cougar Ave</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Liberty St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Bay City Incline</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Conquistador St</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Cortes St</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Vitus St</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Aguja St</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Goma St</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Melanoma St</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Palomino Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Invention Ct</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Imagination Ct</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Rub St</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Tug St</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Ginger St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Lindsay Circus</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Calais Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Adam's Apple Blvd</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Alta St</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Integrity Way</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Swiss St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Strawberry Ave</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Capital Blvd</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Crusade Rd</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Innocence Blvd</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Davis Ave</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Little Bighorn Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Roy Lowenstein Blvd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Jamestown St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Carson Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Grove St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Brouge Ave</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Covenant Ave</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Dutch London St</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Signal St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Elysian Fields Fwy</Name>
+    <SpeedLimit>50</SpeedLimit>
+    <IsHighway>true</IsHighway>
+  </Street>
+  <Street>
+    <Name>Plaice Pl</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Chum St</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Chupacabra St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Miriam Turner Overpass</Name>
+    <SpeedLimit>60</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Autopia Pkwy</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Exceptionalists Way</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>La Puerta Fwy</Name>
+    <SpeedLimit>60</SpeedLimit>
+    <IsHighway>true</IsHighway>
+  </Street>
+  <Street>
+    <Name>New Empire Way</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Runway1</Name>
+    <SpeedLimit>90</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Greenwich Pkwy</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Kortz Dr</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Banham Canyon Dr</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Buen Vino Rd</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Route 68</Name>
+    <SpeedLimit>55</SpeedLimit>
+    <IsHighway>true</IsHighway>
+  </Street>
+  <Street>
+    <Name>Zancudo Grande Valley</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Zancudo Barranca</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Galileo Rd</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Mt Vinewood Dr</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Marlowe Dr</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Milton Rd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Kimble Hill Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Normandy Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Hillcrest Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Hillcrest Ridge Access Rd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>North Sheldon Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Lake Vinewood Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Lake Vinewood Est</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Baytree Canyon Rd</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>North Conker Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Wild Oats Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Whispymound Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Didion Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Cox Way</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Picture Perfect Drive</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>South Mo Milton Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Cockingend Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Mad Wayne Thunder Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Hangman Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Dunstable Ln</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Dunstable Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Greenwich Way</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Greenwich Pl</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Hardy Way</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Richman St</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Ace Jones Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Los Santos Freeway</Name>
+    <SpeedLimit>65</SpeedLimit>
+    <IsHighway>true</IsHighway>
+  </Street>
+  <Street>
+    <Name>Senora Rd</Name>
+    <SpeedLimit>60</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Nowhere Rd</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Smoke Tree Rd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Cholla Rd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Cat-Claw Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Senora Way</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Palomino Fwy</Name>
+    <SpeedLimit>60</SpeedLimit>
+    <IsHighway>true</IsHighway>
+  </Street>
+  <Street>
+    <Name>Shank St</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Macdonald St</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Route 68 Approach</Name>
+    <SpeedLimit>55</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Vinewood Park Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Vinewood Blvd</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Mirror Park Blvd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Glory Way</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Bridge St</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>West Mirror Drive</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Nikola Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>East Mirror Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Nikola Pl</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Mirror Pl</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>El Rancho Blvd</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Olympic Fwy</Name>
+    <SpeedLimit>60</SpeedLimit>
+    <IsHighway>true</IsHighway>
+  </Street>
+  <Street>
+    <Name>Fudge Ln</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Amarillo Vista</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Labor Pl</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>El Burro Blvd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Sustancia Rd</Name>
+    <SpeedLimit>45</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>South Shambles St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Hanger Way</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Orchardville Ave</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Popular St</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Buccaneer Way</Name>
+    <SpeedLimit>45</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Abattoir Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Voodoo Place</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Mutiny Rd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>South Arsenal St</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Forum Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Morningwood Blvd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Dorset Dr</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Caesars Place</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Spanish Ave</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Portola Dr</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Edwood Way</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>San Vitus Blvd</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Eclipse Blvd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Gentry Lane</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Las Lagunas Blvd</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Power St</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Mt Haan Rd</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Elgin Ave</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Hawick Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Meteor St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Alta Pl</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Occupation Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Carcer Way</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Eastbourne Way</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Rockford Dr</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Abe Milton Pkwy</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Laguna Pl</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Sinners Passage</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Atlee St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Sinner St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Supply St</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Amarillo Way</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Tower Way</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Decker St</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Tackle St</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Low Power St</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Clinton Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Fenwell Pl</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Utopia Gardens</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Cavalry Blvd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>South Boulevard Del Perro</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Americano Way</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Sam Austin Dr</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>East Galileo Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Galileo Park</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>West Galileo Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Tongva Dr</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Zancudo Rd</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Movie Star Way</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Heritage Way</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Perth St</Name>
+    <SpeedLimit>25</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Chianski Passage</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Lolita Ave</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Meringue Ln</Name>
+    <SpeedLimit>35</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Strangeways Dr</Name>
+    <SpeedLimit>30</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+  <Street>
+    <Name>Mt Haan Dr</Name>
+    <SpeedLimit>40</SpeedLimit>
+    <IsHighway>false</IsHighway>
+  </Street>
+</ArrayOfStreet>

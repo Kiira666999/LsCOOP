@@ -1,0 +1,1692 @@
+<ArrayOfDanceData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DanceData>
+    <Name>Default</Name>
+    <AnimationDictionary>missfbi3_sniping</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>dance_m_default</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub A-A</Name>
+    <AnimationDictionary>anim@amb@nightclub@mini@dance@dance_paired@dance_a@</AnimationDictionary>
+    <AnimationEnter>ped_a_dance_intro</AnimationEnter>
+    <AnimationIdle>ped_a_dance_idle</AnimationIdle>
+    <AnimationExit>ped_a_dance_exit</AnimationExit>
+    <FacialAnimationEnter>ped_a_dance_intro_facial</FacialAnimationEnter>
+    <FacialAnimationIdle>ped_a_dance_idle_facial</FacialAnimationIdle>
+    <FacialAnimationExit>ped_a_dance_exit_facial</FacialAnimationExit>
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub A-B</Name>
+    <AnimationDictionary>anim@amb@nightclub@mini@dance@dance_paired@dance_a@</AnimationDictionary>
+    <AnimationEnter>ped_b_dance_intro</AnimationEnter>
+    <AnimationIdle>ped_b_dance_idle</AnimationIdle>
+    <AnimationExit>ped_b_dance_exit</AnimationExit>
+    <FacialAnimationEnter>ped_b_dance_intro_facial</FacialAnimationEnter>
+    <FacialAnimationIdle>ped_b_dance_idle_facial</FacialAnimationIdle>
+    <FacialAnimationExit>ped_b_dance_exit_facial</FacialAnimationExit>
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub B-A</Name>
+    <AnimationDictionary>anim@amb@nightclub@mini@dance@dance_paired@dance_b@</AnimationDictionary>
+    <AnimationEnter>ped_a_dance_intro</AnimationEnter>
+    <AnimationIdle>ped_a_dance_idle</AnimationIdle>
+    <AnimationExit>ped_a_dance_exit</AnimationExit>
+    <FacialAnimationEnter>ped_a_dance_intro_facial</FacialAnimationEnter>
+    <FacialAnimationIdle>ped_a_dance_idle_facial</FacialAnimationIdle>
+    <FacialAnimationExit>ped_a_dance_exit_facial</FacialAnimationExit>
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub B-B</Name>
+    <AnimationDictionary>anim@amb@nightclub@mini@dance@dance_paired@dance_b@</AnimationDictionary>
+    <AnimationEnter>ped_b_dance_intro</AnimationEnter>
+    <AnimationIdle>ped_b_dance_idle</AnimationIdle>
+    <AnimationExit>ped_b_dance_exit</AnimationExit>
+    <FacialAnimationEnter>ped_b_dance_intro_facial</FacialAnimationEnter>
+    <FacialAnimationIdle>ped_b_dance_idle_facial</FacialAnimationIdle>
+    <FacialAnimationExit>ped_b_dance_exit_facial</FacialAnimationExit>
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub D-A</Name>
+    <AnimationDictionary>anim@amb@nightclub@mini@dance@dance_paired@dance_d@</AnimationDictionary>
+    <AnimationEnter>ped_a_dance_intro</AnimationEnter>
+    <AnimationIdle>ped_a_dance_idle</AnimationIdle>
+    <AnimationExit>ped_a_dance_exit</AnimationExit>
+    <FacialAnimationEnter>ped_a_dance_intro_facial</FacialAnimationEnter>
+    <FacialAnimationIdle>ped_a_dance_idle_facial</FacialAnimationIdle>
+    <FacialAnimationExit>ped_a_dance_exit_facial</FacialAnimationExit>
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub D-B</Name>
+    <AnimationDictionary>anim@amb@nightclub@mini@dance@dance_paired@dance_d@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>ped_b_dance_idle</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub E-A</Name>
+    <AnimationDictionary>anim@amb@nightclub@mini@dance@dance_paired@dance_e@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>ped_a_dance_idle</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub E-B</Name>
+    <AnimationDictionary>anim@amb@nightclub@mini@dance@dance_paired@dance_e@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>ped_b_dance_idle</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub F-A</Name>
+    <AnimationDictionary>anim@amb@nightclub@mini@dance@dance_paired@dance_f@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>ped_a_dance_idle</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub F-B</Name>
+    <AnimationDictionary>anim@amb@nightclub@mini@dance@dance_paired@dance_f@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>ped_b_dance_idle</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) A-1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_m01</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) A-2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_m02</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) A-3</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_m03</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) A-4</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_m04</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) A-5</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_m05</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) B-1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_b_m01</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) B-2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_b_m02</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) B-3</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_b_m03</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) B-4</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_b_m04</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) B-5</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_b_m05</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (F) A-1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_f01</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (F) A-2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_f02</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (F) B-1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_b_f01</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (F) B-2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_b_f02</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (F) C-1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_c_f01</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (F) C-1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_c_f02</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (F) F-1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_d_f01</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) C-1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_c_m01</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) C-2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_c_m02</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) C-3</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_c_m03</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) C-4</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_c_m04</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nighclub Beach (M) C-5</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@beachdance@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_c_m05</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub Club (F) A-1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@club@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_f01</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub Club (F) A-2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@club@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_f02</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub Club (F) A-3</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@club@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_f03</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub Club (F) B-1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@club@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_b_f01</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub Club (F) B-2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@club@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_b_f02</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub Club (M) A-1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@club@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_m01</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub Club (M) A-2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@club@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_m02</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Nightclub Club (M) A-3</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@club@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_idle_a_m03</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Mountain Dancer Base</Name>
+    <AnimationDictionary>special_ped@mountain_dancer@base</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>base</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Mountain Dancer Verse</Name>
+    <AnimationDictionary>special_ped@mountain_dancer@monologue_4@monologue_4a</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>mnt_dnc_verse</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Mountain Dancer Butt Wag</Name>
+    <AnimationDictionary>special_ped@mountain_dancer@monologue_3@monologue_3a</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>mnt_dnc_buttwag</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Mountain Dancer Angel</Name>
+    <AnimationDictionary>special_ped@mountain_dancer@monologue_2@monologue_2a</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>mnt_dnc_angel</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Mountain Dancer Heaven</Name>
+    <AnimationDictionary>special_ped@mountain_dancer@monologue_1@monologue_1a</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>mtn_dnc_if_you_want_to_get_to_heaven</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>NME Away Dance B-26</Name>
+    <AnimationDictionary>anim@scripted@nightclub@dj@kmuzk@andme@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>nme_away_dance_b_26</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>NME Away Dance A-03v2</Name>
+    <AnimationDictionary>anim@scripted@nightclub@dj@kmuzk@andme@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>nme_away_dance_a_03_v2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>NME Away Dance C-16</Name>
+    <AnimationDictionary>anim@scripted@nightclub@dj@kmuzk@andme@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>nme_away_dance_c_16</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>NME Away Dance D-30</Name>
+    <AnimationDictionary>anim@scripted@nightclub@dj@kmuzk@andme@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>nme_away_dance_d_30</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Dance In Car (Driver)</Name>
+    <AnimationDictionary>anim@mp_player_intincardancestd@ds@</AnimationDictionary>
+    <AnimationEnter>enter</AnimationEnter>
+    <AnimationIdle>idle_a</AnimationIdle>
+    <AnimationExit>exit</AnimationExit>
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>true</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Dance In Car (Passenger)</Name>
+    <AnimationDictionary>anim@mp_player_intincardancestd@ps@</AnimationDictionary>
+    <AnimationEnter>enter</AnimationEnter>
+    <AnimationIdle>idle_a</AnimationIdle>
+    <AnimationExit>exit</AnimationExit>
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>true</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Hi Dance Crown (F) 09-1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_09_v1_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Hi Dance Crown (F) 09-2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_09_v1_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_09_v1_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_09_v1_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_09_v2_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_09_v2_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_09_v2_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_09_v2_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_09_v2_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_09_v2_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_11_v1_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_11_v1_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_11_v1_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_11_v1_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_11_v1_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_11_v1_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_11_v2_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_11_v2_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_11_v2_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_11_v2_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_11_v2_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_11_v2_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_13_v1_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_13_v1_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_13_v1_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_13_v1_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_13_v1_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_13_v1_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_13_v2_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_13_v2_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_13_v2_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_13_v2_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_13_v2_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_13_v2_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_15_v1_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_15_v1_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_15_v1_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_15_v1_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_15_v1_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_15_v1_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_15_v2_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_15_v2_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_15_v2_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_15_v2_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_15_v2_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_15_v2_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_17_v1_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_17_v1_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_17_v1_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_17_v1_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_17_v1_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_17_v1_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_17_v2_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_17_v2_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_17_v2_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_17_v2_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_crowd_17_v2_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_crowd_17_v2_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_09_v1_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_09_v1_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_09_v1_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_09_v1_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_09_v1_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_09_v1_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_09_v2_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_09_v2_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_09_v2_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_09_v2_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_09_v2_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_09_v2_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_11_v1_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_11_v1_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_11_v1_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_11_v1_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_11_v1_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_11_v1_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_11_v2_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_11_v2_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_11_v2_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_11_v2_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_11_v2_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_11_v2_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_13_v1_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_13_v1_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_13_v1_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_13_v1_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_13_v1_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_13_v1_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>li_dance_crowd_13_v2_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_groups@groupe@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>li_dance_crowd_13_v2_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_facedj_09_v1_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@hi_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_09_v1_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_facedj_09_v1_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@hi_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_09_v1_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_facedj_09_v1_female^3</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@hi_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_09_v1_female^3</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_facedj_09_v1_female^4</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@hi_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_09_v1_female^4</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_facedj_09_v1_female^5</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@hi_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_09_v1_female^5</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_facedj_09_v1_female^6</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@hi_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_09_v1_female^6</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_facedj_09_v1_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@hi_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_09_v1_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_facedj_09_v1_male^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@hi_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_09_v1_male^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_facedj_09_v1_male^3</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@hi_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_09_v1_male^3</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_facedj_09_v1_male^4</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@hi_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_09_v1_male^4</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_facedj_09_v1_male^5</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@hi_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_09_v1_male^5</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>hi_dance_facedj_09_v1_male^6</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@hi_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_09_v1_male^6</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>]mi_dance_facedj_11_v1_female^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@med_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>]mi_dance_facedj_11_v1_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>]mi_dance_facedj_11_v1_female^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@med_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>]mi_dance_facedj_11_v1_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>]mi_dance_facedj_11_v1_female^3</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@med_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>]mi_dance_facedj_11_v1_female^3</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>]mi_dance_facedj_11_v1_female^4</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@med_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>]mi_dance_facedj_11_v1_female^4</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>]mi_dance_facedj_11_v1_female^5</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@med_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>]mi_dance_facedj_11_v1_female^5</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>]mi_dance_facedj_11_v1_female^6</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@med_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>]mi_dance_facedj_11_v1_female^6</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>]mi_dance_facedj_11_v1_male^1</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@med_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>]mi_dance_facedj_11_v1_male^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>]mi_dance_facedj_11_v1_male^2</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@med_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>]mi_dance_facedj_11_v1_male^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>]mi_dance_facedj_11_v1_male^3</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@med_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>]mi_dance_facedj_11_v1_male^3</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>]mi_dance_facedj_11_v1_male^4</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@med_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>]mi_dance_facedj_11_v1_male^4</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>]mi_dance_facedj_11_v1_male^5</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@med_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>]mi_dance_facedj_11_v1_male^5</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>]mi_dance_facedj_11_v1_male^6</Name>
+    <AnimationDictionary>anim@amb@nightclub_island@dancers@crowddance_facedj@med_intensity</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>]mi_dance_facedj_11_v1_male^6</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Dixon Entourage (M) 01</Name>
+    <AnimationDictionary>anim@amb@nightclub@dancers@dixon_entourage@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>mi_dance_facedj_15_v1_male^4</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Podium Dancers (M) 01</Name>
+    <AnimationDictionary>anim@amb@nightclub@dancers@podium_dancers@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_17_v2_male^5</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Solomun Entourage (F) 01</Name>
+    <AnimationDictionary>anim@amb@nightclub@dancers@solomun_entourage@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>mi_dance_facedj_17_v1_female^1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Tale of Us Entourage (F) 04</Name>
+    <AnimationDictionary>anim@amb@nightclub@dancers@tale_of_us_entourage@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>mi_dance_crowd_13_v2_female^4</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Podium Dancers (F) 01</Name>
+    <AnimationDictionary>anim@amb@nightclub@dancers@podium_dancers@</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>hi_dance_facedj_17_v2_female^2</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Strip Club Private Dance (F)</Name>
+    <AnimationDictionary>mini@strip_club@private_dance@part1</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>priv_dance_p1</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Lap Dance 01</Name>
+    <AnimationDictionary>mp_safehouse</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>lap_dance_girl</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>false</IsOnActionWheel>
+  </DanceData>
+  <DanceData>
+    <Name>Private Dance 01</Name>
+    <AnimationDictionary>mini@strip_club@private_dance@idle</AnimationDictionary>
+    <AnimationEnter />
+    <AnimationIdle>priv_dance_idle</AnimationIdle>
+    <AnimationExit />
+    <FacialAnimationEnter />
+    <FacialAnimationIdle />
+    <FacialAnimationExit />
+    <IsInsulting>false</IsInsulting>
+    <IsVehicle>false</IsVehicle>
+    <IsOnActionWheel>true</IsOnActionWheel>
+  </DanceData>
+</ArrayOfDanceData>

@@ -1,5 +1,6 @@
 ﻿using LosSantosRED.lsr.Helper;
 using LosSantosRED.lsr.Interface;
+using LosSantosRED.lsr.Coop.Core;
 using Mod;
 using RAGENativeUI;
 using RAGENativeUI.Elements;
@@ -24,8 +25,9 @@ public class CustomizeDemographicsMenu
     private UIMenuItem ChangeMoney;
     private PedCustomizerMenu PedCustomizerMenu;
     private UIMenuItem NewPlayerMenu;
+    private CoopPermissionService CoopPermissionService;
 
-    public CustomizeDemographicsMenu(MenuPool menuPool, IPedSwap pedSwap, INameProvideable names, IPedSwappable player, IEntityProvideable world, ISettingsProvideable settings, PedCustomizer pedCustomizer, PedCustomizerMenu pedCustomizerMenu)
+    public CustomizeDemographicsMenu(MenuPool menuPool, IPedSwap pedSwap, INameProvideable names, IPedSwappable player, IEntityProvideable world, ISettingsProvideable settings, PedCustomizer pedCustomizer, PedCustomizerMenu pedCustomizerMenu, CoopPermissionService coopPermissionService = null)
     {
         PedSwap = pedSwap;
         MenuPool = menuPool;
@@ -35,6 +37,7 @@ public class CustomizeDemographicsMenu
         Settings = settings;
         PedCustomizer = pedCustomizer;
         PedCustomizerMenu = pedCustomizerMenu;
+        CoopPermissionService = coopPermissionService ?? new CoopPermissionService();
     }
     public void Setup(UIMenu CustomizeMainMenu)
     {
@@ -58,6 +61,11 @@ public class CustomizeDemographicsMenu
         NewPlayerMenu = new UIMenuItem("Set New Player", "Set a new player for the existing model. Will reset the name, money, contacts, weapons, etc. upon becoming the ped even without changing the model.");
         NewPlayerMenu.Activated += (sender, selectedItem) =>
         {
+            if (!CanEditIdentityAfterCreation())
+            {
+                return;
+            }
+
             PedCustomizer.SetAsNewPlayer();
             RandomizeWorkingName();
             PedCustomizer.WorkingMoney = 5000;
@@ -95,6 +103,12 @@ public class CustomizeDemographicsMenu
     }
     private void ChangeWorkingMoney()
     {
+        if (!CoopPermissionService.CanEditMoney())
+        {
+            Rage.Game.DisplayHelp("Co-op Admin permission required to edit money.");
+            return;
+        }
+
         if (int.TryParse(NativeHelper.GetKeyboardInput(PedCustomizer.WorkingMoney.ToString()), out int BribeAmount))
         {
             PedCustomizer.WorkingMoney = BribeAmount;
@@ -103,11 +117,21 @@ public class CustomizeDemographicsMenu
     }
     private void ChangeWorkingName()
     {
+        if (!CanEditIdentityAfterCreation())
+        {
+            return;
+        }
+
         PedCustomizer.WorkingName = NativeHelper.GetKeyboardInput(PedCustomizer.WorkingName);
         OnWorkingNameChanged();
     }
     private void RandomizeWorkingName()
     {
+        if (!CanEditIdentityAfterCreation())
+        {
+            return;
+        }
+
         string Name = "John Doe";
         if (PedCustomizer.ModelPed.Exists())
         {
@@ -135,6 +159,17 @@ public class CustomizeDemographicsMenu
         OnWorkingNameChanged();
         OnMoneyChanged();
         //EntryPoint.WriteToConsoleTestLong("CustomizeDemographicsMenu.OnModelChanged Executed");
+    }
+
+    private bool CanEditIdentityAfterCreation()
+    {
+        if (PedCustomizer.SetupAsNewPlayer || CoopPermissionService.CanEditIdentityAfterCreation())
+        {
+            return true;
+        }
+
+        Rage.Game.DisplayHelp("Co-op Admin permission required to edit identity after character creation.");
+        return false;
     }
 }
 

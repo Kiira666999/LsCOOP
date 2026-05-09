@@ -1,0 +1,1492 @@
+<ArrayOfAgency xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Agency>
+    <ID>LSPD</ID>
+    <FullName>Los Santos Police Department</FullName>
+    <ShortName>LSPD</ShortName>
+    <MemberName>LSPD Officer</MemberName>
+    <Classification>Police</Classification>
+    <Division>1</Division>
+    <ColorPrefix>~b~</ColorPrefix>
+    <ColorString>Blue</ColorString>
+    <LicensePlatePrefix>LS </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>StandardCops</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LSPDSidearms</SideArmsID>
+    <LongGunsID>LSPDLongGuns</LongGunsID>
+    <VehiclesID>LSPDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSPD-VW</ID>
+    <FullName>Los Santos Police - Vinewood Division</FullName>
+    <ShortName>LSPD-VW</ShortName>
+    <MemberName>LSPD Officer</MemberName>
+    <Classification>Police</Classification>
+    <Division>2</Division>
+    <ColorPrefix>~b~</ColorPrefix>
+    <ColorString>Blue</ColorString>
+    <LicensePlatePrefix>LSV </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>StandardCops</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LSPDSidearms</SideArmsID>
+    <LongGunsID>LSPDLongGuns</LongGunsID>
+    <VehiclesID>VWPDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSPD-ELS</ID>
+    <FullName>Los Santos Police - East Los Santos Division</FullName>
+    <ShortName>LSPD-ELS</ShortName>
+    <MemberName>LSPD Officer</MemberName>
+    <Classification>Police</Classification>
+    <Division>3</Division>
+    <ColorPrefix>~b~</ColorPrefix>
+    <ColorString>Blue</ColorString>
+    <LicensePlatePrefix>LSE </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>StandardCops</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LSPDSidearms</SideArmsID>
+    <LongGunsID>LSPDLongGuns</LongGunsID>
+    <VehiclesID>EastLSPDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>DPPD</ID>
+    <FullName>Del Perro Police Department</FullName>
+    <ShortName>DPPD</ShortName>
+    <MemberName>DPPD Officer</MemberName>
+    <Classification>Police</Classification>
+    <Division>4</Division>
+    <ColorPrefix>~b~</ColorPrefix>
+    <ColorString>Blue</ColorString>
+    <LicensePlatePrefix>DP </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>DPPDCops</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>DPPDSidearms</SideArmsID>
+    <LongGunsID>DPPDLongGuns</LongGunsID>
+    <VehiclesID>DPPDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>RHPD</ID>
+    <FullName>Rockford Hills Police Department</FullName>
+    <ShortName>RHPD</ShortName>
+    <MemberName>RHPD Officer</MemberName>
+    <Classification>Police</Classification>
+    <Division>5</Division>
+    <ColorPrefix>~b~</ColorPrefix>
+    <ColorString>Blue</ColorString>
+    <LicensePlatePrefix>RH </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>RHPDCops</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>RHPDSidearms</SideArmsID>
+    <LongGunsID>RHPDLongGuns</LongGunsID>
+    <VehiclesID>RHPDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSSD</ID>
+    <FullName>Los Santos County Sheriff</FullName>
+    <ShortName>LSSD</ShortName>
+    <MemberName>LSSD Deputy</MemberName>
+    <Classification>Sheriff</Classification>
+    <Division>7</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>Red</ColorString>
+    <LicensePlatePrefix>LSCS </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>SheriffPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LSSDSidearms</SideArmsID>
+    <LongGunsID>LSSDLongGuns</LongGunsID>
+    <VehiclesID>LSSDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSSD-VW</ID>
+    <FullName>Los Santos Sheriff - Vinewood Division</FullName>
+    <ShortName>LSSD-VW</ShortName>
+    <MemberName>LSSD Deputy</MemberName>
+    <Classification>Sheriff</Classification>
+    <Division>8</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>Red</ColorString>
+    <LicensePlatePrefix>LSCS </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>SheriffPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LimitedSidearms</SideArmsID>
+    <LongGunsID>LSSDLongGuns</LongGunsID>
+    <VehiclesID>VWHillsLSSDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSSD-DV</ID>
+    <FullName>Los Santos Sheriff - Davis Division</FullName>
+    <ShortName>LSSD-DV</ShortName>
+    <MemberName>LSSD Deputy</MemberName>
+    <Classification>Sheriff</Classification>
+    <Division>9</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>Red</ColorString>
+    <LicensePlatePrefix>LSCS </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>SheriffPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LSSDSidearms</SideArmsID>
+    <LongGunsID>LSSDLongGuns</LongGunsID>
+    <VehiclesID>DavisLSSDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSSD-MJ</ID>
+    <FullName>Los Santos Sheriff - Majestic County Division</FullName>
+    <ShortName>LSSD-MJ</ShortName>
+    <MemberName>LSSD Deputy</MemberName>
+    <Classification>Sheriff</Classification>
+    <Division>11</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>Red</ColorString>
+    <LicensePlatePrefix>MCS </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>SheriffPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LSSDSidearms</SideArmsID>
+    <LongGunsID>LSSDLongGuns</LongGunsID>
+    <VehiclesID>MajesticLSSDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>BCSO</ID>
+    <FullName>Blaine County Sheriff</FullName>
+    <ShortName>BCSO</ShortName>
+    <MemberName>BCSO Deputy</MemberName>
+    <Classification>Sheriff</Classification>
+    <Division>10</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>Red</ColorString>
+    <LicensePlatePrefix>BCS </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>BCSheriffPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>BCSOSidearms</SideArmsID>
+    <LongGunsID>BCSOLongGuns</LongGunsID>
+    <VehiclesID>BCSOVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>BCSOP</ID>
+    <FullName>Blaine County Sheriff Paleto Bay</FullName>
+    <ShortName>BCSOP</ShortName>
+    <MemberName>BCSO Officer</MemberName>
+    <Classification>Sheriff</Classification>
+    <Division>10</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>Red</ColorString>
+    <LicensePlatePrefix>BCS </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>BCSheriffPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>BCSOSidearms</SideArmsID>
+    <LongGunsID>BCSOLongGuns</LongGunsID>
+    <VehiclesID>BCSOPaletoVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSPD-ASD</ID>
+    <FullName>Los Santos Police Department - Air Support Division</FullName>
+    <ShortName>LSPD-ASD</ShortName>
+    <MemberName>LSPD Officer</MemberName>
+    <Classification>Police</Classification>
+    <Division>6</Division>
+    <ColorPrefix>~b~</ColorPrefix>
+    <ColorString>Blue</ColorString>
+    <LicensePlatePrefix>ASD </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>3</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>LSPDASDPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>HeliSidearms</SideArmsID>
+    <LongGunsID>HeliLongGuns</LongGunsID>
+    <VehiclesID>PoliceHeliVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSSD-ASD</ID>
+    <FullName>Los Santos Sheriffs Department - Air Support Division</FullName>
+    <ShortName>LSSD-ASD</ShortName>
+    <MemberName>LSSD Deputy</MemberName>
+    <Classification>Sheriff</Classification>
+    <Division>13</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>Red</ColorString>
+    <LicensePlatePrefix>ASD </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>3</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>LSSDASDPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>HeliSidearms</SideArmsID>
+    <LongGunsID>HeliLongGuns</LongGunsID>
+    <VehiclesID>SheriffHeliVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSPP</ID>
+    <FullName>Los Santos Port Police</FullName>
+    <ShortName>LSPP</ShortName>
+    <MemberName>Port Authority Officer</MemberName>
+    <Classification>Police</Classification>
+    <Division>15</Division>
+    <ColorPrefix>~p~</ColorPrefix>
+    <ColorString>LightGray</ColorString>
+    <LicensePlatePrefix>LSPP </LicensePlatePrefix>
+    <SpawnLimit>3</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>LSPPPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LSPPSidearms</SideArmsID>
+    <LongGunsID>LSPPLongGuns</LongGunsID>
+    <VehiclesID>LSPPVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSIAPD</ID>
+    <FullName>Los Santos International Airport Police Department</FullName>
+    <ShortName>LSIAPD</ShortName>
+    <MemberName>LSIAPD Officer</MemberName>
+    <Classification>Police</Classification>
+    <Division>16</Division>
+    <ColorPrefix>~p~</ColorPrefix>
+    <ColorString>LightBlue</ColorString>
+    <LicensePlatePrefix>LSA </LicensePlatePrefix>
+    <SpawnLimit>3</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>LSIAPDPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LSIAPDSidearms</SideArmsID>
+    <LongGunsID>LSIAPDLongGuns</LongGunsID>
+    <VehiclesID>LSIAPDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>SAHP</ID>
+    <FullName>San Andreas Highway Patrol</FullName>
+    <ShortName>SAHP</ShortName>
+    <MemberName>SAHP Officer</MemberName>
+    <Classification>State</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~y~</ColorPrefix>
+    <ColorString>Yellow</ColorString>
+    <LicensePlatePrefix>HP </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>true</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>SAHPPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>SAHPSidearms</SideArmsID>
+    <LongGunsID>SAHPLongGuns</LongGunsID>
+    <VehiclesID>SAHPVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>SASPA</ID>
+    <FullName>San Andreas State Prison Authority</FullName>
+    <ShortName>SASPA</ShortName>
+    <MemberName>SASPA Officer</MemberName>
+    <Classification>State</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~o~</ColorPrefix>
+    <ColorString>Orange</ColorString>
+    <LicensePlatePrefix>SASPA </LicensePlatePrefix>
+    <SpawnLimit>4</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>PrisonPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>AllSidearms</SideArmsID>
+    <LongGunsID>AllLongGuns</LongGunsID>
+    <VehiclesID>PrisonVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>SAPR</ID>
+    <FullName>San Andreas State Parks Ranger</FullName>
+    <ShortName>SAPR</ShortName>
+    <MemberName>SA Parks Ranger</MemberName>
+    <Classification>State</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~g~</ColorPrefix>
+    <ColorString>Green</ColorString>
+    <LicensePlatePrefix />
+    <SpawnLimit>4</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>ParkRangers</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>AllSidearms</SideArmsID>
+    <LongGunsID>AllLongGuns</LongGunsID>
+    <VehiclesID>ParkRangerVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>USCG</ID>
+    <FullName>U.S. Coast Guard</FullName>
+    <ShortName>USCG</ShortName>
+    <MemberName>Coast Guard Officer</MemberName>
+    <Classification>Federal</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~w~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix>USCG </LicensePlatePrefix>
+    <SpawnLimit>4</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>CoastGuardPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>MilitarySidearms</SideArmsID>
+    <LongGunsID>MilitaryLongGuns</LongGunsID>
+    <VehiclesID>CoastGuardVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>GLRP</ID>
+    <FullName>Go Loco Railroad Police</FullName>
+    <ShortName>GLRP</ShortName>
+    <MemberName>GLRP Officer</MemberName>
+    <Classification>Police</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~b~</ColorPrefix>
+    <ColorString>Blue</ColorString>
+    <LicensePlatePrefix>GL </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>2</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>StandardCops</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>DPPDSidearms</SideArmsID>
+    <LongGunsID>DPPDLongGuns</LongGunsID>
+    <VehiclesID>GoLocoVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>USNPS</ID>
+    <FullName>US National Park Service</FullName>
+    <ShortName>USNPS</ShortName>
+    <MemberName>US Park Ranger</MemberName>
+    <Classification>Federal</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~g~</ColorPrefix>
+    <ColorString>Green</ColorString>
+    <LicensePlatePrefix>NPS </LicensePlatePrefix>
+    <SpawnLimit>3</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>USNPSParkRangers</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>AllSidearms</SideArmsID>
+    <LongGunsID>AllLongGuns</LongGunsID>
+    <VehiclesID>USNPSParkRangersVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSDPR</ID>
+    <FullName>Los Santos Dept. Parks &amp; Rec</FullName>
+    <ShortName>LSDPR</ShortName>
+    <MemberName>LSDPR Park Ranger</MemberName>
+    <Classification>Police</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~g~</ColorPrefix>
+    <ColorString>Green</ColorString>
+    <LicensePlatePrefix>DPR </LicensePlatePrefix>
+    <SpawnLimit>3</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>LSDPRParkRangers</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>AllSidearms</SideArmsID>
+    <LongGunsID>AllLongGuns</LongGunsID>
+    <VehiclesID>LSDPRParkRangersVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>SADFW</ID>
+    <FullName>San Andreas Dept. Fish and Wildlife</FullName>
+    <ShortName>SADFW</ShortName>
+    <MemberName>Game Warden</MemberName>
+    <Classification>State</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~g~</ColorPrefix>
+    <ColorString>Green</ColorString>
+    <LicensePlatePrefix>DFW </LicensePlatePrefix>
+    <SpawnLimit>3</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>SADFWParkRangers</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>AllSidearms</SideArmsID>
+    <LongGunsID>AllLongGuns</LongGunsID>
+    <VehiclesID>SADFWParkRangersVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>NYSP</ID>
+    <FullName>North Yankton State Patrol</FullName>
+    <ShortName>NYSP</ShortName>
+    <MemberName>NYSP Officer</MemberName>
+    <Classification>Police</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~b~</ColorPrefix>
+    <ColorString>Blue</ColorString>
+    <LicensePlatePrefix>NYSP </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>NYSPPeds</PersonnelID>
+    <LessLethalWeaponsID>Nightsticks</LessLethalWeaponsID>
+    <SideArmsID>LimitedSidearms</SideArmsID>
+    <LongGunsID>LimitedLongGuns</LongGunsID>
+    <VehiclesID>NYSPVehicles</VehiclesID>
+    <OffDutyDispatchPercent>1</OffDutyDispatchPercent>
+    <OffDutyPersonnelID>OffDutyCops</OffDutyPersonnelID>
+    <OffDutyVehiclesID>OffDutyCopVehicles</OffDutyVehiclesID>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSLFG</ID>
+    <FullName>Los Santos Lifeguards</FullName>
+    <ShortName>LS Lifeguards</ShortName>
+    <MemberName>Lifeguard</MemberName>
+    <Classification>EMS</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>Red</ColorString>
+    <LicensePlatePrefix>LFG </LicensePlatePrefix>
+    <SpawnLimit>3</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>2</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>LSLifeguardPeds</PersonnelID>
+    <VehiclesID>LSLifeguardVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>FIB</ID>
+    <FullName>Federal Investigation Bureau</FullName>
+    <ShortName>FIB</ShortName>
+    <MemberName>FIB Agent</MemberName>
+    <Classification>Federal</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~p~</ColorPrefix>
+    <ColorString>Purple</ColorString>
+    <LicensePlatePrefix>FIB </LicensePlatePrefix>
+    <SpawnLimit>6</SpawnLimit>
+    <CanSpawnAnywhere>true</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>5</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>FIBPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>FIBSidearms</SideArmsID>
+    <LongGunsID>FIBLongGuns</LongGunsID>
+    <VehiclesID>FIBVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>NOOSE-BP</ID>
+    <FullName>NOoSE Border Patrol</FullName>
+    <ShortName>Border Patrol</ShortName>
+    <MemberName>Border Patrol Officer</MemberName>
+    <Classification>Federal</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>DarkSlateGray</ColorString>
+    <LicensePlatePrefix />
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>true</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>BorderPatrolPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>NOOSESidearms</SideArmsID>
+    <LongGunsID>NOOSELongGuns</LongGunsID>
+    <VehiclesID>BorderPatrolVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>NOOSE-PIA</ID>
+    <FullName>NOoSE Patriotism and Immigration Authority</FullName>
+    <ShortName>Patriotism and Immigration Authority</ShortName>
+    <MemberName>NOOSE-PIA Officer</MemberName>
+    <Classification>Federal</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>DarkSlateGray</ColorString>
+    <LicensePlatePrefix />
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>true</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>NOOSEPIAPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>NOOSESidearms</SideArmsID>
+    <LongGunsID>NOOSELongGuns</LongGunsID>
+    <VehiclesID>NOOSEPIAVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>NOOSE</ID>
+    <FullName>NOoSE Security Enforcement Police</FullName>
+    <ShortName>Security Enforcement Police</ShortName>
+    <MemberName>NOOSE-SEP Officer</MemberName>
+    <Classification>Federal</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>DarkSlateGray</ColorString>
+    <LicensePlatePrefix />
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>true</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>4</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>NOOSESEPPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>NOOSESidearms</SideArmsID>
+    <LongGunsID>NOOSELongGuns</LongGunsID>
+    <VehiclesID>NOOSESEPVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>DOA</ID>
+    <FullName>Drug Observation Agency</FullName>
+    <ShortName>DOA</ShortName>
+    <MemberName>DOA Agent</MemberName>
+    <Classification>Federal</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~p~</ColorPrefix>
+    <ColorString>Purple</ColorString>
+    <LicensePlatePrefix>DOA </LicensePlatePrefix>
+    <SpawnLimit>4</SpawnLimit>
+    <CanSpawnAnywhere>true</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>DOAPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>DOASidearms</SideArmsID>
+    <LongGunsID>DOALongGuns</LongGunsID>
+    <VehiclesID>DOAVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>ARMY</ID>
+    <FullName>U.S. Army</FullName>
+    <ShortName>ARMY</ShortName>
+    <MemberName>Soldier</MemberName>
+    <Classification>Military</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~u~</ColorPrefix>
+    <ColorString>Black</ColorString>
+    <LicensePlatePrefix />
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>true</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>6</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>10</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>ArmyPeds</PersonnelID>
+    <SideArmsID>MilitarySidearms</SideArmsID>
+    <LongGunsID>MilitaryLongGuns</LongGunsID>
+    <VehiclesID>ArmyVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>USMC</ID>
+    <FullName>U.S. Marine Corps</FullName>
+    <ShortName>USMC</ShortName>
+    <MemberName>Marine</MemberName>
+    <Classification>Military</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~u~</ColorPrefix>
+    <ColorString>Black</ColorString>
+    <LicensePlatePrefix />
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>true</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>6</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>10</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>USMCPeds</PersonnelID>
+    <SideArmsID>MilitarySidearms</SideArmsID>
+    <LongGunsID>MilitaryLongGuns</LongGunsID>
+    <VehiclesID>USMCVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>USAF</ID>
+    <FullName>U.S. Air Force</FullName>
+    <ShortName>USAF</ShortName>
+    <MemberName>Airman</MemberName>
+    <Classification>Military</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~u~</ColorPrefix>
+    <ColorString>Black</ColorString>
+    <LicensePlatePrefix />
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>true</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>6</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>10</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>USAFPeds</PersonnelID>
+    <SideArmsID>MilitarySidearms</SideArmsID>
+    <LongGunsID>MilitaryLongGuns</LongGunsID>
+    <VehiclesID>USAFVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>USMS</ID>
+    <FullName>US Marshals Service</FullName>
+    <ShortName>Marshals Service</ShortName>
+    <MemberName>Marshals Service Officer</MemberName>
+    <Classification>Marshal</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>DarkSlateGray</ColorString>
+    <LicensePlatePrefix />
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>true</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>MarshalsServicePeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>BestSidearms</SideArmsID>
+    <LongGunsID>BestLongGuns</LongGunsID>
+    <VehiclesID>MarshalsServiceVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSFD</ID>
+    <FullName>Los Santos Fire Department</FullName>
+    <ShortName>LSFD</ShortName>
+    <MemberName>LSFD Firefighter</MemberName>
+    <Classification>Fire</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>Red</ColorString>
+    <LicensePlatePrefix>LSFD </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>0</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>LSFDPeds</PersonnelID>
+    <LessLethalWeaponsID>FireExtinguisher</LessLethalWeaponsID>
+    <VehiclesID>LSFDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSCoFD</ID>
+    <FullName>Los Santos County Fire Department</FullName>
+    <ShortName>LSCoFD</ShortName>
+    <MemberName>LSCoFD Firefighter</MemberName>
+    <Classification>Fire</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>Red</ColorString>
+    <LicensePlatePrefix>LSCO </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>0</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>LSCOFDPeds</PersonnelID>
+    <LessLethalWeaponsID>LSCO </LessLethalWeaponsID>
+    <SideArmsID>FireExtinguisher</SideArmsID>
+    <VehiclesID>LSCOFDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>BCFD</ID>
+    <FullName>Blaine County County Fire Department</FullName>
+    <ShortName>BCFD</ShortName>
+    <MemberName>BCFD Firefighter</MemberName>
+    <Classification>Fire</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>Red</ColorString>
+    <LicensePlatePrefix>BCFD </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>0</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>BCFDPeds</PersonnelID>
+    <LessLethalWeaponsID>BCFD </LessLethalWeaponsID>
+    <SideArmsID>FireExtinguisher</SideArmsID>
+    <VehiclesID>BCFDVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>SANFIRE</ID>
+    <FullName>San Andreas Dept of Forestry and Fire Protection</FullName>
+    <ShortName>San Fire</ShortName>
+    <MemberName>SANFIRE Firefighter</MemberName>
+    <Classification>Fire</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~r~</ColorPrefix>
+    <ColorString>Red</ColorString>
+    <LicensePlatePrefix>SANF </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>true</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>0</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>SanFirePeds</PersonnelID>
+    <LessLethalWeaponsID>FireExtinguisher</LessLethalWeaponsID>
+    <VehiclesID>SanFireVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSMC</ID>
+    <FullName>Los Santos Medical Center</FullName>
+    <ShortName>LSMC</ShortName>
+    <MemberName>LSMC EMT</MemberName>
+    <Classification>EMS</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~w~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix>LSMC </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>0</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>GreenEMTs</PersonnelID>
+    <VehiclesID>LSMCVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>MRH</ID>
+    <FullName>Mission Row Hospital</FullName>
+    <ShortName>MRH</ShortName>
+    <MemberName>MRH Officer</MemberName>
+    <Classification>EMS</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~w~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix>MRH </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>0</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>BlueEMTs</PersonnelID>
+    <VehiclesID>MRHVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSFD-EMS</ID>
+    <FullName>Los Santos Fire Department EMS</FullName>
+    <ShortName>LSFD-EMS</ShortName>
+    <MemberName>LSFD EMT</MemberName>
+    <Classification>EMS</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~w~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix>LSFD </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>0</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>LSFDEMTPeds</PersonnelID>
+    <VehiclesID>LSFDEMTVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>40</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LSCoFD-EMS</ID>
+    <FullName>Los Santos County Fire Department EMS</FullName>
+    <ShortName>LSCoFD-EMS</ShortName>
+    <MemberName>LSCoFD EMT</MemberName>
+    <Classification>EMS</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~w~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix>LSCO </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>0</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>LSCOFDEMTPeds</PersonnelID>
+    <VehiclesID>LSCOFDEMSVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>BCFD-EMS</ID>
+    <FullName>Blaine County Fire Department EMS</FullName>
+    <ShortName>BCFD-EMS</ShortName>
+    <MemberName>BCFD EMT</MemberName>
+    <Classification>EMS</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~w~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix>BCFD </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>0</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>BCFDEMTPeds</PersonnelID>
+    <VehiclesID>BCFDEMSVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>SAMS</ID>
+    <FullName>San Andreas Medical Services</FullName>
+    <ShortName>SAMS</ShortName>
+    <MemberName>SAMS EMT</MemberName>
+    <Classification>EMS</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~w~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix>SAMS </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>true</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>0</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>SAMSEMTPeds</PersonnelID>
+    <VehiclesID>SAMSVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>UNK</ID>
+    <FullName>Unknown Agency</FullName>
+    <ShortName>UNK</ShortName>
+    <MemberName>Officer</MemberName>
+    <Classification>Other</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~s~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix />
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>0</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>GRP6</ID>
+    <FullName>Gruppe Sechs</FullName>
+    <ShortName>G6</ShortName>
+    <MemberName>Gruppe Sechs Officer</MemberName>
+    <Classification>Security</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~g~</ColorPrefix>
+    <ColorString>Green</ColorString>
+    <LicensePlatePrefix>GS </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>2</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>GruppeSechsPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LimitedSidearms</SideArmsID>
+    <VehiclesID>GroupSechsVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>SECURO</ID>
+    <FullName>SecuroServ</FullName>
+    <ShortName>SecuroServ</ShortName>
+    <MemberName>SecuroServ Officer</MemberName>
+    <Classification>Security</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~b~</ColorPrefix>
+    <ColorString>Black</ColorString>
+    <LicensePlatePrefix>SS </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>2</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>SecuroservPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LimitedSidearms</SideArmsID>
+    <VehiclesID>SecuroservVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>MERRY</ID>
+    <FullName>Merryweather Security</FullName>
+    <ShortName>Merryweather</ShortName>
+    <MemberName>Merryweather Officer</MemberName>
+    <Classification>Security</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~w~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix>MW </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>2</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>MerryweatherSecurityPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LimitedSidearms</SideArmsID>
+    <VehiclesID>MerryweatherPatrolVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>BOBCAT</ID>
+    <FullName>Bobcat Security</FullName>
+    <ShortName>Bobcat</ShortName>
+    <MemberName>Bobcat Officer</MemberName>
+    <Classification>Security</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~w~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix>BC </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>2</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>BobcatPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LimitedSidearms</SideArmsID>
+    <VehiclesID>BobcatSecurityVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>CHUFF</ID>
+    <FullName>Chuff Security</FullName>
+    <ShortName>Chuff</ShortName>
+    <MemberName>Chuff Officer</MemberName>
+    <Classification>Security</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~w~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix>MW </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>2</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>ChuffPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LimitedSidearms</SideArmsID>
+    <VehiclesID>ChuffVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>LNL</ID>
+    <FullName>Lock &amp; Load Security</FullName>
+    <ShortName>Lock &amp; Load</ShortName>
+    <MemberName>L&amp;L Officer</MemberName>
+    <Classification>Security</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~w~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix>BC </LicensePlatePrefix>
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>2</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <HeadDataGroupID>AllHeads</HeadDataGroupID>
+    <PersonnelID>LNLPeds</PersonnelID>
+    <LessLethalWeaponsID>Tasers</LessLethalWeaponsID>
+    <SideArmsID>LimitedSidearms</SideArmsID>
+    <VehiclesID>LNLVehicles</VehiclesID>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+  <Agency>
+    <ID>UNK</ID>
+    <FullName>Unknown Agency</FullName>
+    <ShortName>UNK</ShortName>
+    <MemberName>Officer</MemberName>
+    <Classification>Other</Classification>
+    <Division>-1</Division>
+    <ColorPrefix>~s~</ColorPrefix>
+    <ColorString>White</ColorString>
+    <LicensePlatePrefix />
+    <SpawnLimit>99</SpawnLimit>
+    <CanSpawnAnywhere>false</CanSpawnAnywhere>
+    <CanAmbientlySpawnAnywhere>false</CanAmbientlySpawnAnywhere>
+    <SpawnsOnHighway>false</SpawnsOnHighway>
+    <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+    <MaxWantedLevelSpawn>0</MaxWantedLevelSpawn>
+    <CanDispatchOffDuty>true</CanDispatchOffDuty>
+    <OffDutyDispatchPercent>0</OffDutyDispatchPercent>
+    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageUsingLongGunsWheneverPossible>20</PercentageUsingLongGunsWheneverPossible>
+    <MoneyMin>20</MoneyMin>
+    <MoneyMax>900</MoneyMax>
+  </Agency>
+</ArrayOfAgency>

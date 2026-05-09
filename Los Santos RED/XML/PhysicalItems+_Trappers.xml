@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPhysicalItem>
+  <PhysicalItem>
+    <ModelName>bkr_prop_weed_bag_01a</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>hei_prop_hei_drug_pack_01b</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>m23_2_prop_m32_drug_pkg_01a</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>m24_1_prop_m41_notebook_01a</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>p_cash_envelope_01_s</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>prop_bar_nuts</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>prop_detergent_01b</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>prop_drug_package_02</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>prop_mk_boost</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>sf_prop_sf_cash_pile_01</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>v_ind_cftrayfillets</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>v_med_latexgloveboxblue</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>v_res_fa_ketchup</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>v_ret_247_cereal1</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>v_ret_gc_box1</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>vw_prop_cas_card_spd_ace</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>vw_prop_cas_card_spd_jack</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>vw_prop_cas_card_spd_king</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+  <PhysicalItem>
+    <ModelName>vw_prop_cas_card_spd_queen</ModelName>
+    <ModelHash>0</ModelHash>
+    <IsLarge>false</IsLarge>
+    <Type>Prop</Type>
+    <Attachments />
+    <CleanupItemImmediately>false</CleanupItemImmediately>
+    <AliasWeaponHash>0</AliasWeaponHash>
+  </PhysicalItem>
+</ArrayOfPhysicalItem>

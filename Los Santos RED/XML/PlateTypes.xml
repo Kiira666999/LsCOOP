@@ -1,0 +1,227 @@
+<PlateTypeManager xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PlateTypeList>
+    <PlateType>
+      <Index>0</Index>
+      <Description>San Andreas</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>1</Index>
+      <Description>San Andreas Yellow on Black</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>2</Index>
+      <Description>San Andreas Yellow on Blue</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>3</Index>
+      <Description>San Andreas Classic</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>4</Index>
+      <Description>San Andreas Exempt</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>false</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>5</Index>
+      <Description>North Yankton</Description>
+      <StateID>NorthYankton</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123  ABC</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>6</Index>
+      <Description>eCola</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>7</Index>
+      <Description>Las Venturas</Description>
+      <StateID>LasVenturas</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12A  345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>8</Index>
+      <Description>Liberty</Description>
+      <StateID>Liberty</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>8</Index>
+      <Description>Liberty</Description>
+      <StateID>Alderney</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>2</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>9</Index>
+      <Description>LS Car Meet</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>10</Index>
+      <Description>LS Panic</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>11</Index>
+      <Description>LS Pounders</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>12</Index>
+      <Description>Sprunkn</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+  </PlateTypeList>
+  <VanityPlates>
+    <string>AZZ KIKR</string>
+    <string>STARK 4</string>
+    <string>OUTATIME</string>
+    <string>MUF DVR</string>
+    <string>NRVOUS</string>
+    <string>PSY WGN</string>
+    <string>SOUTHPAW</string>
+    <string>UZI 4U</string>
+    <string>DEV IL</string>
+    <string>THX 138</string>
+    <string>D-FENS</string>
+    <string>ECTO-1</string>
+    <string>THE CAPN</string>
+    <string>18A 4RE</string>
+    <string>LWYRUP</string>
+    <string>ASSMAN</string>
+    <string>WEIRDO</string>
+    <string>PLNCRAZY</string>
+    <string>WDRFULL</string>
+    <string>YOU FOOL</string>
+    <string>RUB1OUT</string>
+    <string>ID8MOMS</string>
+    <string>ANUSTART</string>
+    <string>FL4TOUT</string>
+    <string>NVRMYND</string>
+    <string>LEDFOOT</string>
+    <string>ECTO 1A</string>
+    <string>KITT</string>
+    <string>RNO 263</string>
+    <string>LYN 274</string>
+    <string>BAN ONE</string>
+    <string>BDR529</string>
+    <string>CQB241</string>
+    <string>STYNCLSY</string>
+    <string>FCK IT</string>
+    <string>ORP 967</string>
+    <string>NTGUILTY</string>
+    <string>GRAYMTR</string>
+    <string>PLAYUH</string>
+  </VanityPlates>
+</PlateTypeManager>

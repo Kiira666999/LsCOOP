@@ -1,0 +1,135 @@
+<PossibleItems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FlashlightItems />
+  <CellphoneItems />
+  <ModItems />
+  <ShovelItems />   
+  <UmbrellaItems />
+  <LicensePlateItems />
+  <LighterItems />
+  <ScrewdriverItems />
+  <TapeItems />
+  <DrillItems />
+  <HammerItems />
+  <PliersItems />
+  <BongItems />
+  <PipeItems />
+  <RollingPapersItems />
+  <FoodItems>
+    <FoodItem>
+      <Name>Chicken and Rice</Name>
+      <Description>Simple and effective</Description>
+      <ItemType>Food</ItemType>
+      <ItemSubType>Entree</ItemSubType>
+      <MeasurementName>Dish</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_bar_nuts</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>75</PercentLostOnUse>
+      <ConsumeOnPurchase>true</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName />
+      <IntoxicationPerInterval>0.5</IntoxicationPerInterval>
+      <HealthChangeAmount>65</HealthChangeAmount>
+      <ArmorChangeAmount>5</ArmorChangeAmount>
+      <HungerChangeAmount>65</HungerChangeAmount>
+      <ThirstChangeAmount>65</ThirstChangeAmount>
+      <SleepChangeAmount>20</SleepChangeAmount>
+      <AlwaysChangesHealth>true</AlwaysChangesHealth>
+      <AnimationCycles>15</AnimationCycles>
+    </FoodItem>
+    <FoodItem>
+      <Name>Chicken</Name>
+      <Description>Raw chicken thighs</Description>
+      <ItemType>Food</ItemType>
+      <ItemSubType>Entree</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>v_ind_cftrayfillets</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName />
+      <IntoxicationPerInterval>0.4</IntoxicationPerInterval>
+      <HealthChangeAmount>-15</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>5</HungerChangeAmount>
+      <ThirstChangeAmount>-15</ThirstChangeAmount>
+      <SleepChangeAmount>-10</SleepChangeAmount>
+      <AlwaysChangesHealth>true</AlwaysChangesHealth>
+      <AnimationCycles>15</AnimationCycles>
+    </FoodItem>
+    <FoodItem>
+      <Name>Rice</Name>
+      <Description>Common looking rice</Description>
+      <ItemType>Food</ItemType>
+      <ItemSubType>Entree</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>v_ret_247_cereal1</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName />
+      <IntoxicationPerInterval>0.3</IntoxicationPerInterval>
+      <HealthChangeAmount>0</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>5</HungerChangeAmount>
+      <ThirstChangeAmount>-10</ThirstChangeAmount>
+      <SleepChangeAmount>-5</SleepChangeAmount>
+      <AlwaysChangesHealth>true</AlwaysChangesHealth>
+      <AnimationCycles>15</AnimationCycles>
+    </FoodItem>
+    <FoodItem>
+      <Name>Ketchup</Name>
+      <Description>Simple ketchup</Description>
+      <ItemType>Food</ItemType>
+      <ItemSubType>Entree</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>v_res_fa_ketchup</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName />
+      <IntoxicationPerInterval>0.1</IntoxicationPerInterval>
+      <HealthChangeAmount>0</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>2</HungerChangeAmount>
+      <ThirstChangeAmount>-10</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>true</AlwaysChangesHealth>
+      <AnimationCycles>15</AnimationCycles>
+    </FoodItem>
+  </FoodItems>
+  <SmokeItems />
+  <PipeSmokeItems />
+  <DrinkItems />
+  <InhaleItems />
+  <IngestItems />
+  <InjectItems />
+  <HotelStayItems />
+  <WeaponItems />
+  <VehicleItems />
+  <BinocularsItems />
+  <RadioItems />
+  <RadarDetectorItems />
+  <ValuableItems />
+  <EquipmentItems />
+  <BodyArmorItems />
+  <HardwareItems />
+</PossibleItems>

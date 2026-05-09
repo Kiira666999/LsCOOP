@@ -1,0 +1,118 @@
+<ShopMenuTypes xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ShopMenuList>
+    <ShopMenu>
+      <ID>McKenzieDealership</ID>
+      <Name>McKenzie Dealership</Name>
+      <GroupName />
+      <Items>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Buckingham Howard NX-25</ModItemName>
+          <PurchasePrice>450000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+		<MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Buckingham Pyro</ModItemName>
+          <PurchasePrice>500000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+		<MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Cuban 800</ModItemName>
+          <PurchasePrice>340000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+		<MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Nagasaki Ultralight</ModItemName>
+          <PurchasePrice>45000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+		<MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Mammoth Streamer216</ModItemName>
+          <PurchasePrice>430000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+		<MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Western Seabreeze</ModItemName>
+          <PurchasePrice>750000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+      </Items>
+    </ShopMenu>
+  </ShopMenuList>
+  <ShopMenuGroupList />
+  <ShopMenuGroupContainers />
+  <PropShopMenus />
+  <TreatmentOptionsList />
+  <PedVariationShopMenus />
+</ShopMenuTypes>

@@ -1,0 +1,164 @@
+<PossibleOrganizations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TaxiFirms>
+    <TaxiFirm>
+      <ID>DTCAB</ID>
+      <FullName>Downtown Cab Co.</FullName>
+      <ShortName>Downtown Cab Co.</ShortName>
+      <MemberName>Cabbie</MemberName>
+      <Description>In transit since 1922</Description>
+      <BannerImagePath>stores\downtownnew.png</BannerImagePath>
+      <ContactName>Downtown Cab Co.</ContactName>
+      <ColorPrefix>~y~</ColorPrefix>
+      <ColorString>Yellow</ColorString>
+      <LicensePlatePrefix>DT </LicensePlatePrefix>
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID>TaxiDrivers</PersonnelID>
+      <LessLethalWeaponsID>MeleeWeapons</LessLethalWeaponsID>
+      <SideArmsID>TaxiSidearms</SideArmsID>
+      <LongGunsID>TaxiLongGuns</LongGunsID>
+      <VehiclesID>DowntownTaxiVehicles</VehiclesID>
+      <IsDefault>true</IsDefault>
+      <BaseFare>10</BaseFare>
+      <PricePerMile>5</PricePerMile>
+      <FastSpeedFee>20</FastSpeedFee>
+      <CrazySpeedFee>100</CrazySpeedFee>
+      <FightPercentage>35</FightPercentage>
+      <FightPolicePercentage>5</FightPolicePercentage>
+      <AlwaysFightPolicePercentage>1</AlwaysFightPolicePercentage>
+      <CallPolicePercentage>35</CallPolicePercentage>
+      <CallPoliceForSeriousCrimesPercentage>70</CallPoliceForSeriousCrimesPercentage>
+      <PercentageWithLongGuns>5</PercentageWithLongGuns>
+      <PercentageWithSidearms>30</PercentageWithSidearms>
+      <PercentageWithMelee>10</PercentageWithMelee>
+      <IsRideShare>false</IsRideShare>
+    </TaxiFirm>
+    <TaxiFirm>
+      <ID>HELLCAB</ID>
+      <FullName>Hell Cab</FullName>
+      <ShortName>Hell Cab</ShortName>
+      <MemberName>Cabbie</MemberName>
+      <Description>Open the door to HELL and RIDE!</Description>
+      <BannerImagePath>stores\hellcab.png</BannerImagePath>
+      <ContactName>Hell Cab</ContactName>
+      <ColorPrefix>~g~</ColorPrefix>
+      <ColorString>Green</ColorString>
+      <LicensePlatePrefix>HC </LicensePlatePrefix>
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID>TaxiDrivers</PersonnelID>
+      <LessLethalWeaponsID>MeleeWeapons</LessLethalWeaponsID>
+      <SideArmsID>TaxiSidearms</SideArmsID>
+      <LongGunsID>TaxiLongGuns</LongGunsID>
+      <VehiclesID>HellTaxiVehicles</VehiclesID>
+      <IsDefault>false</IsDefault>
+      <BaseFare>10</BaseFare>
+      <PricePerMile>5</PricePerMile>
+      <FastSpeedFee>20</FastSpeedFee>
+      <CrazySpeedFee>100</CrazySpeedFee>
+      <FightPercentage>35</FightPercentage>
+      <FightPolicePercentage>5</FightPolicePercentage>
+      <AlwaysFightPolicePercentage>1</AlwaysFightPolicePercentage>
+      <CallPolicePercentage>35</CallPolicePercentage>
+      <CallPoliceForSeriousCrimesPercentage>70</CallPoliceForSeriousCrimesPercentage>
+      <PercentageWithLongGuns>5</PercentageWithLongGuns>
+      <PercentageWithSidearms>30</PercentageWithSidearms>
+      <PercentageWithMelee>10</PercentageWithMelee>
+      <IsRideShare>false</IsRideShare>
+    </TaxiFirm>
+    <TaxiFirm>
+      <ID>PRPLCAB</ID>
+      <FullName>Purple Cab Co.</FullName>
+      <ShortName>Purple Cab Co.</ShortName>
+      <MemberName>Cabbie</MemberName>
+      <Description>High Vis Meets High Class</Description>
+      <BannerImagePath>stores\purplecab.png</BannerImagePath>
+      <ContactName>Purple Cab Co.</ContactName>
+      <ColorPrefix>~y~</ColorPrefix>
+      <ColorString>Yellow</ColorString>
+      <LicensePlatePrefix>PC </LicensePlatePrefix>
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID>TaxiDrivers</PersonnelID>
+      <LessLethalWeaponsID>MeleeWeapons</LessLethalWeaponsID>
+      <SideArmsID>TaxiSidearms</SideArmsID>
+      <LongGunsID>TaxiLongGuns</LongGunsID>
+      <VehiclesID>PurpleTaxiVehicles</VehiclesID>
+      <IsDefault>false</IsDefault>
+      <BaseFare>10</BaseFare>
+      <PricePerMile>5</PricePerMile>
+      <FastSpeedFee>20</FastSpeedFee>
+      <CrazySpeedFee>100</CrazySpeedFee>
+      <FightPercentage>35</FightPercentage>
+      <FightPolicePercentage>5</FightPolicePercentage>
+      <AlwaysFightPolicePercentage>1</AlwaysFightPolicePercentage>
+      <CallPolicePercentage>35</CallPolicePercentage>
+      <CallPoliceForSeriousCrimesPercentage>70</CallPoliceForSeriousCrimesPercentage>
+      <PercentageWithLongGuns>5</PercentageWithLongGuns>
+      <PercentageWithSidearms>30</PercentageWithSidearms>
+      <PercentageWithMelee>10</PercentageWithMelee>
+      <IsRideShare>false</IsRideShare>
+    </TaxiFirm>
+    <TaxiFirm>
+      <ID>SHITICAB</ID>
+      <FullName>Shiti Cab</FullName>
+      <ShortName>Shiti Cab</ShortName>
+      <MemberName>Cabbie</MemberName>
+      <Description>Our service is anything BUT!</Description>
+      <BannerImagePath>stores\shiticab.png</BannerImagePath>
+      <ContactName>Shiti Cab</ContactName>
+      <ColorPrefix>~y~</ColorPrefix>
+      <ColorString>Yellow</ColorString>
+      <LicensePlatePrefix>PC </LicensePlatePrefix>
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID>TaxiDrivers</PersonnelID>
+      <LessLethalWeaponsID>MeleeWeapons</LessLethalWeaponsID>
+      <SideArmsID>TaxiSidearms</SideArmsID>
+      <LongGunsID>TaxiLongGuns</LongGunsID>
+      <VehiclesID>ShitiTaxiVehicles</VehiclesID>
+      <IsDefault>false</IsDefault>
+      <BaseFare>10</BaseFare>
+      <PricePerMile>5</PricePerMile>
+      <FastSpeedFee>20</FastSpeedFee>
+      <CrazySpeedFee>100</CrazySpeedFee>
+      <FightPercentage>35</FightPercentage>
+      <FightPolicePercentage>5</FightPolicePercentage>
+      <AlwaysFightPolicePercentage>1</AlwaysFightPolicePercentage>
+      <CallPolicePercentage>35</CallPolicePercentage>
+      <CallPoliceForSeriousCrimesPercentage>70</CallPoliceForSeriousCrimesPercentage>
+      <PercentageWithLongGuns>5</PercentageWithLongGuns>
+      <PercentageWithSidearms>30</PercentageWithSidearms>
+      <PercentageWithMelee>10</PercentageWithMelee>
+      <IsRideShare>false</IsRideShare>
+    </TaxiFirm>
+    <TaxiFirm>
+      <ID>SUNDERED</ID>
+      <FullName>Sundered Taxi</FullName>
+      <ShortName>Sundered Codependent Taxi</ShortName>
+      <MemberName>Cabbie</MemberName>
+      <Description>We contemptuously drive L.S.</Description>
+      <BannerImagePath>stores\sunderedtaxi.png</BannerImagePath>
+      <ContactName>Sundered Codependent Cab</ContactName>
+      <ColorPrefix>~y~</ColorPrefix>
+      <ColorString>Yellow</ColorString>
+      <LicensePlatePrefix>SI </LicensePlatePrefix>
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID>TaxiDrivers</PersonnelID>
+      <LessLethalWeaponsID>MeleeWeapons</LessLethalWeaponsID>
+      <SideArmsID>TaxiSidearms</SideArmsID>
+      <LongGunsID>TaxiLongGuns</LongGunsID>
+      <VehiclesID>SunderedTaxiVehicles</VehiclesID>
+      <IsDefault>false</IsDefault>
+      <BaseFare>10</BaseFare>
+      <PricePerMile>5</PricePerMile>
+      <FastSpeedFee>20</FastSpeedFee>
+      <CrazySpeedFee>100</CrazySpeedFee>
+      <FightPercentage>35</FightPercentage>
+      <FightPolicePercentage>5</FightPolicePercentage>
+      <AlwaysFightPolicePercentage>1</AlwaysFightPolicePercentage>
+      <CallPolicePercentage>35</CallPolicePercentage>
+      <CallPoliceForSeriousCrimesPercentage>70</CallPoliceForSeriousCrimesPercentage>
+      <PercentageWithLongGuns>5</PercentageWithLongGuns>
+      <PercentageWithSidearms>30</PercentageWithSidearms>
+      <PercentageWithMelee>10</PercentageWithMelee>
+      <IsRideShare>false</IsRideShare>
+    </TaxiFirm>
+  </TaxiFirms>
+</PossibleOrganizations>

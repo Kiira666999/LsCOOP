@@ -1,0 +1,275 @@
+<PossibleItems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FlashlightItems />
+  <CellphoneItems />
+  <ModItems />
+  <ShovelItems />
+  <UmbrellaItems />
+  <LicensePlateItems />
+  <LighterItems />
+  <ScrewdriverItems />
+  <TapeItems />
+  <DrillItems />
+  <HammerItems />
+  <PliersItems />
+  <BongItems />
+  <PipeItems />
+  <RollingPapersItems />
+  <FoodItems />
+  <SmokeItems />
+  <PipeSmokeItems />
+  <DrinkItems />
+  <InhaleItems />
+  <IngestItems />
+  <InjectItems />
+  <HotelStayItems />
+  <WeaponItems />
+  <VehicleItems />
+  <BinocularsItems />
+  <RadioItems />
+  <RadarDetectorItems />
+  <ValuableItems>
+    <ValuableItem>
+      <Name>Diamonds</Name>
+      <Description>A handful of blood diamonds</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>ch_prop_ch_security_case_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Gold Bar</Name>
+      <Description>The pefect investment during uncertainty</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>hei_prop_heist_gold_bar</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Gold Watch</Name>
+      <Description>An Expensive Gold Watch</Description>
+      <ItemType>Jewelry</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_watch_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>	
+    <ValuableItem>
+      <Name>Laptop</Name>
+      <Description>An iFruit Laptop</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_laptop_02_closed</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Old TV</Name>
+      <Description>An old TV from the 90's</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_tv_05</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Flatscreen TV</Name>
+      <Description>A more modern TV</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sm_prop_smug_tv_flat_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Silver Watch</Name>
+      <Description>An Expensive Gold Watch</Description>
+      <ItemType>Jewelry</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_watch_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Radio</Name>
+      <Description>A radio with a docking station</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m24_1_prop_m41_radio_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Gold Chain</Name>
+      <Description>Rappers die over these</Description>
+      <ItemType>Jewelry</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Silver Chain</Name>
+      <Description>Silver Cuban link</Description>
+      <ItemType>Jewelry</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_stretch_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Painting #1</Name>
+      <Description>A worthless painting, worth thousands</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>h4_prop_h4_painting_01e</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>	
+    <ValuableItem>
+      <Name>Painting #2</Name>
+      <Description>A worthless painting, worth thousands</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>ch_prop_vault_painting_01j</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>	
+    <ValuableItem>
+      <Name>Painting #3</Name>
+      <Description>A worthless painting, worth thousands</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>ch_prop_vault_painting_01h</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>	
+    <ValuableItem>
+      <Name>Diamond Skull #1</Name>
+      <Description>Made in China</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_casino_art_skull_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>	
+    <ValuableItem>
+      <Name>Diamond Skull #2</Name>
+      <Description>Made in China</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_casino_art_skull_03a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>	
+  </ValuableItems>
+  <EquipmentItems />
+  <BodyArmorItems />
+  <HardwareItems />
+</PossibleItems>

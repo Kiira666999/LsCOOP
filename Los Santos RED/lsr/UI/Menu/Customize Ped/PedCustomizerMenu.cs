@@ -1,5 +1,6 @@
 ﻿using LosSantosRED.lsr.Helper;
 using LosSantosRED.lsr.Interface;
+using LosSantosRED.lsr.Coop.Core;
 using Rage;
 using Rage.Native;
 using RAGENativeUI;
@@ -29,9 +30,10 @@ public class PedCustomizerMenu
     private CustomizeAffiliationMenu CustomizeAffiliationMenu;
     private CustomizeVoiceMenu CustomizeVoiceMenu;
     private PedCustomizerLocation PedCustomizerLocation;
+    private CoopPermissionService CoopPermissionService;
     public bool IsProgramicallySettingFieldValues { get; set; }
     public PedCustomizerMenu(MenuPool menuPool, IPedSwap pedSwap, INameProvideable names, IPedSwappable player, IEntityProvideable world, ISettingsProvideable settings, PedCustomizer pedCustomizer, IDispatchablePeople dispatchablePeople, IHeads heads, IGangs gangs, 
-        IAgencies agencies, IGameSaves gameSaves, ISavedOutfits savedOutfits, PedCustomizerLocation pedCustomizerLocation)
+        IAgencies agencies, IGameSaves gameSaves, ISavedOutfits savedOutfits, PedCustomizerLocation pedCustomizerLocation, CoopPermissionService coopPermissionService = null)
     {
         PedSwap = pedSwap;
         MenuPool = menuPool;
@@ -41,9 +43,10 @@ public class PedCustomizerMenu
         Settings = settings;
         PedCustomizer = pedCustomizer;
         PedCustomizerLocation = pedCustomizerLocation; ;
+        CoopPermissionService = coopPermissionService ?? new CoopPermissionService();
 
-        CustomizeDemographicsMenu = new CustomizeDemographicsMenu(MenuPool, PedSwap, Names, Player, World, Settings, PedCustomizer, this);
-        CustomizeModelMenu = new CustomizeModelMenu(MenuPool, PedSwap, Names, Player, World, Settings, PedCustomizer, this);
+        CustomizeDemographicsMenu = new CustomizeDemographicsMenu(MenuPool, PedSwap, Names, Player, World, Settings, PedCustomizer, this, CoopPermissionService);
+        CustomizeModelMenu = new CustomizeModelMenu(MenuPool, PedSwap, Names, Player, World, Settings, PedCustomizer, this, CoopPermissionService);
         CustomizeHeadMenu = new CustomizeHeadMenu(MenuPool, PedSwap, Names, Player, World, Settings, PedCustomizer, this);
         CustomizeComponentsMenu = new CustomizeComponentsMenu(MenuPool, PedSwap, Names, Player, World, Settings, PedCustomizer, this);  
         CustomizePropsMenu = new CustomizePropsMenu(MenuPool, PedSwap, Names, Player, World, Settings, PedCustomizer, this);

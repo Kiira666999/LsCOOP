@@ -1,0 +1,149 @@
+<ArrayOfCraftableItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CraftableItem>
+    <Name>Methamphetamine</Name>
+    <Resultant>Methamphetamine</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_monitoring_cooking@cooking@</AnimationDictionary>
+    <AnimationName>chemical_pour_short_cooker</AnimationName>
+    <ResultantAmount>10</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Chesty</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>pH strip</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>BlazeBox Ignite</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>3000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>DrugLab</string>
+      <string>JOURNEY</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Cook Crack</Name>
+    <Resultant>Crack</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_char02</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cocaine</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Bottle of Raine Water</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Baking Soda</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>3000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>DrugLab</string>
+      <string>Stove</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Molotov Cocktail</Name>
+    <Resultant>Improvised Incendiary</Resultant>
+    <AnimationDictionary>anim@scripted@player@freemode@ig4_chem_pour@male@</AnimationDictionary>
+    <AnimationName>action</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>NOGO Vodka</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>DIC Lighter</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>false</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>2000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Lean</Name>
+    <Resultant>Lean</Resultant>
+    <AnimationDictionary>anim@amb@nightclub@mini@drinking@drinking_shots@ped_d@normal</AnimationDictionary>
+    <AnimationName>pour_one</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cup of Sprunk</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>P's &amp; Q's</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chesty</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>2000</Cooldown>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>DIY pipe bomb</Name>
+    <Resultant>Pipe Bomb</Resultant>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Metal Tube</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Fuse</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Scrap Metal</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>TerroristActivity</CrimeId>
+  </CraftableItem>
+</ArrayOfCraftableItem>

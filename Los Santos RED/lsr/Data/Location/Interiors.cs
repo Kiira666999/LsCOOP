@@ -85,7 +85,7 @@ public class Interiors : IInteriors
     }
     public Interior GetInteriorByInternalID(int id)
     {
-        return PossibleInteriors.AllInteriors().Where(x => x.InternalID == id).FirstOrDefault();
+        return PossibleInteriors.AllInteriors().Where(x => x.CheckMatchingIDs(id)).FirstOrDefault();
     }
     private void BarberShops()
     {

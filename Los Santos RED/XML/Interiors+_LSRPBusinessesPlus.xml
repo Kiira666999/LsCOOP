@@ -1,0 +1,295 @@
+<PossibleInteriors xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <GeneralInteriors />
+  <ResidenceInteriors />
+  <GangDenInteriors />
+  <BankInteriors />
+  <BarberShopInteriors />
+  <BusinessInteriors>
+    <BusinessInterior>
+      <LocalID>290305</LocalID>
+      <InternalInteriorCoordinates>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </InternalInteriorCoordinates>
+      <Name>Chemistry Lab</Name>
+      <IsTeleportEntry>true</IsTeleportEntry>
+      <DisabledInteriorCoords>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </DisabledInteriorCoords>
+      <Doors />
+      <RequestIPLs />
+      <RemoveIPLs />
+      <InteriorSets>
+        <string>set_product_02</string>
+        <string>set_product_03</string>
+        <string>set_product_05</string>
+        <string>set_supplies_02</string>
+		<string>set_supplies_04</string>
+		<string>set_equipment_upgrade</string>
+      </InteriorSets>
+      <InteriorTintColor>-1</InteriorTintColor>
+      <InteriorSetStyleID>-1</InteriorSetStyleID>
+      <InteriorEgressPosition>
+        <X>482.3717</X>
+        <Y>-2623.797</Y>
+        <Z>-49.06404</Z>
+      </InteriorEgressPosition>
+      <InteriorEgressHeading>177.4816</InteriorEgressHeading>
+      <NeedsActivation>false</NeedsActivation>
+      <NeedsSetDisabled>false</NeedsSetDisabled>
+      <IsRestricted>false</IsRestricted>
+      <IsCivilianReactableRestricted>false</IsCivilianReactableRestricted>
+      <IsWeaponRestricted>false</IsWeaponRestricted>
+      <IsTunnel>false</IsTunnel>
+      <MaxUpdateDistance>50</MaxUpdateDistance>
+      <InteractPoints>
+        <InteriorInteract xsi:type="ExitInteriorInteract">
+          <Name>AcidLabExit</Name>
+          <Position>
+            <X>482.4018</X>
+            <Y>-2623.8</Y>
+            <Z>-49.06404</Z>
+          </Position>
+          <Heading>358.3603</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Exit</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>true</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+        </InteriorInteract>
+        <InteriorInteract xsi:type="StandardInteriorInteract">
+          <Name>AcidLabStandard</Name>
+          <Position>
+            <X>488.6763</X>
+            <Y>-2623.824</Y>
+            <Z>-48.66408</Z>
+          </Position>
+          <Heading>285.4784</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>485.6623</X>
+            <Y>-2625.858</Y>
+            <Z>-47.85224</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0.8215898</X>
+            <Y>0.5398599</Y>
+            <Z>-0.1831432</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>-10.5529</Pitch>
+            <Roll>-1.38954E-05</Roll>
+            <Yaw>-56.69141</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Manage</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>false</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+        </InteriorInteract>
+        <InteriorInteract xsi:type="CraftInteriorInteract">
+          <Name>Chemistry Station</Name>
+          <Position>
+            <X>484.4356</X>
+            <Y>-2626.103</Y>
+            <Z>-49.06403</Z>
+          </Position>
+          <Heading>173.1266</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>481.4794</X>
+            <Y>-2623.982</Y>
+            <Z>-47.35825</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0.6803585</X>
+            <Y>-0.5723125</Y>
+            <Z>-0.4577889</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>-27.24452</Pitch>
+            <Roll>-1.920619E-06</Roll>
+            <Yaw>-130.0703</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Use Chemistry Station</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>true</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <CraftingFlag>Chemistry Station</CraftingFlag>
+        </InteriorInteract>
+      </InteractPoints>
+      <ClearPositions />
+      <VendorLocations />
+      <RestInteracts />
+      <InventoryInteracts />
+      <OutfitInteracts />
+    </BusinessInterior>  
+    <BusinessInterior>
+      <LocalID>293377</LocalID>
+      <InternalInteriorCoordinates>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </InternalInteriorCoordinates>
+      <Name>Chopshop</Name>
+      <IsTeleportEntry>true</IsTeleportEntry>
+      <DisabledInteriorCoords>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </DisabledInteriorCoords>
+      <Doors />
+      <RequestIPLs>
+	    <string>m23_2_sc1_03_reds</string>
+	  </RequestIPLs>
+      <RemoveIPLs />
+      <InteriorSets>
+        <string>set_mechanic_basic</string>
+        <string>set_safe_basic</string>
+        <string>set_car_lift_01_down</string>
+		<string>set_tint_b</string>
+      </InteriorSets>
+      <InteriorTintColor>1</InteriorTintColor>
+      <InteriorSetStyleID>-1</InteriorSetStyleID>
+      <InteriorEgressPosition>
+        <X>1098.845</X>
+        <Y>-2265.963</Y>
+        <Z>-48.99994</Z>
+      </InteriorEgressPosition>
+      <InteriorEgressHeading>185.6994</InteriorEgressHeading>
+      <NeedsActivation>false</NeedsActivation>
+      <NeedsSetDisabled>false</NeedsSetDisabled>
+      <IsRestricted>false</IsRestricted>
+      <IsCivilianReactableRestricted>false</IsCivilianReactableRestricted>
+      <IsWeaponRestricted>false</IsWeaponRestricted>
+      <IsTunnel>false</IsTunnel>
+      <MaxUpdateDistance>50</MaxUpdateDistance>
+      <InteractPoints>
+        <InteriorInteract xsi:type="ExitInteriorInteract">
+          <Name>ChopshopExit</Name>
+          <Position>
+            <X>1098.973</X>
+            <Y>-2265.934</Y>
+            <Z>-48.99989</Z>
+          </Position>
+          <Heading>358.2996</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Exit</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>true</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+        </InteriorInteract>///lsrp
+        <InteriorInteract xsi:type="StandardInteriorInteract">
+          <Name>ChopshopStandard</Name>
+          <Position>
+            <X>1074.265</X>
+            <Y>-2275.511</Y>
+            <Z>-48.99989</Z>
+          </Position>
+          <Heading>85.11946</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>1078.907</X>
+            <Y>-2272.32</Y>
+            <Z>-47.02103</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>-0.8966837</X>
+            <Y>-0.429009</Y>
+            <Z>-0.1091312</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>-6.265235</Pitch>
+            <Roll>-1.073629E-06</Roll>
+            <Yaw>115.5683</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Manage</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>true</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+        </InteriorInteract>
+      </InteractPoints>
+      <ClearPositions />
+      <VendorLocations />
+      <RestInteracts>
+        <RestInteract>
+          <Name>ChopshopRest1</Name>
+          <Position>
+            <X>1071.369</X>
+            <Y>-2280.441</Y>
+            <Z>-46.59995</Z>
+          </Position>
+          <Heading>272.6431</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>1071.61</X>
+            <Y>-2283.524</Y>
+            <Z>-45.69682</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0.1857349</X>
+            <Y>0.9621689</Y>
+            <Z>-0.1993329</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>-11.49795</Pitch>
+            <Roll>-8.930396E-06</Roll>
+            <Yaw>-10.92586</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Sleep</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>true</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <ShouldHideMarker>false</ShouldHideMarker>
+          <UseDefaultAnimations>true</UseDefaultAnimations>
+        </RestInteract>
+      </RestInteracts>
+      <InventoryInteracts />
+      <OutfitInteracts />
+    </BusinessInterior>
+  </BusinessInteriors>
+</PossibleInteriors>

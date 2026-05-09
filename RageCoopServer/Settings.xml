@@ -1,0 +1,26 @@
+﻿<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Port>4499</Port>
+	<MaxPlayers>32</MaxPlayers>
+	<MaxLatency>500</MaxLatency>
+	<Name>RAGECOOP server</Name>
+	<Website>https://ragecoop.com/</Website>
+	<Description>RAGECOOP server</Description>
+	<GameMode>FreeRoam</GameMode>
+	<Language>English</Language>
+	<WelcomeMessage>Welcome on this server :)</WelcomeMessage>
+	<AnnounceSelf>false</AnnounceSelf>
+	<MasterServer>https://masterserver.ragecoop.com/</MasterServer>
+	<LogLevel>0</LogLevel>
+	<NpcStreamingDistance>500</NpcStreamingDistance>
+	<PlayerStreamingDistance>-1</PlayerStreamingDistance>
+	<WeatherTimeSync>true</WeatherTimeSync>
+	<AllowedUsernameChars>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-_</AllowedUsernameChars>
+	<UseP2P>false</UseP2P>
+	<UseZeroTier>false</UseZeroTier>
+	<UseVoice>false</UseVoice>
+	<ZeroTierNetworkID>8056c2e21c000001</ZeroTierNetworkID>
+	<AutoUpdate>false</AutoUpdate>
+	<KickGodMode>false</KickGodMode>
+	<KickSpamming>true</KickSpamming>
+	<SpamLimit>100</SpamLimit>
+</Settings>

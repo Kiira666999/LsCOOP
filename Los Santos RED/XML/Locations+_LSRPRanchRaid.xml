@@ -1,0 +1,863 @@
+﻿<PossibleLocations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DeadDrops />
+  <ScrapYards />
+  <BodyExports />
+  <CarCrushers />
+  <GangDens>
+    <GangDen>
+      <Name>Meth Ranch</Name>
+      <FullName>Meth Ranch</FullName>
+      <Description />
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>false</IsBlipEnabled>
+      <MapIcon>378</MapIcon>
+      <MapIconColorString>White</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>2452.373</X>
+        <Y>4969.51</Y>
+        <Z>46.57162</Z>
+      </EntrancePosition>
+      <EntranceHeading>138.3594</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>31746</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
+      <ShowsOnTaxi>false</ShowsOnTaxi>
+      <TypeName>Gang Den</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>225</ActivateDistance>
+      <AssignedAssociationID>AMBIENT_GANG_THUGS</AssignedAssociationID>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <MenuID>RebelRanchMenu</MenuID>
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>true</CanInteractWhenWanted>
+      <ShowsMarker>true</ShowsMarker>
+      <PossiblePedSpawns>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2452.574</X>
+            <Y>4955.97</Y>
+            <Z>44.92131</Z>
+          </Location>
+          <Heading>223.9913</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2455.567</X>
+            <Y>4965.94</Y>
+            <Z>46.57161</Z>
+          </Location>
+          <Heading>224.3175</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2446.186</X>
+            <Y>4962.384</Y>
+            <Z>46.57161</Z>
+          </Location>
+          <Heading>342.7429</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2446.451</X>
+            <Y>4963.632</Y>
+            <Z>46.57161</Z>
+          </Location>
+          <Heading>170.2142</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2452.636</X>
+            <Y>4975.398</Y>
+            <Z>46.8099</Z>
+          </Location>
+          <Heading>172.0535</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2456.262</X>
+            <Y>4979.849</Y>
+            <Z>46.82233</Z>
+          </Location>
+          <Heading>166.5273</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2456.104</X>
+            <Y>4978.48</Y>
+            <Z>46.81033</Z>
+          </Location>
+          <Heading>351.826</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2441.425</X>
+            <Y>4976.636</Y>
+            <Z>46.8106</Z>
+          </Location>
+          <Heading>215.9355</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2434.844</X>
+            <Y>4966.869</Y>
+            <Z>46.8106</Z>
+          </Location>
+          <Heading>257.8224</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2436.271</X>
+            <Y>4966.99</Y>
+            <Z>46.8106</Z>
+          </Location>
+          <Heading>93.60706</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2434.705</X>
+            <Y>4960.909</Y>
+            <Z>46.81443</Z>
+          </Location>
+          <Heading>286.0984</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2433.29</X>
+            <Y>4965.037</Y>
+            <Z>42.34761</Z>
+          </Location>
+          <Heading>300.0453</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2434.669</X>
+            <Y>4965.983</Y>
+            <Z>42.34761</Z>
+          </Location>
+          <Heading>123.5311</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2447.16</X>
+            <Y>4982.443</Y>
+            <Z>46.84622</Z>
+          </Location>
+          <Heading>326.2887</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2447.997</X>
+            <Y>4983.719</Y>
+            <Z>46.84684</Z>
+          </Location>
+          <Heading>150.1277</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2454.05</X>
+            <Y>4985.747</Y>
+            <Z>46.81057</Z>
+          </Location>
+          <Heading>79.90473</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2454.462</X>
+            <Y>4970.458</Y>
+            <Z>51.56783</Z>
+          </Location>
+          <Heading>230.2872</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2460.16</X>
+            <Y>4976.886</Y>
+            <Z>51.56783</Z>
+          </Location>
+          <Heading>317.7966</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2444.905</X>
+            <Y>4966.065</Y>
+            <Z>51.56786</Z>
+          </Location>
+          <Heading>237.5272</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2438.104</X>
+            <Y>4976.341</Y>
+            <Z>51.56785</Z>
+          </Location>
+          <Heading>87.46315</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2442.117</X>
+            <Y>4973.078</Y>
+            <Z>51.56488</Z>
+          </Location>
+          <Heading>206.8906</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2454.943</X>
+            <Y>4974.4</Y>
+            <Z>51.56785</Z>
+          </Location>
+          <Heading>222.8109</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2480.538</X>
+            <Y>4957.512</Y>
+            <Z>45.00389</Z>
+          </Location>
+          <Heading>137.3791</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2471.902</X>
+            <Y>4948.504</Y>
+            <Z>45.08674</Z>
+          </Location>
+          <Heading>297.1971</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>2447.446</X>
+            <Y>4990.541</Y>
+            <Z>46.54266</Z>
+          </Location>
+          <Heading>5.94487</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard LocalScenario</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+      </PossiblePedSpawns>
+      <PossibleVehicleSpawns />
+      <VendorLocations />
+      <ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>VendorPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>20</VendorMeleePercent>
+      <VendorSidearmPercent>5</VendorSidearmPercent>
+      <VendorLongGunPercent>2</VendorLongGunPercent>
+      <VendorMoneyMin>-1</VendorMoneyMin>
+      <VendorMoneyMax>-1</VendorMoneyMax>
+      <VendorFightPercentage>-1</VendorFightPercentage>
+      <VendorCallPolicePercentage>-1</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>-1</VendorFightPolicePercentage>
+      <VendorCowerPercentage>-1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>-1</VendorSurrenderPercentage>
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehiclePreviewLocation>
+        <Position>
+          <X>0</X>
+          <Y>0</Y>
+          <Z>0</Z>
+        </Position>
+        <Heading>0</Heading>
+      </VehiclePreviewLocation>
+      <VehicleDeliveryLocations>
+        <SpawnPlace>
+          <Position>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </Position>
+          <Heading>0</Heading>
+        </SpawnPlace>
+        <SpawnPlace>
+          <Position>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </Position>
+          <Heading>0</Heading>
+        </SpawnPlace>
+        <SpawnPlace>
+          <Position>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </Position>
+          <Heading>0</Heading>
+        </SpawnPlace>
+        <SpawnPlace>
+          <Position>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </Position>
+          <Heading>0</Heading>
+        </SpawnPlace>
+      </VehicleDeliveryLocations>
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>0</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>0</MaxPriceRefreshHours>
+      <MinRestockHours>0</MinRestockHours>
+      <MaxRestockHours>0</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>500</RacketeeringAmountMin>
+      <RacketeeringAmountMax>1000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>true</IgnoreEntranceInteract>
+      <PurchasePrice>0</PurchasePrice>
+      <PayoutFrequency>7</PayoutFrequency>
+      <PayoutMin>0</PayoutMin>
+      <PayoutMax>0</PayoutMax>
+      <SalesPrice>0</SalesPrice>
+      <MaxSalesPrice>0</MaxSalesPrice>
+      <GrowthPercentage>20</GrowthPercentage>
+      <IsPrimaryGangDen>true</IsPrimaryGangDen>
+      <DisableNearbyScenarios>false</DisableNearbyScenarios>
+      <DisableScenarioDistance>50</DisableScenarioDistance>
+      <MaxAssaultSpawns>25</MaxAssaultSpawns>
+      <RestrictAssaultSpawningUsingPedSpawns>false</RestrictAssaultSpawningUsingPedSpawns>
+      <AssaultSpawnHeavyWeaponsPercent>80</AssaultSpawnHeavyWeaponsPercent>
+    </GangDen>
+  </GangDens>
+  <GunStores />
+  <Hotels />
+  <ApartmentBuildings />
+  <Residences />
+  <CityHalls />
+  <VendingMachines />
+  <PoliceStations />
+  <Hospitals />
+  <FireStations />
+  <Restaurants />
+  <Businesses />
+  <Pharmacies />
+  <Dispensaries />
+  <HeadShops />
+  <HardwareStores />
+  <PawnShops />
+  <Landmarks />
+  <Banks />
+  <ConvenienceStores />
+  <GasStations />
+  <LiquorStores />
+  <FoodStands />
+  <CarDealerships />
+  <VehicleExporters />
+  <Forgers />
+  <GamblingDens />
+  <RepairGarages />
+  <Bars />
+  <DriveThrus />
+  <ClothingShops />
+  <BusStops />
+  <SubwayStations />
+  <Prisons />
+  <Morgues />
+  <SportingGoodsStores />
+  <Airports />
+  <IllicitMarketplaces />
+  <BlankLocations />
+  <MilitaryBases />
+  <ExteriorCraftingLocations />
+  <BarberShops />
+  <PlasticSurgeryClinics />
+  <TattooShops />
+  <RaceMeetups />
+  <ATMMachines />
+  <GasPumps />
+  <CashRegisters />
+  <StoredSpawns />
+  <PedCustomizerLocation />
+</PossibleLocations>

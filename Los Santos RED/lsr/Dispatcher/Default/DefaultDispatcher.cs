@@ -1,4 +1,5 @@
 ﻿using LosSantosRED.lsr.Interface;
+using LosSantosRED.lsr.Coop.Core;
 using LSR.Vehicles;
 using Rage;
 
@@ -17,6 +18,7 @@ public class DefaultDispatcher
     protected readonly ICrimes Crimes;
     protected readonly IModItems ModItems;
     protected readonly IShopMenus ShopMenus;
+    protected readonly RequirementContextAdapter RequirementContextAdapter;
     protected int TimesToTryLocation = 3;
 
 
@@ -47,6 +49,7 @@ public class DefaultDispatcher
         ShopMenus = shopMenus;
         ModItems = modItems;
         Crimes = crimes;
+        RequirementContextAdapter = new RequirementContextAdapter();
     }
     public virtual void Dispatch()
     {
@@ -141,31 +144,40 @@ public class DefaultDispatcher
 
     protected virtual bool IsValidCloseSpawn(SpawnLocation spawnLocation)
     {
-        if (spawnLocation.StreetPosition.DistanceTo2D(Player.Position) < MinDistanceToSpawnOnDemand)
+        IActorRequirementContext actorContext = CreatePlayerRequirementContext();
+        Vector3 actorPosition = actorContext.Position;
+        if (spawnLocation.StreetPosition.DistanceTo2D(actorPosition) < MinDistanceToSpawnOnDemand)
         {
-            EntryPoint.WriteToConsole($"NOT VALID SPAWN 1 {MinDistanceToSpawn} {spawnLocation.StreetPosition.DistanceTo2D(Player.Position)}");
+            EntryPoint.WriteToConsole($"NOT VALID SPAWN 1 {MinDistanceToSpawn} {spawnLocation.StreetPosition.DistanceTo2D(actorPosition)}");
             return false;
         }
-        else if (spawnLocation.InitialPosition.DistanceTo2D(Player.Position) < MinDistanceToSpawnOnDemand)
+        else if (spawnLocation.InitialPosition.DistanceTo2D(actorPosition) < MinDistanceToSpawnOnDemand)
         {
-            EntryPoint.WriteToConsole($"NOT VALID SPAWN 2 {MinDistanceToSpawn} {spawnLocation.InitialPosition.DistanceTo2D(Player.Position)}");
+            EntryPoint.WriteToConsole($"NOT VALID SPAWN 2 {MinDistanceToSpawn} {spawnLocation.InitialPosition.DistanceTo2D(actorPosition)}");
             return false;
         }
         return true;
     }
     protected virtual bool IsValidSpawn(SpawnLocation spawnLocation)
     {
-        if (spawnLocation.StreetPosition.DistanceTo2D(Player.Position) < MinDistanceToSpawn)
+        IActorRequirementContext actorContext = CreatePlayerRequirementContext();
+        Vector3 actorPosition = actorContext.Position;
+        if (spawnLocation.StreetPosition.DistanceTo2D(actorPosition) < MinDistanceToSpawn)
         {
-            EntryPoint.WriteToConsole($"NOT VALID SPAWN 1 {MinDistanceToSpawn} {spawnLocation.StreetPosition.DistanceTo2D(Player.Position)}");
+            EntryPoint.WriteToConsole($"NOT VALID SPAWN 1 {MinDistanceToSpawn} {spawnLocation.StreetPosition.DistanceTo2D(actorPosition)}");
             return false;
         }
-        else if (spawnLocation.InitialPosition.DistanceTo2D(Player.Position) < MinDistanceToSpawn)
+        else if (spawnLocation.InitialPosition.DistanceTo2D(actorPosition) < MinDistanceToSpawn)
         {
-            EntryPoint.WriteToConsole($"NOT VALID SPAWN 2 {MinDistanceToSpawn} {spawnLocation.InitialPosition.DistanceTo2D(Player.Position)}");
+            EntryPoint.WriteToConsole($"NOT VALID SPAWN 2 {MinDistanceToSpawn} {spawnLocation.InitialPosition.DistanceTo2D(actorPosition)}");
             return false;
         }
         return true;
+    }
+
+    protected virtual IActorRequirementContext CreatePlayerRequirementContext()
+    {
+        return RequirementContextAdapter.FromLegacyPlayer(Player, Player.Character, null, Player.Position, false);
     }
 
 

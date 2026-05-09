@@ -1,5 +1,6 @@
 ﻿using LosSantosRED.lsr.Helper;
 using LosSantosRED.lsr.Interface;
+using LosSantosRED.lsr.Coop.Core;
 using Rage;
 using Rage.Native;
 using RAGENativeUI;
@@ -21,6 +22,7 @@ public class UI : IMenuProvideable
     private ITimeControllable Time;
     private IEntityProvideable World;
     private ISettingsProvideable Settings;
+    private CoopPermissionService CoopPermissionService;
 
     private LowerRightDisplay LowerRightDisplay;
     private TopRightMenu TopRightMenu;
@@ -78,11 +80,12 @@ public class UI : IMenuProvideable
     public UI(IDisplayable displayablePlayer, ISettingsProvideable settings, IJurisdictions jurisdictions, IPedSwap pedSwap, IPlacesOfInterest placesOfInterest, IRespawning respawning, IActionable actionablePlayer, ISaveable saveablePlayer, IWeapons weapons, 
         RadioStations radioStations, IGameSaves gameSaves, IEntityProvideable world, IRespawnable player, IPoliceRespondable policeRespondable, ITaskerable tasker, IInventoryable playerinventory, IModItems modItems, ITimeControllable time, IGangRelateable gangRelateable, 
         IGangs gangs, IGangTerritories gangTerritories, IZones zones, IStreets streets, IInteriors interiors, Dispatcher dispatcher, IAgencies agencies, ILocationInteractable locationInteractableplayer, IDances dances, IGestures gestures, IShopMenus shopMenus, 
-        IActivityPerformable activityPerformable, ICrimes crimes, ILocationTypes locationTypes, IIntoxicants intoxicants, IPlateTypes plateTypes, INameProvideable names, ModDataFileManager modDataFileManager, IInteractionable interactionable, Mod.Crafting crafting, IViolateable violateable)
+        IActivityPerformable activityPerformable, ICrimes crimes, ILocationTypes locationTypes, IIntoxicants intoxicants, IPlateTypes plateTypes, INameProvideable names, ModDataFileManager modDataFileManager, IInteractionable interactionable, Mod.Crafting crafting, IViolateable violateable, CoopPermissionService coopPermissionService = null)
     {
         DisplayablePlayer = displayablePlayer;
         ActionablePlayer = actionablePlayer;
         Settings = settings;
+        CoopPermissionService = coopPermissionService ?? new CoopPermissionService();
         Jurisdictions = jurisdictions;
         Time = time;
         Tasker = tasker;
@@ -93,7 +96,7 @@ public class UI : IMenuProvideable
         TimerBarPool = new TimerBarPool();
         DeathMenu = new DeathMenu(MenuPool, pedSwap, respawning, placesOfInterest, Settings, player, gameSaves);
         BustedMenu = new BustedMenu(MenuPool, pedSwap, respawning, placesOfInterest, Settings, policeRespondable, time, World);
-        MainMenu = new MainMenu(MenuPool,actionablePlayer, locationInteractableplayer, saveablePlayer, gameSaves, weapons, pedSwap, world, Settings, Tasker, playerinventory, modItems, this, gangs, time,placesOfInterest, dances, gestures, activityPerformable,agencies, crimes, intoxicants, shopMenus);
+        MainMenu = new MainMenu(MenuPool,actionablePlayer, locationInteractableplayer, saveablePlayer, gameSaves, weapons, pedSwap, world, Settings, Tasker, playerinventory, modItems, this, gangs, time,placesOfInterest, dances, gestures, activityPerformable,agencies, crimes, intoxicants, shopMenus, CoopPermissionService);
         DebugMenu = new DebugMenu(MenuPool, actionablePlayer, weapons, radioStations, placesOfInterest, Settings, Time, World, Tasker, dispatcher,agencies, gangs, modItems, crimes, plateTypes, names, modDataFileManager, policeRespondable, interactionable);
         CraftableItems = modDataFileManager.CraftableItems;
         Crafting = crafting;
@@ -524,6 +527,12 @@ public class UI : IMenuProvideable
     }
     public void ToggleDebugMenu()
     {
+        if (!CoopPermissionService.CanUseDebugMenu())
+        {
+            Game.DisplayHelp("Co-op Admin permission required for debug menu.");
+            return;
+        }
+
         Toggle(DebugMenu);
     }
     public void ToggleMenu()

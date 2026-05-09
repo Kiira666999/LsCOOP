@@ -1,0 +1,200 @@
+<ArrayOfIntoxicant xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Intoxicant>
+    <Name>Marijuana</Name>
+    <IntoxicatingIntervalTime>60000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>3</MaxEffectAllowed>
+    <SoberingIntervalTime>120000</SoberingIntervalTime>
+    <OverLayEffect>Barry1_Stoned</OverLayEffect>
+    <EffectIntoxicationLimit>0.5</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>false</ContinuesWithoutCurrentUse>
+    <NoCameraShake>true</NoCameraShake>
+    <Effects>RelaxesMuscles</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Low Proof Alcohol</Name>
+    <IntoxicatingIntervalTime>25000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>3.5</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>Drunk</OverLayEffect>
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>false</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving ImparesWalking</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>High Proof Alcohol</Name>
+    <IntoxicatingIntervalTime>10000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>4</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>Drunk</OverLayEffect>
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>false</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving ImparesWalking</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Mushrooms</Name>
+    <IntoxicatingIntervalTime>25000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>10</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>DRUG_gas_huffin</OverLayEffect>
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving ImparesWalking</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Nicotine</Name>
+    <IntoxicatingIntervalTime>120000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>1</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>HeatHaze</OverLayEffect>
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>false</ContinuesWithoutCurrentUse>
+    <NoCameraShake>true</NoCameraShake>
+    <Effects />
+  </Intoxicant>
+  <Intoxicant>
+    <Name>SPANK</Name>
+    <IntoxicatingIntervalTime>45000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>5</MaxEffectAllowed>
+    <SoberingIntervalTime>40000</SoberingIntervalTime>
+    <OverLayEffect>BeastIntro01</OverLayEffect>
+    <EffectIntoxicationLimit>0.5</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving ImparesWalking</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Cocaine</Name>
+    <IntoxicatingIntervalTime>20000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>5</MaxEffectAllowed>
+    <SoberingIntervalTime>30000</SoberingIntervalTime>
+    <OverLayEffect>BikerFormFlash</OverLayEffect>
+    <EffectIntoxicationLimit>0.5</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving InfiniteStamina FastSpeed</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Methamphetamine</Name>
+    <IntoxicatingIntervalTime>30000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>5</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>BeastIntro02</OverLayEffect>
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>false</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving InfiniteStamina ImparesWalking FastSpeed</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Toilet Cleaner</Name>
+    <IntoxicatingIntervalTime>10000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>5</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>dying</OverLayEffect>
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving ImparesWalking</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Heroin</Name>
+    <IntoxicatingIntervalTime>15000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>5</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>dying</OverLayEffect>
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving ImparesWalking</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Crack</Name>
+    <IntoxicatingIntervalTime>20000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>5</MaxEffectAllowed>
+    <SoberingIntervalTime>30000</SoberingIntervalTime>
+    <OverLayEffect>BikerFormFlash</OverLayEffect>
+    <EffectIntoxicationLimit>0.5</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>false</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving InfiniteStamina ImparesWalking</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Diazepam</Name>
+    <IntoxicatingIntervalTime>60000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>4</MaxEffectAllowed>
+    <SoberingIntervalTime>120000</SoberingIntervalTime>
+    <OverLayEffect />
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>true</NoCameraShake>
+    <Effects>RelaxesMuscles</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Bull Shark Testosterone</Name>
+    <IntoxicatingIntervalTime>45000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>2</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>drug_wobbly</OverLayEffect>
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>true</NoCameraShake>
+    <Effects>InfiniteStamina FastSpeed</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Alco Patch</Name>
+    <IntoxicatingIntervalTime>25000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>4</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>Drunk</OverLayEffect>
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving ImparesWalking</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Mollis</Name>
+    <IntoxicatingIntervalTime>15000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>3</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>drug_wobbly</OverLayEffect>
+    <EffectIntoxicationLimit>0.5</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>true</NoCameraShake>
+    <Effects>ImparesDriving ImparesWalking</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Chesty</Name>
+    <IntoxicatingIntervalTime>10000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>1</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>HeatHaze</OverLayEffect>
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>true</NoCameraShake>
+    <Effects>ImparesDriving ImparesWalking</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Equanox</Name>
+    <IntoxicatingIntervalTime>30000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>5</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>drug_wobbly</OverLayEffect>
+    <EffectIntoxicationLimit>0.25</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>false</NoCameraShake>
+    <Effects>ImparesDriving ImparesWalking</Effects>
+  </Intoxicant>
+  <Intoxicant>
+    <Name>Zombix</Name>
+    <IntoxicatingIntervalTime>25000</IntoxicatingIntervalTime>
+    <MaxEffectAllowed>5</MaxEffectAllowed>
+    <SoberingIntervalTime>60000</SoberingIntervalTime>
+    <OverLayEffect>BeastIntro01</OverLayEffect>
+    <EffectIntoxicationLimit>0.5</EffectIntoxicationLimit>
+    <ContinuesWithoutCurrentUse>true</ContinuesWithoutCurrentUse>
+    <NoCameraShake>true</NoCameraShake>
+    <Effects>ImparesDriving ImparesWalking</Effects>
+  </Intoxicant>
+</ArrayOfIntoxicant>

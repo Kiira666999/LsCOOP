@@ -1,0 +1,22 @@
+<ArrayOfZoneJurisdiction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ZoneJurisdiction>
+    <ZoneInternalGameName>IsHeist</ZoneInternalGameName>
+    <AgencyID>CPPD</AgencyID>
+    <Priority>0</Priority>
+    <AmbientSpawnChance>100</AmbientSpawnChance>
+    <WantedSpawnChance>100</WantedSpawnChance>
+    <CanSpawnPedestrianOfficers>true</CanSpawnPedestrianOfficers>
+    <CanSpawnBicycleOfficers>false</CanSpawnBicycleOfficers>
+    <CanSpawnDirtBikeOfficers>false</CanSpawnDirtBikeOfficers>
+  </ZoneJurisdiction>
+  <ZoneJurisdiction>
+    <ZoneInternalGameName>IsHeist</ZoneInternalGameName>
+    <AgencyID>CPAS</AgencyID>
+    <Priority>1</Priority>
+    <AmbientSpawnChance>100</AmbientSpawnChance>
+    <WantedSpawnChance>100</WantedSpawnChance>
+    <CanSpawnPedestrianOfficers>true</CanSpawnPedestrianOfficers>
+    <CanSpawnBicycleOfficers>false</CanSpawnBicycleOfficers>
+    <CanSpawnDirtBikeOfficers>false</CanSpawnDirtBikeOfficers>
+  </ZoneJurisdiction>
+</ArrayOfZoneJurisdiction>

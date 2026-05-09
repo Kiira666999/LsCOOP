@@ -1,0 +1,874 @@
+<PossibleInteriors xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <GeneralInteriors>
+    <Interior>
+      <LocalID>19972</LocalID>
+      <InternalInteriorCoordinates>
+        <X>-2043.974</X>
+        <Y>-1031.582</Y>
+        <Z>11.981</Z>
+      </InternalInteriorCoordinates>
+      <Name>Yacht</Name>
+      <IsTeleportEntry>false</IsTeleportEntry>
+      <DisabledInteriorCoords>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </DisabledInteriorCoords>
+      <Doors />
+      <RequestIPLs>
+        <string>hei_yacht_heist</string>
+        <string>hei_yacht_heist_bar</string>
+        <string>hei_yacht_heist_bar_lod</string>
+        <string>hei_yacht_heist_bedrm</string>
+        <string>hei_yacht_heist_bedrm_lod</string>
+        <string>hei_yacht_heist_bridge</string>
+		<string>hei_yacht_heist_bridge_lod</string>
+		<string>hei_yacht_heist_enginrm</string>
+		<string>hei_yacht_heist_enginrm_lod</string>
+		<string>hei_yacht_heist_lod</string>
+		<string>hei_yacht_heist_lounge</string>
+		<string>hei_yacht_heist_lounge_lod</string>
+		<string>hei_yacht_heist_slod</string>
+      </RequestIPLs>
+      <RemoveIPLs />
+      <InteriorSets />
+      <InteriorEgressPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </InteriorEgressPosition>
+      <InteriorEgressHeading>0</InteriorEgressHeading>
+      <NeedsActivation>false</NeedsActivation>
+      <NeedsSetDisabled>false</NeedsSetDisabled>
+      <IsRestricted>false</IsRestricted>
+      <IsCivilianReactableRestricted>false</IsCivilianReactableRestricted>
+      <IsWeaponRestricted>true</IsWeaponRestricted>
+      <IsTunnel>false</IsTunnel>
+      <MaxUpdateDistance>300</MaxUpdateDistance>
+      <InteractPoints>
+		<InteriorInteract xsi:type="ItemTheftInteract">
+          <Name>Gold Ring</Name>
+          <Position>
+            <X>-2071.008</X>
+            <Y>-1020.814</Y>
+            <Z>5.884133</Z>
+          </Position>
+          <Heading>242.6699</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Steal Jewelry</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>false</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <StealPrimptText>Stole Jewelry</StealPrimptText>
+          <EmptyText>Empty</EmptyText>
+          <IncrementGameTimeMin>900</IncrementGameTimeMin>
+          <IncrementGameTimeMax>900</IncrementGameTimeMax>
+          <SpawnPercent>100</SpawnPercent>
+          <GameTimeBeforeInitialReward>0</GameTimeBeforeInitialReward>
+          <ViolatingCrimeID />
+          <HasPreInteractRequirement>false</HasPreInteractRequirement>
+          <PossibleItems>
+            <TheftInteractItem>
+              <ModItemName>Gold Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>3</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Gold Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>3</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Gold Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>3</MaxItems>
+              <Percentage>80</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Gold Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>3</MaxItems>
+              <Percentage>70</Percentage>
+            </TheftInteractItem>
+          </PossibleItems>
+          <MinItems>1</MinItems>
+          <MaxItems>4</MaxItems>
+          <RightHandAnimationPoints />
+        </InteriorInteract>
+		<InteriorInteract xsi:type="ItemTheftInteract">
+          <Name>Gold Ring</Name>
+          <Position>
+            <X>-2071.998</X>
+            <Y>-1023.931</Y>
+            <Z>5.884131</Z>
+          </Position>
+          <Heading>249.7268</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Steal Jewelry</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>false</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <StealPrimptText>Stole Jewelry</StealPrimptText>
+          <EmptyText>Empty</EmptyText>
+          <IncrementGameTimeMin>900</IncrementGameTimeMin>
+          <IncrementGameTimeMax>900</IncrementGameTimeMax>
+          <SpawnPercent>100</SpawnPercent>
+          <GameTimeBeforeInitialReward>0</GameTimeBeforeInitialReward>
+          <ViolatingCrimeID />
+          <HasPreInteractRequirement>false</HasPreInteractRequirement>
+          <PossibleItems>
+            <TheftInteractItem>
+              <ModItemName>Gold Ring</ModItemName>
+              <MinItems>3</MinItems>
+              <MaxItems>10</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+          </PossibleItems>
+          <MinItems>1</MinItems>
+          <MaxItems>2</MaxItems>
+          <RightHandAnimationPoints />
+        </InteriorInteract>
+		<InteriorInteract xsi:type="ItemTheftInteract">
+          <Name>Silver Ring</Name>
+          <Position>
+            <X>-2083.893</X>
+            <Y>-1018.484</Y>
+            <Z>5.884132</Z>
+          </Position>
+          <Heading>247.5759</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Steal Jewelry</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>false</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <StealPrimptText>Stole Jewelry</StealPrimptText>
+          <EmptyText>Empty</EmptyText>
+          <IncrementGameTimeMin>900</IncrementGameTimeMin>
+          <IncrementGameTimeMax>900</IncrementGameTimeMax>
+          <SpawnPercent>100</SpawnPercent>
+          <GameTimeBeforeInitialReward>0</GameTimeBeforeInitialReward>
+          <ViolatingCrimeID />
+          <HasPreInteractRequirement>false</HasPreInteractRequirement>
+          <PossibleItems>
+            <TheftInteractItem>
+              <ModItemName>Silver Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>3</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Silver Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>3</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Silver Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>3</MaxItems>
+              <Percentage>80</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Silver Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>3</MaxItems>
+              <Percentage>70</Percentage>
+            </TheftInteractItem>
+          </PossibleItems>
+          <MinItems>1</MinItems>
+          <MaxItems>4</MaxItems>
+          <RightHandAnimationPoints />
+        </InteriorInteract>
+		<InteriorInteract xsi:type="ItemTheftInteract">
+          <Name>Silver Ring</Name>
+          <Position>
+            <X>-2084.534</X>
+            <Y>-1020.53</Y>
+            <Z>5.884132</Z>
+          </Position>
+          <Heading>250.0325</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Steal Jewelry</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>false</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <StealPrimptText>Stole Jewelry</StealPrimptText>
+          <EmptyText>Empty</EmptyText>
+          <IncrementGameTimeMin>900</IncrementGameTimeMin>
+          <IncrementGameTimeMax>900</IncrementGameTimeMax>
+          <SpawnPercent>100</SpawnPercent>
+          <GameTimeBeforeInitialReward>0</GameTimeBeforeInitialReward>
+          <ViolatingCrimeID />
+          <HasPreInteractRequirement>false</HasPreInteractRequirement>
+          <PossibleItems>
+            <TheftInteractItem>
+              <ModItemName>Silver Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>3</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+          </PossibleItems>
+          <MinItems>1</MinItems>
+          <MaxItems>2</MaxItems>
+          <RightHandAnimationPoints />
+        </InteriorInteract>
+		<InteriorInteract xsi:type="ItemTheftInteract">
+          <Name>Cash</Name>
+          <Position>
+            <X>-2083.181</X>
+            <Y>-1012.262</Y>
+            <Z>5.884131</Z>
+          </Position>
+          <Heading>173.4493</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Steal Cash</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>false</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <StealPrimptText>Stole Cash</StealPrimptText>
+          <EmptyText>Empty</EmptyText>
+          <IncrementGameTimeMin>900</IncrementGameTimeMin>
+          <IncrementGameTimeMax>900</IncrementGameTimeMax>
+          <SpawnPercent>100</SpawnPercent>
+          <GameTimeBeforeInitialReward>0</GameTimeBeforeInitialReward>
+          <ViolatingCrimeID />
+          <HasPreInteractRequirement>false</HasPreInteractRequirement>
+          <PossibleItems>
+            <TheftInteractItem>
+              <ModItemName>Marked Cash Stack</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>1</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Marked Cash Stack</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>1</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Marked Cash Stack</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>1</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Marked Cash Stack</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>1</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Marked Cash Stack</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>1</MaxItems>
+              <Percentage>90</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Marked Cash Stack</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>1</MaxItems>
+              <Percentage>85</Percentage>
+            </TheftInteractItem>
+          </PossibleItems>
+          <MinItems>1</MinItems>
+          <MaxItems>6</MaxItems>
+          <RightHandAnimationPoints />
+        </InteriorInteract>
+		<InteriorInteract xsi:type="ItemTheftInteract">
+          <Name>Gold Ring</Name>
+          <Position>
+            <X>-2090.658</X>
+            <Y>-1013.741</Y>
+            <Z>5.884131</Z>
+          </Position>
+          <Heading>68.55412</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Steal Jewelry</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>false</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <StealPrimptText>Stole Jewelry</StealPrimptText>
+          <EmptyText>Empty</EmptyText>
+          <IncrementGameTimeMin>900</IncrementGameTimeMin>
+          <IncrementGameTimeMax>900</IncrementGameTimeMax>
+          <SpawnPercent>100</SpawnPercent>
+          <GameTimeBeforeInitialReward>0</GameTimeBeforeInitialReward>
+          <ViolatingCrimeID />
+          <HasPreInteractRequirement>false</HasPreInteractRequirement>
+          <PossibleItems>
+            <TheftInteractItem>
+              <ModItemName>Gold Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>2</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Gold Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>2</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Gold Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>2</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Gold Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>2</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+          </PossibleItems>
+          <MinItems>1</MinItems>
+          <MaxItems>4</MaxItems>
+          <RightHandAnimationPoints />
+        </InteriorInteract>
+		<InteriorInteract xsi:type="ItemTheftInteract">
+          <Name>Gold Ring</Name>
+          <Position>
+            <X>-2089.331</X>
+            <Y>-1009.866</Y>
+            <Z>5.884131</Z>
+          </Position>
+          <Heading>66.82522</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Steal Jewelry</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>false</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <StealPrimptText>Stole Jewelry</StealPrimptText>
+          <EmptyText>Empty</EmptyText>
+          <IncrementGameTimeMin>900</IncrementGameTimeMin>
+          <IncrementGameTimeMax>900</IncrementGameTimeMax>
+          <SpawnPercent>100</SpawnPercent>
+          <GameTimeBeforeInitialReward>0</GameTimeBeforeInitialReward>
+          <ViolatingCrimeID />
+          <HasPreInteractRequirement>false</HasPreInteractRequirement>
+          <PossibleItems>
+            <TheftInteractItem>
+              <ModItemName>Gold Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>6</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+          </PossibleItems>
+          <MinItems>1</MinItems>
+          <MaxItems>2</MaxItems>
+          <RightHandAnimationPoints />
+        </InteriorInteract>
+		<InteriorInteract xsi:type="ItemTheftInteract">
+          <Name>Cash</Name>
+          <Position>
+            <X>-2086.816</X>
+            <Y>-1012.77</Y>
+            <Z>5.884131</Z>
+          </Position>
+          <Heading>251.4483</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Steal Cash</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>false</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <StealPrimptText>Stole Cash</StealPrimptText>
+          <EmptyText>Empty</EmptyText>
+          <IncrementGameTimeMin>900</IncrementGameTimeMin>
+          <IncrementGameTimeMax>900</IncrementGameTimeMax>
+          <SpawnPercent>100</SpawnPercent>
+          <GameTimeBeforeInitialReward>0</GameTimeBeforeInitialReward>
+          <ViolatingCrimeID />
+          <HasPreInteractRequirement>false</HasPreInteractRequirement>
+          <PossibleItems>
+            <TheftInteractItem>
+              <ModItemName>Marked Cash Stack</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>1</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Marked Cash Stack</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>1</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+            <TheftInteractItem>
+              <ModItemName>Marked Cash Stack</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>1</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+          </PossibleItems>
+          <MinItems>2</MinItems>
+          <MaxItems>3</MaxItems>
+          <RightHandAnimationPoints />
+        </InteriorInteract>
+		<InteriorInteract xsi:type="ItemTheftInteract">
+          <Name>Gold Ring</Name>
+          <Position>
+            <X>-2097.333</X>
+            <Y>-1009.746</Y>
+            <Z>5.884347</Z>
+          </Position>
+          <Heading>71.36473</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Steal Jewelry</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>false</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <StealPrimptText>Stole Jewelry</StealPrimptText>
+          <EmptyText>Empty</EmptyText>
+          <IncrementGameTimeMin>900</IncrementGameTimeMin>
+          <IncrementGameTimeMax>900</IncrementGameTimeMax>
+          <SpawnPercent>100</SpawnPercent>
+          <GameTimeBeforeInitialReward>0</GameTimeBeforeInitialReward>
+          <ViolatingCrimeID />
+          <HasPreInteractRequirement>false</HasPreInteractRequirement>
+          <PossibleItems>
+            <TheftInteractItem>
+              <ModItemName>Gold Ring</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>6</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+          </PossibleItems>
+          <MinItems>1</MinItems>
+          <MaxItems>2</MaxItems>
+          <RightHandAnimationPoints />
+        </InteriorInteract>
+		<InteriorInteract xsi:type="ItemTheftInteract">
+          <Name>Gold Watch</Name>
+          <Position>
+            <X>-2098.467</X>
+            <Y>-1012.946</Y>
+            <Z>5.884343</Z>
+          </Position>
+          <Heading>63.61158</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Steal Jewelry</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>false</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <StealPrimptText>Stole Jewelry</StealPrimptText>
+          <EmptyText>Empty</EmptyText>
+          <IncrementGameTimeMin>900</IncrementGameTimeMin>
+          <IncrementGameTimeMax>900</IncrementGameTimeMax>
+          <SpawnPercent>100</SpawnPercent>
+          <GameTimeBeforeInitialReward>0</GameTimeBeforeInitialReward>
+          <ViolatingCrimeID />
+          <HasPreInteractRequirement>false</HasPreInteractRequirement>
+          <PossibleItems>
+            <TheftInteractItem>
+              <ModItemName>Gold Watch</ModItemName>
+              <MinItems>1</MinItems>
+              <MaxItems>2</MaxItems>
+              <Percentage>100</Percentage>
+            </TheftInteractItem>
+          </PossibleItems>
+          <MinItems>1</MinItems>
+          <MaxItems>2</MaxItems>
+          <RightHandAnimationPoints />
+        </InteriorInteract>
+	  </InteractPoints>
+      <ClearPositions />
+      <VendorLocations />
+    </Interior>  
+  </GeneralInteriors>
+  <ResidenceInteriors />
+  <GangDenInteriors>
+    <GangDenInterior>
+      <LocalID>246529</LocalID>
+      <InternalInteriorCoordinates>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </InternalInteriorCoordinates>
+      <Name>Rebels MC Den</Name>
+      <IsTeleportEntry>true</IsTeleportEntry>
+      <DisabledInteriorCoords>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </DisabledInteriorCoords>
+      <Doors />
+      <RequestIPLs>
+	    <string>bkr_biker_interior_placement_interior_1_biker_dlc_int_02_milo</string>
+	  </RequestIPLs>
+      <RemoveIPLs />
+      <InteriorSets>
+	    <string>walls_02</string>
+		<string>lower_walls_default</string>
+		<string>furnishings_01</string>
+		<string>decorative_01</string>
+		<string>mural_03</string>
+		<string>gun_locker</string>
+		<string>no_mod_booth</string>
+		<string>meth_large</string>
+		<string>cash_large</string>
+		<string>coke_large</string>
+		<string>counterfeit_medium</string>
+		<string>id_medium</string>
+      </InteriorSets>
+      <InteriorTintColor>3</InteriorTintColor>
+      <InteriorSetStyleID>-1</InteriorSetStyleID>
+      <InteriorEgressPosition>
+        <X>998.4809</X>
+        <Y>-3164.711</Y>
+        <Z>-38.90733</Z>
+      </InteriorEgressPosition>
+      <InteriorEgressHeading>269.3185</InteriorEgressHeading>
+      <NeedsActivation>false</NeedsActivation>
+      <NeedsSetDisabled>false</NeedsSetDisabled>
+      <IsRestricted>false</IsRestricted>
+      <IsCivilianReactableRestricted>false</IsCivilianReactableRestricted>
+      <IsWeaponRestricted>false</IsWeaponRestricted>
+      <IsTunnel>false</IsTunnel>
+      <MaxUpdateDistance>50</MaxUpdateDistance>
+      <InteractPoints>
+        <InteriorInteract xsi:type="ExitInteriorInteract">
+          <Name>RebelExit1</Name>
+          <Position>
+            <X>997.1519</X>
+            <Y>-3164.428</Y>
+            <Z>-38.90733</Z>
+          </Position>
+          <Heading>90.81423</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Exit</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>true</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+        </InteriorInteract>
+        <InteriorInteract xsi:type="StandardInteriorInteract">
+          <Name>RebelStandard1</Name>
+          <Position>
+            <X>998.5516</X>
+            <Y>-3168.49</Y>
+            <Z>-34.07746</Z>
+          </Position>
+          <Heading>179.9392</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>1010.178</X>
+            <Y>-3169.663</Y>
+            <Z>-33.0468</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>-0.6351814</X>
+            <Y>0.7723558</Y>
+            <Z>0.003346534</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0.1917426</Pitch>
+            <Roll>-1.587494E-06</Roll>
+            <Yaw>39.4337</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Interact</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>true</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+        </InteriorInteract>
+        <InteriorInteract xsi:type="ToiletInteract">
+          <Name>RebelsToilet1</Name>
+          <Position>
+            <X>1016.008</X>
+            <Y>-3149.822</Y>
+            <Z>-38.89819</Z>
+          </Position>
+          <Heading>6.033175</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>1015.528</X>
+            <Y>-3153.116</Y>
+            <Z>-38.24743</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0.1055337</X>
+            <Y>0.9852429</Y>
+            <Z>-0.1347558</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>-7.744497</Pitch>
+            <Roll>2.213319E-05</Roll>
+            <Yaw>-6.113891</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Use Toilet</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>false</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <IsStanding>false</IsStanding>
+        </InteriorInteract>
+      </InteractPoints>
+      <ClearPositions />
+      <VendorLocations />
+      <RestInteracts>
+        <RestInteract>
+          <Name>RebelRest1</Name>
+          <Position>
+            <X>1009.471</X>
+            <Y>-3170.967</Y>
+            <Z>-38.89423</Z>
+          </Position>
+          <Heading>265.4167</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>1011.008</X>
+            <Y>-3169.55</Y>
+            <Z>-38.06985</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>-0.1385416</X>
+            <Y>-0.9833781</Y>
+            <Z>0.1173616</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>6.739855</Pitch>
+            <Roll>-1.955851E-05</Roll>
+            <Yaw>171.9808</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Sleep</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>true</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <UseDefaultAnimations>true</UseDefaultAnimations>
+        </RestInteract>
+      </RestInteracts>
+      <InventoryInteracts>
+        <InventoryInteract>
+          <Name>RebelsInventory1</Name>
+          <Position>
+            <X>1008.301</X>
+            <Y>-3171.365</Y>
+            <Z>-38.89473</Z>
+          </Position>
+          <Heading>176.4214</Heading>
+          <InteractDistance>1</InteractDistance>
+          <CameraPosition>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraPosition>
+          <CameraDirection>
+            <X>0</X>
+            <Y>0</Y>
+            <Z>0</Z>
+          </CameraDirection>
+          <CameraRotation>
+            <Pitch>0</Pitch>
+            <Roll>0</Roll>
+            <Yaw>0</Yaw>
+          </CameraRotation>
+          <ButtonPromptText>Access Weapons</ButtonPromptText>
+          <AutoCamera>true</AutoCamera>
+          <UseNavmesh>true</UseNavmesh>
+          <WithWarp>false</WithWarp>
+          <ForceIsntantCamera>false</ForceIsntantCamera>
+          <IsAutoInteract>false</IsAutoInteract>
+          <CanAccessItems>false</CanAccessItems>
+          <CanAccessWeapons>true</CanAccessWeapons>
+          <CanAccessCash>false</CanAccessCash>
+          <RemoveMenuBanner>true</RemoveMenuBanner>
+        </InventoryInteract>
+      </InventoryInteracts>
+    </GangDenInterior>  
+  </GangDenInteriors>
+  <BankInteriors />
+  <BarberShopInteriors />
+  <BusinessInteriors />
+</PossibleInteriors>

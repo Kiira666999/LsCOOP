@@ -1,0 +1,2175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCraftableItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CraftableItem>
+    <Name>Unpack 5G Marijuana</Name>
+    <Resultant>Marijuana</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>5G Marijuana</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>200</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Stash</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Unpack 10G Marijuana</Name>
+    <Resultant>Marijuana</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>10</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>10G Marijuana</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>250</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Stash</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Unpack 15G Marijuana</Name>
+    <Resultant>Marijuana</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>15</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>15G Marijuana</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>300</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Stash</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Unpack package of Crack</Name>
+    <Resultant>Crack</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>100</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Package of Crack</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>100</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags></CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Unpack 5G Heroin</Name>
+    <Resultant>Heroin</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>5G Heroin</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>200</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Stash</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Unpack 10G Heroin</Name>
+    <Resultant>Heroin</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>10</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>10G Heroin</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>250</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Stash</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Unpack 15G Heroin</Name>
+    <Resultant>Heroin</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>15</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>15G Heroin</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>300</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Stash</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Unpack 5G Cocaine</Name>
+    <Resultant>Cocaine</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>5G Cocaine</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>200</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Stash</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Unpack 10G Cocaine</Name>
+    <Resultant>Cocaine</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>10</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>10G Cocaine</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>250</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Stash</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Unpack 15G Cocaine</Name>
+    <Resultant>Cocaine</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>15</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>15G Cocaine</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>300</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Stash</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Organize corner: Davis</Name>
+    <Resultant>Ballas: Reputation+</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Trap day</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Crack</IngredientName>
+        <Quantity>200</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Manpower: Dealer</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>30000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>DavisCorner</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Organize corner: Marijuana</Name>
+    <Resultant>Corner's money: Marijuana</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>15</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Marijuana</IngredientName>
+        <Quantity>100</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Manpower: Dealer</IngredientName>
+        <Quantity>4</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>Corner</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Organize corner: Heroin</Name>
+    <Resultant>Corner's money: Heroin</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>24</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Package of Heroin</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Manpower: Dealer</IngredientName>
+        <Quantity>6</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>Corner</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Organize corner: Crack</Name>
+    <Resultant>Corner's money: Crack</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>18</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Package of Crack</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Manpower: Dealer</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>Corner</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Organize corner: Cocaine</Name>
+    <Resultant>Corner's money: Cocaine</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>30</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Package of Cocaine</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Manpower: Dealer</IngredientName>
+        <Quantity>7</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>Corner</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Organize corner: Crack sample day</Name>
+    <Resultant>Influence</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>6</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Sample day</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Crack</IngredientName>
+        <Quantity>50</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Manpower: Dealer</IngredientName>
+        <Quantity>6</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>15000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>Corner</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Organize corner: Marijuana sample day</Name>
+    <Resultant>Influence</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>6</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Sample day</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Marijuana</IngredientName>
+        <Quantity>50</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Manpower: Dealer</IngredientName>
+        <Quantity>6</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>15000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>Corner</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Refurbish iFruit Cellphones</Name>
+    <Resultant>Box of iFruit Cellphones</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>iFruit Cellphone</IngredientName>
+        <Quantity>25</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Work day</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Multi-Bit Screwdriver</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontElectrical</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Refurbish Facade Cellphones</Name>
+    <Resultant>Box of Facade Cellphones</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Facade Cellphone</IngredientName>
+        <Quantity>25</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Work day</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Multi-Bit Screwdriver</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontElectrical</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Refurbish Badger Cellphones</Name>
+    <Resultant>Box of Badger Cellphones</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Badger Cellphone</IngredientName>
+        <Quantity>25</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Work day</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Multi-Bit Screwdriver</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontElectrical</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Manufacture fake ID</Name>
+    <Resultant>Box of fake ID</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Drivers License</IngredientName>
+        <Quantity>10</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Workday</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>500</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontForgery</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean South LS Trappers' chain</Name>
+    <Resultant>Gold chain</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>South LS trapper's chain</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontJewelry</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean East LS Trappers' chain</Name>
+    <Resultant>Gold chain</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>East LS trapper's chain</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontJewelry</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Ballas's chain</Name>
+    <Resultant>Gold chain</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Ballas's chain</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontJewelry</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Families's chain</Name>
+    <Resultant>Gold chain</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Families's chain</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontJewelry</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Yardies's chain</Name>
+    <Resultant>Gold chain</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Yardies's chain</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontJewelry</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Khangpae's chain</Name>
+    <Resultant>Gold chain</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Khangpae's chain</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontJewelry</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Vagos's chain</Name>
+    <Resultant>Gold chain</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Vagos's chain</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontJewelry</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Aztecas's chain</Name>
+    <Resultant>Gold chain</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Aztecas's chain</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontJewelry</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Triads's chain</Name>
+    <Resultant>Gold chain</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Triads's chain</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontJewelry</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Armenian's chain</Name>
+    <Resultant>Gold chain</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Armenian's chain</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontJewelry</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Marabunta's chain</Name>
+    <Resultant>Gold chain</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Marabunta's chain</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontJewelry</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Lost's chain</Name>
+    <Resultant>Gold chain</Resultant>
+    <AnimationDictionary>anim@heists@heist_corona@single_team</AnimationDictionary>
+    <AnimationName>single_team_loop_boss</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Lost's chain</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Flint Duct Tape</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>FrontJewelry</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Cook Crack</Name>
+    <Resultant>Crack</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_char02</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cocaine</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Bottle of Raine Water</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Baking Soda</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>CheapSafehouseStove</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Cook cheap meal</Name>
+    <Resultant>Chicken and Rice</Resultant>
+    <AnimationDictionary>timetable@maid@ig_2@</AnimationDictionary>
+    <AnimationName>ig_2_base</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>General Items</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Rice</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chicken</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Ketchup</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>10000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>CheapSafehouseStove</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Shrewsbury S7</Name>
+    <Resultant>Tool</Resultant>
+    <AnimationDictionary>timetable@maid@ig_2@</AnimationDictionary>
+    <AnimationName>ig_2_base</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Shrewsbury S7</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Latex gloves</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Detergent</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Hawk &amp; Little 1919A1</Name>
+    <Resultant>Tool</Resultant>
+    <AnimationDictionary>timetable@maid@ig_2@</AnimationDictionary>
+    <AnimationName>ig_2_base</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Hawk &amp; Little 1919 Tactical</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Latex gloves</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Detergent</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>6000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Hawk &amp; Little PTF092F</Name>
+    <Resultant>Tool</Resultant>
+    <AnimationDictionary>timetable@maid@ig_2@</AnimationDictionary>
+    <AnimationName>ig_2_base</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Hawk &amp; Little PTF092F</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Latex gloves</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Detergent</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>7000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Vom Feuer VF76</Name>
+    <Resultant>Tool</Resultant>
+    <AnimationDictionary>timetable@maid@ig_2@</AnimationDictionary>
+    <AnimationName>ig_2_base</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Vom Feuer P69</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Latex gloves</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Detergent</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>7000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Hawk &amp; Little Desert Slug</Name>
+    <Resultant>Tool</Resultant>
+    <AnimationDictionary>timetable@maid@ig_2@</AnimationDictionary>
+    <AnimationName>ig_2_base</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Hawk &amp; Little Desert Slug</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Latex gloves</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Detergent</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean Hawk &amp; Little 1919 Tactical</Name>
+    <Resultant>Tool</Resultant>
+    <AnimationDictionary>timetable@maid@ig_2@</AnimationDictionary>
+    <AnimationName>ig_2_base</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Hawk &amp; Little 1919 Tactical</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Latex gloves</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Detergent</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>9000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Clean WIN95</Name>
+    <Resultant>Tool</Resultant>
+    <AnimationDictionary>timetable@maid@ig_2@</AnimationDictionary>
+    <AnimationName>ig_2_base</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Valuable</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Shrewsbury Stinkov</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Latex gloves</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Detergent</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>10000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>-------------------MARIJUANA CRAFT-------------------</Name>
+    <Resultant>--</Resultant>
+    <AnimationDictionary>anim@scripted@player@mission@tun_table_grab@cash@</AnimationDictionary>
+    <AnimationName>grab</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>-</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>false</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>0</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>1G Marijuana x5</Name>
+    <Resultant>1G Marijuana</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>hack_loop</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Marijuana</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Small Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>4000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>5G Marijuana x5</Name>
+    <Resultant>5G Marijuana</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>hack_loop</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Marijuana</IngredientName>
+        <Quantity>25</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Small Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>15000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>10G Marijuana x5</Name>
+    <Resultant>10G Marijuana</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>hack_loop</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Marijuana</IngredientName>
+        <Quantity>50</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Phone number</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>17000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>15G Marijuana x5</Name>
+    <Resultant>15G Marijuana</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>hack_loop</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Marijuana</IngredientName>
+        <Quantity>75</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Large Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Phone number</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>20000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Package Marijuana</Name>
+    <Resultant>Package of Marijuana</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Marijuana</IngredientName>
+        <Quantity>100</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>200</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>-------------------CRACK CRAFT-------------------</Name>
+    <Resultant>--</Resultant>
+    <AnimationDictionary>anim@scripted@player@mission@tun_table_grab@cash@</AnimationDictionary>
+    <AnimationName>grab</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>-</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>false</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>0</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>1G Crack x5</Name>
+    <Resultant>1G Crack</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>base</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Crack</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Small Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>4000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>5G Crack x5</Name>
+    <Resultant>5G Crack</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>base</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Crack</IngredientName>
+        <Quantity>25</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Small Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>15000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>10G Crack x5</Name>
+    <Resultant>10G Crack</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>base</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Crack</IngredientName>
+        <Quantity>50</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>17000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>15G Crack x5</Name>
+    <Resultant>15G Crack</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>base</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Crack</IngredientName>
+        <Quantity>75</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Large Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>20000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Package Crack</Name>
+    <Resultant>Package of Crack</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Crack</IngredientName>
+        <Quantity>100</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>200</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>-------------------HEROIN CRAFT-------------------</Name>
+    <Resultant>--</Resultant>
+    <AnimationDictionary>anim@scripted@player@mission@tun_table_grab@cash@</AnimationDictionary>
+    <AnimationName>grab</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>-</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>false</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>0</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>1G Heroin x5</Name>
+    <Resultant>1G Heroin</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>hack_loop</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Heroin</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Small Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>4000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>5G Heroin x5</Name>
+    <Resultant>5G Heroin</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>hack_loop</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Heroin</IngredientName>
+        <Quantity>25</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Small Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>10G Heroin x5</Name>
+    <Resultant>10G Heroin</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>hack_loop</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Heroin</IngredientName>
+        <Quantity>50</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Phone number</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>6000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>15G Heroin x5</Name>
+    <Resultant>15G Heroin</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>hack_loop</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Heroin</IngredientName>
+        <Quantity>75</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Large Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Phone number</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Package Heroin</Name>
+    <Resultant>Package of Heroin</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Heroin</IngredientName>
+        <Quantity>100</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>100</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>-------------------COCAINE CRAFT-------------------</Name>
+    <Resultant>--</Resultant>
+    <AnimationDictionary>anim@scripted@player@mission@tun_table_grab@cash@</AnimationDictionary>
+    <AnimationName>grab</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>-</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>false</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>0</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>1G Cocaine x5</Name>
+    <Resultant>1G Cocaine</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>hack_loop</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cocaine</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Small Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>4000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>5G Cocaine x5</Name>
+    <Resultant>5G Cocaine</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>hack_loop</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cocaine</IngredientName>
+        <Quantity>25</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Small Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>15000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>10G Cocaine x5</Name>
+    <Resultant>10G Cocaine</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>hack_loop</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cocaine</IngredientName>
+        <Quantity>50</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Phone number</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>17000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>15G Cocaine x5</Name>
+    <Resultant>15G Cocaine</Resultant>
+    <AnimationDictionary>anim@scripted@cayo_v2@ig1_hack_radar@heeled@</AnimationDictionary>
+    <AnimationName>hack_loop</AnimationName>
+    <ResultantAmount>5</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cocaine</IngredientName>
+        <Quantity>75</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Large Baggie</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Phone number</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>20000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Package Cocaine</Name>
+    <Resultant>Package of Cocaine</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Narcotics</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cocaine</IngredientName>
+        <Quantity>100</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>200</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>--------------------MANPOWER CRAFT--------------------</Name>
+    <Resultant>--</Resultant>
+    <AnimationDictionary>anim@scripted@player@mission@tun_table_grab@cash@</AnimationDictionary>
+    <AnimationName>grab</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>-</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>false</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>0</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Hire dealer</Name>
+    <Resultant>Manpower: Dealer</Resultant>
+    <AnimationDictionary>cellphone@str</AnimationDictionary>
+    <AnimationName>cellphone_call_listen_g</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>8</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>2000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Hire muscle</Name>
+    <Resultant>Manpower: Muscle</Resultant>
+    <AnimationDictionary>cellphone@str</AnimationDictionary>
+    <AnimationName>cellphone_call_listen_g</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>12</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>2000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>-------------------MANPOWER ACTIONS-------------------</Name>
+    <Resultant>--</Resultant>
+    <AnimationDictionary>anim@scripted@player@mission@tun_table_grab@cash@</AnimationDictionary>
+    <AnimationName>grab</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>-</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>false</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>0</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Dealer: Sling Crack</Name>
+    <Resultant>Influence</Resultant>
+    <AnimationDictionary>cellphone@str</AnimationDictionary>
+    <AnimationName>cellphone_call_listen_g</AnimationName>
+    <ResultantAmount>20</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Package of Crack</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>15</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Manpower: Dealer</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>2500</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Dealer: Sling Marijuana</Name>
+    <Resultant>Influence</Resultant>
+    <AnimationDictionary>cellphone@str</AnimationDictionary>
+    <AnimationName>cellphone_call_listen_g</AnimationName>
+    <ResultantAmount>20</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Package of Marijuana</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>15</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Manpower: Dealer</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>2500</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Muscle: Rob South LS Trappers</Name>
+    <Resultant>South LS trapper's chain</Resultant>
+    <AnimationDictionary>cellphone@str</AnimationDictionary>
+    <AnimationName>cellphone_call_listen_g</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Manpower: Muscle</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Tool</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Muscle: Rob East LS Trappers</Name>
+    <Resultant>East LS trapper's chain</Resultant>
+    <AnimationDictionary>cellphone@str</AnimationDictionary>
+    <AnimationName>cellphone_call_listen_g</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Manpower: Muscle</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Tool</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Muscle: Rob Families</Name>
+    <Resultant>Families's chain</Resultant>
+    <AnimationDictionary>cellphone@str</AnimationDictionary>
+    <AnimationName>cellphone_call_listen_g</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Manpower: Muscle</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Tool</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>4</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Muscle: Rob Ballas</Name>
+    <Resultant>Ballas's chain</Resultant>
+    <AnimationDictionary>cellphone@str</AnimationDictionary>
+    <AnimationName>cellphone_call_listen_g</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Manpower: Muscle</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Tool</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>4</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Muscle: Rob Vagos</Name>
+    <Resultant>Vagos's chain</Resultant>
+    <AnimationDictionary>cellphone@str</AnimationDictionary>
+    <AnimationName>cellphone_call_listen_g</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Manpower: Muscle</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Tool</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>5000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Muscle: Raid Marijuana Stash</Name>
+    <Resultant>Package of Marijuana</Resultant>
+    <AnimationDictionary>cellphone@str</AnimationDictionary>
+    <AnimationName>cellphone_call_listen_g</AnimationName>
+    <ResultantAmount>3</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Manpower: Muscle</IngredientName>
+        <Quantity>4</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Tool</IngredientName>
+        <Quantity>4</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>15</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>10000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Muscle: Raid Crack Stash</Name>
+    <Resultant>Package of Crack</Resultant>
+    <AnimationDictionary>cellphone@str</AnimationDictionary>
+    <AnimationName>cellphone_call_listen_g</AnimationName>
+    <ResultantAmount>3</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Equipment</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Manpower: Muscle</IngredientName>
+        <Quantity>4</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Tool</IngredientName>
+        <Quantity>4</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Influence</IngredientName>
+        <Quantity>15</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>10000</Cooldown>
+    <CrimeId></CrimeId>
+    <CraftingFlags>
+      <string>SafehouseLow</string>
+    </CraftingFlags>
+  </CraftableItem>
+</ArrayOfCraftableItem>

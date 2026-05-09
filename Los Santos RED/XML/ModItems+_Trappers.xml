@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PossibleItems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FlashlightItems />
+  <CellphoneItems />
+  <ModItems />
+  <ShovelItems />   
+  <UmbrellaItems />
+  <LicensePlateItems />
+  <LighterItems />
+  <ScrewdriverItems />
+  <TapeItems />
+  <DrillItems />
+  <HammerItems />
+  <PliersItems />
+  <BongItems />
+  <PipeItems />
+  <RollingPapersItems />
+  <FoodItems />
+  <SmokeItems>
+  </SmokeItems>
+  <PipeSmokeItems />
+  <DrinkItems />
+  <InhaleItems />
+  <IngestItems />
+  <InjectItems />
+  <HotelStayItems />
+  <WeaponItems />
+  <VehicleItems />
+  <BinocularsItems />
+  <RadioItems />
+  <RadarDetectorItems />
+  <ValuableItems>
+    <ValuableItem>
+      <Name>Hyun-Su: Respect</Name>
+      <Description>You got the OG respect. You can use it to gain relation with him.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_queen</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Hyun-Su: Influence</Name>
+      <Description>You got Hyun-Su's support. You can use it to gain relations with some gangs.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_king</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Long-Yang: Respect</Name>
+      <Description>You got the OG respect. You can use it to gain relation with him.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_queen</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Long-Yang: Influence</Name>
+      <Description>You got Long-Yang's support. You can use it to gain relations with some gangs.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_king</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Caesars: Respect</Name>
+      <Description>You got the OG respect. You can use it to gain relation with him.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_queen</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Caesars: Influence</Name>
+      <Description>You got Caesars's support. You can use it to gain relations with some gangs.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_king</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Little Jacob: Respect</Name>
+      <Description>You got the OG respect. You can use it to gain relation with him.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_queen</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Little Jacob: Influence</Name>
+      <Description>You got Little Jacob's support. You can use it to gain relations with some gangs.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_king</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Dizzy-D: Respect</Name>
+      <Description>You got the OG respect. You can use it to gain relation with him.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_queen</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Dizzy-D: Influence</Name>
+      <Description>You got Dizzy-D's support. You can use it to gain relations with some gangs.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_king</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Dwayne: Respect</Name>
+      <Description>You got the OG respect. You can use it to gain relation with him.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_queen</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Dwayne: Influence</Name>
+      <Description>You got Dwayne's support. You can use it to gain relations with some gangs.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_king</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Dwayne: Hit</Name>
+      <Description>A hit placed by Dizzy-D. 1500$</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Dizzy-D: Hit</Name>
+      <Description>A hit placed by Dwayne. 1500$</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Little Jacob: Hit</Name>
+      <Description>A hit placed by Caesars. 2000$</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Caesars: Hit</Name>
+      <Description>A hit placed by Little Jacob. 2000$</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Gang hit: Korra</Name>
+      <Description>She has been seen around Power Street. 500$</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Meet: Korra</Name>
+      <Description>Meet our guy around Power Street at 5PM</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_cash_envelope_01_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Gang hit: Annie</Name>
+      <Description>She has been seen around Little Bighorn. 500$</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Meet: Annie</Name>
+      <Description>Meet our guy around Little Bighorn avenue at 3PM</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_cash_envelope_01_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Gang hit: Leroy</Name>
+      <Description>He has been seen around Carson Avenue. 2000$</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Gang hit: Stanley</Name>
+      <Description>He has been seen around Elgin Avenue. 2000$</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Meet: Leroy</Name>
+      <Description>Meet our guy around Carson Avenue at 9PM</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_cash_envelope_01_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Gang hit: Terrance</Name>
+      <Description>He has been seen around Brouge Avenue. 2000$</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Meet: Terrance</Name>
+      <Description>Meet our guy around Brouge Avenue at 11PM</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_cash_envelope_01_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Gang hit: Alphonse</Name>
+      <Description>He has been seen around Little Bighorn Avenue. 2500$</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Meet: Alphonse</Name>
+      <Description>Meet our guy around Little Bighorn Avenue at 7PM</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_cash_envelope_01_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Gang hit: Chung-Hee</Name>
+      <Description>He has been seen around Decker Street. 2500$</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Gang hit: Fu-Kang</Name>
+      <Description>He has been seen around Peaceful Street. 3000$</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_cash_pile_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Meet: Chung-Hee</Name>
+      <Description>Meet our guy around Decker Street  at 12PM</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_cash_envelope_01_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>South LS Trappers: Reputation+</Name>
+      <Description>Make your name known</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>South LS Trappers: Influence</Name>
+      <Description>You got South LS Trappers's support. You can use it to gain relations with some gangs</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>1</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>South LS trapper's chain</Name>
+      <Description>Proof that you put in some work. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Identification</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>East LS Trappers: Reputation+</Name>
+      <Description>Make your name known</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>East LS Trappers: Influence</Name>
+      <Description>You got East LS Trappers's support. You can use it to gain relations with some gangs</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>1</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+	<ValuableItem>
+      <Name>East LS trapper's chain</Name>
+      <Description>Proof that you put in some work. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Identification</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Ballas: Reputation+</Name>
+      <Description>Make your name known</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Ballas: Influence</Name>
+      <Description>You got Ballas's support. You can use it to gain relations with some gangs</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>1</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Ballas's chain</Name>
+      <Description>Proof that you put in some work. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Identification</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Families: Reputation+</Name>
+      <Description>Make your name known</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Families: Influence</Name>
+      <Description>You got Families's support. You can use it to gain relations with some gangs</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>1</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Families's chain</Name>
+      <Description>Proof that you put in some work. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Identification</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Yardies: Reputation+</Name>
+      <Description>Make your name known</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Yardies: Influence</Name>
+      <Description>You got Yardies's support. You can use it to gain relations with some gangs</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>1</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Yardies's chain</Name>
+      <Description>Proof that you put in some work. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Identification</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Khangpae: Reputation+</Name>
+      <Description>Make your name known</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Khangpae: Influence</Name>
+      <Description>You got Khangpae's support. You can use it to gain relations with some gangs</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>1</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Khangpae's chain</Name>
+      <Description>Proof that you put in some work. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Identification</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Vagos's chain</Name>
+      <Description>Proof that you put in some work. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Identification</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Vagos: Reputation+</Name>
+      <Description>Make your name known</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Vagos: Influence</Name>
+      <Description>You got Vagos's support. You can use it to gain relations with some gangs</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>1</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Aztecas's chain</Name>
+      <Description>Proof that you put in some work. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Identification</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Aztecas: Reputation+</Name>
+      <Description>Make your name known</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Aztecas: Influence</Name>
+      <Description>You got Aztecas's support. You can use it to gain relations with some gangs</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Rep</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>1</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Triads's chain</Name>
+      <Description>Proof that you put in some work. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Identification</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Triads: Reputation+</Name>
+      <Description>Make your name known</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Triads: Influence</Name>
+      <Description>You got Triads's support. You can use it to gain relations with some gangs</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Rep</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>1</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Armenian's chain</Name>
+      <Description>Proof that you put in some work. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Identification</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Armenian: Reputation+</Name>
+      <Description>Make your name known</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Armenian: Influence</Name>
+      <Description>You got Armenian's support. You can use it to gain relations with some gangs</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Rep</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>1</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Marabunta: Reputation+</Name>
+      <Description>Make your name known</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Marabunta: Influence</Name>
+      <Description>You got Marabunta's support. You can use it to gain relations with some gangs</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>1</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+	<ValuableItem>
+      <Name>Marabunta's chain</Name>
+      <Description>Proof that you put in some work. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Identification</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Lost: Reputation+</Name>
+      <Description>Make your name known</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Lost: Influence</Name>
+      <Description>You got Lost's support. You can use it to gain relations with some gangs</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>1</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+	<ValuableItem>
+      <Name>Lost's chain</Name>
+      <Description>Proof that you put in some work. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Identification</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_csbporndudes_necklace_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+    <ValuableItem>
+      <Name>Influence</Name>
+      <Description>Lost on death or arrest. Used in crafting.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Unit</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_ace</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>0</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem>
+  <ValuableItem>
+      <Name>Professionals: Reputation+</Name>
+      <Description>Make your name known with The Professionals</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Action</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_jack</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem><ValuableItem>
+      <Name>Professionals: Influence</Name>
+      <Description>You got The Professionals support. You can use it to gain relations with some gangs.</Description>
+      <ItemType>Valuables</ItemType>
+      <ItemSubType>Money</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>vw_prop_cas_card_spd_king</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ValuableItem></ValuableItems>
+  <EquipmentItems />
+  <BodyArmorItems />
+  <HardwareItems />
+</PossibleItems>

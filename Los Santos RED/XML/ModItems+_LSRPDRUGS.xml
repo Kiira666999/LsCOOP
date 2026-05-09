@@ -1,0 +1,1007 @@
+<PossibleItems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FlashlightItems />
+  <CellphoneItems />
+  <ModItems />
+  <ShovelItems>
+  <ShovelItem>
+      <Name>Frozen Meth</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_meth_smashedtray_02</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Pseudoephedrine</Name>
+      <Description>Over the counter medicine, main ingredient for homemade meth</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_meth_pseudoephedrine</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem> 
+	<ShovelItem>
+      <Name>Frozen Pizza</Name>
+      <Description>Frozen pizza with all the added preservatives</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_pizza_box_02</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Burger Buns</Name>
+      <Description>Fresh buns</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID />
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Minced Beef</Name>
+      <Description>Fresh ground beef</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_cs_steak</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Cheese</Name>
+      <Description>AKA plastic cheese</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID />
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Pasta</Name>
+      <Description>Al dente</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID />
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Canned Tomatoes</Name>
+      <Description>The finest tomatoes from Italy</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>v_ret_247_tomsoup1</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Peanut Butter</Name>
+      <Description>America's favourite</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID />
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Jam</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID />
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Bread</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>v_ret_247_bread1</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Pancakes</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID />
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Maple Syrup</Name>
+      <Description>Imported from Canada</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID />
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Bacon</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID />
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Sausage</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID />
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Harvested Marijuana</Name>
+      <Description>Wet Buds</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_weed_bud_02a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem> 
+	<ShovelItem>
+      <Name>Dried Marijuana</Name>
+      <Description>Dried Buds</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_weed_bud_02a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem> 
+	<ShovelItem>
+      <Name>Baggie</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m25_1_prop_m51_bag_weed_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem> 
+	<ShovelItem>
+      <Name>Dried Coca Leaf</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_weed_leaf_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem> 
+	<ShovelItem>
+      <Name>Processed Coca Leaf</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_weed_leaf_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Refined Cocaine</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_coke_plate2</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem> 
+	<ShovelItem>
+      <Name>Mixed Cocaine</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_coke_plate2</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem> 
+	<ShovelItem>
+      <Name>Cooked Meth</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_meth_smashedtray_02</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem> 
+	<ShovelItem>
+      <Name>Meth Shards</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_int_02_meth_pile007</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem> 
+	<ShovelItem>
+      <Name>Sodium Benzoate</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_meth_sacid</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>///lsrp
+	<ShovelItem>
+      <Name>Hydrogen Peroxide</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_meth_sodium</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem> 
+    <ShovelItem>
+      <Name>Ammonia</Name>
+      <Description>Chemical used in meth production</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_meth_ammonia</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>	
+	<ShovelItem>
+      <Name>Red Phosphorus</Name>
+      <Description>Chemical used in meth production</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_meth_phosphorus</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Lithium Battery</Name>
+      <Description>A car battery, used for its lithium in meth</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_meth_lithium</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Medical Supplies</Name>
+      <Description>A box of pharmaceutical drugs</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>ex_office_swag_pills4</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>///lsrp
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Syringe</Name>
+      <Description>An empty syringe.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_syringe_01_s</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Morphine</Name>
+      <Description>Medical morphine, to forget the bad times.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>xm3_prop_xm3_lsd_bottle_02a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Coca Leaves</Name>
+      <Description>Leaves from a coca plant.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_weed_leaf_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Gasoline</Name>
+      <Description>Smells good, don't consume.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_ld_jerrycan_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Acetone</Name>
+      <Description>Gets rid of impurities.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_meth_acetone</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>Lysergic acid
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Lysergic acid</Name>
+      <Description>The main ingredient in LSD.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>xm3_prop_xm3_lsd_bottle_03a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Vitamin Powder</Name>
+      <Description>Used by dodgy dealers to cut cocaine.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_coke_powderbottle_02</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Blotter Paper</Name>
+      <Description>Edible paper.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+	  <ModelItemID>xm3_prop_xm3_sheet_acid_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Plant Pot</Name>
+      <Description>A cheap plastic pot, used to grow various fruits.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>sf_prop_sf_weed_01_small_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Cannabis Seed</Name>
+      <Description>A bag of cannabis seeds.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m25_1_prop_m51_bag_weed_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+    <ShovelItem>
+      <Name>Fertiliser</Name>
+      <Description>fertiliser.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_cs_fertilizer</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+  </ShovelItems>   
+  <UmbrellaItems />
+  <LicensePlateItems />
+  <LighterItems />
+  <ScrewdriverItems />
+  <TapeItems />
+  <DrillItems />
+  <HammerItems />
+  <PliersItems />
+  <BongItems />
+  <PipeItems />
+  <RollingPapersItems />
+  <FoodItems>
+    <FoodItem>
+      <Name>Baking Soda</Name>
+      <Description />
+      <ItemType>Food</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_coke_bakingsoda</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>10</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName />
+      <IntoxicationPerInterval>0.2</IntoxicationPerInterval>
+      <HealthChangeAmount>0</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>0</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>false</AlwaysChangesHealth>
+      <AnimationCycles>15</AnimationCycles>
+    </FoodItem>
+	<FoodItem>
+      <Name>Cooked Pizza</Name>
+      <Description />
+      <ItemType>Food</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>v_res_tt_pizzaplate</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName />
+      <IntoxicationPerInterval>0.2</IntoxicationPerInterval>
+      <HealthChangeAmount>90</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>80</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>true</AlwaysChangesHealth>
+      <AnimationCycles>15</AnimationCycles>
+    </FoodItem>
+	<FoodItem>
+      <Name>Cheese Burger</Name>
+      <Description />
+      <ItemType>Food</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_cs_burger_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName />
+      <IntoxicationPerInterval>0.2</IntoxicationPerInterval>
+      <HealthChangeAmount>90</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>85</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>true</AlwaysChangesHealth>
+      <AnimationCycles>15</AnimationCycles>
+    </FoodItem>
+	<FoodItem>
+      <Name>Pasta &amp; Meatballs</Name>
+      <Description />
+      <ItemType>Food</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID />
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName />
+      <IntoxicationPerInterval>0.2</IntoxicationPerInterval>
+      <HealthChangeAmount>100</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>100</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>true</AlwaysChangesHealth>
+      <AnimationCycles>15</AnimationCycles>
+    </FoodItem>
+	<FoodItem>
+      <Name>PB&amp;J</Name>
+      <Description />
+      <ItemType>Food</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_sandwich_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName />
+      <IntoxicationPerInterval>0.2</IntoxicationPerInterval>
+      <HealthChangeAmount>75</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>68</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>true</AlwaysChangesHealth>
+      <AnimationCycles>15</AnimationCycles>
+    </FoodItem>
+	<FoodItem>
+      <Name>Breakfast Pancakes</Name>
+      <Description />
+      <ItemType>Food</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID />
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName />
+      <IntoxicationPerInterval>0.2</IntoxicationPerInterval>
+      <HealthChangeAmount>82</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>75</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>true</AlwaysChangesHealth>
+      <AnimationCycles>15</AnimationCycles>
+    </FoodItem>
+	<FoodItem>
+      <Name>Breakfast Sandwich</Name>
+      <Description />
+      <ItemType>Food</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_sandwich_01</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName />
+      <IntoxicationPerInterval>0.2</IntoxicationPerInterval>
+      <HealthChangeAmount>86</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>79</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>true</AlwaysChangesHealth>
+      <AnimationCycles>15</AnimationCycles>
+    </FoodItem>
+  </FoodItems>
+  <SmokeItems />
+  <PipeSmokeItems />
+  <DrinkItems />
+  <InhaleItems>
+    <InhaleItem>
+      <Name>LSD</Name>
+      <Description>The government are in the walls!</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Gram</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>xm3_prop_xm3_sheet_acid_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0.5</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>12</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName>LSD</IntoxicantName>
+      <IntoxicationPerInterval>0.2</IntoxicationPerInterval>
+      <HealthChangeAmount>0</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>0</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>false</AlwaysChangesHealth>
+    </InhaleItem>
+    <InhaleItem>
+      <Name>MDMA</Name>
+      <Description>The love drug</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Gram</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>bkr_prop_meth_smallbag_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0.5</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>12</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName>LSD</IntoxicantName>
+      <IntoxicationPerInterval>0.2</IntoxicationPerInterval>
+      <HealthChangeAmount>0</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>0</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>false</AlwaysChangesHealth>
+    </InhaleItem>
+    <InhaleItem>
+      <Name>Ecstasy</Name>
+      <Description>Make strangers your best friend</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Gram</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>m24_1_prop_m41_pill_bag_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0.5</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>12</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName>LSD</IntoxicantName>
+      <IntoxicationPerInterval>0.2</IntoxicationPerInterval>
+      <HealthChangeAmount>0</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>0</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>false</AlwaysChangesHealth>
+    </InhaleItem>
+    <InhaleItem>
+      <Name>Fish Scale</Name>
+      <Description>98% pure Bolivian cocaine</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Gram</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>ba_prop_battle_sniffing_pipe</ModelItemID>
+      <PackageItemID>prop_meth_bag_01</PackageItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0.5</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>12</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName>Fish Scale</IntoxicantName>
+      <IntoxicationPerInterval>0.2</IntoxicationPerInterval>
+      <HealthChangeAmount>0</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>0</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>false</AlwaysChangesHealth>
+    </InhaleItem>
+    <InhaleItem>
+      <Name>Bashed Coke</Name>
+      <Description>Cut cocaine, low purity, very cheap.</Description>
+      <ItemType>Drugs</ItemType>
+      <ItemSubType>Narcotic</ItemSubType>
+      <MeasurementName>Gram</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>ba_prop_battle_sniffing_pipe</ModelItemID>
+      <PackageItemID>prop_meth_bag_01</PackageItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0.5</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>true</CanConsume>
+      <FindPercentage>1</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>12</PoliceFindDuringPlayerSearchPercentage>
+      <IntoxicantName>Bashed Coke</IntoxicantName>
+      <IntoxicationPerInterval>0.2</IntoxicationPerInterval>
+      <HealthChangeAmount>0</HealthChangeAmount>
+      <ArmorChangeAmount>0</ArmorChangeAmount>
+      <HungerChangeAmount>0</HungerChangeAmount>
+      <ThirstChangeAmount>0</ThirstChangeAmount>
+      <SleepChangeAmount>0</SleepChangeAmount>
+      <AlwaysChangesHealth>false</AlwaysChangesHealth>
+    </InhaleItem>
+  </InhaleItems>
+  <IngestItems />
+  <InjectItems />
+  <HotelStayItems />
+  <WeaponItems />
+  <VehicleItems />
+  <BinocularsItems />
+  <RadioItems />
+  <RadarDetectorItems />
+  <ValuableItems />
+  <EquipmentItems />
+  <BodyArmorItems />
+  <HardwareItems>
+    <HardwareItem>
+      <Name>Chemicals</Name>
+      <Description>For Science! Mix responsibly... or don't.</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>v_med_cor_chemical</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </HardwareItem>
+  </HardwareItems>
+</PossibleItems>

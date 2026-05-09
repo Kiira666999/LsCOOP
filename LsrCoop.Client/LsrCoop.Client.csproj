@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AssemblyName>LsrCoop.Client</AssemblyName>
+    <RootNamespace>LsrCoop.Client</RootNamespace>
+    <GtaVInstallPath>O:\SteamLibrary\steamapps\common\Grand Theft Auto V</GtaVInstallPath>
+    <OutputPath>..\RageCoopServer\Resources\Client\LsrCoop.Client\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="ScriptHookVDotNet3">
+      <HintPath>$(GtaVInstallPath)\ScriptHookVDotNet3.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="RageCoop.Client">
+      <HintPath>$(GtaVInstallPath)\scripts\RageCoop\RageCoop.Client.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="RageCoop.Core">
+      <HintPath>$(GtaVInstallPath)\scripts\RageCoop\RageCoop.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
+</Project>

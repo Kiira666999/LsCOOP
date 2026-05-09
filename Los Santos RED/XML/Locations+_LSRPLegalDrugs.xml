@@ -1,0 +1,891 @@
+<PossibleLocations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DeadDrops />
+  <ScrapYards />
+  <BodyExports />
+  <CarCrushers />
+  <GangDens />
+  <GunStores />
+  <Hotels />
+  <ApartmentBuildings />
+  <Residences />
+  <CityHalls />
+  <VendingMachines />
+  <PoliceStations />
+  <Hospitals />
+  <FireStations />
+  <Restaurants />
+  <Businesses />
+  <Pharmacies />
+  <Dispensaries />
+  <HeadShops />
+  <HardwareStores />
+  <PawnShops />
+  <Landmarks />
+  <Banks />
+  <ConvenienceStores />
+  <GasStations />
+  <LiquorStores />
+  <FoodStands />
+  <CarDealerships />
+  <VehicleExporters />
+  <Forgers />
+  <GamblingDens />
+  <RepairGarages />
+  <Bars />
+  <DriveThrus />
+  <ClothingShops />
+  <BusStops />
+  <SubwayStations />
+  <Prisons />
+  <Morgues>
+    <Morgue>
+      <Name>Pharmacist, Strawberry</Name>
+      <FullName>Pharmacist, Strawberry</FullName>
+      <Description />
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>true</IsBlipEnabled>
+      <MapIcon>850</MapIcon>
+      <MapIconColorString>Blue</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>93.53864</X>
+        <Y>-1600.443</Y>
+        <Z>30.89501</Z>
+      </EntrancePosition>
+      <EntranceHeading>228.437</EntranceHeading>
+      <OpenTime>20</OpenTime>
+      <CloseTime>4</CloseTime>
+      <InteriorID>15022025</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnTaxi>true</ShowsOnTaxi>
+      <TypeName>Pharmacist Warehouse</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>225</ActivateDistance>
+      <RestrictedAreas>
+        <RestrictedAreasList>
+          <RestrictedArea>
+            <Name>Pharmacist Warehouse</Name>
+            <Boundaries>
+              <Vector2>
+                <X>84.71455</X>
+                <Y>-1611.612</Y>
+              </Vector2>
+              <Vector2>
+                <X>94.14315</X>
+                <Y>-1623.038</Y>
+              </Vector2>
+              <Vector2>
+                <X>118.8596</X>
+                <Y>-1608.848</Y>
+              </Vector2>
+              <Vector2>
+                <X>99.60696</X>
+                <Y>-1593.898</Y>
+              </Vector2>
+            </Boundaries>
+            <SecurityCameras>
+              <SecurityCamera>
+                <Name>CCTV2</Name>
+                <ModelHash>548760764</ModelHash>
+                <Position>
+                  <X>89.5313568</X>
+                  <Y>-1605.34668</Y>
+                  <Z>33.9727745</Z>
+                </Position>
+                <Heading>51.6896706</Heading>
+                <IsManuallyCreated>true</IsManuallyCreated>
+                <PropHeading>51.6896706</PropHeading>
+              </SecurityCamera>
+              <SecurityCamera>
+                <Name>CCTV3</Name>
+                <ModelHash>548760764</ModelHash>
+                <Position>
+                  <X>105.594788</X>
+                  <Y>-1598.38403</Y>
+                  <Z>34.5341339</Z>
+                </Position>
+                <Heading>-38.9487305</Heading>
+                <IsManuallyCreated>true</IsManuallyCreated>
+                <PropHeading>-38.9487305</PropHeading>
+              </SecurityCamera>
+            </SecurityCameras>
+            <RestrictedAreaType>ImpoundLot</RestrictedAreaType>
+            <IsCivilianReactableRestricted>false</IsCivilianReactableRestricted>
+            <IsZRestricted>false</IsZRestricted>
+            <ZRestrictionMin>0</ZRestrictionMin>
+            <ZRestrictionMax>0</ZRestrictionMax>
+          </RestrictedArea>
+        </RestrictedAreasList>
+        <VanillaRestrictedAreas />
+      </RestrictedAreas>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <MenuID />
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>false</CanInteractWhenWanted>
+      <ShowsMarker>true</ShowsMarker>
+      <PossiblePedSpawns>
+		<ConditionalLocation xsi:type="SecurityConditionalLocation">
+          <Location>
+            <X>89.98595</X>
+            <Y>-1606.347</Y>
+            <Z>30.89501</Z>
+          </Location>
+          <Heading>259.8676</Heading>
+          <Percentage>100</Percentage>
+          <AssociationID>BOBCAT</AssociationID>
+          <RequiredPedGroup>ArmedSecurity</RequiredPedGroup>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard</TaskRequirements>
+          <ForcedScenarios>
+            <string>WORLD_HUMAN_SECURITY_SHINE_TORCH</string>
+          </ForcedScenarios>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>20</MinHourSpawn>
+          <MaxHourSpawn>4</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>true</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>true</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+        </ConditionalLocation>
+      </PossiblePedSpawns>
+      <PossibleVehicleSpawns>
+        <ConditionalLocation xsi:type="SecurityConditionalLocation">
+          <Location>
+            <X>89.48946</X>
+            <Y>-1616.202</Y>
+            <Z>29.59174</Z>
+          </Location>
+          <Heading>274.2081</Heading>
+          <Percentage>100</Percentage>
+          <AssociationID>BOBCAT</AssociationID>
+          <RequiredPedGroup>ArmedSecurity</RequiredPedGroup>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>20</MinHourSpawn>
+          <MaxHourSpawn>4</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>true</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+        </ConditionalLocation>
+      </PossibleVehicleSpawns>
+	  <VendorLocations />
+      <ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>BarPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>20</VendorMeleePercent>
+      <VendorSidearmPercent>5</VendorSidearmPercent>
+      <VendorLongGunPercent>2</VendorLongGunPercent>
+      <VendorMoneyMin>-1</VendorMoneyMin>
+      <VendorMoneyMax>-1</VendorMoneyMax>
+      <VendorFightPercentage>-1</VendorFightPercentage>
+      <VendorCallPolicePercentage>-1</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>-1</VendorFightPolicePercentage>
+      <VendorCowerPercentage>-1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>-1</VendorSurrenderPercentage>
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations />
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>0</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>0</MaxPriceRefreshHours>
+      <MinRestockHours>0</MinRestockHours>
+      <MaxRestockHours>0</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+    </Morgue>  
+    <Morgue>
+      <Name>Pharmacist, Harmony</Name>
+      <FullName>Pharmacist, Harmony</FullName>
+      <Description />
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>true</IsBlipEnabled>
+      <MapIcon>850</MapIcon>
+      <MapIconColorString>Blue</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>588.5391</X>
+        <Y>2782.321</Y>
+        <Z>43.48122</Z>
+      </EntrancePosition>
+      <EntranceHeading>2.260529</EntranceHeading>
+      <OpenTime>22</OpenTime>
+      <CloseTime>4</CloseTime>
+      <InteriorID>15022025</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnTaxi>true</ShowsOnTaxi>
+      <TypeName>Pharmacist Warehouse</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>225</ActivateDistance>
+      <RestrictedAreas>
+        <RestrictedAreasList>
+          <RestrictedArea>
+            <Name>Pharmacist Warehouse</Name>
+            <Boundaries>
+              <Vector2>
+                <X>621.5266</X>
+                <Y>2785.294</Y>
+              </Vector2>
+              <Vector2>
+                <X>580.3707</X>
+                <Y>2782.283</Y>
+              </Vector2>
+              <Vector2>
+                <X>575.4324</X>
+                <Y>2815.105</Y>
+              </Vector2>
+              <Vector2>
+                <X>620.131</X>
+                <Y>2818.176</Y>
+              </Vector2>
+            </Boundaries>
+            <SecurityCameras>
+              <SecurityCamera>
+                <Name>CCTV3</Name>
+                <ModelHash>3199670845</ModelHash>
+                <Position>
+                  <X>579.312317</X>
+                  <Y>2789.83105</Y>
+                  <Z>47.996788</Z>
+                </Position>
+                <Heading>156</Heading>
+                <IsManuallyCreated>true</IsManuallyCreated>
+                <PropHeading>156</PropHeading>
+              </SecurityCamera>
+              <SecurityCamera>
+                <Name>CCTV4</Name>
+                <ModelHash>3199670845</ModelHash>
+                <Position>
+                  <X>620.587646</X>
+                  <Y>2805.31543</Y>
+                  <Z>46.9640961</Z>
+                </Position>
+                <Heading>-84.939003</Heading>
+                <IsManuallyCreated>true</IsManuallyCreated>
+                <PropHeading>-84.939003</PropHeading>
+              </SecurityCamera>
+              <SecurityCamera>
+                <Name>CCTV5</Name>
+                <ModelHash>3199670845</ModelHash>
+                <Position>
+                  <X>618.096802</X>
+                  <Y>2784.54834</Y>
+                  <Z>47.988842</Z>
+                </Position>
+                <Heading>-174.959686</Heading>
+                <IsManuallyCreated>true</IsManuallyCreated>
+                <PropHeading>-174.959686</PropHeading>
+              </SecurityCamera>
+            </SecurityCameras>
+            <RestrictedAreaType>ImpoundLot</RestrictedAreaType>
+            <IsCivilianReactableRestricted>false</IsCivilianReactableRestricted>
+            <IsZRestricted>false</IsZRestricted>
+            <ZRestrictionMin>0</ZRestrictionMin>
+            <ZRestrictionMax>0</ZRestrictionMax>
+          </RestrictedArea>
+        </RestrictedAreasList>
+        <VanillaRestrictedAreas />
+      </RestrictedAreas>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <MenuID />
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>false</CanInteractWhenWanted>
+      <ShowsMarker>true</ShowsMarker>
+      <PossiblePedSpawns>
+		<ConditionalLocation xsi:type="SecurityConditionalLocation">
+          <Location>
+            <X>607.215</X>
+            <Y>2800.025</Y>
+            <Z>41.89534</Z>
+          </Location>
+          <Heading>49.37493</Heading>
+          <Percentage>100</Percentage>
+          <AssociationID>BOBCAT</AssociationID>
+          <RequiredPedGroup>ArmedSecurity</RequiredPedGroup>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard</TaskRequirements>
+          <ForcedScenarios>
+            <string>WORLD_HUMAN_SECURITY_SHINE_TORCH</string>
+          </ForcedScenarios>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>20</MinHourSpawn>
+          <MaxHourSpawn>4</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>true</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>true</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+        </ConditionalLocation>
+		<ConditionalLocation xsi:type="SecurityConditionalLocation">
+          <Location>
+            <X>578.7809</X>
+            <Y>2791.341</Y>
+            <Z>42.23911</Z>
+          </Location>
+          <Heading>8.07764</Heading>
+          <Percentage>100</Percentage>
+          <AssociationID>BOBCAT</AssociationID>
+          <RequiredPedGroup>ArmedSecurity</RequiredPedGroup>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard</TaskRequirements>
+          <ForcedScenarios>
+            <string>WORLD_HUMAN_SECURITY_SHINE_TORCH</string>
+          </ForcedScenarios>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>20</MinHourSpawn>
+          <MaxHourSpawn>4</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>true</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>true</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+        </ConditionalLocation>
+      </PossiblePedSpawns>
+      <PossibleVehicleSpawns>
+        <ConditionalLocation xsi:type="SecurityConditionalLocation">
+          <Location>
+            <X>626.2515</X>
+            <Y>2811.728</Y>
+            <Z>41.99433</Z>
+          </Location>
+          <Heading>274.9584</Heading>
+          <Percentage>100</Percentage>
+          <AssociationID>BOBCAT</AssociationID>
+          <RequiredPedGroup>ArmedSecurity</RequiredPedGroup>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>20</MinHourSpawn>
+          <MaxHourSpawn>4</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>true</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+        </ConditionalLocation>
+      </PossibleVehicleSpawns>
+	  <VendorLocations />
+      <ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>BarPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>20</VendorMeleePercent>
+      <VendorSidearmPercent>5</VendorSidearmPercent>
+      <VendorLongGunPercent>2</VendorLongGunPercent>
+      <VendorMoneyMin>-1</VendorMoneyMin>
+      <VendorMoneyMax>-1</VendorMoneyMax>
+      <VendorFightPercentage>-1</VendorFightPercentage>
+      <VendorCallPolicePercentage>-1</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>-1</VendorFightPolicePercentage>
+      <VendorCowerPercentage>-1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>-1</VendorSurrenderPercentage>
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations />
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>0</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>0</MaxPriceRefreshHours>
+      <MinRestockHours>0</MinRestockHours>
+      <MaxRestockHours>0</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+    </Morgue>  
+  </Morgues>
+  <SportingGoodsStores />
+  <Airports />
+  <IllicitMarketplaces>
+    <IllicitMarketplace>
+      <Name>Shady Pharmacist 1</Name>
+      <FullName>Shady Pharmacist</FullName>
+      <Description>Shady Pharmacist</Description>
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>true</IsBlipEnabled>
+      <MapIcon>51</MapIcon>
+      <MapIconColorString>Red</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>341.6285</X>
+        <Y>-1683.228</Y>
+        <Z>27.29782</Z>
+      </EntrancePosition>
+      <EntranceHeading>180.8947</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>-1</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
+      <ShowsOnTaxi>true</ShowsOnTaxi>
+      <TypeName>Shady Pharmacist</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>225</ActivateDistance>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <MenuID>PharmacistMenu1</MenuID>
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>false</CanInteractWhenWanted>
+      <ShowsMarker>true</ShowsMarker>
+      <VendorLocations>
+        <SpawnPlace>
+          <Position>
+            <X>341.6285</X>
+            <Y>-1683.228</Y>
+            <Z>27.29782</Z>
+          </Position>
+          <Heading>180.8947</Heading>
+        </SpawnPlace>
+      </VendorLocations>
+      <ExtaVendorSpawnPercentage>25</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>IllicitPharmacyPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>55</VendorMeleePercent>
+      <VendorSidearmPercent>25</VendorSidearmPercent>
+      <VendorLongGunPercent>5</VendorLongGunPercent>
+      <VendorMoneyMin>5</VendorMoneyMin>
+      <VendorMoneyMax>550</VendorMoneyMax>
+      <VendorFightPercentage>35</VendorFightPercentage>
+      <VendorCallPolicePercentage>0</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>0</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>35</VendorFightPolicePercentage>
+      <VendorCowerPercentage>1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>5</VendorSurrenderPercentage>///lsrp
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations />
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>12</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>24</MaxPriceRefreshHours>
+      <MinRestockHours>12</MinRestockHours>
+      <MaxRestockHours>24</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>500</RacketeeringAmountMin>
+      <RacketeeringAmountMax>1000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+      <PurchasePrice>0</PurchasePrice>
+      <PayoutFrequency>7</PayoutFrequency>
+      <PayoutMin>0</PayoutMin>
+      <PayoutMax>0</PayoutMax>
+      <SalesPrice>0</SalesPrice>
+      <MaxSalesPrice>0</MaxSalesPrice>
+      <IsOwnable>false</IsOwnable>
+      <GrowthPercentage>20</GrowthPercentage>
+      <AppearPercentages>
+        <AppearPercentage>
+          <Hour>24</Hour>
+          <Percentage>100</Percentage>
+        </AppearPercentage>
+      </AppearPercentages>
+    </IllicitMarketplace>  
+    <IllicitMarketplace>
+      <Name>Shady Pharmacist 2</Name>
+      <FullName>Shady Pharmacist</FullName>
+      <Description>Shady Pharmacist</Description>
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>true</IsBlipEnabled>
+      <MapIcon>51</MapIcon>
+      <MapIconColorString>Red</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>1169.395</X>
+        <Y>-1574.599</Y>
+        <Z>34.69699</Z>
+      </EntrancePosition>
+      <EntranceHeading>279.2871</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>-1</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
+      <ShowsOnTaxi>true</ShowsOnTaxi>
+      <TypeName>Shady Pharmacist</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>225</ActivateDistance>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <MenuID>PharmacistMenu1</MenuID>
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>false</CanInteractWhenWanted>
+      <ShowsMarker>true</ShowsMarker>
+      <VendorLocations>
+        <SpawnPlace>
+          <Position>
+            <X>1169.395</X>
+            <Y>-1574.599</Y>
+            <Z>34.69699</Z>
+          </Position>
+          <Heading>279.2871</Heading>
+        </SpawnPlace>
+      </VendorLocations>
+      <ExtaVendorSpawnPercentage>25</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>IllicitPharmacyPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>55</VendorMeleePercent>
+      <VendorSidearmPercent>25</VendorSidearmPercent>
+      <VendorLongGunPercent>5</VendorLongGunPercent>
+      <VendorMoneyMin>5</VendorMoneyMin>
+      <VendorMoneyMax>550</VendorMoneyMax>
+      <VendorFightPercentage>35</VendorFightPercentage>
+      <VendorCallPolicePercentage>0</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>0</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>35</VendorFightPolicePercentage>
+      <VendorCowerPercentage>1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>5</VendorSurrenderPercentage>///lsrp
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations />
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>12</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>24</MaxPriceRefreshHours>
+      <MinRestockHours>12</MinRestockHours>
+      <MaxRestockHours>24</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>500</RacketeeringAmountMin>
+      <RacketeeringAmountMax>1000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+      <PurchasePrice>0</PurchasePrice>
+      <PayoutFrequency>7</PayoutFrequency>
+      <PayoutMin>0</PayoutMin>
+      <PayoutMax>0</PayoutMax>
+      <SalesPrice>0</SalesPrice>
+      <MaxSalesPrice>0</MaxSalesPrice>
+      <IsOwnable>false</IsOwnable>
+      <GrowthPercentage>20</GrowthPercentage>
+      <AppearPercentages>
+        <AppearPercentage>
+          <Hour>24</Hour>
+          <Percentage>100</Percentage>
+        </AppearPercentage>
+      </AppearPercentages>
+    </IllicitMarketplace>  
+    <IllicitMarketplace>
+      <Name>Shady Pharmacist 3</Name>
+      <FullName>Shady Pharmacist</FullName>
+      <Description>Shady Pharmacist</Description>
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>true</IsBlipEnabled>
+      <MapIcon>51</MapIcon>
+      <MapIconColorString>Red</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>321.8551</X>
+        <Y>-558.3829</Y>
+        <Z>28.74378</Z>
+      </EntrancePosition>
+      <EntranceHeading>27.62527</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>-1</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
+      <ShowsOnTaxi>true</ShowsOnTaxi>
+      <TypeName>Shady Pharmacist</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>225</ActivateDistance>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <MenuID>PharmacistMenu1</MenuID>
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>false</CanInteractWhenWanted>
+      <ShowsMarker>true</ShowsMarker>
+      <VendorLocations>
+        <SpawnPlace>
+          <Position>
+            <X>321.8551</X>
+            <Y>-558.3829</Y>
+            <Z>28.74378</Z>
+          </Position>
+          <Heading>27.62527</Heading>
+        </SpawnPlace>
+      </VendorLocations>
+      <ExtaVendorSpawnPercentage>25</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>IllicitPharmacyPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>55</VendorMeleePercent>
+      <VendorSidearmPercent>25</VendorSidearmPercent>
+      <VendorLongGunPercent>5</VendorLongGunPercent>
+      <VendorMoneyMin>5</VendorMoneyMin>
+      <VendorMoneyMax>550</VendorMoneyMax>
+      <VendorFightPercentage>35</VendorFightPercentage>
+      <VendorCallPolicePercentage>0</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>0</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>35</VendorFightPolicePercentage>
+      <VendorCowerPercentage>1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>5</VendorSurrenderPercentage>///lsrp
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations />
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>12</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>24</MaxPriceRefreshHours>
+      <MinRestockHours>12</MinRestockHours>
+      <MaxRestockHours>24</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>500</RacketeeringAmountMin>
+      <RacketeeringAmountMax>1000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+      <PurchasePrice>0</PurchasePrice>
+      <PayoutFrequency>7</PayoutFrequency>
+      <PayoutMin>0</PayoutMin>
+      <PayoutMax>0</PayoutMax>
+      <SalesPrice>0</SalesPrice>
+      <MaxSalesPrice>0</MaxSalesPrice>
+      <IsOwnable>false</IsOwnable>
+      <GrowthPercentage>20</GrowthPercentage>
+      <AppearPercentages>
+        <AppearPercentage>
+          <Hour>24</Hour>
+          <Percentage>100</Percentage>
+        </AppearPercentage>
+      </AppearPercentages>
+    </IllicitMarketplace>  
+  </IllicitMarketplaces>
+  <BlankLocations />
+  <MilitaryBases />
+  <ExteriorCraftingLocations />
+  <BarberShops />
+  <PlasticSurgeryClinics />
+  <TattooShops />
+  <RaceMeetups />
+  <ATMMachines />
+  <GasPumps />
+  <CashRegisters />
+  <StoredSpawns />
+  <PedCustomizerLocation />
+</PossibleLocations>

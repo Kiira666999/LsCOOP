@@ -1,0 +1,323 @@
+<PossibleItems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FlashlightItems />
+  <CellphoneItems />
+  <ModItems />
+  <ShovelItems>
+    <ShovelItem>
+      <Name>Filament Spool</Name>
+      <Description>Filament used in 3D printers</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>xm3_prop_xm3_spool_copp_01a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Steel Rod</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_cs_bar</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Aluminum Sheet</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID />
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Aluminum Billet</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>prop_cs_bar</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Small Parts Kit</Name>
+      <Description>Contains: springs, pins, screws and trigger components</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>ch_prop_toolbox_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Polymer Resin</Name>
+      <Description>Premium plastic</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>xm3_prop_xm3_lsd_bottle_02a</ModelItemID>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Light Weapon Blueprint</Name>
+      <Description>Do it yourself!</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_blueprints_01_s</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Medium Weapon Blueprint</Name>
+      <Description>Do it yourself!</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_blueprints_01_s</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Heavy Weapon Blueprint</Name>
+      <Description>Do it yourself!</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_blueprints_01_s</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Advanced Weapon Blueprint</Name>
+      <Description>Do it yourself!</Description>
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>p_blueprints_01_s</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Light Gun Frame</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>reh_prop_reh_sp_receiver_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Medium Gun Frame</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>reh_prop_reh_sp_receiver_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Heavy Gun Frame</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>reh_prop_reh_sp_receiver_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Light Gun Barrel</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>w_at_sr_barrel_1</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Medium Gun Barrel</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>w_at_sr_barrel_1</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Heavy Gun Barrel</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>w_at_sr_barrel_1</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Advanced Gun Frame</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>reh_prop_reh_sp_receiver_01a</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+	<ShovelItem>
+      <Name>Advanced Gun Barrel</Name>
+      <Description />
+      <ItemType>Equipment</ItemType>
+      <ItemSubType>Misc</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <ModelItemID>w_at_sr_barrel_1</ModelItemID>
+      <IsPossessionIllicit>true</IsPossessionIllicit>
+      <IsPublicUseIllegal>true</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+    </ShovelItem>
+  </ShovelItems>
+  <UmbrellaItems />
+  <LicensePlateItems />
+  <LighterItems />
+  <ScrewdriverItems />
+  <TapeItems />
+  <DrillItems />
+  <HammerItems />
+  <PliersItems />
+  <BongItems />
+  <PipeItems />
+  <RollingPapersItems />
+  <FoodItems />
+  <SmokeItems />
+  <PipeSmokeItems />
+  <DrinkItems />
+  <InhaleItems />
+  <IngestItems />
+  <InjectItems />
+  <HotelStayItems />
+  <WeaponItems />
+  <VehicleItems />
+  <BinocularsItems />
+  <RadioItems />
+  <RadarDetectorItems />
+  <ValuableItems />
+  <EquipmentItems />
+  <BodyArmorItems />
+  <HardwareItems />
+</PossibleItems>

@@ -1,0 +1,456 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ArrayOfCraftableItem>
+  <CraftableItem>
+    <Name>Heroin</Name>
+    <Resultant>Heroin</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char01</AnimationName>
+    <ResultantAmount>12</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Heroin</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Syringe</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Morphine</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>3000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Chemistry Station</string>
+    </CraftingFlags>
+  </CraftableItem>///lsrp
+  <CraftableItem>
+    <Name>Acid</Name>
+    <Resultant>LSD</Resultant>
+    <AnimationDictionary>anim@scripted@npc@freemode@ig1_cook_lab@acid_sheets@</AnimationDictionary>
+    <AnimationName>idle_04</AnimationName>
+    <ResultantAmount>20</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Acid</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Lysergic acid</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Blotter Paper</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>800</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Chemistry Station</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>///lsrp
+    <Name>MDMA</Name>
+    <Resultant>MDMA</Resultant>
+    <AnimationDictionary>anim@scripted@npc@freemode@ig1_cook_lab@acid_sheets@</AnimationDictionary>
+    <AnimationName>idle_04</AnimationName>
+    <ResultantAmount>10</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>MDMA</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Chemicals</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Smoke Shop Rolling Papers</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>800</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Chemistry Station</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Ecstasy</Name>
+    <Resultant>Ecstasy</Resultant>
+    <AnimationDictionary>anim@scripted@npc@freemode@ig1_cook_lab@acid_sheets@</AnimationDictionary>
+    <AnimationName>idle_04</AnimationName>
+    <ResultantAmount>10</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Ecstasy</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>MDMA</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Vitamin Powder</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>800</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Chemistry Station</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Sow Seed</Name>///lsrp
+    <Resultant>Harvested Marijuana</Resultant>
+    <AnimationDictionary>amb@world_human_gardener_plant@female@idle_a</AnimationDictionary>
+    <AnimationName>idle_a_female</AnimationName>
+    <ResultantAmount>10</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Seed Sowing</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cannabis Seed</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Fertiliser</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Bottle of Raine Water</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>1000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Plant Pot</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Weed Drying</Name>
+    <Resultant>Dried Marijuana</Resultant>
+    <AnimationDictionary>anim@amb@business@weed@weed_inspecting_high_dry@</AnimationDictionary>
+    <AnimationName>weed_inspecting_high_idle_01_inspector</AnimationName>
+    <ResultantAmount>10</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Weed Drying</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Harvested Marijuana</IngredientName>
+        <Quantity>10</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>1000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Drying Rack</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Weed Packaging</Name>
+    <Resultant>Marijuana</Resultant>
+    <AnimationDictionary>mp_safehouselost@</AnimationDictionary>
+    <AnimationName>package_dropoff</AnimationName>
+    <ResultantAmount>10</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Packaging</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Dried Marijuana</IngredientName>
+        <Quantity>10</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Baggie</IngredientName>
+        <Quantity>10</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>1000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Packaging Station</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Coca Leaf Drying</Name>
+    <Resultant>Dried Coca Leaf</Resultant>
+    <AnimationDictionary>mp_safehouselost@</AnimationDictionary>
+    <AnimationName>package_dropoff</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Coca Leaf Drying</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Coca Leaves</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>1000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Coca Leaf Drying Rack</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Coca Leaf Mixing Station</Name>
+    <Resultant>Processed Coca Leaf</Resultant>
+    <AnimationDictionary>mp_safehouselost@</AnimationDictionary>
+    <AnimationName>package_dropoff</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Coca Leaf Mixing</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Dried Coca Leaf</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Gasoline</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>1000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Coca Leaf Mixing Station</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Refined Cocaine</Name>
+    <Resultant>Refined Cocaine</Resultant>
+    <AnimationDictionary>mp_safehouselost@</AnimationDictionary>
+    <AnimationName>package_dropoff</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Cocaine Refining</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Processed Coca Leaf</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>1000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Cocaine Refining Station</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Cocaine Mixing Station</Name>
+    <Resultant>Mixed Cocaine</Resultant>
+    <AnimationDictionary>anim@amb@business@coc@coc_unpack_cut@</AnimationDictionary>
+    <AnimationName>fullcut_cycle_v3_cokecutter</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Cocaine Mixing</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Refined Cocaine</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Baking Soda</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>1000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Cocaine Mixing Station</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Cocaine Press</Name>///lsrp
+    <Resultant>Cocaine</Resultant>
+    <AnimationDictionary>anim@mp_radio@garage@high</AnimationDictionary>
+    <AnimationName>button_press</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Cocaine Press</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Mixed Cocaine</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>1000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Cocaine Press</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Bashed Coke</Name>
+    <Resultant>Bashed Coke</Resultant>
+    <AnimationDictionary>anim@amb@business@coc@coc_unpack_cut@</AnimationDictionary>
+    <AnimationName>fullcut_cycle_v6_cokecutter</AnimationName>
+    <ResultantAmount>2</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Cocaine Cutting</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cocaine</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Baking Soda</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>700</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Cocaine Cutting</string>
+      <string>Traphouse Stove</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Cook Meth</Name>
+    <Resultant>Cooked Meth</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_monitoring_cooking@cooking@</AnimationDictionary>
+    <AnimationName>chemical_pour_long_cooker</AnimationName>
+    <ResultantAmount>30</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Meth Cooking</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Pseudoephedrine</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Acetone</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Ammonia</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Red Phosphorus</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Lithium Battery</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Sodium Benzoate</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Hydrogen Peroxide</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>3000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Meth Cooker</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>///lsrp
+    <Name>Frozen Meth</Name>
+    <Resultant>Frozen Meth</Resultant>
+    <AnimationDictionary>mp_safehouselost@</AnimationDictionary>
+    <AnimationName>package_dropoff</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Freezer</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Cooked Meth</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>3000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Freezer</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>///lsrp
+    <Name>Break Meth</Name>
+    <Resultant>Meth Shards</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char02</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Break Meth</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Frozen Meth</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>3000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Meth Station</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>///lsrp
+    <Name>Package Meth</Name>
+    <Resultant>Methamphetamine</Resultant>
+    <AnimationDictionary>anim@amb@business@meth@meth_smash_weight_check@</AnimationDictionary>
+    <AnimationName>break_weigh_v2_char02</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Break Meth</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Meth Shards</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Baggie</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>3000</Cooldown>
+    <CrimeId>DealingDrugs</CrimeId>
+    <CraftingFlags>
+      <string>Meth Packaging Station</string>
+    </CraftingFlags>
+  </CraftableItem>
+</ArrayOfCraftableItem>

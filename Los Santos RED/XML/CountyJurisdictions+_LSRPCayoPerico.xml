@@ -1,0 +1,9 @@
+<ArrayOfCountyJurisdiction xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CountyJurisdiction>
+    <CountyID>IsHeist</CountyID>
+    <AgencyInitials>CPPD</AgencyInitials>
+    <Priority>0</Priority>
+    <AmbientSpawnChance>100</AmbientSpawnChance>
+    <WantedSpawnChance>100</WantedSpawnChance>
+  </CountyJurisdiction>
+</ArrayOfCountyJurisdiction>

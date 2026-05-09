@@ -1,0 +1,1267 @@
+<PlateTypeManager xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PlateTypeList>
+    <PlateType>
+      <Index>0</Index>
+      <Description>San Andreas</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>100</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>1</Index>
+      <Description>San Andreas Yellow on Black</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>2</Index>
+      <Description>San Andreas Yellow on Blue</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>3</Index>
+      <Description>San Andreas Classic</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>4</Index>
+      <Description>San Andreas Exempt</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>false</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>5</Index>
+      <Description>North Yankton Old</Description>
+      <StateID>NorthYankton</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123  ABC</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>6</Index>
+      <Description>eCola</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>7</Index>
+      <Description>San Andreas Lake Washo</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>8</Index>
+      <Description>Liberty</Description>
+      <StateID>Liberty</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>true</DisablePrefix>
+      <InStateSpawnChance>3</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>9</Index>
+      <Description>LS Car Meet</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>10</Index>
+      <Description>LS Panic</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>11</Index>
+      <Description>LS Pounders</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>12</Index>
+      <Description>Sprunkn</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12ABC345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>true</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>13</Index>
+      <Description>Pimahito</Description>
+      <StateID>Pimahito</StateID>
+      <SpawnChance>8</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  1DE</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>14</Index>
+      <Description>Columbia</Description>
+      <StateID>Columbia</StateID>
+      <SpawnChance>4</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC12345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>15</Index>
+      <Description>US Gov</Description>
+      <StateID>US Gov</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>false</CanOverwrite>
+      <SerialFormat>1234A</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>true</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>16</Index>
+      <Description>Liberty</Description>
+      <StateID>Liberty</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>true</DisablePrefix>
+      <InStateSpawnChance>75</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>17</Index>
+      <Description>Alderney</Description>
+      <StateID>Alderney</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>A12  BCD</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>true</DisablePrefix>
+      <InStateSpawnChance>100</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>18</Index>
+      <Description>Leonida</Description>
+      <StateID>Leonida</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>A12  BCD</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>true</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>19</Index>
+      <Description>Liberty Police</Description>
+      <StateID>Liberty</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat> 123456 </SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>true</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>20</Index>
+      <Description>North Yankton</Description>
+      <StateID>NorthYankton</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123  ABC</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>true</DisablePrefix>
+      <InStateSpawnChance>100</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>21</Index>
+      <Description>New Austin</Description>
+      <StateID>New Austin</StateID>
+      <SpawnChance>4</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>22</Index>
+      <Description>Ambarino</Description>
+      <StateID>Ambarino</StateID>
+      <SpawnChance>6</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  D12</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>23</Index>
+      <Description>Robada</Description>
+      <StateID>Robada</StateID>
+      <SpawnChance>8</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>12A  345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>24</Index>
+      <Description>Leonida County</Description>
+      <StateID>Leonida</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat> 123456 </SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>true</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>25</Index>
+      <Description>Leonida City</Description>
+      <StateID>Leonida</StateID>
+      <SpawnChance>0</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat> 123456 </SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>true</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>26</Index>
+      <Description>South Yankton</Description>
+      <StateID>South Yankton</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1AB  345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>27</Index>
+      <Description>Lemoyne</Description>
+      <StateID>Lemoyne</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123  ABC</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>28</Index>
+      <Description>Willamette</Description>
+      <StateID>Willamette</StateID>
+      <SpawnChance>6</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123  ABC</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>29</Index>
+      <Description>Nacimiento</Description>
+      <StateID>Nacimiento</StateID>
+      <SpawnChance>6</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>30</Index>
+      <Description>Jolliet</Description>
+      <StateID>Jolliet</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>AB 12345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>31</Index>
+      <Description>Nez Perce</Description>
+      <StateID>Nez Perce</StateID>
+      <SpawnChance>4</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1A B2345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>32</Index>
+      <Description>Noochee</Description>
+      <StateID>Noochee</StateID>
+      <SpawnChance>4</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>A12  3BC</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>33</Index>
+      <Description>Shoshone</Description>
+      <StateID>Shoshone</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1 23456A</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>34</Index>
+      <Description>Liberty Exculpate</Description>
+      <StateID>Liberty</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>A1B 23C4</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>true</DisablePrefix>
+      <InStateSpawnChance>25</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>35</Index>
+      <Description>Alderney Municipal</Description>
+      <StateID>Alderney</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>false</CanOverwrite>
+      <SerialFormat>123456AB</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>36</Index>
+      <Description>Keweenawan</Description>
+      <StateID>Keweenawan</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC-1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>37</Index>
+      <Description>Meskousing</Description>
+      <StateID>Meskousing</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1 23456A</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>38</Index>
+      <Description>Radon</Description>
+      <StateID>Radon</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>39</Index>
+      <Description>Saybrook</Description>
+      <StateID>Saybrook</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>AB 12345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>40</Index>
+      <Description>Lenape</Description>
+      <StateID>Lenape</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat> 123456 </SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>41</Index>
+      <Description>Chickatawbut</Description>
+      <StateID>Chickatawbut</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123  AB4</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>42</Index>
+      <Description>Platte</Description>
+      <StateID>Platte</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123  AB4</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>43</Index>
+      <Description>South Cromwell</Description>
+      <StateID>South Cromwell</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123  ABC</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>44</Index>
+      <Description>North Cromwell</Description>
+      <StateID>North Cromwell</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>45</Index>
+      <Description>West Powhatan</Description>
+      <StateID>West Powhatan</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123 345A</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>46</Index>
+      <Description>Powhatan</Description>
+      <StateID>Powhatan</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123 345A</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>47</Index>
+      <Description>Champlain</Description>
+      <StateID>Champlain</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>48</Index>
+      <Description>Patmo Island</Description>
+      <StateID>Patmo Island</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1AB  234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>49</Index>
+      <Description>Gnadenhutten</Description>
+      <StateID>Gnadenhutten</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>50</Index>
+      <Description>Mackinac</Description>
+      <StateID>Mackinac</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>51</Index>
+      <Description>Mauna Loa</Description>
+      <StateID>Mauna Loa</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>52</Index>
+      <Description>Aleutia</Description>
+      <StateID>Aleutia</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>53</Index>
+      <Description>Quapaw</Description>
+      <StateID>Quapaw</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  12D</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>54</Index>
+      <Description>Gloriana</Description>
+      <StateID>Gloriana</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>55</Index>
+      <Description>Tippecanoe</Description>
+      <StateID>Tippecanoe</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat> 123ABC </SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>56</Index>
+      <Description>West Elizabth</Description>
+      <StateID>West Elizabth</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1234ABCD</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>57</Index>
+      <Description>Franklin</Description>
+      <StateID>Franklin</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123 ABCD</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>58</Index>
+      <Description>Knobs</Description>
+      <StateID>Knobs</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>  123ABC</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>59</Index>
+      <Description>Perche</Description>
+      <StateID>Perche</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>  123 AB</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>60</Index>
+      <Description>Anneland</Description>
+      <StateID>Anneland</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1AB23455</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>61</Index>
+      <Description>Jackson</Description>
+      <StateID>Jackson</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>62</Index>
+      <Description>Squaretop</Description>
+      <StateID>Squaretop</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1A  2345</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>63</Index>
+      <Description>Squaretop Old</Description>
+      <StateID>Squaretop Old</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1  2345A</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>64</Index>
+      <Description>New Hanover</Description>
+      <StateID>New Hanover</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>65</Index>
+      <Description>Putnam</Description>
+      <StateID>Putnam</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>66</Index>
+      <Description>Pascagoula</Description>
+      <StateID>Pascagoula</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>67</Index>
+      <Description>Coosa</Description>
+      <StateID>Coosa</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1A2345B6</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>68</Index>
+      <Description>New Cornwall</Description>
+      <StateID>New Cornwall</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123 4567</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>69</Index>
+      <Description>Columbia, DW</Description>
+      <StateID>Columbia, DW</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>AB  1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>70</Index>
+      <Description>San Andreas Disabled</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>AB123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>2</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>71</Index>
+      <Description>San Andreas Motorcycle</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1A234567</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>true</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>72</Index>
+      <Description>San Andreas Motorcycle Alt</Description>
+      <StateID>SanAndreas</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1A234567</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>true</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>73</Index>
+      <Description>Gloriana Legacy</Description>
+      <StateID>Gloriana</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC   D1</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>74</Index>
+      <Description>Gloriana Legacy Motorcycle</Description>
+      <StateID>Gloriana</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC   D1</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>true</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>75</Index>
+      <Description>Jackson Older</Description>
+      <StateID>Jackson</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>76</Index>
+      <Description>New Austin Black</Description>
+      <StateID>New Austin</StateID>
+      <SpawnChance>4</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>77</Index>
+      <Description>Noochee Alt</Description>
+      <StateID>Noochee</StateID>
+      <SpawnChance>4</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>   1234A</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>78</Index>
+      <Description>Putnam Older</Description>
+      <StateID>Putnam</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>79</Index>
+      <Description>Shoshone Older</Description>
+      <StateID>Shoshone</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>1 23456A</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>80</Index>
+      <Description>Athabasca</Description>
+      <StateID>Athabasca</StateID>
+      <SpawnChance>3</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123  ABC</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>81</Index>
+      <Description>British Washington</Description>
+      <StateID>British Washington</StateID>
+      <SpawnChance>3</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>AB1  23C</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>82</Index>
+      <Description>Victoria 01</Description>
+      <StateID>Victoria</StateID>
+      <SpawnChance>3</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>83</Index>
+      <Description>Victoria 02</Description>
+      <StateID>Victoria</StateID>
+      <SpawnChance>3</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC 1234</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>84</Index>
+      <Description>Saguenay</Description>
+      <StateID>Saguenay</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  12D</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>85</Index>
+      <Description>Prince Albert Island</Description>
+      <StateID>Prince Albert Island</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>123  ABC</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>86</Index>
+      <Description>Superior</Description>
+      <StateID>Superior</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABCD 123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>87</Index>
+      <Description>Nova Francia</Description>
+      <StateID>Nova Francia</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>88</Index>
+      <Description>Newstolenland and Barcelos</Description>
+      <StateID>Newstolenland and Barcelos</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>89</Index>
+      <Description>New Wolfsburg</Description>
+      <StateID>New Wolfsburg</StateID>
+      <SpawnChance>2</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>90</Index>
+      <Description>Assiniboia</Description>
+      <StateID>Assiniboia</StateID>
+      <SpawnChance>3</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>ABC  123</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>91</Index>
+      <Description>Tintina</Description>
+      <StateID>Tintina</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat>   ABC12</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>92</Index>
+      <Description>Ungava</Description>
+      <StateID>Ungava</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat> 123 456</SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+    <PlateType>
+      <Index>93</Index>
+      <Description>Denendeh Subdivision</Description>
+      <StateID>Denendeh Subdivision</StateID>
+      <SpawnChance>1</SpawnChance>
+      <CanOverwrite>true</CanOverwrite>
+      <SerialFormat> 123456 </SerialFormat>
+      <Order>0</Order>
+      <DisablePrefix>false</DisablePrefix>
+      <InStateSpawnChance>0</InStateSpawnChance>
+      <IsMotorcyclePlate>false</IsMotorcyclePlate>
+      <AllowVanity>false</AllowVanity>
+    </PlateType>
+  </PlateTypeList>
+  <VanityPlates>
+    <string>AZZ KIKR</string>
+    <string>STARK 4</string>
+    <string>OUTATIME</string>
+    <string>MUF DVR</string>
+    <string>NRVOUS</string>
+    <string>PSY WGN</string>
+    <string>SOUTHPAW</string>
+    <string>UZI 4U</string>
+    <string>DEV IL</string>
+    <string>THX 138</string>
+    <string>D-FENS</string>
+    <string>ECTO-1</string>
+    <string>THE CAPN</string>
+    <string>18A 4RE</string>
+    <string>LWYRUP</string>
+    <string>ASSMAN</string>
+    <string>WEIRDO</string>
+    <string>PLNCRAZY</string>
+    <string>WDRFULL</string>
+    <string>YOU FOOL</string>
+    <string>RUB1OUT</string>
+    <string>ID8MOMS</string>
+    <string>ANUSTART</string>
+    <string>FL4TOUT</string>
+    <string>NVRMYND</string>
+    <string>LEDFOOT</string>
+    <string>ECTO 1A</string>
+    <string>KITT</string>
+    <string>RNO 263</string>
+    <string>LYN 274</string>
+    <string>BAN ONE</string>
+    <string>BDR529</string>
+    <string>CQB241</string>
+    <string>STYNCLSY</string>
+    <string>FCK IT</string>
+    <string>ORP 967</string>
+    <string>NTGUILTY</string>
+    <string>GRAYMTR</string>
+    <string>PLAYUH</string>
+  </VanityPlates>
+</PlateTypeManager>

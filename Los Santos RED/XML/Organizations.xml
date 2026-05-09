@@ -1,0 +1,187 @@
+<PossibleOrganizations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <GeneralOrganizations>
+    <Organization>
+      <ID>VEHEXP</ID>
+      <FullName>Vehicle Exports</FullName>
+      <ShortName>Vehicle Exports</ShortName>
+      <MemberName>Exporter</MemberName>
+      <Description />
+      <BannerImagePath />
+      <ContactName>Vehicle Exports</ContactName>
+      <ColorPrefix>~w~</ColorPrefix>
+      <ColorString>White</ColorString>
+      <LicensePlatePrefix />
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID />
+      <LessLethalWeaponsID />
+      <SideArmsID />
+      <LongGunsID />
+      <VehiclesID />
+    </Organization>
+    <Organization>
+      <ID>UNDRGUN</ID>
+      <FullName>Underground Guns</FullName>
+      <ShortName>Underground Guns</ShortName>
+      <MemberName>Gun Dealer</MemberName>
+      <Description />
+      <BannerImagePath />
+      <ContactName>Underground Guns</ContactName>
+      <ColorPrefix>~r~</ColorPrefix>
+      <ColorString>Red</ColorString>
+      <LicensePlatePrefix />
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID />
+      <LessLethalWeaponsID />
+      <SideArmsID />
+      <LongGunsID />
+      <VehiclesID />
+    </Organization>
+    <Organization>
+      <ID>weazel</ID>
+      <FullName>Weazel News</FullName>
+      <ShortName>Weazel</ShortName>
+      <MemberName>Weazel Reporter</MemberName>
+      <Description>Reporting the Right News</Description>
+      <BannerImagePath />
+      <ColorPrefix>~r~</ColorPrefix>
+      <ColorString>Red</ColorString>
+      <LicensePlatePrefix>WN </LicensePlatePrefix>
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID>NewsPeds</PersonnelID>
+      <LessLethalWeaponsID />
+      <SideArmsID />
+      <LongGunsID />
+      <VehiclesID>WeazelVehicles</VehiclesID>
+    </Organization>
+  </GeneralOrganizations>
+  <TaxiFirms>
+    <TaxiFirm>
+      <ID>DTCAB</ID>
+      <FullName>Downtown Cab Co.</FullName>
+      <ShortName>Downtown Cab Co.</ShortName>
+      <MemberName>Cabbie</MemberName>
+      <Description>In transit since 1922</Description>
+      <BannerImagePath>stores\downtownvanilla.png</BannerImagePath>
+      <ContactName>Downtown Cab Co.</ContactName>
+      <ColorPrefix>~y~</ColorPrefix>
+      <ColorString>Yellow</ColorString>
+      <LicensePlatePrefix>DT </LicensePlatePrefix>
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID>TaxiDrivers</PersonnelID>
+      <LessLethalWeaponsID>MeleeWeapons</LessLethalWeaponsID>
+      <SideArmsID>TaxiSidearms</SideArmsID>
+      <LongGunsID>TaxiLongGuns</LongGunsID>
+      <VehiclesID>TaxiVehicles</VehiclesID>
+      <IsDefault>true</IsDefault>
+      <BaseFare>10</BaseFare>
+      <PricePerMile>5</PricePerMile>
+      <FastSpeedFee>20</FastSpeedFee>
+      <CrazySpeedFee>100</CrazySpeedFee>
+      <FightPercentage>35</FightPercentage>
+      <FightPolicePercentage>5</FightPolicePercentage>
+      <AlwaysFightPolicePercentage>1</AlwaysFightPolicePercentage>
+      <CallPolicePercentage>35</CallPolicePercentage>
+      <CallPoliceForSeriousCrimesPercentage>70</CallPoliceForSeriousCrimesPercentage>
+      <PercentageWithLongGuns>5</PercentageWithLongGuns>
+      <PercentageWithSidearms>30</PercentageWithSidearms>
+      <PercentageWithMelee>10</PercentageWithMelee>
+      <IsRideShare>false</IsRideShare>
+    </TaxiFirm>
+    <TaxiFirm>
+      <ID>rydeme</ID>
+      <FullName>RydeMe</FullName>
+      <ShortName>RydeMe</ShortName>
+      <MemberName>Contractor</MemberName>
+      <Description>Come on and RydeMe!</Description>
+      <BannerImagePath>stores\rydeme.png</BannerImagePath>
+      <ContactName>RydeMe Rideshare</ContactName>
+      <ColorPrefix>~r~</ColorPrefix>
+      <ColorString>Red</ColorString>
+      <LicensePlatePrefix />
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID>TaxiDrivers</PersonnelID>
+      <LessLethalWeaponsID>MeleeWeapons</LessLethalWeaponsID>
+      <SideArmsID>TaxiSidearms</SideArmsID>
+      <LongGunsID>TaxiLongGuns</LongGunsID>
+      <VehiclesID>RideshareVehicles</VehiclesID>
+      <IsDefault>true</IsDefault>
+      <BaseFare>12</BaseFare>
+      <PricePerMile>4</PricePerMile>
+      <FastSpeedFee>50</FastSpeedFee>
+      <CrazySpeedFee>300</CrazySpeedFee>
+      <FightPercentage>35</FightPercentage>
+      <FightPolicePercentage>5</FightPolicePercentage>
+      <AlwaysFightPolicePercentage>1</AlwaysFightPolicePercentage>
+      <CallPolicePercentage>35</CallPolicePercentage>
+      <CallPoliceForSeriousCrimesPercentage>70</CallPoliceForSeriousCrimesPercentage>
+      <PercentageWithLongGuns>5</PercentageWithLongGuns>
+      <PercentageWithSidearms>30</PercentageWithSidearms>
+      <PercentageWithMelee>10</PercentageWithMelee>
+      <IsRideShare>true</IsRideShare>
+    </TaxiFirm>
+    <TaxiFirm>
+      <ID>schlecht</ID>
+      <FullName>Schlecht</FullName>
+      <ShortName>Schlecht</ShortName>
+      <MemberName>Contractor</MemberName>
+      <Description>Service Beyond Reproach</Description>
+      <BannerImagePath>stores\schlecht.png</BannerImagePath>
+      <ContactName>Schlecht Rideshare</ContactName>
+      <ColorPrefix>~b~</ColorPrefix>
+      <ColorString>Black</ColorString>
+      <LicensePlatePrefix />
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID>RegularPeds</PersonnelID>
+      <LessLethalWeaponsID>MeleeWeapons</LessLethalWeaponsID>
+      <SideArmsID>TaxiSidearms</SideArmsID>
+      <LongGunsID>TaxiLongGuns</LongGunsID>
+      <VehiclesID>RideshareVehicles</VehiclesID>
+      <IsDefault>true</IsDefault>
+      <BaseFare>12</BaseFare>
+      <PricePerMile>4</PricePerMile>
+      <FastSpeedFee>50</FastSpeedFee>
+      <CrazySpeedFee>300</CrazySpeedFee>
+      <FightPercentage>35</FightPercentage>
+      <FightPolicePercentage>5</FightPolicePercentage>
+      <AlwaysFightPolicePercentage>1</AlwaysFightPolicePercentage>
+      <CallPolicePercentage>35</CallPolicePercentage>
+      <CallPoliceForSeriousCrimesPercentage>70</CallPoliceForSeriousCrimesPercentage>
+      <PercentageWithLongGuns>5</PercentageWithLongGuns>
+      <PercentageWithSidearms>30</PercentageWithSidearms>
+      <PercentageWithMelee>10</PercentageWithMelee>
+      <IsRideShare>true</IsRideShare>
+    </TaxiFirm>
+    <TaxiFirm>
+      <ID>knoway</ID>
+      <FullName>Knoway</FullName>
+      <ShortName>KnoWay</ShortName>
+      <MemberName>Robot</MemberName>
+      <Description>Let us take you for a ride</Description>
+      <BannerImagePath>stores\knoway.png</BannerImagePath>
+      <ContactName>KnoWay</ContactName>
+      <ColorPrefix>~w~</ColorPrefix>
+      <ColorString>White</ColorString>
+      <LicensePlatePrefix />
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID>knowaypeds</PersonnelID>
+      <LessLethalWeaponsID />
+      <SideArmsID />
+      <LongGunsID />
+      <VehiclesID>knowayvehicles</VehiclesID>
+      <IsDefault>true</IsDefault>
+      <BaseFare>12</BaseFare>
+      <PricePerMile>6</PricePerMile>
+      <FastSpeedFee>-1</FastSpeedFee>
+      <CrazySpeedFee>-1</CrazySpeedFee>
+      <FightPercentage>0</FightPercentage>
+      <FightPolicePercentage>0</FightPolicePercentage>
+      <AlwaysFightPolicePercentage>1</AlwaysFightPolicePercentage>
+      <CallPolicePercentage>100</CallPolicePercentage>
+      <CallPoliceForSeriousCrimesPercentage>100</CallPoliceForSeriousCrimesPercentage>
+      <PercentageWithLongGuns>5</PercentageWithLongGuns>
+      <PercentageWithSidearms>30</PercentageWithSidearms>
+      <PercentageWithMelee>10</PercentageWithMelee>
+      <IsRideShare>false</IsRideShare>
+    </TaxiFirm>
+  </TaxiFirms>
+</PossibleOrganizations>

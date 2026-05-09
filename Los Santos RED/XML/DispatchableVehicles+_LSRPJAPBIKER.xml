@@ -1,0 +1,320 @@
+<ArrayOfDispatchableVehicleGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DispatchableVehicleGroup>
+    <DispatchableVehicleGroupID>JapVehicles</DispatchableVehicleGroupID>
+    <DispatchableVehicles>
+      <DispatchableVehicle>
+        <ModelName>akuma</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>1</MaxOccupants>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>180</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>false</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+      </DispatchableVehicle>
+      <DispatchableVehicle>
+        <ModelName>bati</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>1</MaxOccupants>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>180</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>false</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+      </DispatchableVehicle>
+      <DispatchableVehicle>
+        <ModelName>carbonrs</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>1</MaxOccupants>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>180</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>false</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+      </DispatchableVehicle>
+      <DispatchableVehicle>
+        <ModelName>diablous2</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>1</MaxOccupants>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>180</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>true</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+      </DispatchableVehicle>
+      <DispatchableVehicle>
+        <ModelName>hakuchou</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>1</MaxOccupants>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>180</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>true</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+      </DispatchableVehicle>
+      <DispatchableVehicle>
+        <ModelName>lectro</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>1</MaxOccupants>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>180</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>true</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+      </DispatchableVehicle>
+      <DispatchableVehicle>
+        <ModelName>ruffian</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>1</MaxOccupants>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>180</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>false</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+      </DispatchableVehicle>
+      <DispatchableVehicle>
+        <ModelName>shinobi</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>1</MaxOccupants>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>180</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>true</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+      </DispatchableVehicle>
+      <DispatchableVehicle>
+        <ModelName>thrust</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>1</MaxOccupants>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>180</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>true</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+      </DispatchableVehicle>
+      <DispatchableVehicle>
+        <ModelName>Vader</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>1</MaxOccupants>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>180</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>false</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+      </DispatchableVehicle>
+      <DispatchableVehicle>
+        <ModelName>vindicator</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>1</MaxOccupants>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>180</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>true</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+      </DispatchableVehicle>
+      <DispatchableVehicle>
+        <ModelName>vortex</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>1</MaxOccupants>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>180</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>true</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+      </DispatchableVehicle>
+    </DispatchableVehicles>
+    <DispatchbleVehicleGroupType>Other</DispatchbleVehicleGroupType>
+  </DispatchableVehicleGroup>    
+</ArrayOfDispatchableVehicleGroup>

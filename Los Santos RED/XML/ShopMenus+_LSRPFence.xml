@@ -1,0 +1,1295 @@
+<ShopMenuTypes xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ShopMenuList>
+    <ShopMenu>
+      <ID>FenceMenu</ID>
+      <Name>Fence</Name>
+      <GroupName />
+      <Items>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Laptop</ModItemName>
+          <PurchasePrice>400</PurchasePrice>
+          <SalesPrice>300</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>100</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>250</MinSalesPrice>
+          <MaxSalesPrice>300</MaxSalesPrice>
+          <MinPurchasePrice>350</MinPurchasePrice>
+          <MaxPurchasePrice>400</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Old TV</ModItemName>
+          <PurchasePrice>245</PurchasePrice>
+          <SalesPrice>150</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>100</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>100</MinSalesPrice>
+          <MaxSalesPrice>150</MaxSalesPrice>
+          <MinPurchasePrice>200</MinPurchasePrice>
+          <MaxPurchasePrice>245</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Flatscreen TV</ModItemName>
+          <PurchasePrice>500</PurchasePrice>
+          <SalesPrice>500</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>100</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>400</MinSalesPrice>
+          <MaxSalesPrice>500</MaxSalesPrice>
+          <MinPurchasePrice>490</MinPurchasePrice>
+          <MaxPurchasePrice>500</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Silver Watch</ModItemName>
+          <PurchasePrice>200</PurchasePrice>
+          <SalesPrice>150</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>100</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>100</MinSalesPrice>
+          <MaxSalesPrice>150</MaxSalesPrice>
+          <MinPurchasePrice>190</MinPurchasePrice>
+          <MaxPurchasePrice>200</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Radio</ModItemName>
+          <PurchasePrice>80</PurchasePrice>
+          <SalesPrice>45</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>100</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>100</MinSalesPrice>
+          <MaxSalesPrice>150</MaxSalesPrice>
+          <MinPurchasePrice>40</MinPurchasePrice>
+          <MaxPurchasePrice>45</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Gold Chain</ModItemName>
+          <PurchasePrice>1000</PurchasePrice>
+          <SalesPrice>800</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>100</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>500</MinSalesPrice>
+          <MaxSalesPrice>700</MaxSalesPrice>
+          <MinPurchasePrice>900</MinPurchasePrice>
+          <MaxPurchasePrice>1000</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Silver Chain</ModItemName>
+          <PurchasePrice>300</PurchasePrice>
+          <SalesPrice>200</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>100</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>100</MinSalesPrice>
+          <MaxSalesPrice>200</MaxSalesPrice>
+          <MinPurchasePrice>280</MinPurchasePrice>
+          <MaxPurchasePrice>300</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Gold Watch</ModItemName>
+          <PurchasePrice>1500</PurchasePrice>
+          <SalesPrice>800</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1000</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>600</MinSalesPrice>
+          <MaxSalesPrice>800</MaxSalesPrice>
+          <MinPurchasePrice>1300</MinPurchasePrice>
+          <MaxPurchasePrice>1500</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>GASH Black Umbrella</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>1</MinSalesPrice>
+          <MaxSalesPrice>5</MaxSalesPrice>
+          <MinPurchasePrice>25</MinPurchasePrice>
+          <MaxPurchasePrice>55</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>TAG-HARD Flashlight</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>5</MinSalesPrice>
+          <MaxSalesPrice>10</MaxSalesPrice>
+          <MinPurchasePrice>110</MinPurchasePrice>
+          <MaxPurchasePrice>140</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Flint Handle Flashlight</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>15</MinSalesPrice>
+          <MaxSalesPrice>25</MaxSalesPrice>
+          <MinPurchasePrice>90</MinPurchasePrice>
+          <MaxPurchasePrice>110</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>G.E.S. Baseball Bat</ModItemName>
+          <PurchasePrice>1800</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>15</MinSalesPrice>
+          <MaxSalesPrice>25</MaxSalesPrice>
+          <MinPurchasePrice>1800</MinPurchasePrice>
+          <MaxPurchasePrice>2070</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>ProLaps Five Iron Golf Club</ModItemName>
+          <PurchasePrice>1400</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>15</MinSalesPrice>
+          <MaxSalesPrice>25</MaxSalesPrice>
+          <MinPurchasePrice>1400</MinPurchasePrice>
+          <MaxPurchasePrice>1610</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Schmidt &amp; Priss TL6 Scanner</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>100</MinSalesPrice>
+          <MaxSalesPrice>150</MaxSalesPrice>
+          <MinPurchasePrice>500</MinPurchasePrice>
+          <MaxPurchasePrice>800</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>SCHEISS AS Binoculars</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>150</MinSalesPrice>
+          <MaxSalesPrice>200</MaxSalesPrice>
+          <MinPurchasePrice>500</MinPurchasePrice>
+          <MaxPurchasePrice>700</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>SCHEISS RP Binoculars</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>220</MinSalesPrice>
+          <MaxSalesPrice>400</MaxSalesPrice>
+          <MinPurchasePrice>900</MinPurchasePrice>
+          <MaxPurchasePrice>1500</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Schmidt &amp; Priss RD4 Radar Detector</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>25</MinSalesPrice>
+          <MaxSalesPrice>45</MaxSalesPrice>
+          <MinPurchasePrice>300</MinPurchasePrice>
+          <MaxPurchasePrice>500</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hawk &amp; Little PTF092F</ModItemName>
+          <PurchasePrice>12000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>100</MinSalesPrice>
+          <MaxSalesPrice>150</MaxSalesPrice>
+          <MinPurchasePrice>12000</MinPurchasePrice>
+          <MaxPurchasePrice>13800</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hawk &amp; Little Thunder</ModItemName>
+          <PurchasePrice>12000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>110</MinSalesPrice>
+          <MaxSalesPrice>200</MaxSalesPrice>
+          <MinPurchasePrice>12000</MinPurchasePrice>
+          <MaxPurchasePrice>13800</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hawk &amp; Little Combat Pistol</ModItemName>
+          <PurchasePrice>14000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>200</MinSalesPrice>
+          <MaxSalesPrice>300</MaxSalesPrice>
+          <MinPurchasePrice>14000</MinPurchasePrice>
+          <MaxPurchasePrice>16100</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hawk &amp; Little Desert Slug</ModItemName>
+          <PurchasePrice>18000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>300</MinSalesPrice>
+          <MaxSalesPrice>500</MaxSalesPrice>
+          <MinPurchasePrice>18000</MinPurchasePrice>
+          <MaxPurchasePrice>20700</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hawk &amp; Little 1919 Tactical</ModItemName>
+          <PurchasePrice>14000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>325</MinSalesPrice>
+          <MaxSalesPrice>350</MaxSalesPrice>
+          <MinPurchasePrice>14000</MinPurchasePrice>
+          <MaxPurchasePrice>16100</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hawk &amp; Little Raging Mare</ModItemName>
+          <PurchasePrice>18000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>300</MinSalesPrice>
+          <MaxSalesPrice>450</MaxSalesPrice>
+          <MinPurchasePrice>18000</MinPurchasePrice>
+          <MaxPurchasePrice>20700</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hawk &amp; Little Raging Mare Dx</ModItemName>
+          <PurchasePrice>22000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>375</MinSalesPrice>
+          <MaxSalesPrice>475</MaxSalesPrice>
+          <MinPurchasePrice>22000</MinPurchasePrice>
+          <MaxPurchasePrice>25300</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Vom Feuer P69</ModItemName>
+          <PurchasePrice>14000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>140</MinSalesPrice>
+          <MaxSalesPrice>170</MaxSalesPrice>
+          <MinPurchasePrice>14000</MinPurchasePrice>
+          <MaxPurchasePrice>16100</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Shrewsbury S7</ModItemName>
+          <PurchasePrice>12000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>220</MinSalesPrice>
+          <MaxSalesPrice>330</MaxSalesPrice>
+          <MinPurchasePrice>12000</MinPurchasePrice>
+          <MaxPurchasePrice>13800</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Shrewsbury S7A</ModItemName>
+          <PurchasePrice>18000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>325</MinSalesPrice>
+          <MaxSalesPrice>450</MaxSalesPrice>
+          <MinPurchasePrice>18000</MinPurchasePrice>
+          <MaxPurchasePrice>20700</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Coil Tesla</ModItemName>
+          <PurchasePrice>10000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>150</MinSalesPrice>
+          <MaxSalesPrice>250</MaxSalesPrice>
+          <MinPurchasePrice>10000</MinPurchasePrice>
+          <MaxPurchasePrice>11500</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Vom Feuer 1922</ModItemName>
+          <PurchasePrice>18000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>200</MinSalesPrice>
+          <MaxSalesPrice>250</MaxSalesPrice>
+          <MinPurchasePrice>18000</MinPurchasePrice>
+          <MaxPurchasePrice>20700</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Flint Duct Tape</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>1</MinSalesPrice>
+          <MaxSalesPrice>1</MaxSalesPrice>
+          <MinPurchasePrice>5</MinPurchasePrice>
+          <MaxPurchasePrice>10</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Flint Multi-Bit Screwdriver</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>4</MinSalesPrice>
+          <MaxSalesPrice>5</MaxSalesPrice>
+          <MinPurchasePrice>35</MinPurchasePrice>
+          <MaxPurchasePrice>40</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Flint Rubber Mallet</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>10</MinSalesPrice>
+          <MaxSalesPrice>15</MaxSalesPrice>
+          <MinPurchasePrice>45</MinPurchasePrice>
+          <MaxPurchasePrice>70</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Flint Hammer</ModItemName>
+          <PurchasePrice>1200</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>4</MinSalesPrice>
+          <MaxSalesPrice>5</MaxSalesPrice>
+          <MinPurchasePrice>1200</MinPurchasePrice>
+          <MaxPurchasePrice>1380</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Flint Crowbar</ModItemName>
+          <PurchasePrice>1400</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>12</MinSalesPrice>
+          <MaxSalesPrice>20</MaxSalesPrice>
+          <MinPurchasePrice>1400</MinPurchasePrice>
+          <MaxPurchasePrice>1610</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Flint Hatchet</ModItemName>
+          <PurchasePrice>2400</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>35</MinSalesPrice>
+          <MaxSalesPrice>50</MaxSalesPrice>
+          <MinPurchasePrice>2400</MinPurchasePrice>
+          <MaxPurchasePrice>2760</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Vom Feuer Machete</ModItemName>
+          <PurchasePrice>3600</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>25</MinSalesPrice>
+          <MaxSalesPrice>40</MaxSalesPrice>
+          <MinPurchasePrice>3600</MinPurchasePrice>
+          <MaxPurchasePrice>4140</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Flint Pliers</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>2</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>5</MinSalesPrice>
+          <MaxSalesPrice>10</MaxSalesPrice>
+          <MinPurchasePrice>20</MinPurchasePrice>
+          <MaxPurchasePrice>45</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Flint Heavy Duty Pipe Wrench</ModItemName>
+          <PurchasePrice>1200</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>2</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>15</MinSalesPrice>
+          <MaxSalesPrice>25</MaxSalesPrice>
+          <MinPurchasePrice>1200</MinPurchasePrice>
+          <MaxPurchasePrice>1380</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Flint Shovel</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>2</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>20</MinSalesPrice>
+          <MaxSalesPrice>35</MaxSalesPrice>
+          <MinPurchasePrice>95</MinPurchasePrice>
+          <MaxPurchasePrice>120</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Flint Cordless Drill</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>2</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>18</MinSalesPrice>
+          <MaxSalesPrice>25</MaxSalesPrice>
+          <MinPurchasePrice>98</MinPurchasePrice>
+          <MaxPurchasePrice>150</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Power Metal Cordless Drill</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>2</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>22</MinSalesPrice>
+          <MaxSalesPrice>30</MaxSalesPrice>
+          <MinPurchasePrice>78</MinPurchasePrice>
+          <MaxPurchasePrice>110</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Power Metal Side Drill</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>2</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>45</MinSalesPrice>
+          <MaxSalesPrice>140</MaxSalesPrice>
+          <MinPurchasePrice>185</MinPurchasePrice>
+          <MaxPurchasePrice>265</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Power Metal Custom Side Drill</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>2</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>120</MinSalesPrice>
+          <MaxSalesPrice>160</MaxSalesPrice>
+          <MinPurchasePrice>375</MinPurchasePrice>
+          <MaxPurchasePrice>675</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Fake Gold Ring</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>5</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>1</MinSalesPrice>
+          <MaxSalesPrice>2</MaxSalesPrice>
+          <MinPurchasePrice>0</MinPurchasePrice>
+          <MaxPurchasePrice>0</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Gold Ring</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>5</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>85</MinSalesPrice>
+          <MaxSalesPrice>155</MaxSalesPrice>
+          <MinPurchasePrice>0</MinPurchasePrice>
+          <MaxPurchasePrice>0</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Fake Silver Ring</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>5</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>1</MinSalesPrice>
+          <MaxSalesPrice>1</MaxSalesPrice>
+          <MinPurchasePrice>0</MinPurchasePrice>
+          <MaxPurchasePrice>0</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Silver Ring</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>5</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>5</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>12</MinSalesPrice>
+          <MaxSalesPrice>15</MaxSalesPrice>
+          <MinPurchasePrice>0</MinPurchasePrice>
+          <MaxPurchasePrice>0</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>iFruit Cellphone</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>2</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>5</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>75</MinSalesPrice>
+          <MaxSalesPrice>95</MaxSalesPrice>
+          <MinPurchasePrice>0</MinPurchasePrice>
+          <MaxPurchasePrice>0</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Facade Cellphone</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>2</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>5</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>55</MinSalesPrice>
+          <MaxSalesPrice>75</MaxSalesPrice>
+          <MinPurchasePrice>0</MinPurchasePrice>
+          <MaxPurchasePrice>0</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Badger Cellphone</ModItemName>
+          <PurchasePrice>5</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>2</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>5</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>45</MinSalesPrice>
+          <MaxSalesPrice>55</MaxSalesPrice>
+          <MinPurchasePrice>0</MinPurchasePrice>
+          <MaxPurchasePrice>0</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Light Weapon Blueprint</ModItemName>
+          <PurchasePrice>100</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Medium Weapon Blueprint</ModItemName>
+          <PurchasePrice>400</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Heavy Weapon Blueprint</ModItemName>
+          <PurchasePrice>600</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Advanced Weapon Blueprint</ModItemName>
+          <PurchasePrice>850</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+      </Items>
+    </ShopMenu>
+    <ShopMenu>
+      <ID>DiamondFenceMenu</ID>
+      <Name>Diamond Fence</Name>
+      <GroupName />
+      <Items>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Diamonds</ModItemName>
+          <PurchasePrice>2000</PurchasePrice>
+          <SalesPrice>1000</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>20</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1000</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>900</MinSalesPrice>
+          <MaxSalesPrice>1000</MaxSalesPrice>
+          <MinPurchasePrice>1700</MinPurchasePrice>
+          <MaxPurchasePrice>2000</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Diamond Skull #1</ModItemName>
+          <PurchasePrice>1000</PurchasePrice>
+          <SalesPrice>800</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>20</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1000</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>800</MinSalesPrice>
+          <MaxSalesPrice>845</MaxSalesPrice>
+          <MinPurchasePrice>980</MinPurchasePrice>
+          <MaxPurchasePrice>1000</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Diamond Skull #2</ModItemName>
+          <PurchasePrice>1000</PurchasePrice>
+          <SalesPrice>800</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>20</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1000</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>800</MinSalesPrice>
+          <MaxSalesPrice>845</MaxSalesPrice>
+          <MinPurchasePrice>980</MinPurchasePrice>
+          <MaxPurchasePrice>1000</MaxPurchasePrice>
+        </MenuItem>
+      </Items>
+    </ShopMenu>
+    <ShopMenu>
+      <ID>GoldFenceMenu</ID>
+      <Name>Gold Fence</Name>
+      <GroupName />
+      <Items>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Gold Bar</ModItemName>
+          <PurchasePrice>3000</PurchasePrice>
+          <SalesPrice>2500</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>20</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1000</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>2000</MinSalesPrice>
+          <MaxSalesPrice>2800</MaxSalesPrice>
+          <MinPurchasePrice>3000</MinPurchasePrice>
+          <MaxPurchasePrice>3400</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Painting #1</ModItemName>
+          <PurchasePrice>700</PurchasePrice>
+          <SalesPrice>500</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>20</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1000</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>500</MinSalesPrice>
+          <MaxSalesPrice>530</MaxSalesPrice>
+          <MinPurchasePrice>700</MinPurchasePrice>
+          <MaxPurchasePrice>725</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Painting #2</ModItemName>
+          <PurchasePrice>700</PurchasePrice>
+          <SalesPrice>500</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>20</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1000</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>500</MinSalesPrice>
+          <MaxSalesPrice>600</MaxSalesPrice>
+          <MinPurchasePrice>700</MinPurchasePrice>
+          <MaxPurchasePrice>725</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Painting #3</ModItemName>
+          <PurchasePrice>700</PurchasePrice>
+          <SalesPrice>500</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>20</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>1000</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>500</MinSalesPrice>
+          <MaxSalesPrice>580</MaxSalesPrice>
+          <MinPurchasePrice>700</MinPurchasePrice>
+          <MaxPurchasePrice>725</MaxPurchasePrice>
+        </MenuItem>
+      </Items>
+    </ShopMenu>
+  </ShopMenuList>
+  <ShopMenuGroupList />
+  <ShopMenuGroupContainers />
+  <PropShopMenus />
+  <TreatmentOptionsList />
+  <PedVariationShopMenus />
+</ShopMenuTypes>

@@ -1,0 +1,1846 @@
+<ArrayOfCraftableItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CraftableItem>
+    <Name>Craft Advanced Gun Barrel</Name>
+    <Resultant>Advanced Gun Barrel</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Aluminum Billet</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Steel Rod</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Drill Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Advanced Gun Frame</Name>
+    <Resultant>Advanced Gun Frame</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Filament Spool</IngredientName>
+        <Quantity>8</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Polymer Resin</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>3D Printer</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Light Gun Barrel</Name>
+    <Resultant>Light Gun Barrel</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Aluminum Billet</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Drill Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Medium Gun Barrel</Name>
+    <Resultant>Medium Gun Barrel</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Steel Rod</IngredientName>
+        <Quantity>4</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Drill Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Heavy Gun Barrel</Name>
+    <Resultant>Heavy Gun Barrel</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Steel Rod</IngredientName>
+        <Quantity>5</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Drill Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Light Gun Frame</Name>
+    <Resultant>Light Gun Frame</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Filament Spool</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>3D Printer</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Medium Gun Frame</Name>
+    <Resultant>Medium Gun Frame</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Filament Spool</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Polymer Resin</IngredientName>
+        <Quantity>2</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>3D Printer</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Heavy Gun Frame</Name>
+    <Resultant>Heavy Gun Frame</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>false</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+      <Ingredient>
+        <IngredientName>Filament Spool</IngredientName>
+        <Quantity>6</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Polymer Resin</IngredientName>
+        <Quantity>3</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>3D Printer</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Pistol</Name>
+    <Resultant>Hawk &amp; Little PTF092F</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Light Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Light Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Light Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+	</CraftableItem>
+	<CraftableItem>
+    <Name>Craft Vintage Pistol</Name>
+    <Resultant>Vom Feuer 1922</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Light Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Light Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Light Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>  
+  <CraftableItem>
+    <Name>Craft SNS Pistol</Name>
+    <Resultant>Shrewsbury S7</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Light Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Light Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Light Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>  
+  <CraftableItem>
+    <Name>Craft Revolver</Name>
+    <Resultant>Vom Feuer M1888</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Light Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Light Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Light Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem> 
+  <CraftableItem>
+    <Name>Craft Perico Pistol</Name>
+    <Resultant>Perico Pistol</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Light Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Light Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Light Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>   
+  <CraftableItem>
+    <Name>Craft xm3 Pistol</Name>
+    <Resultant>Vom Feuer Gruber</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Light Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Light Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Light Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem> 
+  <CraftableItem>
+    <Name>Craft Ceramic Pistol</Name>
+    <Resultant>Vom Feuer P69</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Light Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Light Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Light Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem> 
+  <CraftableItem>
+    <Name>Craft Micro SMG</Name>
+    <Resultant>Shrewsbury Luzi</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Light Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Light Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Light Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem> 
+  <CraftableItem>
+    <Name>Craft Mini SMG</Name>
+    <Resultant>Hawk &amp; Little Millipede</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Light Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Light Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Light Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem> 
+  <CraftableItem>
+    <Name>Craft Machine Pistol</Name>
+    <Resultant>Vom Feuer KEK-9</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Light Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Light Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Light Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem> 
+  <CraftableItem>
+    <Name>Craft Combat Pistol</Name>
+    <Resultant>Hawk &amp; Little Combat Pistol</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft AP Pistol</Name>
+    <Resultant>Vom Feuer SCRAMP</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Heavy Pistol</Name>
+    <Resultant>Hawk &amp; Little 1919 Tactical</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft .50 Pistol</Name>
+    <Resultant>Hawk &amp; Little Desert Slug</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Marksman Pistol</Name>
+    <Resultant>Malloy/Brando Waterfront</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Heavy Revolver</Name>
+    <Resultant>Hawk &amp; Little Raging Mare</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Navy Revolver</Name>
+    <Resultant>Vom Feuer Navy Revolver</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft SMG</Name>
+    <Resultant>Hawk &amp; Little MP6</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Combat PDW</Name>
+    <Resultant>Coil PXM</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craftt Assault SMG</Name>
+    <Resultant>Vom Feuer Fisher</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Tactical SMG</Name>
+    <Resultant>Vom Feuer PMP</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Pump Shotgun</Name>
+    <Resultant>Shrewsbury 420</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Sawed-Off Shotgun</Name>
+    <Resultant>Shrewsbury 420 Sawed-Off</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Double Barrel Shotgun</Name>
+    <Resultant>Toto 12 Guage Sawed-Off</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Medium Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Medium Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Medium Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Carbine Rifle</Name>
+    <Resultant>Vom Feuer A5-1R</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Heavy Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Heavy Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Heavy Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Assault Rifle</Name>
+    <Resultant>Shrewsbury A7-4K</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Heavy Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Heavy Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Heavy Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Special Carbine</Name>
+    <Resultant>Vom Feuer SL6</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Heavy Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Heavy Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Heavy Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Compact Rifle</Name>
+    <Resultant>Shrewsbury Stinkov</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Heavy Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Heavy Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Heavy Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Bullpup Shotgun</Name>
+    <Resultant>Hawk &amp; Little HLSG</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Heavy Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Heavy Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Heavy Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Sweeper Shotgun</Name>
+    <Resultant>Shrewsbury Defender</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Heavy Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Heavy Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Heavy Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Combat Pistol Mk2</Name>
+    <Resultant>Hawk &amp; Little Thunder</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft SNS Pistol Mk2</Name>
+    <Resultant>Shrewsbury S7A</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft SMG Mk2</Name>
+    <Resultant>Hawk &amp; Little XPM</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Pump Shotgun Mk2</Name>
+    <Resultant>Vom Feuer 569</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Carbine Rifle Mk2</Name>
+    <Resultant>Vom Feuer A5-1R MK2</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Assault Rifle Mk2</Name>
+    <Resultant>Shrewsbury A2-1K</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Special Carbine Mk2</Name>
+    <Resultant>Vom Feuer SL6 MK2</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Advanced Rifle</Name>
+    <Resultant>Vom Feuer BFR</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Bullpup Rifle</Name>
+    <Resultant>Hawk &amp; Little ZBZ-23</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Bullpup Rifle Mk2</Name>
+    <Resultant>Hawk &amp; Little ZBZ-25X</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Battle Rifle</Name>
+    <Resultant>Vom Feuer LAR</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Heavy Rifle</Name>
+    <Resultant>Vom Feuer POCK</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Military Rifle</Name>
+    <Resultant>Vom Feuer GUH-B4</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Marksman Rifle Mk2</Name>
+    <Resultant>Vom Feuer M23 DBS Scout</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Assault Shotgun</Name>
+    <Resultant>Vom Feuer IBS-12</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+  <CraftableItem>
+    <Name>Craft Combat Shotgun</Name>
+    <Resultant>Leotardo SPAZ-11</Resultant>
+    <AnimationDictionary>bunk_int_p6_t06</AnimationDictionary>
+    <AnimationName>mp_m_weapwork_01^2</AnimationName>
+    <ResultantAmount>1</ResultantAmount>
+    <SingleUnit>true</SingleUnit>
+    <Category>Manufacturing</Category>
+    <Ingredients>
+	  <Ingredient>
+        <IngredientName>Advanced Weapon Blueprint</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Advanced Gun Frame</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+      <Ingredient>
+        <IngredientName>Advanced Gun Barrel</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+	  <Ingredient>
+        <IngredientName>Small Parts Kit</IngredientName>
+        <Quantity>1</Quantity>
+        <IsConsumed>true</IsConsumed>
+      </Ingredient>
+    </Ingredients>
+    <Cooldown>8000</Cooldown>
+    <CrimeId>DealingGuns</CrimeId>
+    <CraftingFlags>
+      <string>Weapons Bench</string>
+    </CraftingFlags>
+  </CraftableItem>
+</ArrayOfCraftableItem>

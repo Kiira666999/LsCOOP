@@ -1,5 +1,6 @@
 ﻿using LosSantosRED.lsr.Helper;
 using LosSantosRED.lsr.Interface;
+using LosSantosRED.lsr.Coop.Core;
 using Mod;
 using RAGENativeUI;
 using RAGENativeUI.Elements;
@@ -27,8 +28,9 @@ public class CustomizeModelMenu
     private string FilterString = "";
     private UIMenuListScrollerItem<string> FilteredModels;
     private UIMenuListScrollerItem<string> SelectSimpleModel;
+    private CoopPermissionService CoopPermissionService;
 
-    public CustomizeModelMenu(MenuPool menuPool, IPedSwap pedSwap, INameProvideable names, IPedSwappable player, IEntityProvideable world, ISettingsProvideable settings, PedCustomizer pedCustomizer, PedCustomizerMenu pedCustomizerMenu)
+    public CustomizeModelMenu(MenuPool menuPool, IPedSwap pedSwap, INameProvideable names, IPedSwappable player, IEntityProvideable world, ISettingsProvideable settings, PedCustomizer pedCustomizer, PedCustomizerMenu pedCustomizerMenu, CoopPermissionService coopPermissionService = null)
     {
         PedSwap = pedSwap;
         MenuPool = menuPool;
@@ -38,6 +40,7 @@ public class CustomizeModelMenu
         Settings = settings;
         PedCustomizer = pedCustomizer;
         PedCustomizerMenu = pedCustomizerMenu;
+        CoopPermissionService = coopPermissionService ?? new CoopPermissionService();
     }
     public void Setup(UIMenu CustomizeMainMenu)
     {
@@ -162,6 +165,11 @@ public class CustomizeModelMenu
     {
         try
         {
+            if (!CanChangeModelAfterCreation())
+            {
+                return;
+            }
+
             string modelName = NativeHelper.GetKeyboardInput("player_zero");
             if (string.IsNullOrEmpty(modelName) || modelName == "")
             {
@@ -183,6 +191,11 @@ public class CustomizeModelMenu
     {
         try
         {
+            if (!CanChangeModelAfterCreation())
+            {
+                return;
+            }
+
             if(string.IsNullOrEmpty(modelName) || modelName == "")
             {
                 return;
@@ -198,6 +211,17 @@ public class CustomizeModelMenu
             EntryPoint.WriteToConsole($"SetModelFromString ERROR {ex.Message} {ex.StackTrace}",0);
             Rage.Game.DisplayNotification("Error Setting Model");
         }
+    }
+
+    private bool CanChangeModelAfterCreation()
+    {
+        if (PedCustomizer.SetupAsNewPlayer || CoopPermissionService.CanChangeModelAfterCreation())
+        {
+            return true;
+        }
+
+        Rage.Game.DisplayHelp("Co-op Admin permission required to change model after character creation.");
+        return false;
     }
 }
 

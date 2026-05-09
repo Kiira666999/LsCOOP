@@ -1,0 +1,15 @@
+{
+  "StoreVersion": "1",
+  "WorldId": "lsrcoop-default-world",
+  "Profiles": [
+    {
+      "ProfileId": "Kiira",
+      "ClientId": "Kiira",
+      "DisplayName": "Kiira",
+      "Role": "TrustedHost",
+      "CreatedUtc": "2026-05-09T06:22:26.552453+00:00",
+      "LastSeenUtc": "2026-05-09T19:13:00.3127234+00:00",
+      "Character": null
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 ﻿using LosSantosRED.lsr.Helper;
+using LosSantosRED.lsr.Coop.Core;
 using Rage;
 using Rage.Native;
 using RAGENativeUI;
@@ -33,6 +34,8 @@ namespace LosSantosRED.lsr
         private WeatherReporting Weather;
         private Mod.World World;
         private Mod.Crafting Crafting;
+        public LsrCoopCharacterManager CoopCharacterManager { get; private set; }
+        public CoopPermissionService CoopPermissionService { get; private set; }
         public ModDataFileManager ModDataFileManager { get; private set; }
         private WeatherManager WeatherManager;
 
@@ -84,12 +87,16 @@ namespace LosSantosRED.lsr
             GameFiber.Yield();
             Player.Setup();
             GameFiber.Yield();
+            CoopCharacterManager = new LsrCoopCharacterManager();
+            CoopCharacterManager.RegisterLocalCharacter(Player);
+            CoopPermissionService = new CoopPermissionService();
+            GameFiber.Yield();
             Police = new Police(World, Player, Player, ModDataFileManager.Settings, Player, Time);
             GameFiber.Yield();
             Civilians = new Civilians(World, Player, Player, ModDataFileManager.Settings, ModDataFileManager.Gangs);
             GameFiber.Yield();
             PedSwap = new PedSwap(Time, Player, ModDataFileManager.Settings, World, ModDataFileManager.Weapons, ModDataFileManager.Crimes, ModDataFileManager.Names, ModDataFileManager.ModItems, World, ModDataFileManager.RelationshipGroups,
-                ModDataFileManager.ShopMenus, ModDataFileManager.DispatchablePeople, ModDataFileManager.Heads, ModDataFileManager.ClothesNames, ModDataFileManager.Gangs, ModDataFileManager.Agencies, ModDataFileManager.TattooNames, ModDataFileManager.GameSaves, ModDataFileManager.SavedOutfits, Player, Player);
+                ModDataFileManager.ShopMenus, ModDataFileManager.DispatchablePeople, ModDataFileManager.Heads, ModDataFileManager.ClothesNames, ModDataFileManager.Gangs, ModDataFileManager.Agencies, ModDataFileManager.TattooNames, ModDataFileManager.GameSaves, ModDataFileManager.SavedOutfits, Player, Player, CoopPermissionService);
             GameFiber.Yield();
             Player.PedSwap = PedSwap;
             Tasker = new Mod.Tasker(World, Player, ModDataFileManager.Weapons, ModDataFileManager.Settings, ModDataFileManager.PlacesOfInterest);
@@ -110,7 +117,7 @@ namespace LosSantosRED.lsr
             GameFiber.Yield();
             UI = new UI(Player, ModDataFileManager.Settings, ModDataFileManager.Jurisdictions, PedSwap, ModDataFileManager.PlacesOfInterest, Player, Player, Player, ModDataFileManager.Weapons, ModDataFileManager.RadioStations, ModDataFileManager.GameSaves, World, Player, Player, Tasker, Player, 
                 ModDataFileManager.ModItems, Time, Player, ModDataFileManager.Gangs, ModDataFileManager.GangTerritories, ModDataFileManager.Zones, ModDataFileManager.Streets, ModDataFileManager.Interiors, Dispatcher, ModDataFileManager.Agencies, Player, ModDataFileManager.DanceList, ModDataFileManager.GestureList, 
-                ModDataFileManager.ShopMenus, Player, ModDataFileManager.Crimes, ModDataFileManager.LocationTypes, ModDataFileManager.Intoxicants, ModDataFileManager.PlateTypes, ModDataFileManager.Names, ModDataFileManager, Player, Crafting, Player);
+                ModDataFileManager.ShopMenus, Player, ModDataFileManager.Crimes, ModDataFileManager.LocationTypes, ModDataFileManager.Intoxicants, ModDataFileManager.PlateTypes, ModDataFileManager.Names, ModDataFileManager, Player, Crafting, Player, CoopPermissionService);
             UI.Setup();
             GameFiber.Yield();
             Input = new Input(Player, ModDataFileManager.Settings, UI, PedSwap);

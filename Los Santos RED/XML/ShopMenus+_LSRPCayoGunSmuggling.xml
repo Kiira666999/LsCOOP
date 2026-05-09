@@ -1,0 +1,1669 @@
+<ShopMenuTypes xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ShopMenuList>
+    <ShopMenu>
+      <ID>ArmsTraffickerMenuCayo</ID>
+      <Name>Arms Trafficker</Name>
+      <GroupName />
+      <Items>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Pipe Bomb</ModItemName>
+          <PurchasePrice>15000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>5</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Proximity Mines</ModItemName>
+          <PurchasePrice>30000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>5</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Sticky Bomb</ModItemName>
+          <PurchasePrice>25000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>5</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Parachute</ModItemName>
+          <PurchasePrice>1000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>1</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>BZ Gas Grenade</ModItemName>
+          <PurchasePrice>15000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>5</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Improvised Incendiary</ModItemName>
+          <PurchasePrice>15000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>5</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>M61 Grenade</ModItemName>
+          <PurchasePrice>15000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>5</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Compact Grenade Launcher</ModItemName>
+          <PurchasePrice>180000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>1</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hawk &amp; Little Thunder</ModItemName>
+          <PurchasePrice>12000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tracer Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Incendiary Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Hollow Point Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Full Metal Jacket Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Mounted Scope</ExtraName>
+              <PurchasePrice>1200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flashlight</ExtraName>
+              <PurchasePrice>100</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>699</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Compensator</ExtraName>
+              <PurchasePrice>240</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hawk &amp; Little Raging Mare Dx</ModItemName>
+          <PurchasePrice>22000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Rounds</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tracer Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Incendiary Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Hollow Point Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Full Metal Jacket Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Holographic Sight</ExtraName>
+              <PurchasePrice>890</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Small Scope</ExtraName>
+              <PurchasePrice>570</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flashlight</ExtraName>
+              <PurchasePrice>100</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Shrewsbury S7A</ModItemName>
+          <PurchasePrice>18000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Mounted Scope</ExtraName>
+              <PurchasePrice>890</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>145</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Compensator</ExtraName>
+              <PurchasePrice>240</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Vom Feuer 569</ModItemName>
+          <PurchasePrice>18000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Shells</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Dragon's Breath Shells</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Steel Buckshot Shells</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flechette Shells</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Explosive Slugs</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Holographic Sight</ExtraName>
+              <PurchasePrice>670</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Small Scope</ExtraName>
+              <PurchasePrice>560</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Medium Scope</ExtraName>
+              <PurchasePrice>890</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flashlight</ExtraName>
+              <PurchasePrice>85</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>1890</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Squared Muzzle Brake</ExtraName>
+              <PurchasePrice>200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hawk &amp; Little XPM</ModItemName>
+          <PurchasePrice>33000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>250</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tracer Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Incendiary Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Hollow Point Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Full Metal Jacket Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flashlight</ExtraName>
+              <PurchasePrice>120</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Holographic Sight</ExtraName>
+              <PurchasePrice>760</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Small Scope</ExtraName>
+              <PurchasePrice>525</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Medium Scope</ExtraName>
+              <PurchasePrice>890</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>1400</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flat Muzzle Brake</ExtraName>
+              <PurchasePrice>255</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tactical Muzzle Brake</ExtraName>
+              <PurchasePrice>265</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Fat-End Muzzle Brake</ExtraName>
+              <PurchasePrice>200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Precision Muzzle Brake</ExtraName>
+              <PurchasePrice>276</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Duty Muzzle Brake</ExtraName>
+              <PurchasePrice>345</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Slanted Muzzle Brake</ExtraName>
+              <PurchasePrice>205</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Split-End Muzzle Brake</ExtraName>
+              <PurchasePrice>200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Default Barrel</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Barrel</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Shrewsbury A2-1K</ModItemName>
+          <PurchasePrice>60000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tracer Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Incendiary Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Armor Piercing Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Full Metal Jacket Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Grip</ExtraName>
+              <PurchasePrice>120</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flashlight</ExtraName>
+              <PurchasePrice>90</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Holographic Sight</ExtraName>
+              <PurchasePrice>780</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Small Scope</ExtraName>
+              <PurchasePrice>667</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Large Scope</ExtraName>
+              <PurchasePrice>989</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>1200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flat Muzzle Brake</ExtraName>
+              <PurchasePrice>300</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tactical Muzzle Brake</ExtraName>
+              <PurchasePrice>123</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Fat-End Muzzle Brake</ExtraName>
+              <PurchasePrice>150</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Precision Muzzle Brake</ExtraName>
+              <PurchasePrice>224</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Duty Muzzle Brake</ExtraName>
+              <PurchasePrice>330</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Slanted Muzzle Brake</ExtraName>
+              <PurchasePrice>150</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Split-End Muzzle Brake</ExtraName>
+              <PurchasePrice>175</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Default Barrel</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Barrel</ExtraName>
+              <PurchasePrice>800</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Vom Feuer A5-1R MK2</ModItemName>
+          <PurchasePrice>85000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>250</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tracer Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Incendiary Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Armor Piercing Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Full Metal Jacket Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Grip</ExtraName>
+              <PurchasePrice>120</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flashlight</ExtraName>
+              <PurchasePrice>90</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Holographic Sight</ExtraName>
+              <PurchasePrice>870</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Small Scope</ExtraName>
+              <PurchasePrice>760</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Large Scope</ExtraName>
+              <PurchasePrice>900</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>1200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flat Muzzle Brake</ExtraName>
+              <PurchasePrice>250</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tactical Muzzle Brake</ExtraName>
+              <PurchasePrice>220</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Fat-End Muzzle Brake</ExtraName>
+              <PurchasePrice>215</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Precision Muzzle Brake</ExtraName>
+              <PurchasePrice>220</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Duty Muzzle Brake</ExtraName>
+              <PurchasePrice>235</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Slanted Muzzle Brake</ExtraName>
+              <PurchasePrice>230</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Split-End Muzzle Brake</ExtraName>
+              <PurchasePrice>225</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Default Barrel</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Barrel</ExtraName>
+              <PurchasePrice>670</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Vom Feuer SL6 MK2</ModItemName>
+          <PurchasePrice>85000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tracer Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Incendiary Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Armor Piercing Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Full Metal Jacket Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Grip</ExtraName>
+              <PurchasePrice>120</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flashlight</ExtraName>
+              <PurchasePrice>90</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Holographic Sight</ExtraName>
+              <PurchasePrice>870</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Small Scope</ExtraName>
+              <PurchasePrice>760</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Large Scope</ExtraName>
+              <PurchasePrice>900</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>1200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flat Muzzle Brake</ExtraName>
+              <PurchasePrice>250</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tactical Muzzle Brake</ExtraName>
+              <PurchasePrice>220</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Fat-End Muzzle Brake</ExtraName>
+              <PurchasePrice>215</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Precision Muzzle Brake</ExtraName>
+              <PurchasePrice>220</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Duty Muzzle Brake</ExtraName>
+              <PurchasePrice>235</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Slanted Muzzle Brake</ExtraName>
+              <PurchasePrice>230</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Split-End Muzzle Brake</ExtraName>
+              <PurchasePrice>225</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Default Barrel</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Barrel</ExtraName>
+              <PurchasePrice>670</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hawk &amp; Little ZBZ-25X</ModItemName>
+          <PurchasePrice>85000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>145</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tracer Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Incendiary Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Armor Piercing Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Full Metal Jacket Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Grip</ExtraName>
+              <PurchasePrice>120</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flashlight</ExtraName>
+              <PurchasePrice>90</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Holographic Sight</ExtraName>
+              <PurchasePrice>870</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Small Scope</ExtraName>
+              <PurchasePrice>760</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Large Scope</ExtraName>
+              <PurchasePrice>900</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>1200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flat Muzzle Brake</ExtraName>
+              <PurchasePrice>250</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tactical Muzzle Brake</ExtraName>
+              <PurchasePrice>220</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Fat-End Muzzle Brake</ExtraName>
+              <PurchasePrice>215</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Precision Muzzle Brake</ExtraName>
+              <PurchasePrice>220</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Duty Muzzle Brake</ExtraName>
+              <PurchasePrice>235</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Slanted Muzzle Brake</ExtraName>
+              <PurchasePrice>230</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Split-End Muzzle Brake</ExtraName>
+              <PurchasePrice>225</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Default Barrel</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Barrel</ExtraName>
+              <PurchasePrice>670</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Vom Feuer M70E1</ModItemName>
+          <PurchasePrice>90000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>145</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tracer Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Incendiary Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Armor Piercing Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Full Metal Jacket Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Grip</ExtraName>
+              <PurchasePrice>124</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Holographic Sight</ExtraName>
+              <PurchasePrice>556</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Medium Scope</ExtraName>
+              <PurchasePrice>760</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Large Scope</ExtraName>
+              <PurchasePrice>890</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flat Muzzle Brake</ExtraName>
+              <PurchasePrice>120</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tactical Muzzle Brake</ExtraName>
+              <PurchasePrice>125</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Fat-End Muzzle Brake</ExtraName>
+              <PurchasePrice>130</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Precision Muzzle Brake</ExtraName>
+              <PurchasePrice>135</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Duty Muzzle Brake</ExtraName>
+              <PurchasePrice>145</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Slanted Muzzle Brake</ExtraName>
+              <PurchasePrice>155</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Split-End Muzzle Brake</ExtraName>
+              <PurchasePrice>155</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Default Barrel</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Barrel</ExtraName>
+              <PurchasePrice>900</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Bartlett M92 Mk2</ModItemName>
+          <PurchasePrice>120000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>250</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Incendiary Rounds</ExtraName>
+              <PurchasePrice>1000</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Armor Piercing Rounds</ExtraName>
+              <PurchasePrice>1500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Full Metal Jacket Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Explosive Rounds</ExtraName>
+              <PurchasePrice>2000</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Zoom Scope</ExtraName>
+              <PurchasePrice>2500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Advanced Scope</ExtraName>
+              <PurchasePrice>1500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Night Vision Scope</ExtraName>
+              <PurchasePrice>3500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Thermal Scope</ExtraName>
+              <PurchasePrice>9500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>1900</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Squared Muzzle Brake</ExtraName>
+              <PurchasePrice>125</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Bell-End Muzzle Brake</ExtraName>
+              <PurchasePrice>150</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Default Barrel</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Barrel</ExtraName>
+              <PurchasePrice>1800</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Vom Feuer M23 DBS Scout</ModItemName>
+          <PurchasePrice>120000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>550</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tracer Rounds</ExtraName>
+              <PurchasePrice>560</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Incendiary Rounds</ExtraName>
+              <PurchasePrice>1000</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Armor Piercing Rounds</ExtraName>
+              <PurchasePrice>1700</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Full Metal Jacket Rounds</ExtraName>
+              <PurchasePrice>550</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Holographic Sight</ExtraName>
+              <PurchasePrice>670</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Large Scope</ExtraName>
+              <PurchasePrice>890</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Zoom Scope</ExtraName>
+              <PurchasePrice>1200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flashlight</ExtraName>
+              <PurchasePrice>78</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>1400</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flat Muzzle Brake</ExtraName>
+              <PurchasePrice>123</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tactical Muzzle Brake</ExtraName>
+              <PurchasePrice>125</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Fat-End Muzzle Brake</ExtraName>
+              <PurchasePrice>150</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Precision Muzzle Brake</ExtraName>
+              <PurchasePrice>125</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Duty Muzzle Brake</ExtraName>
+              <PurchasePrice>134</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Slanted Muzzle Brake</ExtraName>
+              <PurchasePrice>145</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Split-End Muzzle Brake</ExtraName>
+              <PurchasePrice>134</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Default Barrel</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Heavy Barrel</ExtraName>
+              <PurchasePrice>1200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Grip</ExtraName>
+              <PurchasePrice>130</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>RPG-7</ModItemName>
+          <PurchasePrice>220000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>100</SubPrice>
+          <SubAmount>1</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Crate of AKs</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>5000</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>5</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>4</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>-1</MinSalesPrice>
+          <MaxSalesPrice>-1</MaxSalesPrice>
+          <MinPurchasePrice>9500</MinPurchasePrice>
+          <MaxPurchasePrice>10500</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Crate of Rifles</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>5000</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>5</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>3</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>-1</MinSalesPrice>
+          <MaxSalesPrice>-1</MaxSalesPrice>
+          <MinPurchasePrice>12500</MinPurchasePrice>
+          <MaxPurchasePrice>13500</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>9mm Ammo</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>5000</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>50</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>100</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>60</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>-1</MinSalesPrice>
+          <MaxSalesPrice>-1</MaxSalesPrice>
+          <MinPurchasePrice>90</MinPurchasePrice>
+          <MaxPurchasePrice>100</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>7.62mm Ammo</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>5000</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>50</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>100</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>55</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>-1</MinSalesPrice>
+          <MaxSalesPrice>-1</MaxSalesPrice>
+          <MinPurchasePrice>110</MinPurchasePrice>
+          <MaxPurchasePrice>120</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>12 Gauge Ammo</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>5000</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>50</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>100</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>50</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>-1</MinSalesPrice>
+          <MaxSalesPrice>-1</MaxSalesPrice>
+          <MinPurchasePrice>105</MinPurchasePrice>
+          <MaxPurchasePrice>115</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem xsi:type="VariablePriceMenuItem">
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Crate of ammunition</ModItemName>
+          <PurchasePrice>-1</PurchasePrice>
+          <SalesPrice>5000</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>5</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>10</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>-1</MinSalesPrice>
+          <MaxSalesPrice>-1</MaxSalesPrice>
+          <MinPurchasePrice>1650</MinPurchasePrice>
+          <MaxPurchasePrice>1800</MaxPurchasePrice>
+        </MenuItem>
+      </Items>
+    </ShopMenu>
+  </ShopMenuList>
+  <ShopMenuGroupList />
+  <ShopMenuGroupContainers />
+  <PropShopMenus />
+  <TreatmentOptionsList />
+  <PedVariationShopMenus />
+</ShopMenuTypes>

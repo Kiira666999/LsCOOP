@@ -1,0 +1,1268 @@
+<PossibleLocations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DeadDrops />
+  <ScrapYards />
+  <BodyExports />
+  <CarCrushers />
+  <GangDens>
+    <GangDen>
+      <Name>Bosozoku Clubhouse</Name>
+      <FullName>Bosozoku Clubhouse</FullName>
+      <Description />
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath>gangs\japmc.png</BannerImagePath>
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>true</IsBlipEnabled>
+      <MapIcon>378</MapIcon>
+      <MapIconColorString>White</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>1191.949</X>
+        <Y>-1268.953</Y>
+        <Z>35.3176</Z>
+      </EntrancePosition>
+      <EntranceHeading>353.8634</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>-1</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
+      <ShowsOnTaxi>true</ShowsOnTaxi>
+      <TypeName>Gang Den</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>225</ActivateDistance>
+      <AssignedAssociationID>AMBIENT_GANG_JAPMC</AssignedAssociationID>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <MenuID>JapDenMenu</MenuID>
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>true</CanInteractWhenWanted>
+      <ShowsMarker>true</ShowsMarker>
+      <PossiblePedSpawns>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>1202.496</X>
+            <Y>-1279.172</Y>
+            <Z>35.22646</Z>
+          </Location>
+          <Heading>262.7331</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard</TaskRequirements>
+		  <ForcedScenarios>
+            <string>WORLD_HUMAN_HANG_OUT_STREET</string>
+            <string>WORLD_HUMAN_SMOKING</string>
+			<string>WORLD_HUMAN_DRINKING</string>
+			<string>WORLD_HUMAN_STAND_MOBILE</string>
+          </ForcedScenarios>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>1210.45</X>
+            <Y>-1282.769</Y>
+            <Z>35.37629</Z>
+          </Location>
+          <Heading>175.3431</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard</TaskRequirements>
+		  <ForcedScenarios>
+            <string>WORLD_HUMAN_HANG_OUT_STREET</string>
+            <string>WORLD_HUMAN_SMOKING</string>
+			<string>WORLD_HUMAN_DRINKING</string>
+			<string>WORLD_HUMAN_STAND_MOBILE</string>
+          </ForcedScenarios>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>1214.634</X>
+            <Y>-1268.498</Y>
+            <Z>35.37565</Z>
+          </Location>
+          <Heading>144.5342</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard</TaskRequirements>
+		  <ForcedScenarios>
+            <string>WORLD_HUMAN_HANG_OUT_STREET</string>
+            <string>WORLD_HUMAN_SMOKING</string>
+			<string>WORLD_HUMAN_DRINKING</string>
+			<string>WORLD_HUMAN_STAND_MOBILE</string>
+          </ForcedScenarios>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+      </PossiblePedSpawns>
+      <PossibleVehicleSpawns>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>1200.244</X>
+            <Y>-1271.539</Y>
+            <Z>34.69024</Z>
+          </Location>
+          <Heading>233.1167</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>1206.21</X>
+            <Y>-1288.99</Y>
+            <Z>35.22677</Z>
+          </Location>
+          <Heading>263.7696</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>false</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>1211.733</X>
+            <Y>-1263.199</Y>
+            <Z>34.69386</Z>
+          </Location>
+          <Heading>95.67802</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>1193.892</X>
+            <Y>-1260.211</Y>
+            <Z>34.67201</Z>
+          </Location>
+          <Heading>215.2928</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+      </PossibleVehicleSpawns>
+      <VendorLocations />
+      <ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>VendorPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>20</VendorMeleePercent>
+      <VendorSidearmPercent>5</VendorSidearmPercent>
+      <VendorLongGunPercent>2</VendorLongGunPercent>
+      <VendorMoneyMin>-1</VendorMoneyMin>
+      <VendorMoneyMax>-1</VendorMoneyMax>
+      <VendorFightPercentage>-1</VendorFightPercentage>
+      <VendorCallPolicePercentage>-1</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>-1</VendorFightPolicePercentage>
+      <VendorCowerPercentage>-1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>-1</VendorSurrenderPercentage>
+      <VehiclePreviewCameraPosition>
+        <X>1209.367</X>
+        <Y>-1272.493</Y>
+        <Z>36.7177</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>-0.4809051</X>
+        <Y>0.8606126</Y>
+        <Z>-0.1675599</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>-9.645974</Pitch>
+        <Roll>1.732035E-06</Roll>
+        <Yaw>29.19619</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations>  
+        <SpawnPlace>
+          <Position>
+            <X>1205.364</X>
+            <Y>-1264.724</Y>
+            <Z>34.69279</Z>
+          </Position>
+          <Heading>175.7051</Heading>
+        </SpawnPlace>
+      </VehicleDeliveryLocations>
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>0</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>0</MaxPriceRefreshHours>
+      <MinRestockHours>0</MinRestockHours>
+      <MaxRestockHours>0</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>500</RacketeeringAmountMin>
+      <RacketeeringAmountMax>1000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+      <PurchasePrice>0</PurchasePrice>
+      <PayoutFrequency>7</PayoutFrequency>
+      <PayoutMin>0</PayoutMin>
+      <PayoutMax>0</PayoutMax>
+      <SalesPrice>0</SalesPrice>
+      <MaxSalesPrice>0</MaxSalesPrice>
+      <IsOwnable>false</IsOwnable>
+      <GrowthPercentage>20</GrowthPercentage>
+      <IsPrimaryGangDen>true</IsPrimaryGangDen>
+      <DisableNearbyScenarios>false</DisableNearbyScenarios>
+      <DisableScenarioDistance>50</DisableScenarioDistance>
+      <MaxAssaultSpawns>15</MaxAssaultSpawns>
+      <RestrictAssaultSpawningUsingPedSpawns>false</RestrictAssaultSpawningUsingPedSpawns>
+      <AssaultSpawnHeavyWeaponsPercent>80</AssaultSpawnHeavyWeaponsPercent>
+    </GangDen>
+    <GangDen>
+      <Name>Bosozoku Clubhouse</Name>
+      <FullName>Bosozoku Clubhouse</FullName>
+      <Description />
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath>gangs\japmc.png</BannerImagePath>
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>true</IsBlipEnabled>
+      <MapIcon>378</MapIcon>
+      <MapIconColorString>White</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>-2205.747</X>
+        <Y>-373.9046</Y>
+        <Z>13.32048</Z>
+      </EntrancePosition>
+      <EntranceHeading>317.9148</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>-1</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
+      <ShowsOnTaxi>true</ShowsOnTaxi>
+      <TypeName>Gang Den</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>225</ActivateDistance>
+      <AssignedAssociationID>AMBIENT_GANG_JAPMC</AssignedAssociationID>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <MenuID>JapDenMenu</MenuID>
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>true</CanInteractWhenWanted>
+      <ShowsMarker>true</ShowsMarker>
+      <PossiblePedSpawns>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>-2189.214</X>
+            <Y>-386.3366</Y>
+            <Z>13.35194</Z>
+          </Location>
+          <Heading>0.3579693</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard</TaskRequirements>
+		  <ForcedScenarios>
+            <string>WORLD_HUMAN_HANG_OUT_STREET</string>
+            <string>WORLD_HUMAN_SMOKING</string>
+			<string>WORLD_HUMAN_DRINKING</string>
+			<string>WORLD_HUMAN_STAND_MOBILE</string>
+          </ForcedScenarios>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>-2189.274</X>
+            <Y>-384.36</Y>
+            <Z>13.30197</Z>
+          </Location>
+          <Heading>174.4709</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard</TaskRequirements>
+		  <ForcedScenarios>
+            <string>WORLD_HUMAN_HANG_OUT_STREET</string>
+            <string>WORLD_HUMAN_SMOKING</string>
+			<string>WORLD_HUMAN_DRINKING</string>
+			<string>WORLD_HUMAN_STAND_MOBILE</string>
+          </ForcedScenarios>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>-2187.242</X>
+            <Y>-395.6423</Y>
+            <Z>13.42742</Z>
+          </Location>
+          <Heading>316.1397</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard</TaskRequirements>
+		  <ForcedScenarios>
+            <string>WORLD_HUMAN_HANG_OUT_STREET</string>
+            <string>WORLD_HUMAN_SMOKING</string>
+			<string>WORLD_HUMAN_DRINKING</string>
+			<string>WORLD_HUMAN_STAND_MOBILE</string>
+          </ForcedScenarios>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+      </PossiblePedSpawns>
+      <PossibleVehicleSpawns>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>-2185.232</X>
+            <Y>-390.4114</Y>
+            <Z>12.80438</Z>
+          </Location>
+          <Heading>234.1021</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>-2197.15</X>
+            <Y>-378.323</Y>
+            <Z>12.7864</Z>
+          </Location>
+          <Heading>39.55755</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>-2192.041</X>
+            <Y>-368.6563</Y>
+            <Z>12.55516</Z>
+          </Location>
+          <Heading>240.385</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>true</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>None</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+      </PossibleVehicleSpawns>
+      <VendorLocations />
+      <ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>VendorPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>20</VendorMeleePercent>
+      <VendorSidearmPercent>5</VendorSidearmPercent>
+      <VendorLongGunPercent>2</VendorLongGunPercent>
+      <VendorMoneyMin>-1</VendorMoneyMin>
+      <VendorMoneyMax>-1</VendorMoneyMax>
+      <VendorFightPercentage>-1</VendorFightPercentage>
+      <VendorCallPolicePercentage>-1</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>-1</VendorFightPolicePercentage>
+      <VendorCowerPercentage>-1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>-1</VendorSurrenderPercentage>
+      <VehiclePreviewCameraPosition>
+        <X>-2186.84</X>
+        <Y>-413.1134</Y>
+        <Z>13.84015</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>-0.5572002</X>
+        <Y>-0.8228531</Y>
+        <Z>-0.1115373</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>-6.403944</Pitch>
+        <Roll>-5.111849E-05</Roll>
+        <Yaw>145.8959</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations>  
+        <SpawnPlace>
+          <Position>
+            <X>-2190.875</X>
+            <Y>-418.9142</Y>
+            <Z>12.56087</Z>
+          </Position>
+          <Heading>300.2026</Heading>
+        </SpawnPlace>
+      </VehicleDeliveryLocations>
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>0</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>0</MaxPriceRefreshHours>
+      <MinRestockHours>0</MinRestockHours>
+      <MaxRestockHours>0</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>500</RacketeeringAmountMin>
+      <RacketeeringAmountMax>1000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+      <PurchasePrice>0</PurchasePrice>
+      <PayoutFrequency>7</PayoutFrequency>
+      <PayoutMin>0</PayoutMin>
+      <PayoutMax>0</PayoutMax>
+      <SalesPrice>0</SalesPrice>
+      <MaxSalesPrice>0</MaxSalesPrice>
+      <IsOwnable>false</IsOwnable>
+      <GrowthPercentage>20</GrowthPercentage>
+      <IsPrimaryGangDen>false</IsPrimaryGangDen>
+      <DisableNearbyScenarios>false</DisableNearbyScenarios>
+      <DisableScenarioDistance>50</DisableScenarioDistance>
+      <MaxAssaultSpawns>15</MaxAssaultSpawns>
+      <RestrictAssaultSpawningUsingPedSpawns>false</RestrictAssaultSpawningUsingPedSpawns>
+      <AssaultSpawnHeavyWeaponsPercent>80</AssaultSpawnHeavyWeaponsPercent>
+    </GangDen>
+  </GangDens>
+  <GunStores />
+  <Hotels />
+  <ApartmentBuildings />
+  <Residences />
+  <CityHalls />
+  <VendingMachines />
+  <PoliceStations />
+  <Hospitals />
+  <FireStations />
+  <Restaurants />
+  <Businesses />
+  <Pharmacies />
+  <Dispensaries />
+  <HeadShops />
+  <HardwareStores />
+  <PawnShops />
+  <Landmarks />
+  <Banks />
+  <ConvenienceStores />
+  <GasStations />
+  <LiquorStores />
+  <FoodStands />
+  <CarDealerships />
+  <VehicleExporters />
+  <Forgers />
+  <GamblingDens />
+  <RepairGarages />
+  <Bars />
+  <DriveThrus />
+  <ClothingShops />
+  <BusStops />
+  <SubwayStations />
+  <Prisons />
+  <Morgues />
+  <SportingGoodsStores />
+  <Airports />
+  <IllicitMarketplaces />
+  <BlankLocations>
+    <BlankLocation>
+      <Name>JAPBIKERPETROL1</Name>
+      <Description>3 Bikers hanging out at the petrol station</Description>
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>false</IsBlipEnabled>
+      <MapIcon>162</MapIcon>
+      <MapIconColorString>White</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>-2093.447</X>
+        <Y>-321.8348</Y>
+        <Z>12.49053</Z>
+      </EntrancePosition>
+      <EntranceHeading>212.3047</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>-1</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
+      <ShowsOnTaxi>false</ShowsOnTaxi>
+      <TypeName>Blank Location</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>300</ActivateDistance>
+      <AssignedAssociationID>AMBIENT_GANG_JAPMC</AssignedAssociationID>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>false</CanInteractWhenWanted>
+      <ShowsMarker>false</ShowsMarker>
+      <PossiblePedSpawns>
+            <ConditionalLocation xsi:type="GangConditionalLocation">
+              <Location>
+                <X>-2075.499</X>
+                <Y>-315.3235</Y>
+                <Z>13.15619</Z>
+              </Location>
+              <Heading>123.7289</Heading>
+              <Percentage>100</Percentage>
+              <AssociationID />
+              <RequiredPedGroup />
+              <RequiredVehicleGroup />
+              <IsEmpty>true</IsEmpty>
+              <AllowAirVehicle>false</AllowAirVehicle>
+              <AllowBoat>false</AllowBoat>
+              <TaskRequirements>Guard</TaskRequirements>
+              <ForcedScenarios>
+                <string>WORLD_HUMAN_HANG_OUT_STREET</string>
+                <string>WORLD_HUMAN_SMOKING_POT</string>
+              </ForcedScenarios>
+              <OverrideNightPercentage>-1</OverrideNightPercentage>
+              <OverrideDayPercentage>-1</OverrideDayPercentage>
+              <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+              <MinHourSpawn>0</MinHourSpawn>
+              <MaxHourSpawn>24</MaxHourSpawn>
+              <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+              <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+              <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+              <ForceMelee>false</ForceMelee>
+              <ForceSidearm>false</ForceSidearm>
+              <ForceLongGun>false</ForceLongGun>
+              <ForceVehicleGroup>false</ForceVehicleGroup>
+              <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+            </ConditionalLocation>
+            <ConditionalLocation xsi:type="GangConditionalLocation">
+              <Location>
+                <X>-2077.095</X>
+                <Y>-316.6053</Y>
+                <Z>13.14497</Z>
+              </Location>
+              <Heading>312.4934</Heading>
+              <Percentage>100</Percentage>
+              <AssociationID />
+              <RequiredPedGroup />
+              <RequiredVehicleGroup />
+              <IsEmpty>true</IsEmpty>
+              <AllowAirVehicle>false</AllowAirVehicle>
+              <AllowBoat>false</AllowBoat>
+              <TaskRequirements>Guard</TaskRequirements>
+              <ForcedScenarios>
+                <string>WORLD_HUMAN_HANG_OUT_STREET</string>
+                <string>WORLD_HUMAN_SMOKING_POT</string>
+              </ForcedScenarios>
+              <OverrideNightPercentage>-1</OverrideNightPercentage>
+              <OverrideDayPercentage>-1</OverrideDayPercentage>
+              <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+              <MinHourSpawn>0</MinHourSpawn>
+              <MaxHourSpawn>24</MaxHourSpawn>
+              <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+              <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+              <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+              <ForceMelee>false</ForceMelee>
+              <ForceSidearm>false</ForceSidearm>
+              <ForceLongGun>false</ForceLongGun>
+              <ForceVehicleGroup>false</ForceVehicleGroup>
+              <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+            </ConditionalLocation>
+            <ConditionalLocation xsi:type="GangConditionalLocation">
+              <Location>
+                <X>-2074.224</X>
+                <Y>-320.3482</Y>
+                <Z>13.31597</Z>
+              </Location>
+              <Heading>79.6933</Heading>
+              <Percentage>100</Percentage>
+              <AssociationID />
+              <RequiredPedGroup />
+              <RequiredVehicleGroup />
+              <IsEmpty>true</IsEmpty>
+              <AllowAirVehicle>false</AllowAirVehicle>
+              <AllowBoat>false</AllowBoat>
+              <TaskRequirements>Guard</TaskRequirements>
+              <ForcedScenarios>
+                <string>WORLD_HUMAN_HANG_OUT_STREET</string>
+                <string>WORLD_HUMAN_SMOKING_POT</string>
+              </ForcedScenarios>
+              <OverrideNightPercentage>-1</OverrideNightPercentage>
+              <OverrideDayPercentage>-1</OverrideDayPercentage>
+              <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+              <MinHourSpawn>0</MinHourSpawn>
+              <MaxHourSpawn>24</MaxHourSpawn>
+              <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+              <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+              <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+              <ForceMelee>false</ForceMelee>
+              <ForceSidearm>false</ForceSidearm>
+              <ForceLongGun>false</ForceLongGun>
+              <ForceVehicleGroup>false</ForceVehicleGroup>
+              <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+            </ConditionalLocation>
+      </PossiblePedSpawns>
+      <PossibleVehicleSpawns />
+      <VendorLocations />
+      <ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>VendorPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>20</VendorMeleePercent>
+      <VendorSidearmPercent>5</VendorSidearmPercent>
+      <VendorLongGunPercent>2</VendorLongGunPercent>
+      <VendorMoneyMin>-1</VendorMoneyMin>
+      <VendorMoneyMax>-1</VendorMoneyMax>
+      <VendorFightPercentage>-1</VendorFightPercentage>
+      <VendorCallPolicePercentage>-1</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>-1</VendorFightPolicePercentage>
+      <VendorCowerPercentage>-1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>-1</VendorSurrenderPercentage>
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations />
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>0</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>0</MaxPriceRefreshHours>
+      <MinRestockHours>0</MinRestockHours>
+      <MaxRestockHours>0</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>500</RacketeeringAmountMin>
+      <RacketeeringAmountMax>1000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+    </BlankLocation>
+    <BlankLocation>
+      <Name>JAPBIKERUNDERPASS1</Name>
+      <Description>2 Bikers hanging out at the underpass</Description>
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>false</IsBlipEnabled>
+      <MapIcon>162</MapIcon>
+      <MapIconColorString>White</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>973.4421</X>
+        <Y>-1371.566</Y>
+        <Z>21.40703</Z>
+      </EntrancePosition>
+      <EntranceHeading>281.2357</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>-1</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
+      <ShowsOnTaxi>false</ShowsOnTaxi>
+      <TypeName>Blank Location</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>300</ActivateDistance>
+      <AssignedAssociationID>AMBIENT_GANG_JAPMC</AssignedAssociationID>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>false</CanInteractWhenWanted>
+      <ShowsMarker>false</ShowsMarker>
+      <PossiblePedSpawns>
+            <ConditionalLocation xsi:type="GangConditionalLocation">
+              <Location>
+                <X>976.9334</X>
+                <Y>-1375.472</Y>
+                <Z>21.39407</Z>
+              </Location>
+              <Heading>102.6633</Heading>
+              <Percentage>100</Percentage>
+              <AssociationID />
+              <RequiredPedGroup />
+              <RequiredVehicleGroup />
+              <IsEmpty>true</IsEmpty>
+              <AllowAirVehicle>false</AllowAirVehicle>
+              <AllowBoat>false</AllowBoat>
+              <TaskRequirements>Guard</TaskRequirements>
+              <ForcedScenarios>
+                <string>WORLD_HUMAN_HANG_OUT_STREET</string>
+                <string>WORLD_HUMAN_SMOKING_POT</string>
+              </ForcedScenarios>
+              <OverrideNightPercentage>-1</OverrideNightPercentage>
+              <OverrideDayPercentage>-1</OverrideDayPercentage>
+              <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+              <MinHourSpawn>0</MinHourSpawn>
+              <MaxHourSpawn>24</MaxHourSpawn>
+              <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+              <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+              <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+              <ForceMelee>false</ForceMelee>
+              <ForceSidearm>false</ForceSidearm>
+              <ForceLongGun>false</ForceLongGun>
+              <ForceVehicleGroup>false</ForceVehicleGroup>
+              <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+            </ConditionalLocation>
+            <ConditionalLocation xsi:type="GangConditionalLocation">
+              <Location>
+                <X>975.1544</X>
+                <Y>-1375.922</Y>
+                <Z>21.37136</Z>
+              </Location>
+              <Heading>282.8336</Heading>
+              <Percentage>100</Percentage>
+              <AssociationID />
+              <RequiredPedGroup />
+              <RequiredVehicleGroup />
+              <IsEmpty>true</IsEmpty>
+              <AllowAirVehicle>false</AllowAirVehicle>
+              <AllowBoat>false</AllowBoat>
+              <TaskRequirements>Guard</TaskRequirements>
+              <ForcedScenarios>
+                <string>WORLD_HUMAN_HANG_OUT_STREET</string>
+                <string>WORLD_HUMAN_SMOKING_POT</string>
+              </ForcedScenarios>
+              <OverrideNightPercentage>-1</OverrideNightPercentage>
+              <OverrideDayPercentage>-1</OverrideDayPercentage>
+              <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+              <MinHourSpawn>0</MinHourSpawn>
+              <MaxHourSpawn>24</MaxHourSpawn>
+              <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+              <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+              <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+              <ForceMelee>false</ForceMelee>
+              <ForceSidearm>false</ForceSidearm>
+              <ForceLongGun>false</ForceLongGun>
+              <ForceVehicleGroup>false</ForceVehicleGroup>
+              <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+            </ConditionalLocation>
+      </PossiblePedSpawns>
+      <PossibleVehicleSpawns>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>973.4421</X>
+            <Y>-1371.566</Y>
+            <Z>21.40703</Z>
+          </Location>
+          <Heading>281.2357</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>false</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+      </PossibleVehicleSpawns>
+      <VendorLocations />
+      <ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>VendorPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>20</VendorMeleePercent>
+      <VendorSidearmPercent>5</VendorSidearmPercent>
+      <VendorLongGunPercent>2</VendorLongGunPercent>
+      <VendorMoneyMin>-1</VendorMoneyMin>
+      <VendorMoneyMax>-1</VendorMoneyMax>
+      <VendorFightPercentage>-1</VendorFightPercentage>
+      <VendorCallPolicePercentage>-1</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>-1</VendorFightPolicePercentage>
+      <VendorCowerPercentage>-1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>-1</VendorSurrenderPercentage>
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations />
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>0</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>0</MaxPriceRefreshHours>
+      <MinRestockHours>0</MinRestockHours>
+      <MaxRestockHours>0</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>500</RacketeeringAmountMin>
+      <RacketeeringAmountMax>1000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+    </BlankLocation>
+    <BlankLocation>
+      <Name>JAPBIKERKOREANSHOPS1</Name>
+      <Description>Bikers hanging out at Korean Stores</Description>
+      <IsEnabled>true</IsEnabled>
+      <IsTemporarilyClosed>false</IsTemporarilyClosed>
+      <BannerImagePath />
+      <RemoveBanner>false</RemoveBanner>
+      <IsBlipEnabled>false</IsBlipEnabled>
+      <MapIcon>162</MapIcon>
+      <MapIconColorString>White</MapIconColorString>
+      <MapIconScale>0.5</MapIconScale>
+      <MapIconRadius>1</MapIconRadius>
+      <MapOpenIconAlpha>1</MapOpenIconAlpha>
+      <MapClosedIconAlpha>0.25</MapClosedIconAlpha>
+      <EntrancePosition>
+        <X>-772.583</X>
+        <Y>-578.8021</Y>
+        <Z>30.12625</Z>
+      </EntrancePosition>
+      <EntranceHeading>103.2496</EntranceHeading>
+      <OpenTime>0</OpenTime>
+      <CloseTime>24</CloseTime>
+      <InteriorID>-1</InteriorID>
+      <IsWalkup>false</IsWalkup>
+      <IsOnSPMap>true</IsOnSPMap>
+      <IsOnMPMap>true</IsOnMPMap>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
+      <ShowsOnTaxi>false</ShowsOnTaxi>
+      <TypeName>Blank Location</TypeName>
+      <SortOrder>999</SortOrder>
+      <ScannerFilePath />
+      <ActivateCells>4</ActivateCells>
+      <ActivateDistance>300</ActivateDistance>
+      <AssignedAssociationID>AMBIENT_GANG_JAPMC</AssignedAssociationID>
+      <DisableRegularInteract>false</DisableRegularInteract>
+      <CameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraPosition>
+      <CameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </CameraDirection>
+      <CameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </CameraRotation>
+      <CanInteractWhenWanted>false</CanInteractWhenWanted>
+      <ShowsMarker>false</ShowsMarker>
+      <PossiblePedSpawns>
+            <ConditionalLocation xsi:type="GangConditionalLocation">
+              <Location>
+                <X>-796.8583</X>
+                <Y>-593.2598</Y>
+                <Z>30.27626</Z>
+              </Location>
+              <Heading>9.462535</Heading>
+              <Percentage>100</Percentage>
+              <AssociationID />
+              <RequiredPedGroup />
+              <RequiredVehicleGroup />
+              <IsEmpty>true</IsEmpty>
+              <AllowAirVehicle>false</AllowAirVehicle>
+              <AllowBoat>false</AllowBoat>
+              <TaskRequirements>Guard</TaskRequirements>
+              <ForcedScenarios>
+                <string>WORLD_HUMAN_HANG_OUT_STREET</string>
+                <string>WORLD_HUMAN_SMOKING_POT</string>
+              </ForcedScenarios>
+              <OverrideNightPercentage>-1</OverrideNightPercentage>
+              <OverrideDayPercentage>-1</OverrideDayPercentage>
+              <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+              <MinHourSpawn>0</MinHourSpawn>
+              <MaxHourSpawn>24</MaxHourSpawn>
+              <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+              <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+              <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+              <ForceMelee>false</ForceMelee>
+              <ForceSidearm>false</ForceSidearm>
+              <ForceLongGun>false</ForceLongGun>
+              <ForceVehicleGroup>false</ForceVehicleGroup>
+              <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+            </ConditionalLocation>
+            <ConditionalLocation xsi:type="GangConditionalLocation">
+              <Location>
+                <X>-797.2594</X>
+                <Y>-591.6052</Y>
+                <Z>30.27626</Z>
+              </Location>
+              <Heading>189.6922</Heading>
+              <Percentage>100</Percentage>
+              <AssociationID />
+              <RequiredPedGroup />
+              <RequiredVehicleGroup />
+              <IsEmpty>true</IsEmpty>
+              <AllowAirVehicle>false</AllowAirVehicle>
+              <AllowBoat>false</AllowBoat>
+              <TaskRequirements>Guard</TaskRequirements>
+              <ForcedScenarios>
+                <string>WORLD_HUMAN_AA_SMOKE</string>
+              </ForcedScenarios>
+              <OverrideNightPercentage>-1</OverrideNightPercentage>
+              <OverrideDayPercentage>-1</OverrideDayPercentage>
+              <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+              <MinHourSpawn>0</MinHourSpawn>
+              <MaxHourSpawn>24</MaxHourSpawn>
+              <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+              <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+              <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+              <ForceMelee>false</ForceMelee>
+              <ForceSidearm>false</ForceSidearm>
+              <ForceLongGun>false</ForceLongGun>
+              <ForceVehicleGroup>false</ForceVehicleGroup>
+              <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+            </ConditionalLocation>
+      </PossiblePedSpawns>
+      <PossibleVehicleSpawns>
+        <ConditionalLocation xsi:type="GangConditionalLocation">
+          <Location>
+            <X>-795.5089</X>
+            <Y>-588.1551</Y>
+            <Z>30.12627</Z>
+          </Location>
+          <Heading>167.5675</Heading>
+          <Percentage>100</Percentage>
+          <IsEmpty>false</IsEmpty>
+          <AllowAirVehicle>false</AllowAirVehicle>
+          <AllowBoat>false</AllowBoat>
+          <TaskRequirements>Guard</TaskRequirements>
+          <OverrideNightPercentage>-1</OverrideNightPercentage>
+          <OverrideDayPercentage>-1</OverrideDayPercentage>
+          <OverridePoorWeatherPercentage>-1</OverridePoorWeatherPercentage>
+          <MinHourSpawn>0</MinHourSpawn>
+          <MaxHourSpawn>24</MaxHourSpawn>
+          <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+          <MaxWantedLevelSpawn>3</MaxWantedLevelSpawn>
+          <LongGunAlwaysEquipped>false</LongGunAlwaysEquipped>
+          <ForceMelee>false</ForceMelee>
+          <ForceSidearm>false</ForceSidearm>
+          <ForceLongGun>false</ForceLongGun>
+          <ForceVehicleGroup>false</ForceVehicleGroup>
+          <TerritorySpawnsForceMainGang>false</TerritorySpawnsForceMainGang>
+        </ConditionalLocation>
+      </PossibleVehicleSpawns>
+      <VendorLocations />
+      <ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage>
+      <VendorPersonnelID>VendorPeds</VendorPersonnelID>
+      <VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID>
+      <VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID>
+      <VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID>
+      <VendorMeleePercent>20</VendorMeleePercent>
+      <VendorSidearmPercent>5</VendorSidearmPercent>
+      <VendorLongGunPercent>2</VendorLongGunPercent>
+      <VendorMoneyMin>-1</VendorMoneyMin>
+      <VendorMoneyMax>-1</VendorMoneyMax>
+      <VendorFightPercentage>-1</VendorFightPercentage>
+      <VendorCallPolicePercentage>-1</VendorCallPolicePercentage>
+      <VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage>
+      <VendorFightPolicePercentage>-1</VendorFightPolicePercentage>
+      <VendorCowerPercentage>-1</VendorCowerPercentage>
+      <VendorSurrenderPercentage>-1</VendorSurrenderPercentage>
+      <VehiclePreviewCameraPosition>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraPosition>
+      <VehiclePreviewCameraDirection>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </VehiclePreviewCameraDirection>
+      <VehiclePreviewCameraRotation>
+        <Pitch>0</Pitch>
+        <Roll>0</Roll>
+        <Yaw>0</Yaw>
+      </VehiclePreviewCameraRotation>
+      <VehicleDeliveryLocations />
+      <RegisterCashMin>250</RegisterCashMin>
+      <RegisterCashMax>1550</RegisterCashMax>
+      <NoEntryCam>false</NoEntryCam>
+      <MinPriceRefreshHours>0</MinPriceRefreshHours>
+      <MaxPriceRefreshHours>0</MaxPriceRefreshHours>
+      <MinRestockHours>0</MinRestockHours>
+      <MaxRestockHours>0</MaxRestockHours>
+      <CloseRange>10</CloseRange>
+      <RacketeeringAmountMin>500</RacketeeringAmountMin>
+      <RacketeeringAmountMax>1000</RacketeeringAmountMax>
+      <IgnoreEntranceInteract>false</IgnoreEntranceInteract>
+    </BlankLocation>
+  </BlankLocations>
+  <MilitaryBases />
+  <ExteriorCraftingLocations />
+  <BarberShops />
+  <PlasticSurgeryClinics />
+  <TattooShops />
+  <RaceMeetups />
+  <ATMMachines />
+  <GasPumps />
+  <CashRegisters />
+  <StoredSpawns />
+  <PedCustomizerLocation />
+</PossibleLocations>

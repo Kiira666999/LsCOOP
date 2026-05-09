@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ShopMenuTypes xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ShopMenuList>
+    <ShopMenu>
+      <ID>JapDenMenu</ID>
+      <Name>JapDenMenu</Name>
+      <GroupName />
+      <Items>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Heroin</ModItemName>
+          <PurchasePrice>41</PurchasePrice>
+          <SalesPrice>30</SalesPrice>
+          <IsIllicilt>true</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>20</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>20</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+          <MinSalesPrice>28</MinSalesPrice>
+          <MaxSalesPrice>32</MaxSalesPrice>
+          <MinPurchasePrice>38</MinPurchasePrice>
+          <MaxPurchasePrice>44</MaxPurchasePrice>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>G.E.S. Baseball Bat</ModItemName>
+          <PurchasePrice>1800</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Brass Knuckles</ModItemName>
+          <PurchasePrice>1200</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Combat Knife</ModItemName>
+          <PurchasePrice>2400</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Vom Feuer Machete</ModItemName>
+          <PurchasePrice>3600</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Switchblade</ModItemName>
+          <PurchasePrice>2400</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Shrewsbury S7A</ModItemName>
+          <PurchasePrice>18000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>68</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Tracer Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Incendiary Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Hollow Point Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Full Metal Jacket Rounds</ExtraName>
+              <PurchasePrice>500</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Flashlight</ExtraName>
+              <PurchasePrice>75</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Mounted Scope</ExtraName>
+              <PurchasePrice>890</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>780</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Compensator</ExtraName>
+              <PurchasePrice>240</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Hawk &amp; Little Millipede</ModItemName>
+          <PurchasePrice>33000</PurchasePrice>
+          <SalesPrice>300</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>120</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Vom Feuer SCRAMP</ModItemName>
+          <PurchasePrice>16000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>85</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Shrewsbury Stinkov</ModItemName>
+          <PurchasePrice>60000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>125</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Drum Magazine</ExtraName>
+              <PurchasePrice>225</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Vom Feuer KEK-9</ModItemName>
+          <PurchasePrice>33000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>120</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Drum Magazine</ExtraName>
+              <PurchasePrice>123</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>356</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Shrewsbury A7-4K</ModItemName>
+          <PurchasePrice>60000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras>
+            <MenuItemExtra>
+              <ExtraName>Default Clip</ExtraName>
+              <PurchasePrice>0</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Extended Clip</ExtraName>
+              <PurchasePrice>125</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Drum Magazine</ExtraName>
+              <PurchasePrice>200</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+            <MenuItemExtra>
+              <ExtraName>Suppressor</ExtraName>
+              <PurchasePrice>456</PurchasePrice>
+              <SalesPrice>-1</SalesPrice>
+              <HasItem>false</HasItem>
+            </MenuItemExtra>
+          </Extras>
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Dinka Akuma</ModItemName>
+          <PurchasePrice>10000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Pegassi Bati 801</ModItemName>
+          <PurchasePrice>15000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Nagasaki Carbon RS</ModItemName>
+          <PurchasePrice>40000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Principe Diabolus Custom</ModItemName>
+          <PurchasePrice>17000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+        <MenuItem>
+          <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
+          <NumberOfItemsPurchasedByPlayer>0</NumberOfItemsPurchasedByPlayer>
+          <ModItemName>Shitzu Hakuchou</ModItemName>
+          <PurchasePrice>19000</PurchasePrice>
+          <SalesPrice>-1</SalesPrice>
+          <IsIllicilt>false</IsIllicilt>
+          <Extras />
+          <SubPrice>1</SubPrice>
+          <SubAmount>30</SubAmount>
+          <MinimumPurchaseAmount>1</MinimumPurchaseAmount>
+          <MaximumPurchaseAmount>10</MaximumPurchaseAmount>
+          <PurchaseIncrement>1</PurchaseIncrement>
+          <NumberOfItemsToSellToPlayer>-1</NumberOfItemsToSellToPlayer>
+          <NumberOfItemsToPurchaseFromPlayer>-1</NumberOfItemsToPurchaseFromPlayer>
+          <IsFree>false</IsFree>
+        </MenuItem>
+      </Items>
+    </ShopMenu>
+  </ShopMenuList>
+  <ShopMenuGroupList />
+  <ShopMenuGroupContainers />
+  <PropShopMenus />
+  <TreatmentOptionsList />
+  <PedVariationShopMenus />
+</ShopMenuTypes>

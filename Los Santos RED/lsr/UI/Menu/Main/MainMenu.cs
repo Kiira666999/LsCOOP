@@ -1,5 +1,6 @@
 ﻿using LosSantosRED.lsr.Interface;
 using RAGENativeUI;
+using LosSantosRED.lsr.Coop.Core;
 using RAGENativeUI.Elements;
 using System.Linq;
 
@@ -35,9 +36,10 @@ public class MainMenu : ModUIMenu
     private IActivityPerformable ActivityPerformable;
     private ICrimes Crimes;
     private IGameConfigs GameConfigs;
+    private CoopPermissionService CoopPermissionService;
 
     public MainMenu(MenuPool menuPool, IActionable actionablePlayer, ILocationInteractable player, ISaveable saveablePlayer, IGameSaves gameSaves, IWeapons weapons, IPedSwap pedswap, IEntityProvideable world, ISettingsProvideable settings, ITaskerable tasker, 
-        IInventoryable playerinventory, IModItems modItems, UI ui, IGangs gangs, ITimeControllable time, IPlacesOfInterest placesOfInterest, IDances dances, IGestures gestures, IActivityPerformable activityPerformable, IAgencies agencies, ICrimes crimes, IIntoxicants intoxicants, IShopMenus shopMenus)
+        IInventoryable playerinventory, IModItems modItems, UI ui, IGangs gangs, ITimeControllable time, IPlacesOfInterest placesOfInterest, IDances dances, IGestures gestures, IActivityPerformable activityPerformable, IAgencies agencies, ICrimes crimes, IIntoxicants intoxicants, IShopMenus shopMenus, CoopPermissionService coopPermissionService = null)
     {
         MenuPool = menuPool;
         ActionablePlayer = actionablePlayer;
@@ -59,9 +61,10 @@ public class MainMenu : ModUIMenu
         UI = ui;
         Crimes = crimes;
         ActivityPerformable = activityPerformable;
+        CoopPermissionService = coopPermissionService ?? new CoopPermissionService();
         Main = new UIMenu("Los Santos RED", "Select an Option");
         SettingsMenu = new SettingsMenu(MenuPool, Main, Settings, Crimes, intoxicants, shopMenus);
-        PedSwapMenu = new PedSwapMenu(MenuPool, Main, PedSwap, Gangs, agencies, ActionablePlayer);
+        PedSwapMenu = new PedSwapMenu(MenuPool, Main, PedSwap, Gangs, agencies, ActionablePlayer, CoopPermissionService);
     }
 
     public void Setup()

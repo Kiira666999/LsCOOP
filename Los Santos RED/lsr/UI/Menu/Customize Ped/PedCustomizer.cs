@@ -1,5 +1,6 @@
 ﻿using LosSantosRED.lsr.Helper;
 using LosSantosRED.lsr.Interface;
+using LosSantosRED.lsr.Coop.Core;
 using Rage;
 using Rage.Native;
 using RAGENativeUI;
@@ -35,6 +36,7 @@ public class PedCustomizer
     private GameLocation TeleportedFromLocation;
     private IInteractionable Interactionable;
     private ILocationInteractable LocationInteractable;
+    private CoopPermissionService CoopPermissionService;
 
     private List<BlacklistedPedComponent> BlacklistedPedComponents = new List<BlacklistedPedComponent>();
 
@@ -75,7 +77,7 @@ public class PedCustomizer
     public ITattooNames TattooNames { get; private set; }
     public PedCustomizer(MenuPool menuPool, IPedSwap pedSwap, INameProvideable names, IPedSwappable player, IEntityProvideable world, ISettingsProvideable settings, 
         IDispatchablePeople dispatchablePeople, IHeads heads, IClothesNames clothesNames, IGangs gangs, IAgencies agencies, ITattooNames tattooNames, IGameSaves gameSaves, 
-        ISavedOutfits savedOutfits, IInteractionable interactionable, ILocationInteractable locationInteractable)
+        ISavedOutfits savedOutfits, IInteractionable interactionable, ILocationInteractable locationInteractable, CoopPermissionService coopPermissionService = null)
     {
         PedSwap = pedSwap;
         MenuPool = menuPool;
@@ -94,6 +96,7 @@ public class PedCustomizer
         SavedOutfits = savedOutfits;
         Interactionable = interactionable;
         LocationInteractable = locationInteractable;
+        CoopPermissionService = coopPermissionService ?? new CoopPermissionService();
     }   
     public bool SetupAsNewPlayer { get; private set; } = false;
     public bool ChoseToClose { get; private set; } = false;
@@ -168,7 +171,7 @@ public class PedCustomizer
             PedCustomizerLocation.SetDefault();
         }
 
-        PedCustomizerMenu = new PedCustomizerMenu(MenuPool, PedSwap, Names, Player, World, Settings, this, DispatchablePeople, Heads, Gangs,Agencies, GameSaves, SavedOutfits, PedCustomizerLocation);
+        PedCustomizerMenu = new PedCustomizerMenu(MenuPool, PedSwap, Names, Player, World, Settings, this, DispatchablePeople, Heads, Gangs,Agencies, GameSaves, SavedOutfits, PedCustomizerLocation, CoopPermissionService);
         PedCustomizerMenu.Setup();
 
         //CameraCycler = new CameraCycler(CharCam, Player, this, PedCustomizerLocation.CameraCyclerPositions);

@@ -1,5 +1,6 @@
 ﻿using LosSantosRED.lsr.Interface;
 using Rage;
+using LosSantosRED.lsr.Coop.Core;
 using Rage.Native;
 using RAGENativeUI;
 using RAGENativeUI.Elements;
@@ -29,8 +30,9 @@ public class PedSwapMenu : ModUIMenu
     private UIMenuListScrollerItem<Agency> SetAsEMT;
     private UIMenuListScrollerItem<Agency> SetAsFireFighter;
     private UIMenuListScrollerItem<Agency> SetAsSecurity;
+    private CoopPermissionService CoopPermissionService;
 
-    public PedSwapMenu(MenuPool menuPool, UIMenu parentMenu, IPedSwap pedSwap, IGangs gangs, IAgencies agencies, IActionable player)
+    public PedSwapMenu(MenuPool menuPool, UIMenu parentMenu, IPedSwap pedSwap, IGangs gangs, IAgencies agencies, IActionable player, CoopPermissionService coopPermissionService = null)
     {
         MenuPool = menuPool;
         ParentMenu = parentMenu;
@@ -38,6 +40,7 @@ public class PedSwapMenu : ModUIMenu
         Gangs = gangs;
         Agencies = agencies;
         Player = player;
+        CoopPermissionService = coopPermissionService ?? new CoopPermissionService();
     }
     public void Setup()
     {
@@ -78,9 +81,11 @@ public class PedSwapMenu : ModUIMenu
     private void CreatePedSwap()
     {
         PedSwapUIMenu.Clear();
+        bool canUsePedSwap = CoopPermissionService.CanUsePedSwap();
 
 
         BecomeCustomPed2 = new UIMenuItem("Ped Update/Create", "Update your existing ped or create a new customized ped from user input.");
+        BecomeCustomPed2.Enabled = canUsePedSwap;
         BecomeCustomPed2.Activated += (menu, item) =>
         {
             //if(Player.InteriorManager.IsInsideTeleportInterior)
@@ -94,6 +99,7 @@ public class PedSwapMenu : ModUIMenu
         PedSwapUIMenu.AddItem(BecomeCustomPed2);
 
         TakeoverRandomPed = new UIMenuListScrollerItem<DistanceSelect>("Takeover Random Pedestrian", "Takes over a random ~r~civilian~s~ pedestrian around the player.", Distances);
+        TakeoverRandomPed.Enabled = canUsePedSwap;
         TakeoverRandomPed.Activated += (s, e) =>
         {
             if (Player.InteriorManager.IsInsideTeleportInterior)
@@ -114,6 +120,7 @@ public class PedSwapMenu : ModUIMenu
         PedSwapUIMenu.AddItem(TakeoverRandomPed);
 
         BecomeRandomPed = new UIMenuItem("Become Random Pedestrian", "Becomes a random ~r~civilian~s~ ped model.");
+        BecomeRandomPed.Enabled = canUsePedSwap;
         BecomeRandomPed.Activated += (menu, item) =>
         {
             if (Player.InteriorManager.IsInsideTeleportInterior)
@@ -128,6 +135,7 @@ public class PedSwapMenu : ModUIMenu
 
 
         SetAsGangMember = new UIMenuListScrollerItem<Gang>("Become Gang Member", "Become a random ~r~gang member~s~ of the selected gang. When you join, you join for life.", Gangs.GetAllGangs());
+        SetAsGangMember.Enabled = canUsePedSwap;
         SetAsGangMember.Activated += (menu, item) =>
         {
             if (Player.InteriorManager.IsInsideTeleportInterior)
@@ -141,6 +149,7 @@ public class PedSwapMenu : ModUIMenu
         PedSwapUIMenu.AddItem(SetAsGangMember);
 
         SetAsCop = new UIMenuListScrollerItem<Agency>("Become Cop", "Become a random ~b~Police Officer~s~ from the selected agency. Become part of the REAL biggest gang around. Use your police powers to enrich yourself and terrorize your enemies. Be on the lookout for nosey civilians and so-called 'good' cops when you make your moves. ~r~WIP Most Features TBD~s~", Agencies.GetAgencies().Where(x=> x.ResponseType == ResponseType.LawEnforcement));
+        SetAsCop.Enabled = canUsePedSwap;
         SetAsCop.Activated += (menu, item) =>
         {
             if (Player.InteriorManager.IsInsideTeleportInterior)
@@ -158,6 +167,7 @@ public class PedSwapMenu : ModUIMenu
 #endif
 
         SetAsSecurity = new UIMenuListScrollerItem<Agency>("Become Security", "Become a random ~y~Security Guard~s~ from the selected agency. Want to walk around with a gun without questions? Not accepted by the real police? Join a security agency and become the king of your small castle.~r~WIP Most Features TBD~s~", Agencies.GetAgencies().Where(x => x.ResponseType == ResponseType.Security));
+        SetAsSecurity.Enabled = canUsePedSwap;
         SetAsSecurity.Activated += (menu, item) =>
         {
             if (Player.InteriorManager.IsInsideTeleportInterior)
@@ -175,6 +185,7 @@ public class PedSwapMenu : ModUIMenu
 #endif
 
         SetAsEMT = new UIMenuListScrollerItem<Agency>("Become EMT", "Become a random ~w~EMT~s~ from the selected agency. Treat the unwashed masses, or don't. Got sticky fingers? They won't miss it if they are dead. ~r~WIP Most Features TBD~s~", Agencies.GetAgencies().Where(x => x.ResponseType == ResponseType.EMS));
+        SetAsEMT.Enabled = canUsePedSwap;
         SetAsEMT.Activated += (menu, item) =>
         {
             if (Player.InteriorManager.IsInsideTeleportInterior)
@@ -191,6 +202,7 @@ public class PedSwapMenu : ModUIMenu
 #endif
 
         SetAsFireFighter = new UIMenuListScrollerItem<Agency>("Become FireFighter", "Become a random ~r~Firefighter~s~ from the selected agency. You've seen Backdraft right? ~r~WIP Most Features TBD~s~", Agencies.GetAgencies().Where(x => x.ResponseType == ResponseType.Fire));
+        SetAsFireFighter.Enabled = canUsePedSwap;
         SetAsFireFighter.Activated += (menu, item) =>
         {
             if (Player.InteriorManager.IsInsideTeleportInterior)

@@ -1,0 +1,66 @@
+<PossibleItems xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FlashlightItems />
+  <CellphoneItems />
+  <ModItems />
+  <ShovelItems />
+  <UmbrellaItems />
+  <LicensePlateItems />
+  <LighterItems />
+  <ScrewdriverItems />
+  <TapeItems />
+  <DrillItems />
+  <HammerItems />
+  <PliersItems />
+  <BongItems />
+  <PipeItems />
+  <RollingPapersItems />
+  <FoodItems />
+  <SmokeItems />
+  <PipeSmokeItems />
+  <DrinkItems />
+  <InhaleItems />
+  <IngestItems />
+  <InjectItems />
+  <HotelStayItems />
+  <WeaponItems />
+  <VehicleItems>
+    <VehicleItem>
+      <Name>Cuban 800</Name>
+      <Description />
+      <ItemType>Vehicles</ItemType>
+      <ItemSubType>None</ItemSubType>
+      <MeasurementName>Item</MeasurementName>
+      <AmountPerPackage>1</AmountPerPackage>
+      <IsPossessionIllicit>false</IsPossessionIllicit>
+      <IsPublicUseIllegal>false</IsPublicUseIllegal>
+      <PercentLostOnUse>0</PercentLostOnUse>
+      <ConsumeOnPurchase>false</ConsumeOnPurchase>
+      <CanConsume>false</CanConsume>
+      <FindPercentage>0</FindPercentage>
+      <PoliceFindDuringPlayerSearchPercentage>85</PoliceFindDuringPlayerSearchPercentage>
+      <RequiresDLC>false</RequiresDLC>
+      <ModelName>cuban800</ModelName>
+      <ModelHash>3650256867</ModelHash>
+      <OverrideCannotLoadBodiesInRear>false</OverrideCannotLoadBodiesInRear>
+      <OverrideLoadBodiesInBed>false</OverrideLoadBodiesInBed>
+      <BedLoadOffsetOverride>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </BedLoadOffsetOverride>
+      <OverrideTrunkAttachment>false</OverrideTrunkAttachment>
+      <TrunkAttachOffsetOverride>
+        <X>0</X>
+        <Y>0</Y>
+        <Z>0</Z>
+      </TrunkAttachOffsetOverride>
+    </VehicleItem>
+  </VehicleItems>
+  <BinocularsItems />
+  <RadioItems />
+  <RadarDetectorItems />
+  <ValuableItems />
+  <EquipmentItems />
+  <BodyArmorItems />
+  <HardwareItems />
+</PossibleItems>
