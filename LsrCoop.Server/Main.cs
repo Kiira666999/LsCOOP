@@ -93,6 +93,7 @@ namespace LsrCoop.Server
         {
             API.RegisterCustomEventHandler(EventRouter.PingEventHash, OnPingReceived);
             API.RegisterCustomEventHandler(EventRouter.CompatibilityReportEventHash, OnCompatibilityReportReceived);
+            API.RegisterCustomEventHandler(EventRouter.CharacterCreatedEventHash, OnCharacterCreatedReceived);
             API.RegisterCustomEventHandler(EventRouter.CharacterSnapshotAckEventHash, OnCharacterSnapshotAckReceived);
             API.RegisterCustomEventHandler(EventRouter.AppearanceChangeRequestedEventHash, OnAppearanceChangeRequested);
             API.RegisterCustomEventHandler(EventRouter.GameplayActionCommittedEventHash, OnGameplayActionCommitted);
@@ -143,6 +144,27 @@ namespace LsrCoop.Server
             }
 
             activeHostHandoffService.EvaluateAndSync("character-snapshot-ack");
+        }
+
+        private void OnCharacterCreatedReceived(CustomEventReceivedArgs args)
+        {
+            CoopClientStatus status = playerRegistrationService.RegisterClient(args?.Client, "character-created");
+            if (status == null)
+            {
+                return;
+            }
+
+            CoopCharacterCreatedRequest request = Deserialize<CoopCharacterCreatedRequest>(GetArg(args, 0));
+            if (!playerRegistrationService.TrySaveCreatedCharacter(status, request, out string reason))
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected character create from {status.ProfileId}: {reason}");
+                playerRegistrationService.SendRegistrationState(status, "character-create-rejected");
+                activeHostHandoffService.EvaluateAndSync("character-create-rejected");
+                return;
+            }
+
+            playerRegistrationService.SendRegistrationState(status, "character-created");
+            activeHostHandoffService.EvaluateAndSync("character-created");
         }
 
         private void OnAppearanceChangeRequested(CustomEventReceivedArgs args)

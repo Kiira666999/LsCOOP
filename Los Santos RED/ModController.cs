@@ -50,9 +50,11 @@ namespace LosSantosRED.lsr
         public bool RunVanilla { get; set; } = true;
         public bool RunMenuOnly { get; set; } = true;
         public bool IsDisplayingAlertScreen { get; set; } = false;
+        public bool IsBootstrapOnly { get; private set; }
         public void Setup()
         {
             IsRunning = true;
+            IsBootstrapOnly = false;
             EntryPoint.IsLoadingAltConfig = false;
             while (Game.IsLoading)
             {
@@ -74,15 +76,8 @@ namespace LosSantosRED.lsr
             Time = new Mod.Time(ModDataFileManager.Settings);
             Time.Setup();
             GameFiber.Yield();
-            World = new Mod.World(ModDataFileManager.Agencies, ModDataFileManager.Zones, ModDataFileManager.Jurisdictions, ModDataFileManager.Settings, ModDataFileManager.PlacesOfInterest, ModDataFileManager.PlateTypes,
-                ModDataFileManager.Names, ModDataFileManager.RelationshipGroups, ModDataFileManager.Weapons, ModDataFileManager.Crimes, Time, ModDataFileManager.ShopMenus, ModDataFileManager.Interiors, NAudioPlayer,
-                ModDataFileManager.Gangs, ModDataFileManager.GangTerritories, ModDataFileManager.Streets, ModDataFileManager.ModItems, ModDataFileManager.RelationshipGroups, ModDataFileManager.LocationTypes,
-                ModDataFileManager.Organizations, ModDataFileManager.Contacts, ModDataFileManager);
-            Player = new Mod.Player(Game.LocalPlayer.Character.Model.Name, Game.LocalPlayer.Character.IsMale, ModDataFileManager.Names.GetRandomName(Game.LocalPlayer.Character.Model.Name, Game.LocalPlayer.Character.IsMale), World, Time,
-                ModDataFileManager.Streets, ModDataFileManager.Zones, ModDataFileManager.Settings, ModDataFileManager.Weapons, ModDataFileManager.RadioStations, ModDataFileManager.Scenarios, ModDataFileManager.Crimes, NAudioPlayer,
-                NAudioPlayer2, ModDataFileManager.PlacesOfInterest, ModDataFileManager.Interiors, ModDataFileManager.ModItems, ModDataFileManager.Intoxicants, ModDataFileManager.Gangs, ModDataFileManager.Jurisdictions,
-                ModDataFileManager.GangTerritories, ModDataFileManager.GameSaves, ModDataFileManager.Names, ModDataFileManager.ShopMenus, ModDataFileManager.RelationshipGroups, ModDataFileManager.DanceList, ModDataFileManager.SpeechList,
-                ModDataFileManager.Seats, ModDataFileManager.Agencies, ModDataFileManager.SavedOutfits, ModDataFileManager.VehicleSeatDoorData, ModDataFileManager.Cellphones, ModDataFileManager.Contacts, ModDataFileManager.VehicleRaces, ModDataFileManager.DispatchableVehicles, ModDataFileManager.DispatchablePeople);
+            World = CreateWorld();
+            Player = CreatePlayer(World);
             World.Setup(Player, Player);
             GameFiber.Yield();
             Player.Setup();
@@ -90,13 +85,13 @@ namespace LosSantosRED.lsr
             CoopCharacterManager = new LsrCoopCharacterManager();
             CoopCharacterManager.RegisterLocalCharacter(Player);
             CoopPermissionService = new CoopPermissionService();
+            ConfigureCoopPermissions(true, LsrCoopMode.ActiveHost);
             GameFiber.Yield();
             Police = new Police(World, Player, Player, ModDataFileManager.Settings, Player, Time);
             GameFiber.Yield();
             Civilians = new Civilians(World, Player, Player, ModDataFileManager.Settings, ModDataFileManager.Gangs);
             GameFiber.Yield();
-            PedSwap = new PedSwap(Time, Player, ModDataFileManager.Settings, World, ModDataFileManager.Weapons, ModDataFileManager.Crimes, ModDataFileManager.Names, ModDataFileManager.ModItems, World, ModDataFileManager.RelationshipGroups,
-                ModDataFileManager.ShopMenus, ModDataFileManager.DispatchablePeople, ModDataFileManager.Heads, ModDataFileManager.ClothesNames, ModDataFileManager.Gangs, ModDataFileManager.Agencies, ModDataFileManager.TattooNames, ModDataFileManager.GameSaves, ModDataFileManager.SavedOutfits, Player, Player, CoopPermissionService);
+            PedSwap = CreatePedSwap();
             GameFiber.Yield();
             Player.PedSwap = PedSwap;
             Tasker = new Mod.Tasker(World, Player, ModDataFileManager.Weapons, ModDataFileManager.Settings, ModDataFileManager.PlacesOfInterest);
@@ -162,6 +157,43 @@ namespace LosSantosRED.lsr
             //    EntryPoint.WriteToConsole($"Loaded {ConfigName}", 0); 
             //}
         }
+        public void SetupBootstrapOnly()
+        {
+            IsRunning = true;
+            IsBootstrapOnly = true;
+            EntryPoint.IsLoadingAltConfig = false;
+            while (Game.IsLoading)
+            {
+                GameFiber.Yield();
+            }
+
+            Game.FadeScreenOut(500, true);
+            ModDataFileManager = new ModDataFileManager();
+            ModDataFileManager.Setup();
+            GameFiber.Yield();
+
+            NAudioPlayer = new NAudioPlayer(ModDataFileManager.Settings);
+            NAudioPlayer.Setup();
+            NAudioPlayer2 = new NAudioPlayer(ModDataFileManager.Settings);
+            NAudioPlayer2.Setup();
+            Time = new Mod.Time(ModDataFileManager.Settings);
+            Time.Setup();
+            World = CreateWorld();
+            Player = CreatePlayer(World);
+            Player.Setup();
+            CoopCharacterManager = new LsrCoopCharacterManager();
+            CoopCharacterManager.RegisterLocalCharacter(Player);
+            CoopPermissionService = new CoopPermissionService();
+            ConfigureCoopPermissions(false, LsrCoopMode.BootstrapOnly);
+            PedSwap = CreatePedSwap();
+            Player.PedSwap = PedSwap;
+            PedSwap.Setup();
+            NativeFunction.Natives.FREEZE_ENTITY_POSITION(Game.LocalPlayer.Character, false);
+            Game.FadeScreenIn(500, true);
+            Game.DisplayNotification("LSR co-op character creation mode");
+            EntryPoint.WriteToConsole("Co-op BootstrapOnly character creation mode started", 0);
+            PedSwap.BecomeCreatorPed();
+        }
         public void SetupFileOnly()
         {
             while (Game.IsLoading)
@@ -174,16 +206,16 @@ namespace LosSantosRED.lsr
         public void Dispose()
         {
             IsRunning = false;
-            Player.Dispose();
-            World.Dispose();
-            PedSwap.Dispose();
-            Dispatcher.Dispose();
-            VanillaManager.Dispose();
-            UI.Dispose();
-            Time.Dispose();
-            Weather.Dispose();
-            Debug.Dispose();
-            WeatherManager.Dispose();
+            Player?.Dispose();
+            World?.Dispose();
+            PedSwap?.Dispose();
+            Dispatcher?.Dispose();
+            VanillaManager?.Dispose();
+            UI?.Dispose();
+            Time?.Dispose();
+            Weather?.Dispose();
+            Debug?.Dispose();
+            WeatherManager?.Dispose();
 
 
 
@@ -277,6 +309,40 @@ namespace LosSantosRED.lsr
                     new ModTask(500, "Tasker.UpdateCivilians", Tasker.UpdateCivilians, 1),
                 }),
             };
+        }
+        private Mod.World CreateWorld()
+        {
+            return new Mod.World(ModDataFileManager.Agencies, ModDataFileManager.Zones, ModDataFileManager.Jurisdictions, ModDataFileManager.Settings, ModDataFileManager.PlacesOfInterest, ModDataFileManager.PlateTypes,
+                ModDataFileManager.Names, ModDataFileManager.RelationshipGroups, ModDataFileManager.Weapons, ModDataFileManager.Crimes, Time, ModDataFileManager.ShopMenus, ModDataFileManager.Interiors, NAudioPlayer,
+                ModDataFileManager.Gangs, ModDataFileManager.GangTerritories, ModDataFileManager.Streets, ModDataFileManager.ModItems, ModDataFileManager.RelationshipGroups, ModDataFileManager.LocationTypes,
+                ModDataFileManager.Organizations, ModDataFileManager.Contacts, ModDataFileManager);
+        }
+
+        private Mod.Player CreatePlayer(Mod.World world)
+        {
+            return new Mod.Player(Game.LocalPlayer.Character.Model.Name, Game.LocalPlayer.Character.IsMale, ModDataFileManager.Names.GetRandomName(Game.LocalPlayer.Character.Model.Name, Game.LocalPlayer.Character.IsMale), world, Time,
+                ModDataFileManager.Streets, ModDataFileManager.Zones, ModDataFileManager.Settings, ModDataFileManager.Weapons, ModDataFileManager.RadioStations, ModDataFileManager.Scenarios, ModDataFileManager.Crimes, NAudioPlayer,
+                NAudioPlayer2, ModDataFileManager.PlacesOfInterest, ModDataFileManager.Interiors, ModDataFileManager.ModItems, ModDataFileManager.Intoxicants, ModDataFileManager.Gangs, ModDataFileManager.Jurisdictions,
+                ModDataFileManager.GangTerritories, ModDataFileManager.GameSaves, ModDataFileManager.Names, ModDataFileManager.ShopMenus, ModDataFileManager.RelationshipGroups, ModDataFileManager.DanceList, ModDataFileManager.SpeechList,
+                ModDataFileManager.Seats, ModDataFileManager.Agencies, ModDataFileManager.SavedOutfits, ModDataFileManager.VehicleSeatDoorData, ModDataFileManager.Cellphones, ModDataFileManager.Contacts, ModDataFileManager.VehicleRaces, ModDataFileManager.DispatchableVehicles, ModDataFileManager.DispatchablePeople);
+        }
+
+        private PedSwap CreatePedSwap()
+        {
+            return new PedSwap(Time, Player, ModDataFileManager.Settings, World, ModDataFileManager.Weapons, ModDataFileManager.Crimes, ModDataFileManager.Names, ModDataFileManager.ModItems, World, ModDataFileManager.RelationshipGroups,
+                ModDataFileManager.ShopMenus, ModDataFileManager.DispatchablePeople, ModDataFileManager.Heads, ModDataFileManager.ClothesNames, ModDataFileManager.Gangs, ModDataFileManager.Agencies, ModDataFileManager.TattooNames, ModDataFileManager.GameSaves, ModDataFileManager.SavedOutfits, Player, Player, CoopPermissionService);
+        }
+
+        private void ConfigureCoopPermissions(bool localCharacterExists, LsrCoopMode mode)
+        {
+            CoopPermissionService.SetLocalCharacterExists(localCharacterExists);
+            CoopPermissionService.SetSessionState(new CoopSessionState
+            {
+                Mode = CoopStartupBridge.IsCoopEnabled ? mode : LsrCoopMode.Disabled,
+                WorldId = new CoopWorldId(CoopStartupBridge.WorldId),
+                LocalCharacterId = new CoopCharacterId(CoopStartupBridge.LocalProfileId),
+                ActiveHostCharacterId = new CoopCharacterId(CoopStartupBridge.ActiveHostProfileId),
+            });
         }
         private void StartCoreLogic()
         {

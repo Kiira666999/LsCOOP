@@ -24,6 +24,7 @@ namespace LsrCoop.Client
         private static readonly int CompatibilityStatusEventHash = CustomEvents.Hash("lsrcoop.compatibility.status");
         private static readonly int PlayerRegisteredEventHash = CustomEvents.Hash("lsrcoop.player.registered");
         private static readonly int CharacterCreateRequiredEventHash = CustomEvents.Hash("lsrcoop.character.createRequired");
+        private static readonly int CharacterCreatedEventHash = CustomEvents.Hash("lsrcoop.character.created");
         private static readonly int CharacterSnapshotEventHash = CustomEvents.Hash("lsrcoop.character.snapshot");
         private static readonly int CharacterSnapshotAckEventHash = CustomEvents.Hash("lsrcoop.character.snapshotAck");
         private static readonly int AppearanceChangeRequestedEventHash = CustomEvents.Hash("lsrcoop.appearance.changeRequested");
@@ -48,6 +49,11 @@ namespace LsrCoop.Client
         private string localProfileId;
         private string activeHostProfileId;
         private bool localCharacterReadyForSimulation;
+        private bool characterCreationRequired;
+        private bool characterCreationRequestSent;
+        private DateTimeOffset characterCreateRequiredUtc;
+        private bool lsrGameplayBridgeRegistered;
+        private DateTimeOffset lastLsrBridgeRegistrationAttemptUtc;
 
         public Main()
         {
@@ -66,6 +72,7 @@ namespace LsrCoop.Client
 
         public override void OnStop()
         {
+            ExitCharacterCreationSafeState();
             UnregisterLsrGameplayBridge();
             SetBridgeDisabled();
             Logger.Info("[LsrCoop.Client] stopped");
@@ -90,6 +97,7 @@ namespace LsrCoop.Client
 
         public void OnTick()
         {
+            EnsureLsrGameplayBridgeRegistered();
             DetectPlayerOnPlayerViolence();
         }
 
@@ -226,6 +234,7 @@ namespace LsrCoop.Client
             if (string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase))
             {
                 localCharacterReadyForSimulation = false;
+                EnterCharacterCreationSafeState(worldId, profileId);
                 UpdateCurrentBridgeState();
             }
             Logger.Info($"[LsrCoop.Client] character create required: world={worldId}, profile={profileId}");
@@ -240,10 +249,133 @@ namespace LsrCoop.Client
             if (string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase))
             {
                 localCharacterReadyForSimulation = snapshot != null;
+                if (localCharacterReadyForSimulation)
+                {
+                    ExitCharacterCreationSafeState();
+                }
                 UpdateCurrentBridgeState();
                 SendCharacterSnapshotAck(worldId, profileId);
             }
             Logger.Info($"[LsrCoop.Client] character snapshot received: world={worldId}, profile={profileId}");
+        }
+
+        private void EnterCharacterCreationSafeState(string worldId, string profileId)
+        {
+            localWorldId = string.IsNullOrWhiteSpace(worldId) ? localWorldId : worldId;
+            localProfileId = string.IsNullOrWhiteSpace(profileId) ? localProfileId : profileId;
+            characterCreationRequired = true;
+            characterCreationRequestSent = false;
+            characterCreateRequiredUtc = DateTimeOffset.UtcNow;
+            ApplyCharacterCreationSafeState(true);
+            TryOpenExistingLsrCustomizer();
+            Logger.Info("[LsrCoop.Client] character creation required; local player safe-stated");
+        }
+
+        private void ExitCharacterCreationSafeState()
+        {
+            if (!characterCreationRequired && !characterCreationRequestSent)
+            {
+                return;
+            }
+
+            characterCreationRequired = false;
+            characterCreationRequestSent = false;
+            ApplyCharacterCreationSafeState(false);
+            Logger.Info("[LsrCoop.Client] character creation safe-state cleared");
+        }
+
+        private void EnsureLsrGameplayBridgeRegistered()
+        {
+            if (lsrGameplayBridgeRegistered || DateTimeOffset.UtcNow - lastLsrBridgeRegistrationAttemptUtc < TimeSpan.FromSeconds(3))
+            {
+                return;
+            }
+
+            lastLsrBridgeRegistrationAttemptUtc = DateTimeOffset.UtcNow;
+            lsrGameplayBridgeRegistered = RegisterLsrGameplayBridge();
+        }
+
+        private void ApplyCharacterCreationSafeState(bool enabled)
+        {
+            Ped ped = Game.Player?.Character;
+            if (ped == null || !ped.Exists())
+            {
+                return;
+            }
+
+            Function.Call(Hash.FREEZE_ENTITY_POSITION, ped.Handle, enabled);
+            Function.Call(Hash.SET_ENTITY_INVINCIBLE, ped.Handle, enabled);
+        }
+
+        private void TryOpenExistingLsrCustomizer()
+        {
+            Logger.Info("[LsrCoop.Client] press Shift+F10 to open LSR co-op BootstrapOnly character creation");
+        }
+
+        private void OnLsrCharacterCreated(object character)
+        {
+            string modelName = GetString(character, "ModelName");
+            string displayName = GetString(character, "PlayerName");
+            SendCharacterCreatedRequest(modelName, displayName);
+        }
+
+        private void SendCharacterCreatedRequest(string modelName, string displayName)
+        {
+            if (characterCreationRequestSent)
+            {
+                return;
+            }
+
+            if (!API.IsOnServer || string.IsNullOrWhiteSpace(localWorldId) || string.IsNullOrWhiteSpace(localProfileId))
+            {
+                Logger.Info("[LsrCoop.Client] character created request skipped; client is not registered");
+                return;
+            }
+
+            Ped ped = Game.Player?.Character;
+            if (ped == null || !ped.Exists())
+            {
+                Logger.Info("[LsrCoop.Client] character created request skipped; local ped unavailable");
+                return;
+            }
+
+            modelName = string.IsNullOrWhiteSpace(modelName) ? GetPedModelName(ped) : modelName;
+            displayName = string.IsNullOrWhiteSpace(displayName) ? localProfileId : displayName;
+            CoopAppearanceState appearance = appearanceCaptureService.Capture(ped, modelName);
+            if (appearance == null)
+            {
+                Logger.Info("[LsrCoop.Client] character created request skipped; appearance unavailable");
+                return;
+            }
+
+            CoopCharacterCreatedRequest request = new CoopCharacterCreatedRequest
+            {
+                WorldId = localWorldId,
+                ProfileId = localProfileId,
+                Character = new CoopCharacterSnapshot
+                {
+                    CharacterId = localProfileId,
+                    ProfileId = localProfileId,
+                    DisplayName = displayName,
+                    ModelName = modelName,
+                    Appearance = appearance
+                }
+            };
+
+            characterCreationRequestSent = true;
+            API.SendCustomEvent(CharacterCreatedEventHash, new object[] { serializer.Serialize(request) });
+            Logger.Info($"[LsrCoop.Client] character created request sent: world={localWorldId}, profile={localProfileId}, model={modelName}");
+        }
+
+        private string GetPedModelName(Ped ped)
+        {
+            if (ped == null || !ped.Exists())
+            {
+                return string.Empty;
+            }
+
+            int modelHash = Function.Call<int>(Hash.GET_ENTITY_MODEL, ped.Handle);
+            return modelHash.ToString();
         }
 
         private void OnAppearanceChanged(CustomEventReceivedArgs args)
@@ -277,9 +409,9 @@ namespace LsrCoop.Client
             Logger.Info($"[LsrCoop.Client] gameplay action result: request={result.RequestId}, accepted={result.Accepted}, resync={result.RequiresResync}");
         }
 
-        private void RegisterLsrGameplayBridge()
+        private bool RegisterLsrGameplayBridge()
         {
-            InvokeLsrStaticBridge(
+            bool registered = InvokeLsrStaticBridge(
                 "LosSantosRED.lsr.Coop.Core.CoopStorePurchaseBridge",
                 "RegisterPurchaseCommitSink",
                 new Action<object>(OnLsrPurchaseCommitted));
@@ -303,6 +435,18 @@ namespace LsrCoop.Client
                 "LosSantosRED.lsr.Coop.Core.CoopGangReputationStateAdapter",
                 "RegisterSnapshotCommittedSink",
                 new Action<object>(OnLsrGangReputationSnapshotCommitted));
+
+            registered = InvokeLsrStaticBridge(
+                "LosSantosRED.lsr.Coop.Core.CoopCharacterCreationBridge",
+                "RegisterCharacterCreatedSink",
+                new Action<object>(OnLsrCharacterCreated)) || registered;
+
+            if (registered)
+            {
+                Logger.Info("[LsrCoop.Client] LSR gameplay bridge registered");
+            }
+
+            return registered;
         }
 
         private void UnregisterLsrGameplayBridge()
@@ -326,6 +470,10 @@ namespace LsrCoop.Client
             InvokeLsrStaticBridge(
                 "LosSantosRED.lsr.Coop.Core.CoopGangReputationStateAdapter",
                 "UnregisterSnapshotCommittedSink");
+
+            InvokeLsrStaticBridge(
+                "LosSantosRED.lsr.Coop.Core.CoopCharacterCreationBridge",
+                "UnregisterCharacterCreatedSink");
         }
 
         private void OnLsrPurchaseCommitted(object commit)
@@ -692,7 +840,7 @@ namespace LsrCoop.Client
             InvokeLsrStaticBridge("LosSantosRED.lsr.Coop.Core.CoopStartupBridge", methodName, args);
         }
 
-        private void InvokeLsrStaticBridge(string typeName, string methodName, params object[] args)
+        private bool InvokeLsrStaticBridge(string typeName, string methodName, params object[] args)
         {
             try
             {
@@ -701,11 +849,18 @@ namespace LsrCoop.Client
                     .FirstOrDefault(x => x != null);
 
                 MethodInfo method = bridgeType?.GetMethod(methodName, BindingFlags.Public | BindingFlags.Static);
-                method?.Invoke(null, args);
+                if (method == null)
+                {
+                    return false;
+                }
+
+                method.Invoke(null, args);
+                return true;
             }
             catch (Exception ex)
             {
                 Logger.Info($"[LsrCoop.Client] LSR bridge update skipped: {ex.Message}");
+                return false;
             }
         }
 
@@ -1221,6 +1376,7 @@ namespace LsrCoop.Client
                 $"IsCoopEnabled={isCoopEnabled.ToString().ToLowerInvariant()}",
                 $"HasActiveHostAssigned={hasActiveHostAssigned.ToString().ToLowerInvariant()}",
                 $"CharacterReadyForSimulation={isCharacterReadyForSimulation.ToString().ToLowerInvariant()}",
+                $"CharacterCreationRequired={(!isCharacterReadyForSimulation && !string.IsNullOrWhiteSpace(localProfileId)).ToString().ToLowerInvariant()}",
                 $"WorldId={worldId ?? string.Empty}",
                 $"LocalProfileId={localProfileId ?? string.Empty}",
                 $"ActiveHostProfileId={activeHostProfileId ?? string.Empty}",

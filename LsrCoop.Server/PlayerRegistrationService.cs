@@ -133,6 +133,59 @@ namespace LsrCoop.Server
             return status;
         }
 
+        public bool TrySaveCreatedCharacter(CoopClientStatus status, CoopCharacterCreatedRequest request, out string reason)
+        {
+            reason = string.Empty;
+            if (status?.Profile == null)
+            {
+                reason = "Missing profile";
+                return false;
+            }
+
+            if (request == null || request.Character == null)
+            {
+                reason = "Missing character payload";
+                return false;
+            }
+
+            if (!string.Equals(worldProfileStoreService.WorldId, request.WorldId, StringComparison.OrdinalIgnoreCase))
+            {
+                reason = $"Wrong co-op world {request.WorldId}";
+                return false;
+            }
+
+            if (!string.Equals(status.ProfileId, request.ProfileId, StringComparison.OrdinalIgnoreCase))
+            {
+                reason = $"Profile mismatch {request.ProfileId}";
+                return false;
+            }
+
+            if (status.Profile.Character != null)
+            {
+                reason = "Profile already has a character";
+                return false;
+            }
+
+            if (request.Character.Appearance == null)
+            {
+                reason = "Missing appearance snapshot";
+                return false;
+            }
+
+            request.Character.ProfileId = status.Profile.ProfileId;
+            request.Character.CharacterId = string.IsNullOrWhiteSpace(request.Character.CharacterId) ? status.Profile.ProfileId : request.Character.CharacterId;
+            request.Character.DisplayName = string.IsNullOrWhiteSpace(request.Character.DisplayName) ? status.Profile.DisplayName : request.Character.DisplayName;
+            request.Character.ModelName = string.IsNullOrWhiteSpace(request.Character.ModelName) ? request.Character.Appearance.ModelName : request.Character.ModelName;
+            request.Character.UpdatedUtc = DateTimeOffset.UtcNow;
+            status.Profile.Character = request.Character;
+            status.CharacterSnapshotSent = false;
+            status.CharacterSnapshotAcknowledged = false;
+            status.RefreshReadinessState();
+            worldProfileStoreService.Save();
+            info?.Invoke($"[LsrCoop.Server] character saved: profile={status.ProfileId}, character={status.Profile.Character.CharacterId}");
+            return true;
+        }
+
         public void Remove(string profileId)
         {
             if (!string.IsNullOrWhiteSpace(profileId))

@@ -524,6 +524,7 @@ public class PedCustomizer
 
 
         Player.OnBecamePedFromCustomzer();
+        CoopCharacterCreationBridge.NotifyCharacterCreated(Player as Mod.Player);
         
     }
     public void Exit()

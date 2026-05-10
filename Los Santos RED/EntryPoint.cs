@@ -69,18 +69,11 @@ public static class EntryPoint
     {
         while (true)
         {
-            if (ModController == null || !ModController.IsRunning)
+            if (ModController == null || !ModController.IsRunning || ModController.IsBootstrapOnly)
             {
                 if ((Game.IsKeyDown(Keys.F10) && Game.IsShiftKeyDownRightNow))
                 {
-                    if (!CanStartFullSimulation())
-                    {
-                        GameFiber.Yield();
-                        continue;
-                    }
-                    RemoveNotification();
-                    ModController = new ModController();
-                    ModController.Setup();
+                    StartRequestedMode();
                 }
             }
 
@@ -108,6 +101,49 @@ public static class EntryPoint
         }
 
         return false;
+    }
+    private static void StartRequestedMode()
+    {
+        string blockedReason;
+        CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
+        if (startupMode == CoopStartupMode.BootstrapOnly)
+        {
+            if (ModController?.IsBootstrapOnly == true)
+            {
+                Game.DisplayNotification("LSR co-op character creation is already running");
+                return;
+            }
+
+            RemoveNotification();
+            ModController = new ModController();
+            ModController.SetupBootstrapOnly();
+            return;
+        }
+
+        if (startupMode == CoopStartupMode.Disabled || startupMode == CoopStartupMode.FullSimulation)
+        {
+            if (ModController?.IsBootstrapOnly == true)
+            {
+                ModController.Dispose();
+            }
+
+            RemoveNotification();
+            ModController = new ModController();
+            ModController.Setup();
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(blockedReason))
+        {
+            blockedReason = "LSR co-op is waiting for active host";
+        }
+
+        if (GameTimeLastCoopStartBlocked == 0 || Game.GameTime - GameTimeLastCoopStartBlocked >= 3000)
+        {
+            Game.DisplayNotification(blockedReason);
+            WriteToConsole(blockedReason, 0);
+            GameTimeLastCoopStartBlocked = Game.GameTime;
+        }
     }
     private static void GetVersionInfo()
     {

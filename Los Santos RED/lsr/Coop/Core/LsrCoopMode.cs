@@ -4,6 +4,7 @@ namespace LosSantosRED.lsr.Coop.Core
     {
         Disabled = 0,
         Client = 1,
-        ActiveHost = 2,
+        BootstrapOnly = 2,
+        ActiveHost = 3,
     }
 }
