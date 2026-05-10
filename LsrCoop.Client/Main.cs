@@ -17,6 +17,7 @@ namespace LsrCoop.Client
     {
         private const string CoopBuildVersion = "0.1.0";
         private const string ConfigVersion = "1";
+        private const string CharacterCreatedBridgeFileName = "LsrCoopCharacterCreated.txt";
 
         private static readonly int PingEventHash = CustomEvents.Hash("lsrcoop.ping");
         private static readonly int PongEventHash = CustomEvents.Hash("lsrcoop.pong");
@@ -47,13 +48,17 @@ namespace LsrCoop.Client
         private CoopWorldSnapshotDto latestWorldSnapshot;
         private string localWorldId;
         private string localProfileId;
+        private string localRole;
         private string activeHostProfileId;
         private bool localCharacterReadyForSimulation;
         private bool characterCreationRequired;
         private bool characterCreationRequestSent;
         private DateTimeOffset characterCreateRequiredUtc;
         private bool lsrGameplayBridgeRegistered;
+        private bool clientTickSubscribed;
         private DateTimeOffset lastLsrBridgeRegistrationAttemptUtc;
+        private DateTimeOffset lastCharacterCreatedBridgePollUtc;
+        private readonly HashSet<string> processedCharacterCreationNonces = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
         public Main()
         {
@@ -65,6 +70,7 @@ namespace LsrCoop.Client
             Logger.Info("[LsrCoop.Client] loaded");
             UpdateBridgeWaiting(localWorldId);
             RegisterCustomEventStubs();
+            SubscribeClientTick();
             RegisterLsrGameplayBridge();
             SendLoadPing();
             SendCompatibilityReport();
@@ -72,6 +78,7 @@ namespace LsrCoop.Client
 
         public override void OnStop()
         {
+            UnsubscribeClientTick();
             ExitCharacterCreationSafeState();
             UnregisterLsrGameplayBridge();
             SetBridgeDisabled();
@@ -95,9 +102,34 @@ namespace LsrCoop.Client
             Logger.Info("[LsrCoop.Client] custom event stubs registered");
         }
 
-        public void OnTick()
+        private void SubscribeClientTick()
+        {
+            if (clientTickSubscribed)
+            {
+                return;
+            }
+
+            API.Events.OnTick += OnClientTick;
+            clientTickSubscribed = true;
+            Logger.Info("[LsrCoop.Client] character creation bridge poller started");
+        }
+
+        private void UnsubscribeClientTick()
+        {
+            if (!clientTickSubscribed)
+            {
+                return;
+            }
+
+            API.Events.OnTick -= OnClientTick;
+            clientTickSubscribed = false;
+            Logger.Info("[LsrCoop.Client] character creation bridge poller stopped");
+        }
+
+        private void OnClientTick()
         {
             EnsureLsrGameplayBridgeRegistered();
+            PollCharacterCreationBridge();
             DetectPlayerOnPlayerViolence();
         }
 
@@ -159,6 +191,7 @@ namespace LsrCoop.Client
             }
             localWorldId = worldId;
             localProfileId = profileId;
+            localRole = role;
             if (string.IsNullOrWhiteSpace(activeHostProfileId))
             {
                 UpdateBridgeSession();
@@ -312,31 +345,24 @@ namespace LsrCoop.Client
             Logger.Info("[LsrCoop.Client] press Shift+F10 to open LSR co-op BootstrapOnly character creation");
         }
 
-        private void OnLsrCharacterCreated(object character)
-        {
-            string modelName = GetString(character, "ModelName");
-            string displayName = GetString(character, "PlayerName");
-            SendCharacterCreatedRequest(modelName, displayName);
-        }
-
-        private void SendCharacterCreatedRequest(string modelName, string displayName)
+        private bool SendCharacterCreatedRequest(string modelName, string displayName)
         {
             if (characterCreationRequestSent)
             {
-                return;
+                return false;
             }
 
             if (!API.IsOnServer || string.IsNullOrWhiteSpace(localWorldId) || string.IsNullOrWhiteSpace(localProfileId))
             {
                 Logger.Info("[LsrCoop.Client] character created request skipped; client is not registered");
-                return;
+                return false;
             }
 
             Ped ped = Game.Player?.Character;
             if (ped == null || !ped.Exists())
             {
                 Logger.Info("[LsrCoop.Client] character created request skipped; local ped unavailable");
-                return;
+                return false;
             }
 
             modelName = string.IsNullOrWhiteSpace(modelName) ? GetPedModelName(ped) : modelName;
@@ -345,7 +371,7 @@ namespace LsrCoop.Client
             if (appearance == null)
             {
                 Logger.Info("[LsrCoop.Client] character created request skipped; appearance unavailable");
-                return;
+                return false;
             }
 
             CoopCharacterCreatedRequest request = new CoopCharacterCreatedRequest
@@ -365,6 +391,76 @@ namespace LsrCoop.Client
             characterCreationRequestSent = true;
             API.SendCustomEvent(CharacterCreatedEventHash, new object[] { serializer.Serialize(request) });
             Logger.Info($"[LsrCoop.Client] character created request sent: world={localWorldId}, profile={localProfileId}, model={modelName}");
+            return true;
+        }
+
+        private void PollCharacterCreationBridge()
+        {
+            if (!API.IsOnServer || string.IsNullOrWhiteSpace(localWorldId) || string.IsNullOrWhiteSpace(localProfileId))
+            {
+                return;
+            }
+
+            if (DateTimeOffset.UtcNow - lastCharacterCreatedBridgePollUtc < TimeSpan.FromMilliseconds(500))
+            {
+                return;
+            }
+
+            lastCharacterCreatedBridgePollUtc = DateTimeOffset.UtcNow;
+            foreach (string path in GetCharacterCreationBridgePaths())
+            {
+                TryProcessCharacterCreationBridgeFile(path);
+            }
+        }
+
+        private void TryProcessCharacterCreationBridgeFile(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
+            {
+                return;
+            }
+
+            Logger.Info($"[LsrCoop.Client] character bridge file found: {path}");
+            Dictionary<string, string> values;
+            try
+            {
+                values = ReadBridgeKeyValues(path);
+            }
+            catch (Exception ex)
+            {
+                Logger.Info($"[LsrCoop.Client] character bridge read skipped: {ex.Message}");
+                return;
+            }
+
+            string worldId = GetBridgeValue(values, "WorldId");
+            string profileId = GetBridgeValue(values, "ProfileId");
+            string nonce = GetBridgeValue(values, "Nonce");
+            if (!string.Equals(worldId, localWorldId, StringComparison.OrdinalIgnoreCase)
+                || !string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Info($"[LsrCoop.Client] character bridge ignored; expected world={localWorldId}, profile={localProfileId}, file world={worldId}, profile={profileId}");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(nonce))
+            {
+                Logger.Info($"[LsrCoop.Client] character bridge ignored; missing nonce: {path}");
+                return;
+            }
+
+            if (processedCharacterCreationNonces.Contains(nonce))
+            {
+                DeleteCharacterCreationBridgeFiles(nonce);
+                return;
+            }
+
+            Logger.Info($"[LsrCoop.Client] character bridge accepted: world={worldId}, profile={profileId}, nonce={nonce}");
+            if (SendCharacterCreatedRequest(GetBridgeValue(values, "ModelName"), GetBridgeValue(values, "PlayerName")))
+            {
+                processedCharacterCreationNonces.Add(nonce);
+                DeleteCharacterCreationBridgeFiles(nonce);
+                Logger.Info($"[LsrCoop.Client] character bridge consumed: nonce={nonce}");
+            }
         }
 
         private string GetPedModelName(Ped ped)
@@ -436,11 +532,6 @@ namespace LsrCoop.Client
                 "RegisterSnapshotCommittedSink",
                 new Action<object>(OnLsrGangReputationSnapshotCommitted));
 
-            registered = InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopCharacterCreationBridge",
-                "RegisterCharacterCreatedSink",
-                new Action<object>(OnLsrCharacterCreated)) || registered;
-
             if (registered)
             {
                 Logger.Info("[LsrCoop.Client] LSR gameplay bridge registered");
@@ -471,9 +562,6 @@ namespace LsrCoop.Client
                 "LosSantosRED.lsr.Coop.Core.CoopGangReputationStateAdapter",
                 "UnregisterSnapshotCommittedSink");
 
-            InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopCharacterCreationBridge",
-                "UnregisterCharacterCreatedSink");
         }
 
         private void OnLsrPurchaseCommitted(object commit)
@@ -807,9 +895,10 @@ namespace LsrCoop.Client
 
         private void SetBridgeDisabled()
         {
-            WriteBridgeState(false, false, string.Empty, string.Empty, string.Empty, false);
             activeHostProfileId = string.Empty;
+            localRole = string.Empty;
             localCharacterReadyForSimulation = false;
+            WriteBridgeState(false, false, string.Empty, string.Empty, string.Empty, false);
             InvokeLsrBridge("SetDisabled");
         }
 
@@ -838,6 +927,10 @@ namespace LsrCoop.Client
         private void InvokeLsrBridge(string methodName, params object[] args)
         {
             InvokeLsrStaticBridge("LosSantosRED.lsr.Coop.Core.CoopStartupBridge", methodName, args);
+            if (!string.Equals(methodName, "SetDisabled", StringComparison.Ordinal))
+            {
+                InvokeLsrStaticBridge("LosSantosRED.lsr.Coop.Core.CoopStartupBridge", "SetLocalRole", localRole ?? string.Empty);
+            }
         }
 
         private bool InvokeLsrStaticBridge(string typeName, string methodName, params object[] args)
@@ -1338,6 +1431,68 @@ namespace LsrCoop.Client
             return values;
         }
 
+        private IEnumerable<string> GetCharacterCreationBridgePaths()
+        {
+            foreach (string folder in GetBridgeStateFolders())
+            {
+                yield return Path.Combine(folder, CharacterCreatedBridgeFileName);
+            }
+        }
+
+        private Dictionary<string, string> ReadBridgeKeyValues(string path)
+        {
+            Dictionary<string, string> values = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            foreach (string line in File.ReadAllLines(path))
+            {
+                int separatorIndex = line?.IndexOf('=') ?? -1;
+                if (separatorIndex <= 0)
+                {
+                    continue;
+                }
+
+                string key = line.Substring(0, separatorIndex);
+                string value = line.Substring(separatorIndex + 1);
+                values[key] = Uri.UnescapeDataString(value ?? string.Empty);
+            }
+
+            return values;
+        }
+
+        private string GetBridgeValue(Dictionary<string, string> values, string key)
+        {
+            return values != null && values.TryGetValue(key, out string value) ? value ?? string.Empty : string.Empty;
+        }
+
+        private void DeleteCharacterCreationBridgeFiles(string nonce)
+        {
+            foreach (string path in GetCharacterCreationBridgePaths())
+            {
+                TryDeleteCharacterCreationBridgeFile(path, nonce);
+            }
+        }
+
+        private void TryDeleteCharacterCreationBridgeFile(string path, string nonce)
+        {
+            if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
+            {
+                return;
+            }
+
+            try
+            {
+                Dictionary<string, string> values = ReadBridgeKeyValues(path);
+                if (string.Equals(GetBridgeValue(values, "Nonce"), nonce, StringComparison.OrdinalIgnoreCase))
+                {
+                    File.Delete(path);
+                    Logger.Info($"[LsrCoop.Client] character bridge file deleted: {path}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Info($"[LsrCoop.Client] character bridge cleanup skipped: {ex.Message}");
+            }
+        }
+
         private IEnumerable<object> GetEnumerable(object source)
         {
             if (source is IEnumerable enumerable)
@@ -1379,6 +1534,7 @@ namespace LsrCoop.Client
                 $"CharacterCreationRequired={(!isCharacterReadyForSimulation && !string.IsNullOrWhiteSpace(localProfileId)).ToString().ToLowerInvariant()}",
                 $"WorldId={worldId ?? string.Empty}",
                 $"LocalProfileId={localProfileId ?? string.Empty}",
+                $"LocalRole={localRole ?? string.Empty}",
                 $"ActiveHostProfileId={activeHostProfileId ?? string.Empty}",
             };
 

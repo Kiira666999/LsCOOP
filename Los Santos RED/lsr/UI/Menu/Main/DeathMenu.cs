@@ -1,6 +1,7 @@
 ﻿using LosSantosRED.lsr.Helper;
 using LosSantosRED.lsr.Interface;
 using Rage;
+using LosSantosRED.lsr.Coop.Core;
 using RAGENativeUI;
 using RAGENativeUI.Elements;
 using System.Collections.Generic;
@@ -17,7 +18,8 @@ public class DeathMenu : ModUIMenu
     private IRespawnable Player;
     private IGameSaves GameSaves;
     private MenuPool MenuPool;
-    public DeathMenu(MenuPool menuPool, IPedSwap pedSwap, IRespawning respawning, IPlacesOfInterest placesOfInterest, ISettingsProvideable settings, IRespawnable player, IGameSaves gameSaves)
+    private CoopPermissionService CoopPermissionService;
+    public DeathMenu(MenuPool menuPool, IPedSwap pedSwap, IRespawning respawning, IPlacesOfInterest placesOfInterest, ISettingsProvideable settings, IRespawnable player, IGameSaves gameSaves, CoopPermissionService coopPermissionService = null)
     {
         MenuPool = menuPool;
         PedSwap = pedSwap;
@@ -26,6 +28,7 @@ public class DeathMenu : ModUIMenu
         Settings = settings;
         Player = player;
         GameSaves = gameSaves;
+        CoopPermissionService = coopPermissionService ?? new CoopPermissionService();
     }
     public void Setup()
     {
@@ -75,6 +78,11 @@ public class DeathMenu : ModUIMenu
         UIMenuItem Undie = new UIMenuItem("Un-Die", "Respawn at this exact spot as yourself.");
         Undie.Activated += (sender, selectedItem) =>
         {
+            if (!CoopPermissionService.CanUseUndieOption())
+            {
+                Rage.Game.DisplayHelp("Admin permission required.");
+                return;
+            }
             PlayerRespawning.Respawning.RespawnAtCurrentLocation(true, false, false, false);
             Menu.Visible = false;
         };

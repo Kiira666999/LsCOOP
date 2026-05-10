@@ -31,24 +31,27 @@ namespace LosSantosRED.lsr.Coop.Core
 
         public bool CanUsePedSwap()
         {
-            return IsCoopDisabled || IsLocalAdmin || !LocalCharacterExists;
+            return IsCoopDisabled || IsLocalAdmin || IsCharacterCreationBootstrap || !LocalCharacterExists;
         }
 
         public bool CanChangeModelAfterCreation()
         {
-            return IsCoopDisabled || IsLocalAdmin;
+            return IsCoopDisabled || IsLocalAdmin || IsCharacterCreationBootstrap;
         }
 
         public bool CanEditIdentityAfterCreation()
         {
-            return IsCoopDisabled || IsLocalAdmin;
+            return IsCoopDisabled || IsLocalAdmin || IsCharacterCreationBootstrap;
         }
-
+        
         public bool CanEditMoney()
         {
             return IsCoopDisabled || IsLocalAdmin;
         }
-
+        public bool CanUseUndieOption()
+        {
+            return IsCoopDisabled || IsLocalAdmin;
+        }
         public bool CanEditCriminalRecord()
         {
             return IsCoopDisabled || IsLocalAdmin;
@@ -61,10 +64,20 @@ namespace LosSantosRED.lsr.Coop.Core
 
         private bool IsCoopDisabled => !CoopStartupBridge.IsCoopEnabled || SessionState == null || !SessionState.IsEnabled;
 
+        private bool IsCharacterCreationBootstrap =>
+            CoopStartupBridge.StartupMode == CoopStartupMode.BootstrapOnly
+            || CoopStartupBridge.IsCharacterCreationRequired
+            || (SessionState?.Mode == LsrCoopMode.BootstrapOnly && !LocalCharacterExists);
+
         private bool IsLocalAdmin
         {
             get
             {
+                if (CoopStartupBridge.IsLocalAdmin)
+                {
+                    return true;
+                }
+
                 if (LocalActorContext?.IsAdmin == true)
                 {
                     return true;

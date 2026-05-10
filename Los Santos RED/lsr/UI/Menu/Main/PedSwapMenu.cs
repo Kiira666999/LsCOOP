@@ -44,6 +44,11 @@ public class PedSwapMenu : ModUIMenu
     }
     public void Setup()
     {
+        if (!CoopPermissionService.CanUsePedSwap())
+        {
+            return;
+        }
+
         Distances = new List<DistanceSelect> { new DistanceSelect("Closest", -1f), new DistanceSelect("20 M", 20f), new DistanceSelect("40 M", 40f), new DistanceSelect("100 M", 100f), new DistanceSelect("500 M", 500f), new DistanceSelect("Any", 1000f) };
         PedSwapUIMenu = MenuPool.AddSubMenu(ParentMenu, "Ped Swap");
         ParentMenu.MenuItems[ParentMenu.MenuItems.Count() - 1].Description = "Change your character by taking over an existing ped, editing the current ped or creating a ped from scratch.";
@@ -54,16 +59,28 @@ public class PedSwapMenu : ModUIMenu
     public float SelectedTakeoverRadius { get; set; } = -1f;
     public override void Hide()
     {
-        PedSwapUIMenu.Visible = false;
+        if (PedSwapUIMenu != null)
+        {
+            PedSwapUIMenu.Visible = false;
+        }
     }
 
     public override void Show()
     {
+        if (PedSwapUIMenu == null)
+        {
+            return;
+        }
+
         Update();
         PedSwapUIMenu.Visible = true;
     }
     public override void Toggle()
     {
+        if (PedSwapUIMenu == null)
+        {
+            return;
+        }
 
         if (!PedSwapUIMenu.Visible)
         {

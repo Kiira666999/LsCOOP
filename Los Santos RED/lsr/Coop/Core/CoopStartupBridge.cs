@@ -20,6 +20,8 @@ namespace LosSantosRED.lsr.Coop.Core
         public static string WorldId { get; private set; } = string.Empty;
         public static string LocalProfileId { get; private set; } = string.Empty;
         public static string ActiveHostProfileId { get; private set; } = string.Empty;
+        public static string LocalRole { get; private set; } = string.Empty;
+        public static bool IsLocalAdmin => HasRole(LocalRole, "Admin");
 
         public static void SetDisabled()
         {
@@ -33,7 +35,13 @@ namespace LosSantosRED.lsr.Coop.Core
             WorldId = string.Empty;
             LocalProfileId = string.Empty;
             ActiveHostProfileId = string.Empty;
+            LocalRole = string.Empty;
             CoopRuntimeServices.ResetToDisabled();
+        }
+
+        public static void SetLocalRole(string localRole)
+        {
+            LocalRole = localRole ?? string.Empty;
         }
 
         public static void SetSession(string worldId, string localProfileId)
@@ -158,6 +166,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 WorldId = GetValue(lines, "WorldId") ?? string.Empty;
                 LocalProfileId = GetValue(lines, "LocalProfileId") ?? string.Empty;
                 ActiveHostProfileId = GetValue(lines, "ActiveHostProfileId") ?? string.Empty;
+                LocalRole = GetValue(lines, "LocalRole") ?? string.Empty;
                 IsLocalActiveHost = HasActiveHostAssigned && !string.IsNullOrWhiteSpace(LocalProfileId) && string.Equals(LocalProfileId, ActiveHostProfileId, StringComparison.OrdinalIgnoreCase);
                 if (!IsCharacterReadyForSimulation && !string.IsNullOrWhiteSpace(LocalProfileId))
                 {
@@ -242,6 +251,25 @@ namespace LosSantosRED.lsr.Coop.Core
         private static bool IsTrue(string value)
         {
             return string.Equals(value, "true", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private static bool HasRole(string roles, string role)
+        {
+            if (string.IsNullOrWhiteSpace(roles) || string.IsNullOrWhiteSpace(role))
+            {
+                return false;
+            }
+
+            string[] splitRoles = roles.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string splitRole in splitRoles)
+            {
+                if (string.Equals(splitRole.Trim(), role, StringComparison.OrdinalIgnoreCase))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
