@@ -47,10 +47,11 @@ namespace LsrCoop.Server
 
             status.ClientId = GetClientId(client);
             status.Profile = worldProfileStoreService.LoadOrCreateProfile(status, client, status.ClientId, roleConfigService.GetRoleName(profileId));
+            status.RefreshReadinessState();
 
             if (isNew)
             {
-                info?.Invoke($"[LsrCoop.Server] client registered ({reason}): {profileId}, role={roleConfigService.GetRoleName(profileId)}, trustedHost={roleConfigService.IsTrustedHost(profileId)}, compatibility={status.CompatibilityState}");
+                info?.Invoke($"[LsrCoop.Server] client registered ({reason}): {profileId}, role={roleConfigService.GetRoleName(profileId)}, trustedHost={roleConfigService.IsTrustedHost(profileId)}, compatibility={status.CompatibilityState}, readiness={status.ReadinessState}");
             }
 
             return status;
@@ -89,18 +90,47 @@ namespace LsrCoop.Server
 
             if (status.Profile.Character == null)
             {
+                status.CharacterSnapshotSent = false;
+                status.CharacterSnapshotAcknowledged = false;
+                status.RefreshReadinessState();
                 eventRouter.Send(status.Client, EventRouter.CharacterCreateRequiredEventHash, new object[] { worldProfileStoreService.WorldId, status.Profile.ProfileId, reason });
-                info?.Invoke($"[LsrCoop.Server] character create required: {status.Profile.ProfileId} ({reason})");
+                info?.Invoke($"[LsrCoop.Server] character create required: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}");
                 return;
             }
 
+            status.CharacterSnapshotSent = true;
+            status.RefreshReadinessState();
             eventRouter.Send(status.Client, EventRouter.CharacterSnapshotEventHash, new object[]
             {
                 worldProfileStoreService.WorldId,
                 status.Profile.ProfileId,
                 JsonSerializer.Serialize(status.Profile.Character)
             });
-            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason})");
+            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}");
+        }
+
+        public CoopClientStatus AcknowledgeCharacterSnapshot(Client client, string worldId, string profileId, string reason)
+        {
+            CoopClientStatus status = RegisterClient(client, reason);
+            if (status == null)
+            {
+                return null;
+            }
+
+            if (!string.Equals(worldProfileStoreService.WorldId, worldId, StringComparison.OrdinalIgnoreCase)
+                || !string.Equals(status.ProfileId, profileId, StringComparison.OrdinalIgnoreCase)
+                || status.Profile?.Character == null)
+            {
+                status.RefreshReadinessState();
+                info?.Invoke($"[LsrCoop.Server] character snapshot ack ignored: profile={profileId}, world={worldId}, readiness={status.ReadinessState}");
+                return status;
+            }
+
+            status.CharacterSnapshotSent = true;
+            status.CharacterSnapshotAcknowledged = true;
+            status.RefreshReadinessState();
+            info?.Invoke($"[LsrCoop.Server] character ready for simulation: {status.ProfileId} ({reason})");
+            return status;
         }
 
         public void Remove(string profileId)

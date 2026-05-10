@@ -14,6 +14,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public static bool IsCoopModeConfigured { get; private set; }
         public static bool HasActiveHostAssigned { get; private set; }
         public static bool IsLocalActiveHost { get; private set; }
+        public static bool IsCharacterReadyForSimulation { get; private set; }
         public static string WorldId { get; private set; } = string.Empty;
         public static string LocalProfileId { get; private set; } = string.Empty;
         public static string ActiveHostProfileId { get; private set; } = string.Empty;
@@ -24,6 +25,7 @@ namespace LosSantosRED.lsr.Coop.Core
             IsCoopModeConfigured = false;
             HasActiveHostAssigned = false;
             IsLocalActiveHost = false;
+            IsCharacterReadyForSimulation = false;
             WorldId = string.Empty;
             LocalProfileId = string.Empty;
             ActiveHostProfileId = string.Empty;
@@ -32,18 +34,30 @@ namespace LosSantosRED.lsr.Coop.Core
 
         public static void SetSession(string worldId, string localProfileId)
         {
+            SetSession(worldId, localProfileId, false);
+        }
+
+        public static void SetSession(string worldId, string localProfileId, bool isCharacterReadyForSimulation)
+        {
             IsCoopModeConfigured = true;
             IsCoopEnabled = true;
             WorldId = worldId ?? string.Empty;
             LocalProfileId = localProfileId ?? string.Empty;
+            IsCharacterReadyForSimulation = isCharacterReadyForSimulation;
             IsLocalActiveHost = HasActiveHostAssigned && !string.IsNullOrWhiteSpace(LocalProfileId) && string.Equals(LocalProfileId, ActiveHostProfileId, System.StringComparison.OrdinalIgnoreCase);
         }
 
         public static void SetActiveHost(string worldId, string activeHostProfileId, string localProfileId)
         {
+            SetActiveHost(worldId, activeHostProfileId, localProfileId, false);
+        }
+
+        public static void SetActiveHost(string worldId, string activeHostProfileId, string localProfileId, bool isCharacterReadyForSimulation)
+        {
             IsCoopModeConfigured = true;
             IsCoopEnabled = true;
             HasActiveHostAssigned = true;
+            IsCharacterReadyForSimulation = isCharacterReadyForSimulation;
             WorldId = worldId ?? string.Empty;
             ActiveHostProfileId = activeHostProfileId ?? string.Empty;
             if (!string.IsNullOrWhiteSpace(localProfileId))
@@ -68,9 +82,20 @@ namespace LosSantosRED.lsr.Coop.Core
             RefreshFromStateFile();
             blockedReason = string.Empty;
 
-            if (!IsCoopEnabled || IsLocalActiveHost)
+            if (!IsCoopEnabled)
             {
                 return true;
+            }
+
+            if (IsLocalActiveHost && IsCharacterReadyForSimulation)
+            {
+                return true;
+            }
+
+            if (IsLocalActiveHost)
+            {
+                blockedReason = "LSR co-op is waiting for character profile";
+                return false;
             }
 
             blockedReason = "LSR co-op is waiting for active host";
@@ -109,6 +134,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 IsCoopModeConfigured = true;
                 IsCoopEnabled = true;
                 HasActiveHostAssigned = IsTrue(GetValue(lines, "HasActiveHostAssigned"));
+                IsCharacterReadyForSimulation = IsTrue(GetValue(lines, "CharacterReadyForSimulation"));
                 WorldId = GetValue(lines, "WorldId") ?? string.Empty;
                 LocalProfileId = GetValue(lines, "LocalProfileId") ?? string.Empty;
                 ActiveHostProfileId = GetValue(lines, "ActiveHostProfileId") ?? string.Empty;

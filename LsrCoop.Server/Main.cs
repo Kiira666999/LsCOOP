@@ -93,6 +93,7 @@ namespace LsrCoop.Server
         {
             API.RegisterCustomEventHandler(EventRouter.PingEventHash, OnPingReceived);
             API.RegisterCustomEventHandler(EventRouter.CompatibilityReportEventHash, OnCompatibilityReportReceived);
+            API.RegisterCustomEventHandler(EventRouter.CharacterSnapshotAckEventHash, OnCharacterSnapshotAckReceived);
             API.RegisterCustomEventHandler(EventRouter.AppearanceChangeRequestedEventHash, OnAppearanceChangeRequested);
             API.RegisterCustomEventHandler(EventRouter.GameplayActionCommittedEventHash, OnGameplayActionCommitted);
             API.RegisterCustomEventHandler(EventRouter.PvpCrimeReportedEventHash, OnPvpCrimeReported);
@@ -127,9 +128,21 @@ namespace LsrCoop.Server
                 bool.TryParse(GetArg(args, 3), out bool loaded) && loaded);
 
             Logger.Info($"[LsrCoop.Server] compatibility {status.ProfileId}: {status.CompatibilityState}, coop={status.CoopBuildVersion}, lsr={status.LsrVersion}, config={status.ConfigVersion}, resourceLoaded={status.RequiredResourceLoaded}");
+            status.RefreshReadinessState();
             eventRouter.Send(status.Client, EventRouter.CompatibilityStatusEventHash, new object[] { status.CompatibilityState.ToString(), CompatibilityService.RequiredCoopBuildVersion, CompatibilityService.RequiredConfigVersion, CompatibilityService.RequiredLsrVersion });
             playerRegistrationService.SendRegistrationState(status, "compatibility-report");
             activeHostHandoffService.EvaluateAndSync("compatibility-report");
+        }
+
+        private void OnCharacterSnapshotAckReceived(CustomEventReceivedArgs args)
+        {
+            CoopClientStatus status = playerRegistrationService.AcknowledgeCharacterSnapshot(args?.Client, GetArg(args, 0), GetArg(args, 1), "character-snapshot-ack");
+            if (status == null)
+            {
+                return;
+            }
+
+            activeHostHandoffService.EvaluateAndSync("character-snapshot-ack");
         }
 
         private void OnAppearanceChangeRequested(CustomEventReceivedArgs args)

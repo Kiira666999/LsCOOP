@@ -34,7 +34,8 @@ namespace LsrCoop.Server
             if (!string.IsNullOrWhiteSpace(activeHostId)
                 && clientStatuses.ContainsKey(activeHostId)
                 && roleConfigService.IsTrustedHost(activeHostId)
-                && compatibilityService.IsCompatible(clientStatuses[activeHostId]))
+                && compatibilityService.IsCompatible(clientStatuses[activeHostId])
+                && clientStatuses[activeHostId].CharacterReadyForSimulation)
             {
                 return;
             }
@@ -46,7 +47,7 @@ namespace LsrCoop.Server
 
             Client nextHost = clientStatuses
                 .OrderBy(x => x.Key, StringComparer.OrdinalIgnoreCase)
-                .Where(x => roleConfigService.IsTrustedHost(x.Key) && compatibilityService.IsCompatible(x.Value))
+                .Where(x => roleConfigService.IsTrustedHost(x.Key) && IsHostReady(x.Value))
                 .Select(x => x.Value.Client)
                 .FirstOrDefault();
 
@@ -90,6 +91,23 @@ namespace LsrCoop.Server
             activeHostUnavailableAnnounced = true;
             info?.Invoke($"[LsrCoop.Server] active host unavailable; no compatible connected TrustedHost ({reason})");
             eventRouter.Broadcast(clients, EventRouter.ActiveHostUnavailableEventHash, new object[] { roleConfigService.WorldId, reason });
+        }
+
+        private bool IsHostReady(CoopClientStatus status)
+        {
+            if (status == null)
+            {
+                return false;
+            }
+
+            status.RefreshReadinessState();
+            if (compatibilityService.IsCompatible(status) && status.CharacterReadyForSimulation)
+            {
+                return true;
+            }
+
+            info?.Invoke($"[LsrCoop.Server] TrustedHost not host-ready: profile={status.ProfileId}, compatibility={status.CompatibilityState}, readiness={status.ReadinessState}");
+            return false;
         }
     }
 }

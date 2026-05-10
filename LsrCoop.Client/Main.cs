@@ -25,6 +25,7 @@ namespace LsrCoop.Client
         private static readonly int PlayerRegisteredEventHash = CustomEvents.Hash("lsrcoop.player.registered");
         private static readonly int CharacterCreateRequiredEventHash = CustomEvents.Hash("lsrcoop.character.createRequired");
         private static readonly int CharacterSnapshotEventHash = CustomEvents.Hash("lsrcoop.character.snapshot");
+        private static readonly int CharacterSnapshotAckEventHash = CustomEvents.Hash("lsrcoop.character.snapshotAck");
         private static readonly int AppearanceChangeRequestedEventHash = CustomEvents.Hash("lsrcoop.appearance.changeRequested");
         private static readonly int AppearanceChangedEventHash = CustomEvents.Hash("lsrcoop.appearance.changed");
         private static readonly int ActiveHostAssignedEventHash = CustomEvents.Hash("lsrcoop.activeHost.assigned");
@@ -46,6 +47,7 @@ namespace LsrCoop.Client
         private string localWorldId;
         private string localProfileId;
         private string activeHostProfileId;
+        private bool localCharacterReadyForSimulation;
 
         public Main()
         {
@@ -143,6 +145,10 @@ namespace LsrCoop.Client
             string profileId = GetArg(args, 1);
             string role = GetArg(args, 4);
             string compatibility = GetArg(args, 5);
+            if (!string.Equals(localProfileId, profileId, StringComparison.OrdinalIgnoreCase))
+            {
+                localCharacterReadyForSimulation = false;
+            }
             localWorldId = worldId;
             localProfileId = profileId;
             if (string.IsNullOrWhiteSpace(activeHostProfileId))
@@ -217,6 +223,11 @@ namespace LsrCoop.Client
         {
             string worldId = GetArg(args, 0);
             string profileId = GetArg(args, 1);
+            if (string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase))
+            {
+                localCharacterReadyForSimulation = false;
+                UpdateCurrentBridgeState();
+            }
             Logger.Info($"[LsrCoop.Client] character create required: world={worldId}, profile={profileId}");
         }
 
@@ -226,6 +237,12 @@ namespace LsrCoop.Client
             string profileId = GetArg(args, 1);
             CoopCharacterSnapshot snapshot = Deserialize<CoopCharacterSnapshot>(GetArg(args, 2));
             ApplyAppearanceIfLocal(worldId, profileId, snapshot?.Appearance);
+            if (string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase))
+            {
+                localCharacterReadyForSimulation = snapshot != null;
+                UpdateCurrentBridgeState();
+                SendCharacterSnapshotAck(worldId, profileId);
+            }
             Logger.Info($"[LsrCoop.Client] character snapshot received: world={worldId}, profile={profileId}");
         }
 
@@ -622,29 +639,52 @@ namespace LsrCoop.Client
 
         private void UpdateBridgeSession()
         {
-            WriteBridgeState(true, false, localWorldId, localProfileId, string.Empty);
-            InvokeLsrBridge("SetSession", localWorldId ?? string.Empty, localProfileId ?? string.Empty);
+            WriteBridgeState(true, false, localWorldId, localProfileId, string.Empty, localCharacterReadyForSimulation);
+            InvokeLsrBridge("SetSession", localWorldId ?? string.Empty, localProfileId ?? string.Empty, localCharacterReadyForSimulation);
         }
 
         private void UpdateBridgeActiveHost(string worldId, string activeHostProfileId)
         {
             localWorldId = string.IsNullOrWhiteSpace(worldId) ? localWorldId : worldId;
-            WriteBridgeState(true, true, localWorldId, localProfileId, activeHostProfileId);
-            InvokeLsrBridge("SetActiveHost", localWorldId ?? string.Empty, activeHostProfileId ?? string.Empty, localProfileId ?? string.Empty);
+            WriteBridgeState(true, true, localWorldId, localProfileId, activeHostProfileId, localCharacterReadyForSimulation);
+            InvokeLsrBridge("SetActiveHost", localWorldId ?? string.Empty, activeHostProfileId ?? string.Empty, localProfileId ?? string.Empty, localCharacterReadyForSimulation);
         }
 
         private void UpdateBridgeWaiting(string worldId)
         {
             localWorldId = string.IsNullOrWhiteSpace(worldId) ? localWorldId : worldId;
-            WriteBridgeState(true, false, localWorldId, localProfileId, string.Empty);
+            WriteBridgeState(true, false, localWorldId, localProfileId, string.Empty, localCharacterReadyForSimulation);
             InvokeLsrBridge("ClearActiveHost", localWorldId ?? string.Empty);
         }
 
         private void SetBridgeDisabled()
         {
-            WriteBridgeState(false, false, string.Empty, string.Empty, string.Empty);
+            WriteBridgeState(false, false, string.Empty, string.Empty, string.Empty, false);
             activeHostProfileId = string.Empty;
+            localCharacterReadyForSimulation = false;
             InvokeLsrBridge("SetDisabled");
+        }
+
+        private void UpdateCurrentBridgeState()
+        {
+            if (string.IsNullOrWhiteSpace(activeHostProfileId))
+            {
+                UpdateBridgeSession();
+                return;
+            }
+
+            UpdateBridgeActiveHost(localWorldId, activeHostProfileId);
+        }
+
+        private void SendCharacterSnapshotAck(string worldId, string profileId)
+        {
+            if (!API.IsOnServer)
+            {
+                return;
+            }
+
+            API.SendCustomEvent(CharacterSnapshotAckEventHash, new object[] { worldId ?? string.Empty, profileId ?? string.Empty });
+            Logger.Info($"[LsrCoop.Client] character snapshot ack sent: world={worldId}, profile={profileId}");
         }
 
         private void InvokeLsrBridge(string methodName, params object[] args)
@@ -1170,7 +1210,7 @@ namespace LsrCoop.Client
             public DateTimeOffset LastReportedUtc { get; set; }
         }
 
-        private void WriteBridgeState(bool isCoopEnabled, bool hasActiveHostAssigned, string worldId, string localProfileId, string activeHostProfileId)
+        private void WriteBridgeState(bool isCoopEnabled, bool hasActiveHostAssigned, string worldId, string localProfileId, string activeHostProfileId, bool isCharacterReadyForSimulation)
         {
             string[] lines =
             {
@@ -1180,6 +1220,7 @@ namespace LsrCoop.Client
                 $"ProcessId={Process.GetCurrentProcess().Id}",
                 $"IsCoopEnabled={isCoopEnabled.ToString().ToLowerInvariant()}",
                 $"HasActiveHostAssigned={hasActiveHostAssigned.ToString().ToLowerInvariant()}",
+                $"CharacterReadyForSimulation={isCharacterReadyForSimulation.ToString().ToLowerInvariant()}",
                 $"WorldId={worldId ?? string.Empty}",
                 $"LocalProfileId={localProfileId ?? string.Empty}",
                 $"ActiveHostProfileId={activeHostProfileId ?? string.Empty}",

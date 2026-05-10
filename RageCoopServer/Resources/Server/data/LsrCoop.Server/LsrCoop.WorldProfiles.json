@@ -13,40 +13,7 @@
     "UpdatedUtc": "2026-05-10T05:45:23.8891487+00:00"
   },
   "Profiles": [
-    {
-      "ProfileId": "",
-      "ClientId": null,
-      "DisplayName": "",
-      "Role": "Player",
-      "CreatedUtc": "2026-05-09T23:18:20.0474485+00:00",
-      "LastSeenUtc": "2026-05-09T23:18:20.0474495+00:00",
-      "Character": null,
-      "InventoryMoney": null,
-      "Weapons": null,
-      "OwnedVehicles": null,
-      "PropertyOwnership": null,
-      "GangReputation": null,
-      "CriminalHistory": null,
-      "DeathArrestState": null,
-      "LongTermLsrRecords": []
-    },
-    {
-      "ProfileId": "Kiira",
-      "ClientId": "Kiira",
-      "DisplayName": "Kiira",
-      "Role": "TrustedHost",
-      "CreatedUtc": "2026-05-09T23:19:37.7103303+00:00",
-      "LastSeenUtc": "2026-05-10T05:45:23.8710125+00:00",
-      "Character": null,
-      "InventoryMoney": null,
-      "Weapons": null,
-      "OwnedVehicles": null,
-      "PropertyOwnership": null,
-      "GangReputation": null,
-      "CriminalHistory": null,
-      "DeathArrestState": null,
-      "LongTermLsrRecords": []
-    }
+    
   ],
   "WorldFlags": [],
   "LongTermLsrRecords": []

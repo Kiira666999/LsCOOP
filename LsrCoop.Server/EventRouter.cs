@@ -14,6 +14,7 @@ namespace LsrCoop.Server
         public static readonly int PlayerRegisteredEventHash = CustomEvents.Hash("lsrcoop.player.registered");
         public static readonly int CharacterCreateRequiredEventHash = CustomEvents.Hash("lsrcoop.character.createRequired");
         public static readonly int CharacterSnapshotEventHash = CustomEvents.Hash("lsrcoop.character.snapshot");
+        public static readonly int CharacterSnapshotAckEventHash = CustomEvents.Hash("lsrcoop.character.snapshotAck");
         public static readonly int AppearanceChangeRequestedEventHash = CustomEvents.Hash("lsrcoop.appearance.changeRequested");
         public static readonly int AppearanceChangedEventHash = CustomEvents.Hash("lsrcoop.appearance.changed");
         public static readonly int ActiveHostAssignedEventHash = CustomEvents.Hash("lsrcoop.activeHost.assigned");

@@ -19,5 +19,39 @@ namespace LsrCoop.Server
         public string LsrVersion { get; set; }
         public string ConfigVersion { get; set; }
         public bool RequiredResourceLoaded { get; set; }
+        public CoopClientReadinessState ReadinessState { get; set; } = CoopClientReadinessState.Connected;
+        public bool CharacterSnapshotSent { get; set; }
+        public bool CharacterSnapshotAcknowledged { get; set; }
+        public bool CharacterReadyForSimulation => CompatibilityState == CoopClientCompatibilityState.Compatible
+            && Profile?.Character != null
+            && CharacterSnapshotAcknowledged;
+
+        public void RefreshReadinessState()
+        {
+            if (CharacterReadyForSimulation)
+            {
+                ReadinessState = CoopClientReadinessState.CharacterReadyForSimulation;
+            }
+            else if (CharacterSnapshotSent)
+            {
+                ReadinessState = CoopClientReadinessState.CharacterSnapshotSent;
+            }
+            else if (Profile?.Character == null && Profile != null)
+            {
+                ReadinessState = CoopClientReadinessState.CharacterRequired;
+            }
+            else if (Profile != null)
+            {
+                ReadinessState = CoopClientReadinessState.ProfileLoaded;
+            }
+            else if (CompatibilityState == CoopClientCompatibilityState.Compatible)
+            {
+                ReadinessState = CoopClientReadinessState.Compatible;
+            }
+            else
+            {
+                ReadinessState = CoopClientReadinessState.Connected;
+            }
+        }
     }
 }
