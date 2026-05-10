@@ -1,4 +1,5 @@
 ﻿using LosSantosRED.lsr.Data.Interface;
+using LosSantosRED.lsr.Coop.Core;
 using LosSantosRED.lsr.Interface;
 using Rage;
 using RAGENativeUI;
@@ -306,17 +307,31 @@ public class Business : GameLocation, ILocationSetupable, IRestableLocation, IIn
     }
     protected override void OnSold()
     {
+        if (!CoopStorePurchaseBridge.TryBeginPurchaseProperty(this, Player, CurrentSalesPrice, "Sell", out CoopGameplayActionRequest request, out string blockedReason))
+        {
+            DisplayMessage("~y~Sale Pending", blockedReason);
+            return;
+        }
+
         Reset();
         Player.Properties.RemoveOwnedLocation(this);
         Player.BankAccounts.GiveMoney(CurrentSalesPrice, true);
+        CoopStorePurchaseBridge.CompletePropertyOwnershipChange(request, Player);
         PlaySuccessSound();
         DisplayMessage("~g~Sold", $"You have sold {Name} for {CurrentSalesPrice.ToString("C0")}");
     }
     protected override bool Purchase()
     {
+        if (!CoopStorePurchaseBridge.TryBeginPurchaseProperty(this, Player, PurchasePrice, "Purchase", out CoopGameplayActionRequest request, out string blockedReason))
+        {
+            DisplayMessage("~y~Purchase Pending", blockedReason);
+            return false;
+        }
+
         if (CanBuy && Player.BankAccounts.GetMoney(true) >= PurchasePrice)
         {
             OnPurchased();
+            CoopStorePurchaseBridge.CompletePropertyOwnershipChange(request, Player);
             return true;
         }
         PlayErrorSound();

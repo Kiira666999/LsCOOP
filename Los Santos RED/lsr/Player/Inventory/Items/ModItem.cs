@@ -15,6 +15,7 @@ using LosSantosRED.lsr.Player;
 using System.ComponentModel;
 using System.Collections.Generic;
 using Microsoft.VisualBasic;
+using LosSantosRED.lsr.Coop.Core;
 
 [Serializable()]
 [XmlInclude(typeof(ClothingItem))]
@@ -392,7 +393,13 @@ public class ModItem
     {
         int TotalPrice = menuItem.PurchasePrice * TotalItems;
         if (player.BankAccounts.GetMoney(Transaction.UseAccounts) >= TotalPrice || isStealing)
-        {      
+        {
+            if (!CoopStorePurchaseBridge.TryBeginPurchaseItem(Transaction, player, menuItem, this, TotalItems, TotalPrice, isStealing, out CoopGameplayActionRequest coopRequest, out string blockedReason))
+            {
+                Transaction.DisplayMessage("~o~Purchase Pending", blockedReason);
+                return false;
+            }
+
             Transaction?.PersonTransaction?.TransactionPed?.PedInventory.Remove(this, TotalItems);
             //menuItem.ItemsSoldToPlayer += TotalItems;
 
@@ -414,6 +421,7 @@ public class ModItem
                 player.Inventory.Add(this, TotalItems * AmountPerPackage);
             }
 
+            CoopStorePurchaseBridge.CompletePurchase(coopRequest, player);
             return true;
         }
         Transaction.DisplayInsufficientFundsMessage();

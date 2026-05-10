@@ -1,5 +1,6 @@
 ﻿using ExtensionsMethods;
 using LosSantosRED.lsr;
+using LosSantosRED.lsr.Coop.Core;
 using LSR.Vehicles;
 using Rage;
 using Rage.Attributes;
@@ -42,6 +43,7 @@ public static class EntryPoint
     public static uint NotificationID { get; set; }
     public static GameConfig LoadedConfig { get; set; } = new GameConfig("");
     public static bool IsLoadingAltConfig { get; set; } = false;
+    private static uint GameTimeLastCoopStartBlocked;
     public static void Main()
     {
 
@@ -71,6 +73,11 @@ public static class EntryPoint
             {
                 if ((Game.IsKeyDown(Keys.F10) && Game.IsShiftKeyDownRightNow))
                 {
+                    if (!CanStartFullSimulation())
+                    {
+                        GameFiber.Yield();
+                        continue;
+                    }
                     RemoveNotification();
                     ModController = new ModController();
                     ModController.Setup();
@@ -84,6 +91,23 @@ public static class EntryPoint
     {
         if (NotificationID == 0) return;
         Game.RemoveNotification(NotificationID);
+    }
+    private static bool CanStartFullSimulation()
+    {
+        string blockedReason;
+        if (CoopStartupBridge.CanStartFullSimulation(out blockedReason))
+        {
+            return true;
+        }
+
+        if (GameTimeLastCoopStartBlocked == 0 || Game.GameTime - GameTimeLastCoopStartBlocked >= 3000)
+        {
+            Game.DisplayNotification(blockedReason);
+            WriteToConsole(blockedReason, 0);
+            GameTimeLastCoopStartBlocked = Game.GameTime;
+        }
+
+        return false;
     }
     private static void GetVersionInfo()
     {

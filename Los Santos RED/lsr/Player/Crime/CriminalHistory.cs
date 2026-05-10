@@ -1,4 +1,5 @@
 ﻿using LosSantosRED.lsr;
+using LosSantosRED.lsr.Coop.Core;
 using LosSantosRED.lsr.Interface;
 using LSR.Vehicles;
 using Rage;
@@ -48,6 +49,7 @@ namespace LosSantosRED.lsr
             if (CrimesAssociated != null && PlaceLastSeen != Vector3.Zero && Player.PoliceResponse.HasPlayerBeenIdentified )
             {
                 CurrentHistory = new BOLO(PlaceLastSeen,  CrimesAssociated, Player.WantedLevel);
+                CoopCriminalJusticeStateAdapter.Current.NotifyLocalCriminalHistoryChanged();
             }
         }
         public void OnLostWanted()
@@ -67,6 +69,7 @@ namespace LosSantosRED.lsr
         public void Clear()
         {
             CurrentHistory = null;
+            CoopCriminalJusticeStateAdapter.Current.NotifyLocalCriminalHistoryChanged();
             //EntryPoint.WriteToConsole($" PLAYER EVENT: Criminal History Clear");
         }
         public void AddCrime(Crime crime)
@@ -83,6 +86,62 @@ namespace LosSantosRED.lsr
                     CurrentHistory.Crimes.Add(new CrimeEvent(crime, null));
                 }
             }
+            CoopCriminalJusticeStateAdapter.Current.NotifyLocalCriminalHistoryChanged();
+        }
+        public CoopCriminalHistoryState CreateCoopState(CoopWorldId worldId, CoopProfileId profileId, CoopCharacterId characterId)
+        {
+            CoopCriminalHistoryState state = new CoopCriminalHistoryState
+            {
+                WorldId = worldId,
+                ProfileId = profileId,
+                CharacterId = characterId,
+                HasHistory = CurrentHistory != null,
+                WantedLevel = CurrentHistory?.WantedLevel ?? 0,
+                LastSeenX = CurrentHistory?.LastSeenLocation.X ?? 0.0f,
+                LastSeenY = CurrentHistory?.LastSeenLocation.Y ?? 0.0f,
+                LastSeenZ = CurrentHistory?.LastSeenLocation.Z ?? 0.0f,
+                UpdatedUtc = DateTimeOffset.UtcNow,
+            };
+
+            if (CurrentHistory?.Crimes != null)
+            {
+                foreach (CrimeEvent crimeEvent in CurrentHistory.Crimes.Where(x => x?.AssociatedCrime != null))
+                {
+                    state.Crimes.Add(new CoopCriminalHistoryCrimeRecord
+                    {
+                        CrimeId = crimeEvent.AssociatedCrime.ID,
+                        CrimeName = crimeEvent.AssociatedCrime.Name,
+                        Instances = crimeEvent.Instances,
+                        ResultingWantedLevel = crimeEvent.AssociatedCrime.ResultingWantedLevel,
+                        Priority = crimeEvent.AssociatedCrime.Priority,
+                        ResultsInLethalForce = crimeEvent.AssociatedCrime.ResultsInLethalForce,
+                    });
+                }
+            }
+
+            return state;
+        }
+        public void ApplyCoopState(CoopCriminalHistoryState state, ICrimes crimes)
+        {
+            if (state == null || !state.HasHistory)
+            {
+                CurrentHistory = null;
+                return;
+            }
+
+            List<CrimeEvent> restoredCrimes = new List<CrimeEvent>();
+            foreach (CoopCriminalHistoryCrimeRecord crimeRecord in state.Crimes)
+            {
+                Crime crime = crimes?.GetCrime(crimeRecord.CrimeId);
+                if (crime == null)
+                {
+                    continue;
+                }
+
+                restoredCrimes.Add(new CrimeEvent(crime, null) { Instances = crimeRecord.Instances });
+            }
+
+            CurrentHistory = new BOLO(new Vector3(state.LastSeenX, state.LastSeenY, state.LastSeenZ), restoredCrimes, state.WantedLevel);
         }
         public string PrintCriminalHistory()
         {

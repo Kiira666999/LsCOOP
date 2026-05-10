@@ -59,7 +59,7 @@ namespace LosSantosRED.lsr.Coop.Core
             return IsCoopDisabled || IsLocalAdmin;
         }
 
-        private bool IsCoopDisabled => SessionState == null || !SessionState.IsEnabled;
+        private bool IsCoopDisabled => !CoopStartupBridge.IsCoopEnabled || SessionState == null || !SessionState.IsEnabled;
 
         private bool IsLocalAdmin
         {

@@ -13,50 +13,47 @@ namespace LsrCoop.Server
 {
     public class Main : ServerScript
     {
-        private const string RoleConfigFileName = "LsrCoop.RoleConfig.json";
-        private const string WorldProfileStoreFileName = "LsrCoop.WorldProfiles.json";
-        private const string RequiredCoopBuildVersion = "0.1.0";
-        private const string RequiredLsrVersion = "1.0.0.513";
-        private const string RequiredConfigVersion = "1";
-
-        private static readonly int PingEventHash = CustomEvents.Hash("lsrcoop.ping");
-        private static readonly int PongEventHash = CustomEvents.Hash("lsrcoop.pong");
-        private static readonly int CompatibilityReportEventHash = CustomEvents.Hash("lsrcoop.compatibility.report");
-        private static readonly int CompatibilityStatusEventHash = CustomEvents.Hash("lsrcoop.compatibility.status");
-        private static readonly int PlayerRegisteredEventHash = CustomEvents.Hash("lsrcoop.player.registered");
-        private static readonly int CharacterCreateRequiredEventHash = CustomEvents.Hash("lsrcoop.character.createRequired");
-        private static readonly int CharacterSnapshotEventHash = CustomEvents.Hash("lsrcoop.character.snapshot");
-        private static readonly int AppearanceChangeRequestedEventHash = CustomEvents.Hash("lsrcoop.appearance.changeRequested");
-        private static readonly int AppearanceChangedEventHash = CustomEvents.Hash("lsrcoop.appearance.changed");
-        private static readonly int ActiveHostAssignedEventHash = CustomEvents.Hash("lsrcoop.activeHost.assigned");
-        private static readonly int ActiveHostReleasedEventHash = CustomEvents.Hash("lsrcoop.activeHost.released");
-        private static readonly int ActiveHostUnavailableEventHash = CustomEvents.Hash("lsrcoop.activeHost.unavailable");
-
-        private readonly Dictionary<string, CoopClientStatus> clientStatuses = new Dictionary<string, CoopClientStatus>(StringComparer.OrdinalIgnoreCase);
         private readonly List<ConnectionEventSubscription> connectionSubscriptions = new List<ConnectionEventSubscription>();
-        private LsrCoopRoleConfig roleConfig = new LsrCoopRoleConfig();
-        private CoopWorldProfileStore worldProfiles = new CoopWorldProfileStore();
-        private string roleConfigPath;
-        private string worldProfileStorePath;
-        private string activeHostId;
-        private bool activeHostUnavailableAnnounced;
+
+        private EventRouter eventRouter;
+        private RoleConfigService roleConfigService;
+        private WorldProfileStoreService worldProfileStoreService;
+        private CompatibilityService compatibilityService;
+        private PlayerRegistrationService playerRegistrationService;
+        private ActiveHostService activeHostService;
+        private ActiveHostHandoffService activeHostHandoffService;
+        private AppearanceSyncService appearanceSyncService;
 
         public override void OnStart()
         {
             Logger.Info("[LsrCoop.Server] loaded");
-            roleConfig = LoadRoleConfig();
-            worldProfiles = LoadWorldProfileStore();
+            InitializeServices();
             RegisterConnectionHooks();
             RegisterCustomEventStubs();
-            RefreshConnectedClients();
-            EvaluateActiveHost("resource-start");
+            playerRegistrationService.RefreshConnectedClients(API?.GetAllClients());
+            activeHostHandoffService.EvaluateAndSync("resource-start");
         }
 
         public override void OnStop()
         {
-            ReleaseActiveHost("resource-stop");
+            activeHostService?.Release("resource-stop", playerRegistrationService?.ConnectedClients);
             UnregisterConnectionHooks();
             Logger.Info("[LsrCoop.Server] stopped");
+        }
+
+        private void InitializeServices()
+        {
+            string dataFolder = GetDataFolder();
+            eventRouter = new EventRouter(Logger.Warning);
+            roleConfigService = new RoleConfigService(dataFolder, Logger.Info, Logger.Warning);
+            roleConfigService.Load();
+            worldProfileStoreService = new WorldProfileStoreService(dataFolder, roleConfigService, Logger.Info, Logger.Warning);
+            worldProfileStoreService.Load();
+            compatibilityService = new CompatibilityService();
+            playerRegistrationService = new PlayerRegistrationService(worldProfileStoreService, roleConfigService, eventRouter, Logger.Info);
+            activeHostService = new ActiveHostService(roleConfigService, compatibilityService, eventRouter, Logger.Info);
+            activeHostHandoffService = new ActiveHostHandoffService(worldProfileStoreService, playerRegistrationService, activeHostService, eventRouter, Logger.Info);
+            appearanceSyncService = new AppearanceSyncService(worldProfileStoreService, roleConfigService, eventRouter, () => playerRegistrationService.ConnectedClients, Logger.Info, Logger.Warning);
         }
 
         private void RegisterConnectionHooks()
@@ -94,176 +91,351 @@ namespace LsrCoop.Server
 
         private void RegisterCustomEventStubs()
         {
-            API.RegisterCustomEventHandler(PingEventHash, OnPingReceived);
-            API.RegisterCustomEventHandler(CompatibilityReportEventHash, OnCompatibilityReportReceived);
-            API.RegisterCustomEventHandler(AppearanceChangeRequestedEventHash, OnAppearanceChangeRequested);
+            API.RegisterCustomEventHandler(EventRouter.PingEventHash, OnPingReceived);
+            API.RegisterCustomEventHandler(EventRouter.CompatibilityReportEventHash, OnCompatibilityReportReceived);
+            API.RegisterCustomEventHandler(EventRouter.AppearanceChangeRequestedEventHash, OnAppearanceChangeRequested);
+            API.RegisterCustomEventHandler(EventRouter.GameplayActionCommittedEventHash, OnGameplayActionCommitted);
+            API.RegisterCustomEventHandler(EventRouter.PvpCrimeReportedEventHash, OnPvpCrimeReported);
+            API.RegisterCustomEventHandler(EventRouter.CriminalJusticeSnapshotCommittedEventHash, OnCriminalJusticeSnapshotCommitted);
+            API.RegisterCustomEventHandler(EventRouter.GangReputationSnapshotCommittedEventHash, OnGangReputationSnapshotCommitted);
             Logger.Info("[LsrCoop.Server] custom event stubs registered");
         }
 
         private void OnPingReceived(CustomEventReceivedArgs args)
         {
-            CoopClientStatus status = RegisterClient(args?.Client, "ping");
-            SendRegistrationState(status, "ping");
-            string source = GetClientName(args?.Client);
+            CoopClientStatus status = playerRegistrationService.RegisterClient(args?.Client, "ping");
+            playerRegistrationService.SendRegistrationState(status, "ping");
+            string source = playerRegistrationService.GetClientName(args?.Client);
             string message = args?.Args != null && args.Args.Length > 0 ? args.Args[0]?.ToString() : string.Empty;
             Logger.Info($"[LsrCoop.Server] ping from {source}: {message}");
-            args?.Client?.SendCustomEvent(PongEventHash, new object[] { "server-pong" });
+            eventRouter.Send(args?.Client, EventRouter.PongEventHash, new object[] { "server-pong" });
         }
 
         private void OnCompatibilityReportReceived(CustomEventReceivedArgs args)
         {
-            CoopClientStatus status = RegisterClient(args?.Client, "compatibility-report");
+            CoopClientStatus status = playerRegistrationService.RegisterClient(args?.Client, "compatibility-report");
             if (status == null)
             {
                 return;
             }
 
-            status.CoopBuildVersion = GetArg(args, 0);
-            status.LsrVersion = GetArg(args, 1);
-            status.ConfigVersion = GetArg(args, 2);
-            status.RequiredResourceLoaded = bool.TryParse(GetArg(args, 3), out bool loaded) && loaded;
-            status.CompatibilityState = EvaluateCompatibility(status);
+            compatibilityService.ApplyReport(
+                status,
+                GetArg(args, 0),
+                GetArg(args, 1),
+                GetArg(args, 2),
+                bool.TryParse(GetArg(args, 3), out bool loaded) && loaded);
 
             Logger.Info($"[LsrCoop.Server] compatibility {status.ProfileId}: {status.CompatibilityState}, coop={status.CoopBuildVersion}, lsr={status.LsrVersion}, config={status.ConfigVersion}, resourceLoaded={status.RequiredResourceLoaded}");
-            status.Client?.SendCustomEvent(CompatibilityStatusEventHash, new object[] { status.CompatibilityState.ToString(), RequiredCoopBuildVersion, RequiredConfigVersion, RequiredLsrVersion });
-            SendRegistrationState(status, "compatibility-report");
-            EvaluateActiveHost("compatibility-report");
+            eventRouter.Send(status.Client, EventRouter.CompatibilityStatusEventHash, new object[] { status.CompatibilityState.ToString(), CompatibilityService.RequiredCoopBuildVersion, CompatibilityService.RequiredConfigVersion, CompatibilityService.RequiredLsrVersion });
+            playerRegistrationService.SendRegistrationState(status, "compatibility-report");
+            activeHostHandoffService.EvaluateAndSync("compatibility-report");
         }
 
         private void OnAppearanceChangeRequested(CustomEventReceivedArgs args)
         {
-            CoopClientStatus requester = RegisterClient(args?.Client, "appearance-change-request");
+            CoopClientStatus requester = playerRegistrationService.RegisterClient(args?.Client, "appearance-change-request");
+            appearanceSyncService.HandleAppearanceChange(requester, Deserialize<CoopAppearanceChangeRequest>(GetArg(args, 0)));
+        }
+
+        private void OnGameplayActionCommitted(CustomEventReceivedArgs args)
+        {
+            CoopClientStatus requester = playerRegistrationService.RegisterClient(args?.Client, "gameplay-action-commit");
             if (requester == null)
             {
                 return;
             }
 
-            CoopAppearanceChangeRequest request = Deserialize<CoopAppearanceChangeRequest>(GetArg(args, 0));
-            if (request?.Appearance == null)
+            CoopStorePurchaseCommitDto commit = Deserialize<CoopStorePurchaseCommitDto>(GetArg(args, 0));
+            CoopGameplayActionRequestDto request = commit?.Request;
+            CoopGameplayActionResultDto result = commit?.Result;
+            if (request == null || result == null)
             {
-                Logger.Warning($"[LsrCoop.Server] rejected appearance request from {requester.ProfileId}: empty appearance");
+                Logger.Warning($"[LsrCoop.Server] rejected gameplay action from {requester.ProfileId}: empty payload");
+                SendGameplayActionResult(requester, CreateGameplayActionResult(request, false, true, "Invalid gameplay action payload"));
                 return;
             }
 
-            request.ProfileId = string.IsNullOrWhiteSpace(request.ProfileId) ? requester.ProfileId : request.ProfileId;
-            request.TargetProfileId = string.IsNullOrWhiteSpace(request.TargetProfileId) ? requester.ProfileId : request.TargetProfileId;
-            request.WorldId = string.IsNullOrWhiteSpace(request.WorldId) ? worldProfiles.WorldId : request.WorldId;
-
-            if (!string.Equals(request.WorldId, worldProfiles.WorldId, StringComparison.OrdinalIgnoreCase))
+            if (!string.Equals(request.WorldId, worldProfileStoreService.WorldId, StringComparison.OrdinalIgnoreCase))
             {
-                Logger.Warning($"[LsrCoop.Server] rejected appearance request from {requester.ProfileId}: wrong world {request.WorldId}");
+                Logger.Warning($"[LsrCoop.Server] rejected gameplay action from {requester.ProfileId}: wrong world {request.WorldId}");
+                SendGameplayActionResult(requester, CreateGameplayActionResult(request, false, true, "Wrong co-op world"));
                 return;
             }
 
-            bool requesterIsAdmin = IsAdmin(requester.ProfileId);
-            if (!string.Equals(requester.ProfileId, request.TargetProfileId, StringComparison.OrdinalIgnoreCase) && !requesterIsAdmin)
+            if (!string.Equals(request.SourceProfileId, requester.ProfileId, StringComparison.OrdinalIgnoreCase)
+                && !activeHostService.IsActiveHost(requester.ProfileId))
             {
-                Logger.Warning($"[LsrCoop.Server] rejected appearance request from {requester.ProfileId}: target {request.TargetProfileId} requires Admin");
+                Logger.Warning($"[LsrCoop.Server] rejected gameplay action from {requester.ProfileId}: source mismatch {request.SourceProfileId}");
+                SendGameplayActionResult(requester, CreateGameplayActionResult(request, false, true, "Profile mismatch"));
                 return;
             }
 
-            CoopPlayerProfile targetProfile = GetProfile(request.TargetProfileId);
-            if (targetProfile == null)
+            if (!activeHostService.IsActiveHost(requester.ProfileId))
             {
-                Logger.Warning($"[LsrCoop.Server] rejected appearance request from {requester.ProfileId}: missing profile {request.TargetProfileId}");
+                Logger.Warning($"[LsrCoop.Server] rejected gameplay action from {requester.ProfileId}: active host is {activeHostService.ActiveHostId ?? "none"}");
+                SendGameplayActionResult(requester, CreateGameplayActionResult(request, false, true, "Only the active host can commit gameplay actions"));
                 return;
             }
 
-            if (IsModelChangeAfterCreation(targetProfile, request.Appearance) && !requesterIsAdmin)
+            CoopPlayerProfile profile = worldProfileStoreService.GetProfile(request.SourceProfileId);
+            if (profile == null)
             {
-                Logger.Warning($"[LsrCoop.Server] rejected appearance request from {requester.ProfileId}: model change after creation requires Admin");
+                Logger.Warning($"[LsrCoop.Server] rejected gameplay action from {requester.ProfileId}: missing profile");
+                SendGameplayActionResult(requester, CreateGameplayActionResult(request, false, true, "Missing profile"));
                 return;
             }
 
-            SaveAcceptedAppearance(targetProfile, request.Appearance);
-            CoopAppearanceChanged changed = new CoopAppearanceChanged
+            if (commit.InventoryMoneySnapshot != null)
             {
-                WorldId = worldProfiles.WorldId,
-                ProfileId = targetProfile.ProfileId,
-                SourceProfileId = requester.ProfileId,
-                Appearance = request.Appearance,
-                AcceptedUtc = DateTimeOffset.UtcNow
+                profile.InventoryMoney = commit.InventoryMoneySnapshot;
+                profile.InventoryMoney.WorldId = worldProfileStoreService.WorldId;
+                profile.InventoryMoney.ProfileId = profile.ProfileId;
+                profile.InventoryMoney.CharacterId = string.IsNullOrWhiteSpace(profile.InventoryMoney.CharacterId) ? profile.ProfileId : profile.InventoryMoney.CharacterId;
+                worldProfileStoreService.Save();
+            }
+
+            if (commit.WeaponSnapshot != null)
+            {
+                profile.Weapons = commit.WeaponSnapshot;
+                profile.Weapons.WorldId = worldProfileStoreService.WorldId;
+                profile.Weapons.ProfileId = profile.ProfileId;
+                profile.Weapons.CharacterId = string.IsNullOrWhiteSpace(profile.Weapons.CharacterId) ? profile.ProfileId : profile.Weapons.CharacterId;
+                worldProfileStoreService.Save();
+            }
+
+            if (commit.PropertyOwnershipSnapshot != null)
+            {
+                profile.PropertyOwnership = commit.PropertyOwnershipSnapshot;
+                profile.PropertyOwnership.WorldId = worldProfileStoreService.WorldId;
+                profile.PropertyOwnership.ProfileId = profile.ProfileId;
+                profile.PropertyOwnership.CharacterId = string.IsNullOrWhiteSpace(profile.PropertyOwnership.CharacterId) ? profile.ProfileId : profile.PropertyOwnership.CharacterId;
+                worldProfileStoreService.Save();
+            }
+
+            if (commit.OwnedVehicleSnapshot != null)
+            {
+                profile.OwnedVehicles = commit.OwnedVehicleSnapshot;
+                profile.OwnedVehicles.WorldId = worldProfileStoreService.WorldId;
+                profile.OwnedVehicles.ProfileId = profile.ProfileId;
+                profile.OwnedVehicles.CharacterId = string.IsNullOrWhiteSpace(profile.OwnedVehicles.CharacterId) ? profile.ProfileId : profile.OwnedVehicles.CharacterId;
+                worldProfileStoreService.Save();
+            }
+
+            if (commit.DeathArrestState != null)
+            {
+                profile.DeathArrestState = commit.DeathArrestState;
+                profile.DeathArrestState.WorldId = worldProfileStoreService.WorldId;
+                profile.DeathArrestState.ProfileId = profile.ProfileId;
+                profile.DeathArrestState.CharacterId = string.IsNullOrWhiteSpace(profile.DeathArrestState.CharacterId) ? profile.ProfileId : profile.DeathArrestState.CharacterId;
+                worldProfileStoreService.Save();
+            }
+
+            CoopGameplayActionResultDto accepted = CreateGameplayActionResult(request, true, false, "Committed by active host");
+            SendGameplayActionResult(requester, accepted);
+            Logger.Info($"[LsrCoop.Server] gameplay action committed: profile={profile.ProfileId}, request={request.RequestId}, type={request.ActionType}");
+        }
+
+        private void OnPvpCrimeReported(CustomEventReceivedArgs args)
+        {
+            CoopClientStatus requester = playerRegistrationService.RegisterClient(args?.Client, "pvp-crime-report");
+            if (requester == null)
+            {
+                return;
+            }
+
+            CoopPvpCrimeReportDto report = Deserialize<CoopPvpCrimeReportDto>(GetArg(args, 0));
+            if (report == null)
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected PvP crime from {requester.ProfileId}: empty payload");
+                return;
+            }
+
+            if (!string.Equals(report.WorldId, worldProfileStoreService.WorldId, StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected PvP crime from {requester.ProfileId}: wrong world {report.WorldId}");
+                return;
+            }
+
+            if (!string.Equals(report.SourceProfileId, requester.ProfileId, StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected PvP crime from {requester.ProfileId}: source mismatch {report.SourceProfileId}");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(report.TargetProfileId) || worldProfileStoreService.GetProfile(report.TargetProfileId) == null)
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected PvP crime from {requester.ProfileId}: unknown victim {report.TargetProfileId}");
+                return;
+            }
+
+            if (activeHostService.IsActiveHost(requester.ProfileId))
+            {
+                Logger.Info($"[LsrCoop.Server] PvP crime already handled by active host: offender={report.SourceProfileId}, victim={report.TargetProfileId}");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(activeHostService.ActiveHostId) || !playerRegistrationService.ClientStatuses.TryGetValue(activeHostService.ActiveHostId, out CoopClientStatus activeHost))
+            {
+                Logger.Warning($"[LsrCoop.Server] PvP crime queued without active host: offender={report.SourceProfileId}, victim={report.TargetProfileId}");
+                return;
+            }
+
+            eventRouter.Send(activeHost.Client, EventRouter.PvpCrimeAssignedEventHash, new object[] { JsonSerializer.Serialize(report) });
+            Logger.Info($"[LsrCoop.Server] PvP crime routed to active host: offender={report.SourceProfileId}, victim={report.TargetProfileId}, killed={report.WasKilled}");
+        }
+
+        private void OnCriminalJusticeSnapshotCommitted(CustomEventReceivedArgs args)
+        {
+            CoopClientStatus requester = playerRegistrationService.RegisterClient(args?.Client, "criminal-justice-snapshot");
+            if (requester == null)
+            {
+                return;
+            }
+
+            CoopCriminalJusticeStateSnapshotDto snapshot = Deserialize<CoopCriminalJusticeStateSnapshotDto>(GetArg(args, 0));
+            if (snapshot == null || snapshot.CriminalHistory == null)
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected criminal justice snapshot from {requester.ProfileId}: empty payload");
+                return;
+            }
+
+            if (!string.Equals(snapshot.WorldId, worldProfileStoreService.WorldId, StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected criminal justice snapshot from {requester.ProfileId}: wrong world {snapshot.WorldId}");
+                return;
+            }
+
+            if (!string.Equals(snapshot.ProfileId, requester.ProfileId, StringComparison.OrdinalIgnoreCase)
+                && !activeHostService.IsActiveHost(requester.ProfileId))
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected criminal justice snapshot from {requester.ProfileId}: profile mismatch {snapshot.ProfileId}");
+                return;
+            }
+
+            CoopPlayerProfile profile = worldProfileStoreService.GetProfile(snapshot.ProfileId);
+            if (profile == null)
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected criminal justice snapshot from {requester.ProfileId}: missing profile");
+                return;
+            }
+
+            snapshot.CriminalHistory.WorldId = worldProfileStoreService.WorldId;
+            snapshot.CriminalHistory.ProfileId = profile.ProfileId;
+            snapshot.CriminalHistory.CharacterId = string.IsNullOrWhiteSpace(snapshot.CriminalHistory.CharacterId) ? profile.ProfileId : snapshot.CriminalHistory.CharacterId;
+            profile.CriminalHistory = snapshot.CriminalHistory;
+            worldProfileStoreService.Save();
+
+            Logger.Info($"[LsrCoop.Server] criminal history saved: profile={profile.ProfileId}, crimes={profile.CriminalHistory.Crimes?.Count ?? 0}, wanted={profile.CriminalHistory.WantedLevel}");
+        }
+
+        private void OnGangReputationSnapshotCommitted(CustomEventReceivedArgs args)
+        {
+            CoopClientStatus requester = playerRegistrationService.RegisterClient(args?.Client, "gang-reputation-snapshot");
+            if (requester == null)
+            {
+                return;
+            }
+
+            CoopGangReputationStateDto snapshot = Deserialize<CoopGangReputationStateDto>(GetArg(args, 0));
+            if (snapshot == null)
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected gang reputation snapshot from {requester.ProfileId}: empty payload");
+                return;
+            }
+
+            if (!string.Equals(snapshot.WorldId, worldProfileStoreService.WorldId, StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected gang reputation snapshot from {requester.ProfileId}: wrong world {snapshot.WorldId}");
+                return;
+            }
+
+            if (!string.Equals(snapshot.ProfileId, requester.ProfileId, StringComparison.OrdinalIgnoreCase)
+                && !activeHostService.IsActiveHost(requester.ProfileId))
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected gang reputation snapshot from {requester.ProfileId}: profile mismatch {snapshot.ProfileId}");
+                return;
+            }
+
+            CoopPlayerProfile profile = worldProfileStoreService.GetProfile(snapshot.ProfileId);
+            if (profile == null)
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected gang reputation snapshot from {requester.ProfileId}: missing profile");
+                return;
+            }
+
+            snapshot.WorldId = worldProfileStoreService.WorldId;
+            snapshot.ProfileId = profile.ProfileId;
+            snapshot.CharacterId = string.IsNullOrWhiteSpace(snapshot.CharacterId) ? profile.ProfileId : snapshot.CharacterId;
+            profile.GangReputation = snapshot;
+            worldProfileStoreService.Save();
+
+            Logger.Info($"[LsrCoop.Server] gang reputation saved: profile={profile.ProfileId}, gangs={profile.GangReputation.Reputations?.Count ?? 0}, currentGang={profile.GangReputation.CurrentGangId ?? "none"}");
+        }
+
+        private void OnClientReady(object eventPayload)
+        {
+            CoopClientStatus status = playerRegistrationService.RegisterClient(ExtractClient(eventPayload), "ready");
+            playerRegistrationService.SendRegistrationState(status, "client-ready");
+            activeHostHandoffService.EvaluateAndSync("client-ready");
+        }
+
+        private void OnClientDisconnected(object eventPayload)
+        {
+            Client client = ExtractClient(eventPayload);
+            string profileId = playerRegistrationService.GetClientProfileId(client);
+            if (string.IsNullOrWhiteSpace(profileId))
+            {
+                playerRegistrationService.RefreshConnectedClients(API?.GetAllClients());
+                activeHostHandoffService.EvaluateAndSync("disconnect-refresh");
+                return;
+            }
+
+            bool disconnectedActiveHost = activeHostService.IsActiveHost(profileId);
+            playerRegistrationService.Remove(profileId);
+            Logger.Info($"[LsrCoop.Server] client disconnected: {profileId}");
+
+            if (disconnectedActiveHost)
+            {
+                activeHostHandoffService.HandleActiveHostLeft(profileId, "active-host-left");
+                return;
+            }
+
+            activeHostHandoffService.EvaluateAndSync("client-disconnected");
+        }
+
+        private CoopGameplayActionResultDto CreateGameplayActionResult(CoopGameplayActionRequestDto request, bool accepted, bool requiresResync, string reason)
+        {
+            if (request == null)
+            {
+                return null;
+            }
+
+            return new CoopGameplayActionResultDto
+            {
+                RequestId = request.RequestId,
+                ActionType = request.ActionType,
+                WorldId = request.WorldId,
+                SourceProfileId = request.SourceProfileId,
+                SourceCharacterId = request.SourceCharacterId,
+                TargetProfileId = request.TargetProfileId,
+                TargetCharacterId = request.TargetCharacterId,
+                Accepted = accepted,
+                RequiresPersistentCommit = accepted,
+                RequiresResync = requiresResync,
+                Reason = reason ?? string.Empty,
+                ResolvedUtc = DateTimeOffset.UtcNow,
             };
-
-            BroadcastEvent(AppearanceChangedEventHash, new object[] { JsonSerializer.Serialize(changed) });
-            BroadcastCharacterSnapshot(targetProfile);
-            Logger.Info($"[LsrCoop.Server] appearance accepted: profile={targetProfile.ProfileId}, source={requester.ProfileId}");
         }
 
-        private LsrCoopRoleConfig LoadRoleConfig()
+        private void SendGameplayActionResult(CoopClientStatus status, CoopGameplayActionResultDto result)
         {
-            roleConfigPath = Path.Combine(GetDataFolder(), RoleConfigFileName);
-            Directory.CreateDirectory(Path.GetDirectoryName(roleConfigPath));
-
-            if (!File.Exists(roleConfigPath))
+            if (status?.Client == null || result == null)
             {
-                LsrCoopRoleConfig defaultConfig = new LsrCoopRoleConfig();
-                SaveRoleConfig(defaultConfig);
-                Logger.Info($"[LsrCoop.Server] created role config: {roleConfigPath}");
-                return defaultConfig;
+                return;
             }
 
-            try
-            {
-                string json = File.ReadAllText(roleConfigPath);
-                LsrCoopRoleConfig config = JsonSerializer.Deserialize<LsrCoopRoleConfig>(json) ?? new LsrCoopRoleConfig();
-                config.AdminIds = config.AdminIds ?? new List<string>();
-                config.TrustedHostIds = config.TrustedHostIds ?? new List<string>();
-                Logger.Info($"[LsrCoop.Server] role config loaded: world={config.WorldId}, admins={config.AdminIds.Count}, trustedHosts={config.TrustedHostIds.Count}");
-                return config;
-            }
-            catch (Exception ex)
-            {
-                Logger.Warning($"[LsrCoop.Server] failed to load role config, using defaults: {ex.Message}");
-                return new LsrCoopRoleConfig();
-            }
-        }
-
-        private void SaveRoleConfig(LsrCoopRoleConfig config)
-        {
-            string json = JsonSerializer.Serialize(config, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(roleConfigPath, json);
-        }
-
-        private CoopWorldProfileStore LoadWorldProfileStore()
-        {
-            worldProfileStorePath = Path.Combine(GetDataFolder(), WorldProfileStoreFileName);
-            Directory.CreateDirectory(Path.GetDirectoryName(worldProfileStorePath));
-
-            if (!File.Exists(worldProfileStorePath))
-            {
-                CoopWorldProfileStore defaultStore = new CoopWorldProfileStore { WorldId = roleConfig.WorldId };
-                SaveWorldProfileStore(defaultStore);
-                Logger.Info($"[LsrCoop.Server] created world profile store: {worldProfileStorePath}");
-                return defaultStore;
-            }
-
-            try
-            {
-                string json = File.ReadAllText(worldProfileStorePath);
-                CoopWorldProfileStore store = JsonSerializer.Deserialize<CoopWorldProfileStore>(json) ?? new CoopWorldProfileStore();
-                store.Profiles = store.Profiles ?? new List<CoopPlayerProfile>();
-                store.WorldId = string.IsNullOrWhiteSpace(store.WorldId) ? roleConfig.WorldId : store.WorldId;
-
-                if (!string.Equals(store.WorldId, roleConfig.WorldId, StringComparison.OrdinalIgnoreCase))
-                {
-                    Logger.Warning($"[LsrCoop.Server] world profile store id {store.WorldId} does not match role config world id {roleConfig.WorldId}");
-                }
-
-                Logger.Info($"[LsrCoop.Server] world profiles loaded: world={store.WorldId}, profiles={store.Profiles.Count}");
-                return store;
-            }
-            catch (Exception ex)
-            {
-                Logger.Warning($"[LsrCoop.Server] failed to load world profiles, using empty store: {ex.Message}");
-                return new CoopWorldProfileStore { WorldId = roleConfig.WorldId };
-            }
-        }
-
-        private void SaveWorldProfileStore(CoopWorldProfileStore store)
-        {
-            string json = JsonSerializer.Serialize(store, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(worldProfileStorePath, json);
+            eventRouter.Send(status.Client, EventRouter.GameplayActionResultEventHash, new object[] { JsonSerializer.Serialize(result) });
         }
 
         private string GetDataFolder()
@@ -274,314 +446,6 @@ namespace LsrCoop.Server
             }
 
             return Path.Combine(AppContext.BaseDirectory, "Resources", "Server", "data", "LsrCoop.Server");
-        }
-
-        private void RefreshConnectedClients()
-        {
-            Dictionary<int, Client> allClients = API?.GetAllClients();
-            if (allClients == null)
-            {
-                return;
-            }
-
-            foreach (Client client in allClients.Values)
-            {
-                CoopClientStatus status = RegisterClient(client, "refresh");
-                SendRegistrationState(status, "refresh");
-            }
-        }
-
-        private void OnClientReady(object eventPayload)
-        {
-            CoopClientStatus status = RegisterClient(ExtractClient(eventPayload), "ready");
-            SendRegistrationState(status, "client-ready");
-            EvaluateActiveHost("client-ready");
-        }
-
-        private void OnClientDisconnected(object eventPayload)
-        {
-            Client client = ExtractClient(eventPayload);
-            string profileId = GetClientProfileId(client);
-            if (string.IsNullOrWhiteSpace(profileId))
-            {
-                RefreshConnectedClients();
-                EvaluateActiveHost("disconnect-refresh");
-                return;
-            }
-
-            clientStatuses.Remove(profileId);
-            Logger.Info($"[LsrCoop.Server] client disconnected: {profileId}");
-
-            if (string.Equals(activeHostId, profileId, StringComparison.OrdinalIgnoreCase))
-            {
-                ReleaseActiveHost("active-host-left");
-            }
-
-            EvaluateActiveHost("client-disconnected");
-        }
-
-        private CoopClientStatus RegisterClient(Client client, string reason)
-        {
-            string profileId = GetClientProfileId(client);
-            if (string.IsNullOrWhiteSpace(profileId))
-            {
-                return null;
-            }
-
-            bool isNew = !clientStatuses.TryGetValue(profileId, out CoopClientStatus status);
-            if (isNew)
-            {
-                status = new CoopClientStatus(profileId, client);
-                clientStatuses[profileId] = status;
-            }
-            else
-            {
-                status.Client = client;
-            }
-
-            status.ClientId = GetClientId(client);
-            status.Profile = LoadOrCreateProfile(status);
-
-            if (isNew)
-            {
-                Logger.Info($"[LsrCoop.Server] client registered ({reason}): {profileId}, role={GetRoleName(profileId)}, trustedHost={IsTrustedHost(profileId)}, compatibility={status.CompatibilityState}");
-            }
-
-            return status;
-        }
-
-        private CoopPlayerProfile LoadOrCreateProfile(CoopClientStatus status)
-        {
-            CoopPlayerProfile profile = worldProfiles.Profiles.FirstOrDefault(x => string.Equals(x.ProfileId, status.ProfileId, StringComparison.OrdinalIgnoreCase));
-            DateTimeOffset now = DateTimeOffset.UtcNow;
-            string role = GetRoleName(status.ProfileId);
-            bool created = false;
-
-            if (profile == null)
-            {
-                profile = new CoopPlayerProfile
-                {
-                    ProfileId = status.ProfileId,
-                    DisplayName = GetClientName(status.Client),
-                    CreatedUtc = now
-                };
-                worldProfiles.Profiles.Add(profile);
-                created = true;
-            }
-
-            profile.ClientId = status.ClientId;
-            profile.DisplayName = GetClientName(status.Client);
-            profile.Role = role;
-            profile.LastSeenUtc = now;
-            SaveWorldProfileStore(worldProfiles);
-
-            if (created)
-            {
-                Logger.Info($"[LsrCoop.Server] created co-op profile: world={worldProfiles.WorldId}, profile={profile.ProfileId}, role={profile.Role}");
-            }
-
-            return profile;
-        }
-
-        private void SendRegistrationState(CoopClientStatus status, string reason)
-        {
-            if (status?.Client == null || status.Profile == null)
-            {
-                return;
-            }
-
-            status.Client.SendCustomEvent(PlayerRegisteredEventHash, new object[]
-            {
-                worldProfiles.WorldId,
-                status.Profile.ProfileId,
-                status.ClientId,
-                status.Profile.DisplayName,
-                status.Profile.Role,
-                status.CompatibilityState.ToString()
-            });
-
-            if (status.Profile.Character == null)
-            {
-                status.Client.SendCustomEvent(CharacterCreateRequiredEventHash, new object[] { worldProfiles.WorldId, status.Profile.ProfileId, reason });
-                Logger.Info($"[LsrCoop.Server] character create required: {status.Profile.ProfileId} ({reason})");
-                return;
-            }
-
-            status.Client.SendCustomEvent(CharacterSnapshotEventHash, new object[]
-            {
-                worldProfiles.WorldId,
-                status.Profile.ProfileId,
-                JsonSerializer.Serialize(status.Profile.Character)
-            });
-            Logger.Info($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason})");
-        }
-
-        private CoopPlayerProfile GetProfile(string profileId)
-        {
-            return worldProfiles.Profiles.FirstOrDefault(x => string.Equals(x.ProfileId, profileId, StringComparison.OrdinalIgnoreCase));
-        }
-
-        private void SaveAcceptedAppearance(CoopPlayerProfile profile, CoopAppearanceState appearance)
-        {
-            DateTimeOffset now = DateTimeOffset.UtcNow;
-            if (profile.Character == null)
-            {
-                profile.Character = new CoopCharacterSnapshot
-                {
-                    CharacterId = profile.ProfileId,
-                    ProfileId = profile.ProfileId,
-                    DisplayName = profile.DisplayName,
-                    ModelName = appearance.ModelName,
-                    UpdatedUtc = now
-                };
-            }
-
-            profile.Character.Appearance = appearance;
-            profile.Character.UpdatedUtc = now;
-            profile.Character.DisplayName = profile.DisplayName;
-            if (!string.IsNullOrWhiteSpace(appearance.ModelName))
-            {
-                profile.Character.ModelName = appearance.ModelName;
-            }
-
-            SaveWorldProfileStore(worldProfiles);
-        }
-
-        private bool IsModelChangeAfterCreation(CoopPlayerProfile profile, CoopAppearanceState appearance)
-        {
-            if (profile.Character == null || appearance == null || string.IsNullOrWhiteSpace(appearance.ModelName))
-            {
-                return false;
-            }
-
-            string existingModel = !string.IsNullOrWhiteSpace(profile.Character.ModelName)
-                ? profile.Character.ModelName
-                : profile.Character.Appearance?.ModelName;
-
-            return !string.IsNullOrWhiteSpace(existingModel) && !string.Equals(existingModel, appearance.ModelName, StringComparison.OrdinalIgnoreCase);
-        }
-
-        private void BroadcastCharacterSnapshot(CoopPlayerProfile profile)
-        {
-            if (profile?.Character == null)
-            {
-                return;
-            }
-
-            BroadcastEvent(CharacterSnapshotEventHash, new object[]
-            {
-                worldProfiles.WorldId,
-                profile.ProfileId,
-                JsonSerializer.Serialize(profile.Character)
-            });
-        }
-
-        private void EvaluateActiveHost(string reason)
-        {
-            if (!string.IsNullOrWhiteSpace(activeHostId) && clientStatuses.ContainsKey(activeHostId) && IsTrustedHost(activeHostId) && IsCompatible(activeHostId))
-            {
-                return;
-            }
-
-            if (!string.IsNullOrWhiteSpace(activeHostId))
-            {
-                ReleaseActiveHost("active-host-invalid");
-            }
-
-            Client nextHost = clientStatuses
-                .OrderBy(x => x.Key, StringComparer.OrdinalIgnoreCase)
-                .Where(x => IsTrustedHost(x.Key) && x.Value.CompatibilityState == CoopClientCompatibilityState.Compatible)
-                .Select(x => x.Value.Client)
-                .FirstOrDefault();
-
-            if (nextHost == null)
-            {
-                AnnounceActiveHostUnavailable(reason);
-                return;
-            }
-
-            AssignActiveHost(nextHost, reason);
-        }
-
-        private void AssignActiveHost(Client client, string reason)
-        {
-            activeHostId = GetClientProfileId(client);
-            activeHostUnavailableAnnounced = false;
-            Logger.Info($"[LsrCoop.Server] active host assigned: {activeHostId} ({reason})");
-            BroadcastEvent(ActiveHostAssignedEventHash, new object[] { roleConfig.WorldId, activeHostId, reason });
-        }
-
-        private void ReleaseActiveHost(string reason)
-        {
-            if (string.IsNullOrWhiteSpace(activeHostId))
-            {
-                return;
-            }
-
-            string releasedHostId = activeHostId;
-            activeHostId = null;
-            Logger.Info($"[LsrCoop.Server] active host released: {releasedHostId} ({reason})");
-            BroadcastEvent(ActiveHostReleasedEventHash, new object[] { roleConfig.WorldId, releasedHostId, reason });
-        }
-
-        private void AnnounceActiveHostUnavailable(string reason)
-        {
-            if (activeHostUnavailableAnnounced)
-            {
-                return;
-            }
-
-            activeHostUnavailableAnnounced = true;
-            Logger.Info($"[LsrCoop.Server] active host unavailable; no compatible connected TrustedHost ({reason})");
-            BroadcastEvent(ActiveHostUnavailableEventHash, new object[] { roleConfig.WorldId, reason });
-        }
-
-        private bool IsTrustedHost(string profileId)
-        {
-            return roleConfig.TrustedHostIds.Any(x => string.Equals(x, profileId, StringComparison.OrdinalIgnoreCase));
-        }
-
-        private bool IsAdmin(string profileId)
-        {
-            return roleConfig.AdminIds.Any(x => string.Equals(x, profileId, StringComparison.OrdinalIgnoreCase));
-        }
-
-        private string GetRoleName(string profileId)
-        {
-            bool isAdmin = IsAdmin(profileId);
-            bool isTrustedHost = IsTrustedHost(profileId);
-
-            if (isAdmin && isTrustedHost)
-            {
-                return "Admin,TrustedHost";
-            }
-
-            if (isAdmin)
-            {
-                return LsrCoopRole.Admin.ToString();
-            }
-
-            if (isTrustedHost)
-            {
-                return LsrCoopRole.TrustedHost.ToString();
-            }
-
-            return LsrCoopRole.Player.ToString();
-        }
-
-        private void BroadcastEvent(int eventHash, object[] args)
-        {
-            foreach (Client client in clientStatuses.Values.Select(x => x.Client).ToArray())
-            {
-                try
-                {
-                    client.SendCustomEvent(eventHash, args);
-                }
-                catch (Exception ex)
-                {
-                    Logger.Warning($"[LsrCoop.Server] failed to send event {eventHash} to {GetClientName(client)}: {ex.Message}");
-                }
-            }
         }
 
         private bool TrySubscribeConnectionEvent(object events, string eventName, Action<object> handler)
@@ -634,41 +498,6 @@ namespace LsrCoop.Server
             return clientValue as Client;
         }
 
-        private CoopClientCompatibilityState EvaluateCompatibility(CoopClientStatus status)
-        {
-            if (!status.RequiredResourceLoaded)
-            {
-                return CoopClientCompatibilityState.Incompatible;
-            }
-
-            if (!string.Equals(status.CoopBuildVersion, RequiredCoopBuildVersion, StringComparison.OrdinalIgnoreCase))
-            {
-                return CoopClientCompatibilityState.Incompatible;
-            }
-
-            if (string.IsNullOrWhiteSpace(status.LsrVersion) || string.Equals(status.LsrVersion, "unknown", StringComparison.OrdinalIgnoreCase))
-            {
-                return CoopClientCompatibilityState.Unknown;
-            }
-
-            if (!string.Equals(status.LsrVersion, RequiredLsrVersion, StringComparison.OrdinalIgnoreCase))
-            {
-                return CoopClientCompatibilityState.Incompatible;
-            }
-
-            if (!string.Equals(status.ConfigVersion, RequiredConfigVersion, StringComparison.OrdinalIgnoreCase))
-            {
-                return CoopClientCompatibilityState.Incompatible;
-            }
-
-            return CoopClientCompatibilityState.Compatible;
-        }
-
-        private bool IsCompatible(string profileId)
-        {
-            return clientStatuses.TryGetValue(profileId, out CoopClientStatus status) && status.CompatibilityState == CoopClientCompatibilityState.Compatible;
-        }
-
         private string GetArg(CustomEventReceivedArgs args, int index)
         {
             if (args?.Args == null || args.Args.Length <= index)
@@ -695,36 +524,6 @@ namespace LsrCoop.Server
                 Logger.Warning($"[LsrCoop.Server] failed to read event payload: {ex.Message}");
                 return null;
             }
-        }
-
-        private string GetClientProfileId(Client client)
-        {
-            return string.IsNullOrWhiteSpace(client?.Username) ? null : client.Username;
-        }
-
-        private string GetClientId(Client client)
-        {
-            if (client == null)
-            {
-                return null;
-            }
-
-            string[] propertyNames = { "Id", "ID", "NetHandle", "Handle" };
-            foreach (string propertyName in propertyNames)
-            {
-                object value = client.GetType().GetProperty(propertyName)?.GetValue(client);
-                if (value != null)
-                {
-                    return value.ToString();
-                }
-            }
-
-            return GetClientProfileId(client);
-        }
-
-        private string GetClientName(Client client)
-        {
-            return string.IsNullOrWhiteSpace(client?.Username) ? "unknown" : client.Username;
         }
     }
 }

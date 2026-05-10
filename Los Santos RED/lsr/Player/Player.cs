@@ -5,6 +5,7 @@ using LosSantosRED.lsr.Helper;
 using LosSantosRED.lsr.Interface;
 using LosSantosRED.lsr.Locations;
 using LosSantosRED.lsr.Player;
+using LosSantosRED.lsr.Coop.Core;
 using LSR.Vehicles;
 using Rage;
 using Rage.Native;
@@ -112,6 +113,9 @@ namespace Mod
             IsMale = isMale;
             PlayerName = suspectsName;
             Crimes = crimes;
+            CoopCrimeRoutingService.RegisterLocalCrimeRuntime(this, Crimes);
+            CoopCriminalJusticeStateAdapter.RegisterLocalRuntime(this, Crimes);
+            CoopGangReputationStateAdapter.RegisterLocalRuntime(this, gangs);
             World = provider;
             TimeControllable = timeControllable;
             Settings = settings;
@@ -1860,9 +1864,16 @@ namespace Mod
             {
                 return;
             }
+            CoopCrimeEvent coopCrimeEvent = CoopCrimeRoutingService.Current.CreateLocalCrimeEvent(this, crimeObserved, isObservedByPolice, Location, VehicleObserved, WeaponObserved, HaveDescription, AnnounceCrime, isForPlayer, alwaysAddInstance);
+            if (!CoopCrimeRoutingService.Current.RouteOrAllowLocal(coopCrimeEvent))
+            {
+                return;
+            }
             GameFiber.Yield();//TR 6 this is new, seems helpful so far with no downsides
             CrimeSceneDescription description = new CrimeSceneDescription(!IsInVehicle, isObservedByPolice, Location, HaveDescription) { InteriorSeen = isForPlayer ? CurrentLocation.CurrentInterior : null, VehicleSeen = VehicleObserved, WeaponSeen = WeaponObserved, Speed = Game.LocalPlayer.Character.Speed };
+            coopCrimeEvent.CrimeSceneDescription = description;
             PoliceResponse.AddCrime(crimeObserved, description, isForPlayer, alwaysAddInstance);
+            CoopCrimeRoutingService.Current.NotifyAppliedOnActiveHost(coopCrimeEvent);
 
 
 

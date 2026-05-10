@@ -319,6 +319,7 @@ public class GangMember : PedExt, IWeaponIssuable
                     // EntryPoint.WriteToConsole($"VIOLATIONS: isKilled {isKilled} GangMemeber {gm.Gang.ShortName} zone fail", 5);
                 }
             }
+            Player.RelationshipManager.GangRelationships.NotifyCoopStateChanged();
         }
 
        // ReputationReport.WasKilledByPlayer = true;
@@ -361,6 +362,7 @@ public class GangMember : PedExt, IWeaponIssuable
                     // EntryPoint.WriteToConsole($"VIOLATIONS: isKilled {isKilled} GangMemeber {gm.Gang.ShortName} zone fail", 5);
                 }
             }
+            Player.RelationshipManager.GangRelationships.NotifyCoopStateChanged();
         }
         WillFight = true;
         ReputationReport.AddReputation(RepToRemove);
@@ -389,6 +391,7 @@ public class GangMember : PedExt, IWeaponIssuable
                     }
                 }
             }
+            Player.RelationshipManager.GangRelationships.NotifyCoopStateChanged();
         }
         //ReputationReport.WasCarjackedByPlayer = true;
         ReputationReport.AddReputation(RepToRemove);

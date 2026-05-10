@@ -1,4 +1,5 @@
 ﻿using LosSantosRED.lsr.Interface;
+using LosSantosRED.lsr.Coop.Core;
 using LSR.Vehicles;
 using Rage;
 using System;
@@ -43,6 +44,11 @@ public class VehicleOwnership
     }
     public void ClearVehicleOwnership()
     {
+        if (!CoopStorePurchaseBridge.TryBeginSaveOwnedVehicle(Player, null, "ClearOwnership", out CoopGameplayActionRequest coopRequest, out _))
+        {
+            return;
+        }
+
         foreach (VehicleExt car in OwnedVehicles)
         {
             car.ResetItems();
@@ -50,6 +56,7 @@ public class VehicleOwnership
             car.RemoveBlip();       
         }
         OwnedVehicles.Clear();
+        CoopStorePurchaseBridge.CompleteOwnedVehicleChange(coopRequest, Player);
         //EntryPoint.WriteToConsole($"PLAYER EVENT: OWNED VEHICLEs CLEARED");
     }
     public void RemoveOwnershipOfNearestCar()
@@ -78,6 +85,14 @@ public class VehicleOwnership
         {
             return;
         }
+        if (!CoopStorePurchaseBridge.TryBeginSaveOwnedVehicle(Player, toOwn, "RemoveOwnership", out CoopGameplayActionRequest coopRequest, out string blockedReason))
+        {
+            if (!string.IsNullOrWhiteSpace(blockedReason))
+            {
+                Game.DisplayNotification("CHAR_BLANK_ENTRY", "CHAR_BLANK_ENTRY", "~b~Vehicle Info", string.Format("~y~{0}", Player.PlayerName), blockedReason);
+            }
+            return;
+        }
         //EntryPoint.WriteToConsole($"PLAYER EVENT: OWNED VEHICLE REMOVED {toOwn.Vehicle.Handle}");
         if (OwnedVehicles.Any(x => x.Handle == toOwn.Handle))
         {
@@ -85,7 +100,8 @@ public class VehicleOwnership
         }
         toOwn.RemoveOwnership();
         toOwn.RemoveBlip();
-        UpdateOwnedBlips();     
+        UpdateOwnedBlips();
+        CoopStorePurchaseBridge.CompleteOwnedVehicleChange(coopRequest, Player);
     }
     public void TakeOwnershipOfNearestCar()
     {
@@ -116,6 +132,14 @@ public class VehicleOwnership
         { 
             return; 
         }
+        if (!CoopStorePurchaseBridge.TryBeginSaveOwnedVehicle(Player, toOwn, "TakeOwnership", out CoopGameplayActionRequest coopRequest, out string blockedReason))
+        {
+            if (showNotification && !string.IsNullOrWhiteSpace(blockedReason))
+            {
+                Game.DisplayNotification("CHAR_BLANK_ENTRY", "CHAR_BLANK_ENTRY", "~b~Vehicle Info", string.Format("~y~{0}", Player.PlayerName), blockedReason);
+            }
+            return;
+        }
         toOwn.SetNotWanted();
         toOwn.AddOwnership();
         Player.VehicleManager.OnTookOwnership(toOwn);
@@ -125,6 +149,7 @@ public class VehicleOwnership
         {
             DisplayPlayerVehicleNotification(toOwn);
         }
+        CoopStorePurchaseBridge.CompleteOwnedVehicleChange(coopRequest, Player);
         EntryPoint.WriteToConsole($"PLAYER EVENT: OWNED VEHICLE ADDED {toOwn.Vehicle.Handle}");    
     }
     private void UpdateOwnedBlips()
