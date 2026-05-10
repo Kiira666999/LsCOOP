@@ -7,6 +7,8 @@ namespace LosSantosRED.lsr.Coop.Core
         public CoopPersistentPlayerState()
         {
             InventoryRecords = new List<string>();
+            InventoryItems = new List<CoopInventoryItemState>();
+            BankAccounts = new List<CoopBankAccountState>();
             WeaponRecords = new List<string>();
             OwnedVehicleIds = new List<string>();
             PropertyIds = new List<string>();
@@ -20,7 +22,14 @@ namespace LosSantosRED.lsr.Coop.Core
         public CoopCharacterId CharacterId { get; set; }
         public string CharacterAppearanceData { get; set; }
         public int Money { get; set; }
+        public int OnHandCash { get; set; }
+        public CoopOwnedVehicleSnapshot OwnedVehicleState { get; set; }
+        public CoopGangReputationState GangReputationState { get; set; }
+        public CoopCriminalHistoryState CriminalHistoryState { get; set; }
+        public CoopPropertyOwnershipSnapshot PropertyOwnershipState { get; set; }
         public List<string> InventoryRecords { get; private set; }
+        public List<CoopInventoryItemState> InventoryItems { get; private set; }
+        public List<CoopBankAccountState> BankAccounts { get; private set; }
         public List<string> WeaponRecords { get; private set; }
         public List<string> OwnedVehicleIds { get; private set; }
         public List<string> PropertyIds { get; private set; }

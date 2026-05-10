@@ -1,4 +1,5 @@
 ﻿using ExtensionsMethods;
+using LosSantosRED.lsr.Coop.Core;
 using LosSantosRED.lsr.Data.Interface;
 using LosSantosRED.lsr.Helper;
 using LosSantosRED.lsr.Interface;
@@ -558,9 +559,16 @@ public class Residence : GameLocation, ILocationSetupable, IRestableLocation, II
     }
     private bool Rent()
     {
+        if (!CoopStorePurchaseBridge.TryBeginPurchaseProperty(this, Player, RentalFee, "Rent", out CoopGameplayActionRequest request, out string blockedReason))
+        {
+            DisplayMessage("~y~Rental Pending", blockedReason);
+            return false;
+        }
+
         if(CanRent && Player.BankAccounts.GetMoney(true) >= RentalFee)
         {
             OnRented();
+            CoopStorePurchaseBridge.CompletePropertyOwnershipChange(request, Player);
             return true;
         }
         PlayErrorSound();
@@ -569,9 +577,16 @@ public class Residence : GameLocation, ILocationSetupable, IRestableLocation, II
     }
     protected override bool Purchase()
     {
+        if (!CoopStorePurchaseBridge.TryBeginPurchaseProperty(this, Player, PurchasePrice, "Purchase", out CoopGameplayActionRequest request, out string blockedReason))
+        {
+            DisplayMessage("~y~Purchase Pending", blockedReason);
+            return false;
+        }
+
         if (CanBuy && Player.BankAccounts.GetMoney(true) >= PurchasePrice)
         {
             OnPurchased();
+            CoopStorePurchaseBridge.CompletePropertyOwnershipChange(request, Player);
             return true;
         }
         PlayErrorSound();
@@ -656,16 +671,30 @@ public class Residence : GameLocation, ILocationSetupable, IRestableLocation, II
     }
     private void OnStopRenting()
     {
+        if (!CoopStorePurchaseBridge.TryBeginPurchaseProperty(this, Player, 0, "StopRenting", out CoopGameplayActionRequest request, out string blockedReason))
+        {
+            DisplayMessage("~y~Rental Pending", blockedReason);
+            return;
+        }
+
         Reset();
         Player.Properties.RemoveOwnedLocation(this);
+        CoopStorePurchaseBridge.CompletePropertyOwnershipChange(request, Player);
         PlaySuccessSound();
         DisplayMessage("~y~Rental", $"You have stopped renting {Name}");
     }
     protected override void OnSold()
     {
+        if (!CoopStorePurchaseBridge.TryBeginPurchaseProperty(this, Player, SalesPrice, "Sell", out CoopGameplayActionRequest request, out string blockedReason))
+        {
+            DisplayMessage("~y~Sale Pending", blockedReason);
+            return;
+        }
+
         Reset();
         Player.Properties.RemoveOwnedLocation(this);
         Player.BankAccounts.GiveMoney(SalesPrice, true);
+        CoopStorePurchaseBridge.CompletePropertyOwnershipChange(request, Player);
         PlaySuccessSound();
         DisplayMessage("~g~Sold", $"You have sold {Name} for {SalesPrice.ToString("C0")}");
     }
@@ -906,17 +935,31 @@ public class Residence : GameLocation, ILocationSetupable, IRestableLocation, II
     }
     private void OnStopRentingOut()
     {
+        if (!CoopStorePurchaseBridge.TryBeginPurchaseProperty(this, Player, 0, "StopRentOut", out CoopGameplayActionRequest request, out string blockedReason))
+        {
+            DisplayMessage("~y~Rental Pending", blockedReason);
+            return;
+        }
+
         MenuPool.CloseAllMenus();
         Interior?.ForceExitPlayer(Player, this);
         IsRentedOut = false;
+        CoopStorePurchaseBridge.CompletePropertyOwnershipChange(request, Player);
     }
     private void OnRentOutProperty()
     {
+        if (!CoopStorePurchaseBridge.TryBeginPurchaseProperty(this, Player, RentalFee, "RentOut", out CoopGameplayActionRequest request, out string blockedReason))
+        {
+            DisplayMessage("~y~Rental Pending", blockedReason);
+            return;
+        }
+
         MenuPool.CloseAllMenus();
         Interior?.ForceExitPlayer(Player, this);
         IsRentedOut = true;
         DateRentalPaymentPaid = Time.CurrentDateTime;
         DateRentalPaymentDue = DateRentalPaymentPaid.AddDays(RentalDays);
+        CoopStorePurchaseBridge.CompletePropertyOwnershipChange(request, Player);
     }
 
     public override void Payout(IPropertyOwnable player, ITimeReportable time)

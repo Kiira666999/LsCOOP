@@ -1,4 +1,5 @@
 ﻿using ExtensionsMethods;
+using LosSantosRED.lsr.Coop.Core;
 using LosSantosRED.lsr.Helper;
 using LosSantosRED.lsr.Interface;
 using LosSantosRED.lsr.Locations;
@@ -604,9 +605,16 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
     }
     protected virtual bool Purchase()
     {
+        if (!CoopStorePurchaseBridge.TryBeginPurchaseProperty(this, Player, PurchasePrice, "Purchase", out CoopGameplayActionRequest request, out string blockedReason))
+        {
+            DisplayMessage("~y~Purchase Pending", blockedReason);
+            return false;
+        }
+
         if (Player.BankAccounts.GetMoney(true) >= PurchasePrice)
         {
             OnPurchased();
+            CoopStorePurchaseBridge.CompletePropertyOwnershipChange(request, Player);
             DisplayMessage("~g~Purchased", $"Thank you for purchasing {Name}");
             return true;
         }
@@ -625,12 +633,19 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
     }
     protected virtual void OnSold()
     {
+        if (!CoopStorePurchaseBridge.TryBeginPurchaseProperty(this, Player, CurrentSalesPrice, "Sell", out CoopGameplayActionRequest request, out string blockedReason))
+        {
+            DisplayMessage("~y~Sale Pending", blockedReason);
+            return;
+        }
+
         //Player.Properties.RemovePayoutProperty(this);
         RemoveOwnership();
         Player.BankAccounts.GiveMoney(CurrentSalesPrice, true);
         MenuPool.CloseAllMenus();
         Interior?.ForceExitPlayer(Player, this);
         IsOwned = false;
+        CoopStorePurchaseBridge.CompletePropertyOwnershipChange(request, Player);
         DisplayMessage("~g~Sold", $"You have sold {Name} for {CurrentSalesPrice.ToString("C0")}");
     }
     public virtual void HandleVariableItems()
@@ -1499,10 +1514,7 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
             UIMenuItem businessManagementButton = new UIMenuItem("Sell Property") { RightLabel = $"{CurrentSalesPrice:C0}" };
             businessManagementButton.Activated += (s, i) =>
             {
-                Player.Properties.RemoveOwnedLocation(this);
-                Player.BankAccounts.GiveMoney(CurrentSalesPrice, true);
-                IsOwned = false;
-                DisplayMessage("~g~Sold", $"You have sold {Name} for {CurrentSalesPrice.ToString("C0")}");
+                OnSold();
                 conversation.Dispose();
             };
             headerMenu.AddItem(businessManagementButton);

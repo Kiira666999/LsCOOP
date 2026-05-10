@@ -1,4 +1,5 @@
 ﻿using ExtensionsMethods;
+using LosSantosRED.lsr.Coop.Core;
 using LosSantosRED.lsr.Interface;
 using Rage;
 using System;
@@ -14,6 +15,7 @@ public class GangRelationships
     private ISettingsProvideable Settings;
     private IPlacesOfInterest PlacesOfInterest;
     private ITimeReportable Time;
+    private bool isApplyingCoopState;
     public List<GangReputation> GangReputations { get; private set; } = new List<GangReputation>();
     public Gang CurrentGang { get; private set; }
     public GangKickUp CurrentGangKickUp { get; private set; }
@@ -95,6 +97,7 @@ public class GangRelationships
         }
         int preValue = gr.ReputationLevel;
         gr.SetReputation(gr.ReputationLevel + amount, sendNotification);
+        NotifyCoopGangReputationChanged();
         //if (amount > 1)
         //{
         //    EntryPoint.WriteToConsole($"GangRelationships ChangeReputation {gang.FullName} preValue {preValue} amount {amount} current {gr.ReputationLevel}", 5);
@@ -113,6 +116,7 @@ public class GangRelationships
             GangReputations.Add(gr);
         }
         gr.SetAttacked(); 
+        NotifyCoopGangReputationChanged();
         //EntryPoint.WriteToConsole($"GangRelationships AddAttacked {gang.FullName} {gr.RecentlyAttacked} RecentlyAttacked {gr.RecentlyAttacked} current {gr.ReputationLevel}", 5);
     }
     public void SetReputation(Gang gang, int value, bool sendNotification)
@@ -129,6 +133,7 @@ public class GangRelationships
         }
         int preValue = gr.ReputationLevel;
         gr.SetReputation(value, sendNotification);
+        NotifyCoopGangReputationChanged();
         //EntryPoint.WriteToConsole($"GangRelationships SetReputation {gang.FullName} preValue {preValue} toset {value} current {gr.ReputationLevel}", 5);
     }
     public void AddDebt(Gang gang, int amount)
@@ -146,6 +151,7 @@ public class GangRelationships
         if (!gr.IsMember)
         {
             gr.AddDebt(Math.Abs(amount));
+            NotifyCoopGangReputationChanged();
             //gr.PlayerDebt += Math.Abs(amount);
         }
     }
@@ -166,6 +172,7 @@ public class GangRelationships
             GangReputations.Add(gr);
         }
         gr.PlayerDebt = Math.Abs(amount);
+        NotifyCoopGangReputationChanged();
     }
     public void SetRepStats(Gang gang, int hurt, int hurtInTerritory, int killed, int killedInTerritory, int carjacked, int carjackedInTerritory, int playerDebt, bool isMember, bool isEnemy, int tasksCompleted)
     {
@@ -189,11 +196,13 @@ public class GangRelationships
         gr.IsMember = isMember;
         gr.IsEnemy = isEnemy;
         gr.TasksCompleted = tasksCompleted;
+        NotifyCoopGangReputationChanged();
     }
     public void SetKickStatus(Gang gang, DateTime kickDueDate, int kickMissedPeriods, int kickMissedAmount)
     {
         CurrentGangKickUp = new GangKickUp(Player, gang, Time);
         CurrentGangKickUp.Restart(kickDueDate, kickMissedPeriods, kickMissedAmount);
+        NotifyCoopGangReputationChanged();
     }
     public void Reset()
     {
@@ -211,6 +220,7 @@ public class GangRelationships
         }
         CurrentGang = null;
         CurrentGangKickUp = null;
+        NotifyCoopGangReputationChanged();
     }
     public void SetAllRandomReputations()
     {
@@ -218,6 +228,7 @@ public class GangRelationships
         {
             rg.SetReputation(RandomItems.GetRandomNumberInt(rg.RepMinimum, rg.RepMaximum),false);
         }
+        NotifyCoopGangReputationChanged();
     }
     public string PrintRelationships()
     {
@@ -306,6 +317,7 @@ public class GangRelationships
         {
             rg.SetReputation(rg.FriendlyRepLevel,false);
         }
+        NotifyCoopGangReputationChanged();
     }
     public void SetHostileReputations()
     {
@@ -313,6 +325,7 @@ public class GangRelationships
         {
             rg.SetReputation(rg.HostileRepLevel,false);
         }
+        NotifyCoopGangReputationChanged();
     }
     public void SetSingleRandomReputation()
     {
@@ -320,6 +333,7 @@ public class GangRelationships
         if(gr != null)
         {
             GangReputations.PickRandom()?.SetReputation(RandomItems.GetRandomNumberInt(gr.RepMinimum, gr.RepMaximum), false);
+            NotifyCoopGangReputationChanged();
         }
         
     }
@@ -376,6 +390,7 @@ public class GangRelationships
             {
                 Game.DisplayHelp($"Joined {CurrentGang.FullName}");
             }
+            NotifyCoopGangReputationChanged();
         }
     }
     public void ResetGang(bool showNotification)
@@ -401,6 +416,7 @@ public class GangRelationships
                 Game.DisplayHelp($"Left {CurrentGang.FullName}");
             }
             CurrentGang = null;
+            NotifyCoopGangReputationChanged();
         }
     }
     public void SetCompletedTask(Gang gang)
@@ -416,6 +432,7 @@ public class GangRelationships
             GangReputations.Add(gr);
         }
         gr.TasksCompleted++;
+        NotifyCoopGangReputationChanged();
 
         
     }
@@ -432,6 +449,7 @@ public class GangRelationships
             GangReputations.Add(gr);
         }
         gr.TasksCompleted--;
+        NotifyCoopGangReputationChanged();
     }
     public void OnMoneyWon(Gang associatedGang, int totalMoneyWon)
     {
@@ -445,6 +463,84 @@ public class GangRelationships
         }
         ChangeReputation(associatedGang, Math.Abs(totalMoneyWon), true);
         EntryPoint.WriteToConsole($"OnMoneyWon {associatedGang.ShortName} YOU WON {totalMoneyWon} ADDING REP:{Math.Abs(totalMoneyWon)}");
+    }
+    public CoopGangReputationState CreateCoopState(CoopWorldId worldId, CoopProfileId profileId, CoopCharacterId characterId)
+    {
+        CoopGangReputationState state = new CoopGangReputationState
+        {
+            WorldId = worldId,
+            ProfileId = profileId,
+            CharacterId = characterId,
+            CurrentGangId = CurrentGang?.ID,
+            UpdatedUtc = DateTimeOffset.UtcNow,
+        };
+
+        foreach (GangReputation gr in GangReputations.Where(x => x?.Gang != null))
+        {
+            state.Reputations.Add(new CoopGangReputationRecord
+            {
+                GangId = gr.Gang.ID,
+                Reputation = gr.ReputationLevel,
+                MembersHurt = gr.MembersHurt,
+                MembersKilled = gr.MembersKilled,
+                MembersCarJacked = gr.MembersCarJacked,
+                MembersHurtInTerritory = gr.MembersHurtInTerritory,
+                MembersKilledInTerritory = gr.MembersKilledInTerritory,
+                MembersCarJackedInTerritory = gr.MembersCarJackedInTerritory,
+                PlayerDebt = gr.PlayerDebt,
+                IsMember = gr.IsMember,
+                IsEnemy = gr.IsEnemy,
+                TasksCompleted = gr.TasksCompleted,
+            });
+        }
+
+        return state;
+    }
+    public void ApplyCoopState(CoopGangReputationState state, IGangs gangs)
+    {
+        if (state?.Reputations == null || gangs == null)
+        {
+            return;
+        }
+
+        isApplyingCoopState = true;
+        try
+        {
+            ResetGang(false);
+            Reset();
+            foreach (CoopGangReputationRecord record in state.Reputations)
+            {
+                Gang gang = gangs.GetGang(record.GangId);
+                if (gang == null)
+                {
+                    continue;
+                }
+
+                SetReputation(gang, record.Reputation, false);
+                SetRepStats(gang, record.MembersHurt, record.MembersHurtInTerritory, record.MembersKilled, record.MembersKilledInTerritory, record.MembersCarJacked, record.MembersCarJackedInTerritory, record.PlayerDebt, record.IsMember, record.IsEnemy, record.TasksCompleted);
+                if (record.IsMember || string.Equals(record.GangId, state.CurrentGangId, StringComparison.OrdinalIgnoreCase))
+                {
+                    SetGang(gang, false);
+                }
+            }
+        }
+        finally
+        {
+            isApplyingCoopState = false;
+        }
+    }
+    private void NotifyCoopGangReputationChanged()
+    {
+        if (isApplyingCoopState)
+        {
+            return;
+        }
+
+        CoopGangReputationStateAdapter.Current.NotifyLocalGangReputationChanged();
+    }
+    public void NotifyCoopStateChanged()
+    {
+        NotifyCoopGangReputationChanged();
     }
 }
 

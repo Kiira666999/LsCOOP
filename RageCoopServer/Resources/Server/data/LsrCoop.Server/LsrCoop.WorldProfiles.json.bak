@@ -1,0 +1,53 @@
+{
+  "StoreVersion": "1",
+  "WorldId": "lsrcoop-default-world",
+  "CreatedUtc": "2026-05-10T05:08:02.5545493+00:00",
+  "UpdatedUtc": "2026-05-10T05:45:23.871014+00:00",
+  "Roles": {
+    "ConfigVersion": "1",
+    "WorldId": "lsrcoop-default-world",
+    "AdminIds": [],
+    "TrustedHostIds": [
+      "Kiira"
+    ],
+    "UpdatedUtc": "2026-05-10T05:45:23.8710516+00:00"
+  },
+  "Profiles": [
+    {
+      "ProfileId": "",
+      "ClientId": null,
+      "DisplayName": "",
+      "Role": "Player",
+      "CreatedUtc": "2026-05-09T23:18:20.0474485+00:00",
+      "LastSeenUtc": "2026-05-09T23:18:20.0474495+00:00",
+      "Character": null,
+      "InventoryMoney": null,
+      "Weapons": null,
+      "OwnedVehicles": null,
+      "PropertyOwnership": null,
+      "GangReputation": null,
+      "CriminalHistory": null,
+      "DeathArrestState": null,
+      "LongTermLsrRecords": []
+    },
+    {
+      "ProfileId": "Kiira",
+      "ClientId": "Kiira",
+      "DisplayName": "Kiira",
+      "Role": "TrustedHost",
+      "CreatedUtc": "2026-05-09T23:19:37.7103303+00:00",
+      "LastSeenUtc": "2026-05-10T05:45:23.8710125+00:00",
+      "Character": null,
+      "InventoryMoney": null,
+      "Weapons": null,
+      "OwnedVehicles": null,
+      "PropertyOwnership": null,
+      "GangReputation": null,
+      "CriminalHistory": null,
+      "DeathArrestState": null,
+      "LongTermLsrRecords": []
+    }
+  ],
+  "WorldFlags": [],
+  "LongTermLsrRecords": []
+}

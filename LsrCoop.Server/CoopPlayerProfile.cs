@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace LsrCoop.Server
 {
@@ -11,5 +12,13 @@ namespace LsrCoop.Server
         public DateTimeOffset CreatedUtc { get; set; } = DateTimeOffset.UtcNow;
         public DateTimeOffset LastSeenUtc { get; set; } = DateTimeOffset.UtcNow;
         public CoopCharacterSnapshot Character { get; set; }
+        public CoopInventoryMoneySnapshot InventoryMoney { get; set; }
+        public CoopWeaponSnapshot Weapons { get; set; }
+        public CoopOwnedVehicleSnapshot OwnedVehicles { get; set; }
+        public CoopPropertyOwnershipSnapshot PropertyOwnership { get; set; }
+        public CoopGangReputationStateDto GangReputation { get; set; }
+        public CoopCriminalHistoryStateDto CriminalHistory { get; set; }
+        public CoopDeathArrestStateDto DeathArrestState { get; set; }
+        public List<string> LongTermLsrRecords { get; set; } = new List<string>();
     }
 }

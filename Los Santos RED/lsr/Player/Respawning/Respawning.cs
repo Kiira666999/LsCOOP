@@ -1,5 +1,6 @@
 ﻿using ExtensionsMethods;
 using LosSantosRED.lsr;
+using LosSantosRED.lsr.Coop.Core;
 using LosSantosRED.lsr.Helper;
 using LosSantosRED.lsr.Interface;
 using LSR.Vehicles;
@@ -158,6 +159,7 @@ public class Respawning// : IRespawning
             Player.Scanner.OnBribedPolice();
             if (Player.CellPhone.GetCorruptCopContact() != null)
             {
+                CoopDeathArrestBridge.CompleteArrestState(Player, null, "PoliceBribe", 0, 0, 0, possibleBribe.Amount, false, false, Time.CurrentDateTime);
                 return true;
             }
             CorruptCopContact toSend = Player.CellPhone.DefaultCorruptCopContact;
@@ -165,6 +167,7 @@ public class Respawning// : IRespawning
             {
                 Player.CellPhone.AddScheduledText(toSend, OfficerFriendlyResponses.PickRandom(), 1, false);
             }
+            CoopDeathArrestBridge.CompleteArrestState(Player, null, "PoliceBribe", 0, 0, 0, possibleBribe.Amount, false, false, Time.CurrentDateTime);
             return true;
         }
     }
@@ -195,6 +198,7 @@ public class Respawning// : IRespawning
         }
         GameTimeLastPaidFine = Game.GameTime;
         Player.Scanner.OnPaidFine();
+        CoopDeathArrestBridge.CompleteArrestState(Player, null, "Citation", FineAmount, BailFeePastDue, 0, FineAmount, false, false, Time.CurrentDateTime);
     }
     public void GetBooked(ILocationRespawnable respawnableLocation)
     {
@@ -403,6 +407,7 @@ public class Respawning// : IRespawning
                 });
             }
             GameTimeLastUndied = Game.GameTime;
+            CoopDeathArrestBridge.CompleteDeathState(Player, null, "RespawnAtCurrentLocation", 0, HospitalBillPastDue, 0, Time.CurrentDateTime, TimesDied);
         }
     }
     public void RespawnAtHospital(ILocationRespawnable respawnableLocation)
@@ -447,6 +452,7 @@ public class Respawning// : IRespawning
         }
         ShowImpoundDisplay();
         GameTimeLastDischargedFromHospital = Game.GameTime;
+        CoopDeathArrestBridge.CompleteDeathState(Player, respawnableLocation, "HospitalRespawn", HospitalFee, HospitalBillPastDue, HospitalDuration, HospitalDischargeDate, TimesDied);
         EntryPoint.WriteToConsole($"POST 1: {Time.CurrentDateTime} {HospitalDuration} {HospitalDischargeDate}");
     }
     private void LoseOnHandCash()
@@ -491,6 +497,7 @@ public class Respawning// : IRespawning
         DisplayBailNotification(respawnableLocation.Name);
         ShowImpoundDisplay();
         GameTimeLastSurrenderedToPolice = Game.GameTime;
+        CoopDeathArrestBridge.CompleteArrestState(Player, respawnableLocation, "PoliceSurrender", BailFee, BailFeePastDue, BailDuration, TodaysPayment, HasIllegalWeapons, HasIllegalItems, BailPostingTime);
         EntryPoint.WriteToConsole($"POST 1: {Time.CurrentDateTime} {BailDuration}");
     }
     private void ShowImpoundDisplay()

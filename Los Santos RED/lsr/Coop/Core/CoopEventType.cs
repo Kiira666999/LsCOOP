@@ -25,5 +25,7 @@ namespace LosSantosRED.lsr.Coop.Core
         ArrestStateChanged = 20,
         SaveRequested = 21,
         SaveCompleted = 22,
+        InventoryMoneySnapshot = 23,
+        InventoryMoneySyncResult = 24,
     }
 }

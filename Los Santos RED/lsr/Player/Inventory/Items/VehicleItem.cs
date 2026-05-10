@@ -11,6 +11,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using LosSantosRED.lsr.Coop.Core;
 
 public class VehicleItem : ModItem
 {
@@ -320,12 +321,18 @@ public class VehicleItem : ModItem
                 return;
             }
             Transaction.IsShowingConfirmDialog = false;
+            if (!CoopStorePurchaseBridge.TryBeginPurchaseVehicle(Transaction, player, menuItem, this, 1, menuItem.PurchasePrice, false, out CoopGameplayActionRequest coopRequest, out string blockedReason))
+            {
+                Transaction.DisplayMessage("~o~Purchase Pending", blockedReason);
+                return;
+            }
             if (!PurchaseVehicle(Transaction, menuItem, player, settings, world))
             {
                 return;
             }
             player.BankAccounts.GiveMoney(-1 * menuItem.PurchasePrice, Transaction.UseAccounts);
             Transaction.MoneySpent += menuItem.PurchasePrice;   
+            CoopStorePurchaseBridge.CompletePurchase(coopRequest, player);
            // sender.Visible = false;
         };
         VehicleMenu.AddItem(Purchase);

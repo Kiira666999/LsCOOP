@@ -15,6 +15,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using LosSantosRED.lsr.Coop.Core;
 
 
 public class WeaponItem : ModItem
@@ -514,12 +515,18 @@ public class WeaponItem : ModItem
                 Transaction.DisplayInsufficientFundsMessage();
                 return;
             }
+            if (!CoopStorePurchaseBridge.TryBeginPurchaseItem(Transaction, player, menuItem, this, 1, TotalPrice, false, out CoopGameplayActionRequest coopRequest, out string blockedReason))
+            {
+                Transaction.DisplayMessage("~o~Purchase Pending", blockedReason);
+                return;
+            }
             if (!PurchaseWeapon(player,Transaction,menuItem))
             {
                 return;
             }
             player.BankAccounts.GiveMoney(-1 * TotalPrice, Transaction.UseAccounts);
             Transaction.MoneySpent += TotalPrice;
+            CoopStorePurchaseBridge.CompletePurchase(coopRequest, player);
             OnWeaponMenuOpen(sender, player);
         };
         WeaponMenu.AddItem(Purchase);
