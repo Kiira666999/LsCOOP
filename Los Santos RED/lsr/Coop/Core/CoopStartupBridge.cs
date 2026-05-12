@@ -111,16 +111,22 @@ namespace LosSantosRED.lsr.Coop.Core
                 return StartupMode;
             }
 
+            if (IsCharacterCreationRequired || (!IsCharacterReadyForSimulation && !string.IsNullOrWhiteSpace(LocalProfileId)))
+            {
+                blockedReason = "LSR co-op character creation is required";
+                StartupMode = CoopStartupMode.BootstrapOnly;
+                return StartupMode;
+            }
+
             if (IsLocalActiveHost && IsCharacterReadyForSimulation)
             {
                 StartupMode = CoopStartupMode.FullSimulation;
                 return StartupMode;
             }
 
-            if (IsCharacterCreationRequired || (!IsCharacterReadyForSimulation && !string.IsNullOrWhiteSpace(LocalProfileId)))
+            if (IsCharacterReadyForSimulation)
             {
-                blockedReason = "LSR co-op character creation is required";
-                StartupMode = CoopStartupMode.BootstrapOnly;
+                StartupMode = CoopStartupMode.ClientMode;
                 return StartupMode;
             }
 
@@ -185,13 +191,17 @@ namespace LosSantosRED.lsr.Coop.Core
             {
                 StartupMode = CoopStartupMode.Disabled;
             }
+            else if (IsCharacterCreationRequired || (!IsCharacterReadyForSimulation && !string.IsNullOrWhiteSpace(LocalProfileId)))
+            {
+                StartupMode = CoopStartupMode.BootstrapOnly;
+            }
             else if (IsLocalActiveHost && IsCharacterReadyForSimulation)
             {
                 StartupMode = CoopStartupMode.FullSimulation;
             }
-            else if (IsCharacterCreationRequired || (!IsCharacterReadyForSimulation && !string.IsNullOrWhiteSpace(LocalProfileId)))
+            else if (IsCharacterReadyForSimulation)
             {
-                StartupMode = CoopStartupMode.BootstrapOnly;
+                StartupMode = CoopStartupMode.ClientMode;
             }
             else
             {

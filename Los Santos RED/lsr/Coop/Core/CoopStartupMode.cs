@@ -6,5 +6,6 @@ namespace LosSantosRED.lsr.Coop.Core
         Blocked = 1,
         BootstrapOnly = 2,
         FullSimulation = 3,
+        ClientMode = 4,
     }
 }

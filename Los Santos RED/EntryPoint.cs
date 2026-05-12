@@ -120,6 +120,19 @@ public static class EntryPoint
             return;
         }
 
+        if (startupMode == CoopStartupMode.ClientMode)
+        {
+            if (ModController?.IsBootstrapOnly == true)
+            {
+                ModController.Dispose(restoreInitialPedModel: false);
+            }
+
+            RemoveNotification();
+            ModController = new ModController();
+            ModController.SetupClientMode();
+            return;
+        }
+
         if (startupMode == CoopStartupMode.Disabled || startupMode == CoopStartupMode.FullSimulation)
         {
             if (ModController?.IsBootstrapOnly == true)

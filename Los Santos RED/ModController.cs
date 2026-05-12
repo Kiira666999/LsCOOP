@@ -197,6 +197,45 @@ namespace LosSantosRED.lsr
             EntryPoint.WriteToConsole("Co-op BootstrapOnly character creation mode started", 0);
             PedSwap.BecomeCreatorPed();
         }
+        public void SetupClientMode()
+        {
+            IsRunning = true;
+            IsBootstrapOnly = false;
+            EntryPoint.IsLoadingAltConfig = false;
+            while (Game.IsLoading)
+            {
+                GameFiber.Yield();
+            }
+
+            Game.FadeScreenOut(500, true);
+            ModDataFileManager = new ModDataFileManager();
+            ModDataFileManager.Setup();
+            GameFiber.Yield();
+
+            NAudioPlayer = new NAudioPlayer(ModDataFileManager.Settings);
+            NAudioPlayer.Setup();
+            NAudioPlayer2 = new NAudioPlayer(ModDataFileManager.Settings);
+            NAudioPlayer2.Setup();
+            Time = new Mod.Time(ModDataFileManager.Settings);
+            Time.Setup();
+            World = CreateWorld();
+            CoopCharacterStartupSnapshot startupSnapshot = CoopCharacterSnapshotStartupBridge.TryReadReadySnapshot();
+            CoopCharacterSnapshotStartupBridge.ApplyModelBeforeCreatePlayer(startupSnapshot);
+            Player = CreatePlayer(World);
+            Player.Setup();
+            CoopCharacterSnapshotStartupBridge.ApplyAppearanceAfterPlayerSetup(startupSnapshot, Player);
+            CoopCharacterManager = new LsrCoopCharacterManager();
+            CoopCharacterManager.RegisterLocalCharacter(Player);
+            CoopPermissionService = new CoopPermissionService();
+            ConfigureCoopPermissions(true, LsrCoopMode.Client);
+            PedSwap = CreatePedSwap();
+            Player.PedSwap = PedSwap;
+            PedSwap.Setup();
+            NativeFunction.Natives.FREEZE_ENTITY_POSITION(Game.LocalPlayer.Character, false);
+            Game.FadeScreenIn(500, true);
+            Game.DisplayNotification("LSR co-op client mode");
+            EntryPoint.WriteToConsole("Co-op ClientMode started without full simulation systems", 0);
+        }
         public void SetupFileOnly()
         {
             while (Game.IsLoading)

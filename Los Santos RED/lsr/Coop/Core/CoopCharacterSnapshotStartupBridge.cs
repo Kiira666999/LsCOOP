@@ -31,7 +31,8 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             string blockedReason;
-            if (CoopStartupBridge.GetStartupMode(out blockedReason) != CoopStartupMode.FullSimulation)
+            CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
+            if (startupMode != CoopStartupMode.FullSimulation && startupMode != CoopStartupMode.ClientMode)
             {
                 return null;
             }
