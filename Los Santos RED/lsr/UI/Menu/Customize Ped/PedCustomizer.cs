@@ -481,50 +481,76 @@ public class PedCustomizer
         {
             return;
         }
+        bool guardBootstrapOnlyModelChange = CoopCharacterCreationBridge.ShouldGuardBootstrapOnlyCharacterCreation(SetupAsNewPlayer);
+        bool stableBootstrapOnlyPed = !guardBootstrapOnlyModelChange;
         ChoseToClose = true;
-        if (ModelPed.Exists())
+        try
         {
-            Game.FadeScreenOut(0, false);
-
-
-            if(SetupAsNewPlayer)
+            if (ModelPed.Exists())
             {
-                PedSwap.BecomeExistingPed(ModelPed, WorkingModelName, WorkingName, WorkingMoney, WorkingVariation, RandomItems.GetRandomNumberInt(Settings.SettingsManager.PlayerOtherSettings.PlayerSpeechSkill_Min, Settings.SettingsManager.PlayerOtherSettings.PlayerSpeechSkill_Max), WorkingVoice);
+                Game.FadeScreenOut(0, false);
+
+                if (guardBootstrapOnlyModelChange)
+                {
+                    CoopCharacterCreationBridge.BeginBootstrapOnlyModelChangeGuard(WorkingModelName);
+                }
+
+                if(SetupAsNewPlayer)
+                {
+                    PedSwap.BecomeExistingPed(ModelPed, WorkingModelName, WorkingName, WorkingMoney, WorkingVariation, RandomItems.GetRandomNumberInt(Settings.SettingsManager.PlayerOtherSettings.PlayerSpeechSkill_Min, Settings.SettingsManager.PlayerOtherSettings.PlayerSpeechSkill_Max), WorkingVoice);
+                }
+                else
+                {
+                    PedSwap.BecomeSamePed(WorkingModelName, WorkingName, WorkingMoney, WorkingVariation, WorkingVoice);
+
+                }
+
+                if(AssignedAgency != null)
+                {
+                    Player.SetAgencyStatus(AssignedAgency);
+                }
+                else
+                {
+                    Player.RemoveAgencyStatus();
+                }
+
+                if (AssignedGang != null)
+                {
+                    Player.RelationshipManager.GangRelationships.SetGang(AssignedGang, true);
+                }
+                else if(SetupAsNewPlayer)
+                {
+                    Player.RelationshipManager.GangRelationships.ResetGang(false);
+                }
+                Dispose(false);
+                if (guardBootstrapOnlyModelChange)
+                {
+                    stableBootstrapOnlyPed = CoopCharacterCreationBridge.WaitForStableBootstrapOnlyPed(WorkingModelName);
+                }
             }
             else
             {
-                PedSwap.BecomeSamePed(WorkingModelName, WorkingName, WorkingMoney, WorkingVariation, WorkingVoice);
-
+                Dispose(true);
+                if (guardBootstrapOnlyModelChange)
+                {
+                    EntryPoint.WriteToConsole($"Co-op BootstrapOnly character creation model guard failed Model:{WorkingModelName}; model ped missing", 0);
+                }
             }
 
 
-            if(AssignedAgency != null)
+            if (!guardBootstrapOnlyModelChange || stableBootstrapOnlyPed)
             {
-                Player.SetAgencyStatus(AssignedAgency);
+                Player.OnBecamePedFromCustomzer();
+                CoopCharacterCreationBridge.NotifyCharacterCreated(Player as Mod.Player);
             }
-            else
-            {
-                Player.RemoveAgencyStatus();
-            }
-
-            if (AssignedGang != null)
-            {
-                Player.RelationshipManager.GangRelationships.SetGang(AssignedGang, true);
-            }
-            else if(SetupAsNewPlayer)
-            {
-                Player.RelationshipManager.GangRelationships.ResetGang(false);
-            }
-            Dispose(false);
         }
-        else
+        finally
         {
-            Dispose(true);
+            if (guardBootstrapOnlyModelChange)
+            {
+                CoopCharacterCreationBridge.EndBootstrapOnlyModelChangeGuard(WorkingModelName, stableBootstrapOnlyPed);
+            }
         }
-
-
-        Player.OnBecamePedFromCustomzer();
-        CoopCharacterCreationBridge.NotifyCharacterCreated(Player as Mod.Player);
         
     }
     public void Exit()

@@ -1,8 +1,8 @@
 {
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
-  "CreatedUtc": "2026-05-10T05:08:02.5545493+00:00",
-  "UpdatedUtc": "2026-05-10T21:04:25.2876552+00:00",
+  "CreatedUtc": "2026-05-11T19:32:22.1700437+00:00",
+  "UpdatedUtc": "2026-05-11T19:36:39.6637994+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -10,7 +10,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-10T21:04:25.2877007+00:00"
+    "UpdatedUtc": "2026-05-11T19:36:39.6638225+00:00"
   },
   "Profiles": [
     {
@@ -18,15 +18,15 @@
       "ClientId": "Kiira",
       "DisplayName": "Kiira",
       "Role": "TrustedHost",
-      "CreatedUtc": "2026-05-10T18:33:48.34605+00:00",
-      "LastSeenUtc": "2026-05-10T21:00:55.7494237+00:00",
+      "CreatedUtc": "2026-05-11T19:34:14.1243539+00:00",
+      "LastSeenUtc": "2026-05-11T19:36:39.6637981+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
-        "DisplayName": "Franklin Clinton",
-        "ModelName": "PLAYER_ONE",
+        "DisplayName": "Lucy James",
+        "ModelName": "ig_michelle",
         "Appearance": {
-          "ModelName": "PLAYER_ONE",
+          "ModelName": "ig_michelle",
           "Components": [
             {
               "ComponentId": 0,
@@ -48,8 +48,8 @@
             },
             {
               "ComponentId": 3,
-              "DrawableId": 13,
-              "TextureId": 10,
+              "DrawableId": 0,
+              "TextureId": 0,
               "PaletteId": 0
             },
             {
@@ -78,7 +78,7 @@
             },
             {
               "ComponentId": 8,
-              "DrawableId": 14,
+              "DrawableId": 0,
               "TextureId": 0,
               "PaletteId": 0
             },
@@ -152,7 +152,7 @@
             }
           ]
         },
-        "UpdatedUtc": "2026-05-10T20:31:04.3423305+00:00"
+        "UpdatedUtc": "2026-05-11T19:34:48.0846504+00:00"
       },
       "InventoryMoney": null,
       "Weapons": null,

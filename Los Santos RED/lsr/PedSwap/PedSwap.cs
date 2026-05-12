@@ -1526,7 +1526,8 @@ public class PedSwap : IPedSwap
     }
     public void NewPlayer(string modelName, bool isMale, string playerName, int moneyToSpawnWith, int speechSkill, string voiceName)//gotta go
     {
-        Player.Reset(true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true);
+        bool resetProperties = !ShouldSkipPropertyResetForBootstrapOnlyCharacterCreation();
+        Player.Reset(true, true, true, true, true, true, true, true, true, true, resetProperties, true, true, true, true, true, true, true, true, true, true, true, true);
         Player.SetDemographics(
             modelName, 
             isMale, 
@@ -1535,6 +1536,16 @@ public class PedSwap : IPedSwap
             speechSkill,
             voiceName
             );
+    }
+    private bool ShouldSkipPropertyResetForBootstrapOnlyCharacterCreation()
+    {
+        if (!CoopStartupBridge.IsCoopEnabled || !CoopStartupBridge.IsCharacterCreationRequired)
+        {
+            return false;
+        }
+
+        string blockedReason;
+        return CoopStartupBridge.GetStartupMode(out blockedReason) == CoopStartupMode.BootstrapOnly;
     }
     private string GetName(string modelBeforeSpoof, string defaultName)//gotta get outta here
     {
