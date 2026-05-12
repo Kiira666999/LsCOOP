@@ -18,6 +18,7 @@ namespace LsrCoop.Client
         private const string CoopBuildVersion = "0.1.0";
         private const string ConfigVersion = "1";
         private const string CharacterCreatedBridgeFileName = "LsrCoopCharacterCreated.txt";
+        private const string CharacterSnapshotBridgeFileName = "LsrCoopCharacterSnapshot.txt";
 
         private static readonly int PingEventHash = CustomEvents.Hash("lsrcoop.ping");
         private static readonly int PongEventHash = CustomEvents.Hash("lsrcoop.pong");
@@ -255,6 +256,10 @@ namespace LsrCoop.Client
             foreach (CoopPlayerProfileSnapshotDto profile in snapshot.Profiles ?? new List<CoopPlayerProfileSnapshotDto>())
             {
                 ApplyAppearanceIfLocal(snapshot.WorldId, profile.ProfileId, profile.Character?.Appearance);
+                if (string.Equals(profile.ProfileId, localProfileId, StringComparison.OrdinalIgnoreCase))
+                {
+                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character);
+                }
             }
 
             Logger.Info($"[LsrCoop.Client] world snapshot received: world={snapshot.WorldId}, profiles={snapshot.Profiles?.Count ?? 0}, activeHost={activeHostProfileId}, reason={snapshot.Reason}");
@@ -284,6 +289,7 @@ namespace LsrCoop.Client
                 localCharacterReadyForSimulation = snapshot != null;
                 if (localCharacterReadyForSimulation)
                 {
+                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot);
                     ExitCharacterCreationSafeState();
                 }
                 UpdateCurrentBridgeState();
@@ -472,6 +478,42 @@ namespace LsrCoop.Client
 
             int modelHash = Function.Call<int>(Hash.GET_ENTITY_MODEL, ped.Handle);
             return modelHash.ToString();
+        }
+
+        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot)
+        {
+            if (snapshot == null || string.IsNullOrWhiteSpace(worldId) || string.IsNullOrWhiteSpace(profileId))
+            {
+                return;
+            }
+
+            string modelName = !string.IsNullOrWhiteSpace(snapshot.ModelName)
+                ? snapshot.ModelName
+                : snapshot.Appearance?.ModelName ?? string.Empty;
+            string nonce = Guid.NewGuid().ToString("N");
+            string[] lines =
+            {
+                "BridgeVersion=1",
+                "TransportMode=RAGECOOP",
+                $"ProcessId={Process.GetCurrentProcess().Id}",
+                $"WorldId={EscapeBridgeValue(worldId)}",
+                $"ProfileId={EscapeBridgeValue(profileId)}",
+                $"CharacterId={EscapeBridgeValue(snapshot.CharacterId ?? profileId)}",
+                $"DisplayName={EscapeBridgeValue(snapshot.DisplayName ?? profileId)}",
+                $"ModelName={EscapeBridgeValue(modelName)}",
+                $"IsMale={GetLocalPedIsMale()}",
+                $"Components={SerializeComponents(snapshot.Appearance?.Components)}",
+                $"Props={SerializeProps(snapshot.Appearance?.Props)}",
+                $"TimestampUtc={EscapeBridgeValue(DateTime.UtcNow.ToString("O"))}",
+                $"Nonce={EscapeBridgeValue(nonce)}",
+            };
+
+            foreach (string folder in GetBridgeStateFolders())
+            {
+                WriteAtomicBridgeFile(folder, CharacterSnapshotBridgeFileName, lines, nonce);
+            }
+
+            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}");
         }
 
         private void OnAppearanceChanged(CustomEventReceivedArgs args)
@@ -1461,6 +1503,94 @@ namespace LsrCoop.Client
         private string GetBridgeValue(Dictionary<string, string> values, string key)
         {
             return values != null && values.TryGetValue(key, out string value) ? value ?? string.Empty : string.Empty;
+        }
+
+        private void WriteAtomicBridgeFile(string folder, string fileName, string[] lines, string nonce)
+        {
+            if (string.IsNullOrWhiteSpace(folder))
+            {
+                return;
+            }
+
+            try
+            {
+                Directory.CreateDirectory(folder);
+                string targetPath = Path.Combine(folder, fileName);
+                string tempPath = targetPath + "." + nonce + ".tmp";
+                File.WriteAllLines(tempPath, lines);
+                if (File.Exists(targetPath))
+                {
+                    try
+                    {
+                        File.Replace(tempPath, targetPath, null);
+                        return;
+                    }
+                    catch
+                    {
+                        File.Delete(targetPath);
+                    }
+                }
+
+                File.Move(tempPath, targetPath);
+            }
+            catch (Exception ex)
+            {
+                Logger.Info($"[LsrCoop.Client] bridge file write skipped: {ex.Message}");
+            }
+        }
+
+        private string SerializeComponents(IEnumerable<CoopPedComponentState> components)
+        {
+            if (components == null)
+            {
+                return string.Empty;
+            }
+
+            return string.Join(";", components.Select(component => string.Join(",", new[]
+            {
+                component.ComponentId.ToString(),
+                component.DrawableId.ToString(),
+                component.TextureId.ToString(),
+                component.PaletteId.ToString()
+            })));
+        }
+
+        private string SerializeProps(IEnumerable<CoopPedPropState> props)
+        {
+            if (props == null)
+            {
+                return string.Empty;
+            }
+
+            return string.Join(";", props.Select(prop => string.Join(",", new[]
+            {
+                prop.PropId.ToString(),
+                prop.DrawableId.ToString(),
+                prop.TextureId.ToString(),
+                prop.IsCleared.ToString().ToLowerInvariant()
+            })));
+        }
+
+        private string EscapeBridgeValue(string value)
+        {
+            return Uri.EscapeDataString(value ?? string.Empty);
+        }
+
+        private string GetLocalPedIsMale()
+        {
+            try
+            {
+                Ped ped = Game.Player?.Character;
+                if (ped != null && ped.Exists())
+                {
+                    return Function.Call<bool>(Hash.IS_PED_MALE, ped.Handle).ToString().ToLowerInvariant();
+                }
+            }
+            catch
+            {
+            }
+
+            return string.Empty;
         }
 
         private void DeleteCharacterCreationBridgeFiles(string nonce)

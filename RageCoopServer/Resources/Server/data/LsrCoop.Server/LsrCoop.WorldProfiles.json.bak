@@ -1,8 +1,8 @@
 {
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
-  "CreatedUtc": "2026-05-11T19:32:22.1700437+00:00",
-  "UpdatedUtc": "2026-05-11T19:36:39.6446916+00:00",
+  "CreatedUtc": "2026-05-11T20:18:53.2646467+00:00",
+  "UpdatedUtc": "2026-05-11T20:42:54.9010237+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -10,7 +10,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-11T19:36:39.6447196+00:00"
+    "UpdatedUtc": "2026-05-11T20:42:54.9010338+00:00"
   },
   "Profiles": [
     {
@@ -18,15 +18,15 @@
       "ClientId": "Kiira",
       "DisplayName": "Kiira",
       "Role": "TrustedHost",
-      "CreatedUtc": "2026-05-11T19:34:14.1243539+00:00",
-      "LastSeenUtc": "2026-05-11T19:36:39.6446899+00:00",
+      "CreatedUtc": "2026-05-11T20:21:49.41134+00:00",
+      "LastSeenUtc": "2026-05-11T20:42:54.9010221+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
-        "DisplayName": "Lucy James",
-        "ModelName": "ig_michelle",
+        "DisplayName": "Kyler Jimenez",
+        "ModelName": "ig_nervousron",
         "Appearance": {
-          "ModelName": "ig_michelle",
+          "ModelName": "ig_nervousron",
           "Components": [
             {
               "ComponentId": 0,
@@ -152,7 +152,7 @@
             }
           ]
         },
-        "UpdatedUtc": "2026-05-11T19:34:48.0846504+00:00"
+        "UpdatedUtc": "2026-05-11T20:22:42.1413203+00:00"
       },
       "InventoryMoney": null,
       "Weapons": null,

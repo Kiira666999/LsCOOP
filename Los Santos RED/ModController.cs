@@ -77,10 +77,13 @@ namespace LosSantosRED.lsr
             Time.Setup();
             GameFiber.Yield();
             World = CreateWorld();
+            CoopCharacterStartupSnapshot startupSnapshot = CoopCharacterSnapshotStartupBridge.TryReadReadySnapshot();
+            CoopCharacterSnapshotStartupBridge.ApplyModelBeforeCreatePlayer(startupSnapshot);
             Player = CreatePlayer(World);
             World.Setup(Player, Player);
             GameFiber.Yield();
             Player.Setup();
+            CoopCharacterSnapshotStartupBridge.ApplyAppearanceAfterPlayerSetup(startupSnapshot, Player);
             GameFiber.Yield();
             CoopCharacterManager = new LsrCoopCharacterManager();
             CoopCharacterManager.RegisterLocalCharacter(Player);
@@ -203,12 +206,12 @@ namespace LosSantosRED.lsr
             ModDataFileManager = new ModDataFileManager();
             ModDataFileManager.Setup();
         }
-        public void Dispose()
+        public void Dispose(bool restoreInitialPedModel = true)
         {
             IsRunning = false;
             Player?.Dispose();
             World?.Dispose();
-            PedSwap?.Dispose();
+            PedSwap?.Dispose(restoreInitialPedModel);
             Dispatcher?.Dispose();
             VanillaManager?.Dispose();
             UI?.Dispose();

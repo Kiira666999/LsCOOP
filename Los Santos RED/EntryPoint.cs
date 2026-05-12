@@ -124,7 +124,7 @@ public static class EntryPoint
         {
             if (ModController?.IsBootstrapOnly == true)
             {
-                ModController.Dispose();
+                ModController.Dispose(restoreInitialPedModel: startupMode != CoopStartupMode.FullSimulation);
             }
 
             RemoveNotification();

@@ -133,6 +133,7 @@
     <Compile Include="lsr\Coop\Core\CoopCharacterCreationBridge.cs" />
     <Compile Include="lsr\Coop\Core\CoopCharacterCreationCompleted.cs" />
     <Compile Include="lsr\Coop\Core\CoopCharacterSnapshot.cs" />
+    <Compile Include="lsr\Coop\Core\CoopCharacterSnapshotStartupBridge.cs" />
     <Compile Include="lsr\Coop\Core\CoopCrimeActorContext.cs" />
     <Compile Include="lsr\Coop\Core\CoopCrimeEvent.cs" />
     <Compile Include="lsr\Coop\Core\CoopCrimeRoutingService.cs" />

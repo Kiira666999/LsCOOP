@@ -820,7 +820,7 @@ public class PedSwap : IPedSwap
             EntryPoint.WriteToConsole("PEDSWAP: TakeoverPed Error; " + e3.Message + " " + e3.StackTrace, 0);
         }
     }
-    public void Dispose()
+    public void Dispose(bool restoreInitialPedModel = true)
     {
         if(IsDisposed)
         {
@@ -839,11 +839,18 @@ public class PedSwap : IPedSwap
 
         // ResetExistingModelHash();
 
-        NativeHelper.ChangeModel(InitialPlayerModel.Name);
-
-        if (InitialPlayerVariation != null)
+        if (restoreInitialPedModel)
         {
-            InitialPlayerVariation.ApplyToPed(Game.LocalPlayer.Character, true);
+            NativeHelper.ChangeModel(InitialPlayerModel.Name);
+
+            if (InitialPlayerVariation != null)
+            {
+                InitialPlayerVariation.ApplyToPed(Game.LocalPlayer.Character, true);
+            }
+        }
+        else
+        {
+            EntryPoint.WriteToConsole($"PEDSWAP Dispose preserving current model for co-op transition CurrentModel:{Game.LocalPlayer.Character.Model.Name} InitialModel:{InitialPlayerModel.Name}", 0);
         }
         //if (Settings.SettingsManager.PedSwapSettings.AliasPedAsMainCharacter && !Player.CharacterModelIsPrimaryCharacter)
         //{
