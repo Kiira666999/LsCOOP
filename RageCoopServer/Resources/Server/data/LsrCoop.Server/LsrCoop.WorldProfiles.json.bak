@@ -1,8 +1,8 @@
 {
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
-  "CreatedUtc": "2026-05-11T20:18:53.2646467+00:00",
-  "UpdatedUtc": "2026-05-11T20:42:54.9010237+00:00",
+  "CreatedUtc": "2026-05-12T16:34:05.1710253+00:00",
+  "UpdatedUtc": "2026-05-12T17:02:51.785756+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -10,7 +10,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-11T20:42:54.9010338+00:00"
+    "UpdatedUtc": "2026-05-12T17:02:51.785764+00:00"
   },
   "Profiles": [
     {
@@ -18,15 +18,15 @@
       "ClientId": "Kiira",
       "DisplayName": "Kiira",
       "Role": "TrustedHost",
-      "CreatedUtc": "2026-05-11T20:21:49.41134+00:00",
-      "LastSeenUtc": "2026-05-11T20:42:54.9010221+00:00",
+      "CreatedUtc": "2026-05-12T16:35:00.195521+00:00",
+      "LastSeenUtc": "2026-05-12T17:02:51.7684584+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
-        "DisplayName": "Kyler Jimenez",
-        "ModelName": "ig_nervousron",
+        "DisplayName": "Rylan Harris",
+        "ModelName": "ig_taocheng",
         "Appearance": {
-          "ModelName": "ig_nervousron",
+          "ModelName": "ig_taocheng",
           "Components": [
             {
               "ComponentId": 0,
@@ -152,13 +152,21 @@
             }
           ]
         },
-        "UpdatedUtc": "2026-05-11T20:22:42.1413203+00:00"
+        "UpdatedUtc": "2026-05-12T16:35:34.0973916+00:00"
       },
       "InventoryMoney": null,
       "Weapons": null,
       "OwnedVehicles": null,
       "PropertyOwnership": null,
-      "GangReputation": null,
+      "GangReputation": {
+        "StateId": "a5035b3b28554c39be2d10a5accab1d9",
+        "WorldId": "lsrcoop-default-world",
+        "ProfileId": "Kiira",
+        "CharacterId": "Kiira",
+        "CurrentGangId": null,
+        "Reputations": [],
+        "UpdatedUtc": "2026-05-12T17:02:51.2696146+00:00"
+      },
       "CriminalHistory": null,
       "DeathArrestState": null,
       "LongTermLsrRecords": []

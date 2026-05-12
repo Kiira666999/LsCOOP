@@ -109,8 +109,9 @@ namespace LsrCoop.Server
             info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}");
         }
 
-        public CoopClientStatus AcknowledgeCharacterSnapshot(Client client, string worldId, string profileId, string reason)
+        public CoopClientStatus AcknowledgeCharacterSnapshot(Client client, string worldId, string profileId, string reason, out bool readinessChanged)
         {
+            readinessChanged = false;
             CoopClientStatus status = RegisterClient(client, reason);
             if (status == null)
             {
@@ -126,10 +127,20 @@ namespace LsrCoop.Server
                 return status;
             }
 
+            bool wasReady = status.CharacterReadyForSimulation;
+            bool wasAcknowledged = status.CharacterSnapshotAcknowledged;
             status.CharacterSnapshotSent = true;
             status.CharacterSnapshotAcknowledged = true;
             status.RefreshReadinessState();
-            info?.Invoke($"[LsrCoop.Server] character ready for simulation: {status.ProfileId} ({reason})");
+            readinessChanged = !wasReady && status.CharacterReadyForSimulation;
+            if (readinessChanged)
+            {
+                info?.Invoke($"[LsrCoop.Server] character ready for simulation: {status.ProfileId} ({reason})");
+            }
+            else if (!wasAcknowledged)
+            {
+                info?.Invoke($"[LsrCoop.Server] character snapshot acknowledged: {status.ProfileId} ({reason}); readiness={status.ReadinessState}");
+            }
             return status;
         }
 

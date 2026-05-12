@@ -10,22 +10,11 @@ namespace LosSantosRED.lsr.Coop.Core
     {
         public static CoopCrimeRoutingService Current { get; } = new CoopCrimeRoutingService();
 
-        private Action<object> crimeRouteSink;
         private global::Mod.Player localPlayer;
         private ICrimes crimes;
 
         public event Action<CoopCrimeEvent> CrimeRoutedToActiveHost;
         public event Action<CoopCrimeEvent> CrimeAppliedOnActiveHost;
-
-        public static void RegisterCrimeRouteSink(Action<object> sink)
-        {
-            Current.crimeRouteSink = sink;
-        }
-
-        public static void UnregisterCrimeRouteSink()
-        {
-            Current.crimeRouteSink = null;
-        }
 
         public static void RegisterLocalCrimeRuntime(global::Mod.Player player, ICrimes crimeProvider)
         {
@@ -33,12 +22,7 @@ namespace LosSantosRED.lsr.Coop.Core
             Current.crimes = crimeProvider;
         }
 
-        public static bool ReportLocalPlayerOnPlayerViolence(string victimProfileId, int victimPedHandle, bool wasKilled, bool wasShot, bool wasMeleeAttacked, bool wasHitByVehicle)
-        {
-            return Current.ReportPlayerOnPlayerViolence(GetCurrentProfileId(), victimProfileId, 0, victimPedHandle, wasKilled, wasShot, wasMeleeAttacked, wasHitByVehicle, true);
-        }
-
-        public static bool ApplyRemotePlayerOnPlayerViolence(string offenderProfileId, string victimProfileId, int offenderPedHandle, int victimPedHandle, bool wasKilled, bool wasShot, bool wasMeleeAttacked, bool wasHitByVehicle)
+        internal static bool ApplyRemotePlayerOnPlayerViolence(string offenderProfileId, string victimProfileId, int offenderPedHandle, int victimPedHandle, bool wasKilled, bool wasShot, bool wasMeleeAttacked, bool wasHitByVehicle)
         {
             if (!CoopStartupBridge.IsCoopEnabled || !CoopStartupBridge.IsLocalActiveHost)
             {
@@ -108,7 +92,7 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             CrimeRoutedToActiveHost?.Invoke(crimeEvent);
-            crimeRouteSink?.Invoke(crimeEvent);
+            CoopGameplayFileBridge.PublishPvpCrimeReport(crimeEvent);
             return false;
         }
 

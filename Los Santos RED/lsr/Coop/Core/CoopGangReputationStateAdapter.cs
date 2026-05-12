@@ -8,19 +8,8 @@ namespace LosSantosRED.lsr.Coop.Core
     {
         public static CoopGangReputationStateAdapter Current { get; } = new CoopGangReputationStateAdapter();
 
-        private Action<object> snapshotCommittedSink;
         private Mod.Player localPlayer;
         private IGangs gangs;
-
-        public static void RegisterSnapshotCommittedSink(Action<object> sink)
-        {
-            Current.snapshotCommittedSink = sink;
-        }
-
-        public static void UnregisterSnapshotCommittedSink()
-        {
-            Current.snapshotCommittedSink = null;
-        }
 
         public static void RegisterLocalRuntime(Mod.Player player, IGangs gangProvider)
         {
@@ -36,7 +25,7 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             CoopGangReputationState snapshot = CaptureFromPlayer(localPlayer, GetCurrentProfileId(), GetCurrentCharacterId(GetCurrentProfileId()), GetCurrentWorldId());
-            snapshotCommittedSink?.Invoke(snapshot);
+            CoopGameplayFileBridge.PublishGangReputationSnapshot(snapshot);
         }
 
         public CoopGangReputationState CaptureFromPlayer(Mod.Player player, string profileId, string characterId, string worldId)

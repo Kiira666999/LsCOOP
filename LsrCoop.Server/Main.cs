@@ -137,13 +137,16 @@ namespace LsrCoop.Server
 
         private void OnCharacterSnapshotAckReceived(CustomEventReceivedArgs args)
         {
-            CoopClientStatus status = playerRegistrationService.AcknowledgeCharacterSnapshot(args?.Client, GetArg(args, 0), GetArg(args, 1), "character-snapshot-ack");
+            CoopClientStatus status = playerRegistrationService.AcknowledgeCharacterSnapshot(args?.Client, GetArg(args, 0), GetArg(args, 1), "character-snapshot-ack", out bool readinessChanged);
             if (status == null)
             {
                 return;
             }
 
-            activeHostHandoffService.EvaluateAndSync("character-snapshot-ack");
+            if (readinessChanged)
+            {
+                activeHostHandoffService.EvaluateAndSync("character-snapshot-ack");
+            }
         }
 
         private void OnCharacterCreatedReceived(CustomEventReceivedArgs args)
@@ -181,7 +184,15 @@ namespace LsrCoop.Server
                 return;
             }
 
-            CoopStorePurchaseCommitDto commit = Deserialize<CoopStorePurchaseCommitDto>(GetArg(args, 0));
+            string payloadJson = GetArg(args, 0);
+            string eventType = GetArg(args, 1);
+            string nonce = GetArg(args, 2);
+            string sourceProfile = GetArg(args, 3);
+            if (!TryDeserializeEventPayload(payloadJson, eventType, nonce, sourceProfile, out CoopStorePurchaseCommitDto commit))
+            {
+                return;
+            }
+
             CoopGameplayActionRequestDto request = commit?.Request;
             CoopGameplayActionResultDto result = commit?.Result;
             if (request == null || result == null)
@@ -279,7 +290,15 @@ namespace LsrCoop.Server
                 return;
             }
 
-            CoopPvpCrimeReportDto report = Deserialize<CoopPvpCrimeReportDto>(GetArg(args, 0));
+            string payloadJson = GetArg(args, 0);
+            string eventType = GetArg(args, 1);
+            string nonce = GetArg(args, 2);
+            string sourceProfile = GetArg(args, 3);
+            if (!TryDeserializeEventPayload(payloadJson, eventType, nonce, sourceProfile, out CoopPvpCrimeReportDto report))
+            {
+                return;
+            }
+
             if (report == null)
             {
                 Logger.Warning($"[LsrCoop.Server] rejected PvP crime from {requester.ProfileId}: empty payload");
@@ -328,7 +347,15 @@ namespace LsrCoop.Server
                 return;
             }
 
-            CoopCriminalJusticeStateSnapshotDto snapshot = Deserialize<CoopCriminalJusticeStateSnapshotDto>(GetArg(args, 0));
+            string payloadJson = GetArg(args, 0);
+            string eventType = GetArg(args, 1);
+            string nonce = GetArg(args, 2);
+            string sourceProfile = GetArg(args, 3);
+            if (!TryDeserializeEventPayload(payloadJson, eventType, nonce, sourceProfile, out CoopCriminalJusticeStateSnapshotDto snapshot))
+            {
+                return;
+            }
+
             if (snapshot == null || snapshot.CriminalHistory == null)
             {
                 Logger.Warning($"[LsrCoop.Server] rejected criminal justice snapshot from {requester.ProfileId}: empty payload");
@@ -372,7 +399,15 @@ namespace LsrCoop.Server
                 return;
             }
 
-            CoopGangReputationStateDto snapshot = Deserialize<CoopGangReputationStateDto>(GetArg(args, 0));
+            string payloadJson = GetArg(args, 0);
+            string eventType = GetArg(args, 1);
+            string nonce = GetArg(args, 2);
+            string sourceProfile = GetArg(args, 3);
+            if (!TryDeserializeEventPayload(payloadJson, eventType, nonce, sourceProfile, out CoopGangReputationStateDto snapshot))
+            {
+                return;
+            }
+
             if (snapshot == null)
             {
                 Logger.Warning($"[LsrCoop.Server] rejected gang reputation snapshot from {requester.ProfileId}: empty payload");
@@ -558,6 +593,26 @@ namespace LsrCoop.Server
             {
                 Logger.Warning($"[LsrCoop.Server] failed to read event payload: {ex.Message}");
                 return null;
+            }
+        }
+
+        private bool TryDeserializeEventPayload<T>(string json, string eventType, string nonce, string profileId, out T payload) where T : class
+        {
+            payload = null;
+            if (string.IsNullOrWhiteSpace(json))
+            {
+                return true;
+            }
+
+            try
+            {
+                payload = JsonSerializer.Deserialize<T>(json);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Logger.Warning($"[LsrCoop.Server] failed to read event payload: eventType={eventType ?? "unknown"}, nonce={nonce ?? "unknown"}, profile={profileId ?? "unknown"}, error={ex.Message}");
+                return false;
             }
         }
     }

@@ -149,6 +149,7 @@
     <Compile Include="lsr\Coop\Core\CoopGameplayActionRequest.cs" />
     <Compile Include="lsr\Coop\Core\CoopGameplayActionResult.cs" />
     <Compile Include="lsr\Coop\Core\CoopGameplayActionType.cs" />
+    <Compile Include="lsr\Coop\Core\CoopGameplayFileBridge.cs" />
     <Compile Include="lsr\Coop\Core\CoopGangReputationRecord.cs" />
     <Compile Include="lsr\Coop\Core\CoopGangReputationState.cs" />
     <Compile Include="lsr\Coop\Core\CoopGangReputationStateAdapter.cs" />

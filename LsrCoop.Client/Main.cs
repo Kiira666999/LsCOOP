@@ -19,6 +19,8 @@ namespace LsrCoop.Client
         private const string ConfigVersion = "1";
         private const string CharacterCreatedBridgeFileName = "LsrCoopCharacterCreated.txt";
         private const string CharacterSnapshotBridgeFileName = "LsrCoopCharacterSnapshot.txt";
+        private const string GameplayOutboundBridgeSearchPattern = "LsrCoopGameplayOut.*.txt";
+        private const string GameplayInboundBridgeFilePrefix = "LsrCoopGameplayIn.";
 
         private static readonly int PingEventHash = CustomEvents.Hash("lsrcoop.ping");
         private static readonly int PongEventHash = CustomEvents.Hash("lsrcoop.pong");
@@ -55,11 +57,11 @@ namespace LsrCoop.Client
         private bool characterCreationRequired;
         private bool characterCreationRequestSent;
         private DateTimeOffset characterCreateRequiredUtc;
-        private bool lsrGameplayBridgeRegistered;
         private bool clientTickSubscribed;
-        private DateTimeOffset lastLsrBridgeRegistrationAttemptUtc;
         private DateTimeOffset lastCharacterCreatedBridgePollUtc;
+        private DateTimeOffset lastGameplayBridgePollUtc;
         private readonly HashSet<string> processedCharacterCreationNonces = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        private readonly HashSet<string> processedGameplayBridgeNonces = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
         public Main()
         {
@@ -72,7 +74,6 @@ namespace LsrCoop.Client
             UpdateBridgeWaiting(localWorldId);
             RegisterCustomEventStubs();
             SubscribeClientTick();
-            RegisterLsrGameplayBridge();
             SendLoadPing();
             SendCompatibilityReport();
         }
@@ -81,7 +82,6 @@ namespace LsrCoop.Client
         {
             UnsubscribeClientTick();
             ExitCharacterCreationSafeState();
-            UnregisterLsrGameplayBridge();
             SetBridgeDisabled();
             Logger.Info("[LsrCoop.Client] stopped");
         }
@@ -129,8 +129,8 @@ namespace LsrCoop.Client
 
         private void OnClientTick()
         {
-            EnsureLsrGameplayBridgeRegistered();
             PollCharacterCreationBridge();
+            PollGameplayBridge();
             DetectPlayerOnPlayerViolence();
         }
 
@@ -323,17 +323,6 @@ namespace LsrCoop.Client
             Logger.Info("[LsrCoop.Client] character creation safe-state cleared");
         }
 
-        private void EnsureLsrGameplayBridgeRegistered()
-        {
-            if (lsrGameplayBridgeRegistered || DateTimeOffset.UtcNow - lastLsrBridgeRegistrationAttemptUtc < TimeSpan.FromSeconds(3))
-            {
-                return;
-            }
-
-            lastLsrBridgeRegistrationAttemptUtc = DateTimeOffset.UtcNow;
-            lsrGameplayBridgeRegistered = RegisterLsrGameplayBridge();
-        }
-
         private void ApplyCharacterCreationSafeState(bool enabled)
         {
             Ped ped = Game.Player?.Character;
@@ -469,6 +458,111 @@ namespace LsrCoop.Client
             }
         }
 
+        private void PollGameplayBridge()
+        {
+            if (!API.IsOnServer)
+            {
+                return;
+            }
+
+            if (DateTimeOffset.UtcNow - lastGameplayBridgePollUtc < TimeSpan.FromMilliseconds(500))
+            {
+                return;
+            }
+
+            lastGameplayBridgePollUtc = DateTimeOffset.UtcNow;
+            foreach (string path in GetGameplayOutboundBridgePaths())
+            {
+                TryProcessGameplayBridgeFile(path);
+            }
+        }
+
+        private void TryProcessGameplayBridgeFile(string path)
+        {
+            if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
+            {
+                return;
+            }
+
+            Dictionary<string, string> values;
+            try
+            {
+                values = ReadBridgeKeyValues(path);
+            }
+            catch (Exception ex)
+            {
+                Logger.Info($"[LsrCoop.Client] gameplay bridge read skipped: {ex.Message}");
+                return;
+            }
+
+            string nonce = GetBridgeValue(values, "Nonce");
+            if (string.IsNullOrWhiteSpace(nonce))
+            {
+                Logger.Info($"[LsrCoop.Client] gameplay bridge ignored; missing nonce: {path}");
+                return;
+            }
+
+            if (processedGameplayBridgeNonces.Contains(nonce))
+            {
+                TryDeleteGameplayBridgeFile(path, nonce);
+                return;
+            }
+
+            if (!IsCurrentProcessBridgeFile(values))
+            {
+                return;
+            }
+
+            string eventType = GetBridgeValue(values, "EventType");
+            string payloadJson = GetBridgeValue(values, "PayloadJson");
+            bool processed = TrySendGameplayBridgeEvent(eventType, payloadJson, nonce, GetBridgeValue(values, "ProfileId"));
+            if (processed)
+            {
+                processedGameplayBridgeNonces.Add(nonce);
+                TryDeleteGameplayBridgeFile(path, nonce);
+                Logger.Info($"[LsrCoop.Client] gameplay bridge consumed: type={eventType}, nonce={nonce}");
+            }
+        }
+
+        private bool TrySendGameplayBridgeEvent(string eventType, string payloadJson, string nonce, string profileId)
+        {
+            if (string.IsNullOrWhiteSpace(eventType) || string.IsNullOrWhiteSpace(payloadJson))
+            {
+                return false;
+            }
+
+            if (string.Equals(eventType, "GameplayActionCommitted", StringComparison.OrdinalIgnoreCase))
+            {
+                API.SendCustomEvent(GameplayActionCommittedEventHash, new object[] { payloadJson, eventType ?? string.Empty, nonce ?? string.Empty, profileId ?? string.Empty });
+                Logger.Info($"[LsrCoop.Client] gameplay commit sent: profile={profileId}");
+                return true;
+            }
+
+            if (string.Equals(eventType, "PvpCrimeReported", StringComparison.OrdinalIgnoreCase))
+            {
+                API.SendCustomEvent(PvpCrimeReportedEventHash, new object[] { payloadJson, eventType ?? string.Empty, nonce ?? string.Empty, profileId ?? string.Empty });
+                Logger.Info($"[LsrCoop.Client] PvP crime reported: profile={profileId}");
+                return true;
+            }
+
+            if (string.Equals(eventType, "CriminalJusticeSnapshotCommitted", StringComparison.OrdinalIgnoreCase))
+            {
+                API.SendCustomEvent(CriminalJusticeSnapshotCommittedEventHash, new object[] { payloadJson, eventType ?? string.Empty, nonce ?? string.Empty, profileId ?? string.Empty });
+                Logger.Info($"[LsrCoop.Client] criminal justice snapshot sent: profile={profileId}");
+                return true;
+            }
+
+            if (string.Equals(eventType, "GangReputationSnapshotCommitted", StringComparison.OrdinalIgnoreCase))
+            {
+                API.SendCustomEvent(GangReputationSnapshotCommittedEventHash, new object[] { payloadJson, eventType ?? string.Empty, nonce ?? string.Empty, profileId ?? string.Empty });
+                Logger.Info($"[LsrCoop.Client] gang reputation snapshot sent: profile={profileId}");
+                return true;
+            }
+
+            Logger.Info($"[LsrCoop.Client] gameplay bridge ignored; unknown type={eventType}");
+            return true;
+        }
+
         private string GetPedModelName(Ped ped)
         {
             if (ped == null || !ped.Exists())
@@ -536,138 +630,17 @@ namespace LsrCoop.Client
                 return;
             }
 
-            InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopStorePurchaseBridge",
-                "HandlePurchaseResult",
-                result.RequestId ?? string.Empty,
-                result.Accepted,
-                result.RequiresResync,
-                result.Reason ?? string.Empty);
+            WriteGameplayInboundBridgeFile("GameplayActionResult", new Dictionary<string, string>
+            {
+                ["WorldId"] = result.WorldId ?? localWorldId ?? string.Empty,
+                ["ProfileId"] = result.SourceProfileId ?? localProfileId ?? string.Empty,
+                ["RequestId"] = result.RequestId ?? string.Empty,
+                ["Accepted"] = result.Accepted.ToString().ToLowerInvariant(),
+                ["RequiresResync"] = result.RequiresResync.ToString().ToLowerInvariant(),
+                ["Reason"] = result.Reason ?? string.Empty,
+            });
 
             Logger.Info($"[LsrCoop.Client] gameplay action result: request={result.RequestId}, accepted={result.Accepted}, resync={result.RequiresResync}");
-        }
-
-        private bool RegisterLsrGameplayBridge()
-        {
-            bool registered = InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopStorePurchaseBridge",
-                "RegisterPurchaseCommitSink",
-                new Action<object>(OnLsrPurchaseCommitted));
-
-            InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopDeathArrestBridge",
-                "RegisterOutcomeCommitSink",
-                new Action<object>(OnLsrPurchaseCommitted));
-
-            InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopCrimeRoutingService",
-                "RegisterCrimeRouteSink",
-                new Action<object>(OnLsrCrimeRouted));
-
-            InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopCriminalJusticeStateAdapter",
-                "RegisterSnapshotCommittedSink",
-                new Action<object>(OnLsrCriminalJusticeSnapshotCommitted));
-
-            InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopGangReputationStateAdapter",
-                "RegisterSnapshotCommittedSink",
-                new Action<object>(OnLsrGangReputationSnapshotCommitted));
-
-            if (registered)
-            {
-                Logger.Info("[LsrCoop.Client] LSR gameplay bridge registered");
-            }
-
-            return registered;
-        }
-
-        private void UnregisterLsrGameplayBridge()
-        {
-            InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopStorePurchaseBridge",
-                "UnregisterPurchaseCommitSink");
-
-            InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopDeathArrestBridge",
-                "UnregisterOutcomeCommitSink");
-
-            InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopCrimeRoutingService",
-                "UnregisterCrimeRouteSink");
-
-            InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopCriminalJusticeStateAdapter",
-                "UnregisterSnapshotCommittedSink");
-
-            InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopGangReputationStateAdapter",
-                "UnregisterSnapshotCommittedSink");
-
-        }
-
-        private void OnLsrPurchaseCommitted(object commit)
-        {
-            if (!API.IsOnServer)
-            {
-                Logger.Info("[LsrCoop.Client] gameplay commit skipped; client is not connected");
-                return;
-            }
-
-            CoopStorePurchaseCommitDto dto = ConvertPurchaseCommit(commit);
-            if (dto?.Request == null || dto.Result == null)
-            {
-                Logger.Info("[LsrCoop.Client] gameplay commit skipped; payload unavailable");
-                return;
-            }
-
-            API.SendCustomEvent(GameplayActionCommittedEventHash, new object[] { serializer.Serialize(dto) });
-            Logger.Info($"[LsrCoop.Client] gameplay commit sent: request={dto.Request.RequestId}, type={dto.Request.ActionType}");
-        }
-
-        private void OnLsrCrimeRouted(object crimeEvent)
-        {
-            CoopPvpCrimeReportDto dto = ConvertPvpCrimeReport(crimeEvent);
-            if (dto == null || string.IsNullOrWhiteSpace(dto.TargetProfileId))
-            {
-                return;
-            }
-
-            SendPvpCrimeReport(dto);
-        }
-
-        private void OnLsrCriminalJusticeSnapshotCommitted(object snapshot)
-        {
-            if (!API.IsOnServer)
-            {
-                return;
-            }
-
-            CoopCriminalJusticeStateSnapshotDto dto = ConvertCriminalJusticeSnapshot(snapshot);
-            if (dto == null || string.IsNullOrWhiteSpace(dto.ProfileId))
-            {
-                return;
-            }
-
-            API.SendCustomEvent(CriminalJusticeSnapshotCommittedEventHash, new object[] { serializer.Serialize(dto) });
-            Logger.Info($"[LsrCoop.Client] criminal justice snapshot sent: profile={dto.ProfileId}, history={dto.CriminalHistory?.HasHistory}");
-        }
-
-        private void OnLsrGangReputationSnapshotCommitted(object snapshot)
-        {
-            if (!API.IsOnServer)
-            {
-                return;
-            }
-
-            CoopGangReputationStateDto dto = ConvertGangReputationState(snapshot);
-            if (dto == null || string.IsNullOrWhiteSpace(dto.ProfileId))
-            {
-                return;
-            }
-
-            API.SendCustomEvent(GangReputationSnapshotCommittedEventHash, new object[] { serializer.Serialize(dto) });
-            Logger.Info($"[LsrCoop.Client] gang reputation snapshot sent: profile={dto.ProfileId}, gangs={dto.Reputations?.Count ?? 0}");
         }
 
         private void DetectPlayerOnPlayerViolence()
@@ -712,17 +685,11 @@ namespace LsrCoop.Client
             if (damagedByLocalPlayer && canReport && (healthChanged || killedNow))
             {
                 CoopPvpCrimeReportDto report = CreatePvpCrimeReport(remoteProfileId, remotePed, killedNow);
-                InvokeLsrStaticBridge(
-                    "LosSantosRED.lsr.Coop.Core.CoopCrimeRoutingService",
-                    "ReportLocalPlayerOnPlayerViolence",
-                    report.TargetProfileId,
-                    report.VictimPedHandle,
-                    report.WasKilled,
-                    report.WasShot,
-                    report.WasMeleeAttacked,
-                    report.WasHitByVehicle);
-
-                if (!string.Equals(localProfileId, activeHostProfileId, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(localProfileId, activeHostProfileId, StringComparison.OrdinalIgnoreCase))
+                {
+                    WriteApplyRemotePvpCrimeBridge(report);
+                }
+                else
                 {
                     SendPvpCrimeReport(report);
                 }
@@ -777,17 +744,9 @@ namespace LsrCoop.Client
 
             Ped offenderPed = ResolveTargetPed(report.SourceProfileId);
             Ped victimPed = ResolveTargetPed(report.TargetProfileId);
-            InvokeLsrStaticBridge(
-                "LosSantosRED.lsr.Coop.Core.CoopCrimeRoutingService",
-                "ApplyRemotePlayerOnPlayerViolence",
-                report.SourceProfileId ?? string.Empty,
-                report.TargetProfileId ?? string.Empty,
-                offenderPed?.Handle ?? report.OffenderPedHandle,
-                victimPed?.Handle ?? report.VictimPedHandle,
-                report.WasKilled,
-                report.WasShot,
-                report.WasMeleeAttacked,
-                report.WasHitByVehicle);
+            report.OffenderPedHandle = offenderPed?.Handle ?? report.OffenderPedHandle;
+            report.VictimPedHandle = victimPed?.Handle ?? report.VictimPedHandle;
+            WriteApplyRemotePvpCrimeBridge(report);
 
             Logger.Info($"[LsrCoop.Client] PvP crime assigned to active host: offender={report.SourceProfileId}, victim={report.TargetProfileId}");
         }
@@ -1481,6 +1440,22 @@ namespace LsrCoop.Client
             }
         }
 
+        private IEnumerable<string> GetGameplayOutboundBridgePaths()
+        {
+            foreach (string folder in GetBridgeStateFolders())
+            {
+                if (string.IsNullOrWhiteSpace(folder) || !Directory.Exists(folder))
+                {
+                    continue;
+                }
+
+                foreach (string path in Directory.GetFiles(folder, GameplayOutboundBridgeSearchPattern))
+                {
+                    yield return path;
+                }
+            }
+        }
+
         private Dictionary<string, string> ReadBridgeKeyValues(string path)
         {
             Dictionary<string, string> values = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
@@ -1536,6 +1511,53 @@ namespace LsrCoop.Client
             catch (Exception ex)
             {
                 Logger.Info($"[LsrCoop.Client] bridge file write skipped: {ex.Message}");
+            }
+        }
+
+        private void WriteApplyRemotePvpCrimeBridge(CoopPvpCrimeReportDto report)
+        {
+            if (report == null)
+            {
+                return;
+            }
+
+            WriteGameplayInboundBridgeFile("ApplyRemotePvpCrime", new Dictionary<string, string>
+            {
+                ["WorldId"] = report.WorldId ?? localWorldId ?? string.Empty,
+                ["ProfileId"] = report.SourceProfileId ?? localProfileId ?? string.Empty,
+                ["SourceProfileId"] = report.SourceProfileId ?? string.Empty,
+                ["TargetProfileId"] = report.TargetProfileId ?? string.Empty,
+                ["OffenderPedHandle"] = report.OffenderPedHandle.ToString(),
+                ["VictimPedHandle"] = report.VictimPedHandle.ToString(),
+                ["WasKilled"] = report.WasKilled.ToString().ToLowerInvariant(),
+                ["WasShot"] = report.WasShot.ToString().ToLowerInvariant(),
+                ["WasMeleeAttacked"] = report.WasMeleeAttacked.ToString().ToLowerInvariant(),
+                ["WasHitByVehicle"] = report.WasHitByVehicle.ToString().ToLowerInvariant(),
+            });
+        }
+
+        private void WriteGameplayInboundBridgeFile(string eventType, Dictionary<string, string> values)
+        {
+            string nonce = Guid.NewGuid().ToString("N");
+            List<string> lines = new List<string>
+            {
+                "BridgeVersion=1",
+                "TransportMode=RAGECOOP",
+                "Direction=RAGECOOP_TO_LSR",
+                $"ProcessId={Process.GetCurrentProcess().Id}",
+                $"EventType={EscapeBridgeValue(eventType)}",
+                $"TimestampUtc={EscapeBridgeValue(DateTime.UtcNow.ToString("O"))}",
+                $"Nonce={EscapeBridgeValue(nonce)}",
+            };
+
+            foreach (KeyValuePair<string, string> pair in values ?? new Dictionary<string, string>())
+            {
+                lines.Add($"{pair.Key}={EscapeBridgeValue(pair.Value)}");
+            }
+
+            foreach (string folder in GetBridgeStateFolders())
+            {
+                WriteAtomicBridgeFile(folder, GameplayInboundBridgeFilePrefix + nonce + ".txt", lines.ToArray(), nonce);
             }
         }
 
@@ -1621,6 +1643,44 @@ namespace LsrCoop.Client
             {
                 Logger.Info($"[LsrCoop.Client] character bridge cleanup skipped: {ex.Message}");
             }
+        }
+
+        private void TryDeleteGameplayBridgeFile(string path, string nonce)
+        {
+            if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
+            {
+                return;
+            }
+
+            try
+            {
+                Dictionary<string, string> values = ReadBridgeKeyValues(path);
+                if (string.Equals(GetBridgeValue(values, "Nonce"), nonce, StringComparison.OrdinalIgnoreCase))
+                {
+                    File.Delete(path);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Info($"[LsrCoop.Client] gameplay bridge cleanup skipped: {ex.Message}");
+            }
+        }
+
+        private bool IsCurrentProcessBridgeFile(Dictionary<string, string> values)
+        {
+            if (values == null)
+            {
+                return false;
+            }
+
+            if (!string.Equals(GetBridgeValue(values, "BridgeVersion"), "1", StringComparison.Ordinal)
+                || !string.Equals(GetBridgeValue(values, "TransportMode"), "RAGECOOP", StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
+            return int.TryParse(GetBridgeValue(values, "ProcessId"), out int processId)
+                && processId == Process.GetCurrentProcess().Id;
         }
 
         private IEnumerable<object> GetEnumerable(object source)

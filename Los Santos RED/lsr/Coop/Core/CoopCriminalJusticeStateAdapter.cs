@@ -9,19 +9,8 @@ namespace LosSantosRED.lsr.Coop.Core
     {
         public static CoopCriminalJusticeStateAdapter Current { get; } = new CoopCriminalJusticeStateAdapter();
 
-        private Action<object> snapshotCommittedSink;
         private Mod.Player localPlayer;
         private ICrimes crimes;
-
-        public static void RegisterSnapshotCommittedSink(Action<object> sink)
-        {
-            Current.snapshotCommittedSink = sink;
-        }
-
-        public static void UnregisterSnapshotCommittedSink()
-        {
-            Current.snapshotCommittedSink = null;
-        }
 
         public static void RegisterLocalRuntime(Mod.Player player, ICrimes crimeProvider)
         {
@@ -37,7 +26,7 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             CoopCriminalJusticeStateSnapshot snapshot = CaptureFromPlayer(localPlayer, GetCurrentProfileId(), GetCurrentCharacterId(GetCurrentProfileId()), GetCurrentWorldId());
-            snapshotCommittedSink?.Invoke(snapshot);
+            CoopGameplayFileBridge.PublishCriminalJusticeSnapshot(snapshot);
         }
 
         public CoopCriminalJusticeStateSnapshot CaptureFromPlayer(Mod.Player player, string profileId, string characterId, string worldId)

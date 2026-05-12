@@ -613,6 +613,7 @@ namespace Mod
 
         public void Update()
         {
+            CoopGameplayFileBridge.PollInbound();
             UpdateVehicleData();
             if (Settings.SettingsManager.PerformanceSettings.EnableHighPerformanceMode)
             {

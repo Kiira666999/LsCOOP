@@ -16,18 +16,6 @@ namespace LosSantosRED.lsr.Coop.Core
         private static readonly CoopOwnedVehicleAdapter OwnedVehicleAdapter = new CoopOwnedVehicleAdapter();
         private static readonly Dictionary<string, PendingPurchaseState> PendingPurchaseStates = new Dictionary<string, PendingPurchaseState>();
 
-        private static Action<object> purchaseCommitSink;
-
-        public static void RegisterPurchaseCommitSink(Action<object> sink)
-        {
-            purchaseCommitSink = sink;
-        }
-
-        public static void UnregisterPurchaseCommitSink()
-        {
-            purchaseCommitSink = null;
-        }
-
         public static bool TryBeginPurchaseItem(Transaction transaction, ILocationInteractable player, MenuItem menuItem, ModItem modItem, int quantity, int totalPrice, bool isStealing, out CoopGameplayActionRequest request, out string blockedReason)
         {
             return TryBeginPurchase(CoopGameplayActionType.PurchaseItem, transaction, player, menuItem, modItem, quantity, totalPrice, isStealing, out request, out blockedReason);
@@ -52,7 +40,7 @@ namespace LosSantosRED.lsr.Coop.Core
             CoopOwnedVehicleSnapshot ownedVehicleSnapshot = request.ActionType == CoopGameplayActionType.PurchaseVehicle
                 ? OwnedVehicleAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId)
                 : null;
-            purchaseCommitSink?.Invoke(new CoopStorePurchaseCommit
+            CoopGameplayFileBridge.PublishGameplayCommit(new CoopStorePurchaseCommit
             {
                 Request = request,
                 Result = result,
@@ -114,7 +102,7 @@ namespace LosSantosRED.lsr.Coop.Core
             CoopInventoryMoneySnapshot moneySnapshot = InventoryMoneyAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId);
             CoopPropertyOwnershipSnapshot propertySnapshot = PropertyOwnershipAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId);
 
-            purchaseCommitSink?.Invoke(new CoopStorePurchaseCommit
+            CoopGameplayFileBridge.PublishGameplayCommit(new CoopStorePurchaseCommit
             {
                 Request = request,
                 Result = result,
@@ -173,7 +161,7 @@ namespace LosSantosRED.lsr.Coop.Core
             CoopGameplayActionResult result = AuthorityService.CreateAcceptedResult(request, "Accepted by active host");
             CoopOwnedVehicleSnapshot ownedVehicleSnapshot = OwnedVehicleAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId);
 
-            purchaseCommitSink?.Invoke(new CoopStorePurchaseCommit
+            CoopGameplayFileBridge.PublishGameplayCommit(new CoopStorePurchaseCommit
             {
                 Request = request,
                 Result = result,

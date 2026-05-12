@@ -9,18 +9,6 @@ namespace LosSantosRED.lsr.Coop.Core
         private static readonly CoopActionAuthorityService AuthorityService = new CoopActionAuthorityService();
         private static readonly CoopInventoryMoneyAdapter InventoryMoneyAdapter = new CoopInventoryMoneyAdapter();
         private static readonly CoopWeaponInventoryAdapter WeaponInventoryAdapter = new CoopWeaponInventoryAdapter();
-        private static Action<object> outcomeCommitSink;
-
-        public static void RegisterOutcomeCommitSink(Action<object> sink)
-        {
-            outcomeCommitSink = sink;
-        }
-
-        public static void UnregisterOutcomeCommitSink()
-        {
-            outcomeCommitSink = null;
-        }
-
         public static void CompleteDeathState(IRespawnable player, ILocationRespawnable respawnLocation, string outcomeType, int hospitalFee, int hospitalBillPastDue, int hospitalDuration, DateTime releaseDate, int timesDied)
         {
             CompleteOutcome(CoopGameplayActionType.ApplyDeathState, player, respawnLocation, outcomeType, hospitalFee, hospitalBillPastDue, hospitalDuration, 0, 0, 0, 0, false, false, releaseDate, timesDied);
@@ -59,7 +47,7 @@ namespace LosSantosRED.lsr.Coop.Core
 
             Mod.Player modPlayer = player as Mod.Player;
             CoopGameplayActionResult result = AuthorityService.CreateAcceptedResult(request, "Accepted by active host");
-            outcomeCommitSink?.Invoke(new CoopStorePurchaseCommit
+            CoopGameplayFileBridge.PublishGameplayCommit(new CoopStorePurchaseCommit
             {
                 Request = request,
                 Result = result,
