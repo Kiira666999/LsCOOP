@@ -25,7 +25,13 @@ The goal is to make existing Los Santos RED systems actor-aware, network-routed,
 - Prefer patches/diffs and concise summaries.
 - Touch the fewest files practical.
 - Build after every code change when possible.
+- Before adding new compatibility code, check existing LSR XML/settings/config options that may already control the behavior.
+    Examples:
+    - PedSwapSettings.AliasPedAsMainCharacter affects non-primary ped compatibility with vanilla GTA systems such as shops.
 
+- Existing LSR settings should be tested before creating new workaround systems.
+
+- Do not add custom compatibility patches until relevant existing settings have been identified, tested, and ruled out.
 ---
 
 ## Current Design
