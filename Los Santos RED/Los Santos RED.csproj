@@ -207,6 +207,8 @@
     <Compile Include="lsr\Coop\Core\NullCoopSaveService.cs" />
     <Compile Include="lsr\Coop\Core\NullCoopTransport.cs" />
     <Compile Include="lsr\Coop\Core\RequirementContextAdapter.cs" />
+    <Compile Include="lsr\Diagnostics\AmmuNationDoorCompatibility.cs" />
+    <Compile Include="lsr\Diagnostics\AmmuNationDoorDiagnostics.cs" />
     <Compile Include="lsr\Camera\CameraControl.cs" />
     <Compile Include="lsr\Camera\CameraRotator.cs" />
     <Compile Include="lsr\Data\Agencies\IPlatePrefixable.cs" />

@@ -27,6 +27,7 @@ namespace LosSantosRED.lsr.Coop.Core
 
             CoopCriminalJusticeStateSnapshot snapshot = CaptureFromPlayer(localPlayer, GetCurrentProfileId(), GetCurrentCharacterId(GetCurrentProfileId()), GetCurrentWorldId());
             CoopGameplayFileBridge.PublishCriminalJusticeSnapshot(snapshot);
+            EntryPoint.WriteToConsole($"Co-op criminal history captured Profile:{snapshot.ProfileId} HasHistory:{snapshot.CriminalHistory?.HasHistory == true} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0}; live wanted/search state not persisted", 0);
         }
 
         public CoopCriminalJusticeStateSnapshot CaptureFromPlayer(Mod.Player player, string profileId, string characterId, string worldId)
@@ -41,7 +42,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 ProfileId = resolvedProfileId,
                 CharacterId = resolvedCharacterId,
                 CriminalHistory = player?.CriminalHistory?.CreateCoopState(resolvedWorldId, resolvedProfileId, resolvedCharacterId),
-                WantedRuntime = CaptureWantedRuntime(player, resolvedWorldId, resolvedProfileId, resolvedCharacterId),
+                WantedRuntime = null,
             };
         }
 
@@ -93,12 +94,18 @@ namespace LosSantosRED.lsr.Coop.Core
 
         public bool TryApplyPersistentStateToPlayer(Mod.Player player, CoopCriminalHistoryState state)
         {
+            return TryApplyPersistentStateToPlayer(player, state, crimes);
+        }
+
+        public bool TryApplyPersistentStateToPlayer(Mod.Player player, CoopCriminalHistoryState state, ICrimes crimeProvider)
+        {
             if (player == null || state == null)
             {
                 return false;
             }
 
-            player.CriminalHistory.ApplyCoopState(state, crimes);
+            player.CriminalHistory.ApplyCoopState(state, crimeProvider ?? crimes);
+            EntryPoint.WriteToConsole($"Co-op criminal history hydrated Profile:{state.ProfileId} HasHistory:{state.HasHistory} Crimes:{state.Crimes?.Count ?? 0}", 0);
             return true;
         }
 

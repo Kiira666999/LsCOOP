@@ -52,6 +52,8 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
     protected DateTime LastInteractTime;
     protected bool HasLoggedMissingPriceRefreshMenu;
     protected bool HasLoggedMissingPriceRefreshItems;
+    protected bool HasLoggedMissingSupplyRefreshMenu;
+    protected bool HasLoggedMissingSupplyRefreshItems;
 
     protected uint DistanceUpdateIntervalTime
     {
@@ -377,6 +379,7 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
         //EntryPoint.WriteToConsole($"Activate Location {Name} {DistanceToPlayer}");
         World = world;
         bool isOpen = IsOpen(time.CurrentHour);
+        AmmuNationDoorDiagnostics.LogGameLocationState("GameLocation.Activate", this, time.CurrentHour, isOpen);
         if (HasVendor)
         {
             EntryPoint.WriteToConsole($"{Name} NOINT:{Interior == null} ISTELE:{Interior?.IsTeleportEntry} ISTELE:{Interior?.Name}");
@@ -444,6 +447,7 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
     {
         if (HasInterior && interior != null)
         {
+            AmmuNationDoorDiagnostics.LogGameLocationState("GameLocation.LoadInterior", this, Time == null ? -1 : Time.CurrentHour, isOpen);
             interior.Load(isOpen);
         }
     }
@@ -665,12 +669,12 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
         {
             if (Menu == null)
             {
-                LogInvalidPriceRefreshData("Menu", null, null, ref HasLoggedMissingPriceRefreshMenu);
+                LogInvalidRefreshData("Price", "Menu", null, null, ref HasLoggedMissingPriceRefreshMenu);
                 return;
             }
             if (Menu.Items == null)
             {
-                LogInvalidPriceRefreshData("Menu.Items", null, null, ref HasLoggedMissingPriceRefreshItems);
+                LogInvalidRefreshData("Price", "Menu.Items", null, null, ref HasLoggedMissingPriceRefreshItems);
                 return;
             }
 
@@ -679,7 +683,7 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
                 MenuItem menuItem = Menu.Items[i];
                 if (menuItem == null)
                 {
-                    LogInvalidPriceRefreshData($"Menu.Items[{i}]", null, $"<null item at index {i}>", true);
+                    LogInvalidRefreshData("Price", $"Menu.Items[{i}]", null, $"<null item at index {i}>", true);
                     continue;
                 }
                 menuItem.UpdatePrices();
@@ -692,7 +696,7 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
             EntryPoint.WriteToConsole($"{Name} AND WE ARE WAITING FOR THE PRICE REFRESH Current:{Time.CurrentDateTime} RefreshTime:{NextPriceRefreshTime}");
         }
     }
-    protected void LogInvalidPriceRefreshData(string nullField, MenuItem menuItem, string itemContext, ref bool hasLogged)
+    protected void LogInvalidRefreshData(string refreshType, string nullField, MenuItem menuItem, string itemContext, ref bool hasLogged)
     {
         if (hasLogged)
         {
@@ -700,9 +704,9 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
         }
 
         hasLogged = true;
-        LogInvalidPriceRefreshData(nullField, menuItem, itemContext, true);
+        LogInvalidRefreshData(refreshType, nullField, menuItem, itemContext, true);
     }
-    protected void LogInvalidPriceRefreshData(string nullField, MenuItem menuItem, string itemContext, bool log)
+    protected void LogInvalidRefreshData(string refreshType, string nullField, MenuItem menuItem, string itemContext, bool log)
     {
         if (!log)
         {
@@ -712,7 +716,7 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
         string locationName = string.IsNullOrEmpty(Name) ? "<unknown location>" : Name;
         string menuName = Menu == null ? "<null>" : $"{(string.IsNullOrEmpty(Menu.Name) ? "<unnamed menu>" : Menu.Name)} ({(string.IsNullOrEmpty(Menu.ID) ? MenuID : Menu.ID)})";
         string itemName = menuItem == null ? (string.IsNullOrEmpty(itemContext) ? "<null>" : itemContext) : (string.IsNullOrEmpty(menuItem.ModItemName) ? "<unnamed item>" : menuItem.ModItemName);
-        EntryPoint.WriteToConsole($"Skipping price refresh invalid data Location:{locationName} MenuID:{MenuID ?? "<null>"} ShopMenu:{menuName} Item:{itemName} NullField:{nullField}", 0);
+        EntryPoint.WriteToConsole($"Skipping {refreshType} refresh invalid data Location:{locationName} MenuID:{MenuID ?? "<null>"} ShopMenu:{menuName} Item:{itemName} NullField:{nullField}", 0);
     }
     protected virtual void HandleSupplyRefreshes()
     {
@@ -722,8 +726,25 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
         }
         if (DateTime.Compare(Time.CurrentDateTime, NextRestockTime) == 1)
         {
-            foreach (MenuItem menuItem in Menu.Items)
+            if (Menu == null)
             {
+                LogInvalidRefreshData("Supply", "Menu", null, null, ref HasLoggedMissingSupplyRefreshMenu);
+                return;
+            }
+            if (Menu.Items == null)
+            {
+                LogInvalidRefreshData("Supply", "Menu.Items", null, null, ref HasLoggedMissingSupplyRefreshItems);
+                return;
+            }
+
+            for (int i = 0; i < Menu.Items.Count; i++)
+            {
+                MenuItem menuItem = Menu.Items[i];
+                if (menuItem == null)
+                {
+                    LogInvalidRefreshData("Supply", $"Menu.Items[{i}]", null, $"<null item at index {i}>", true);
+                    continue;
+                }
                 menuItem.UpdateStock();
             }
             NextRestockTime = Time.CurrentDateTime.AddHours(RandomItems.GetRandomNumberInt(MinRestockHours, MaxRestockHours));
@@ -981,6 +1002,7 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
             if(DistanceToPlayer <= 100f)
             {
                /// UpdatePrompts();
+                AmmuNationDoorDiagnostics.LogGameLocationState("GameLocation.Update", this, time.CurrentHour, IsOpen(time.CurrentHour));
                 if (IsActivated && HasInterior)
                 {
                     Interior?.Update(IsOpen(time.CurrentHour));

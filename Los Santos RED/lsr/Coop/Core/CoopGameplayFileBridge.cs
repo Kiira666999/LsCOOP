@@ -68,6 +68,7 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             WriteOutbound("CriminalJusticeSnapshotCommitted", snapshot.WorldId.ToString(), snapshot.ProfileId.ToString(), SimpleJson.Serialize(snapshot));
+            EntryPoint.WriteToConsole($"Co-op criminal history bridge event written Profile:{snapshot.ProfileId} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0}; skipped live wanted/search/chase state", 0);
         }
 
         public static void PublishGangReputationSnapshot(CoopGangReputationState snapshot)

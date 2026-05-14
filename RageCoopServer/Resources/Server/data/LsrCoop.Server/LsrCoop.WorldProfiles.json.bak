@@ -2,7 +2,7 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-12T18:07:18.174055+00:00",
-  "UpdatedUtc": "2026-05-14T09:17:31.0484537+00:00",
+  "UpdatedUtc": "2026-05-14T11:26:49.2628015+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -12,7 +12,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-14T09:17:31.0484672+00:00"
+    "UpdatedUtc": "2026-05-14T11:26:49.2628662+00:00"
   },
   "Profiles": [
     {
@@ -21,7 +21,7 @@
       "DisplayName": "Kiira",
       "Role": "Admin,TrustedHost",
       "CreatedUtc": "2026-05-12T18:07:37.7695554+00:00",
-      "LastSeenUtc": "2026-05-14T09:17:31.0484524+00:00",
+      "LastSeenUtc": "2026-05-14T11:26:49.2627958+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -186,39 +186,30 @@
         "SnapshotUtc": "2026-05-14T08:54:15.6188209+00:00"
       },
       "Weapons": {
-        "SnapshotId": "fd5629446f1d43a8b425f3c13e5b0524",
+        "SnapshotId": "fc0fda925d0244a6999b80da9df5dcaa",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "Weapons": [
-          {
-            "WeaponHash": "125959754",
-            "WeaponName": "weapon_compactlauncher",
-            "Category": "Heavy",
-            "Ammo": 9,
-            "IsLegal": false,
-            "IsEquipped": true
-          }
-        ],
-        "SnapshotUtc": "2026-05-14T09:17:30.3931847+00:00"
+        "Weapons": [],
+        "SnapshotUtc": "2026-05-14T10:05:09.3437608+00:00"
       },
       "OwnedVehicles": {
-        "SnapshotId": "f8ee9c4aa45043e38d39cd92e7015a01",
+        "SnapshotId": "f4053e16c8ef4fc895cf8743cb074863",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "Vehicles": [],
-        "SnapshotUtc": "2026-05-14T09:17:30.3921851+00:00"
+        "SnapshotUtc": "2026-05-14T10:05:09.3427604+00:00"
       },
       "PropertyOwnership": null,
       "GangReputation": {
-        "StateId": "1bd1ad32913e4411ac5bfa1e57958e68",
+        "StateId": "cc47fd745b594d09b198f46327497420",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "CurrentGangId": null,
         "Reputations": [],
-        "UpdatedUtc": "2026-05-14T09:17:30.3671876+00:00"
+        "UpdatedUtc": "2026-05-14T10:05:09.3287604+00:00"
       },
       "CriminalHistory": {
         "WorldId": "lsrcoop-default-world",

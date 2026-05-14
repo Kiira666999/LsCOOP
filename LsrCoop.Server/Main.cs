@@ -385,10 +385,11 @@ namespace LsrCoop.Server
             snapshot.CriminalHistory.WorldId = worldProfileStoreService.WorldId;
             snapshot.CriminalHistory.ProfileId = profile.ProfileId;
             snapshot.CriminalHistory.CharacterId = string.IsNullOrWhiteSpace(snapshot.CriminalHistory.CharacterId) ? profile.ProfileId : snapshot.CriminalHistory.CharacterId;
+            snapshot.CriminalHistory.Crimes = snapshot.CriminalHistory.Crimes ?? new List<CoopCriminalHistoryCrimeRecordDto>();
             profile.CriminalHistory = snapshot.CriminalHistory;
             worldProfileStoreService.Save();
 
-            Logger.Info($"[LsrCoop.Server] criminal history saved: profile={profile.ProfileId}, crimes={profile.CriminalHistory.Crimes?.Count ?? 0}, wanted={profile.CriminalHistory.WantedLevel}");
+            Logger.Info($"[LsrCoop.Server] criminal history saved: profile={profile.ProfileId}, crimes={profile.CriminalHistory.Crimes?.Count ?? 0}, maxWanted={profile.CriminalHistory.WantedLevel}; active wanted/search/chase state ignored");
         }
 
         private void OnGangReputationSnapshotCommitted(CustomEventReceivedArgs args)

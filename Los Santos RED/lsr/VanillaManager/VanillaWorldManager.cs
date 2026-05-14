@@ -36,6 +36,7 @@ public class VanillaWorldManager
         //NativeFunction.Natives.SET_SCENARIO_GROUP_ENABLED("lost_mc", true);
         //NativeFunction.Natives.SET_SCENARIO_GROUP_ENABLED("lost_hangout", true); 
         //NativeFunction.Natives.SET_SCENARIO_GROUP_ENABLED("LOST_HANGOUT", true);
+        AmmuNationDoorDiagnostics.LogVanillaShopControllerState("VanillaWorldManager.Setup", isVanillaShopsActive, Settings.SettingsManager.VanillaSettings.TerminateVanillaShops);
     }
     public void Dispose()
     {
@@ -43,6 +44,9 @@ public class VanillaWorldManager
     }
     public void Tick()
     {
+        AmmuNationDoorDiagnostics.LogVanillaShopControllerState("VanillaWorldManager.Tick", isVanillaShopsActive, Settings.SettingsManager.VanillaSettings.TerminateVanillaShops);
+        AmmuNationDoorDiagnostics.LogCurrentSnapshot("VanillaWorldManager.Tick");
+        AmmuNationDoorCompatibility.Tick(isVanillaShopsActive, Settings.SettingsManager.VanillaSettings.TerminateVanillaShops);
         if (Settings.SettingsManager.VanillaSettings.TerminateRespawn)
         {
             if (IsVanillaRespawnActive)
@@ -196,11 +200,13 @@ public class VanillaWorldManager
     {
         Game.TerminateAllScriptsWithName("shop_controller");
         isVanillaShopsActive = false;
+        AmmuNationDoorDiagnostics.LogVanillaShopControllerState("VanillaWorldManager.TerminateShopController", isVanillaShopsActive, Settings.SettingsManager.VanillaSettings.TerminateVanillaShops);
     }
     private void ActivateShopController()
     {
         Game.StartNewScript("shop_controller");
         isVanillaShopsActive = true;
+        AmmuNationDoorDiagnostics.LogVanillaShopControllerState("VanillaWorldManager.ActivateShopController", isVanillaShopsActive, Settings.SettingsManager.VanillaSettings.TerminateVanillaShops);
     }
 
 

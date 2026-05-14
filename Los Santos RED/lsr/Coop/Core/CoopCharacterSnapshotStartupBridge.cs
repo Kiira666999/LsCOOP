@@ -18,6 +18,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public CoopAppearanceState Appearance { get; set; }
         public CoopInventoryMoneySnapshot InventoryMoney { get; set; }
         public CoopWeaponSnapshot Weapons { get; set; }
+        public CoopCriminalHistoryState CriminalHistory { get; set; }
     }
 
     public static class CoopCharacterSnapshotStartupBridge
@@ -120,7 +121,7 @@ namespace LosSantosRED.lsr.Coop.Core
             return applied;
         }
 
-        public static bool ApplyProfileHydrationAfterPlayerSetup(CoopCharacterStartupSnapshot snapshot, Mod.Player player, IModItems modItems)
+        public static bool ApplyProfileHydrationAfterPlayerSetup(CoopCharacterStartupSnapshot snapshot, Mod.Player player, IModItems modItems, ICrimes crimes)
         {
             if (snapshot == null || player == null)
             {
@@ -133,8 +134,14 @@ namespace LosSantosRED.lsr.Coop.Core
                 appliedInventoryMoney = new CoopInventoryMoneyAdapter().TryApplySnapshotToPlayer(player, snapshot.InventoryMoney, modItems);
             }
 
-            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0}", 0);
-            return appliedInventoryMoney || snapshot.Weapons != null;
+            bool appliedCriminalHistory = false;
+            if (snapshot.CriminalHistory != null)
+            {
+                appliedCriminalHistory = CoopCriminalJusticeStateAdapter.Current.TryApplyPersistentStateToPlayer(player, snapshot.CriminalHistory, crimes);
+            }
+
+            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0}", 0);
+            return appliedInventoryMoney || snapshot.Weapons != null || appliedCriminalHistory;
         }
 
         public static void HydrateLocalCharacter(LocalCoopCharacter localCharacter, CoopCharacterStartupSnapshot snapshot)
@@ -191,6 +198,7 @@ namespace LosSantosRED.lsr.Coop.Core
                     },
                     InventoryMoney = ParseInventoryMoney(values, worldId, profileId),
                     Weapons = ParseWeapons(values, worldId, profileId),
+                    CriminalHistory = ParseCriminalHistory(values, worldId, profileId),
                 };
             }
             catch (Exception ex)
@@ -327,6 +335,53 @@ namespace LosSantosRED.lsr.Coop.Core
             return snapshot;
         }
 
+        private static CoopCriminalHistoryState ParseCriminalHistory(Dictionary<string, string> values, string worldId, string profileId)
+        {
+            string hasHistory = GetValue(values, "CriminalHistoryHasHistory");
+            string crimes = GetValue(values, "CriminalHistoryCrimes");
+            string wantedLevel = GetValue(values, "CriminalHistoryWantedLevel");
+            if (string.IsNullOrWhiteSpace(hasHistory)
+                && string.IsNullOrWhiteSpace(crimes)
+                && string.IsNullOrWhiteSpace(wantedLevel))
+            {
+                return null;
+            }
+
+            CoopCriminalHistoryState state = new CoopCriminalHistoryState
+            {
+                WorldId = new CoopWorldId(worldId),
+                ProfileId = new CoopProfileId(profileId),
+                CharacterId = new CoopCharacterId(GetValue(values, "CharacterId")),
+                HasHistory = IsTrue(hasHistory),
+                LastSeenX = ParseFloat(GetValue(values, "CriminalHistoryLastSeenX")),
+                LastSeenY = ParseFloat(GetValue(values, "CriminalHistoryLastSeenY")),
+                LastSeenZ = ParseFloat(GetValue(values, "CriminalHistoryLastSeenZ")),
+                WantedLevel = ParseInt(wantedLevel),
+                UpdatedUtc = ParseDateTimeOffset(GetValue(values, "CriminalHistoryUpdatedUtc")),
+            };
+
+            foreach (string entry in SplitEntries(crimes))
+            {
+                string[] parts = entry.Split(',');
+                if (parts.Length < 6)
+                {
+                    continue;
+                }
+
+                state.Crimes.Add(new CoopCriminalHistoryCrimeRecord
+                {
+                    CrimeId = UnescapePart(parts[0]),
+                    CrimeName = UnescapePart(parts[1]),
+                    Instances = ParseInt(parts[2]),
+                    ResultingWantedLevel = ParseInt(parts[3]),
+                    Priority = ParseInt(parts[4]),
+                    ResultsInLethalForce = IsTrue(parts[5]),
+                });
+            }
+
+            return state;
+        }
+
         private static CoopWeaponSnapshot ParseWeapons(Dictionary<string, string> values, string worldId, string profileId)
         {
             string snapshotId = GetValue(values, "WeaponSnapshotId");
@@ -401,6 +456,11 @@ namespace LosSantosRED.lsr.Coop.Core
             return DateTimeOffset.TryParse(value, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out parsed)
                 ? parsed
                 : DateTimeOffset.UtcNow;
+        }
+
+        private static bool IsTrue(string value)
+        {
+            return string.Equals(value, "true", StringComparison.OrdinalIgnoreCase);
         }
 
         private static string UnescapePart(string value)

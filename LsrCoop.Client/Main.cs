@@ -259,7 +259,7 @@ namespace LsrCoop.Client
                 ApplyAppearanceIfLocal(snapshot.WorldId, profile.ProfileId, profile.Character?.Appearance);
                 if (string.Equals(profile.ProfileId, localProfileId, StringComparison.OrdinalIgnoreCase))
                 {
-                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character, profile.InventoryMoney, profile.Weapons);
+                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character, profile.InventoryMoney, profile.Weapons, profile.CriminalHistory);
                 }
             }
 
@@ -286,13 +286,14 @@ namespace LsrCoop.Client
             CoopCharacterSnapshot snapshot = Deserialize<CoopCharacterSnapshot>(GetArg(args, 2));
             CoopInventoryMoneySnapshot inventoryMoney = Deserialize<CoopInventoryMoneySnapshot>(GetArg(args, 3));
             CoopWeaponSnapshot weapons = Deserialize<CoopWeaponSnapshot>(GetArg(args, 4));
+            CoopCriminalHistoryStateDto criminalHistory = Deserialize<CoopCriminalHistoryStateDto>(GetArg(args, 5));
             ApplyAppearanceIfLocal(worldId, profileId, snapshot?.Appearance);
             if (string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase))
             {
                 localCharacterReadyForSimulation = snapshot != null;
                 if (localCharacterReadyForSimulation)
                 {
-                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot, inventoryMoney, weapons);
+                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot, inventoryMoney, weapons, criminalHistory);
                     ExitCharacterCreationSafeState();
                 }
                 UpdateCurrentBridgeState();
@@ -551,7 +552,7 @@ namespace LsrCoop.Client
             if (string.Equals(eventType, "CriminalJusticeSnapshotCommitted", StringComparison.OrdinalIgnoreCase))
             {
                 API.SendCustomEvent(CriminalJusticeSnapshotCommittedEventHash, new object[] { payloadJson, eventType ?? string.Empty, nonce ?? string.Empty, profileId ?? string.Empty });
-                Logger.Info($"[LsrCoop.Client] criminal justice snapshot sent: profile={profileId}");
+                Logger.Info($"[LsrCoop.Client] criminal history event forwarded: profile={profileId}");
                 return true;
             }
 
@@ -577,7 +578,7 @@ namespace LsrCoop.Client
             return modelHash.ToString();
         }
 
-        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot, CoopInventoryMoneySnapshot inventoryMoney = null, CoopWeaponSnapshot weapons = null)
+        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot, CoopInventoryMoneySnapshot inventoryMoney = null, CoopWeaponSnapshot weapons = null, CoopCriminalHistoryStateDto criminalHistory = null)
         {
             if (snapshot == null || string.IsNullOrWhiteSpace(worldId) || string.IsNullOrWhiteSpace(profileId))
             {
@@ -610,6 +611,13 @@ namespace LsrCoop.Client
                 $"WeaponSnapshotId={EscapeBridgeValue(weapons?.SnapshotId ?? string.Empty)}",
                 $"WeaponSnapshotUtc={EscapeBridgeValue(FormatDateTime(weapons?.SnapshotUtc))}",
                 $"Weapons={EscapeBridgeValue(SerializeWeapons(weapons?.Weapons))}",
+                $"CriminalHistoryHasHistory={EscapeBridgeValue((criminalHistory?.HasHistory == true).ToString().ToLowerInvariant())}",
+                $"CriminalHistoryLastSeenX={EscapeBridgeValue(criminalHistory?.LastSeenX.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
+                $"CriminalHistoryLastSeenY={EscapeBridgeValue(criminalHistory?.LastSeenY.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
+                $"CriminalHistoryLastSeenZ={EscapeBridgeValue(criminalHistory?.LastSeenZ.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
+                $"CriminalHistoryWantedLevel={EscapeBridgeValue(criminalHistory?.WantedLevel.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
+                $"CriminalHistoryUpdatedUtc={EscapeBridgeValue(FormatDateTime(criminalHistory?.UpdatedUtc))}",
+                $"CriminalHistoryCrimes={EscapeBridgeValue(SerializeCriminalHistoryCrimes(criminalHistory?.Crimes))}",
                 $"TimestampUtc={EscapeBridgeValue(DateTime.UtcNow.ToString("O"))}",
                 $"Nonce={EscapeBridgeValue(nonce)}",
             };
@@ -619,7 +627,7 @@ namespace LsrCoop.Client
                 WriteAtomicBridgeFile(folder, CharacterSnapshotBridgeFileName, lines, nonce);
             }
 
-            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}");
+            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}");
         }
 
         private void OnAppearanceChanged(CustomEventReceivedArgs args)
@@ -1650,6 +1658,24 @@ namespace LsrCoop.Client
                 weapon.Ammo.ToString(CultureInfo.InvariantCulture),
                 weapon.IsLegal.ToString().ToLowerInvariant(),
                 weapon.IsEquipped.ToString().ToLowerInvariant()
+            })));
+        }
+
+        private string SerializeCriminalHistoryCrimes(IEnumerable<CoopCriminalHistoryCrimeRecordDto> crimes)
+        {
+            if (crimes == null)
+            {
+                return string.Empty;
+            }
+
+            return string.Join(";", crimes.Select(crime => string.Join(",", new[]
+            {
+                EscapeListPart(crime.CrimeId),
+                EscapeListPart(crime.CrimeName),
+                crime.Instances.ToString(CultureInfo.InvariantCulture),
+                crime.ResultingWantedLevel.ToString(CultureInfo.InvariantCulture),
+                crime.Priority.ToString(CultureInfo.InvariantCulture),
+                crime.ResultsInLethalForce.ToString().ToLowerInvariant()
             })));
         }
 

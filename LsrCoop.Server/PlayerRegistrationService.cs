@@ -106,9 +106,10 @@ namespace LsrCoop.Server
                 status.Profile.ProfileId,
                 JsonSerializer.Serialize(status.Profile.Character),
                 JsonSerializer.Serialize(status.Profile.InventoryMoney),
-                JsonSerializer.Serialize(status.Profile.Weapons)
+                JsonSerializer.Serialize(status.Profile.Weapons),
+                JsonSerializer.Serialize(status.Profile.CriminalHistory)
             });
-            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}");
+            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}");
         }
 
         public CoopClientStatus AcknowledgeCharacterSnapshot(Client client, string worldId, string profileId, string reason, out bool readinessChanged)
