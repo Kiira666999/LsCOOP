@@ -2,24 +2,26 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-12T18:07:18.174055+00:00",
-  "UpdatedUtc": "2026-05-13T21:50:56.4978355+00:00",
+  "UpdatedUtc": "2026-05-14T09:17:31.0484537+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
-    "AdminIds": [],
+    "AdminIds": [
+      "Kiira"
+    ],
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-13T21:50:56.4978857+00:00"
+    "UpdatedUtc": "2026-05-14T09:17:31.0484672+00:00"
   },
   "Profiles": [
     {
       "ProfileId": "Kiira",
       "ClientId": "Kiira",
       "DisplayName": "Kiira",
-      "Role": "TrustedHost",
+      "Role": "Admin,TrustedHost",
       "CreatedUtc": "2026-05-12T18:07:37.7695554+00:00",
-      "LastSeenUtc": "2026-05-13T21:50:56.4657098+00:00",
+      "LastSeenUtc": "2026-05-14T09:17:31.0484524+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -155,13 +157,13 @@
         "UpdatedUtc": "2026-05-12T18:07:54.1679908+00:00"
       },
       "InventoryMoney": {
-        "SnapshotId": "052da206dd2a4ab7ad0b6b7e4c9c58b2",
+        "SnapshotId": "55c866bce2664bbb870ad939178f371e",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "OnHandCash": 466349,
+        "OnHandCash": 406349,
         "TotalAccountMoney": 0,
-        "TotalMoney": 466349,
+        "TotalMoney": 406349,
         "InventoryItems": [
           {
             "ItemName": "iFruit Cellphone",
@@ -181,33 +183,42 @@
           }
         ],
         "BankAccounts": [],
-        "SnapshotUtc": "2026-05-13T21:40:28.8618432+00:00"
+        "SnapshotUtc": "2026-05-14T08:54:15.6188209+00:00"
       },
       "Weapons": {
-        "SnapshotId": "a7ae5ddfa52d4e28b989388daa430e1f",
+        "SnapshotId": "fd5629446f1d43a8b425f3c13e5b0524",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "Weapons": [],
-        "SnapshotUtc": "2026-05-13T21:50:56.2696795+00:00"
+        "Weapons": [
+          {
+            "WeaponHash": "125959754",
+            "WeaponName": "weapon_compactlauncher",
+            "Category": "Heavy",
+            "Ammo": 9,
+            "IsLegal": false,
+            "IsEquipped": true
+          }
+        ],
+        "SnapshotUtc": "2026-05-14T09:17:30.3931847+00:00"
       },
       "OwnedVehicles": {
-        "SnapshotId": "8d0db87175a04a4c8bd78471243f10a7",
+        "SnapshotId": "f8ee9c4aa45043e38d39cd92e7015a01",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "Vehicles": [],
-        "SnapshotUtc": "2026-05-13T21:50:56.2676969+00:00"
+        "SnapshotUtc": "2026-05-14T09:17:30.3921851+00:00"
       },
       "PropertyOwnership": null,
       "GangReputation": {
-        "StateId": "2576783494484362aef4277a18cdf5c3",
+        "StateId": "1bd1ad32913e4411ac5bfa1e57958e68",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "CurrentGangId": null,
         "Reputations": [],
-        "UpdatedUtc": "2026-05-13T21:50:56.2396961+00:00"
+        "UpdatedUtc": "2026-05-14T09:17:30.3671876+00:00"
       },
       "CriminalHistory": {
         "WorldId": "lsrcoop-default-world",
@@ -222,29 +233,29 @@
         "UpdatedUtc": "2026-05-12T18:30:43.1921158+00:00"
       },
       "DeathArrestState": {
-        "StateId": "cab5b0105da84281bc1b9ec06537aa00",
+        "StateId": "14da07479455465797ddea54fb1d94d6",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "ActionType": "ApplyDeathState",
-        "OutcomeType": "HospitalRespawn",
-        "RespawnLocationName": "Portola Trinity Medical Center",
-        "PositionX": -873.8142,
-        "PositionY": -305.9766,
-        "PositionZ": 39.55193,
-        "Heading": 345.7174,
-        "HospitalFee": 45000,
+        "OutcomeType": "RespawnAtCurrentLocation",
+        "RespawnLocationName": "",
+        "PositionX": 1036.48,
+        "PositionY": -2414.113,
+        "PositionZ": 29.34367,
+        "Heading": 0,
+        "HospitalFee": 0,
         "HospitalBillPastDue": 0,
-        "HospitalDuration": 9,
+        "HospitalDuration": 0,
         "BailFee": 0,
         "BailFeePastDue": 0,
         "BailDuration": 0,
         "TodayPayment": 0,
-        "TimesDied": 0,
+        "TimesDied": 1,
         "HadIllegalWeapons": false,
         "HadIllegalItems": false,
-        "ReleaseDate": "2009-06-15T07:00:00Z",
-        "OccurredUtc": "2026-05-12T18:30:48.8466392+00:00"
+        "ReleaseDate": "2009-06-06T10:14:20Z",
+        "OccurredUtc": "2026-05-14T08:54:15.6188209+00:00"
       },
       "LongTermLsrRecords": []
     }

@@ -10,8 +10,10 @@ namespace LosSantosRED.lsr.Coop.Core
     {
         public static CoopCrimeRoutingService Current { get; } = new CoopCrimeRoutingService();
 
+        private readonly CoopActionAuthorityService authorityService = new CoopActionAuthorityService();
         private global::Mod.Player localPlayer;
         private ICrimes crimes;
+        private bool suppressNextLocalCrimeCommit;
 
         public event Action<CoopCrimeEvent> CrimeRoutedToActiveHost;
         public event Action<CoopCrimeEvent> CrimeAppliedOnActiveHost;
@@ -106,6 +108,7 @@ namespace LosSantosRED.lsr.Coop.Core
             if (!CoopStartupBridge.IsCoopEnabled || CoopStartupBridge.IsLocalActiveHost)
             {
                 CrimeAppliedOnActiveHost?.Invoke(crimeEvent);
+                PublishActiveHostCrimeCommit(crimeEvent);
             }
         }
 
@@ -183,16 +186,25 @@ namespace LosSantosRED.lsr.Coop.Core
                 return;
             }
 
-            localPlayer.AddCrime(
-                crimeEvent.Crime,
-                crimeEvent.IsObservedByPolice,
-                crimeEvent.Position,
-                crimeEvent.ActorVehicle,
-                crimeEvent.ActorWeapon,
-                crimeEvent.HaveDescription,
-                crimeEvent.AnnounceCrime,
-                crimeEvent.IsForPlayer,
-                crimeEvent.AlwaysAddInstance);
+            bool previousSuppressNextLocalCrimeCommit = suppressNextLocalCrimeCommit;
+            suppressNextLocalCrimeCommit = suppressNextLocalCrimeCommit || crimeEvent.IsPlayerOnPlayerViolence;
+            try
+            {
+                localPlayer.AddCrime(
+                    crimeEvent.Crime,
+                    crimeEvent.IsObservedByPolice,
+                    crimeEvent.Position,
+                    crimeEvent.ActorVehicle,
+                    crimeEvent.ActorWeapon,
+                    crimeEvent.HaveDescription,
+                    crimeEvent.AnnounceCrime,
+                    crimeEvent.IsForPlayer,
+                    crimeEvent.AlwaysAddInstance);
+            }
+            finally
+            {
+                suppressNextLocalCrimeCommit = previousSuppressNextLocalCrimeCommit;
+            }
         }
 
         private CoopCrimeActorContext CreateLocalActorContext(global::Mod.Player player, Vector3 location, VehicleExt vehicleObserved)
@@ -248,6 +260,47 @@ namespace LosSantosRED.lsr.Coop.Core
         private static Vector3 GetPlayerPosition(global::Mod.Player player)
         {
             return player == null ? Vector3.Zero : player.Position;
+        }
+
+        private void PublishActiveHostCrimeCommit(CoopCrimeEvent crimeEvent)
+        {
+            if (crimeEvent == null
+                || crimeEvent.Crime == null
+                || crimeEvent.IsPlayerOnPlayerViolence
+                || suppressNextLocalCrimeCommit
+                || !CoopStartupBridge.IsCoopEnabled
+                || !CoopStartupBridge.IsLocalActiveHost)
+            {
+                return;
+            }
+
+            CoopGameplayActionRequest request = new CoopGameplayActionRequest
+            {
+                ActionType = CoopGameplayActionType.CommitCrime,
+                WorldId = crimeEvent.WorldId,
+                SourceProfileId = crimeEvent.OffenderProfileId,
+                SourceCharacterId = crimeEvent.OffenderCharacterId,
+                AllowsOptimisticClientFeedback = authorityService.CanUseOptimisticClientFeedback(CoopGameplayActionType.CommitCrime),
+                RequestedUtc = crimeEvent.TimestampUtc,
+            };
+
+            request.Parameters["CrimeEventId"] = crimeEvent.EventId;
+            request.Parameters["CrimeId"] = crimeEvent.CrimeId ?? string.Empty;
+            request.Parameters["CrimeName"] = crimeEvent.CrimeName ?? string.Empty;
+            request.Parameters["ResultingWantedLevel"] = crimeEvent.Crime.ResultingWantedLevel.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            request.Parameters["IsObservedByPolice"] = crimeEvent.IsObservedByPolice.ToString();
+            request.Parameters["IsForPlayer"] = crimeEvent.IsForPlayer.ToString();
+            request.Parameters["AlwaysAddInstance"] = crimeEvent.AlwaysAddInstance.ToString();
+            request.Parameters["PositionX"] = crimeEvent.Position.X.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            request.Parameters["PositionY"] = crimeEvent.Position.Y.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            request.Parameters["PositionZ"] = crimeEvent.Position.Z.ToString(System.Globalization.CultureInfo.InvariantCulture);
+
+            CoopGameplayActionResult result = authorityService.CreateAcceptedResult(request, "Crime applied by active host");
+            CoopGameplayFileBridge.PublishGameplayCommit(new CoopStorePurchaseCommit
+            {
+                Request = request,
+                Result = result,
+            });
         }
     }
 }
