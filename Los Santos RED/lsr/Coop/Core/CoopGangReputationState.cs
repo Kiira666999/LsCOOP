@@ -17,7 +17,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public CoopProfileId ProfileId { get; set; }
         public CoopCharacterId CharacterId { get; set; }
         public string CurrentGangId { get; set; }
-        public List<CoopGangReputationRecord> Reputations { get; private set; }
+        public List<CoopGangReputationRecord> Reputations { get; set; }
         public DateTimeOffset UpdatedUtc { get; set; }
     }
 }

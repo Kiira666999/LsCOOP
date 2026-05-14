@@ -241,6 +241,7 @@ namespace LsrCoop.Server
             profile.GangReputation.WorldId = Store.WorldId;
             profile.GangReputation.ProfileId = profile.ProfileId;
             profile.GangReputation.CharacterId = string.IsNullOrWhiteSpace(profile.GangReputation.CharacterId) ? profile.ProfileId : profile.GangReputation.CharacterId;
+            profile.GangReputation.Reputations = profile.GangReputation.Reputations ?? new List<CoopGangReputationRecordDto>();
         }
 
         private void NormalizeCriminalHistory(CoopPlayerProfile profile)

@@ -261,7 +261,7 @@ namespace LsrCoop.Client
                 ApplyAppearanceIfLocal(snapshot.WorldId, profile.ProfileId, profile.Character?.Appearance);
                 if (string.Equals(profile.ProfileId, localProfileId, StringComparison.OrdinalIgnoreCase))
                 {
-                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character, profile.InventoryMoney, profile.Weapons, profile.CriminalHistory);
+                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character, profile.InventoryMoney, profile.Weapons, profile.CriminalHistory, profile.GangReputation);
                 }
             }
 
@@ -289,19 +289,20 @@ namespace LsrCoop.Client
             CoopInventoryMoneySnapshot inventoryMoney = Deserialize<CoopInventoryMoneySnapshot>(GetArg(args, 3));
             CoopWeaponSnapshot weapons = Deserialize<CoopWeaponSnapshot>(GetArg(args, 4));
             CoopCriminalHistoryStateDto criminalHistory = Deserialize<CoopCriminalHistoryStateDto>(GetArg(args, 5));
+            CoopGangReputationStateDto gangReputation = Deserialize<CoopGangReputationStateDto>(GetArg(args, 6));
             ApplyAppearanceIfLocal(worldId, profileId, snapshot?.Appearance);
             if (string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase))
             {
                 localCharacterReadyForSimulation = snapshot != null;
                 if (localCharacterReadyForSimulation)
                 {
-                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot, inventoryMoney, weapons, criminalHistory);
+                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot, inventoryMoney, weapons, criminalHistory, gangReputation);
                     ExitCharacterCreationSafeState();
                 }
                 UpdateCurrentBridgeState();
                 SendCharacterSnapshotAck(worldId, profileId);
             }
-            Logger.Info($"[LsrCoop.Client] character snapshot received: world={worldId}, profile={profileId}");
+            Logger.Info($"[LsrCoop.Client] character snapshot received: world={worldId}, profile={profileId}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(gangReputation, "AMBIENT_GANG_MEXICAN"))}");
         }
 
         private void EnterCharacterCreationSafeState(string worldId, string profileId)
@@ -581,7 +582,7 @@ namespace LsrCoop.Client
             return modelHash.ToString();
         }
 
-        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot, CoopInventoryMoneySnapshot inventoryMoney = null, CoopWeaponSnapshot weapons = null, CoopCriminalHistoryStateDto criminalHistory = null)
+        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot, CoopInventoryMoneySnapshot inventoryMoney = null, CoopWeaponSnapshot weapons = null, CoopCriminalHistoryStateDto criminalHistory = null, CoopGangReputationStateDto gangReputation = null)
         {
             if (snapshot == null || string.IsNullOrWhiteSpace(worldId) || string.IsNullOrWhiteSpace(profileId))
             {
@@ -622,6 +623,10 @@ namespace LsrCoop.Client
                 $"CriminalHistoryDateTimeLastWantedEnded={EscapeBridgeValue(FormatDateTime(criminalHistory?.DateTimeLastWantedEnded))}",
                 $"CriminalHistoryUpdatedUtc={EscapeBridgeValue(FormatDateTime(criminalHistory?.UpdatedUtc))}",
                 $"CriminalHistoryCrimes={EscapeBridgeValue(SerializeCriminalHistoryCrimes(criminalHistory?.Crimes))}",
+                $"GangReputationStateId={EscapeBridgeValue(gangReputation?.StateId ?? string.Empty)}",
+                $"GangReputationCurrentGangId={EscapeBridgeValue(gangReputation?.CurrentGangId ?? string.Empty)}",
+                $"GangReputationUpdatedUtc={EscapeBridgeValue(FormatDateTime(gangReputation?.UpdatedUtc))}",
+                $"GangReputationRecords={EscapeBridgeValue(SerializeGangReputations(gangReputation?.Reputations))}",
                 $"TimestampUtc={EscapeBridgeValue(DateTime.UtcNow.ToString("O"))}",
                 $"Nonce={EscapeBridgeValue(nonce)}",
             };
@@ -631,7 +636,7 @@ namespace LsrCoop.Client
                 WriteAtomicBridgeFile(folder, CharacterSnapshotBridgeFileName, lines, nonce);
             }
 
-            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}, dateTimeLastWantedEnded={criminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}");
+            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, currentGang={gangReputation?.CurrentGangId ?? "none"}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(gangReputation, "AMBIENT_GANG_MEXICAN"))}, dateTimeLastWantedEnded={criminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}");
         }
 
         private void OnAppearanceChanged(CustomEventReceivedArgs args)
@@ -1146,6 +1151,7 @@ namespace LsrCoop.Client
                 dto.Reputations.Add(new CoopGangReputationRecordDto
                 {
                     GangId = GetString(record, "GangId"),
+                    GangName = GetString(record, "GangName"),
                     Reputation = GetInt(record, "Reputation"),
                     MembersHurt = GetInt(record, "MembersHurt"),
                     MembersKilled = GetInt(record, "MembersKilled"),
@@ -1709,6 +1715,45 @@ namespace LsrCoop.Client
                 crime.Priority.ToString(CultureInfo.InvariantCulture),
                 crime.ResultsInLethalForce.ToString().ToLowerInvariant()
             })));
+        }
+
+        private string SerializeGangReputations(IEnumerable<CoopGangReputationRecordDto> records)
+        {
+            if (records == null)
+            {
+                return string.Empty;
+            }
+
+            return string.Join(";", records.Where(record => !string.IsNullOrWhiteSpace(record.GangId)).Select(record => string.Join(",", new[]
+            {
+                EscapeListPart(record.GangId),
+                EscapeListPart(record.GangName),
+                record.Reputation.ToString(CultureInfo.InvariantCulture),
+                record.MembersHurt.ToString(CultureInfo.InvariantCulture),
+                record.MembersKilled.ToString(CultureInfo.InvariantCulture),
+                record.MembersCarJacked.ToString(CultureInfo.InvariantCulture),
+                record.MembersHurtInTerritory.ToString(CultureInfo.InvariantCulture),
+                record.MembersKilledInTerritory.ToString(CultureInfo.InvariantCulture),
+                record.MembersCarJackedInTerritory.ToString(CultureInfo.InvariantCulture),
+                record.PlayerDebt.ToString(CultureInfo.InvariantCulture),
+                record.IsMember.ToString().ToLowerInvariant(),
+                record.IsEnemy.ToString().ToLowerInvariant(),
+                record.TasksCompleted.ToString(CultureInfo.InvariantCulture)
+            })));
+        }
+
+        private CoopGangReputationRecordDto FindGangReputationRecord(CoopGangReputationStateDto state, string gangId)
+        {
+            return state?.Reputations?
+                .Where(x => string.Equals(x?.GangId, gangId, StringComparison.OrdinalIgnoreCase))
+                .LastOrDefault();
+        }
+
+        private string DescribeGangReputationRecord(CoopGangReputationRecordDto record)
+        {
+            return record == null
+                ? "missing"
+                : $"{record.GangId}:rep={record.Reputation},hurt={record.MembersHurt},killed={record.MembersKilled}";
         }
 
         private string FormatDateTime(DateTimeOffset? value)

@@ -15,7 +15,7 @@ namespace LsrCoop.Client
         public string ProfileId { get; set; }
         public string CharacterId { get; set; }
         public string CurrentGangId { get; set; }
-        public List<CoopGangReputationRecordDto> Reputations { get; private set; }
+        public List<CoopGangReputationRecordDto> Reputations { get; set; }
         public DateTimeOffset UpdatedUtc { get; set; }
     }
 }

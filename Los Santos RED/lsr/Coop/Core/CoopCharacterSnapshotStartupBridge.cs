@@ -19,6 +19,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public CoopInventoryMoneySnapshot InventoryMoney { get; set; }
         public CoopWeaponSnapshot Weapons { get; set; }
         public CoopCriminalHistoryState CriminalHistory { get; set; }
+        public CoopGangReputationState GangReputation { get; set; }
     }
 
     public static class CoopCharacterSnapshotStartupBridge
@@ -146,8 +147,14 @@ namespace LosSantosRED.lsr.Coop.Core
                 appliedCriminalHistory = CoopCriminalJusticeStateAdapter.Current.TryApplyPersistentStateToPlayer(player, snapshot.CriminalHistory, crimes);
             }
 
-            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Money:{snapshot.InventoryMoney?.TotalMoney ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} WeaponsHydrated:{weaponHydration?.HydratedCount ?? 0} WeaponsExisting:{weaponHydration?.ExistingCount ?? 0} WeaponsSkippedDuplicate:{weaponHydration?.SkippedDuplicateCount ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0} DateTimeLastWantedEnded:{snapshot.CriminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}", 0);
-            return appliedInventoryMoney || weaponHydration?.Applied == true || appliedCriminalHistory;
+            bool appliedGangReputation = false;
+            if (snapshot.GangReputation != null)
+            {
+                appliedGangReputation = CoopGangReputationStateAdapter.Current.TryApplyPersistentStateToPlayer(player, snapshot.GangReputation);
+            }
+
+            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Money:{snapshot.InventoryMoney?.TotalMoney ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} WeaponsHydrated:{weaponHydration?.HydratedCount ?? 0} WeaponsExisting:{weaponHydration?.ExistingCount ?? 0} WeaponsSkippedDuplicate:{weaponHydration?.SkippedDuplicateCount ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0} GangReputation:{appliedGangReputation} GangRecords:{snapshot.GangReputation?.Reputations?.Count ?? 0} DateTimeLastWantedEnded:{snapshot.CriminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}", 0);
+            return appliedInventoryMoney || weaponHydration?.Applied == true || appliedCriminalHistory || appliedGangReputation;
         }
 
         public static void HydrateLocalCharacter(LocalCoopCharacter localCharacter, CoopCharacterStartupSnapshot snapshot)
@@ -205,6 +212,7 @@ namespace LosSantosRED.lsr.Coop.Core
                     InventoryMoney = ParseInventoryMoney(values, worldId, profileId),
                     Weapons = ParseWeapons(values, worldId, profileId),
                     CriminalHistory = ParseCriminalHistory(values, worldId, profileId),
+                    GangReputation = ParseGangReputation(values, worldId, profileId),
                 };
             }
             catch (Exception ex)
@@ -385,6 +393,59 @@ namespace LosSantosRED.lsr.Coop.Core
                     ResultingWantedLevel = ParseInt(parts[3]),
                     Priority = ParseInt(parts[4]),
                     ResultsInLethalForce = IsTrue(parts[5]),
+                });
+            }
+
+            return state;
+        }
+
+        private static CoopGangReputationState ParseGangReputation(Dictionary<string, string> values, string worldId, string profileId)
+        {
+            string records = GetValue(values, "GangReputationRecords");
+            string stateId = GetValue(values, "GangReputationStateId");
+            string currentGangId = GetValue(values, "GangReputationCurrentGangId");
+            if (string.IsNullOrWhiteSpace(records)
+                && string.IsNullOrWhiteSpace(stateId)
+                && string.IsNullOrWhiteSpace(currentGangId))
+            {
+                return null;
+            }
+
+            CoopGangReputationState state = new CoopGangReputationState
+            {
+                StateId = string.IsNullOrWhiteSpace(stateId) ? Guid.NewGuid().ToString("N") : stateId,
+                WorldId = new CoopWorldId(worldId),
+                ProfileId = new CoopProfileId(profileId),
+                CharacterId = new CoopCharacterId(GetValue(values, "CharacterId")),
+                CurrentGangId = currentGangId,
+                UpdatedUtc = ParseDateTimeOffset(GetValue(values, "GangReputationUpdatedUtc")),
+            };
+
+            foreach (string entry in SplitEntries(records))
+            {
+                string[] parts = entry.Split(',');
+                if (parts.Length < 12)
+                {
+                    continue;
+                }
+
+                bool includesGangName = parts.Length >= 13;
+                int offset = includesGangName ? 1 : 0;
+                state.Reputations.Add(new CoopGangReputationRecord
+                {
+                    GangId = UnescapePart(parts[0]),
+                    GangName = includesGangName ? UnescapePart(parts[1]) : string.Empty,
+                    Reputation = ParseInt(parts[1 + offset]),
+                    MembersHurt = ParseInt(parts[2 + offset]),
+                    MembersKilled = ParseInt(parts[3 + offset]),
+                    MembersCarJacked = ParseInt(parts[4 + offset]),
+                    MembersHurtInTerritory = ParseInt(parts[5 + offset]),
+                    MembersKilledInTerritory = ParseInt(parts[6 + offset]),
+                    MembersCarJackedInTerritory = ParseInt(parts[7 + offset]),
+                    PlayerDebt = ParseInt(parts[8 + offset]),
+                    IsMember = IsTrue(parts[9 + offset]),
+                    IsEnemy = IsTrue(parts[10 + offset]),
+                    TasksCompleted = ParseInt(parts[11 + offset]),
                 });
             }
 

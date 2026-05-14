@@ -37,9 +37,17 @@ public class GangRelationships
     }
     public void Setup()
     {
+        EnsureSingleGangReputationPerGang();
+        HashSet<string> existingGangIds = new HashSet<string>(GangReputations.Where(x => x?.Gang != null).Select(x => x.Gang.ID), StringComparer.OrdinalIgnoreCase);
         foreach (Gang gang in Gangs.GetAllGangs())
         {
+            if (gang == null || existingGangIds.Contains(gang.ID))
+            {
+                continue;
+            }
+
             GangReputations.Add(new GangReputation(gang, Player));
+            existingGangIds.Add(gang.ID);
         }
     }
     public void Update()
@@ -480,6 +488,7 @@ public class GangRelationships
             state.Reputations.Add(new CoopGangReputationRecord
             {
                 GangId = gr.Gang.ID,
+                GangName = gr.Gang.ShortName ?? gr.Gang.FullName,
                 Reputation = gr.ReputationLevel,
                 MembersHurt = gr.MembersHurt,
                 MembersKilled = gr.MembersKilled,
@@ -506,9 +515,23 @@ public class GangRelationships
         isApplyingCoopState = true;
         try
         {
+            EnsureSingleGangReputationPerGang();
             ResetGang(false);
             Reset();
-            foreach (CoopGangReputationRecord record in state.Reputations)
+            Gang currentGangFromState = null;
+            List<CoopGangReputationRecord> recordsToApply = state.Reputations
+                .Where(x => !string.IsNullOrWhiteSpace(x?.GangId))
+                .GroupBy(x => x.GangId, StringComparer.OrdinalIgnoreCase)
+                .Select(ChoosePreferredCoopRecord)
+                .Where(x => x != null)
+                .ToList();
+            int duplicateRecordCount = state.Reputations.Count - recordsToApply.Count;
+            if (duplicateRecordCount > 0)
+            {
+                EntryPoint.WriteToConsole($"Co-op gang reputation apply de-duped duplicate bridge records Count:{duplicateRecordCount}", 5);
+            }
+
+            foreach (CoopGangReputationRecord record in recordsToApply)
             {
                 Gang gang = gangs.GetGang(record.GangId);
                 if (gang == null)
@@ -520,13 +543,31 @@ public class GangRelationships
                 SetRepStats(gang, record.MembersHurt, record.MembersHurtInTerritory, record.MembersKilled, record.MembersKilledInTerritory, record.MembersCarJacked, record.MembersCarJackedInTerritory, record.PlayerDebt, record.IsMember, record.IsEnemy, record.TasksCompleted);
                 if (record.IsMember || string.Equals(record.GangId, state.CurrentGangId, StringComparison.OrdinalIgnoreCase))
                 {
-                    SetGang(gang, false);
+                    currentGangFromState = gang;
                 }
+
+                GangReputation applied = GetReputation(gang);
+                applied?.ResetRelationshipGroups();
+                Player.SetDenStatus(gang, applied?.IsMember == true || applied?.GangRelationship == GangRespect.Friendly);
             }
+
+            SetCurrentGangFromCoopState(currentGangFromState);
+            EnsureSingleGangReputationPerGang();
         }
         finally
         {
             isApplyingCoopState = false;
+        }
+    }
+    private void SetCurrentGangFromCoopState(Gang gang)
+    {
+        CurrentGangKickUp?.Dispose();
+        CurrentGangKickUp = null;
+        CurrentGang = gang;
+        if (CurrentGang != null)
+        {
+            CurrentGangKickUp = new GangKickUp(Player, CurrentGang, Time);
+            CurrentGangKickUp.Start(false);
         }
     }
     private void NotifyCoopGangReputationChanged()
@@ -541,6 +582,76 @@ public class GangRelationships
     public void NotifyCoopStateChanged()
     {
         NotifyCoopGangReputationChanged();
+    }
+    private void EnsureSingleGangReputationPerGang()
+    {
+        if (GangReputations == null || GangReputations.Count <= 1)
+        {
+            return;
+        }
+
+        List<GangReputation> deDuped = GangReputations
+            .Where(x => x?.Gang != null)
+            .GroupBy(x => x.Gang.ID, StringComparer.OrdinalIgnoreCase)
+            .Select(ChoosePreferredGangReputation)
+            .Where(x => x != null)
+            .ToList();
+        if (deDuped.Count == GangReputations.Count)
+        {
+            return;
+        }
+
+        foreach (GangReputation duplicate in GangReputations.Except(deDuped).ToList())
+        {
+            duplicate.GangLoan?.Dispose();
+        }
+
+        int removedCount = GangReputations.Count - deDuped.Count;
+        GangReputations = deDuped;
+        if (CoopStartupBridge.IsCoopEnabled)
+        {
+            EntryPoint.WriteToConsole($"Co-op gang reputation de-duped runtime records Removed:{removedCount}", 5);
+        }
+    }
+    private static GangReputation ChoosePreferredGangReputation(IEnumerable<GangReputation> records)
+    {
+        List<GangReputation> recordList = records?.ToList() ?? new List<GangReputation>();
+        return recordList.LastOrDefault(HasPersistentGangReputation) ?? recordList.FirstOrDefault();
+    }
+    private static CoopGangReputationRecord ChoosePreferredCoopRecord(IEnumerable<CoopGangReputationRecord> records)
+    {
+        List<CoopGangReputationRecord> recordList = records?.ToList() ?? new List<CoopGangReputationRecord>();
+        return recordList.LastOrDefault(HasPersistentCoopRecord) ?? recordList.LastOrDefault();
+    }
+    private static bool HasPersistentGangReputation(GangReputation record)
+    {
+        return record != null
+            && (record.ReputationLevel != record.DefaultRepAmount
+                || record.MembersHurt != 0
+                || record.MembersKilled != 0
+                || record.MembersCarJacked != 0
+                || record.MembersHurtInTerritory != 0
+                || record.MembersKilledInTerritory != 0
+                || record.MembersCarJackedInTerritory != 0
+                || record.PlayerDebt != 0
+                || record.IsMember
+                || record.IsEnemy
+                || record.TasksCompleted != 0);
+    }
+    private static bool HasPersistentCoopRecord(CoopGangReputationRecord record)
+    {
+        return record != null
+            && (record.Reputation != 0
+                || record.MembersHurt != 0
+                || record.MembersKilled != 0
+                || record.MembersCarJacked != 0
+                || record.MembersHurtInTerritory != 0
+                || record.MembersKilledInTerritory != 0
+                || record.MembersCarJackedInTerritory != 0
+                || record.PlayerDebt != 0
+                || record.IsMember
+                || record.IsEnemy
+                || record.TasksCompleted != 0);
     }
 }
 

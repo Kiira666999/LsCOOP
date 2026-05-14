@@ -3,6 +3,7 @@ namespace LosSantosRED.lsr.Coop.Core
     public class CoopGangReputationRecord
     {
         public string GangId { get; set; }
+        public string GangName { get; set; }
         public int Reputation { get; set; }
         public int MembersHurt { get; set; }
         public int MembersKilled { get; set; }

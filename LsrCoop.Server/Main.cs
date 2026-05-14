@@ -14,6 +14,8 @@ namespace LsrCoop.Server
     public class Main : ServerScript
     {
         private readonly List<ConnectionEventSubscription> connectionSubscriptions = new List<ConnectionEventSubscription>();
+        private readonly HashSet<string> ignoredEmptyGangSnapshotProfiles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        private readonly HashSet<string> ignoredDefaultGangSnapshotProfiles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
         private EventRouter eventRouter;
         private RoleConfigService roleConfigService;
@@ -497,10 +499,322 @@ namespace LsrCoop.Server
             snapshot.WorldId = worldProfileStoreService.WorldId;
             snapshot.ProfileId = profile.ProfileId;
             snapshot.CharacterId = string.IsNullOrWhiteSpace(snapshot.CharacterId) ? profile.ProfileId : snapshot.CharacterId;
-            profile.GangReputation = snapshot;
+            snapshot.Reputations = snapshot.Reputations ?? new List<CoopGangReputationRecordDto>();
+            CoopGangReputationRecordDto incomingVagos = FindGangReputationRecord(snapshot, "AMBIENT_GANG_MEXICAN");
+            CoopGangReputationRecordDto existingVagos = FindGangReputationRecord(profile.GangReputation, "AMBIENT_GANG_MEXICAN");
+            bool incomingAllDefault = IsAllDefaultGangSnapshot(snapshot);
+            if (snapshot.Reputations.Count == 0)
+            {
+                if (ignoredEmptyGangSnapshotProfiles.Add(profile.ProfileId))
+                {
+                    Logger.Info($"[LsrCoop.Server] gang reputation snapshot ignored: profile={profile.ProfileId}, records=0; empty/no-op snapshot was not saved");
+                }
+
+                return;
+            }
+
+            if (profile.GangReputation != null && string.Equals(CreateGangReputationSignature(profile.GangReputation), CreateGangReputationSignature(snapshot), StringComparison.Ordinal))
+            {
+                return;
+            }
+
+            Logger.Info($"[LsrCoop.Server] gang reputation snapshot received: profile={profile.ProfileId}, records={snapshot.Reputations.Count}, allDefault={incomingAllDefault}, incomingVagos={DescribeGangReputationRecord(incomingVagos)}, savedVagosBefore={DescribeGangReputationRecord(existingVagos)}");
+
+            GangReputationMergeResult mergeResult = MergeGangReputationSnapshot(profile.GangReputation, snapshot);
+            if (!mergeResult.HasChanges)
+            {
+                if (mergeResult.PreservedDefaultOverwriteCount > 0 && ignoredDefaultGangSnapshotProfiles.Add(profile.ProfileId))
+                {
+                    Logger.Info($"[LsrCoop.Server] gang reputation snapshot rejected: profile={profile.ProfileId}, records={snapshot.Reputations.Count}, allDefault={incomingAllDefault}, preservedRecords={mergeResult.PreservedDefaultOverwriteCount}, incomingVagos={DescribeGangReputationRecord(incomingVagos)}, savedVagos={DescribeGangReputationRecord(existingVagos)}; default/no-op snapshot cannot overwrite saved non-default gang reputation");
+                }
+
+                return;
+            }
+
+            int changedRecordCount = LogGangReputationChanges(profile.GangReputation, mergeResult.MergedState);
+            profile.GangReputation = mergeResult.MergedState;
+            ignoredEmptyGangSnapshotProfiles.Remove(profile.ProfileId);
+            ignoredDefaultGangSnapshotProfiles.Remove(profile.ProfileId);
             worldProfileStoreService.Save();
 
-            Logger.Info($"[LsrCoop.Server] gang reputation saved: profile={profile.ProfileId}, gangs={profile.GangReputation.Reputations?.Count ?? 0}, currentGang={profile.GangReputation.CurrentGangId ?? "none"}");
+            Logger.Info($"[LsrCoop.Server] gang reputation {mergeResult.Action}: profile={profile.ProfileId}, recordsSaved={profile.GangReputation.Reputations?.Count ?? 0}, recordsChanged={changedRecordCount}, preservedDefaultOverwrites={mergeResult.PreservedDefaultOverwriteCount}, currentGang={profile.GangReputation.CurrentGangId ?? "none"}, savedVagosAfter={DescribeGangReputationRecord(FindGangReputationRecord(profile.GangReputation, "AMBIENT_GANG_MEXICAN"))}");
+        }
+
+        private static GangReputationMergeResult MergeGangReputationSnapshot(CoopGangReputationStateDto existing, CoopGangReputationStateDto incoming)
+        {
+            CoopGangReputationStateDto merged = CloneGangReputationState(incoming);
+            merged.Reputations = new List<CoopGangReputationRecordDto>();
+            if (existing != null && IsAllDefaultGangSnapshot(incoming) && string.IsNullOrWhiteSpace(incoming.CurrentGangId) && !string.IsNullOrWhiteSpace(existing.CurrentGangId))
+            {
+                merged.CurrentGangId = existing.CurrentGangId;
+            }
+
+            Dictionary<string, CoopGangReputationRecordDto> existingByGang = ToGangReputationDictionary(existing);
+            Dictionary<string, CoopGangReputationRecordDto> incomingByGang = ToGangReputationDictionary(incoming);
+            int preservedDefaultOverwrites = 0;
+
+            foreach (string gangId in existingByGang.Keys.Union(incomingByGang.Keys, StringComparer.OrdinalIgnoreCase).OrderBy(x => x, StringComparer.OrdinalIgnoreCase))
+            {
+                existingByGang.TryGetValue(gangId, out CoopGangReputationRecordDto existingRecord);
+                incomingByGang.TryGetValue(gangId, out CoopGangReputationRecordDto incomingRecord);
+                if (existingRecord != null && incomingRecord == null)
+                {
+                    merged.Reputations.Add(CloneGangReputationRecord(existingRecord));
+                    continue;
+                }
+
+                if (existingRecord != null && IsPersistentGangReputationRecord(existingRecord) && IsDefaultZeroGangReputationRecord(incomingRecord))
+                {
+                    merged.Reputations.Add(CloneGangReputationRecord(existingRecord));
+                    preservedDefaultOverwrites++;
+                    continue;
+                }
+
+                if (incomingRecord != null)
+                {
+                    merged.Reputations.Add(CloneGangReputationRecord(incomingRecord));
+                }
+            }
+
+            string existingSignature = CreateGangReputationSignature(existing);
+            string incomingSignature = CreateGangReputationSignature(incoming);
+            string mergedSignature = CreateGangReputationSignature(merged);
+            return new GangReputationMergeResult
+            {
+                MergedState = merged,
+                PreservedDefaultOverwriteCount = preservedDefaultOverwrites,
+                HasChanges = !string.Equals(existingSignature, mergedSignature, StringComparison.Ordinal),
+                Action = preservedDefaultOverwrites > 0 && !string.Equals(incomingSignature, mergedSignature, StringComparison.Ordinal)
+                    ? "merged"
+                    : "saved",
+            };
+        }
+
+        private static Dictionary<string, CoopGangReputationRecordDto> ToGangReputationDictionary(CoopGangReputationStateDto state)
+        {
+            return state?.Reputations?
+                .Where(x => !string.IsNullOrWhiteSpace(x.GangId))
+                .GroupBy(x => x.GangId, StringComparer.OrdinalIgnoreCase)
+                .ToDictionary(x => x.Key, x => ChoosePreferredGangReputationRecord(x), StringComparer.OrdinalIgnoreCase)
+                ?? new Dictionary<string, CoopGangReputationRecordDto>(StringComparer.OrdinalIgnoreCase);
+        }
+
+        private static CoopGangReputationRecordDto ChoosePreferredGangReputationRecord(IEnumerable<CoopGangReputationRecordDto> records)
+        {
+            List<CoopGangReputationRecordDto> recordList = records?.ToList() ?? new List<CoopGangReputationRecordDto>();
+            return recordList.LastOrDefault(IsPersistentGangReputationRecord) ?? recordList.LastOrDefault();
+        }
+
+        private static CoopGangReputationStateDto CloneGangReputationState(CoopGangReputationStateDto state)
+        {
+            return new CoopGangReputationStateDto
+            {
+                StateId = string.IsNullOrWhiteSpace(state?.StateId) ? Guid.NewGuid().ToString("N") : state.StateId,
+                WorldId = state?.WorldId,
+                ProfileId = state?.ProfileId,
+                CharacterId = state?.CharacterId,
+                CurrentGangId = state?.CurrentGangId,
+                UpdatedUtc = state?.UpdatedUtc ?? DateTimeOffset.UtcNow,
+                Reputations = state?.Reputations?.Select(CloneGangReputationRecord).ToList() ?? new List<CoopGangReputationRecordDto>(),
+            };
+        }
+
+        private static CoopGangReputationRecordDto CloneGangReputationRecord(CoopGangReputationRecordDto record)
+        {
+            if (record == null)
+            {
+                return null;
+            }
+
+            return new CoopGangReputationRecordDto
+            {
+                GangId = record.GangId,
+                GangName = record.GangName,
+                Reputation = record.Reputation,
+                MembersHurt = record.MembersHurt,
+                MembersKilled = record.MembersKilled,
+                MembersCarJacked = record.MembersCarJacked,
+                MembersHurtInTerritory = record.MembersHurtInTerritory,
+                MembersKilledInTerritory = record.MembersKilledInTerritory,
+                MembersCarJackedInTerritory = record.MembersCarJackedInTerritory,
+                PlayerDebt = record.PlayerDebt,
+                IsMember = record.IsMember,
+                IsEnemy = record.IsEnemy,
+                TasksCompleted = record.TasksCompleted,
+            };
+        }
+
+        private static CoopGangReputationRecordDto FindGangReputationRecord(CoopGangReputationStateDto state, string gangId)
+        {
+            return state?.Reputations?
+                .Where(x => string.Equals(x?.GangId, gangId, StringComparison.OrdinalIgnoreCase))
+                .LastOrDefault();
+        }
+
+        private static string DescribeGangReputationRecord(CoopGangReputationRecordDto record)
+        {
+            return record == null
+                ? "missing"
+                : $"{record.GangId}:rep={record.Reputation},hurt={record.MembersHurt},killed={record.MembersKilled}";
+        }
+
+        private static bool IsAllDefaultGangSnapshot(CoopGangReputationStateDto state)
+        {
+            return state?.Reputations != null
+                && state.Reputations.Count > 0
+                && string.IsNullOrWhiteSpace(state.CurrentGangId)
+                && state.Reputations.All(IsDefaultActivityGangReputationRecord);
+        }
+
+        private static bool IsDefaultZeroGangReputationRecord(CoopGangReputationRecordDto record)
+        {
+            return record != null
+                && record.Reputation == 0
+                && IsDefaultActivityGangReputationRecord(record);
+        }
+
+        private static bool IsDefaultActivityGangReputationRecord(CoopGangReputationRecordDto record)
+        {
+            return record != null
+                && record.MembersHurt == 0
+                && record.MembersKilled == 0
+                && record.MembersCarJacked == 0
+                && record.MembersHurtInTerritory == 0
+                && record.MembersKilledInTerritory == 0
+                && record.MembersCarJackedInTerritory == 0
+                && record.PlayerDebt == 0
+                && !record.IsMember
+                && !record.IsEnemy
+                && record.TasksCompleted == 0;
+        }
+
+        private static bool IsPersistentGangReputationRecord(CoopGangReputationRecordDto record)
+        {
+            return record != null
+                && (record.Reputation != 0
+                    || !IsDefaultActivityGangReputationRecord(record));
+        }
+
+        private class GangReputationMergeResult
+        {
+            public CoopGangReputationStateDto MergedState { get; set; }
+            public int PreservedDefaultOverwriteCount { get; set; }
+            public bool HasChanges { get; set; }
+            public string Action { get; set; }
+        }
+
+        private int LogGangReputationChanges(CoopGangReputationStateDto existing, CoopGangReputationStateDto incoming)
+        {
+            Dictionary<string, CoopGangReputationRecordDto> oldValues = existing?.Reputations?
+                .Where(x => !string.IsNullOrWhiteSpace(x.GangId))
+                .GroupBy(x => x.GangId, StringComparer.OrdinalIgnoreCase)
+                .ToDictionary(x => x.Key, x => x.Last(), StringComparer.OrdinalIgnoreCase)
+                ?? new Dictionary<string, CoopGangReputationRecordDto>(StringComparer.OrdinalIgnoreCase);
+
+            int changedCount = 0;
+            foreach (CoopGangReputationRecordDto record in incoming.Reputations.Where(x => !string.IsNullOrWhiteSpace(x.GangId)))
+            {
+                CoopGangReputationRecordDto oldRecord;
+                bool hasOld = oldValues.TryGetValue(record.GangId, out oldRecord);
+                string changes = DescribeGangReputationChanges(oldRecord, record);
+                if (string.IsNullOrWhiteSpace(changes))
+                {
+                    continue;
+                }
+
+                changedCount++;
+                string gangName = string.IsNullOrWhiteSpace(record.GangName) ? record.GangId : record.GangName;
+                Logger.Info($"[LsrCoop.Server] gang reputation record: profile={incoming.ProfileId}, gang={record.GangId}, name={gangName}, oldRep={(hasOld ? oldRecord.Reputation.ToString() : "unknown")}, newRep={record.Reputation}, changes={changes}");
+            }
+
+            return changedCount;
+        }
+
+        private static string DescribeGangReputationChanges(CoopGangReputationRecordDto oldRecord, CoopGangReputationRecordDto newRecord)
+        {
+            if (newRecord == null)
+            {
+                return string.Empty;
+            }
+
+            if (oldRecord == null)
+            {
+                if (newRecord.Reputation == 0
+                    && newRecord.MembersHurt == 0
+                    && newRecord.MembersKilled == 0
+                    && newRecord.MembersCarJacked == 0
+                    && newRecord.MembersHurtInTerritory == 0
+                    && newRecord.MembersKilledInTerritory == 0
+                    && newRecord.MembersCarJackedInTerritory == 0
+                    && newRecord.PlayerDebt == 0
+                    && !newRecord.IsMember
+                    && !newRecord.IsEnemy
+                    && newRecord.TasksCompleted == 0)
+                {
+                    return string.Empty;
+                }
+
+                return "newPersistentRecord";
+            }
+
+            List<string> changes = new List<string>();
+            AddChange(changes, "rep", oldRecord.Reputation, newRecord.Reputation);
+            AddChange(changes, "hurt", oldRecord.MembersHurt, newRecord.MembersHurt);
+            AddChange(changes, "killed", oldRecord.MembersKilled, newRecord.MembersKilled);
+            AddChange(changes, "carjacked", oldRecord.MembersCarJacked, newRecord.MembersCarJacked);
+            AddChange(changes, "hurtTerritory", oldRecord.MembersHurtInTerritory, newRecord.MembersHurtInTerritory);
+            AddChange(changes, "killedTerritory", oldRecord.MembersKilledInTerritory, newRecord.MembersKilledInTerritory);
+            AddChange(changes, "carjackedTerritory", oldRecord.MembersCarJackedInTerritory, newRecord.MembersCarJackedInTerritory);
+            AddChange(changes, "debt", oldRecord.PlayerDebt, newRecord.PlayerDebt);
+            AddChange(changes, "tasks", oldRecord.TasksCompleted, newRecord.TasksCompleted);
+            AddChange(changes, "member", oldRecord.IsMember, newRecord.IsMember);
+            AddChange(changes, "enemy", oldRecord.IsEnemy, newRecord.IsEnemy);
+            return string.Join(";", changes);
+        }
+
+        private static void AddChange(List<string> changes, string name, int oldValue, int newValue)
+        {
+            if (oldValue != newValue)
+            {
+                changes.Add($"{name}:{oldValue}->{newValue}");
+            }
+        }
+
+        private static void AddChange(List<string> changes, string name, bool oldValue, bool newValue)
+        {
+            if (oldValue != newValue)
+            {
+                changes.Add($"{name}:{oldValue}->{newValue}");
+            }
+        }
+
+        private static string CreateGangReputationSignature(CoopGangReputationStateDto state)
+        {
+            if (state?.Reputations == null)
+            {
+                return string.Empty;
+            }
+
+            return $"{state.CurrentGangId ?? string.Empty}|"
+                + string.Join(";", state.Reputations
+                    .Where(x => !string.IsNullOrWhiteSpace(x.GangId))
+                    .OrderBy(x => x.GangId, StringComparer.OrdinalIgnoreCase)
+                    .Select(x => string.Join(",", new[]
+                    {
+                        x.GangId,
+                        x.GangName ?? string.Empty,
+                        x.Reputation.ToString(),
+                        x.MembersHurt.ToString(),
+                        x.MembersKilled.ToString(),
+                        x.MembersCarJacked.ToString(),
+                        x.MembersHurtInTerritory.ToString(),
+                        x.MembersKilledInTerritory.ToString(),
+                        x.MembersCarJackedInTerritory.ToString(),
+                        x.PlayerDebt.ToString(),
+                        x.IsMember.ToString(),
+                        x.IsEnemy.ToString(),
+                        x.TasksCompleted.ToString(),
+                    })));
         }
 
         private void OnClientReady(object eventPayload)
