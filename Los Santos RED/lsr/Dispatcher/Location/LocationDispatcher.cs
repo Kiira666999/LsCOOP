@@ -1,4 +1,5 @@
 ﻿using ExtensionsMethods;
+using LosSantosRED.lsr.Coop.Core;
 using LosSantosRED.lsr.Interface;
 using Mod;
 using Rage;
@@ -62,8 +63,22 @@ public class LocationDispatcher
     }
     public void Dispatch()
     {
-        foreach (GameLocation ps in World.Places.ActiveLocations.ToList().Where(x => x.IsEnabled && x.DistanceToPlayer <= x.ActivateDistance && x.IsNearby && !x.IsDispatchFilled && (x.PossibleGroupSpawns != null || x.PossiblePedSpawns != null || x.PossibleVehicleSpawns != null)).ToList())
+        if (CoopFullSimulationStartupWarmup.ShouldDelayLocationDispatch())
         {
+            return;
+        }
+
+        int locationDispatchLimit = CoopFullSimulationStartupWarmup.LocationDispatchLimit;
+        List<GameLocation> dispatchableLocations = World.Places.ActiveLocations.ToList().Where(x => x.IsEnabled && x.DistanceToPlayer <= x.ActivateDistance && x.IsNearby && !x.IsDispatchFilled && (x.PossibleGroupSpawns != null || x.PossiblePedSpawns != null || x.PossibleVehicleSpawns != null)).ToList();
+        int processedLocations = 0;
+        foreach (GameLocation ps in dispatchableLocations)
+        {
+            if (processedLocations >= locationDispatchLimit)
+            {
+                break;
+            }
+
+            CoopFullSimulationStartupWarmup.OnLocationDispatchAllowed(ps.Name);
             if (ps.PossibleGroupSpawns != null)
             {
                 foreach (ConditionalGroup cg in ps.PossibleGroupSpawns)
@@ -105,8 +120,10 @@ public class LocationDispatcher
                 }
             }
             ps.IsDispatchFilled = true;
+            processedLocations++;
             GameFiber.Yield();
         }
+        CoopFullSimulationStartupWarmup.LogLocationDispatchDeferred(dispatchableLocations.Count - processedLocations);
         //if (Settings.SettingsManager.PerformanceSettings.EnableHighPerformanceMode)
         //{
         //    GameFiber.Yield();
@@ -135,13 +152,24 @@ public class LocationDispatcher
     }
     private void HandleServiceWorkerSpawns()
     {
-        foreach (GameLocation ps in World.Places.ActiveLocations.ToList().Where(x => x.IsEnabled && x.DistanceToPlayer <= x.ActivateDistance && x.IsNearby && x.IsOpen(Time.CurrentHour) && !x.IsServiceFilled).ToList())
+        int serviceWorkerLimit = CoopFullSimulationStartupWarmup.LocationDispatchLimit;
+        List<GameLocation> serviceWorkerLocations = World.Places.ActiveLocations.ToList().Where(x => x.IsEnabled && x.DistanceToPlayer <= x.ActivateDistance && x.IsNearby && x.IsOpen(Time.CurrentHour) && !x.IsServiceFilled).ToList();
+        int processedServiceWorkers = 0;
+        foreach (GameLocation ps in serviceWorkerLocations)
         {
+            if (processedServiceWorkers >= serviceWorkerLimit)
+            {
+                break;
+            }
+
+            CoopFullSimulationStartupWarmup.OnVendorDispatchAllowed(ps.Name);
             ps.AttemptVendorSpawn(ps.IsOpen(Time.CurrentHour),Interiors,Settings,Crimes,Weapons,Time,World, false);
             ps.IsServiceFilled = true;
+            processedServiceWorkers++;
             EntryPoint.WriteToConsole($"VENDOR SPAWN AT {ps.Name} ");
             GameFiber.Yield();
         }
+        CoopFullSimulationStartupWarmup.LogLocationDispatchDeferred(serviceWorkerLocations.Count - processedServiceWorkers);
         GameFiber.Yield();
         foreach (GameLocation ps in PlacesOfInterest.InteractableLocations().Where(x => x.IsEnabled && (!x.IsNearby || !x.IsOpen(Time.CurrentHour)) && x.IsServiceFilled).ToList())
         {

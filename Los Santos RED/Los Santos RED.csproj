@@ -178,6 +178,8 @@
     <Compile Include="lsr\Coop\Core\CoopServerPlayerProfile.cs" />
     <Compile Include="lsr\Coop\Core\CoopServerWorldSave.cs" />
     <Compile Include="lsr\Coop\Core\CoopSessionState.cs" />
+    <Compile Include="lsr\Coop\Core\CoopFullSimulationEntityDiagnostics.cs" />
+    <Compile Include="lsr\Coop\Core\CoopFullSimulationStartupWarmup.cs" />
     <Compile Include="lsr\Coop\Core\CoopStorePurchaseBridge.cs" />
     <Compile Include="lsr\Coop\Core\CoopStorePurchaseCommit.cs" />
     <Compile Include="lsr\Coop\Core\CoopStartupBridge.cs" />

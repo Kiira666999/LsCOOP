@@ -148,6 +148,9 @@ namespace LosSantosRED.lsr
 
             SetTaskGroups();
             GameFiber.Yield();
+            CoopFullSimulationStartupWarmup.Begin();
+            CoopFullSimulationEntityDiagnostics.Begin(World);
+            GameFiber.Yield();
             StartCoreLogic();
             GameFiber.Yield();
             StartUILogic();
@@ -264,6 +267,8 @@ namespace LosSantosRED.lsr
         public void Dispose(bool restoreInitialPedModel = true)
         {
             IsRunning = false;
+            CoopFullSimulationEntityDiagnostics.End();
+            CoopFullSimulationStartupWarmup.End();
             Player?.Dispose();
             World?.Dispose();
             PedSwap?.Dispose(restoreInitialPedModel);
@@ -310,10 +315,10 @@ namespace LosSantosRED.lsr
                     new ModTask(1000, "World.PrunePedestrians", World.Pedestrians.Prune, 0),
 
                     //THIS IS THE ISSUE!
-                    new ModTask(500, "World.CreateNewPedestrians", World.Pedestrians.CreateNew, 1), //this is the freezer, what the fucko
+                    new ModTask(500, "World.CreateNewPedestrians", RunWorldCreateNewPedestrians, 1), //this is the freezer, what the fucko
 
                     new ModTask(1000, "World.PruneVehicles", World.Vehicles.Prune, 2),//500
-                    new ModTask(500, "World.CreateNewVehicles", World.Vehicles.CreateNew, 3),//1000 //very bad performance   
+                    new ModTask(500, "World.CreateNewVehicles", RunWorldCreateNewVehicles, 3),//1000 //very bad performance   
                     new ModTask(1000, "World.UpdateVehiclePlates", World.Vehicles.PlateController.UpdatePlates, 5),
 
                     new ModTask(1500, "Player.ScannerUpdate", Player.Scanner.Update, 6),
@@ -322,7 +327,7 @@ namespace LosSantosRED.lsr
                 new ModTaskGroup("RG4:Dispatch", new List<ModTask>()
                 {
                     new ModTask(500, "Dispatcher.Recall", Dispatcher.Recall, 0),//1500
-                    new ModTask(500, "Dispatcher.Dispatch", Dispatcher.Dispatch, 1),//1500//1000
+                    new ModTask(500, "Dispatcher.Dispatch", RunDispatcherDispatch, 1),//1500//1000
                 }),
                 new ModTaskGroup("RG5:Police Update", new List<ModTask>()
                 {
@@ -349,7 +354,7 @@ namespace LosSantosRED.lsr
                 }),
                 new ModTaskGroup("RG10:World LowPri", new List<ModTask>()
                 {
-                    new ModTask(1000, "World.ActiveNearLocations", World.Places.ActivateLocations, 0),//1000 //????MAYBE BAD?
+                    new ModTask(1000, "World.ActiveNearLocations", RunWorldActivateNearLocations, 0),//1000 //????MAYBE BAD?
 
                     new ModTask(4000, "Weather.Update", Weather.Update, 1),//1000
                     new ModTask(2000,"WeatherManager.Update",WeatherManager.Update,2),
@@ -368,6 +373,47 @@ namespace LosSantosRED.lsr
                 }),
             };
         }
+
+        private void RunWorldCreateNewPedestrians()
+        {
+            CoopFullSimulationEntityDiagnostics.RecordTaskTick("World.CreateNewPedestrians");
+            if (!CoopFullSimulationStartupWarmup.ShouldRunEntityRegistrationTask("World.CreateNewPedestrians"))
+            {
+                return;
+            }
+            World.Pedestrians.CreateNew();
+        }
+
+        private void RunWorldCreateNewVehicles()
+        {
+            CoopFullSimulationEntityDiagnostics.RecordTaskTick("World.CreateNewVehicles");
+            if (!CoopFullSimulationStartupWarmup.ShouldRunEntityRegistrationTask("World.CreateNewVehicles"))
+            {
+                return;
+            }
+            World.Vehicles.CreateNew();
+        }
+
+        private void RunWorldActivateNearLocations()
+        {
+            CoopFullSimulationEntityDiagnostics.RecordTaskTick("World.ActiveNearLocations");
+            if (!CoopFullSimulationStartupWarmup.ShouldRunLocationActivationTask())
+            {
+                return;
+            }
+            World.Places.ActivateLocations();
+        }
+
+        private void RunDispatcherDispatch()
+        {
+            CoopFullSimulationEntityDiagnostics.RecordTaskTick("Dispatcher.Dispatch");
+            if (!CoopFullSimulationStartupWarmup.ShouldRunDispatcherTask())
+            {
+                return;
+            }
+            Dispatcher.Dispatch();
+        }
+
         private Mod.World CreateWorld()
         {
             return new Mod.World(ModDataFileManager.Agencies, ModDataFileManager.Zones, ModDataFileManager.Jurisdictions, ModDataFileManager.Settings, ModDataFileManager.PlacesOfInterest, ModDataFileManager.PlateTypes,

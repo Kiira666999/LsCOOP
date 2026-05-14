@@ -2,7 +2,7 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-14T13:15:51.1387633+00:00",
-  "UpdatedUtc": "2026-05-14T13:31:51.4424392+00:00",
+  "UpdatedUtc": "2026-05-14T15:00:47.7872552+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -12,7 +12,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-14T13:31:51.4424662+00:00"
+    "UpdatedUtc": "2026-05-14T15:00:47.7872778+00:00"
   },
   "Profiles": [
     {
@@ -21,7 +21,7 @@
       "DisplayName": "Kiira",
       "Role": "Admin,TrustedHost",
       "CreatedUtc": "2026-05-14T13:15:58.9246961+00:00",
-      "LastSeenUtc": "2026-05-14T13:31:51.4424356+00:00",
+      "LastSeenUtc": "2026-05-14T15:00:47.7872517+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -158,30 +158,30 @@
       },
       "InventoryMoney": null,
       "Weapons": {
-        "SnapshotId": "603f2b60143a40dabdcae3d582994594",
+        "SnapshotId": "3f8a10f0a2f94749a17d3ff9d4f39846",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "Weapons": [],
-        "SnapshotUtc": "2026-05-14T13:18:09.9555308+00:00"
+        "SnapshotUtc": "2026-05-14T14:22:09.873919+00:00"
       },
       "OwnedVehicles": {
-        "SnapshotId": "00bdc265c75f48f1ab647307c1a2776c",
+        "SnapshotId": "36193959c2614e389e9bceece1c8feec",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "Vehicles": [],
-        "SnapshotUtc": "2026-05-14T13:18:09.9555308+00:00"
+        "SnapshotUtc": "2026-05-14T14:22:09.873919+00:00"
       },
       "PropertyOwnership": null,
       "GangReputation": {
-        "StateId": "199f5c1971354bc2b3b12becb556e9ae",
+        "StateId": "856cc204d34b426d8cff4652da467af1",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "CurrentGangId": null,
         "Reputations": [],
-        "UpdatedUtc": "2026-05-14T13:18:09.9505278+00:00"
+        "UpdatedUtc": "2026-05-14T14:22:09.8699195+00:00"
       },
       "CriminalHistory": {
         "WorldId": "lsrcoop-default-world",
