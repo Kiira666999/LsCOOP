@@ -47,7 +47,7 @@ namespace LosSantosRED.lsr.Coop.Core
                     + " AliasModel:" + aliasModelName
                     + " AddOffsetRun:" + hasAddOffsetRun.ToString(CultureInfo.InvariantCulture)
                     + " SetOffsetRun:" + hasSetPlayerOffsetRun.ToString(CultureInfo.InvariantCulture)
-                    + " CurrentModelPlayerIs:" + currentModelPlayerIs, 0);
+                    + " CurrentModelPlayerIs:" + currentModelPlayerIs, 5);
             }
         }
     }

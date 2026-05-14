@@ -29,7 +29,7 @@ namespace LosSantosRED.lsr.Coop.Core
             gameTimeStarted = Game.GameTime;
             isRunning = true;
 
-            EntryPoint.WriteToConsole("Co-op entity diag start Mode:FullSimulation ActiveHost:True", 0);
+            EntryPoint.WriteToConsole("Co-op entity diag start Mode:FullSimulation ActiveHost:True", 5);
             GameFiber.StartNew(delegate
             {
                 try
@@ -42,7 +42,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 }
                 catch (Exception ex)
                 {
-                    EntryPoint.WriteToConsole("Co-op entity diag error " + ex.Message, 0);
+                    EntryPoint.WriteToConsole("Co-op entity diag error " + ex.Message, 5);
                 }
                 finally
                 {
@@ -71,7 +71,7 @@ namespace LosSantosRED.lsr.Coop.Core
 
             EntryPoint.WriteToConsole("Co-op entity diag task "
                 + "s:" + elapsedSeconds.ToString(CultureInfo.InvariantCulture)
-                + " Name:" + taskName, 0);
+                + " Name:" + taskName, 5);
         }
 
         private static bool ShouldLog()
@@ -103,7 +103,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 + " SpawnedEntities:" + EntryPoint.SpawnedEntities.Count(x => x.Exists()).ToString(CultureInfo.InvariantCulture)
                 + " NewVeh:" + newVehicles.Count.ToString(CultureInfo.InvariantCulture)
                 + " NewPeds:" + newPedCount.ToString(CultureInfo.InvariantCulture)
-                + " NewVehTop:" + GetNewVehicleSummary(newVehicles), 0);
+                + " NewVehTop:" + GetNewVehicleSummary(newVehicles), 5);
 
             PreviousVehicleHandles.Clear();
             foreach (PoolHandle handle in currentVehicleHandles)

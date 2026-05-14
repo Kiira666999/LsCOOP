@@ -104,7 +104,7 @@ public class BankAccounts
 
         if (logDiagnostics)
         {
-            EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney begin Amount:{Amount} UseAccounts:{useAccounts} AccountCount:{accountCountBefore} AccountMoneyBefore:{totalAccountMoneyBefore} CashBefore:{onHandCashBefore} TotalBefore:{totalMoneyBefore} Model:{modelName} IsPrimary:{isPrimaryCharacter} AliasPedAsMainCharacter:{aliasPedAsMainCharacter}", 0);
+            EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney begin Amount:{Amount} UseAccounts:{useAccounts} AccountCount:{accountCountBefore} AccountMoneyBefore:{totalAccountMoneyBefore} CashBefore:{onHandCashBefore} TotalBefore:{totalMoneyBefore} Model:{modelName} IsPrimary:{isPrimaryCharacter} AliasPedAsMainCharacter:{aliasPedAsMainCharacter}", 5);
         }
 
         if (Amount != 0)
@@ -119,7 +119,7 @@ public class BankAccounts
             EntryPoint.WriteToConsole($"GiveMoney ACCOUNT STILL TO REMOVE {Amount}");
             if (logDiagnostics)
             {
-                EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney after accounts RemainingAmount:{Amount} AccountMoneyAfterDebit:{TotalAccountMoney} AccountCount:{BankAccountList?.Count ?? 0}", 0);
+                EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney after accounts RemainingAmount:{Amount} AccountMoneyAfterDebit:{TotalAccountMoney} AccountCount:{BankAccountList?.Count ?? 0}", 5);
             }
         }
  
@@ -131,10 +131,10 @@ public class BankAccounts
             bool nativeWriteMatched = TrySetNativeCash(targetCash, out int currentCashBeforeWrite, out int currentCashAfterWrite, out int statWriteResult);
             if (logDiagnostics)
             {
-                EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney stat write Source:STAT Hash:{GetPlayerCashHash()} CashBeforeWrite:{currentCashBeforeWrite} TargetCash:{targetCash} WriteResult:{statWriteResult} CashAfterWrite:{currentCashAfterWrite}", 0);
+                EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney stat write Source:STAT Hash:{GetPlayerCashHash()} CashBeforeWrite:{currentCashBeforeWrite} TargetCash:{targetCash} WriteResult:{statWriteResult} CashAfterWrite:{currentCashAfterWrite}", 5);
                 if (!nativeWriteMatched)
                 {
-                    EntryPoint.WriteToConsole($"Co-op purchase money write failed Source:STAT TargetCash:{targetCash} CashAfterWrite:{currentCashAfterWrite}", 0);
+                    EntryPoint.WriteToConsole($"Co-op purchase money write failed Source:STAT TargetCash:{targetCash} CashAfterWrite:{currentCashAfterWrite}", 5);
                 }
             }
         }
@@ -151,12 +151,12 @@ public class BankAccounts
             }
             if (logDiagnostics)
             {
-                EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney local write Source:Field CashBeforeWrite:{localCashBeforeWrite} TargetCash:{money} CashAfterWrite:{money}", 0);
+                EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney local write Source:Field CashBeforeWrite:{localCashBeforeWrite} TargetCash:{money} CashAfterWrite:{money}", 5);
             }
         }
         if (logDiagnostics)
         {
-            EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney end AmountRemainingApplied:{Amount} AccountMoneyBefore:{totalAccountMoneyBefore} AccountMoneyAfter:{TotalAccountMoney} CashBefore:{onHandCashBefore} CashAfter:{GetMoney(false)} TotalBefore:{totalMoneyBefore} TotalAfter:{GetMoney(true)}", 0);
+            EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney end AmountRemainingApplied:{Amount} AccountMoneyBefore:{totalAccountMoneyBefore} AccountMoneyAfter:{TotalAccountMoney} CashBefore:{onHandCashBefore} CashAfter:{GetMoney(false)} TotalBefore:{totalMoneyBefore} TotalAfter:{GetMoney(true)}", 5);
         }
         //currentMoney = Money;
     }

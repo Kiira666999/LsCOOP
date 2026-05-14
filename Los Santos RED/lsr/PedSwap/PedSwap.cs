@@ -119,19 +119,19 @@ public class PedSwap : IPedSwap
 
         if (PedSwapAliasDiagnostics.IsVerboseEnabled(Settings))
         {
-            EntryPoint.WriteToConsole($"Co-op alias startup considered Reason:{reason} Mode:{startupMode} SnapshotModel:{snapshotModelName} NativeModel:{currentModelName} PlayerModel:{playerModelName} AliasModel:{aliasModelName} OffsetActive:{HasSetOffset}", 0);
+            EntryPoint.WriteToConsole($"Co-op alias startup considered Reason:{reason} Mode:{startupMode} SnapshotModel:{snapshotModelName} NativeModel:{currentModelName} PlayerModel:{playerModelName} AliasModel:{aliasModelName} OffsetActive:{HasSetOffset}", 5);
         }
 
         string skippedReason = GetCoopStartupAliasSkipReason(startupSnapshot, startupMode, currentModelName);
         if (!string.IsNullOrEmpty(skippedReason))
         {
-            EntryPoint.WriteToConsole($"Co-op alias startup skipped Reason:{reason} Skip:{skippedReason} Mode:{startupMode} SnapshotModel:{snapshotModelName} NativeModel:{currentModelName}", 0);
+            EntryPoint.WriteToConsole($"Co-op alias startup skipped Reason:{reason} Skip:{skippedReason} Mode:{startupMode} SnapshotModel:{snapshotModelName} NativeModel:{currentModelName}", 5);
             LogAliasDiagnostics(reason + ".Skipped." + skippedReason);
             return false;
         }
 
         AddOffset();
-        EntryPoint.WriteToConsole($"Co-op alias startup applied Reason:{reason} AliasModel:{aliasModelName} OffsetActive:{HasSetOffset} AddOffsetRun:{HasAddOffsetRun} SetOffsetRun:{HasSetPlayerOffsetRun} FinalVisibleModel:{Player.ModelName}", 0);
+        EntryPoint.WriteToConsole($"Co-op alias startup applied Reason:{reason} AliasModel:{aliasModelName} OffsetActive:{HasSetOffset} AddOffsetRun:{HasAddOffsetRun} SetOffsetRun:{HasSetPlayerOffsetRun} FinalVisibleModel:{Player.ModelName}", 5);
         LogAliasDiagnostics(reason + ".Applied");
         return true;
     }

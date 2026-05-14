@@ -82,7 +82,7 @@ namespace LosSantosRED.lsr
             NextCoopClearReason = appliedClearReason;
             CoopCriminalJusticeStateAdapter.Current.NotifyLocalCriminalHistoryChanged();
             NextCoopClearReason = string.Empty;
-            EntryPoint.WriteToConsole($" PLAYER EVENT: Criminal History Clear Reason:{appliedClearReason}", 0);
+            EntryPoint.WriteToConsole($" PLAYER EVENT: Criminal History Clear Reason:{appliedClearReason}", 5);
         }
         public void AddCrime(Crime crime)
         {
@@ -336,7 +336,7 @@ namespace LosSantosRED.lsr
                 ? DateTime.MinValue
                 : dateTimeLastWantedEnded.AddHours(wantedLevel * Settings.SettingsManager.CriminalHistorySettings.CalendarTimeExpireWantedMultiplier);
             double remainingHours = expirationTime == DateTime.MinValue ? 0.0d : (expirationTime - Time.CurrentDateTime).TotalHours;
-            EntryPoint.WriteToConsole($"Co-op criminal history expiration {stage} Wanted:{wantedLevel} DateTimeLastWantedEnded:{dateTimeLastWantedEnded:O} Expires:{expirationTime:O} Current:{Time.CurrentDateTime:O} RemainingHours:{remainingHours:0.00} ClearReason:{clearReason}", 0);
+            EntryPoint.WriteToConsole($"Co-op criminal history expiration {stage} Wanted:{wantedLevel} DateTimeLastWantedEnded:{dateTimeLastWantedEnded:O} Expires:{expirationTime:O} Current:{Time.CurrentDateTime:O} RemainingHours:{remainingHours:0.00} ClearReason:{clearReason}", 5);
         }
        
 

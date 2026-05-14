@@ -411,12 +411,12 @@ public class ModItem
                 int chocolateShakeCashBefore = logChocolateShakeDiagnostic ? player.BankAccounts.GetMoney(false) : 0;
                 if (logChocolateShakeDiagnostic)
                 {
-                    EntryPoint.WriteToConsole($"Co-op purchase diagnostic Chocolate Shake before GiveMoney Price:{TotalPrice} UseAccounts:{Transaction.UseAccounts} CashBefore:{chocolateShakeCashBefore} MoneyBefore:{chocolateShakeMoneyBefore}", 0);
+                    EntryPoint.WriteToConsole($"Co-op purchase diagnostic Chocolate Shake before GiveMoney Price:{TotalPrice} UseAccounts:{Transaction.UseAccounts} CashBefore:{chocolateShakeCashBefore} MoneyBefore:{chocolateShakeMoneyBefore}", 5);
                 }
                 player.BankAccounts.GiveMoney(-1 * TotalPrice, Transaction.UseAccounts);
                 if (logChocolateShakeDiagnostic)
                 {
-                    EntryPoint.WriteToConsole($"Co-op purchase diagnostic Chocolate Shake after GiveMoney Price:{TotalPrice} UseAccounts:{Transaction.UseAccounts} CashBefore:{chocolateShakeCashBefore} CashAfter:{player.BankAccounts.GetMoney(false)} MoneyBefore:{chocolateShakeMoneyBefore} MoneyAfter:{player.BankAccounts.GetMoney(true)}", 0);
+                    EntryPoint.WriteToConsole($"Co-op purchase diagnostic Chocolate Shake after GiveMoney Price:{TotalPrice} UseAccounts:{Transaction.UseAccounts} CashBefore:{chocolateShakeCashBefore} CashAfter:{player.BankAccounts.GetMoney(false)} MoneyBefore:{chocolateShakeMoneyBefore} MoneyAfter:{player.BankAccounts.GetMoney(true)}", 5);
                 }
                 Transaction.MoneySpent += TotalPrice;
             }

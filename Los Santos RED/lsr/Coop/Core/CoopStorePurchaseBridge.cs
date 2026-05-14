@@ -52,7 +52,7 @@ namespace LosSantosRED.lsr.Coop.Core
             EntryPoint.WriteToConsole($"Co-op purchase commit Item:{GetParameter(request, "ItemName")} Price:{GetIntParameter(request, "TotalPrice")} MoneyCaptured:{snapshot?.TotalMoney ?? 0} ServerProfile:{request.SourceProfileId} WeaponsSaved:{weaponSnapshot?.Weapons?.Count ?? 0}", 0);
             if (string.Equals(GetParameter(request, "ItemName"), "Chocolate Shake", StringComparison.OrdinalIgnoreCase))
             {
-                EntryPoint.WriteToConsole($"Co-op purchase diagnostic Chocolate Shake snapshot Price:{GetIntParameter(request, "TotalPrice")} CapturedCash:{snapshot?.OnHandCash ?? 0} CapturedAccounts:{snapshot?.TotalAccountMoney ?? 0} CapturedMoney:{snapshot?.TotalMoney ?? 0}", 0);
+                EntryPoint.WriteToConsole($"Co-op purchase diagnostic Chocolate Shake snapshot Price:{GetIntParameter(request, "TotalPrice")} CapturedCash:{snapshot?.OnHandCash ?? 0} CapturedAccounts:{snapshot?.TotalAccountMoney ?? 0} CapturedMoney:{snapshot?.TotalMoney ?? 0}", 5);
             }
         }
 
@@ -288,36 +288,36 @@ namespace LosSantosRED.lsr.Coop.Core
             int liveMoneyAfter = modPlayer?.BankAccounts?.GetMoney(true) ?? snapshot.TotalMoney;
             string itemName = GetParameter(request, "ItemName");
 
-            EntryPoint.WriteToConsole($"Co-op purchase money fallback considered Item:{itemName} Price:{price} UseAccounts:{useAccounts} IsStealing:{isStealing} MoneyBefore:{moneyBefore} LiveAfterGiveMoney:{liveMoneyAfter} CapturedAfter:{snapshot.TotalMoney}", 0);
+            EntryPoint.WriteToConsole($"Co-op purchase money fallback considered Item:{itemName} Price:{price} UseAccounts:{useAccounts} IsStealing:{isStealing} MoneyBefore:{moneyBefore} LiveAfterGiveMoney:{liveMoneyAfter} CapturedAfter:{snapshot.TotalMoney}", 5);
 
             if (isStealing)
             {
-                EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:StealPurchase CapturedSnapshot:{snapshot.TotalMoney}", 0);
+                EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:StealPurchase CapturedSnapshot:{snapshot.TotalMoney}", 5);
             }
             else if (price <= 0)
             {
-                EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:NonDebit Price:{price} CapturedSnapshot:{snapshot.TotalMoney}", 0);
+                EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:NonDebit Price:{price} CapturedSnapshot:{snapshot.TotalMoney}", 5);
             }
             else if (beforeSnapshot == null)
             {
-                EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:MissingBeforeSnapshot CapturedSnapshot:{snapshot.TotalMoney}", 0);
+                EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:MissingBeforeSnapshot CapturedSnapshot:{snapshot.TotalMoney}", 5);
             }
             else if (liveMoneyAfter != beforeSnapshot.TotalMoney)
             {
-                EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:LiveBalanceAlreadyChanged MoneyBefore:{beforeSnapshot.TotalMoney} LiveAfter:{liveMoneyAfter} CapturedSnapshot:{snapshot.TotalMoney}", 0);
+                EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:LiveBalanceAlreadyChanged MoneyBefore:{beforeSnapshot.TotalMoney} LiveAfter:{liveMoneyAfter} CapturedSnapshot:{snapshot.TotalMoney}", 5);
             }
             else
             {
                 CoopInventoryMoneySnapshot reconciledSnapshot = CreateExpectedPostPurchaseSnapshot(beforeSnapshot, snapshot, price, useAccounts);
                 if (reconciledSnapshot.TotalMoney >= snapshot.TotalMoney)
                 {
-                    EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:ReconciledBalanceNotLower CapturedSnapshot:{snapshot.TotalMoney} ReconciledSnapshot:{reconciledSnapshot.TotalMoney}", 0);
+                    EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:ReconciledBalanceNotLower CapturedSnapshot:{snapshot.TotalMoney} ReconciledSnapshot:{reconciledSnapshot.TotalMoney}", 5);
                 }
                 else
                 {
                     snapshot = reconciledSnapshot;
                     ApplyMoneySnapshotToPlayer(modPlayer, snapshot, "PurchaseReconciliation");
-                    EntryPoint.WriteToConsole($"Co-op purchase money fallback applied Item:{itemName} Price:{price} MoneyBefore:{moneyBefore} LiveBeforeFallback:{liveMoneyAfter} LiveAfterFallback:{modPlayer?.BankAccounts?.GetMoney(true) ?? snapshot.TotalMoney} CapturedSnapshot:{snapshot.TotalMoney}", 0);
+                    EntryPoint.WriteToConsole($"Co-op purchase money fallback applied Item:{itemName} Price:{price} MoneyBefore:{moneyBefore} LiveBeforeFallback:{liveMoneyAfter} LiveAfterFallback:{modPlayer?.BankAccounts?.GetMoney(true) ?? snapshot.TotalMoney} CapturedSnapshot:{snapshot.TotalMoney}", 5);
                 }
             }
 
@@ -334,7 +334,7 @@ namespace LosSantosRED.lsr.Coop.Core
             if (CoopStartupBridge.IsCoopEnabled)
             {
                 player.BankAccounts.TrySetCashForCoopReconciliation(snapshot.OnHandCash, out int cashBefore, out int cashAfter, out string setCashResult);
-                EntryPoint.WriteToConsole($"Co-op purchase money live cash update Reason:{reason} CashBefore:{cashBefore} TargetCash:{snapshot.OnHandCash} CashAfter:{cashAfter} CapturedSnapshot:{snapshot.TotalMoney} Result:{setCashResult}", 0);
+                EntryPoint.WriteToConsole($"Co-op purchase money live cash update Reason:{reason} CashBefore:{cashBefore} TargetCash:{snapshot.OnHandCash} CashAfter:{cashAfter} CapturedSnapshot:{snapshot.TotalMoney} Result:{setCashResult}", 5);
             }
             else
             {
@@ -425,7 +425,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 if (CoopStartupBridge.IsCoopEnabled)
                 {
                     player.BankAccounts.TrySetCashForCoopReconciliation(snapshot.OnHandCash, out int cashBefore, out int cashAfter, out string setCashResult);
-                    EntryPoint.WriteToConsole($"Co-op purchase money live cash update Reason:Rollback CashBefore:{cashBefore} TargetCash:{snapshot.OnHandCash} CashAfter:{cashAfter} CapturedSnapshot:{snapshot.TotalMoney} Result:{setCashResult}", 0);
+                    EntryPoint.WriteToConsole($"Co-op purchase money live cash update Reason:Rollback CashBefore:{cashBefore} TargetCash:{snapshot.OnHandCash} CashAfter:{cashAfter} CapturedSnapshot:{snapshot.TotalMoney} Result:{setCashResult}", 5);
                 }
                 else
                 {
