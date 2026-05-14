@@ -50,6 +50,8 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
     protected DateTime NextRestockTime;
     protected DateTime NextPriceRefreshTime;
     protected DateTime LastInteractTime;
+    protected bool HasLoggedMissingPriceRefreshMenu;
+    protected bool HasLoggedMissingPriceRefreshItems;
 
     protected uint DistanceUpdateIntervalTime
     {
@@ -661,8 +663,25 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
         }
         if (DateTime.Compare(Time.CurrentDateTime, NextPriceRefreshTime) == 1)
         {
-            foreach (MenuItem menuItem in Menu.Items)
+            if (Menu == null)
             {
+                LogInvalidPriceRefreshData("Menu", null, null, ref HasLoggedMissingPriceRefreshMenu);
+                return;
+            }
+            if (Menu.Items == null)
+            {
+                LogInvalidPriceRefreshData("Menu.Items", null, null, ref HasLoggedMissingPriceRefreshItems);
+                return;
+            }
+
+            for (int i = 0; i < Menu.Items.Count; i++)
+            {
+                MenuItem menuItem = Menu.Items[i];
+                if (menuItem == null)
+                {
+                    LogInvalidPriceRefreshData($"Menu.Items[{i}]", null, $"<null item at index {i}>", true);
+                    continue;
+                }
                 menuItem.UpdatePrices();
             }
             NextPriceRefreshTime = Time.CurrentDateTime.AddHours(RandomItems.GetRandomNumberInt(MinPriceRefreshHours, MaxPriceRefreshHours));
@@ -672,6 +691,28 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
         {
             EntryPoint.WriteToConsole($"{Name} AND WE ARE WAITING FOR THE PRICE REFRESH Current:{Time.CurrentDateTime} RefreshTime:{NextPriceRefreshTime}");
         }
+    }
+    protected void LogInvalidPriceRefreshData(string nullField, MenuItem menuItem, string itemContext, ref bool hasLogged)
+    {
+        if (hasLogged)
+        {
+            return;
+        }
+
+        hasLogged = true;
+        LogInvalidPriceRefreshData(nullField, menuItem, itemContext, true);
+    }
+    protected void LogInvalidPriceRefreshData(string nullField, MenuItem menuItem, string itemContext, bool log)
+    {
+        if (!log)
+        {
+            return;
+        }
+
+        string locationName = string.IsNullOrEmpty(Name) ? "<unknown location>" : Name;
+        string menuName = Menu == null ? "<null>" : $"{(string.IsNullOrEmpty(Menu.Name) ? "<unnamed menu>" : Menu.Name)} ({(string.IsNullOrEmpty(Menu.ID) ? MenuID : Menu.ID)})";
+        string itemName = menuItem == null ? (string.IsNullOrEmpty(itemContext) ? "<null>" : itemContext) : (string.IsNullOrEmpty(menuItem.ModItemName) ? "<unnamed item>" : menuItem.ModItemName);
+        EntryPoint.WriteToConsole($"Skipping price refresh invalid data Location:{locationName} MenuID:{MenuID ?? "<null>"} ShopMenu:{menuName} Item:{itemName} NullField:{nullField}", 0);
     }
     protected virtual void HandleSupplyRefreshes()
     {
