@@ -1,8 +1,8 @@
 {
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
-  "CreatedUtc": "2026-05-12T16:34:05.1710253+00:00",
-  "UpdatedUtc": "2026-05-12T17:02:51.785756+00:00",
+  "CreatedUtc": "2026-05-12T18:07:18.174055+00:00",
+  "UpdatedUtc": "2026-05-12T19:07:24.9551307+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -10,7 +10,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-12T17:02:51.785764+00:00"
+    "UpdatedUtc": "2026-05-12T19:07:24.9551395+00:00"
   },
   "Profiles": [
     {
@@ -18,15 +18,15 @@
       "ClientId": "Kiira",
       "DisplayName": "Kiira",
       "Role": "TrustedHost",
-      "CreatedUtc": "2026-05-12T16:35:00.195521+00:00",
-      "LastSeenUtc": "2026-05-12T17:02:51.7684584+00:00",
+      "CreatedUtc": "2026-05-12T18:07:37.7695554+00:00",
+      "LastSeenUtc": "2026-05-12T19:07:24.9252643+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
-        "DisplayName": "Rylan Harris",
-        "ModelName": "ig_taocheng",
+        "DisplayName": "Chance Freeman",
+        "ModelName": "IG_TAOCHENG",
         "Appearance": {
-          "ModelName": "ig_taocheng",
+          "ModelName": "IG_TAOCHENG",
           "Components": [
             {
               "ComponentId": 0,
@@ -152,23 +152,100 @@
             }
           ]
         },
-        "UpdatedUtc": "2026-05-12T16:35:34.0973916+00:00"
+        "UpdatedUtc": "2026-05-12T18:07:54.1679908+00:00"
       },
-      "InventoryMoney": null,
-      "Weapons": null,
-      "OwnedVehicles": null,
+      "InventoryMoney": {
+        "SnapshotId": "f4da296435cc44b5a6da65d40fa07fe7",
+        "WorldId": "lsrcoop-default-world",
+        "ProfileId": "Kiira",
+        "CharacterId": "Kiira",
+        "OnHandCash": 489349,
+        "TotalAccountMoney": 0,
+        "TotalMoney": 489349,
+        "InventoryItems": [
+          {
+            "ItemName": "iFruit Cellphone",
+            "RemainingPercent": 1
+          },
+          {
+            "ItemName": "Drivers License",
+            "RemainingPercent": 1
+          },
+          {
+            "ItemName": "Can of Sprunk",
+            "RemainingPercent": 1
+          },
+          {
+            "ItemName": "Bottle of Stronzo",
+            "RemainingPercent": 1
+          }
+        ],
+        "BankAccounts": [],
+        "SnapshotUtc": "2026-05-12T18:30:48.8446674+00:00"
+      },
+      "Weapons": {
+        "SnapshotId": "e46097a27c1546e0999a5183e0ddce77",
+        "WorldId": "lsrcoop-default-world",
+        "ProfileId": "Kiira",
+        "CharacterId": "Kiira",
+        "Weapons": [],
+        "SnapshotUtc": "2026-05-12T19:07:24.6244048+00:00"
+      },
+      "OwnedVehicles": {
+        "SnapshotId": "8c68afe2a6194e34a6b11b455d9a47cf",
+        "WorldId": "lsrcoop-default-world",
+        "ProfileId": "Kiira",
+        "CharacterId": "Kiira",
+        "Vehicles": [],
+        "SnapshotUtc": "2026-05-12T19:07:24.6244048+00:00"
+      },
       "PropertyOwnership": null,
       "GangReputation": {
-        "StateId": "a5035b3b28554c39be2d10a5accab1d9",
+        "StateId": "05e3800347ba4c19a0520b46e8ec9c1b",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "CurrentGangId": null,
         "Reputations": [],
-        "UpdatedUtc": "2026-05-12T17:02:51.2696146+00:00"
+        "UpdatedUtc": "2026-05-12T19:07:24.5694023+00:00"
       },
-      "CriminalHistory": null,
-      "DeathArrestState": null,
+      "CriminalHistory": {
+        "WorldId": "lsrcoop-default-world",
+        "ProfileId": "Kiira",
+        "CharacterId": "Kiira",
+        "HasHistory": false,
+        "LastSeenX": 0,
+        "LastSeenY": 0,
+        "LastSeenZ": 0,
+        "WantedLevel": 0,
+        "Crimes": [],
+        "UpdatedUtc": "2026-05-12T18:30:43.1921158+00:00"
+      },
+      "DeathArrestState": {
+        "StateId": "cab5b0105da84281bc1b9ec06537aa00",
+        "WorldId": "lsrcoop-default-world",
+        "ProfileId": "Kiira",
+        "CharacterId": "Kiira",
+        "ActionType": "ApplyDeathState",
+        "OutcomeType": "HospitalRespawn",
+        "RespawnLocationName": "Portola Trinity Medical Center",
+        "PositionX": -873.8142,
+        "PositionY": -305.9766,
+        "PositionZ": 39.55193,
+        "Heading": 345.7174,
+        "HospitalFee": 45000,
+        "HospitalBillPastDue": 0,
+        "HospitalDuration": 9,
+        "BailFee": 0,
+        "BailFeePastDue": 0,
+        "BailDuration": 0,
+        "TodayPayment": 0,
+        "TimesDied": 0,
+        "HadIllegalWeapons": false,
+        "HadIllegalItems": false,
+        "ReleaseDate": "2009-06-15T07:00:00Z",
+        "OccurredUtc": "2026-05-12T18:30:48.8466392+00:00"
+      },
       "LongTermLsrRecords": []
     }
   ],

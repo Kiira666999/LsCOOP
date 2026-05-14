@@ -18,6 +18,18 @@ namespace LosSantosRED.lsr.Coop.Core
         public LocalCoopCharacter RegisterLocalCharacter(Mod.Player player)
         {
             string displayName = player == null ? string.Empty : player.PlayerName;
+            if (CoopStartupBridge.IsCoopEnabled && !string.IsNullOrWhiteSpace(CoopStartupBridge.LocalProfileId))
+            {
+                string profileId = CoopStartupBridge.LocalProfileId;
+                return RegisterLocalCharacter(
+                    player,
+                    new CoopCharacterId(profileId),
+                    new CoopProfileId(profileId),
+                    displayName,
+                    ResolveLocalRole(),
+                    ResolveLocalPermissions());
+            }
+
             return RegisterLocalCharacter(
                 player,
                 new CoopCharacterId("single-player-local"),
@@ -54,6 +66,32 @@ namespace LosSantosRED.lsr.Coop.Core
         {
             LocalCharacter = null;
             characters.Clear();
+        }
+
+        private LsrCoopAuthorityRole ResolveLocalRole()
+        {
+            if (CoopStartupBridge.IsLocalAdmin)
+            {
+                return LsrCoopAuthorityRole.Admin;
+            }
+
+            return CoopStartupBridge.IsLocalActiveHost ? LsrCoopAuthorityRole.TrustedHost : LsrCoopAuthorityRole.Player;
+        }
+
+        private CoopPermission ResolveLocalPermissions()
+        {
+            CoopPermission permissions = CoopPermission.ClientPresentation;
+            if (CoopStartupBridge.IsLocalActiveHost)
+            {
+                permissions |= CoopPermission.ActiveHostSimulation;
+            }
+
+            if (CoopStartupBridge.IsLocalAdmin)
+            {
+                permissions |= CoopPermission.AdminActions;
+            }
+
+            return permissions;
         }
     }
 }

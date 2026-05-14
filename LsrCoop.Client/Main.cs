@@ -6,6 +6,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -258,7 +259,7 @@ namespace LsrCoop.Client
                 ApplyAppearanceIfLocal(snapshot.WorldId, profile.ProfileId, profile.Character?.Appearance);
                 if (string.Equals(profile.ProfileId, localProfileId, StringComparison.OrdinalIgnoreCase))
                 {
-                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character);
+                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character, profile.InventoryMoney, profile.Weapons);
                 }
             }
 
@@ -283,13 +284,15 @@ namespace LsrCoop.Client
             string worldId = GetArg(args, 0);
             string profileId = GetArg(args, 1);
             CoopCharacterSnapshot snapshot = Deserialize<CoopCharacterSnapshot>(GetArg(args, 2));
+            CoopInventoryMoneySnapshot inventoryMoney = Deserialize<CoopInventoryMoneySnapshot>(GetArg(args, 3));
+            CoopWeaponSnapshot weapons = Deserialize<CoopWeaponSnapshot>(GetArg(args, 4));
             ApplyAppearanceIfLocal(worldId, profileId, snapshot?.Appearance);
             if (string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase))
             {
                 localCharacterReadyForSimulation = snapshot != null;
                 if (localCharacterReadyForSimulation)
                 {
-                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot);
+                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot, inventoryMoney, weapons);
                     ExitCharacterCreationSafeState();
                 }
                 UpdateCurrentBridgeState();
@@ -574,7 +577,7 @@ namespace LsrCoop.Client
             return modelHash.ToString();
         }
 
-        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot)
+        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot, CoopInventoryMoneySnapshot inventoryMoney = null, CoopWeaponSnapshot weapons = null)
         {
             if (snapshot == null || string.IsNullOrWhiteSpace(worldId) || string.IsNullOrWhiteSpace(profileId))
             {
@@ -598,6 +601,15 @@ namespace LsrCoop.Client
                 $"IsMale={GetLocalPedIsMale()}",
                 $"Components={SerializeComponents(snapshot.Appearance?.Components)}",
                 $"Props={SerializeProps(snapshot.Appearance?.Props)}",
+                $"InventoryMoneySnapshotId={EscapeBridgeValue(inventoryMoney?.SnapshotId ?? string.Empty)}",
+                $"OnHandCash={EscapeBridgeValue(inventoryMoney?.OnHandCash.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
+                $"TotalAccountMoney={EscapeBridgeValue(inventoryMoney?.TotalAccountMoney.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
+                $"InventoryMoneySnapshotUtc={EscapeBridgeValue(FormatDateTime(inventoryMoney?.SnapshotUtc))}",
+                $"InventoryItems={EscapeBridgeValue(SerializeInventoryItems(inventoryMoney?.InventoryItems))}",
+                $"BankAccounts={EscapeBridgeValue(SerializeBankAccounts(inventoryMoney?.BankAccounts))}",
+                $"WeaponSnapshotId={EscapeBridgeValue(weapons?.SnapshotId ?? string.Empty)}",
+                $"WeaponSnapshotUtc={EscapeBridgeValue(FormatDateTime(weapons?.SnapshotUtc))}",
+                $"Weapons={EscapeBridgeValue(SerializeWeapons(weapons?.Weapons))}",
                 $"TimestampUtc={EscapeBridgeValue(DateTime.UtcNow.ToString("O"))}",
                 $"Nonce={EscapeBridgeValue(nonce)}",
             };
@@ -607,7 +619,7 @@ namespace LsrCoop.Client
                 WriteAtomicBridgeFile(folder, CharacterSnapshotBridgeFileName, lines, nonce);
             }
 
-            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}");
+            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}");
         }
 
         private void OnAppearanceChanged(CustomEventReceivedArgs args)
@@ -1591,6 +1603,64 @@ namespace LsrCoop.Client
                 prop.TextureId.ToString(),
                 prop.IsCleared.ToString().ToLowerInvariant()
             })));
+        }
+
+        private string SerializeInventoryItems(IEnumerable<CoopInventoryItemState> items)
+        {
+            if (items == null)
+            {
+                return string.Empty;
+            }
+
+            return string.Join(";", items.Select(item => string.Join(",", new[]
+            {
+                EscapeListPart(item.ItemName),
+                item.RemainingPercent.ToString(CultureInfo.InvariantCulture)
+            })));
+        }
+
+        private string SerializeBankAccounts(IEnumerable<CoopBankAccountState> accounts)
+        {
+            if (accounts == null)
+            {
+                return string.Empty;
+            }
+
+            return string.Join(";", accounts.Select(account => string.Join(",", new[]
+            {
+                EscapeListPart(account.BankContactName),
+                EscapeListPart(account.AccountName),
+                account.Money.ToString(CultureInfo.InvariantCulture),
+                account.IsPrimary.ToString().ToLowerInvariant()
+            })));
+        }
+
+        private string SerializeWeapons(IEnumerable<CoopWeaponRecord> weapons)
+        {
+            if (weapons == null)
+            {
+                return string.Empty;
+            }
+
+            return string.Join(";", weapons.Select(weapon => string.Join(",", new[]
+            {
+                EscapeListPart(weapon.WeaponHash),
+                EscapeListPart(weapon.WeaponName),
+                EscapeListPart(weapon.Category),
+                weapon.Ammo.ToString(CultureInfo.InvariantCulture),
+                weapon.IsLegal.ToString().ToLowerInvariant(),
+                weapon.IsEquipped.ToString().ToLowerInvariant()
+            })));
+        }
+
+        private string FormatDateTime(DateTimeOffset? value)
+        {
+            return value.HasValue ? value.Value.UtcDateTime.ToString("O", CultureInfo.InvariantCulture) : string.Empty;
+        }
+
+        private string EscapeListPart(string value)
+        {
+            return Uri.EscapeDataString(value ?? string.Empty);
         }
 
         private string EscapeBridgeValue(string value)

@@ -1,9 +1,11 @@
 using LosSantosRED.lsr.Helper;
+using LosSantosRED.lsr.Interface;
 using Rage;
 using Rage.Native;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 
 namespace LosSantosRED.lsr.Coop.Core
@@ -14,6 +16,8 @@ namespace LosSantosRED.lsr.Coop.Core
         public string ProfileId { get; set; }
         public string ModelName { get; set; }
         public CoopAppearanceState Appearance { get; set; }
+        public CoopInventoryMoneySnapshot InventoryMoney { get; set; }
+        public CoopWeaponSnapshot Weapons { get; set; }
     }
 
     public static class CoopCharacterSnapshotStartupBridge
@@ -116,6 +120,33 @@ namespace LosSantosRED.lsr.Coop.Core
             return applied;
         }
 
+        public static bool ApplyProfileHydrationAfterPlayerSetup(CoopCharacterStartupSnapshot snapshot, Mod.Player player, IModItems modItems)
+        {
+            if (snapshot == null || player == null)
+            {
+                return false;
+            }
+
+            bool appliedInventoryMoney = false;
+            if (snapshot.InventoryMoney != null)
+            {
+                appliedInventoryMoney = new CoopInventoryMoneyAdapter().TryApplySnapshotToPlayer(player, snapshot.InventoryMoney, modItems);
+            }
+
+            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0}", 0);
+            return appliedInventoryMoney || snapshot.Weapons != null;
+        }
+
+        public static void HydrateLocalCharacter(LocalCoopCharacter localCharacter, CoopCharacterStartupSnapshot snapshot)
+        {
+            if (localCharacter == null || snapshot == null)
+            {
+                return;
+            }
+
+            localCharacter.HydratePersistentState(snapshot.InventoryMoney, snapshot.Weapons);
+        }
+
         private static CoopCharacterStartupSnapshot TryReadSnapshot(string path)
         {
             if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
@@ -158,6 +189,8 @@ namespace LosSantosRED.lsr.Coop.Core
                         Components = ParseComponents(GetValue(values, "Components")),
                         Props = ParseProps(GetValue(values, "Props")),
                     },
+                    InventoryMoney = ParseInventoryMoney(values, worldId, profileId),
+                    Weapons = ParseWeapons(values, worldId, profileId),
                 };
             }
             catch (Exception ex)
@@ -232,6 +265,108 @@ namespace LosSantosRED.lsr.Coop.Core
             return props;
         }
 
+        private static CoopInventoryMoneySnapshot ParseInventoryMoney(Dictionary<string, string> values, string worldId, string profileId)
+        {
+            string snapshotId = GetValue(values, "InventoryMoneySnapshotId");
+            string onHandCash = GetValue(values, "OnHandCash");
+            string totalAccountMoney = GetValue(values, "TotalAccountMoney");
+            string inventoryItems = GetValue(values, "InventoryItems");
+            string bankAccounts = GetValue(values, "BankAccounts");
+            if (string.IsNullOrWhiteSpace(snapshotId)
+                && string.IsNullOrWhiteSpace(onHandCash)
+                && string.IsNullOrWhiteSpace(totalAccountMoney)
+                && string.IsNullOrWhiteSpace(inventoryItems)
+                && string.IsNullOrWhiteSpace(bankAccounts))
+            {
+                return null;
+            }
+
+            CoopInventoryMoneySnapshot snapshot = new CoopInventoryMoneySnapshot
+            {
+                SnapshotId = string.IsNullOrWhiteSpace(snapshotId) ? Guid.NewGuid().ToString("N") : snapshotId,
+                WorldId = new CoopWorldId(worldId),
+                ProfileId = new CoopProfileId(profileId),
+                CharacterId = new CoopCharacterId(GetValue(values, "CharacterId")),
+                OnHandCash = ParseInt(onHandCash),
+                TotalAccountMoney = ParseInt(totalAccountMoney),
+                SnapshotUtc = ParseDateTimeOffset(GetValue(values, "InventoryMoneySnapshotUtc")),
+            };
+
+            foreach (string entry in SplitEntries(inventoryItems))
+            {
+                string[] parts = entry.Split(',');
+                if (parts.Length < 2)
+                {
+                    continue;
+                }
+
+                snapshot.InventoryItems.Add(new CoopInventoryItemState
+                {
+                    ItemName = UnescapePart(parts[0]),
+                    RemainingPercent = ParseFloat(parts[1]),
+                });
+            }
+
+            foreach (string entry in SplitEntries(bankAccounts))
+            {
+                string[] parts = entry.Split(',');
+                if (parts.Length < 4)
+                {
+                    continue;
+                }
+
+                snapshot.BankAccounts.Add(new CoopBankAccountState
+                {
+                    BankContactName = UnescapePart(parts[0]),
+                    AccountName = UnescapePart(parts[1]),
+                    Money = ParseInt(parts[2]),
+                    IsPrimary = string.Equals(parts[3], "true", StringComparison.OrdinalIgnoreCase),
+                });
+            }
+
+            return snapshot;
+        }
+
+        private static CoopWeaponSnapshot ParseWeapons(Dictionary<string, string> values, string worldId, string profileId)
+        {
+            string snapshotId = GetValue(values, "WeaponSnapshotId");
+            string weapons = GetValue(values, "Weapons");
+            if (string.IsNullOrWhiteSpace(snapshotId) && string.IsNullOrWhiteSpace(weapons))
+            {
+                return null;
+            }
+
+            CoopWeaponSnapshot snapshot = new CoopWeaponSnapshot
+            {
+                SnapshotId = string.IsNullOrWhiteSpace(snapshotId) ? Guid.NewGuid().ToString("N") : snapshotId,
+                WorldId = new CoopWorldId(worldId),
+                ProfileId = new CoopProfileId(profileId),
+                CharacterId = new CoopCharacterId(GetValue(values, "CharacterId")),
+                SnapshotUtc = ParseDateTimeOffset(GetValue(values, "WeaponSnapshotUtc")),
+            };
+
+            foreach (string entry in SplitEntries(weapons))
+            {
+                string[] parts = entry.Split(',');
+                if (parts.Length < 6)
+                {
+                    continue;
+                }
+
+                snapshot.Weapons.Add(new CoopWeaponRecord
+                {
+                    WeaponHash = UnescapePart(parts[0]),
+                    WeaponName = UnescapePart(parts[1]),
+                    Category = UnescapePart(parts[2]),
+                    Ammo = ParseInt(parts[3]),
+                    IsLegal = string.Equals(parts[4], "true", StringComparison.OrdinalIgnoreCase),
+                    IsEquipped = string.Equals(parts[5], "true", StringComparison.OrdinalIgnoreCase),
+                });
+            }
+
+            return snapshot;
+        }
+
         private static IEnumerable<string> SplitEntries(string raw)
         {
             if (string.IsNullOrWhiteSpace(raw))
@@ -251,7 +386,26 @@ namespace LosSantosRED.lsr.Coop.Core
         private static int ParseInt(string value)
         {
             int parsed;
-            return int.TryParse(value, out parsed) ? parsed : 0;
+            return int.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out parsed) ? parsed : 0;
+        }
+
+        private static float ParseFloat(string value)
+        {
+            float parsed;
+            return float.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out parsed) ? parsed : 0.0f;
+        }
+
+        private static DateTimeOffset ParseDateTimeOffset(string value)
+        {
+            DateTimeOffset parsed;
+            return DateTimeOffset.TryParse(value, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out parsed)
+                ? parsed
+                : DateTimeOffset.UtcNow;
+        }
+
+        private static string UnescapePart(string value)
+        {
+            return Uri.UnescapeDataString(value ?? string.Empty);
         }
 
         private static string GetValue(Dictionary<string, string> values, string key)

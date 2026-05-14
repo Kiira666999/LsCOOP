@@ -7,6 +7,8 @@ namespace LosSantosRED.lsr.Coop.Core
         LsrCoopAuthorityRole Role { get; }
         CoopPermission Permissions { get; }
         ICoopPedProvider PedProvider { get; }
+        CoopInventoryMoneySnapshot InventoryMoneySnapshot { get; }
+        CoopWeaponSnapshot WeaponSnapshot { get; }
         CoopCharacterSnapshot GetSnapshot();
     }
 }

@@ -84,9 +84,11 @@ namespace LosSantosRED.lsr
             GameFiber.Yield();
             Player.Setup();
             CoopCharacterSnapshotStartupBridge.ApplyAppearanceAfterPlayerSetup(startupSnapshot, Player);
+            CoopCharacterSnapshotStartupBridge.ApplyProfileHydrationAfterPlayerSetup(startupSnapshot, Player, ModDataFileManager.ModItems);
             GameFiber.Yield();
             CoopCharacterManager = new LsrCoopCharacterManager();
-            CoopCharacterManager.RegisterLocalCharacter(Player);
+            LocalCoopCharacter localCoopCharacter = CoopCharacterManager.RegisterLocalCharacter(Player);
+            CoopCharacterSnapshotStartupBridge.HydrateLocalCharacter(localCoopCharacter, startupSnapshot);
             CoopPermissionService = new CoopPermissionService();
             ConfigureCoopPermissions(true, LsrCoopMode.ActiveHost);
             GameFiber.Yield();
@@ -224,8 +226,10 @@ namespace LosSantosRED.lsr
             Player = CreatePlayer(World);
             Player.Setup();
             CoopCharacterSnapshotStartupBridge.ApplyAppearanceAfterPlayerSetup(startupSnapshot, Player);
+            CoopCharacterSnapshotStartupBridge.ApplyProfileHydrationAfterPlayerSetup(startupSnapshot, Player, ModDataFileManager.ModItems);
             CoopCharacterManager = new LsrCoopCharacterManager();
-            CoopCharacterManager.RegisterLocalCharacter(Player);
+            LocalCoopCharacter localCoopCharacter = CoopCharacterManager.RegisterLocalCharacter(Player);
+            CoopCharacterSnapshotStartupBridge.HydrateLocalCharacter(localCoopCharacter, startupSnapshot);
             CoopPermissionService = new CoopPermissionService();
             ConfigureCoopPermissions(true, LsrCoopMode.Client);
             PedSwap = CreatePedSwap();

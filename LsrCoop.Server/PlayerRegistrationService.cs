@@ -104,7 +104,9 @@ namespace LsrCoop.Server
             {
                 worldProfileStoreService.WorldId,
                 status.Profile.ProfileId,
-                JsonSerializer.Serialize(status.Profile.Character)
+                JsonSerializer.Serialize(status.Profile.Character),
+                JsonSerializer.Serialize(status.Profile.InventoryMoney),
+                JsonSerializer.Serialize(status.Profile.Weapons)
             });
             info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}");
         }

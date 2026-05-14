@@ -27,6 +27,14 @@ namespace LosSantosRED.lsr.Coop.Core
         public CoopPermission Permissions { get; private set; }
         public ICoopPedProvider PedProvider { get; private set; }
         public Mod.Player Player { get; private set; }
+        public CoopInventoryMoneySnapshot InventoryMoneySnapshot { get; private set; }
+        public CoopWeaponSnapshot WeaponSnapshot { get; private set; }
+
+        public void HydratePersistentState(CoopInventoryMoneySnapshot inventoryMoneySnapshot, CoopWeaponSnapshot weaponSnapshot)
+        {
+            InventoryMoneySnapshot = inventoryMoneySnapshot;
+            WeaponSnapshot = weaponSnapshot;
+        }
 
         public CoopCharacterSnapshot GetSnapshot()
         {
