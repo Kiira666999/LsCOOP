@@ -100,7 +100,15 @@ namespace LosSantosRED.lsr.Coop.Core
 
             if (player.BankAccounts != null)
             {
-                player.BankAccounts.SetCash(snapshot.OnHandCash);
+                if (CoopStartupBridge.IsCoopEnabled)
+                {
+                    player.BankAccounts.TrySetCashForCoopReconciliation(snapshot.OnHandCash, out int cashBefore, out int cashAfter, out string setCashResult);
+                    EntryPoint.WriteToConsole($"Co-op inventory money snapshot live cash update CashBefore:{cashBefore} TargetCash:{snapshot.OnHandCash} CashAfter:{cashAfter} CapturedSnapshot:{snapshot.TotalMoney} Result:{setCashResult}", 0);
+                }
+                else
+                {
+                    player.BankAccounts.SetCash(snapshot.OnHandCash);
+                }
                 player.BankAccounts.BankAccountList = snapshot.BankAccounts.Select(x => new BankAccount(x.BankContactName, x.AccountName, x.Money)
                 {
                     IsPrimary = x.IsPrimary

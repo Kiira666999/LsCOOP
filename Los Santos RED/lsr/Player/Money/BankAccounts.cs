@@ -18,6 +18,7 @@ public class BankAccounts
     private uint GameTimeLastChangedMoney;
     private int money = 0;
     private int currentMoney;
+    private bool useCoopLocalCashSource;
 
     public int LastChangeMoneyAmount { get; set; }
     public bool RecentlyChangedMoney => GameTimeLastChangedMoney != 0 && Game.GameTime - GameTimeLastChangedMoney <= 7000;
@@ -29,16 +30,8 @@ public class BankAccounts
         get
         {
             int CurrentCash;
-            uint PlayerCashHash;
-            if (Player.CharacterModelIsPrimaryCharacter)
-            {
-                PlayerCashHash = NativeHelper.CashHash(Player.ModelName.ToLower());
-            }
-            else
-            {
-                PlayerCashHash = NativeHelper.CashHash(Settings.SettingsManager.PedSwapSettings.MainCharacterToAlias);
-            }
-            if (Settings.SettingsManager.PedSwapSettings.AliasPedAsMainCharacter || Player.CharacterModelIsPrimaryCharacter)
+            uint PlayerCashHash = GetPlayerCashHash();
+            if (ShouldUseNativeCashStat())
             {
                 unsafe
                 {
@@ -100,6 +93,20 @@ public class BankAccounts
     }
     public void GiveMoney(int Amount, bool useAccounts)
     {
+        bool logDiagnostics = IsCoopMoneyDiagnosticsEnabled();
+        int accountCountBefore = BankAccountList?.Count ?? 0;
+        int totalAccountMoneyBefore = TotalAccountMoney;
+        int onHandCashBefore = GetMoney(false);
+        int totalMoneyBefore = GetMoney(true);
+        string modelName = Player?.ModelName ?? "<missing>";
+        bool isPrimaryCharacter = Player?.CharacterModelIsPrimaryCharacter == true;
+        bool aliasPedAsMainCharacter = Settings?.SettingsManager?.PedSwapSettings?.AliasPedAsMainCharacter == true;
+
+        if (logDiagnostics)
+        {
+            EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney begin Amount:{Amount} UseAccounts:{useAccounts} AccountCount:{accountCountBefore} AccountMoneyBefore:{totalAccountMoneyBefore} CashBefore:{onHandCashBefore} TotalBefore:{totalMoneyBefore} Model:{modelName} IsPrimary:{isPrimaryCharacter} AliasPedAsMainCharacter:{aliasPedAsMainCharacter}", 0);
+        }
+
         if (Amount != 0)
         {
             LastChangeMoneyAmount = Amount;
@@ -110,36 +117,30 @@ public class BankAccounts
             EntryPoint.WriteToConsole($"GiveMoney ACCOUNT TO REMOVE {Amount}");
             Amount = GiveMoneyAccount(Amount);
             EntryPoint.WriteToConsole($"GiveMoney ACCOUNT STILL TO REMOVE {Amount}");
+            if (logDiagnostics)
+            {
+                EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney after accounts RemainingAmount:{Amount} AccountMoneyAfterDebit:{TotalAccountMoney} AccountCount:{BankAccountList?.Count ?? 0}", 0);
+            }
         }
  
-        int CurrentCash;
-        uint PlayerCashHash;
-        if (Player.CharacterModelIsPrimaryCharacter)
-        {
-            PlayerCashHash = NativeHelper.CashHash(Player.ModelName.ToLower());
-        }
-        else
-        {
-            PlayerCashHash = NativeHelper.CashHash(Settings.SettingsManager.PedSwapSettings.MainCharacterToAlias);
-        }
         //EntryPoint.WriteToConsoleTestLong($"PlayerCashHash {PlayerCashHash} ModelName {Player.ModelName}");
-        if (Settings.SettingsManager.PedSwapSettings.AliasPedAsMainCharacter || Player.CharacterModelIsPrimaryCharacter)
+        if (ShouldUseNativeCashStat())
         {
-            unsafe
+            int currentCashForTarget = GetMoney(false);
+            int targetCash = currentCashForTarget + Amount < 0 ? 0 : currentCashForTarget + Amount;
+            bool nativeWriteMatched = TrySetNativeCash(targetCash, out int currentCashBeforeWrite, out int currentCashAfterWrite, out int statWriteResult);
+            if (logDiagnostics)
             {
-                NativeFunction.CallByName<int>("STAT_GET_INT", PlayerCashHash, &CurrentCash, -1);
-            }
-            if (CurrentCash + Amount < 0)
-            {
-                NativeFunction.CallByName<int>("STAT_SET_INT", PlayerCashHash, 0, 1);
-            }
-            else
-            {
-                NativeFunction.CallByName<int>("STAT_SET_INT", PlayerCashHash, CurrentCash + Amount, 1);
+                EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney stat write Source:STAT Hash:{GetPlayerCashHash()} CashBeforeWrite:{currentCashBeforeWrite} TargetCash:{targetCash} WriteResult:{statWriteResult} CashAfterWrite:{currentCashAfterWrite}", 0);
+                if (!nativeWriteMatched)
+                {
+                    EntryPoint.WriteToConsole($"Co-op purchase money write failed Source:STAT TargetCash:{targetCash} CashAfterWrite:{currentCashAfterWrite}", 0);
+                }
             }
         }
         else
         {
+            int localCashBeforeWrite = money;
             if (money + Amount < 0)
             {
                 money = 0;
@@ -148,6 +149,14 @@ public class BankAccounts
             {
                 money += Amount;
             }
+            if (logDiagnostics)
+            {
+                EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney local write Source:Field CashBeforeWrite:{localCashBeforeWrite} TargetCash:{money} CashAfterWrite:{money}", 0);
+            }
+        }
+        if (logDiagnostics)
+        {
+            EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney end AmountRemainingApplied:{Amount} AccountMoneyBefore:{totalAccountMoneyBefore} AccountMoneyAfter:{TotalAccountMoney} CashBefore:{onHandCashBefore} CashAfter:{GetMoney(false)} TotalBefore:{totalMoneyBefore} TotalAfter:{GetMoney(true)}", 0);
         }
         //currentMoney = Money;
     }
@@ -186,26 +195,54 @@ public class BankAccounts
     }
     public void SetCash(int Amount)
     {
-        uint PlayerCashHash;
-        if (Player.CharacterModelIsPrimaryCharacter)
-        {
-            PlayerCashHash = NativeHelper.CashHash(Player.ModelName.ToLower());
-        }
-        else
-        {
-            PlayerCashHash = NativeHelper.CashHash(Settings.SettingsManager.PedSwapSettings.MainCharacterToAlias);
-        }
-
         //EntryPoint.WriteToConsoleTestLong($"PlayerCashHash {PlayerCashHash} ModelName {Player.ModelName}");
-        if (Settings.SettingsManager.PedSwapSettings.AliasPedAsMainCharacter || Player.CharacterModelIsPrimaryCharacter)
+        if (ShouldUseNativeCashStat())
         {
-            NativeFunction.CallByName<int>("STAT_SET_INT", PlayerCashHash, Amount, 1);
+            TrySetNativeCash(Amount, out _, out _, out _);
         }
         else
         {
             money = Amount;
         }
         currentMoney = Money;
+    }
+    public bool TrySetCashForCoopReconciliation(int Amount, out int cashBefore, out int cashAfter, out string result)
+    {
+        cashBefore = GetMoney(false);
+        cashAfter = cashBefore;
+        result = string.Empty;
+
+        if (!IsCoopMoneyDiagnosticsEnabled())
+        {
+            result = "Skipped:CoopDisabled";
+            return false;
+        }
+
+        int targetCash = Amount < 0 ? 0 : Amount;
+        if (ShouldUseNativeCashStat())
+        {
+            bool nativeWriteMatched = TrySetNativeCash(targetCash, out int statCashBefore, out int statCashAfter, out int statWriteResult);
+            if (nativeWriteMatched)
+            {
+                cashAfter = GetMoney(false);
+                currentMoney = Money;
+                result = $"NativeStatMatched WriteResult:{statWriteResult} StatBefore:{statCashBefore} StatAfter:{statCashAfter}";
+                return true;
+            }
+
+            useCoopLocalCashSource = true;
+            money = targetCash;
+            currentMoney = Money;
+            cashAfter = GetMoney(false);
+            result = $"NativeStatFailed WriteResult:{statWriteResult} StatBefore:{statCashBefore} StatAfter:{statCashAfter} FallbackSource:Field";
+            return true;
+        }
+
+        money = targetCash;
+        currentMoney = Money;
+        cashAfter = GetMoney(false);
+        result = useCoopLocalCashSource ? "CoopFieldUpdated" : "LocalFieldUpdated";
+        return true;
     }
     public string CashDisplay(bool showFull)
     {
@@ -285,6 +322,58 @@ public class BankAccounts
             return;
         }
         BankAccountList.Remove(selectedItem);
+    }
+
+    private bool IsCoopMoneyDiagnosticsEnabled()
+    {
+        try
+        {
+            return LosSantosRED.lsr.Coop.Core.CoopStartupBridge.IsCoopEnabled;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    private bool ShouldUseNativeCashStat()
+    {
+        return !useCoopLocalCashSource && (Settings.SettingsManager.PedSwapSettings.AliasPedAsMainCharacter || Player.CharacterModelIsPrimaryCharacter);
+    }
+
+    private uint GetPlayerCashHash()
+    {
+        if (Player.CharacterModelIsPrimaryCharacter)
+        {
+            return NativeHelper.CashHash(Player.ModelName.ToLower());
+        }
+
+        return NativeHelper.CashHash(Settings.SettingsManager.PedSwapSettings.MainCharacterToAlias);
+    }
+
+    private bool TrySetNativeCash(int amount, out int cashBefore, out int cashAfter, out int writeResult)
+    {
+        cashBefore = 0;
+        cashAfter = 0;
+        writeResult = 0;
+        int nativeCashBefore = 0;
+        int nativeCashAfter = 0;
+        uint playerCashHash = GetPlayerCashHash();
+        unsafe
+        {
+            NativeFunction.CallByName<int>("STAT_GET_INT", playerCashHash, &nativeCashBefore, -1);
+        }
+
+        writeResult = NativeFunction.CallByName<int>("STAT_SET_INT", playerCashHash, amount, 1);
+
+        unsafe
+        {
+            NativeFunction.CallByName<int>("STAT_GET_INT", playerCashHash, &nativeCashAfter, -1);
+        }
+
+        cashBefore = nativeCashBefore;
+        cashAfter = nativeCashAfter;
+        return cashAfter == amount;
     }
 }
 

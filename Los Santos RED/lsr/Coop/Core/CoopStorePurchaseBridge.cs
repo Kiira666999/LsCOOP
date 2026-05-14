@@ -36,7 +36,8 @@ namespace LosSantosRED.lsr.Coop.Core
             CoopGameplayActionResult result = AuthorityService.CreateAcceptedResult(request, "Accepted by active host");
 
             Mod.Player modPlayer = player as Mod.Player;
-            CoopInventoryMoneySnapshot snapshot = InventoryMoneyAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId);
+            CoopInventoryMoneySnapshot snapshot = CapturePostPurchaseInventoryMoneySnapshot(request, modPlayer);
+            CoopWeaponSnapshot weaponSnapshot = WeaponInventoryAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId);
             CoopOwnedVehicleSnapshot ownedVehicleSnapshot = request.ActionType == CoopGameplayActionType.PurchaseVehicle
                 ? OwnedVehicleAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId)
                 : null;
@@ -45,9 +46,14 @@ namespace LosSantosRED.lsr.Coop.Core
                 Request = request,
                 Result = result,
                 InventoryMoneySnapshot = snapshot,
-                WeaponSnapshot = WeaponInventoryAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId),
+                WeaponSnapshot = weaponSnapshot,
                 OwnedVehicleSnapshot = ownedVehicleSnapshot,
             });
+            EntryPoint.WriteToConsole($"Co-op purchase commit Item:{GetParameter(request, "ItemName")} Price:{GetIntParameter(request, "TotalPrice")} MoneyCaptured:{snapshot?.TotalMoney ?? 0} ServerProfile:{request.SourceProfileId} WeaponsSaved:{weaponSnapshot?.Weapons?.Count ?? 0}", 0);
+            if (string.Equals(GetParameter(request, "ItemName"), "Chocolate Shake", StringComparison.OrdinalIgnoreCase))
+            {
+                EntryPoint.WriteToConsole($"Co-op purchase diagnostic Chocolate Shake snapshot Price:{GetIntParameter(request, "TotalPrice")} CapturedCash:{snapshot?.OnHandCash ?? 0} CapturedAccounts:{snapshot?.TotalAccountMoney ?? 0} CapturedMoney:{snapshot?.TotalMoney ?? 0}", 0);
+            }
         }
 
         public static bool TryBeginPurchaseProperty(GameLocation property, ILocationInteractable player, int amount, string propertyAction, out CoopGameplayActionRequest request, out string blockedReason)
@@ -269,6 +275,144 @@ namespace LosSantosRED.lsr.Coop.Core
             };
         }
 
+        private static CoopInventoryMoneySnapshot CapturePostPurchaseInventoryMoneySnapshot(CoopGameplayActionRequest request, Mod.Player modPlayer)
+        {
+            CoopInventoryMoneySnapshot snapshot = InventoryMoneyAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId);
+            CoopInventoryMoneySnapshot beforeSnapshot = PendingPurchaseStates.TryGetValue(request.RequestId, out PendingPurchaseState pendingState)
+                ? pendingState.BeforeSnapshot
+                : null;
+            int price = GetIntParameter(request, "TotalPrice");
+            bool isStealing = string.Equals(GetParameter(request, "IsStealing"), "True", StringComparison.OrdinalIgnoreCase);
+            bool useAccounts = !string.Equals(GetParameter(request, "UseAccounts"), "False", StringComparison.OrdinalIgnoreCase);
+            int moneyBefore = beforeSnapshot?.TotalMoney ?? 0;
+            int liveMoneyAfter = modPlayer?.BankAccounts?.GetMoney(true) ?? snapshot.TotalMoney;
+            string itemName = GetParameter(request, "ItemName");
+
+            EntryPoint.WriteToConsole($"Co-op purchase money fallback considered Item:{itemName} Price:{price} UseAccounts:{useAccounts} IsStealing:{isStealing} MoneyBefore:{moneyBefore} LiveAfterGiveMoney:{liveMoneyAfter} CapturedAfter:{snapshot.TotalMoney}", 0);
+
+            if (isStealing)
+            {
+                EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:StealPurchase CapturedSnapshot:{snapshot.TotalMoney}", 0);
+            }
+            else if (price <= 0)
+            {
+                EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:NonDebit Price:{price} CapturedSnapshot:{snapshot.TotalMoney}", 0);
+            }
+            else if (beforeSnapshot == null)
+            {
+                EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:MissingBeforeSnapshot CapturedSnapshot:{snapshot.TotalMoney}", 0);
+            }
+            else if (liveMoneyAfter != beforeSnapshot.TotalMoney)
+            {
+                EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:LiveBalanceAlreadyChanged MoneyBefore:{beforeSnapshot.TotalMoney} LiveAfter:{liveMoneyAfter} CapturedSnapshot:{snapshot.TotalMoney}", 0);
+            }
+            else
+            {
+                CoopInventoryMoneySnapshot reconciledSnapshot = CreateExpectedPostPurchaseSnapshot(beforeSnapshot, snapshot, price, useAccounts);
+                if (reconciledSnapshot.TotalMoney >= snapshot.TotalMoney)
+                {
+                    EntryPoint.WriteToConsole($"Co-op purchase money fallback skipped Item:{itemName} Reason:ReconciledBalanceNotLower CapturedSnapshot:{snapshot.TotalMoney} ReconciledSnapshot:{reconciledSnapshot.TotalMoney}", 0);
+                }
+                else
+                {
+                    snapshot = reconciledSnapshot;
+                    ApplyMoneySnapshotToPlayer(modPlayer, snapshot, "PurchaseReconciliation");
+                    EntryPoint.WriteToConsole($"Co-op purchase money fallback applied Item:{itemName} Price:{price} MoneyBefore:{moneyBefore} LiveBeforeFallback:{liveMoneyAfter} LiveAfterFallback:{modPlayer?.BankAccounts?.GetMoney(true) ?? snapshot.TotalMoney} CapturedSnapshot:{snapshot.TotalMoney}", 0);
+                }
+            }
+
+            return snapshot;
+        }
+
+        private static void ApplyMoneySnapshotToPlayer(Mod.Player player, CoopInventoryMoneySnapshot snapshot, string reason)
+        {
+            if (player?.BankAccounts == null || snapshot == null)
+            {
+                return;
+            }
+
+            if (CoopStartupBridge.IsCoopEnabled)
+            {
+                player.BankAccounts.TrySetCashForCoopReconciliation(snapshot.OnHandCash, out int cashBefore, out int cashAfter, out string setCashResult);
+                EntryPoint.WriteToConsole($"Co-op purchase money live cash update Reason:{reason} CashBefore:{cashBefore} TargetCash:{snapshot.OnHandCash} CashAfter:{cashAfter} CapturedSnapshot:{snapshot.TotalMoney} Result:{setCashResult}", 0);
+            }
+            else
+            {
+                player.BankAccounts.SetCash(snapshot.OnHandCash);
+            }
+            player.BankAccounts.BankAccountList = snapshot.BankAccounts.Select(x => new BankAccount(x.BankContactName, x.AccountName, x.Money)
+            {
+                IsPrimary = x.IsPrimary
+            }).ToList();
+        }
+
+        private static CoopInventoryMoneySnapshot CreateExpectedPostPurchaseSnapshot(CoopInventoryMoneySnapshot beforeSnapshot, CoopInventoryMoneySnapshot capturedSnapshot, int price, bool useAccounts)
+        {
+            CoopInventoryMoneySnapshot snapshot = new CoopInventoryMoneySnapshot
+            {
+                WorldId = capturedSnapshot?.WorldId ?? beforeSnapshot.WorldId,
+                ProfileId = capturedSnapshot?.ProfileId ?? beforeSnapshot.ProfileId,
+                CharacterId = capturedSnapshot?.CharacterId ?? beforeSnapshot.CharacterId,
+                OnHandCash = beforeSnapshot.OnHandCash,
+                TotalAccountMoney = beforeSnapshot.TotalAccountMoney,
+            };
+
+            foreach (CoopInventoryItemState item in capturedSnapshot?.InventoryItems ?? Enumerable.Empty<CoopInventoryItemState>())
+            {
+                snapshot.InventoryItems.Add(new CoopInventoryItemState
+                {
+                    ItemName = item.ItemName,
+                    RemainingPercent = item.RemainingPercent,
+                });
+            }
+
+            foreach (CoopBankAccountState account in beforeSnapshot.BankAccounts)
+            {
+                snapshot.BankAccounts.Add(new CoopBankAccountState
+                {
+                    BankContactName = account.BankContactName,
+                    AccountName = account.AccountName,
+                    Money = account.Money,
+                    IsPrimary = account.IsPrimary,
+                });
+            }
+
+            int remainingDebit = Math.Max(0, price);
+            if (useAccounts)
+            {
+                foreach (CoopBankAccountState account in snapshot.BankAccounts.OrderByDescending(x => x.Money))
+                {
+                    int debit = Math.Min(account.Money, remainingDebit);
+                    account.Money -= debit;
+                    remainingDebit -= debit;
+                    if (remainingDebit <= 0)
+                    {
+                        break;
+                    }
+                }
+
+                snapshot.TotalAccountMoney = snapshot.BankAccounts.Sum(x => x.Money);
+            }
+
+            if (remainingDebit > 0)
+            {
+                snapshot.OnHandCash = Math.Max(0, snapshot.OnHandCash - remainingDebit);
+            }
+
+            return snapshot;
+        }
+
+        private static string GetParameter(CoopGameplayActionRequest request, string key)
+        {
+            return request?.Parameters != null && request.Parameters.TryGetValue(key, out string value) ? value ?? string.Empty : string.Empty;
+        }
+
+        private static int GetIntParameter(CoopGameplayActionRequest request, string key)
+        {
+            int value;
+            return int.TryParse(GetParameter(request, key), out value) ? value : 0;
+        }
+
         private static void ApplySnapshotToPlayer(Mod.Player player, CoopInventoryMoneySnapshot snapshot, Dictionary<string, ModItem> itemsByName)
         {
             if (player == null || snapshot == null)
@@ -278,7 +422,15 @@ namespace LosSantosRED.lsr.Coop.Core
 
             if (player.BankAccounts != null)
             {
-                player.BankAccounts.SetCash(snapshot.OnHandCash);
+                if (CoopStartupBridge.IsCoopEnabled)
+                {
+                    player.BankAccounts.TrySetCashForCoopReconciliation(snapshot.OnHandCash, out int cashBefore, out int cashAfter, out string setCashResult);
+                    EntryPoint.WriteToConsole($"Co-op purchase money live cash update Reason:Rollback CashBefore:{cashBefore} TargetCash:{snapshot.OnHandCash} CashAfter:{cashAfter} CapturedSnapshot:{snapshot.TotalMoney} Result:{setCashResult}", 0);
+                }
+                else
+                {
+                    player.BankAccounts.SetCash(snapshot.OnHandCash);
+                }
                 player.BankAccounts.BankAccountList = snapshot.BankAccounts.Select(x => new BankAccount(x.BankContactName, x.AccountName, x.Money)
                 {
                     IsPrimary = x.IsPrimary

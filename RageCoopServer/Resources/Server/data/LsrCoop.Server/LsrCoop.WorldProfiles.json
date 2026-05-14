@@ -2,7 +2,7 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-14T13:15:51.1387633+00:00",
-  "UpdatedUtc": "2026-05-14T15:00:47.8164204+00:00",
+  "UpdatedUtc": "2026-05-14T16:41:06.7450306+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -12,7 +12,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-14T15:00:47.8164439+00:00"
+    "UpdatedUtc": "2026-05-14T16:41:06.745039+00:00"
   },
   "Profiles": [
     {
@@ -21,7 +21,7 @@
       "DisplayName": "Kiira",
       "Role": "Admin,TrustedHost",
       "CreatedUtc": "2026-05-14T13:15:58.9246961+00:00",
-      "LastSeenUtc": "2026-05-14T15:00:47.8164188+00:00",
+      "LastSeenUtc": "2026-05-14T16:41:06.6968044+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -156,32 +156,77 @@
         },
         "UpdatedUtc": "2026-05-14T13:16:22.4013702+00:00"
       },
-      "InventoryMoney": null,
-      "Weapons": {
-        "SnapshotId": "3f8a10f0a2f94749a17d3ff9d4f39846",
+      "InventoryMoney": {
+        "SnapshotId": "077f3548efe24f66a3a2718403140062",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "Weapons": [],
-        "SnapshotUtc": "2026-05-14T14:22:09.873919+00:00"
+        "OnHandCash": 5855,
+        "TotalAccountMoney": 0,
+        "TotalMoney": 5855,
+        "InventoryItems": [
+          {
+            "ItemName": "Carton of Milk",
+            "RemainingPercent": 6
+          },
+          {
+            "ItemName": "Bottle of GREY Water",
+            "RemainingPercent": 2
+          },
+          {
+            "ItemName": "Bottle of Jakeys",
+            "RemainingPercent": 1
+          },
+          {
+            "ItemName": "Lithium Battery",
+            "RemainingPercent": 4
+          }
+        ],
+        "BankAccounts": [],
+        "SnapshotUtc": "2026-05-14T16:41:06.4215522+00:00"
+      },
+      "Weapons": {
+        "SnapshotId": "0c9b6f527ed4419db5408770888b7ade",
+        "WorldId": "lsrcoop-default-world",
+        "ProfileId": "Kiira",
+        "CharacterId": "Kiira",
+        "Weapons": [
+          {
+            "WeaponHash": "2227010557",
+            "WeaponName": "Crowbar",
+            "Category": "",
+            "Ammo": 0,
+            "IsLegal": false,
+            "IsEquipped": false
+          },
+          {
+            "WeaponHash": "2508868239",
+            "WeaponName": "Bat",
+            "Category": "",
+            "Ammo": 0,
+            "IsLegal": false,
+            "IsEquipped": false
+          }
+        ],
+        "SnapshotUtc": "2026-05-14T16:41:06.4215522+00:00"
       },
       "OwnedVehicles": {
-        "SnapshotId": "36193959c2614e389e9bceece1c8feec",
+        "SnapshotId": "9f456112750149689a0df901538f84a2",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "Vehicles": [],
-        "SnapshotUtc": "2026-05-14T14:22:09.873919+00:00"
+        "SnapshotUtc": "2026-05-14T16:39:40.5821614+00:00"
       },
       "PropertyOwnership": null,
       "GangReputation": {
-        "StateId": "856cc204d34b426d8cff4652da467af1",
+        "StateId": "bc264f21ea574500b05380a106639d64",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "CurrentGangId": null,
         "Reputations": [],
-        "UpdatedUtc": "2026-05-14T14:22:09.8699195+00:00"
+        "UpdatedUtc": "2026-05-14T16:39:40.4991223+00:00"
       },
       "CriminalHistory": {
         "WorldId": "lsrcoop-default-world",
@@ -195,7 +240,31 @@
         "Crimes": [],
         "UpdatedUtc": "2026-05-14T13:17:40.0689462+00:00"
       },
-      "DeathArrestState": null,
+      "DeathArrestState": {
+        "StateId": "84dcdc9d07a4483fbe1b035e3c50a85a",
+        "WorldId": "lsrcoop-default-world",
+        "ProfileId": "Kiira",
+        "CharacterId": "Kiira",
+        "ActionType": "ApplyDeathState",
+        "OutcomeType": "RespawnAtCurrentLocation",
+        "RespawnLocationName": "",
+        "PositionX": 230.7449,
+        "PositionY": 206.3791,
+        "PositionZ": 105.4383,
+        "Heading": 0,
+        "HospitalFee": 0,
+        "HospitalBillPastDue": 0,
+        "HospitalDuration": 0,
+        "BailFee": 0,
+        "BailFeePastDue": 0,
+        "BailDuration": 0,
+        "TodayPayment": 0,
+        "TimesDied": 3,
+        "HadIllegalWeapons": false,
+        "HadIllegalItems": false,
+        "ReleaseDate": "2009-06-06T11:48:06Z",
+        "OccurredUtc": "2026-05-14T16:23:50.6587724+00:00"
+      },
       "LongTermLsrRecords": []
     }
   ],

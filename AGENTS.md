@@ -30,7 +30,14 @@ The goal is to make existing Los Santos RED systems actor-aware, network-routed,
 - Do not add custom compatibility patches until relevant existing settings have been identified, tested, and ruled out.
 - Example: `PedSwapSettings.AliasPedAsMainCharacter` affects non-primary ped compatibility with vanilla GTA systems such as shops.
 ---
+## Current RAGECOOP Test Server Settings
 
+For LSR co-op testing, use:
+
+- KickSpamming=true
+- SpamLimit=300
+
+LSR FullSimulation creates enough world entities that RAGECOOP's default 100 spam limit may kick the active host. A co-op warmup/throttle reduces startup crashes, but 300 is currently the stable test value.
 ## Current Design
 
 Co-op session model:

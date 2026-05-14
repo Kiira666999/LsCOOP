@@ -234,20 +234,36 @@ namespace LsrCoop.Server
 
             if (commit.InventoryMoneySnapshot != null)
             {
-                profile.InventoryMoney = commit.InventoryMoneySnapshot;
-                profile.InventoryMoney.WorldId = worldProfileStoreService.WorldId;
-                profile.InventoryMoney.ProfileId = profile.ProfileId;
-                profile.InventoryMoney.CharacterId = string.IsNullOrWhiteSpace(profile.InventoryMoney.CharacterId) ? profile.ProfileId : profile.InventoryMoney.CharacterId;
-                worldProfileStoreService.Save();
+                if (IsNewerOrSame(commit.InventoryMoneySnapshot.SnapshotUtc, profile.InventoryMoney?.SnapshotUtc))
+                {
+                    profile.InventoryMoney = commit.InventoryMoneySnapshot;
+                    profile.InventoryMoney.WorldId = worldProfileStoreService.WorldId;
+                    profile.InventoryMoney.ProfileId = profile.ProfileId;
+                    profile.InventoryMoney.CharacterId = string.IsNullOrWhiteSpace(profile.InventoryMoney.CharacterId) ? profile.ProfileId : profile.InventoryMoney.CharacterId;
+                    worldProfileStoreService.Save();
+                    Logger.Info($"[LsrCoop.Server] money snapshot saved: profile={profile.ProfileId}, request={request.RequestId}, item={GetParameter(request, "ItemName")}, price={GetParameter(request, "TotalPrice")}, onHand={profile.InventoryMoney.OnHandCash}, accounts={profile.InventoryMoney.TotalAccountMoney}, total={profile.InventoryMoney.TotalMoney}, items={profile.InventoryMoney.InventoryItems?.Count ?? 0}");
+                }
+                else
+                {
+                    Logger.Info($"[LsrCoop.Server] stale money snapshot skipped: profile={profile.ProfileId}, request={request.RequestId}, incoming={commit.InventoryMoneySnapshot.SnapshotUtc:O}, current={profile.InventoryMoney?.SnapshotUtc:O}");
+                }
             }
 
             if (commit.WeaponSnapshot != null)
             {
-                profile.Weapons = commit.WeaponSnapshot;
-                profile.Weapons.WorldId = worldProfileStoreService.WorldId;
-                profile.Weapons.ProfileId = profile.ProfileId;
-                profile.Weapons.CharacterId = string.IsNullOrWhiteSpace(profile.Weapons.CharacterId) ? profile.ProfileId : profile.Weapons.CharacterId;
-                worldProfileStoreService.Save();
+                if (IsNewerOrSame(commit.WeaponSnapshot.SnapshotUtc, profile.Weapons?.SnapshotUtc))
+                {
+                    profile.Weapons = commit.WeaponSnapshot;
+                    profile.Weapons.WorldId = worldProfileStoreService.WorldId;
+                    profile.Weapons.ProfileId = profile.ProfileId;
+                    profile.Weapons.CharacterId = string.IsNullOrWhiteSpace(profile.Weapons.CharacterId) ? profile.ProfileId : profile.Weapons.CharacterId;
+                    worldProfileStoreService.Save();
+                    Logger.Info($"[LsrCoop.Server] weapon snapshot saved: profile={profile.ProfileId}, request={request.RequestId}, item={GetParameter(request, "ItemName")}, weapons={profile.Weapons.Weapons?.Count ?? 0}");
+                }
+                else
+                {
+                    Logger.Info($"[LsrCoop.Server] stale weapon snapshot skipped: profile={profile.ProfileId}, request={request.RequestId}, incoming={commit.WeaponSnapshot.SnapshotUtc:O}, current={profile.Weapons?.SnapshotUtc:O}");
+                }
             }
 
             if (commit.PropertyOwnershipSnapshot != null)
@@ -280,6 +296,31 @@ namespace LsrCoop.Server
             CoopGameplayActionResultDto accepted = CreateGameplayActionResult(request, true, false, "Committed by active host");
             SendGameplayActionResult(requester, accepted);
             Logger.Info($"[LsrCoop.Server] gameplay action committed: profile={profile.ProfileId}, request={request.RequestId}, type={request.ActionType}");
+        }
+
+        private bool IsNewerOrSame(DateTimeOffset incomingUtc, DateTimeOffset? currentUtc)
+        {
+            if (!currentUtc.HasValue || currentUtc.Value == default)
+            {
+                return true;
+            }
+
+            if (incomingUtc == default)
+            {
+                return true;
+            }
+
+            return incomingUtc >= currentUtc.Value;
+        }
+
+        private string GetParameter(CoopGameplayActionRequestDto request, string key)
+        {
+            if (request?.Parameters == null || !request.Parameters.TryGetValue(key, out string value))
+            {
+                return string.Empty;
+            }
+
+            return value ?? string.Empty;
         }
 
         private void OnPvpCrimeReported(CustomEventReceivedArgs args)

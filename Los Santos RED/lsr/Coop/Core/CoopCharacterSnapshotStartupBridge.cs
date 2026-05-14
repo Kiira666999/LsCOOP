@@ -134,14 +134,20 @@ namespace LosSantosRED.lsr.Coop.Core
                 appliedInventoryMoney = new CoopInventoryMoneyAdapter().TryApplySnapshotToPlayer(player, snapshot.InventoryMoney, modItems);
             }
 
+            CoopWeaponHydrationResult weaponHydration = null;
+            if (snapshot.Weapons != null)
+            {
+                weaponHydration = new CoopWeaponInventoryAdapter().TryApplySnapshotToPlayer(player, snapshot.Weapons);
+            }
+
             bool appliedCriminalHistory = false;
             if (snapshot.CriminalHistory != null)
             {
                 appliedCriminalHistory = CoopCriminalJusticeStateAdapter.Current.TryApplyPersistentStateToPlayer(player, snapshot.CriminalHistory, crimes);
             }
 
-            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0}", 0);
-            return appliedInventoryMoney || snapshot.Weapons != null || appliedCriminalHistory;
+            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Money:{snapshot.InventoryMoney?.TotalMoney ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} WeaponsHydrated:{weaponHydration?.HydratedCount ?? 0} WeaponsExisting:{weaponHydration?.ExistingCount ?? 0} WeaponsSkippedDuplicate:{weaponHydration?.SkippedDuplicateCount ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0}", 0);
+            return appliedInventoryMoney || weaponHydration?.Applied == true || appliedCriminalHistory;
         }
 
         public static void HydrateLocalCharacter(LocalCoopCharacter localCharacter, CoopCharacterStartupSnapshot snapshot)
