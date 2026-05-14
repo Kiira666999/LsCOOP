@@ -2,7 +2,7 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-12T18:07:18.174055+00:00",
-  "UpdatedUtc": "2026-05-12T19:07:24.9551307+00:00",
+  "UpdatedUtc": "2026-05-13T21:50:56.4978355+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -10,7 +10,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-12T19:07:24.9551395+00:00"
+    "UpdatedUtc": "2026-05-13T21:50:56.4978857+00:00"
   },
   "Profiles": [
     {
@@ -19,7 +19,7 @@
       "DisplayName": "Kiira",
       "Role": "TrustedHost",
       "CreatedUtc": "2026-05-12T18:07:37.7695554+00:00",
-      "LastSeenUtc": "2026-05-12T19:07:24.9252643+00:00",
+      "LastSeenUtc": "2026-05-13T21:50:56.4657098+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -155,13 +155,13 @@
         "UpdatedUtc": "2026-05-12T18:07:54.1679908+00:00"
       },
       "InventoryMoney": {
-        "SnapshotId": "f4da296435cc44b5a6da65d40fa07fe7",
+        "SnapshotId": "052da206dd2a4ab7ad0b6b7e4c9c58b2",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "OnHandCash": 489349,
+        "OnHandCash": 466349,
         "TotalAccountMoney": 0,
-        "TotalMoney": 489349,
+        "TotalMoney": 466349,
         "InventoryItems": [
           {
             "ItemName": "iFruit Cellphone",
@@ -181,33 +181,33 @@
           }
         ],
         "BankAccounts": [],
-        "SnapshotUtc": "2026-05-12T18:30:48.8446674+00:00"
+        "SnapshotUtc": "2026-05-13T21:40:28.8618432+00:00"
       },
       "Weapons": {
-        "SnapshotId": "e46097a27c1546e0999a5183e0ddce77",
+        "SnapshotId": "a7ae5ddfa52d4e28b989388daa430e1f",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "Weapons": [],
-        "SnapshotUtc": "2026-05-12T19:07:24.6244048+00:00"
+        "SnapshotUtc": "2026-05-13T21:50:56.2696795+00:00"
       },
       "OwnedVehicles": {
-        "SnapshotId": "8c68afe2a6194e34a6b11b455d9a47cf",
+        "SnapshotId": "8d0db87175a04a4c8bd78471243f10a7",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "Vehicles": [],
-        "SnapshotUtc": "2026-05-12T19:07:24.6244048+00:00"
+        "SnapshotUtc": "2026-05-13T21:50:56.2676969+00:00"
       },
       "PropertyOwnership": null,
       "GangReputation": {
-        "StateId": "05e3800347ba4c19a0520b46e8ec9c1b",
+        "StateId": "2576783494484362aef4277a18cdf5c3",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "CurrentGangId": null,
         "Reputations": [],
-        "UpdatedUtc": "2026-05-12T19:07:24.5694023+00:00"
+        "UpdatedUtc": "2026-05-13T21:50:56.2396961+00:00"
       },
       "CriminalHistory": {
         "WorldId": "lsrcoop-default-world",
