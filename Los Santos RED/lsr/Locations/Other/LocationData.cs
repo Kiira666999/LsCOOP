@@ -221,7 +221,6 @@ namespace LosSantosRED.lsr.Locations
             if (PrevInteriorID != InteriorID)
             {
                 GetInteriorFromID();
-                global::AmmuNationDoorDiagnostics.LogInteriorTracking("LocationData.UpdateInterior", PrevInteriorID, InteriorID, CurrentInterior);
                 if (PrevInteriorID == 0 && InteriorID != 0)
                 {
                     OnWentInside();

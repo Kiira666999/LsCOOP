@@ -248,7 +248,6 @@ public class Interior
     }
     protected virtual void LoadDoors(bool isOpen)
     {
-        AmmuNationDoorDiagnostics.LogInteriorState("Interior.LoadDoors", this, isOpen);
         EntryPoint.WriteToConsole($"LOAD DOORS RAN {isOpen}");
         if (isOpen)
         {
@@ -342,7 +341,6 @@ public class Interior
     }
     public void Update(bool IsOpen)
     {
-        AmmuNationDoorDiagnostics.LogInteriorState("Interior.Update", this, IsOpen);
         foreach (InteriorDoor door in Doors.Where(x=> !x.IsLocked && x.ForceRotateOpen && !x.HasBeenForceRotatedOpen))
         {
             //EntryPoint.WriteToConsole("ATTEMPTING TO FORCE ROTATE OPEN DOOR THAT WASNT THERE");

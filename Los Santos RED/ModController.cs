@@ -78,7 +78,8 @@ namespace LosSantosRED.lsr
             GameFiber.Yield();
             World = CreateWorld();
             CoopCharacterStartupSnapshot startupSnapshot = CoopCharacterSnapshotStartupBridge.TryReadReadySnapshot();
-            CoopCharacterSnapshotStartupBridge.ApplyModelBeforeCreatePlayer(startupSnapshot);
+            bool startupModelApplied = CoopCharacterSnapshotStartupBridge.ApplyModelBeforeCreatePlayer(startupSnapshot);
+            bool startupAliasSetupHandled = false;
             Player = CreatePlayer(World);
             World.Setup(Player, Player);
             GameFiber.Yield();
@@ -99,6 +100,13 @@ namespace LosSantosRED.lsr
             PedSwap = CreatePedSwap();
             GameFiber.Yield();
             Player.PedSwap = PedSwap;
+            if (ShouldApplyCoopStartupAliasEarly(startupSnapshot, startupModelApplied))
+            {
+                PedSwap.Setup();
+                PedSwap.ApplyAliasForCurrentModelIfNeeded(startupSnapshot, "FullSimulation.AfterPedSwapSetup");
+                startupAliasSetupHandled = true;
+                GameFiber.Yield();
+            }
             Tasker = new Mod.Tasker(World, Player, ModDataFileManager.Weapons, ModDataFileManager.Settings, ModDataFileManager.PlacesOfInterest);
             Tasker.Setup();
             GameFiber.Yield();
@@ -132,8 +140,11 @@ namespace LosSantosRED.lsr
                 ModDataFileManager.PlacesOfInterest, ModDataFileManager.Interiors, ModDataFileManager.Gangs, Input, ModDataFileManager.ShopMenus, ModDataFileManager);
             Debug.Setup();
             GameFiber.Yield();
-            PedSwap.Setup();
-            GameFiber.Yield();
+            if (!startupAliasSetupHandled)
+            {
+                PedSwap.Setup();
+                GameFiber.Yield();
+            }
 
             SetTaskGroups();
             GameFiber.Yield();
@@ -222,7 +233,7 @@ namespace LosSantosRED.lsr
             Time.Setup();
             World = CreateWorld();
             CoopCharacterStartupSnapshot startupSnapshot = CoopCharacterSnapshotStartupBridge.TryReadReadySnapshot();
-            CoopCharacterSnapshotStartupBridge.ApplyModelBeforeCreatePlayer(startupSnapshot);
+            bool startupModelApplied = CoopCharacterSnapshotStartupBridge.ApplyModelBeforeCreatePlayer(startupSnapshot);
             Player = CreatePlayer(World);
             Player.Setup();
             CoopCharacterSnapshotStartupBridge.ApplyAppearanceAfterPlayerSetup(startupSnapshot, Player);
@@ -235,6 +246,7 @@ namespace LosSantosRED.lsr
             PedSwap = CreatePedSwap();
             Player.PedSwap = PedSwap;
             PedSwap.Setup();
+            PedSwap.ApplyAliasForCurrentModelIfNeeded(startupSnapshot, "ClientMode.AfterPedSwapSetup");
             NativeFunction.Natives.FREEZE_ENTITY_POSITION(Game.LocalPlayer.Character, false);
             Game.FadeScreenIn(500, true);
             Game.DisplayNotification("LSR co-op client mode");
@@ -362,6 +374,33 @@ namespace LosSantosRED.lsr
                 ModDataFileManager.Names, ModDataFileManager.RelationshipGroups, ModDataFileManager.Weapons, ModDataFileManager.Crimes, Time, ModDataFileManager.ShopMenus, ModDataFileManager.Interiors, NAudioPlayer,
                 ModDataFileManager.Gangs, ModDataFileManager.GangTerritories, ModDataFileManager.Streets, ModDataFileManager.ModItems, ModDataFileManager.RelationshipGroups, ModDataFileManager.LocationTypes,
                 ModDataFileManager.Organizations, ModDataFileManager.Contacts, ModDataFileManager);
+        }
+
+        private bool ShouldApplyCoopStartupAliasEarly(CoopCharacterStartupSnapshot startupSnapshot, bool startupModelApplied)
+        {
+            if (!CoopStartupBridge.IsCoopEnabled || startupSnapshot == null || !startupModelApplied)
+            {
+                return false;
+            }
+            if (ModDataFileManager?.Settings == null || !ModDataFileManager.Settings.SettingsManager.PedSwapSettings.AliasPedAsMainCharacter)
+            {
+                return false;
+            }
+            if (string.IsNullOrWhiteSpace(startupSnapshot.ModelName) || IsPrimaryCharacterModelName(startupSnapshot.ModelName))
+            {
+                return false;
+            }
+
+            string blockedReason;
+            CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
+            return startupMode == CoopStartupMode.FullSimulation || startupMode == CoopStartupMode.ClientMode;
+        }
+
+        private bool IsPrimaryCharacterModelName(string modelName)
+        {
+            return string.Equals(modelName, "player_zero", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(modelName, "player_one", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(modelName, "player_two", StringComparison.OrdinalIgnoreCase);
         }
 
         private Mod.Player CreatePlayer(Mod.World world)

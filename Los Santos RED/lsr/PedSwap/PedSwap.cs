@@ -52,6 +52,8 @@ public class PedSwap : IPedSwap
     private ISavedOutfits SavedOutfits;
     private IInteractionable Interactionable;
     private bool HasSetOffset;
+    private bool HasAddOffsetRun;
+    private bool HasSetPlayerOffsetRun;
     private bool IsDisposed;
     private ILocationInteractable LocationInteractable;
     private CoopPermissionService CoopPermissionService;
@@ -97,7 +99,41 @@ public class PedSwap : IPedSwap
 
     public void AddOffset()
     {
+        HasAddOffsetRun = true;
         SetPlayerOffset();
+        LogAliasDiagnostics("AddOffset");
+    }
+    public bool ApplyAliasForCurrentModelIfNeeded(CoopCharacterStartupSnapshot startupSnapshot, string reason)
+    {
+        if (!CoopStartupBridge.IsCoopEnabled)
+        {
+            return false;
+        }
+
+        string blockedReason;
+        CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
+        string currentModelName = GetCurrentNativeModelName();
+        string playerModelName = Player == null ? "<missing>" : Player.ModelName;
+        string snapshotModelName = startupSnapshot == null ? "<missing>" : startupSnapshot.ModelName;
+        string aliasModelName = Settings == null ? "<missing>" : AliasModelName(Settings.SettingsManager.PedSwapSettings.MainCharacterToAlias);
+
+        if (PedSwapAliasDiagnostics.IsVerboseEnabled(Settings))
+        {
+            EntryPoint.WriteToConsole($"Co-op alias startup considered Reason:{reason} Mode:{startupMode} SnapshotModel:{snapshotModelName} NativeModel:{currentModelName} PlayerModel:{playerModelName} AliasModel:{aliasModelName} OffsetActive:{HasSetOffset}", 0);
+        }
+
+        string skippedReason = GetCoopStartupAliasSkipReason(startupSnapshot, startupMode, currentModelName);
+        if (!string.IsNullOrEmpty(skippedReason))
+        {
+            EntryPoint.WriteToConsole($"Co-op alias startup skipped Reason:{reason} Skip:{skippedReason} Mode:{startupMode} SnapshotModel:{snapshotModelName} NativeModel:{currentModelName}", 0);
+            LogAliasDiagnostics(reason + ".Skipped." + skippedReason);
+            return false;
+        }
+
+        AddOffset();
+        EntryPoint.WriteToConsole($"Co-op alias startup applied Reason:{reason} AliasModel:{aliasModelName} OffsetActive:{HasSetOffset} AddOffsetRun:{HasAddOffsetRun} SetOffsetRun:{HasSetPlayerOffsetRun} FinalVisibleModel:{Player.ModelName}", 0);
+        LogAliasDiagnostics(reason + ".Applied");
+        return true;
     }
     //public void BecomeCustomPed()//OLD
     //{
@@ -874,7 +910,10 @@ public class PedSwap : IPedSwap
         InitialPlayerModel = Game.LocalPlayer.Character.Model;
         InitialPlayerVariation = NativeHelper.GetPedVariation(Game.LocalPlayer.Character);
         CurrentModelPlayerIs = InitialPlayerModel;
+        HasAddOffsetRun = false;
+        HasSetPlayerOffsetRun = false;
         IsDisposed = false;
+        LogAliasDiagnostics("Setup");
     }
     public void TreatAsCivilian()
     {
@@ -917,6 +956,66 @@ public class PedSwap : IPedSwap
             return "player_two";
         else
             return "player_zero";
+    }
+    private string GetCoopStartupAliasSkipReason(CoopCharacterStartupSnapshot startupSnapshot, CoopStartupMode startupMode, string currentModelName)
+    {
+        if (!CoopStartupBridge.IsCoopEnabled)
+        {
+            return "CoopDisabled";
+        }
+        if (startupMode != CoopStartupMode.FullSimulation && startupMode != CoopStartupMode.ClientMode)
+        {
+            return "StartupModeNotEligible";
+        }
+        if (startupSnapshot == null || string.IsNullOrWhiteSpace(startupSnapshot.ModelName))
+        {
+            return "SnapshotMissing";
+        }
+        if (Settings == null || !Settings.SettingsManager.PedSwapSettings.AliasPedAsMainCharacter)
+        {
+            return "AliasSettingFalse";
+        }
+        if (HasSetOffset)
+        {
+            return "AliasAlreadyActive";
+        }
+        if (string.IsNullOrWhiteSpace(currentModelName) || currentModelName == "<missing>" || currentModelName == "<error>")
+        {
+            return "CurrentModelMissing";
+        }
+        if (!string.Equals(currentModelName, startupSnapshot.ModelName, StringComparison.OrdinalIgnoreCase))
+        {
+            return "CurrentModelDoesNotMatchSnapshot";
+        }
+        if (IsPrimaryCharacterModelName(currentModelName) || (Player != null && Player.CharacterModelIsPrimaryCharacter))
+        {
+            return "PrimaryCharacterModel";
+        }
+
+        return string.Empty;
+    }
+    private bool IsPrimaryCharacterModelName(string modelName)
+    {
+        return string.Equals(modelName, "player_zero", StringComparison.OrdinalIgnoreCase)
+            || string.Equals(modelName, "player_one", StringComparison.OrdinalIgnoreCase)
+            || string.Equals(modelName, "player_two", StringComparison.OrdinalIgnoreCase);
+    }
+    private string GetCurrentNativeModelName()
+    {
+        try
+        {
+            Ped ped = Game.LocalPlayer.Character;
+            if (ped == null || !ped.Exists())
+            {
+                return "<missing>";
+            }
+
+            return ped.Model.Name;
+        }
+        catch
+        {
+            return "<error>";
+        }
     }
     private bool CanTakeoverPed(Ped myPed)
     {
@@ -1335,6 +1434,7 @@ public class PedSwap : IPedSwap
                 *((ulong*)(SkinPtr + 0x18)) = CurrentModelPlayerIs.Hash;
             }
             HasSetOffset = false;
+            LogAliasDiagnostics("ResetOffsetForCurrentModel");
         }
     }
     private void SetPlayerOffset(ulong ModelHash)
@@ -1351,6 +1451,8 @@ public class PedSwap : IPedSwap
             ulong SkinPtr = *((ulong*)(PedPtr + 0x20));
             *((ulong*)(SkinPtr + 0x18)) = ModelHash;
         }
+        HasSetPlayerOffsetRun = true;
+        LogAliasDiagnostics("SetPlayerOffsetCustom");
     }
     public void SetPlayerOffset()
     {
@@ -1382,7 +1484,9 @@ public class PedSwap : IPedSwap
                 ulong SkinPtr = *((ulong*)(PedPtr + 0x20));
                 *((ulong*)(SkinPtr + 0x18)) = ModelHash;
             }
+            HasSetPlayerOffsetRun = true;
             HasSetOffset = true;
+            LogAliasDiagnostics("SetPlayerOffset");
         }
 
         //unsafe
@@ -1392,6 +1496,26 @@ public class PedSwap : IPedSwap
         //    *((ulong*)(SkinPtr + 0x18)) = (ulong)225514697;
         //}
     }
+    public void LogAliasDiagnostics(string stage)
+    {
+        string playerModelName = Player == null ? "<missing>" : Player.ModelName;
+        bool isPrimaryCharacter = Player != null && Player.CharacterModelIsPrimaryCharacter;
+        string aliasModelName = Settings == null ? "<missing>" : AliasModelName(Settings.SettingsManager.PedSwapSettings.MainCharacterToAlias);
+        string currentModelPlayerIs = "<missing>";
+        try
+        {
+            if (CurrentModelPlayerIs != 0)
+            {
+                currentModelPlayerIs = CurrentModelPlayerIs.Name;
+            }
+        }
+        catch
+        {
+            currentModelPlayerIs = "<error>";
+        }
+        PedSwapAliasDiagnostics.RecordPedSwapState(stage, Settings, playerModelName, isPrimaryCharacter, HasSetOffset, aliasModelName, HasAddOffsetRun, HasSetPlayerOffsetRun, currentModelPlayerIs);
+    }
+
     private void StoreTargetPedData(Ped TargetPed)
     {
         CurrentModelPlayerIs = TargetPed.Model;

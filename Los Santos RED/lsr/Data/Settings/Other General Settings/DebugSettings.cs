@@ -8,6 +8,7 @@ public class DebugSettings : ISettingsDefaultable
     public bool ShowCivilianTaskArrows { get; set; }
     public bool ShowCivilianPerceptionArrows { get; set; }
     public bool ShowTrafficArrows { get; set; }
+    public bool LogCoopAliasDiagnostics { get; set; }
     //New Drag
     public bool UseNewDrag { get; set; }
     public bool DoBothAttachments { get; set; }
@@ -75,6 +76,7 @@ public class DebugSettings : ISettingsDefaultable
         ShowCivilianTaskArrows = false;
         ShowCivilianPerceptionArrows = false;
         ShowTrafficArrows = false;
+        LogCoopAliasDiagnostics = false;
 
 
         UseNewDrag = false;

@@ -54,7 +54,6 @@ public class InteriorDoor
     public bool HasRanLockWithEntity => hasRanLockWithEntity;
     public void LockDoor()
     {
-        AmmuNationDoorDiagnostics.LogInteriorDoorAction("InteriorDoor.LockDoor.Before", this);
         //doorEntity = NativeFunction.Natives.GET_CLOSEST_OBJECT_OF_TYPE<Rage.Object>(Position.X, Position.Y, Position.Z, 3.0f, ModelHash, true, false, true);
         NativeFunction.Natives.x9B12F9A24FABEDB0(ModelHash, Position.X, Position.Y, Position.Z, true, 1.0f);
         if(ForceRotateOpen)
@@ -70,11 +69,9 @@ public class InteriorDoor
         }
 
         EntryPoint.WriteToConsole($"LOCKED DOOR {ModelHash} {Position} hasRanLockWithEntity{hasRanLockWithEntity}");
-        AmmuNationDoorDiagnostics.LogInteriorDoorAction("InteriorDoor.LockDoor.After", this);
     }
     public void UnLockDoor()
     {
-        AmmuNationDoorDiagnostics.LogInteriorDoorAction("InteriorDoor.UnLockDoor.Before", this);
         NativeFunction.Natives.x9B12F9A24FABEDB0(ModelHash, Position.X, Position.Y, Position.Z, false, 1.0f);
         if(ForceRotateOpen)
         {
@@ -82,7 +79,6 @@ public class InteriorDoor
         }
         isLocked = false;
         hasRanLockWithEntity = false;
-        AmmuNationDoorDiagnostics.LogInteriorDoorAction("InteriorDoor.UnLockDoor.After", this);
 
         if(PairedDoors == null)
         {

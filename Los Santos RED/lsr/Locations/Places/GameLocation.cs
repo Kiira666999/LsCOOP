@@ -379,7 +379,6 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
         //EntryPoint.WriteToConsole($"Activate Location {Name} {DistanceToPlayer}");
         World = world;
         bool isOpen = IsOpen(time.CurrentHour);
-        AmmuNationDoorDiagnostics.LogGameLocationState("GameLocation.Activate", this, time.CurrentHour, isOpen);
         if (HasVendor)
         {
             EntryPoint.WriteToConsole($"{Name} NOINT:{Interior == null} ISTELE:{Interior?.IsTeleportEntry} ISTELE:{Interior?.Name}");
@@ -447,7 +446,6 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
     {
         if (HasInterior && interior != null)
         {
-            AmmuNationDoorDiagnostics.LogGameLocationState("GameLocation.LoadInterior", this, Time == null ? -1 : Time.CurrentHour, isOpen);
             interior.Load(isOpen);
         }
     }
@@ -1002,7 +1000,6 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
             if(DistanceToPlayer <= 100f)
             {
                /// UpdatePrompts();
-                AmmuNationDoorDiagnostics.LogGameLocationState("GameLocation.Update", this, time.CurrentHour, IsOpen(time.CurrentHour));
                 if (IsActivated && HasInterior)
                 {
                     Interior?.Update(IsOpen(time.CurrentHour));

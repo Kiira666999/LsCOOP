@@ -182,6 +182,7 @@
     <Compile Include="lsr\Coop\Core\CoopStorePurchaseCommit.cs" />
     <Compile Include="lsr\Coop\Core\CoopStartupBridge.cs" />
     <Compile Include="lsr\Coop\Core\CoopStartupMode.cs" />
+    <Compile Include="lsr\Coop\Core\PedSwapAliasDiagnostics.cs" />
     <Compile Include="lsr\Coop\Core\CoopTransportState.cs" />
     <Compile Include="lsr\Coop\Core\CoopWantedRuntimeState.cs" />
     <Compile Include="lsr\Coop\Core\CoopWeaponInventoryAdapter.cs" />
@@ -207,8 +208,6 @@
     <Compile Include="lsr\Coop\Core\NullCoopSaveService.cs" />
     <Compile Include="lsr\Coop\Core\NullCoopTransport.cs" />
     <Compile Include="lsr\Coop\Core\RequirementContextAdapter.cs" />
-    <Compile Include="lsr\Diagnostics\AmmuNationDoorCompatibility.cs" />
-    <Compile Include="lsr\Diagnostics\AmmuNationDoorDiagnostics.cs" />
     <Compile Include="lsr\Camera\CameraControl.cs" />
     <Compile Include="lsr\Camera\CameraRotator.cs" />
     <Compile Include="lsr\Data\Agencies\IPlatePrefixable.cs" />

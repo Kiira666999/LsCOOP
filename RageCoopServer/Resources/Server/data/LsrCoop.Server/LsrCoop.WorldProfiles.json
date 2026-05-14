@@ -1,8 +1,8 @@
 {
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
-  "CreatedUtc": "2026-05-12T18:07:18.174055+00:00",
-  "UpdatedUtc": "2026-05-14T11:32:35.0367289+00:00",
+  "CreatedUtc": "2026-05-14T13:15:51.1387633+00:00",
+  "UpdatedUtc": "2026-05-14T13:31:51.4650456+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -12,7 +12,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-14T11:32:35.0368716+00:00"
+    "UpdatedUtc": "2026-05-14T13:31:51.4650696+00:00"
   },
   "Profiles": [
     {
@@ -20,15 +20,15 @@
       "ClientId": "Kiira",
       "DisplayName": "Kiira",
       "Role": "Admin,TrustedHost",
-      "CreatedUtc": "2026-05-12T18:07:37.7695554+00:00",
-      "LastSeenUtc": "2026-05-14T11:26:49.2627958+00:00",
+      "CreatedUtc": "2026-05-14T13:15:58.9246961+00:00",
+      "LastSeenUtc": "2026-05-14T13:31:51.4650439+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
-        "DisplayName": "Chance Freeman",
-        "ModelName": "IG_TAOCHENG",
+        "DisplayName": "Karter Stewart",
+        "ModelName": "ig_lestercrest",
         "Appearance": {
-          "ModelName": "IG_TAOCHENG",
+          "ModelName": "ig_lestercrest",
           "Components": [
             {
               "ComponentId": 0,
@@ -154,62 +154,34 @@
             }
           ]
         },
-        "UpdatedUtc": "2026-05-12T18:07:54.1679908+00:00"
+        "UpdatedUtc": "2026-05-14T13:16:22.4013702+00:00"
       },
-      "InventoryMoney": {
-        "SnapshotId": "55c866bce2664bbb870ad939178f371e",
-        "WorldId": "lsrcoop-default-world",
-        "ProfileId": "Kiira",
-        "CharacterId": "Kiira",
-        "OnHandCash": 406349,
-        "TotalAccountMoney": 0,
-        "TotalMoney": 406349,
-        "InventoryItems": [
-          {
-            "ItemName": "iFruit Cellphone",
-            "RemainingPercent": 1
-          },
-          {
-            "ItemName": "Drivers License",
-            "RemainingPercent": 1
-          },
-          {
-            "ItemName": "Can of Sprunk",
-            "RemainingPercent": 1
-          },
-          {
-            "ItemName": "Bottle of Stronzo",
-            "RemainingPercent": 1
-          }
-        ],
-        "BankAccounts": [],
-        "SnapshotUtc": "2026-05-14T08:54:15.6188209+00:00"
-      },
+      "InventoryMoney": null,
       "Weapons": {
-        "SnapshotId": "fc0fda925d0244a6999b80da9df5dcaa",
+        "SnapshotId": "603f2b60143a40dabdcae3d582994594",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "Weapons": [],
-        "SnapshotUtc": "2026-05-14T10:05:09.3437608+00:00"
+        "SnapshotUtc": "2026-05-14T13:18:09.9555308+00:00"
       },
       "OwnedVehicles": {
-        "SnapshotId": "f4053e16c8ef4fc895cf8743cb074863",
+        "SnapshotId": "00bdc265c75f48f1ab647307c1a2776c",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "Vehicles": [],
-        "SnapshotUtc": "2026-05-14T10:05:09.3427604+00:00"
+        "SnapshotUtc": "2026-05-14T13:18:09.9555308+00:00"
       },
       "PropertyOwnership": null,
       "GangReputation": {
-        "StateId": "cc47fd745b594d09b198f46327497420",
+        "StateId": "199f5c1971354bc2b3b12becb556e9ae",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "CurrentGangId": null,
         "Reputations": [],
-        "UpdatedUtc": "2026-05-14T10:05:09.3287604+00:00"
+        "UpdatedUtc": "2026-05-14T13:18:09.9505278+00:00"
       },
       "CriminalHistory": {
         "WorldId": "lsrcoop-default-world",
@@ -221,33 +193,9 @@
         "LastSeenZ": 0,
         "WantedLevel": 0,
         "Crimes": [],
-        "UpdatedUtc": "2026-05-12T18:30:43.1921158+00:00"
+        "UpdatedUtc": "2026-05-14T13:17:40.0689462+00:00"
       },
-      "DeathArrestState": {
-        "StateId": "14da07479455465797ddea54fb1d94d6",
-        "WorldId": "lsrcoop-default-world",
-        "ProfileId": "Kiira",
-        "CharacterId": "Kiira",
-        "ActionType": "ApplyDeathState",
-        "OutcomeType": "RespawnAtCurrentLocation",
-        "RespawnLocationName": "",
-        "PositionX": 1036.48,
-        "PositionY": -2414.113,
-        "PositionZ": 29.34367,
-        "Heading": 0,
-        "HospitalFee": 0,
-        "HospitalBillPastDue": 0,
-        "HospitalDuration": 0,
-        "BailFee": 0,
-        "BailFeePastDue": 0,
-        "BailDuration": 0,
-        "TodayPayment": 0,
-        "TimesDied": 1,
-        "HadIllegalWeapons": false,
-        "HadIllegalItems": false,
-        "ReleaseDate": "2009-06-06T10:14:20Z",
-        "OccurredUtc": "2026-05-14T08:54:15.6188209+00:00"
-      },
+      "DeathArrestState": null,
       "LongTermLsrRecords": []
     }
   ],
