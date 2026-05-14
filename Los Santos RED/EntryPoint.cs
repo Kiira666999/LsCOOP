@@ -76,6 +76,10 @@ public static class EntryPoint
                     StartRequestedMode();
                 }
             }
+            else if (ModController.IsClientMode)
+            {
+                TryPromoteClientModeToFullSimulation();
+            }
 
             GameFiber.Yield();
         }
@@ -106,6 +110,7 @@ public static class EntryPoint
     {
         string blockedReason;
         CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
+        WriteToConsole($"Co-op startup request Mode:{startupMode} LocalProfile:{CoopStartupBridge.LocalProfileId} ActiveHost:{CoopStartupBridge.ActiveHostProfileId} IsLocalActiveHost:{CoopStartupBridge.IsLocalActiveHost} CharacterReady:{CoopStartupBridge.IsCharacterReadyForSimulation} BlockedReason:{blockedReason}", 0);
         if (startupMode == CoopStartupMode.BootstrapOnly)
         {
             if (ModController?.IsBootstrapOnly == true)
@@ -157,6 +162,21 @@ public static class EntryPoint
             WriteToConsole(blockedReason, 0);
             GameTimeLastCoopStartBlocked = Game.GameTime;
         }
+    }
+    private static void TryPromoteClientModeToFullSimulation()
+    {
+        string blockedReason;
+        CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
+        if (startupMode != CoopStartupMode.FullSimulation)
+        {
+            return;
+        }
+
+        WriteToConsole($"Co-op startup transition ClientMode->FullSimulation LocalProfile:{CoopStartupBridge.LocalProfileId} ActiveHost:{CoopStartupBridge.ActiveHostProfileId} IsLocalActiveHost:{CoopStartupBridge.IsLocalActiveHost} CharacterReady:{CoopStartupBridge.IsCharacterReadyForSimulation}", 0);
+        ModController.Dispose(restoreInitialPedModel: false);
+        RemoveNotification();
+        ModController = new ModController();
+        ModController.Setup();
     }
     private static void GetVersionInfo()
     {

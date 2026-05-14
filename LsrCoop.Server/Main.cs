@@ -434,10 +434,21 @@ namespace LsrCoop.Server
             snapshot.CriminalHistory.ProfileId = profile.ProfileId;
             snapshot.CriminalHistory.CharacterId = string.IsNullOrWhiteSpace(snapshot.CriminalHistory.CharacterId) ? profile.ProfileId : snapshot.CriminalHistory.CharacterId;
             snapshot.CriminalHistory.Crimes = snapshot.CriminalHistory.Crimes ?? new List<CoopCriminalHistoryCrimeRecordDto>();
+            int incomingCrimeCount = snapshot.CriminalHistory.Crimes.Count;
+            int existingCrimeCount = profile.CriminalHistory?.Crimes?.Count ?? 0;
+            bool incomingHasHistory = snapshot.CriminalHistory.HasHistory || incomingCrimeCount > 0 || snapshot.CriminalHistory.WantedLevel > 0;
+            bool existingHasHistory = profile.CriminalHistory?.HasHistory == true || existingCrimeCount > 0 || (profile.CriminalHistory?.WantedLevel ?? 0) > 0;
+            string clearReason = snapshot.CriminalHistory.ClearReason ?? string.Empty;
+            if (!incomingHasHistory && existingHasHistory && string.IsNullOrWhiteSpace(clearReason))
+            {
+                Logger.Info($"[LsrCoop.Server] criminal history snapshot ignored: profile={profile.ProfileId}, incomingCrimes=0, existingCrimes={existingCrimeCount}, clearReason=none; startup/no-op empty snapshot cannot overwrite saved BOLO/APB");
+                return;
+            }
+
             profile.CriminalHistory = snapshot.CriminalHistory;
             worldProfileStoreService.Save();
 
-            Logger.Info($"[LsrCoop.Server] criminal history saved: profile={profile.ProfileId}, crimes={profile.CriminalHistory.Crimes?.Count ?? 0}, maxWanted={profile.CriminalHistory.WantedLevel}; active wanted/search/chase state ignored");
+            Logger.Info($"[LsrCoop.Server] criminal history saved: profile={profile.ProfileId}, crimes={profile.CriminalHistory.Crimes?.Count ?? 0}, maxWanted={profile.CriminalHistory.WantedLevel}, dateTimeLastWantedEnded={profile.CriminalHistory.DateTimeLastWantedEnded:O}, clearReason={clearReason}; active wanted/search/chase state ignored");
         }
 
         private void OnGangReputationSnapshotCommitted(CustomEventReceivedArgs args)

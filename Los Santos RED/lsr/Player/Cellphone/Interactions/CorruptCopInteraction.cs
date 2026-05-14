@@ -337,7 +337,7 @@ public class CorruptCopInteraction : IContactMenuInteraction
                 {
                     int SleepTime = RandomItems.GetRandomNumberInt(5000, 10000);
                     GameFiber.Sleep(SleepTime);
-                    Player.CriminalHistory.Clear();
+                    Player.CriminalHistory.Clear("CorruptCopPayoff");
                 }
                 catch (Exception ex)
                 {

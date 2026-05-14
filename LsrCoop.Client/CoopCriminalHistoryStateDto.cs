@@ -14,6 +14,8 @@ namespace LsrCoop.Client
         public float LastSeenZ { get; set; }
         public int WantedLevel { get; set; }
         public List<CoopCriminalHistoryCrimeRecordDto> Crimes { get; set; } = new List<CoopCriminalHistoryCrimeRecordDto>();
+        public DateTimeOffset DateTimeLastWantedEnded { get; set; }
         public DateTimeOffset UpdatedUtc { get; set; }
+        public string ClearReason { get; set; }
     }
 }

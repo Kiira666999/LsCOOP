@@ -2,7 +2,7 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-14T13:15:51.1387633+00:00",
-  "UpdatedUtc": "2026-05-14T17:07:14.6022275+00:00",
+  "UpdatedUtc": "2026-05-14T19:23:51.7747544+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -12,7 +12,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-14T17:07:14.6022706+00:00"
+    "UpdatedUtc": "2026-05-14T19:23:51.7747622+00:00"
   },
   "Profiles": [
     {
@@ -21,7 +21,7 @@
       "DisplayName": "Kiira",
       "Role": "Admin,TrustedHost",
       "CreatedUtc": "2026-05-14T13:15:58.9246961+00:00",
-      "LastSeenUtc": "2026-05-14T17:07:14.602226+00:00",
+      "LastSeenUtc": "2026-05-14T19:23:51.7747524+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -157,36 +157,1784 @@
         "UpdatedUtc": "2026-05-14T13:16:22.4013702+00:00"
       },
       "InventoryMoney": {
-        "SnapshotId": "077f3548efe24f66a3a2718403140062",
+        "SnapshotId": "b04c492afeb54ec1ae6bf12cd684ef60",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "OnHandCash": 5855,
+        "OnHandCash": 0,
         "TotalAccountMoney": 0,
-        "TotalMoney": 5855,
+        "TotalMoney": 0,
         "InventoryItems": [
           {
             "ItemName": "Carton of Milk",
-            "RemainingPercent": 6
+            "RemainingPercent": 16
           },
           {
             "ItemName": "Bottle of GREY Water",
-            "RemainingPercent": 2
+            "RemainingPercent": 12
           },
           {
             "ItemName": "Bottle of Jakeys",
-            "RemainingPercent": 1
+            "RemainingPercent": 11
           },
           {
             "ItemName": "Lithium Battery",
-            "RemainingPercent": 4
+            "RemainingPercent": 14
+          },
+          {
+            "ItemName": "TAG-HARD Flashlight",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Flint Handle Flashlight",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "iFruit Cellphone",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Facade Cellphone",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Badger Cellphone",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Celltowa Cellphone",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Flint Shovel",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Filament Spool",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Steel Rod",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Aluminum Sheet",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Aluminum Billet",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Small Parts Kit",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Polymer Resin",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Light Weapon Blueprint",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Medium Weapon Blueprint",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Heavy Weapon Blueprint",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Advanced Weapon Blueprint",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Light Gun Frame",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Medium Gun Frame",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Heavy Gun Frame",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Light Gun Barrel",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Medium Gun Barrel",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Heavy Gun Barrel",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Advanced Gun Frame",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Advanced Gun Barrel",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Frozen Meth",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Pseudoephedrine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Frozen Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Burger Buns",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Minced Beef",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cheese",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Pasta",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Canned Tomatoes",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Peanut Butter",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Jam",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bread",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Pancakes",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Maple Syrup",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bacon",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Sausage",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Harvested Marijuana",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Dried Marijuana",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Baggie",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Dried Coca Leaf",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Processed Coca Leaf",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Refined Cocaine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Mixed Cocaine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cooked Meth",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Meth Shards",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Sodium Benzoate",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Hydrogen Peroxide",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Ammonia",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Red Phosphorus",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Medical Supplies",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Syringe",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Morphine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Coca Leaves",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gasoline",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Acetone",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Lysergic acid",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Vitamin Powder",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Blotter Paper",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Plant Pot",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cannabis Seed",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Fertiliser",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "GASH Blue Umbrella",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "GASH Black Umbrella",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Hot Dog",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Hot Sausage",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Hot Pretzel",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "3 Mini Pretzels",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Nuts",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Donut",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bagel Sandwich",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Freedom Fries",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "French Fries",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Banana",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Orange",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Apple",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Ham and Cheese Sandwich",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Turkey Sandwich",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Tuna Sandwich",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Taco",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Strawberry Rails Cereal",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Crackles O\u0027 Dawn Cereal",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "White Bread",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Slice of Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Small Cheese Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Small Pepperoni Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Small Supreme Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Medium Cheese Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Medium Pepperoni Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Medium Supreme Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Large Cheese Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Large Pepperoni Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Large Supreme Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "10 inch Cheese Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "10 inch Pepperoni Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "10 inch Supreme Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "12 inch Cheese Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "12 inch Pepperoni Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "12 inch Supreme Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "18 inch Cheese Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "18 inch Pepperoni Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "18 inch Supreme Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Sticky Rib Phat Chips",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Habanero Phat Chips",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Supersalt Phat Chips",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Big Cheese Phat Chips",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Ego Chaser Energy Bar",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "King Size P\u0027s \u0026 Q\u0027s",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "P\u0027s \u0026 Q\u0027s",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Meteorite Bar",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bleeder Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Torpedo Sandwich",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Money Shot Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Trio Trio Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Dual Dual Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Solo Solo Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Big Wig Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cheesie Wigwam Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Wigwam Classic Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Big Horny Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Horny Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Randy Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Snr. Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Soph. Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Jr. Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Muy Loca Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Loca Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Locita Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Kingsize Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Double Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Megacheese Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gut Buster Sandwich",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Meat Tube Sandwich",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Chocolate Donut",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Sprinkles Donut",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Rusty Ring Donut",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Double Choc Whammy Donut",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Chicken",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Rice",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Ketchup",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Baking Soda",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cooked Pizza",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cheese Burger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Pasta \u0026 Meatballs",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "PB\u0026J",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Breakfast Pancakes",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Breakfast Sandwich",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Redwood Regular",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Redwood Mild",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Debonaire",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Debonaire Menthol",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Caradique",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "69 Brand",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Estancia Cigar",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Marijuana",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Joint buds w/hash",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Hash",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of Raine Water",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Flow Water ZERO",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of JUNK Energy",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of PiBwasser",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of A.M.",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of Barracho",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of Blarneys",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of Logger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of Patriot",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of Pride",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of Stronzo",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of Dusche",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of 40 oz",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of Sinsimito Tequila",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bottle of Cazafortuna Tequila",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "The Mount Bourbon Whisky",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Richard\u0027s Whisky Short",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Macbeth Single Malt Short",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Ragga Rum",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "This Worm Has Turned Tequilya",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cardiaque Brandy",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bourgeoix Cognac",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Macbeth Single Malt",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Richard\u0027s Whisky",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "NOGO Vodka",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bleuter\u0027d Champagne",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cherenkov Red Label Vodka",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cherenkov Blue Label Vodka",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cherenkov Green Label Vodka",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cherenkov Purple Label Vodka",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Can of eCola",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Can of Sprunk",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Can of Orang-O-Tang",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cup of eCola",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cup of Sprunk",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cup of Coffee",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Can of Hoplivion Double IPA",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Can of Blarneys",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Can of Logger",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Lean",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "High Noon Coffee",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "The Eco-ffee",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Speedball Coffee",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gunkacchino Coffee",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bratte Coffee",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Flusher Coffee",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Caffeagra Coffee",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Big Fruit Smoothie",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Jumbo Shake",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Large eCola",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Large Sprunk",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Double Shot Coffee",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Liter of eCola",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Liter of Sprunk",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "XXL eCola",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "XXL Sprunk",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Methamphetamine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Crack",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bull Shark Testosterone",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Alco Patch",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Lax to the Max",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Mollis",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Chesty",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Equanox",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Zombix",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Wach-Auf Caffeine Pills",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Hingmyralgan",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Deludamol",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Delladamol",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Diazepam",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "SPANK",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Toilet Cleaner",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cocaine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "LSD",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "MDMA",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Ecstasy",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Fish Scale",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bashed Coke",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Crate of AKs",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Crate of Rifles",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "9mm Ammo",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "7.62mm Ammo",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Crate of ammunition",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "12 Gauge Ammo",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Heroin",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Power Metal Cordless Drill",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Power Metal Cordless Impact Driver",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Flint Cordless Drill",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Power Metal Side Drill",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Power Metal Custom Side Drill",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Power Metal Laser Side Drill",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Flint Duct Tape",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Flint Phillips Screwdriver",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Flint Flathead Screwdriver",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Flint Multi-Bit Screwdriver",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "DIC Lighter",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "DIC Lighter Ultra",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Dippo Lighter",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "DIC Lighter Silver",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "DIC Lighter Gold",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "BlazeBox Ignite",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Flint Pliers",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Flint Rubber Mallet",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Bong",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Crack Pipe",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Meth Pipe",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Smoke Shop Rolling Papers",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "SCHEISS BS Binoculars",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "SCHEISS AS Binoculars",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "SCHEISS DS Binoculars",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "SCHEISS RP Binoculars",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Schmidt \u0026 Priss TL6 Scanner",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Fake Gold Ring",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gold Ring",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Fake Silver Ring",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Silver Ring",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cash Bundle",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Marked Cash Stack",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Drivers License",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Police ID Card",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Small Baggie",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Medium Baggie",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Large Baggie",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Package of Marijuana",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Package of Crack",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Package of Heroin",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Package of Cocaine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "1G Crack",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "5G Crack",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "10G Crack",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "15G Crack",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "1G Marijuana",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "5G Marijuana",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "10G Marijuana",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "15G Marijuana",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "1G Heroin",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "5G Heroin",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "10G Heroin",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "15G Heroin",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "1G Cocaine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "5G Cocaine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "10G Cocaine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "15G Cocaine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Phone number",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Dealer phone",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Give a free sample",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Trap day",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Hire dealer",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Hire muscle",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Manpower: Dealer",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Manpower: Muscle",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Buy crack recipe",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Recipe: Crack",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Cooking day",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Recipe: Hash",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Grow day",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Prepare product",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Product: Marijuana",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Product: Crack",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Product: Heroin",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Corner\u0027s money: Marijuana",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Corner\u0027s money: Crack",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Corner\u0027s money: Heroin",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Tool",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Stash info: Marijuana",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Stash info: Crack",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Stash info: Heroin",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Stash info: Cocaine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Work day",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Box of iFruit Cellphones",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Box of Facade Cellphones",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Box of Badger Cellphones",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Box of fake ID",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gold chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "--",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "-",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Corner\u0027s money: Cocaine",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Sample day",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Workday",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Hyun-Su: Respect",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Hyun-Su: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Long-Yang: Respect",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Long-Yang: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Caesars: Respect",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Caesars: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Little Jacob: Respect",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Little Jacob: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Dizzy-D: Respect",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Dizzy-D: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Dwayne: Respect",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Dwayne: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Dwayne: Hit",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Dizzy-D: Hit",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Little Jacob: Hit",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Caesars: Hit",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gang hit: Korra",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Meet: Korra",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gang hit: Annie",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Meet: Annie",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gang hit: Leroy",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gang hit: Stanley",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Meet: Leroy",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gang hit: Terrance",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Meet: Terrance",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gang hit: Alphonse",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Meet: Alphonse",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gang hit: Chung-Hee",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gang hit: Fu-Kang",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Meet: Chung-Hee",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "South LS Trappers: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "South LS Trappers: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "South LS trapper\u0027s chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "East LS Trappers: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "East LS Trappers: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "East LS trapper\u0027s chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Ballas: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Ballas: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Ballas\u0027s chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Families: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Families: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Families\u0027s chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Yardies: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Yardies: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Yardies\u0027s chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Khangpae: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Khangpae: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Khangpae\u0027s chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Vagos\u0027s chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Vagos: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Vagos: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Aztecas\u0027s chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Aztecas: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Aztecas: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Triads\u0027s chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Triads: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Triads: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Armenian\u0027s chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Armenian: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Armenian: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Marabunta: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Marabunta: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Marabunta\u0027s chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Lost: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Lost: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Lost\u0027s chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Professionals: Reputation\u002B",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Professionals: Influence",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Diamonds",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gold Bar",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gold Watch",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Laptop",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Old TV",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Flatscreen TV",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Silver Watch",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Radio",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Gold Chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Silver Chain",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Painting #1",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Painting #2",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Painting #3",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Diamond Skull #1",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Diamond Skull #2",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Health Pack",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Light Body Armor",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Medium Body Armor",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Heavy Body Armor",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Full Body Armor",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Schmidt \u0026 Priss RD4 Radar Detector",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Scrap Metal",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Metal Tube",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Fuse",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "pH strip",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Latex gloves",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Detergent",
+            "RemainingPercent": 10
+          },
+          {
+            "ItemName": "Chemicals",
+            "RemainingPercent": 10
           }
         ],
         "BankAccounts": [],
-        "SnapshotUtc": "2026-05-14T16:41:06.4215522+00:00"
+        "SnapshotUtc": "2026-05-14T19:17:47.9232793+00:00"
       },
       "Weapons": {
-        "SnapshotId": "807bc6548ebc414e8ce1d9a30af5deae",
+        "SnapshotId": "20f5cd5fbdc34146a3a25775406362c8",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
@@ -200,58 +1948,157 @@
             "IsEquipped": false
           },
           {
-            "WeaponHash": "2508868239",
-            "WeaponName": "Bat",
+            "WeaponHash": "3218215474",
+            "WeaponName": "3218215474",
             "Category": "",
-            "Ammo": 0,
+            "Ammo": 56,
+            "IsLegal": false,
+            "IsEquipped": false
+          },
+          {
+            "WeaponHash": "453432689",
+            "WeaponName": "Pistol",
+            "Category": "",
+            "Ammo": 56,
+            "IsLegal": false,
+            "IsEquipped": false
+          },
+          {
+            "WeaponHash": "911657153",
+            "WeaponName": "weapon_stungun",
+            "Category": "Melee",
+            "Ammo": 43,
+            "IsLegal": true,
+            "IsEquipped": true
+          },
+          {
+            "WeaponHash": "1853742572",
+            "WeaponName": "1853742572",
+            "Category": "",
+            "Ammo": 28,
+            "IsLegal": false,
+            "IsEquipped": false
+          },
+          {
+            "WeaponHash": "125959754",
+            "WeaponName": "125959754",
+            "Category": "",
+            "Ammo": 6,
             "IsLegal": false,
             "IsEquipped": false
           }
         ],
-        "SnapshotUtc": "2026-05-14T16:52:27.1537568+00:00"
+        "SnapshotUtc": "2026-05-14T19:21:12.9449522+00:00"
       },
       "OwnedVehicles": {
-        "SnapshotId": "ef0dcc69b25d42eb8230943ba53af944",
+        "SnapshotId": "6fa11914a5e24f3f8345d8b9ed9d2112",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "Vehicles": [],
-        "SnapshotUtc": "2026-05-14T16:52:27.1537568+00:00"
+        "SnapshotUtc": "2026-05-14T19:21:12.9449522+00:00"
       },
       "PropertyOwnership": null,
       "GangReputation": {
-        "StateId": "a458782747f9462ab75be37d77004ed2",
+        "StateId": "80a1bb1e8e004af5bf277ca310e8836c",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "CurrentGangId": null,
         "Reputations": [],
-        "UpdatedUtc": "2026-05-14T16:52:27.1457243+00:00"
+        "UpdatedUtc": "2026-05-14T19:21:12.9359504+00:00"
       },
       "CriminalHistory": {
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "HasHistory": false,
-        "LastSeenX": 0,
-        "LastSeenY": 0,
-        "LastSeenZ": 0,
-        "WantedLevel": 0,
-        "Crimes": [],
-        "UpdatedUtc": "2026-05-14T13:17:40.0689462+00:00"
+        "HasHistory": true,
+        "LastSeenX": -779.9379,
+        "LastSeenY": -1070.98,
+        "LastSeenZ": 10.71108,
+        "WantedLevel": 3,
+        "Crimes": [
+          {
+            "CrimeId": "SuspiciousActivity",
+            "CrimeName": "Suspicious Activity",
+            "Instances": 1,
+            "ResultingWantedLevel": 1,
+            "Priority": 70,
+            "ResultsInLethalForce": false
+          },
+          {
+            "CrimeId": "FiringWeapon",
+            "CrimeName": "Firing Weapon",
+            "Instances": 1,
+            "ResultingWantedLevel": 2,
+            "Priority": 11,
+            "ResultsInLethalForce": false
+          },
+          {
+            "CrimeId": "FiringWeaponNearPolice",
+            "CrimeName": "Shots Fired Near Police",
+            "Instances": 1,
+            "ResultingWantedLevel": 3,
+            "Priority": 4,
+            "ResultsInLethalForce": true
+          },
+          {
+            "CrimeId": "NonRoadworthyVehicle",
+            "CrimeName": "NonRoadworthy Vehicle",
+            "Instances": 1,
+            "ResultingWantedLevel": 1,
+            "Priority": 44,
+            "ResultsInLethalForce": false
+          },
+          {
+            "CrimeId": "ResistingArrest",
+            "CrimeName": "Resisting Arrest",
+            "Instances": 1,
+            "ResultingWantedLevel": 2,
+            "Priority": 21,
+            "ResultsInLethalForce": false
+          },
+          {
+            "CrimeId": "DrivingAgainstTraffic",
+            "CrimeName": "Driving Against Traffic",
+            "Instances": 1,
+            "ResultingWantedLevel": 1,
+            "Priority": 42,
+            "ResultsInLethalForce": false
+          },
+          {
+            "CrimeId": "RunningARedLight",
+            "CrimeName": "Running a Red Light",
+            "Instances": 1,
+            "ResultingWantedLevel": 1,
+            "Priority": 45,
+            "ResultsInLethalForce": false
+          },
+          {
+            "CrimeId": "DrivingOnPavement",
+            "CrimeName": "Driving On Pavement",
+            "Instances": 1,
+            "ResultingWantedLevel": 1,
+            "Priority": 43,
+            "ResultsInLethalForce": false
+          }
+        ],
+        "DateTimeLastWantedEnded": "2009-06-06T12:08:43+00:00",
+        "UpdatedUtc": "2026-05-14T19:20:52.6194233+00:00",
+        "ClearReason": ""
       },
       "DeathArrestState": {
-        "StateId": "84dcdc9d07a4483fbe1b035e3c50a85a",
+        "StateId": "a12c4780e9c245219f924e5494d7ea06",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "ActionType": "ApplyDeathState",
         "OutcomeType": "RespawnAtCurrentLocation",
         "RespawnLocationName": "",
-        "PositionX": 230.7449,
-        "PositionY": 206.3791,
-        "PositionZ": 105.4383,
-        "Heading": 0,
+        "PositionX": -1177.028,
+        "PositionY": -1418.684,
+        "PositionZ": 4.110731,
+        "Heading": 341.663,
         "HospitalFee": 0,
         "HospitalBillPastDue": 0,
         "HospitalDuration": 0,
@@ -259,11 +2106,11 @@
         "BailFeePastDue": 0,
         "BailDuration": 0,
         "TodayPayment": 0,
-        "TimesDied": 3,
+        "TimesDied": 2,
         "HadIllegalWeapons": false,
         "HadIllegalItems": false,
-        "ReleaseDate": "2009-06-06T11:48:06Z",
-        "OccurredUtc": "2026-05-14T16:23:50.6587724+00:00"
+        "ReleaseDate": "2009-06-06T10:14:20Z",
+        "OccurredUtc": "2026-05-14T19:17:47.9232793+00:00"
       },
       "LongTermLsrRecords": []
     }

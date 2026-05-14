@@ -68,7 +68,7 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             WriteOutbound("CriminalJusticeSnapshotCommitted", snapshot.WorldId.ToString(), snapshot.ProfileId.ToString(), SimpleJson.Serialize(snapshot));
-            EntryPoint.WriteToConsole($"Co-op criminal history bridge event written Profile:{snapshot.ProfileId} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0}; skipped live wanted/search/chase state", 0);
+            EntryPoint.WriteToConsole($"Co-op criminal history bridge event written Profile:{snapshot.ProfileId} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0} Wanted:{snapshot.CriminalHistory?.WantedLevel ?? 0} DateTimeLastWantedEnded:{snapshot.CriminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty} ClearReason:{snapshot.CriminalHistory?.ClearReason ?? string.Empty}; skipped live wanted/search/chase state", 0);
         }
 
         public static void PublishGangReputationSnapshot(CoopGangReputationState snapshot)
@@ -170,6 +170,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 $"TransportMode={TransportMode}",
                 $"Direction=LSR_TO_RAGECOOP",
                 $"ProcessId={Process.GetCurrentProcess().Id.ToString(CultureInfo.InvariantCulture)}",
+                $"SessionId={Escape(CoopStartupBridge.BridgeSessionId)}",
                 $"EventType={Escape(eventType)}",
                 $"WorldId={Escape(worldId)}",
                 $"ProfileId={Escape(profileId)}",

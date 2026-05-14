@@ -146,7 +146,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 appliedCriminalHistory = CoopCriminalJusticeStateAdapter.Current.TryApplyPersistentStateToPlayer(player, snapshot.CriminalHistory, crimes);
             }
 
-            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Money:{snapshot.InventoryMoney?.TotalMoney ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} WeaponsHydrated:{weaponHydration?.HydratedCount ?? 0} WeaponsExisting:{weaponHydration?.ExistingCount ?? 0} WeaponsSkippedDuplicate:{weaponHydration?.SkippedDuplicateCount ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0}", 0);
+            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Money:{snapshot.InventoryMoney?.TotalMoney ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} WeaponsHydrated:{weaponHydration?.HydratedCount ?? 0} WeaponsExisting:{weaponHydration?.ExistingCount ?? 0} WeaponsSkippedDuplicate:{weaponHydration?.SkippedDuplicateCount ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0} DateTimeLastWantedEnded:{snapshot.CriminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}", 0);
             return appliedInventoryMoney || weaponHydration?.Applied == true || appliedCriminalHistory;
         }
 
@@ -346,9 +346,11 @@ namespace LosSantosRED.lsr.Coop.Core
             string hasHistory = GetValue(values, "CriminalHistoryHasHistory");
             string crimes = GetValue(values, "CriminalHistoryCrimes");
             string wantedLevel = GetValue(values, "CriminalHistoryWantedLevel");
+            string dateTimeLastWantedEnded = GetValue(values, "CriminalHistoryDateTimeLastWantedEnded");
             if (string.IsNullOrWhiteSpace(hasHistory)
                 && string.IsNullOrWhiteSpace(crimes)
-                && string.IsNullOrWhiteSpace(wantedLevel))
+                && string.IsNullOrWhiteSpace(wantedLevel)
+                && string.IsNullOrWhiteSpace(dateTimeLastWantedEnded))
             {
                 return null;
             }
@@ -363,6 +365,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 LastSeenY = ParseFloat(GetValue(values, "CriminalHistoryLastSeenY")),
                 LastSeenZ = ParseFloat(GetValue(values, "CriminalHistoryLastSeenZ")),
                 WantedLevel = ParseInt(wantedLevel),
+                DateTimeLastWantedEnded = ParseOptionalDateTimeOffset(dateTimeLastWantedEnded),
                 UpdatedUtc = ParseDateTimeOffset(GetValue(values, "CriminalHistoryUpdatedUtc")),
             };
 
@@ -462,6 +465,14 @@ namespace LosSantosRED.lsr.Coop.Core
             return DateTimeOffset.TryParse(value, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out parsed)
                 ? parsed
                 : DateTimeOffset.UtcNow;
+        }
+
+        private static DateTimeOffset ParseOptionalDateTimeOffset(string value)
+        {
+            DateTimeOffset parsed;
+            return DateTimeOffset.TryParse(value, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out parsed)
+                ? parsed
+                : DateTimeOffset.MinValue;
         }
 
         private static bool IsTrue(string value)

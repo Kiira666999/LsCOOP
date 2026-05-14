@@ -20,6 +20,8 @@ namespace LosSantosRED.lsr.Coop.Core
         public float LastSeenZ { get; set; }
         public int WantedLevel { get; set; }
         public List<CoopCriminalHistoryCrimeRecord> Crimes { get; private set; }
+        public DateTimeOffset DateTimeLastWantedEnded { get; set; }
         public DateTimeOffset UpdatedUtc { get; set; }
+        public string ClearReason { get; set; }
     }
 }

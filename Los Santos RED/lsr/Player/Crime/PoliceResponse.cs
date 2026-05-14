@@ -448,6 +448,17 @@ namespace LosSantosRED.lsr
             RelationshipGroup.Player.SetRelationshipWith(RelationshipGroup.SecurityGuard, Relationship.Neutral);
             //EntryPoint.WriteToConsole($"POLICE RESPONSE: Lost Wanted DateTimeLastWantedEnded {DateTimeLastWantedEnded}");
         }
+        public void RestoreCoopCriminalHistoryWantedEndedAnchor(DateTime dateTimeLastWantedEnded)
+        {
+            if (!LosSantosRED.lsr.Coop.Core.CoopStartupBridge.IsCoopEnabled || dateTimeLastWantedEnded == DateTime.MinValue)
+            {
+                return;
+            }
+
+            DateTimeLastWantedEnded = dateTimeLastWantedEnded;
+            GameTimeLastWantedEnded = Game.GameTime;
+            EntryPoint.WriteToConsole($"Co-op criminal history wanted-ended anchor restored DateTimeLastWantedEnded:{DateTimeLastWantedEnded:O} GameTimeLastWantedEnded:{GameTimeLastWantedEnded}", 0);
+        }
         public void OnWantedLevelIncreased()
         {
             GameTimeWantedLevelStarted = Game.GameTime;

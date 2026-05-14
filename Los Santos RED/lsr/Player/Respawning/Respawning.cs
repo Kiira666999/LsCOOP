@@ -143,6 +143,7 @@ public class Respawning// : IRespawning
         }
         else
         {
+            SetCriminalHistoryClearReason("BribePaid");
             ResetPlayer(true, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false);
             Game.DisplayNotification(BlankContactPicture, BlankContactPicture, StaticStrings.OfficerFriendlyContactName, "~r~Expedited Service Fee", BribedCopResponses.PickRandom());
             Player.BankAccounts.GiveMoney(-1 * possibleBribe.Amount, true);
@@ -179,6 +180,7 @@ public class Respawning// : IRespawning
     public void PayFine()
     {
         int FineAmount = Player.FineAmount();
+        SetCriminalHistoryClearReason("FinePaid");
         ResetPlayer(true, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false);
         if (Player.BankAccounts.GetMoney(true) < FineAmount)
         {
@@ -360,6 +362,7 @@ public class Respawning// : IRespawning
                 };
             Game.DisplaySubtitle("~g~Cop: ~s~" + TalkOutResponsePositive.PickRandom());
             GameFiber.Sleep(4000);
+            SetCriminalHistoryClearReason("CitationTalkedOut");
             ResetPlayer(true, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false);
             Player.Scanner.OnTalkedOutOfTicket();
             return true;
@@ -476,6 +479,7 @@ public class Respawning// : IRespawning
             RemoveIllegalWeapons();
         }    
         ImpoundNotification = ImpoundVehicles();
+        SetCriminalHistoryClearReason("ArrestResolved");
         ResetPlayer(true, true, false, false, true, false, true,false, false, false, false, false,true, true, false, true, true, false,false, false, true, false);//if you pass clear weapons here it will just remover everything anwyays
         Player.PlayerTasks.OnStandardRespawn();
         SetPlayerAtLocation(respawnableLocation);
@@ -547,6 +551,10 @@ public class Respawning// : IRespawning
     {
         Game.FadeScreenOut(1500);
         GameFiber.Wait(1500);
+    }
+    private void SetCriminalHistoryClearReason(string clearReason)
+    {
+        (Player as ITargetable)?.CriminalHistory?.SetNextCoopClearReason(clearReason);
     }
     public void CalculateHospitalStay()
     {
@@ -789,6 +797,7 @@ public class Respawning// : IRespawning
                 CrimeEvent highestPriorityCrimeEvent = Player.PoliceResponse.CrimesObserved.OrderBy(x => x.AssociatedCrime.Priority).FirstOrDefault();
                 if (searchActivity.CompletedSearch && !searchActivity.FoundIllegalItems && (highestPriorityCrimeEvent == null || highestPriorityCrimeEvent.AssociatedCrime.CanReleaseOnCleanSearch))
                 {
+                    SetCriminalHistoryClearReason("CleanSearchResolved");
                     ResetPlayer(true, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false);
                     Player.Scanner.OnTalkedOutOfTicket();
                 }

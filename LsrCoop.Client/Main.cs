@@ -46,6 +46,7 @@ namespace LsrCoop.Client
         private static readonly int GangReputationSnapshotCommittedEventHash = CustomEvents.Hash("lsrcoop.gangReputation.snapshot.committed");
 
         private readonly JavaScriptSerializer serializer = new JavaScriptSerializer();
+        private readonly string bridgeSessionId = Guid.NewGuid().ToString("N");
         private readonly CoopAppearanceCaptureService appearanceCaptureService = new CoopAppearanceCaptureService();
         private readonly CoopAppearanceApplyService appearanceApplyService = new CoopAppearanceApplyService();
         private readonly Dictionary<string, PvpVictimDamageState> pvpVictimDamageStates = new Dictionary<string, PvpVictimDamageState>(StringComparer.OrdinalIgnoreCase);
@@ -72,6 +73,7 @@ namespace LsrCoop.Client
         public override void OnStart()
         {
             Logger.Info("[LsrCoop.Client] loaded");
+            CleanupStaleGameplayBridgeFiles();
             UpdateBridgeWaiting(localWorldId);
             RegisterCustomEventStubs();
             SubscribeClientTick();
@@ -514,6 +516,7 @@ namespace LsrCoop.Client
 
             if (!IsCurrentProcessBridgeFile(values))
             {
+                TryDeleteStaleGameplayBridgeFile(path, values);
                 return;
             }
 
@@ -616,6 +619,7 @@ namespace LsrCoop.Client
                 $"CriminalHistoryLastSeenY={EscapeBridgeValue(criminalHistory?.LastSeenY.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
                 $"CriminalHistoryLastSeenZ={EscapeBridgeValue(criminalHistory?.LastSeenZ.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
                 $"CriminalHistoryWantedLevel={EscapeBridgeValue(criminalHistory?.WantedLevel.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
+                $"CriminalHistoryDateTimeLastWantedEnded={EscapeBridgeValue(FormatDateTime(criminalHistory?.DateTimeLastWantedEnded))}",
                 $"CriminalHistoryUpdatedUtc={EscapeBridgeValue(FormatDateTime(criminalHistory?.UpdatedUtc))}",
                 $"CriminalHistoryCrimes={EscapeBridgeValue(SerializeCriminalHistoryCrimes(criminalHistory?.Crimes))}",
                 $"TimestampUtc={EscapeBridgeValue(DateTime.UtcNow.ToString("O"))}",
@@ -627,7 +631,7 @@ namespace LsrCoop.Client
                 WriteAtomicBridgeFile(folder, CharacterSnapshotBridgeFileName, lines, nonce);
             }
 
-            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}");
+            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}, dateTimeLastWantedEnded={criminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}");
         }
 
         private void OnAppearanceChanged(CustomEventReceivedArgs args)
@@ -898,6 +902,7 @@ namespace LsrCoop.Client
         {
             WriteBridgeState(true, false, localWorldId, localProfileId, string.Empty, localCharacterReadyForSimulation);
             InvokeLsrBridge("SetSession", localWorldId ?? string.Empty, localProfileId ?? string.Empty, localCharacterReadyForSimulation);
+            LogStartupBridgeMode("Session", string.Empty);
         }
 
         private void UpdateBridgeActiveHost(string worldId, string activeHostProfileId)
@@ -905,6 +910,7 @@ namespace LsrCoop.Client
             localWorldId = string.IsNullOrWhiteSpace(worldId) ? localWorldId : worldId;
             WriteBridgeState(true, true, localWorldId, localProfileId, activeHostProfileId, localCharacterReadyForSimulation);
             InvokeLsrBridge("SetActiveHost", localWorldId ?? string.Empty, activeHostProfileId ?? string.Empty, localProfileId ?? string.Empty, localCharacterReadyForSimulation);
+            LogStartupBridgeMode("ActiveHostAssigned", activeHostProfileId);
         }
 
         private void UpdateBridgeWaiting(string worldId)
@@ -912,6 +918,7 @@ namespace LsrCoop.Client
             localWorldId = string.IsNullOrWhiteSpace(worldId) ? localWorldId : worldId;
             WriteBridgeState(true, false, localWorldId, localProfileId, string.Empty, localCharacterReadyForSimulation);
             InvokeLsrBridge("ClearActiveHost", localWorldId ?? string.Empty);
+            LogStartupBridgeMode("WaitingForActiveHost", string.Empty);
         }
 
         private void SetBridgeDisabled()
@@ -950,6 +957,7 @@ namespace LsrCoop.Client
             InvokeLsrStaticBridge("LosSantosRED.lsr.Coop.Core.CoopStartupBridge", methodName, args);
             if (!string.Equals(methodName, "SetDisabled", StringComparison.Ordinal))
             {
+                InvokeLsrStaticBridge("LosSantosRED.lsr.Coop.Core.CoopStartupBridge", "SetBridgeSessionId", bridgeSessionId);
                 InvokeLsrStaticBridge("LosSantosRED.lsr.Coop.Core.CoopStartupBridge", "SetLocalRole", localRole ?? string.Empty);
             }
         }
@@ -1065,7 +1073,9 @@ namespace LsrCoop.Client
                 LastSeenY = GetFloat(state, "LastSeenY"),
                 LastSeenZ = GetFloat(state, "LastSeenZ"),
                 WantedLevel = GetInt(state, "WantedLevel"),
+                DateTimeLastWantedEnded = GetDateTimeOffsetOrDefault(state, "DateTimeLastWantedEnded"),
                 UpdatedUtc = GetDateTimeOffset(state, "UpdatedUtc"),
+                ClearReason = GetString(state, "ClearReason"),
             };
 
             foreach (object crime in GetEnumerable(GetPropertyValue(state, "Crimes")))
@@ -1425,6 +1435,12 @@ namespace LsrCoop.Client
             return value is DateTimeOffset dateTimeOffset ? dateTimeOffset : DateTimeOffset.UtcNow;
         }
 
+        private DateTimeOffset GetDateTimeOffsetOrDefault(object source, string propertyName)
+        {
+            object value = GetPropertyValue(source, propertyName);
+            return value is DateTimeOffset dateTimeOffset ? dateTimeOffset : DateTimeOffset.MinValue;
+        }
+
         private DateTime GetDateTime(object source, string propertyName)
         {
             object value = GetPropertyValue(source, propertyName);
@@ -1472,6 +1488,22 @@ namespace LsrCoop.Client
                 foreach (string path in Directory.GetFiles(folder, GameplayOutboundBridgeSearchPattern))
                 {
                     yield return path;
+                }
+            }
+        }
+
+        private void CleanupStaleGameplayBridgeFiles()
+        {
+            foreach (string folder in GetBridgeStateFolders())
+            {
+                if (string.IsNullOrWhiteSpace(folder) || !Directory.Exists(folder))
+                {
+                    continue;
+                }
+
+                foreach (string path in Directory.GetFiles(folder, "LsrCoopGameplayOut.*.tmp"))
+                {
+                    TryDeleteOldBridgeTempFile(path);
                 }
             }
         }
@@ -1775,8 +1807,47 @@ namespace LsrCoop.Client
                 return false;
             }
 
-            return int.TryParse(GetBridgeValue(values, "ProcessId"), out int processId)
-                && processId == Process.GetCurrentProcess().Id;
+            if (!int.TryParse(GetBridgeValue(values, "ProcessId"), out int processId)
+                || processId != Process.GetCurrentProcess().Id)
+            {
+                return false;
+            }
+
+            string sessionId = GetBridgeValue(values, "SessionId");
+            return !string.IsNullOrWhiteSpace(sessionId)
+                && string.Equals(sessionId, bridgeSessionId, StringComparison.OrdinalIgnoreCase);
+        }
+
+        private void TryDeleteStaleGameplayBridgeFile(string path, Dictionary<string, string> values)
+        {
+            try
+            {
+                string processId = GetBridgeValue(values, "ProcessId");
+                string sessionId = GetBridgeValue(values, "SessionId");
+                File.Delete(path);
+                Logger.Info($"[LsrCoop.Client] stale gameplay bridge deleted: process={processId}, session={sessionId}, path={path}");
+            }
+            catch (Exception ex)
+            {
+                Logger.Info($"[LsrCoop.Client] stale gameplay bridge cleanup skipped: {ex.Message}");
+            }
+        }
+
+        private void TryDeleteOldBridgeTempFile(string path)
+        {
+            try
+            {
+                FileInfo file = new FileInfo(path);
+                if (file.Exists && DateTimeOffset.UtcNow - new DateTimeOffset(file.LastWriteTimeUtc, TimeSpan.Zero) > TimeSpan.FromMinutes(5))
+                {
+                    file.Delete();
+                    Logger.Info($"[LsrCoop.Client] stale gameplay bridge temp deleted: {path}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Info($"[LsrCoop.Client] stale gameplay bridge temp cleanup skipped: {ex.Message}");
+            }
         }
 
         private IEnumerable<object> GetEnumerable(object source)
@@ -1814,6 +1885,7 @@ namespace LsrCoop.Client
                 "TransportMode=RAGECOOP",
                 $"CoopModeEnabled={isCoopEnabled.ToString().ToLowerInvariant()}",
                 $"ProcessId={Process.GetCurrentProcess().Id}",
+                $"SessionId={bridgeSessionId}",
                 $"IsCoopEnabled={isCoopEnabled.ToString().ToLowerInvariant()}",
                 $"HasActiveHostAssigned={hasActiveHostAssigned.ToString().ToLowerInvariant()}",
                 $"CharacterReadyForSimulation={isCharacterReadyForSimulation.ToString().ToLowerInvariant()}",
@@ -1836,6 +1908,21 @@ namespace LsrCoop.Client
                     Logger.Info($"[LsrCoop.Client] startup bridge file update skipped: {ex.Message}");
                 }
             }
+        }
+
+        private void LogStartupBridgeMode(string reason, string assignedActiveHostProfileId)
+        {
+            bool isLocalActiveHost = !string.IsNullOrWhiteSpace(localProfileId)
+                && !string.IsNullOrWhiteSpace(assignedActiveHostProfileId)
+                && string.Equals(localProfileId, assignedActiveHostProfileId, StringComparison.OrdinalIgnoreCase);
+            string selectedMode = !localCharacterReadyForSimulation && !string.IsNullOrWhiteSpace(localProfileId)
+                ? "BootstrapOnly"
+                : isLocalActiveHost && localCharacterReadyForSimulation
+                    ? "FullSimulation"
+                    : localCharacterReadyForSimulation
+                        ? "ClientMode"
+                        : "Blocked";
+            Logger.Info($"[LsrCoop.Client] startup bridge state: mode={selectedMode}, localProfile={localProfileId}, activeHost={assignedActiveHostProfileId}, isLocalActiveHost={isLocalActiveHost}, characterReady={localCharacterReadyForSimulation}, reason={reason}, session={bridgeSessionId}");
         }
 
         private string[] GetBridgeStateFolders()

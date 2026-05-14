@@ -21,6 +21,7 @@ namespace LosSantosRED.lsr
         private ISettingsProvideable Settings;
         private ITimeReportable Time;
         private Blip CriminalHistoryBlip;
+        private string NextCoopClearReason;
         private float PlayerDistanceToLastSeen = 9999f;
         private Color blipColor => IsNearLastSeenLocation ? Color.Orange : Color.Yellow;
         public bool IsNearLastSeenLocation { get; set; }
@@ -64,13 +65,24 @@ namespace LosSantosRED.lsr
         }
         public void Reset()
         {
-            Clear();
+            Clear(NextCoopClearReason);
+        }
+        public void SetNextCoopClearReason(string clearReason)
+        {
+            NextCoopClearReason = clearReason ?? string.Empty;
         }
         public void Clear()
         {
+            Clear(null);
+        }
+        public void Clear(string clearReason)
+        {
             CurrentHistory = null;
+            string appliedClearReason = clearReason ?? NextCoopClearReason ?? string.Empty;
+            NextCoopClearReason = appliedClearReason;
             CoopCriminalJusticeStateAdapter.Current.NotifyLocalCriminalHistoryChanged();
-            //EntryPoint.WriteToConsole($" PLAYER EVENT: Criminal History Clear");
+            NextCoopClearReason = string.Empty;
+            EntryPoint.WriteToConsole($" PLAYER EVENT: Criminal History Clear Reason:{appliedClearReason}", 0);
         }
         public void AddCrime(Crime crime)
         {
@@ -100,7 +112,9 @@ namespace LosSantosRED.lsr
                 LastSeenX = CurrentHistory?.LastSeenLocation.X ?? 0.0f,
                 LastSeenY = CurrentHistory?.LastSeenLocation.Y ?? 0.0f,
                 LastSeenZ = CurrentHistory?.LastSeenLocation.Z ?? 0.0f,
+                DateTimeLastWantedEnded = ToCoopDateTimeOffset(GetCoopWantedEndedAnchor()),
                 UpdatedUtc = DateTimeOffset.UtcNow,
+                ClearReason = CurrentHistory == null ? NextCoopClearReason ?? string.Empty : string.Empty,
             };
 
             if (CurrentHistory?.Crimes != null)
@@ -119,6 +133,7 @@ namespace LosSantosRED.lsr
                 }
             }
 
+            LogCoopExpirationDiagnostics("Capture", state.WantedLevel, ToDateTime(state.DateTimeLastWantedEnded), string.Empty);
             return state;
         }
         public void ApplyCoopState(CoopCriminalHistoryState state, ICrimes crimes)
@@ -141,7 +156,10 @@ namespace LosSantosRED.lsr
                 restoredCrimes.Add(new CrimeEvent(crime, null) { Instances = crimeRecord.Instances });
             }
 
+            DateTime restoredWantedEnded = ToDateTime(state.DateTimeLastWantedEnded);
+            Player.PoliceResponse.RestoreCoopCriminalHistoryWantedEndedAnchor(restoredWantedEnded);
             CurrentHistory = new BOLO(new Vector3(state.LastSeenX, state.LastSeenY, state.LastSeenZ), restoredCrimes, state.WantedLevel);
+            LogCoopExpirationDiagnostics("Hydrate", state.WantedLevel, restoredWantedEnded, string.Empty);
         }
         public string PrintCriminalHistory()
         {
@@ -188,13 +206,14 @@ namespace LosSantosRED.lsr
             }
             if (Player.PoliceResponse.HasBeenNotWantedFor >= (Settings.SettingsManager.CriminalHistorySettings.RealTimeExpireWantedMultiplier * LastWantedMaxLevel))// 120000)
             {
-                Clear();
+                Clear("ExpiredRealTime");
                 //EntryPoint.WriteToConsole("CRIMINAL HISTORY EVENT: History Expired (Real Time)");
             }
             if (DateTime.Compare(Player.PoliceResponse.DateTimeLastWantedEnded.AddHours(LastWantedMaxLevel * Settings.SettingsManager.CriminalHistorySettings.CalendarTimeExpireWantedMultiplier), Time.CurrentDateTime) < 0)
             {
                 //EntryPoint.WriteToConsole($"POLICE RESPONSE: Lost Wanted ToExpire: {Player.PoliceResponse.DateTimeLastWantedEnded.AddHours(LastWantedMaxLevel * Settings.SettingsManager.CriminalHistorySettings.CalendarTimeExpireWantedMultiplier)} Current: {Time.CurrentDateTime}");
-                Clear();
+                LogCoopExpirationDiagnostics("Clear", LastWantedMaxLevel, Player.PoliceResponse.DateTimeLastWantedEnded, "ExpiredCalendarTime");
+                Clear("ExpiredCalendarTime");
                 //EntryPoint.WriteToConsole("CRIMINAL HISTORY EVENT: History Expired (Calendar Time)");
             }    
 
@@ -278,6 +297,46 @@ namespace LosSantosRED.lsr
             {
                 CriminalHistoryBlip.Delete();
             }
+        }
+
+        private DateTimeOffset ToCoopDateTimeOffset(DateTime value)
+        {
+            if (value == DateTime.MinValue)
+            {
+                return DateTimeOffset.MinValue;
+            }
+
+            return new DateTimeOffset(DateTime.SpecifyKind(value, DateTimeKind.Utc));
+        }
+
+        private DateTime GetCoopWantedEndedAnchor()
+        {
+            DateTime anchor = Player.PoliceResponse.DateTimeLastWantedEnded;
+            return CurrentHistory != null && anchor == DateTime.MinValue ? Time.CurrentDateTime : anchor;
+        }
+
+        private DateTime ToDateTime(DateTimeOffset value)
+        {
+            if (value == DateTimeOffset.MinValue)
+            {
+                return DateTime.MinValue;
+            }
+
+            return DateTime.SpecifyKind(value.UtcDateTime, DateTimeKind.Unspecified);
+        }
+
+        private void LogCoopExpirationDiagnostics(string stage, int wantedLevel, DateTime dateTimeLastWantedEnded, string clearReason)
+        {
+            if (!CoopStartupBridge.IsCoopEnabled)
+            {
+                return;
+            }
+
+            DateTime expirationTime = dateTimeLastWantedEnded == DateTime.MinValue
+                ? DateTime.MinValue
+                : dateTimeLastWantedEnded.AddHours(wantedLevel * Settings.SettingsManager.CriminalHistorySettings.CalendarTimeExpireWantedMultiplier);
+            double remainingHours = expirationTime == DateTime.MinValue ? 0.0d : (expirationTime - Time.CurrentDateTime).TotalHours;
+            EntryPoint.WriteToConsole($"Co-op criminal history expiration {stage} Wanted:{wantedLevel} DateTimeLastWantedEnded:{dateTimeLastWantedEnded:O} Expires:{expirationTime:O} Current:{Time.CurrentDateTime:O} RemainingHours:{remainingHours:0.00} ClearReason:{clearReason}", 0);
         }
        
 

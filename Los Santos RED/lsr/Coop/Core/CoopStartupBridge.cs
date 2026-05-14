@@ -21,6 +21,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public static string LocalProfileId { get; private set; } = string.Empty;
         public static string ActiveHostProfileId { get; private set; } = string.Empty;
         public static string LocalRole { get; private set; } = string.Empty;
+        public static string BridgeSessionId { get; private set; } = string.Empty;
         public static bool IsLocalAdmin => HasRole(LocalRole, "Admin");
 
         public static void SetDisabled()
@@ -36,7 +37,13 @@ namespace LosSantosRED.lsr.Coop.Core
             LocalProfileId = string.Empty;
             ActiveHostProfileId = string.Empty;
             LocalRole = string.Empty;
+            BridgeSessionId = string.Empty;
             CoopRuntimeServices.ResetToDisabled();
+        }
+
+        public static void SetBridgeSessionId(string sessionId)
+        {
+            BridgeSessionId = sessionId ?? string.Empty;
         }
 
         public static void SetLocalRole(string localRole)
@@ -173,6 +180,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 LocalProfileId = GetValue(lines, "LocalProfileId") ?? string.Empty;
                 ActiveHostProfileId = GetValue(lines, "ActiveHostProfileId") ?? string.Empty;
                 LocalRole = GetValue(lines, "LocalRole") ?? string.Empty;
+                BridgeSessionId = GetValue(lines, "SessionId") ?? string.Empty;
                 IsLocalActiveHost = HasActiveHostAssigned && !string.IsNullOrWhiteSpace(LocalProfileId) && string.Equals(LocalProfileId, ActiveHostProfileId, StringComparison.OrdinalIgnoreCase);
                 if (!IsCharacterReadyForSimulation && !string.IsNullOrWhiteSpace(LocalProfileId))
                 {
