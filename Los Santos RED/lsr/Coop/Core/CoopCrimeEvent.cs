@@ -39,5 +39,10 @@ namespace LosSantosRED.lsr.Coop.Core
         public bool AlwaysAddInstance { get; set; }
         public string SourceClientId { get; set; }
         public DateTimeOffset TimestampUtc { get; set; }
+        public bool HadLongTermCriminalHistoryBefore { get; set; }
+        public bool HasLongTermCriminalHistoryAfter { get; set; }
+        public bool CreatedLongTermCriminalHistory { get; set; }
+        public int LongTermCriminalHistoryCrimeCount { get; set; }
+        public bool TemporaryStatePersisted { get; set; }
     }
 }

@@ -291,6 +291,11 @@ namespace LosSantosRED.lsr.Coop.Core
             request.Parameters["IsObservedByPolice"] = crimeEvent.IsObservedByPolice.ToString();
             request.Parameters["IsForPlayer"] = crimeEvent.IsForPlayer.ToString();
             request.Parameters["AlwaysAddInstance"] = crimeEvent.AlwaysAddInstance.ToString();
+            request.Parameters["HadLongTermCriminalHistoryBefore"] = crimeEvent.HadLongTermCriminalHistoryBefore.ToString();
+            request.Parameters["HasLongTermCriminalHistoryAfter"] = crimeEvent.HasLongTermCriminalHistoryAfter.ToString();
+            request.Parameters["CreatedLongTermCriminalHistory"] = crimeEvent.CreatedLongTermCriminalHistory.ToString();
+            request.Parameters["LongTermCriminalHistoryCrimeCount"] = crimeEvent.LongTermCriminalHistoryCrimeCount.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            request.Parameters["TemporaryStatePersisted"] = crimeEvent.TemporaryStatePersisted.ToString();
             request.Parameters["PositionX"] = crimeEvent.Position.X.ToString(System.Globalization.CultureInfo.InvariantCulture);
             request.Parameters["PositionY"] = crimeEvent.Position.Y.ToString(System.Globalization.CultureInfo.InvariantCulture);
             request.Parameters["PositionZ"] = crimeEvent.Position.Z.ToString(System.Globalization.CultureInfo.InvariantCulture);
@@ -301,6 +306,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 Request = request,
                 Result = result,
             });
+            EntryPoint.WriteToConsole($"Co-op active-host crime routed Crime:{crimeEvent.CrimeId} Profile:{crimeEvent.OffenderProfileId} Character:{crimeEvent.OffenderCharacterId} LongTermHistoryCreated:{crimeEvent.CreatedLongTermCriminalHistory} TemporaryStatePersisted:{crimeEvent.TemporaryStatePersisted}", 0);
         }
     }
 }

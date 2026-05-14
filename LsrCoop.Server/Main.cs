@@ -295,7 +295,14 @@ namespace LsrCoop.Server
 
             CoopGameplayActionResultDto accepted = CreateGameplayActionResult(request, true, false, "Committed by active host");
             SendGameplayActionResult(requester, accepted);
-            Logger.Info($"[LsrCoop.Server] gameplay action committed: profile={profile.ProfileId}, request={request.RequestId}, type={request.ActionType}");
+            if (string.Equals(request.ActionType, "CommitCrime", StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Info($"[LsrCoop.Server] active-host crime committed: crime={GetParameter(request, "CrimeId")} ({GetParameter(request, "CrimeName")}), profile={request.SourceProfileId}, character={request.SourceCharacterId}, longTermHistoryCreated={GetParameter(request, "CreatedLongTermCriminalHistory")}, longTermHistoryCrimes={GetParameter(request, "LongTermCriminalHistoryCrimeCount")}, temporaryStatePersisted={GetParameter(request, "TemporaryStatePersisted")}; active chase/search/witness/roadblock/live combat state skipped");
+            }
+            else
+            {
+                Logger.Info($"[LsrCoop.Server] gameplay action committed: profile={profile.ProfileId}, request={request.RequestId}, type={request.ActionType}");
+            }
         }
 
         private bool IsNewerOrSame(DateTimeOffset incomingUtc, DateTimeOffset? currentUtc)

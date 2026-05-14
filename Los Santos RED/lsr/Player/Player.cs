@@ -1870,10 +1870,21 @@ namespace Mod
             {
                 return;
             }
+            bool hadLongTermCriminalHistoryBefore = CoopStartupBridge.IsCoopEnabled && CriminalHistory.HasHistory;
+            int longTermCriminalHistoryCountBefore = hadLongTermCriminalHistoryBefore ? CriminalHistory.WantedCrimes?.Count ?? 0 : 0;
             GameFiber.Yield();//TR 6 this is new, seems helpful so far with no downsides
             CrimeSceneDescription description = new CrimeSceneDescription(!IsInVehicle, isObservedByPolice, Location, HaveDescription) { InteriorSeen = isForPlayer ? CurrentLocation.CurrentInterior : null, VehicleSeen = VehicleObserved, WeaponSeen = WeaponObserved, Speed = Game.LocalPlayer.Character.Speed };
             coopCrimeEvent.CrimeSceneDescription = description;
             PoliceResponse.AddCrime(crimeObserved, description, isForPlayer, alwaysAddInstance);
+            if (CoopStartupBridge.IsCoopEnabled)
+            {
+                bool hasLongTermCriminalHistoryAfter = CriminalHistory.HasHistory;
+                coopCrimeEvent.HadLongTermCriminalHistoryBefore = hadLongTermCriminalHistoryBefore;
+                coopCrimeEvent.HasLongTermCriminalHistoryAfter = hasLongTermCriminalHistoryAfter;
+                coopCrimeEvent.CreatedLongTermCriminalHistory = !hadLongTermCriminalHistoryBefore && hasLongTermCriminalHistoryAfter;
+                coopCrimeEvent.LongTermCriminalHistoryCrimeCount = hasLongTermCriminalHistoryAfter ? CriminalHistory.WantedCrimes?.Count ?? longTermCriminalHistoryCountBefore : 0;
+                coopCrimeEvent.TemporaryStatePersisted = false;
+            }
             CoopCrimeRoutingService.Current.NotifyAppliedOnActiveHost(coopCrimeEvent);
 
 
