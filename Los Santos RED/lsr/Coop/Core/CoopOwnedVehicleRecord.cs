@@ -7,6 +7,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public string VehicleId { get; set; }
         public string ModelHash { get; set; }
         public string ModelName { get; set; }
+        public string VehicleSaveStatusXml { get; set; }
         public string PlateNumber { get; set; }
         public int PlateType { get; set; }
         public bool PlateIsWanted { get; set; }

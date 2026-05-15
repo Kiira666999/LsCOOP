@@ -88,7 +88,7 @@ namespace LosSantosRED.lsr
             GameFiber.Yield();
             Player.Setup();
             CoopCharacterSnapshotStartupBridge.ApplyAppearanceAfterPlayerSetup(startupSnapshot, Player);
-            CoopCharacterSnapshotStartupBridge.ApplyProfileHydrationAfterPlayerSetup(startupSnapshot, Player, ModDataFileManager.ModItems, ModDataFileManager.Crimes);
+            CoopCharacterSnapshotStartupBridge.ApplyProfileHydrationAfterPlayerSetup(startupSnapshot, Player, ModDataFileManager.ModItems, ModDataFileManager.Crimes, World, ModDataFileManager.Settings, ModDataFileManager.PlacesOfInterest, Time, ModDataFileManager.Weapons);
             GameFiber.Yield();
             CoopCharacterManager = new LsrCoopCharacterManager();
             LocalCoopCharacter localCoopCharacter = CoopCharacterManager.RegisterLocalCharacter(Player);
@@ -247,7 +247,7 @@ namespace LosSantosRED.lsr
             Player = CreatePlayer(World);
             Player.Setup();
             CoopCharacterSnapshotStartupBridge.ApplyAppearanceAfterPlayerSetup(startupSnapshot, Player);
-            CoopCharacterSnapshotStartupBridge.ApplyProfileHydrationAfterPlayerSetup(startupSnapshot, Player, ModDataFileManager.ModItems, ModDataFileManager.Crimes);
+            CoopCharacterSnapshotStartupBridge.ApplyProfileHydrationAfterPlayerSetup(startupSnapshot, Player, ModDataFileManager.ModItems, ModDataFileManager.Crimes, World, ModDataFileManager.Settings, ModDataFileManager.PlacesOfInterest, Time, ModDataFileManager.Weapons);
             CoopCharacterManager = new LsrCoopCharacterManager();
             LocalCoopCharacter localCoopCharacter = CoopCharacterManager.RegisterLocalCharacter(Player);
             CoopCharacterSnapshotStartupBridge.HydrateLocalCharacter(localCoopCharacter, startupSnapshot);

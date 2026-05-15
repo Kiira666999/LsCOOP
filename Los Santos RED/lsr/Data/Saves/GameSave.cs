@@ -522,6 +522,11 @@ namespace LosSantosRED.lsr.Data
                 }
             }
         }
+
+        public void LoadOwnedVehicles(IInventoryable player, IEntityProvideable world, ISettingsProvideable settings, IModItems modItems, IPlacesOfInterest placesOfInterest, ITimeReportable time, IWeapons weapons)
+        {
+            LoadVehicles(player, world, settings, modItems, placesOfInterest, time, weapons);
+        }
         private void LoadRelationships(IInventoryable player, IGangs gangs, IContacts contacts, ITimeReportable time)
         {
             player.RelationshipManager.GangRelationships.ResetGang(false);

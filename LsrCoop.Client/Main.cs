@@ -261,7 +261,7 @@ namespace LsrCoop.Client
                 ApplyAppearanceIfLocal(snapshot.WorldId, profile.ProfileId, profile.Character?.Appearance);
                 if (string.Equals(profile.ProfileId, localProfileId, StringComparison.OrdinalIgnoreCase))
                 {
-                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character, profile.InventoryMoney, profile.Weapons, profile.CriminalHistory, profile.GangReputation);
+                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character, profile.InventoryMoney, profile.Weapons, profile.OwnedVehicles, profile.CriminalHistory, profile.GangReputation);
                 }
             }
 
@@ -290,19 +290,20 @@ namespace LsrCoop.Client
             CoopWeaponSnapshot weapons = Deserialize<CoopWeaponSnapshot>(GetArg(args, 4));
             CoopCriminalHistoryStateDto criminalHistory = Deserialize<CoopCriminalHistoryStateDto>(GetArg(args, 5));
             CoopGangReputationStateDto gangReputation = Deserialize<CoopGangReputationStateDto>(GetArg(args, 6));
+            CoopOwnedVehicleSnapshot ownedVehicles = Deserialize<CoopOwnedVehicleSnapshot>(GetArg(args, 7));
             ApplyAppearanceIfLocal(worldId, profileId, snapshot?.Appearance);
             if (string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase))
             {
                 localCharacterReadyForSimulation = snapshot != null;
                 if (localCharacterReadyForSimulation)
                 {
-                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot, inventoryMoney, weapons, criminalHistory, gangReputation);
+                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot, inventoryMoney, weapons, ownedVehicles, criminalHistory, gangReputation);
                     ExitCharacterCreationSafeState();
                 }
                 UpdateCurrentBridgeState();
                 SendCharacterSnapshotAck(worldId, profileId);
             }
-            Logger.Info($"[LsrCoop.Client] character snapshot received: world={worldId}, profile={profileId}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(gangReputation, "AMBIENT_GANG_MEXICAN"))}");
+            Logger.Info($"[LsrCoop.Client] character snapshot received: world={worldId}, profile={profileId}, ownedVehicles={ownedVehicles?.Vehicles?.Count ?? 0}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(gangReputation, "AMBIENT_GANG_MEXICAN"))}");
         }
 
         private void EnterCharacterCreationSafeState(string worldId, string profileId)
@@ -541,6 +542,7 @@ namespace LsrCoop.Client
 
             if (string.Equals(eventType, "GameplayActionCommitted", StringComparison.OrdinalIgnoreCase))
             {
+                LogOwnedVehicleCommitForwarding(payloadJson, profileId);
                 API.SendCustomEvent(GameplayActionCommittedEventHash, new object[] { payloadJson, eventType ?? string.Empty, nonce ?? string.Empty, profileId ?? string.Empty });
                 Logger.Info($"[LsrCoop.Client] gameplay commit sent: profile={profileId}");
                 return true;
@@ -571,6 +573,29 @@ namespace LsrCoop.Client
             return true;
         }
 
+        private void LogOwnedVehicleCommitForwarding(string payloadJson, string profileId)
+        {
+            CoopStorePurchaseCommitDto commit = Deserialize<CoopStorePurchaseCommitDto>(payloadJson);
+            CoopOwnedVehicleSnapshot snapshot = commit?.OwnedVehicleSnapshot;
+            if (snapshot == null)
+            {
+                return;
+            }
+
+            CoopOwnedVehicleRecord firstVehicle = snapshot.Vehicles?.FirstOrDefault();
+            Logger.Info($"[LsrCoop.Client] owned vehicle commit forwarded: profile={profileId}, type={commit.Request?.ActionType}, action={GetRequestParameter(commit.Request, "VehicleAction")}, count={snapshot.Vehicles?.Count ?? 0}, firstVehicle={firstVehicle?.VehicleId ?? "none"}, firstPlate={firstVehicle?.PlateNumber ?? "none"}, firstModel={firstVehicle?.ModelName ?? firstVehicle?.ModelHash ?? "none"}");
+        }
+
+        private string GetRequestParameter(CoopGameplayActionRequestDto request, string key)
+        {
+            if (request?.Parameters == null || !request.Parameters.TryGetValue(key, out string value))
+            {
+                return string.Empty;
+            }
+
+            return value ?? string.Empty;
+        }
+
         private string GetPedModelName(Ped ped)
         {
             if (ped == null || !ped.Exists())
@@ -582,7 +607,7 @@ namespace LsrCoop.Client
             return modelHash.ToString();
         }
 
-        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot, CoopInventoryMoneySnapshot inventoryMoney = null, CoopWeaponSnapshot weapons = null, CoopCriminalHistoryStateDto criminalHistory = null, CoopGangReputationStateDto gangReputation = null)
+        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot, CoopInventoryMoneySnapshot inventoryMoney = null, CoopWeaponSnapshot weapons = null, CoopOwnedVehicleSnapshot ownedVehicles = null, CoopCriminalHistoryStateDto criminalHistory = null, CoopGangReputationStateDto gangReputation = null)
         {
             if (snapshot == null || string.IsNullOrWhiteSpace(worldId) || string.IsNullOrWhiteSpace(profileId))
             {
@@ -615,6 +640,9 @@ namespace LsrCoop.Client
                 $"WeaponSnapshotId={EscapeBridgeValue(weapons?.SnapshotId ?? string.Empty)}",
                 $"WeaponSnapshotUtc={EscapeBridgeValue(FormatDateTime(weapons?.SnapshotUtc))}",
                 $"Weapons={EscapeBridgeValue(SerializeWeapons(weapons?.Weapons))}",
+                $"OwnedVehicleSnapshotId={EscapeBridgeValue(ownedVehicles?.SnapshotId ?? string.Empty)}",
+                $"OwnedVehicleSnapshotUtc={EscapeBridgeValue(FormatDateTime(ownedVehicles?.SnapshotUtc))}",
+                $"OwnedVehicles={EscapeBridgeValue(SerializeOwnedVehicles(ownedVehicles?.Vehicles))}",
                 $"CriminalHistoryHasHistory={EscapeBridgeValue((criminalHistory?.HasHistory == true).ToString().ToLowerInvariant())}",
                 $"CriminalHistoryLastSeenX={EscapeBridgeValue(criminalHistory?.LastSeenX.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
                 $"CriminalHistoryLastSeenY={EscapeBridgeValue(criminalHistory?.LastSeenY.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
@@ -636,7 +664,7 @@ namespace LsrCoop.Client
                 WriteAtomicBridgeFile(folder, CharacterSnapshotBridgeFileName, lines, nonce);
             }
 
-            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, currentGang={gangReputation?.CurrentGangId ?? "none"}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(gangReputation, "AMBIENT_GANG_MEXICAN"))}, dateTimeLastWantedEnded={criminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}");
+            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, ownedVehicles={ownedVehicles?.Vehicles?.Count ?? 0}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, currentGang={gangReputation?.CurrentGangId ?? "none"}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(gangReputation, "AMBIENT_GANG_MEXICAN"))}, dateTimeLastWantedEnded={criminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}");
         }
 
         private void OnAppearanceChanged(CustomEventReceivedArgs args)
@@ -1353,6 +1381,7 @@ namespace LsrCoop.Client
                     VehicleId = GetString(vehicle, "VehicleId"),
                     ModelHash = GetString(vehicle, "ModelHash"),
                     ModelName = GetString(vehicle, "ModelName"),
+                    VehicleSaveStatusXml = GetString(vehicle, "VehicleSaveStatusXml"),
                     PlateNumber = GetString(vehicle, "PlateNumber"),
                     PlateType = GetInt(vehicle, "PlateType"),
                     PlateIsWanted = GetBool(vehicle, "PlateIsWanted"),
@@ -1696,6 +1725,34 @@ namespace LsrCoop.Client
                 weapon.Ammo.ToString(CultureInfo.InvariantCulture),
                 weapon.IsLegal.ToString().ToLowerInvariant(),
                 weapon.IsEquipped.ToString().ToLowerInvariant()
+            })));
+        }
+
+        private string SerializeOwnedVehicles(IEnumerable<CoopOwnedVehicleRecord> vehicles)
+        {
+            if (vehicles == null)
+            {
+                return string.Empty;
+            }
+
+            return string.Join(";", vehicles.Select(vehicle => string.Join(",", new[]
+            {
+                EscapeListPart(vehicle.VehicleId),
+                EscapeListPart(vehicle.ModelHash),
+                EscapeListPart(vehicle.ModelName),
+                EscapeListPart(vehicle.VehicleSaveStatusXml),
+                EscapeListPart(vehicle.PlateNumber),
+                vehicle.PlateType.ToString(CultureInfo.InvariantCulture),
+                vehicle.PlateIsWanted.ToString().ToLowerInvariant(),
+                vehicle.PositionX.ToString(CultureInfo.InvariantCulture),
+                vehicle.PositionY.ToString(CultureInfo.InvariantCulture),
+                vehicle.PositionZ.ToString(CultureInfo.InvariantCulture),
+                vehicle.Heading.ToString(CultureInfo.InvariantCulture),
+                vehicle.IsImpounded.ToString().ToLowerInvariant(),
+                vehicle.DateTimeImpounded.ToString("O", CultureInfo.InvariantCulture),
+                vehicle.TimesImpounded.ToString(CultureInfo.InvariantCulture),
+                EscapeListPart(vehicle.ImpoundedLocation),
+                vehicle.StoredCash.ToString(CultureInfo.InvariantCulture)
             })));
         }
 

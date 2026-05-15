@@ -15,6 +15,7 @@ namespace LosSantosRED.lsr.Coop.Core
         private static readonly CoopPropertyOwnershipAdapter PropertyOwnershipAdapter = new CoopPropertyOwnershipAdapter();
         private static readonly CoopOwnedVehicleAdapter OwnedVehicleAdapter = new CoopOwnedVehicleAdapter();
         private static readonly Dictionary<string, PendingPurchaseState> PendingPurchaseStates = new Dictionary<string, PendingPurchaseState>();
+        private static int ownedVehicleCommitSuppressionDepth;
 
         public static bool TryBeginPurchaseItem(Transaction transaction, ILocationInteractable player, MenuItem menuItem, ModItem modItem, int quantity, int totalPrice, bool isStealing, out CoopGameplayActionRequest request, out string blockedReason)
         {
@@ -41,6 +42,7 @@ namespace LosSantosRED.lsr.Coop.Core
             CoopOwnedVehicleSnapshot ownedVehicleSnapshot = request.ActionType == CoopGameplayActionType.PurchaseVehicle
                 ? OwnedVehicleAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId)
                 : null;
+            LogOwnedVehicleSnapshotBeforeBridge(request, ownedVehicleSnapshot);
             CoopGameplayFileBridge.PublishGameplayCommit(new CoopStorePurchaseCommit
             {
                 Request = request,
@@ -123,6 +125,11 @@ namespace LosSantosRED.lsr.Coop.Core
             request = null;
             blockedReason = string.Empty;
 
+            if (ownedVehicleCommitSuppressionDepth > 0)
+            {
+                return true;
+            }
+
             if (!CoopStartupBridge.IsCoopEnabled)
             {
                 return true;
@@ -156,6 +163,16 @@ namespace LosSantosRED.lsr.Coop.Core
             return true;
         }
 
+        public static IDisposable SuppressOwnedVehicleCommits(string reason)
+        {
+            ownedVehicleCommitSuppressionDepth++;
+            if (CoopStartupBridge.IsCoopEnabled)
+            {
+                EntryPoint.WriteToConsole($"Co-op owned vehicle commit suppression begin Reason:{reason ?? string.Empty} Depth:{ownedVehicleCommitSuppressionDepth}", 5);
+            }
+            return new OwnedVehicleCommitSuppressionScope(reason);
+        }
+
         public static void CompleteOwnedVehicleChange(CoopGameplayActionRequest request, IVehicleOwnable player)
         {
             if (!CoopStartupBridge.IsCoopEnabled || request == null)
@@ -166,6 +183,7 @@ namespace LosSantosRED.lsr.Coop.Core
             Mod.Player modPlayer = player as Mod.Player;
             CoopGameplayActionResult result = AuthorityService.CreateAcceptedResult(request, "Accepted by active host");
             CoopOwnedVehicleSnapshot ownedVehicleSnapshot = OwnedVehicleAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId);
+            LogOwnedVehicleSnapshotBeforeBridge(request, ownedVehicleSnapshot);
 
             CoopGameplayFileBridge.PublishGameplayCommit(new CoopStorePurchaseCommit
             {
@@ -450,11 +468,48 @@ namespace LosSantosRED.lsr.Coop.Core
             }
         }
 
+        private static void LogOwnedVehicleSnapshotBeforeBridge(CoopGameplayActionRequest request, CoopOwnedVehicleSnapshot snapshot)
+        {
+            if (!CoopStartupBridge.IsCoopEnabled || snapshot == null)
+            {
+                return;
+            }
+
+            CoopOwnedVehicleRecord firstVehicle = snapshot.Vehicles?.FirstOrDefault();
+            EntryPoint.WriteToConsole($"Co-op owned vehicle snapshot before bridge Type:{request?.ActionType} Action:{GetParameter(request, "VehicleAction")} Profile:{request?.SourceProfileId} Count:{snapshot.Vehicles?.Count ?? 0} FirstVehicle:{firstVehicle?.VehicleId ?? "none"} FirstPlate:{firstVehicle?.PlateNumber ?? "none"} FirstModel:{firstVehicle?.ModelName ?? firstVehicle?.ModelHash ?? "none"}", 0);
+        }
+
         private class PendingPurchaseState
         {
             public Mod.Player Player { get; set; }
             public CoopInventoryMoneySnapshot BeforeSnapshot { get; set; }
             public Dictionary<string, ModItem> ItemsByName { get; set; }
+        }
+
+        private class OwnedVehicleCommitSuppressionScope : IDisposable
+        {
+            private readonly string reason;
+            private bool disposed;
+
+            public OwnedVehicleCommitSuppressionScope(string reason)
+            {
+                this.reason = reason ?? string.Empty;
+            }
+
+            public void Dispose()
+            {
+                if (disposed)
+                {
+                    return;
+                }
+
+                disposed = true;
+                ownedVehicleCommitSuppressionDepth = Math.Max(0, ownedVehicleCommitSuppressionDepth - 1);
+                if (CoopStartupBridge.IsCoopEnabled)
+                {
+                    EntryPoint.WriteToConsole($"Co-op owned vehicle commit suppression end Reason:{reason} Depth:{ownedVehicleCommitSuppressionDepth}", 5);
+                }
+            }
         }
     }
 }

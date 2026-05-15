@@ -18,6 +18,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public CoopAppearanceState Appearance { get; set; }
         public CoopInventoryMoneySnapshot InventoryMoney { get; set; }
         public CoopWeaponSnapshot Weapons { get; set; }
+        public CoopOwnedVehicleSnapshot OwnedVehicles { get; set; }
         public CoopCriminalHistoryState CriminalHistory { get; set; }
         public CoopGangReputationState GangReputation { get; set; }
     }
@@ -122,7 +123,7 @@ namespace LosSantosRED.lsr.Coop.Core
             return applied;
         }
 
-        public static bool ApplyProfileHydrationAfterPlayerSetup(CoopCharacterStartupSnapshot snapshot, Mod.Player player, IModItems modItems, ICrimes crimes)
+        public static bool ApplyProfileHydrationAfterPlayerSetup(CoopCharacterStartupSnapshot snapshot, Mod.Player player, IModItems modItems, ICrimes crimes, IEntityProvideable world, ISettingsProvideable settings, IPlacesOfInterest placesOfInterest, ITimeReportable time, IWeapons weapons)
         {
             if (snapshot == null || player == null)
             {
@@ -141,6 +142,19 @@ namespace LosSantosRED.lsr.Coop.Core
                 weaponHydration = new CoopWeaponInventoryAdapter().TryApplySnapshotToPlayer(player, snapshot.Weapons);
             }
 
+            CoopOwnedVehicleHydrationResult ownedVehicleHydration = null;
+            if (snapshot.OwnedVehicles != null)
+            {
+                if (CoopStartupBridge.IsLocalActiveHost)
+                {
+                    ownedVehicleHydration = new CoopOwnedVehicleAdapter().TryApplySnapshotToPlayer(player, snapshot.OwnedVehicles, world, settings, modItems, placesOfInterest, time, weapons);
+                }
+                else
+                {
+                    EntryPoint.WriteToConsole($"Co-op owned vehicle hydration skipped Profile:{snapshot.ProfileId} Reason:ClientModeNotActiveHost SnapshotCount:{snapshot.OwnedVehicles.Vehicles?.Count ?? 0}", 0);
+                }
+            }
+
             bool appliedCriminalHistory = false;
             if (snapshot.CriminalHistory != null)
             {
@@ -153,8 +167,8 @@ namespace LosSantosRED.lsr.Coop.Core
                 appliedGangReputation = CoopGangReputationStateAdapter.Current.TryApplyPersistentStateToPlayer(player, snapshot.GangReputation);
             }
 
-            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Money:{snapshot.InventoryMoney?.TotalMoney ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} WeaponsHydrated:{weaponHydration?.HydratedCount ?? 0} WeaponsExisting:{weaponHydration?.ExistingCount ?? 0} WeaponsSkippedDuplicate:{weaponHydration?.SkippedDuplicateCount ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0} GangReputation:{appliedGangReputation} GangRecords:{snapshot.GangReputation?.Reputations?.Count ?? 0} DateTimeLastWantedEnded:{snapshot.CriminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}", 0);
-            return appliedInventoryMoney || weaponHydration?.Applied == true || appliedCriminalHistory || appliedGangReputation;
+            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Money:{snapshot.InventoryMoney?.TotalMoney ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} WeaponsHydrated:{weaponHydration?.HydratedCount ?? 0} WeaponsExisting:{weaponHydration?.ExistingCount ?? 0} WeaponsSkippedDuplicate:{weaponHydration?.SkippedDuplicateCount ?? 0} OwnedVehicles:{snapshot.OwnedVehicles?.Vehicles?.Count ?? 0} OwnedVehiclesHydrated:{ownedVehicleHydration?.HydratedCount ?? 0} OwnedVehiclesSkipped:{ownedVehicleHydration?.SkippedCount ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0} GangReputation:{appliedGangReputation} GangRecords:{snapshot.GangReputation?.Reputations?.Count ?? 0} DateTimeLastWantedEnded:{snapshot.CriminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}", 0);
+            return appliedInventoryMoney || weaponHydration?.Applied == true || ownedVehicleHydration?.Applied == true || appliedCriminalHistory || appliedGangReputation;
         }
 
         public static void HydrateLocalCharacter(LocalCoopCharacter localCharacter, CoopCharacterStartupSnapshot snapshot)
@@ -211,6 +225,7 @@ namespace LosSantosRED.lsr.Coop.Core
                     },
                     InventoryMoney = ParseInventoryMoney(values, worldId, profileId),
                     Weapons = ParseWeapons(values, worldId, profileId),
+                    OwnedVehicles = ParseOwnedVehicles(values, worldId, profileId),
                     CriminalHistory = ParseCriminalHistory(values, worldId, profileId),
                     GangReputation = ParseGangReputation(values, worldId, profileId),
                 };
@@ -492,6 +507,56 @@ namespace LosSantosRED.lsr.Coop.Core
             return snapshot;
         }
 
+        private static CoopOwnedVehicleSnapshot ParseOwnedVehicles(Dictionary<string, string> values, string worldId, string profileId)
+        {
+            string snapshotId = GetValue(values, "OwnedVehicleSnapshotId");
+            string vehicles = GetValue(values, "OwnedVehicles");
+            if (string.IsNullOrWhiteSpace(snapshotId) && string.IsNullOrWhiteSpace(vehicles))
+            {
+                return null;
+            }
+
+            CoopOwnedVehicleSnapshot snapshot = new CoopOwnedVehicleSnapshot
+            {
+                SnapshotId = string.IsNullOrWhiteSpace(snapshotId) ? Guid.NewGuid().ToString("N") : snapshotId,
+                WorldId = new CoopWorldId(worldId),
+                ProfileId = new CoopProfileId(profileId),
+                CharacterId = new CoopCharacterId(GetValue(values, "CharacterId")),
+                SnapshotUtc = ParseDateTimeOffset(GetValue(values, "OwnedVehicleSnapshotUtc")),
+            };
+
+            foreach (string entry in SplitEntries(vehicles))
+            {
+                string[] parts = entry.Split(',');
+                if (parts.Length < 16)
+                {
+                    continue;
+                }
+
+                snapshot.Vehicles.Add(new CoopOwnedVehicleRecord
+                {
+                    VehicleId = UnescapePart(parts[0]),
+                    ModelHash = UnescapePart(parts[1]),
+                    ModelName = UnescapePart(parts[2]),
+                    VehicleSaveStatusXml = UnescapePart(parts[3]),
+                    PlateNumber = UnescapePart(parts[4]),
+                    PlateType = ParseInt(parts[5]),
+                    PlateIsWanted = IsTrue(parts[6]),
+                    PositionX = ParseFloat(parts[7]),
+                    PositionY = ParseFloat(parts[8]),
+                    PositionZ = ParseFloat(parts[9]),
+                    Heading = ParseFloat(parts[10]),
+                    IsImpounded = IsTrue(parts[11]),
+                    DateTimeImpounded = ParseOptionalDateTime(parts[12]),
+                    TimesImpounded = ParseInt(parts[13]),
+                    ImpoundedLocation = UnescapePart(parts[14]),
+                    StoredCash = ParseInt(parts[15]),
+                });
+            }
+
+            return snapshot;
+        }
+
         private static IEnumerable<string> SplitEntries(string raw)
         {
             if (string.IsNullOrWhiteSpace(raw))
@@ -534,6 +599,14 @@ namespace LosSantosRED.lsr.Coop.Core
             return DateTimeOffset.TryParse(value, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out parsed)
                 ? parsed
                 : DateTimeOffset.MinValue;
+        }
+
+        private static DateTime ParseOptionalDateTime(string value)
+        {
+            DateTime parsed;
+            return DateTime.TryParse(value, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal, out parsed)
+                ? parsed
+                : DateTime.MinValue;
         }
 
         private static bool IsTrue(string value)

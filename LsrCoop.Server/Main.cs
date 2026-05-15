@@ -204,6 +204,12 @@ namespace LsrCoop.Server
                 return;
             }
 
+            if (commit.OwnedVehicleSnapshot != null)
+            {
+                CoopOwnedVehicleRecord firstVehicle = commit.OwnedVehicleSnapshot.Vehicles?.FirstOrDefault();
+                Logger.Info($"[LsrCoop.Server] owned vehicle snapshot deserialized: profile={request.SourceProfileId}, request={request.RequestId}, type={request.ActionType}, action={GetParameter(request, "VehicleAction")}, count={commit.OwnedVehicleSnapshot.Vehicles?.Count ?? 0}, firstVehicle={firstVehicle?.VehicleId ?? "none"}, firstPlate={firstVehicle?.PlateNumber ?? "none"}, firstModel={firstVehicle?.ModelName ?? firstVehicle?.ModelHash ?? "none"}");
+            }
+
             if (!string.Equals(request.WorldId, worldProfileStoreService.WorldId, StringComparison.OrdinalIgnoreCase))
             {
                 Logger.Warning($"[LsrCoop.Server] rejected gameplay action from {requester.ProfileId}: wrong world {request.WorldId}");
@@ -279,11 +285,25 @@ namespace LsrCoop.Server
 
             if (commit.OwnedVehicleSnapshot != null)
             {
-                profile.OwnedVehicles = commit.OwnedVehicleSnapshot;
-                profile.OwnedVehicles.WorldId = worldProfileStoreService.WorldId;
-                profile.OwnedVehicles.ProfileId = profile.ProfileId;
-                profile.OwnedVehicles.CharacterId = string.IsNullOrWhiteSpace(profile.OwnedVehicles.CharacterId) ? profile.ProfileId : profile.OwnedVehicles.CharacterId;
-                worldProfileStoreService.Save();
+                if (ShouldSkipOwnedVehicleSnapshot(request, commit.OwnedVehicleSnapshot, profile))
+                {
+                    CoopOwnedVehicleRecord preservedVehicle = profile.OwnedVehicles?.Vehicles?.FirstOrDefault();
+                    Logger.Info($"[LsrCoop.Server] empty owned vehicle clear skipped: profile={profile.ProfileId}, request={request.RequestId}, action={GetParameter(request, "VehicleAction")}, preservedCount={profile.OwnedVehicles?.Vehicles?.Count ?? 0}, firstVehicle={preservedVehicle?.VehicleId ?? "none"}, firstPlate={preservedVehicle?.PlateNumber ?? "none"}, firstModel={preservedVehicle?.ModelName ?? preservedVehicle?.ModelHash ?? "none"}");
+                }
+                else if (IsNewerOrSame(commit.OwnedVehicleSnapshot.SnapshotUtc, profile.OwnedVehicles?.SnapshotUtc))
+                {
+                    profile.OwnedVehicles = commit.OwnedVehicleSnapshot;
+                    profile.OwnedVehicles.WorldId = worldProfileStoreService.WorldId;
+                    profile.OwnedVehicles.ProfileId = profile.ProfileId;
+                    profile.OwnedVehicles.CharacterId = string.IsNullOrWhiteSpace(profile.OwnedVehicles.CharacterId) ? profile.ProfileId : profile.OwnedVehicles.CharacterId;
+                    worldProfileStoreService.Save();
+                    CoopOwnedVehicleRecord firstVehicle = profile.OwnedVehicles.Vehicles?.FirstOrDefault();
+                    Logger.Info($"[LsrCoop.Server] owned vehicle snapshot saved: profile={profile.ProfileId}, request={request.RequestId}, action={GetParameter(request, "VehicleAction")}, count={profile.OwnedVehicles.Vehicles?.Count ?? 0}, firstVehicle={firstVehicle?.VehicleId ?? "none"}, firstPlate={firstVehicle?.PlateNumber ?? "none"}, firstModel={firstVehicle?.ModelName ?? firstVehicle?.ModelHash ?? "none"}");
+                }
+                else
+                {
+                    Logger.Info($"[LsrCoop.Server] stale owned vehicle snapshot skipped: profile={profile.ProfileId}, request={request.RequestId}, incoming={commit.OwnedVehicleSnapshot.SnapshotUtc:O}, current={profile.OwnedVehicles?.SnapshotUtc:O}");
+                }
             }
 
             if (commit.DeathArrestState != null)
@@ -305,6 +325,15 @@ namespace LsrCoop.Server
             {
                 Logger.Info($"[LsrCoop.Server] gameplay action committed: profile={profile.ProfileId}, request={request.RequestId}, type={request.ActionType}");
             }
+        }
+
+        private bool ShouldSkipOwnedVehicleSnapshot(CoopGameplayActionRequestDto request, CoopOwnedVehicleSnapshot snapshot, CoopPlayerProfile profile)
+        {
+            bool isClearOwnership = string.Equals(request?.ActionType, "SaveOwnedVehicle", StringComparison.OrdinalIgnoreCase)
+                && string.Equals(GetParameter(request, "VehicleAction"), "ClearOwnership", StringComparison.OrdinalIgnoreCase);
+            bool incomingEmpty = snapshot?.Vehicles == null || snapshot.Vehicles.Count == 0;
+            bool hasSavedVehicles = profile?.OwnedVehicles?.Vehicles?.Count > 0;
+            return isClearOwnership && incomingEmpty && hasSavedVehicles;
         }
 
         private bool IsNewerOrSame(DateTimeOffset incomingUtc, DateTimeOffset? currentUtc)

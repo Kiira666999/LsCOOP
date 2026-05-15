@@ -93,7 +93,12 @@ namespace LsrCoop.Server
             {
                 worldProfileStoreService.WorldId,
                 profile.ProfileId,
-                JsonSerializer.Serialize(profile.Character)
+                JsonSerializer.Serialize(profile.Character),
+                JsonSerializer.Serialize(profile.InventoryMoney),
+                JsonSerializer.Serialize(profile.Weapons),
+                JsonSerializer.Serialize(profile.CriminalHistory),
+                JsonSerializer.Serialize(profile.GangReputation),
+                JsonSerializer.Serialize(profile.OwnedVehicles)
             });
         }
 
