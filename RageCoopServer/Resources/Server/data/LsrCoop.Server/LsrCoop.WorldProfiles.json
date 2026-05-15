@@ -2,7 +2,7 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-14T13:15:51.1387633+00:00",
-  "UpdatedUtc": "2026-05-15T12:50:22.9322373+00:00",
+  "UpdatedUtc": "2026-05-15T15:00:40.5164505+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -12,7 +12,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-15T12:50:22.9322523+00:00"
+    "UpdatedUtc": "2026-05-15T15:00:40.5164607+00:00"
   },
   "Profiles": [
     {
@@ -21,7 +21,7 @@
       "DisplayName": "Kiira",
       "Role": "Admin,TrustedHost",
       "CreatedUtc": "2026-05-14T13:15:58.9246961+00:00",
-      "LastSeenUtc": "2026-05-15T12:50:22.9322356+00:00",
+      "LastSeenUtc": "2026-05-15T15:00:40.5164483+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -157,13 +157,13 @@
         "UpdatedUtc": "2026-05-14T13:16:22.4013702+00:00"
       },
       "InventoryMoney": {
-        "SnapshotId": "5d77533f07734935b36b4906f49b301a",
+        "SnapshotId": "f775e703a4b34b6b867bf941a58ebff9",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "OnHandCash": 1816000,
+        "OnHandCash": 491880,
         "TotalAccountMoney": 0,
-        "TotalMoney": 1816000,
+        "TotalMoney": 491880,
         "InventoryItems": [
           {
             "ItemName": "Carton of Milk",
@@ -226,63 +226,7 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Small Parts Kit",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Polymer Resin",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Light Weapon Blueprint",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Medium Weapon Blueprint",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Heavy Weapon Blueprint",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Advanced Weapon Blueprint",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Light Gun Frame",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Medium Gun Frame",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Heavy Gun Frame",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Light Gun Barrel",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Medium Gun Barrel",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Heavy Gun Barrel",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Advanced Gun Frame",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Advanced Gun Barrel",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Frozen Meth",
             "RemainingPercent": 10
           },
           {
@@ -342,47 +286,7 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Harvested Marijuana",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Dried Marijuana",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Baggie",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Dried Coca Leaf",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Processed Coca Leaf",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Refined Cocaine",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Mixed Cocaine",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Cooked Meth",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Meth Shards",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Sodium Benzoate",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Hydrogen Peroxide",
             "RemainingPercent": 10
           },
           {
@@ -394,19 +298,7 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Medical Supplies",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Syringe",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Morphine",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Coca Leaves",
             "RemainingPercent": 10
           },
           {
@@ -814,18 +706,6 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Marijuana",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Joint buds w/hash",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Hash",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Bottle of Raine Water",
             "RemainingPercent": 10
           },
@@ -1050,14 +930,6 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Methamphetamine",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Crack",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Bull Shark Testosterone",
             "RemainingPercent": 10
           },
@@ -1106,38 +978,6 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "SPANK",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Toilet Cleaner",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Cocaine",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "LSD",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "MDMA",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Ecstasy",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Fish Scale",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Bashed Coke",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Crate of AKs",
             "RemainingPercent": 10
           },
@@ -1159,10 +999,6 @@
           },
           {
             "ItemName": "12 Gauge Ammo",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Heroin",
             "RemainingPercent": 10
           },
           {
@@ -1318,86 +1154,6 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Package of Marijuana",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Package of Crack",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Package of Heroin",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Package of Cocaine",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "1G Crack",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "5G Crack",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "10G Crack",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "15G Crack",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "1G Marijuana",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "5G Marijuana",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "10G Marijuana",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "15G Marijuana",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "1G Heroin",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "5G Heroin",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "10G Heroin",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "15G Heroin",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "1G Cocaine",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "5G Cocaine",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "10G Cocaine",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "15G Cocaine",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Phone number",
             "RemainingPercent": 10
           },
@@ -1454,34 +1210,6 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Product: Marijuana",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Product: Crack",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Product: Heroin",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Corner\u0027s money: Marijuana",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Corner\u0027s money: Crack",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Corner\u0027s money: Heroin",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Tool",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Stash info: Marijuana",
             "RemainingPercent": 10
           },
@@ -1527,10 +1255,6 @@
           },
           {
             "ItemName": "-",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Corner\u0027s money: Cocaine",
             "RemainingPercent": 10
           },
           {
@@ -1666,19 +1390,11 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "South LS Trappers: Influence",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "South LS trapper\u0027s chain",
             "RemainingPercent": 10
           },
           {
             "ItemName": "East LS Trappers: Reputation\u002B",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "East LS Trappers: Influence",
             "RemainingPercent": 10
           },
           {
@@ -1690,19 +1406,11 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Ballas: Influence",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Ballas\u0027s chain",
             "RemainingPercent": 10
           },
           {
             "ItemName": "Families: Reputation\u002B",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Families: Influence",
             "RemainingPercent": 10
           },
           {
@@ -1714,19 +1422,11 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Yardies: Influence",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Yardies\u0027s chain",
             "RemainingPercent": 10
           },
           {
             "ItemName": "Khangpae: Reputation\u002B",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Khangpae: Influence",
             "RemainingPercent": 10
           },
           {
@@ -1742,19 +1442,11 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Vagos: Influence",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Aztecas\u0027s chain",
             "RemainingPercent": 10
           },
           {
             "ItemName": "Aztecas: Reputation\u002B",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Aztecas: Influence",
             "RemainingPercent": 10
           },
           {
@@ -1766,10 +1458,6 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Triads: Influence",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Armenian\u0027s chain",
             "RemainingPercent": 10
           },
@@ -1778,15 +1466,7 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Armenian: Influence",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Marabunta: Reputation\u002B",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Marabunta: Influence",
             "RemainingPercent": 10
           },
           {
@@ -1798,15 +1478,7 @@
             "RemainingPercent": 10
           },
           {
-            "ItemName": "Lost: Influence",
-            "RemainingPercent": 10
-          },
-          {
             "ItemName": "Lost\u0027s chain",
-            "RemainingPercent": 10
-          },
-          {
-            "ItemName": "Influence",
             "RemainingPercent": 10
           },
           {
@@ -1931,10 +1603,10 @@
           }
         ],
         "BankAccounts": [],
-        "SnapshotUtc": "2026-05-15T12:49:35.8441888+00:00"
+        "SnapshotUtc": "2026-05-15T14:59:11.7415388+00:00"
       },
       "Weapons": {
-        "SnapshotId": "5eb11ceae5ab4d0ebc60f7675c5d613b",
+        "SnapshotId": "122f8879814740ffadd1b4277d5407d6",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
@@ -1948,47 +1620,15 @@
             "IsEquipped": false
           },
           {
-            "WeaponHash": "3218215474",
-            "WeaponName": "3218215474",
-            "Category": "",
-            "Ammo": 29,
-            "IsLegal": false,
-            "IsEquipped": false
-          },
-          {
-            "WeaponHash": "453432689",
-            "WeaponName": "Pistol",
-            "Category": "",
-            "Ammo": 29,
-            "IsLegal": false,
-            "IsEquipped": false
-          },
-          {
             "WeaponHash": "911657153",
             "WeaponName": "StunGun",
             "Category": "",
-            "Ammo": 43,
-            "IsLegal": false,
-            "IsEquipped": false
-          },
-          {
-            "WeaponHash": "1853742572",
-            "WeaponName": "1853742572",
-            "Category": "",
-            "Ammo": 28,
-            "IsLegal": false,
-            "IsEquipped": false
-          },
-          {
-            "WeaponHash": "125959754",
-            "WeaponName": "125959754",
-            "Category": "",
-            "Ammo": 2,
+            "Ammo": 74,
             "IsLegal": false,
             "IsEquipped": false
           }
         ],
-        "SnapshotUtc": "2026-05-15T12:50:13.3346909+00:00"
+        "SnapshotUtc": "2026-05-15T14:59:53.6598151+00:00"
       },
       "OwnedVehicles": {
         "SnapshotId": "7bbc9534c5a342c48de1f00843b837be",
@@ -2113,7 +1753,7 @@
         "SnapshotUtc": "2026-05-15T12:49:35.8441888+00:00"
       },
       "GangReputation": {
-        "StateId": "b682199c27d844c8b3e7d2147e3007c5",
+        "StateId": "8252d22c20bc4e3da952e777401f5eeb",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
@@ -2557,7 +2197,7 @@
           {
             "GangId": "AMBIENT_GANG_MEXICAN",
             "GangName": "Vagos",
-            "Reputation": -999,
+            "Reputation": -995,
             "MembersHurt": 3,
             "MembersKilled": 4,
             "MembersCarJacked": 0,
@@ -2812,12 +2452,12 @@
           {
             "GangId": "AMBIENT_GANG_YARDIES",
             "GangName": "Yardies",
-            "Reputation": 0,
+            "Reputation": -2143,
             "MembersHurt": 0,
-            "MembersKilled": 0,
+            "MembersKilled": 1,
             "MembersCarJacked": 0,
             "MembersHurtInTerritory": 0,
-            "MembersKilledInTerritory": 0,
+            "MembersKilledInTerritory": 1,
             "MembersCarJackedInTerritory": 0,
             "PlayerDebt": 0,
             "IsMember": false,
@@ -2825,111 +2465,46 @@
             "TasksCompleted": 0
           }
         ],
-        "UpdatedUtc": "2026-05-14T20:25:43.4987561+00:00"
+        "UpdatedUtc": "2026-05-15T14:54:20.7328345+00:00"
       },
       "CriminalHistory": {
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "HasHistory": true,
-        "LastSeenX": -779.9379,
-        "LastSeenY": -1070.98,
-        "LastSeenZ": 10.71108,
-        "WantedLevel": 3,
-        "Crimes": [
-          {
-            "CrimeId": "SuspiciousActivity",
-            "CrimeName": "Suspicious Activity",
-            "Instances": 1,
-            "ResultingWantedLevel": 1,
-            "Priority": 70,
-            "ResultsInLethalForce": false
-          },
-          {
-            "CrimeId": "FiringWeapon",
-            "CrimeName": "Firing Weapon",
-            "Instances": 1,
-            "ResultingWantedLevel": 2,
-            "Priority": 11,
-            "ResultsInLethalForce": false
-          },
-          {
-            "CrimeId": "FiringWeaponNearPolice",
-            "CrimeName": "Shots Fired Near Police",
-            "Instances": 1,
-            "ResultingWantedLevel": 3,
-            "Priority": 4,
-            "ResultsInLethalForce": true
-          },
-          {
-            "CrimeId": "NonRoadworthyVehicle",
-            "CrimeName": "NonRoadworthy Vehicle",
-            "Instances": 1,
-            "ResultingWantedLevel": 1,
-            "Priority": 44,
-            "ResultsInLethalForce": false
-          },
-          {
-            "CrimeId": "ResistingArrest",
-            "CrimeName": "Resisting Arrest",
-            "Instances": 1,
-            "ResultingWantedLevel": 2,
-            "Priority": 21,
-            "ResultsInLethalForce": false
-          },
-          {
-            "CrimeId": "DrivingAgainstTraffic",
-            "CrimeName": "Driving Against Traffic",
-            "Instances": 1,
-            "ResultingWantedLevel": 1,
-            "Priority": 42,
-            "ResultsInLethalForce": false
-          },
-          {
-            "CrimeId": "RunningARedLight",
-            "CrimeName": "Running a Red Light",
-            "Instances": 1,
-            "ResultingWantedLevel": 1,
-            "Priority": 45,
-            "ResultsInLethalForce": false
-          },
-          {
-            "CrimeId": "DrivingOnPavement",
-            "CrimeName": "Driving On Pavement",
-            "Instances": 1,
-            "ResultingWantedLevel": 1,
-            "Priority": 43,
-            "ResultsInLethalForce": false
-          }
-        ],
-        "DateTimeLastWantedEnded": "2009-06-06T12:08:43+00:00",
-        "UpdatedUtc": "2026-05-14T19:20:52.6194233+00:00",
-        "ClearReason": ""
+        "HasHistory": false,
+        "LastSeenX": 0,
+        "LastSeenY": 0,
+        "LastSeenZ": 0,
+        "WantedLevel": 0,
+        "Crimes": [],
+        "DateTimeLastWantedEnded": "2009-06-15T09:02:26+00:00",
+        "UpdatedUtc": "2026-05-15T14:59:05.9718901+00:00",
+        "ClearReason": "ArrestResolved"
       },
       "DeathArrestState": {
-        "StateId": "f8e05569a24c410cb10b0625c363ebc5",
+        "StateId": "5fc2bcb873a848389092ffa7ecc6074f",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "ActionType": "ApplyDeathState",
-        "OutcomeType": "RespawnAtCurrentLocation",
-        "RespawnLocationName": "",
-        "PositionX": 11.20874,
-        "PositionY": 60.92809,
-        "PositionZ": 72.03088,
-        "Heading": 0,
+        "ActionType": "ApplyArrestState",
+        "OutcomeType": "PoliceSurrender",
+        "RespawnLocationName": "Davis Sheriff\u0027s Station",
+        "PositionX": 358.9726,
+        "PositionY": -1582.881,
+        "PositionZ": 29.29195,
+        "Heading": 323.5287,
         "HospitalFee": 0,
         "HospitalBillPastDue": 0,
         "HospitalDuration": 0,
-        "BailFee": 0,
+        "BailFee": 4000,
         "BailFeePastDue": 0,
-        "BailDuration": 0,
-        "TodayPayment": 0,
-        "TimesDied": 1,
+        "BailDuration": 4,
+        "TodayPayment": 4000,
+        "TimesDied": 0,
         "HadIllegalWeapons": false,
         "HadIllegalItems": false,
-        "ReleaseDate": "2009-06-06T10:39:06Z",
-        "OccurredUtc": "2026-05-15T11:51:38.8038947+00:00"
+        "ReleaseDate": "2009-06-19T07:00:00Z",
+        "OccurredUtc": "2026-05-15T14:59:11.7435423+00:00"
       },
       "LongTermLsrRecords": []
     }

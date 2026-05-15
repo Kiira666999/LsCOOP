@@ -235,6 +235,10 @@ namespace LsrCoop.Server
                 return;
             }
 
+            int moneyBeforeCommit = profile.InventoryMoney?.TotalMoney ?? 0;
+            int inventoryBeforeCommit = profile.InventoryMoney?.InventoryItems?.Count ?? 0;
+            int weaponsBeforeCommit = profile.Weapons?.Weapons?.Count ?? 0;
+
             if (commit.InventoryMoneySnapshot != null)
             {
                 if (IsNewerOrSame(commit.InventoryMoneySnapshot.SnapshotUtc, profile.InventoryMoney?.SnapshotUtc))
@@ -318,11 +322,25 @@ namespace LsrCoop.Server
 
             if (commit.DeathArrestState != null)
             {
-                profile.DeathArrestState = commit.DeathArrestState;
-                profile.DeathArrestState.WorldId = worldProfileStoreService.WorldId;
-                profile.DeathArrestState.ProfileId = profile.ProfileId;
-                profile.DeathArrestState.CharacterId = string.IsNullOrWhiteSpace(profile.DeathArrestState.CharacterId) ? profile.ProfileId : profile.DeathArrestState.CharacterId;
-                worldProfileStoreService.Save();
+                if (IsNewerOrSame(commit.DeathArrestState.OccurredUtc, profile.DeathArrestState?.OccurredUtc))
+                {
+                    profile.DeathArrestState = commit.DeathArrestState;
+                    profile.DeathArrestState.WorldId = worldProfileStoreService.WorldId;
+                    profile.DeathArrestState.ProfileId = profile.ProfileId;
+                    profile.DeathArrestState.CharacterId = string.IsNullOrWhiteSpace(profile.DeathArrestState.CharacterId) ? profile.ProfileId : profile.DeathArrestState.CharacterId;
+                    worldProfileStoreService.Save();
+
+                    int moneyAfterCommit = profile.InventoryMoney?.TotalMoney ?? moneyBeforeCommit;
+                    int inventoryAfterCommit = profile.InventoryMoney?.InventoryItems?.Count ?? inventoryBeforeCommit;
+                    int weaponsAfterCommit = profile.Weapons?.Weapons?.Count ?? weaponsBeforeCommit;
+                    int criminalHistoryCount = profile.CriminalHistory?.Crimes?.Count ?? 0;
+                    string clearReason = profile.CriminalHistory?.ClearReason ?? string.Empty;
+                    Logger.Info($"[LsrCoop.Server] death/arrest state saved: event={profile.DeathArrestState.ActionType ?? request.ActionType}, profile={profile.ProfileId}, request={request.RequestId}, outcome={profile.DeathArrestState.OutcomeType ?? string.Empty}, moneyBefore={moneyBeforeCommit}, moneyAfter={moneyAfterCommit}, weapons={weaponsAfterCommit}, inventory={inventoryAfterCommit}, criminalHistory={criminalHistoryCount}, clearReason={(string.IsNullOrWhiteSpace(clearReason) ? "none" : clearReason)}, temporaryStatePersisted=false");
+                }
+                else
+                {
+                    Logger.Info($"[LsrCoop.Server] stale death/arrest state skipped: event={commit.DeathArrestState.ActionType ?? request.ActionType}, profile={profile.ProfileId}, request={request.RequestId}, incoming={commit.DeathArrestState.OccurredUtc:O}, current={profile.DeathArrestState?.OccurredUtc:O}, reason=older outcome payload");
+                }
             }
 
             CoopGameplayActionResultDto accepted = CreateGameplayActionResult(request, true, false, "Committed by active host");

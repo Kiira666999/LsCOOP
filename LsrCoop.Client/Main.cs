@@ -521,7 +521,13 @@ namespace LsrCoop.Client
 
             if (!IsCurrentProcessBridgeFile(values))
             {
-                TryDeleteStaleGameplayBridgeFile(path, values);
+                TryDeleteStaleGameplayBridgeFile(path, values, "process/session mismatch");
+                return;
+            }
+
+            if (!IsCurrentWorldProfileBridgeFile(values))
+            {
+                TryDeleteStaleGameplayBridgeFile(path, values, "world/profile mismatch");
                 return;
             }
 
@@ -1950,14 +1956,35 @@ namespace LsrCoop.Client
                 && string.Equals(sessionId, bridgeSessionId, StringComparison.OrdinalIgnoreCase);
         }
 
-        private void TryDeleteStaleGameplayBridgeFile(string path, Dictionary<string, string> values)
+        private bool IsCurrentWorldProfileBridgeFile(Dictionary<string, string> values)
+        {
+            if (values == null)
+            {
+                return false;
+            }
+
+            string worldId = GetBridgeValue(values, "WorldId");
+            string profileId = GetBridgeValue(values, "ProfileId");
+            bool worldMatches = string.IsNullOrWhiteSpace(localWorldId)
+                || string.IsNullOrWhiteSpace(worldId)
+                || string.Equals(worldId, localWorldId, StringComparison.OrdinalIgnoreCase);
+            bool profileMatches = string.IsNullOrWhiteSpace(localProfileId)
+                || string.IsNullOrWhiteSpace(profileId)
+                || string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase);
+
+            return worldMatches && profileMatches;
+        }
+
+        private void TryDeleteStaleGameplayBridgeFile(string path, Dictionary<string, string> values, string reason)
         {
             try
             {
                 string processId = GetBridgeValue(values, "ProcessId");
                 string sessionId = GetBridgeValue(values, "SessionId");
+                string worldId = GetBridgeValue(values, "WorldId");
+                string profileId = GetBridgeValue(values, "ProfileId");
                 File.Delete(path);
-                Logger.Info($"[LsrCoop.Client] stale gameplay bridge deleted: process={processId}, session={sessionId}, path={path}");
+                Logger.Info($"[LsrCoop.Client] stale gameplay bridge deleted: reason={reason}, process={processId}, session={sessionId}, world={worldId}, profile={profileId}, path={path}");
             }
             catch (Exception ex)
             {

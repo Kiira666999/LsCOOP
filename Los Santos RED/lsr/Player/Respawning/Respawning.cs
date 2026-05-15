@@ -398,6 +398,10 @@ public class Respawning// : IRespawning
         if (CanUndie)
         {
             int wantedLevel = Player.WantedLevel;
+            if (clearCriminalHistory)
+            {
+                SetCriminalHistoryClearReason("DeathResolved");
+            }
             Respawn(resetWanted, true, false, false, clearCriminalHistory, clearInventory, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false);
             Player.SetWantedLevel(wantedLevel, "RespawnAtCurrentLocation", true);
             if (withInvicibility & Settings.SettingsManager.RespawnSettings.InvincibilityOnRespawn)
@@ -429,6 +433,7 @@ public class Respawning// : IRespawning
         {
             ImpoundNotification = ImpoundVehicles();
         }
+        SetCriminalHistoryClearReason("DeathResolved");
         Respawn(true, true, true, false, true, false, true, false, false, false, false, false, true,true, false, true, true, false, false, false, true, false);//we are already removing the weapons above, done need to do it twice with the old bug
         Player.PlayerTasks.OnStandardRespawn();
 
