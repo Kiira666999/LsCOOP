@@ -2,7 +2,7 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-14T13:15:51.1387633+00:00",
-  "UpdatedUtc": "2026-05-15T12:44:48.2475959+00:00",
+  "UpdatedUtc": "2026-05-15T12:50:22.8660961+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -12,7 +12,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-15T12:44:48.247605+00:00"
+    "UpdatedUtc": "2026-05-15T12:50:22.8661043+00:00"
   },
   "Profiles": [
     {
@@ -21,7 +21,7 @@
       "DisplayName": "Kiira",
       "Role": "Admin,TrustedHost",
       "CreatedUtc": "2026-05-14T13:15:58.9246961+00:00",
-      "LastSeenUtc": "2026-05-15T12:44:48.2475943+00:00",
+      "LastSeenUtc": "2026-05-15T12:50:22.8660943+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -157,13 +157,13 @@
         "UpdatedUtc": "2026-05-14T13:16:22.4013702+00:00"
       },
       "InventoryMoney": {
-        "SnapshotId": "3cb6ddb9b96241d6ba82455739fadcf4",
+        "SnapshotId": "5d77533f07734935b36b4906f49b301a",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "OnHandCash": 2846000,
+        "OnHandCash": 1816000,
         "TotalAccountMoney": 0,
-        "TotalMoney": 2846000,
+        "TotalMoney": 1816000,
         "InventoryItems": [
           {
             "ItemName": "Carton of Milk",
@@ -1931,10 +1931,10 @@
           }
         ],
         "BankAccounts": [],
-        "SnapshotUtc": "2026-05-15T12:44:09.3311546+00:00"
+        "SnapshotUtc": "2026-05-15T12:49:35.8441888+00:00"
       },
       "Weapons": {
-        "SnapshotId": "776eb12bfb4c452f997bbdf3c6b0a8c6",
+        "SnapshotId": "5eb11ceae5ab4d0ebc60f7675c5d613b",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
@@ -1988,7 +1988,7 @@
             "IsEquipped": false
           }
         ],
-        "SnapshotUtc": "2026-05-15T12:44:32.0899224+00:00"
+        "SnapshotUtc": "2026-05-15T12:50:13.3346909+00:00"
       },
       "OwnedVehicles": {
         "SnapshotId": "7bbc9534c5a342c48de1f00843b837be",
@@ -2036,7 +2036,7 @@
         "SnapshotUtc": "2026-05-15T11:33:50.5328993+00:00"
       },
       "PropertyOwnership": {
-        "SnapshotId": "48a5b68664c34064955d0cadf15df3c8",
+        "SnapshotId": "56524f2ab11c4f1eb9ad2c50b2703a06",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
@@ -2074,9 +2074,43 @@
             "RentalPaymentDate": "0001-01-01T00:00:00Z",
             "DateOfLastRentalPayment": "0001-01-01T00:00:00Z",
             "SavedGameLocationXml": "\u003CSavedGameLocation xmlns:xsd=\u0022http://www.w3.org/2001/XMLSchema\u0022 xmlns:xsi=\u0022http://www.w3.org/2001/XMLSchema-instance\u0022 xsi:type=\u0022SavedResidence\u0022\u003E\u003CName\u003E2, Melanoma St\u003C/Name\u003E\u003CCurrentSalesPrice\u003E0\u003C/CurrentSalesPrice\u003E\u003CEntrancePosition\u003E\u003CX\u003E0\u003C/X\u003E\u003CY\u003E0\u003C/Y\u003E\u003CZ\u003E0\u003C/Z\u003E\u003C/EntrancePosition\u003E\u003CPayoutDate\u003E0001-01-01T00:00:00\u003C/PayoutDate\u003E\u003CDateOfLastPayout\u003E0001-01-01T00:00:00\u003C/DateOfLastPayout\u003E\u003CIsRentedByPlayer\u003Efalse\u003C/IsRentedByPlayer\u003E\u003CIsOwnedByPlayer\u003Etrue\u003C/IsOwnedByPlayer\u003E\u003CRentalPaymentDate\u003E0001-01-01T00:00:00\u003C/RentalPaymentDate\u003E\u003CDateOfLastRentalPayment\u003E0001-01-01T00:00:00\u003C/DateOfLastRentalPayment\u003E\u003CWeaponInventory /\u003E\u003CInventoryItems /\u003E\u003CIsRentedOut\u003Efalse\u003C/IsRentedOut\u003E\u003CStoredCash\u003E0\u003C/StoredCash\u003E\u003C/SavedGameLocation\u003E"
+          },
+          {
+            "PropertyId": "Business:Vespucci Beach: Dealer crew:-1103.234:-1636.672:4.602",
+            "Name": "Vespucci Beach: Dealer crew",
+            "PropertyType": "Business",
+            "IsOwned": true,
+            "IsRented": false,
+            "IsRentedOut": false,
+            "EntranceX": -1103.234,
+            "EntranceY": -1636.672,
+            "EntranceZ": 4.601837,
+            "CurrentSalesPrice": 1,
+            "PayoutDate": "2009-06-07T10:29:00Z",
+            "DateOfLastPayout": "2009-06-06T10:29:00Z",
+            "RentalPaymentDate": "0001-01-01T00:00:00Z",
+            "DateOfLastRentalPayment": "0001-01-01T00:00:00Z",
+            "SavedGameLocationXml": "\u003CSavedGameLocation xmlns:xsd=\u0022http://www.w3.org/2001/XMLSchema\u0022 xmlns:xsi=\u0022http://www.w3.org/2001/XMLSchema-instance\u0022 xsi:type=\u0022SavedBusiness\u0022\u003E\u003CName\u003EVespucci Beach: Dealer crew\u003C/Name\u003E\u003CCurrentSalesPrice\u003E1\u003C/CurrentSalesPrice\u003E\u003CEntrancePosition\u003E\u003CX\u003E-1103.234\u003C/X\u003E\u003CY\u003E-1636.672\u003C/Y\u003E\u003CZ\u003E4.601837\u003C/Z\u003E\u003C/EntrancePosition\u003E\u003CPayoutDate\u003E2009-06-07T12:29:00\u003C/PayoutDate\u003E\u003CDateOfLastPayout\u003E2009-06-06T12:29:00\u003C/DateOfLastPayout\u003E\u003CModItemToPayout\u003EInfluence\u003C/ModItemToPayout\u003E\u003CWeaponInventory /\u003E\u003CInventoryItems /\u003E\u003CStoredCash\u003E0\u003C/StoredCash\u003E\u003C/SavedGameLocation\u003E"
+          },
+          {
+            "PropertyId": "Business:Cocaine Lockup:-1981.808:-241.498:34.986",
+            "Name": "Cocaine Lockup",
+            "PropertyType": "Business",
+            "IsOwned": true,
+            "IsRented": false,
+            "IsRentedOut": false,
+            "EntranceX": -1981.808,
+            "EntranceY": -241.4975,
+            "EntranceZ": 34.98574,
+            "CurrentSalesPrice": 500000,
+            "PayoutDate": "2009-06-13T10:29:05Z",
+            "DateOfLastPayout": "2009-06-06T10:29:05Z",
+            "RentalPaymentDate": "0001-01-01T00:00:00Z",
+            "DateOfLastRentalPayment": "0001-01-01T00:00:00Z",
+            "SavedGameLocationXml": "\u003CSavedGameLocation xmlns:xsd=\u0022http://www.w3.org/2001/XMLSchema\u0022 xmlns:xsi=\u0022http://www.w3.org/2001/XMLSchema-instance\u0022 xsi:type=\u0022SavedBusiness\u0022\u003E\u003CName\u003ECocaine Lockup\u003C/Name\u003E\u003CCurrentSalesPrice\u003E500000\u003C/CurrentSalesPrice\u003E\u003CEntrancePosition\u003E\u003CX\u003E-1981.808\u003C/X\u003E\u003CY\u003E-241.4975\u003C/Y\u003E\u003CZ\u003E34.98574\u003C/Z\u003E\u003C/EntrancePosition\u003E\u003CPayoutDate\u003E2009-06-13T12:29:05\u003C/PayoutDate\u003E\u003CDateOfLastPayout\u003E2009-06-06T12:29:05\u003C/DateOfLastPayout\u003E\u003CModItemToPayout\u003ECocaine\u003C/ModItemToPayout\u003E\u003CWeaponInventory /\u003E\u003CInventoryItems /\u003E\u003CStoredCash\u003E0\u003C/StoredCash\u003E\u003C/SavedGameLocation\u003E"
           }
         ],
-        "SnapshotUtc": "2026-05-15T12:44:09.332147+00:00"
+        "SnapshotUtc": "2026-05-15T12:49:35.8441888+00:00"
       },
       "GangReputation": {
         "StateId": "b682199c27d844c8b3e7d2147e3007c5",

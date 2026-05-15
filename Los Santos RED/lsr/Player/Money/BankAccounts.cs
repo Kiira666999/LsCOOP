@@ -94,13 +94,13 @@ public class BankAccounts
     public void GiveMoney(int Amount, bool useAccounts)
     {
         bool logDiagnostics = IsCoopMoneyDiagnosticsEnabled();
-        int accountCountBefore = BankAccountList?.Count ?? 0;
-        int totalAccountMoneyBefore = TotalAccountMoney;
-        int onHandCashBefore = GetMoney(false);
-        int totalMoneyBefore = GetMoney(true);
-        string modelName = Player?.ModelName ?? "<missing>";
-        bool isPrimaryCharacter = Player?.CharacterModelIsPrimaryCharacter == true;
-        bool aliasPedAsMainCharacter = Settings?.SettingsManager?.PedSwapSettings?.AliasPedAsMainCharacter == true;
+        int accountCountBefore = logDiagnostics ? BankAccountList?.Count ?? 0 : 0;
+        int totalAccountMoneyBefore = logDiagnostics ? TotalAccountMoney : 0;
+        int onHandCashBefore = logDiagnostics ? GetMoney(false) : 0;
+        int totalMoneyBefore = logDiagnostics ? GetMoney(true) : 0;
+        string modelName = logDiagnostics ? Player?.ModelName ?? "<missing>" : string.Empty;
+        bool isPrimaryCharacter = logDiagnostics && Player?.CharacterModelIsPrimaryCharacter == true;
+        bool aliasPedAsMainCharacter = logDiagnostics && Settings?.SettingsManager?.PedSwapSettings?.AliasPedAsMainCharacter == true;
 
         if (logDiagnostics)
         {
@@ -114,9 +114,15 @@ public class BankAccounts
         }
         if (useAccounts)
         {
-            EntryPoint.WriteToConsole($"GiveMoney ACCOUNT TO REMOVE {Amount}");
+            if (logDiagnostics)
+            {
+                EntryPoint.WriteToConsole($"GiveMoney ACCOUNT TO REMOVE {Amount}", 5);
+            }
             Amount = GiveMoneyAccount(Amount);
-            EntryPoint.WriteToConsole($"GiveMoney ACCOUNT STILL TO REMOVE {Amount}");
+            if (logDiagnostics)
+            {
+                EntryPoint.WriteToConsole($"GiveMoney ACCOUNT STILL TO REMOVE {Amount}", 5);
+            }
             if (logDiagnostics)
             {
                 EntryPoint.WriteToConsole($"Co-op money diagnostic GiveMoney after accounts RemainingAmount:{Amount} AccountMoneyAfterDebit:{TotalAccountMoney} AccountCount:{BankAccountList?.Count ?? 0}", 5);
@@ -177,7 +183,10 @@ public class BankAccounts
             int AccountMoneyTakenAlready = Amount;
             foreach (BankAccount ba in BankAccountList.OrderByDescending(x => x.Money))
             {
-                EntryPoint.WriteToConsole($"GiveMoneyAccount BEGIN {ba.BankContactName} {ba.Money}");
+                if (IsCoopMoneyDiagnosticsEnabled())
+                {
+                    EntryPoint.WriteToConsole($"GiveMoneyAccount BEGIN {ba.BankContactName} {ba.Money}", 5);
+                }
                 if (AccountMoneyTakenAlready + ba.Money < 0)
                 {
                     AccountMoneyTakenAlready += ba.Money;
@@ -188,7 +197,10 @@ public class BankAccounts
                     ba.Money = ba.Money += AccountMoneyTakenAlready;
                     AccountMoneyTakenAlready = 0;
                 }
-                EntryPoint.WriteToConsole($"GiveMoneyAccount END {ba.BankContactName} {ba.Money}");
+                if (IsCoopMoneyDiagnosticsEnabled())
+                {
+                    EntryPoint.WriteToConsole($"GiveMoneyAccount END {ba.BankContactName} {ba.Money}", 5);
+                }
             }
             return AccountMoneyTakenAlready;
         }
@@ -212,7 +224,7 @@ public class BankAccounts
         cashAfter = cashBefore;
         result = string.Empty;
 
-        if (!IsCoopMoneyDiagnosticsEnabled())
+        if (!IsCoopCashReconciliationEnabled())
         {
             result = "Skipped:CoopDisabled";
             return false;
@@ -325,6 +337,19 @@ public class BankAccounts
     }
 
     private bool IsCoopMoneyDiagnosticsEnabled()
+    {
+        try
+        {
+            return LosSantosRED.lsr.Coop.Core.CoopStartupBridge.IsCoopEnabled
+                && Settings?.SettingsManager?.DebugSettings?.LogCoopPersistenceDiagnostics == true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    private bool IsCoopCashReconciliationEnabled()
     {
         try
         {

@@ -51,7 +51,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 CoopCharacterStartupSnapshot snapshot = TryReadSnapshot(path);
                 if (snapshot != null)
                 {
-                    EntryPoint.WriteToConsole($"Co-op character startup snapshot loaded World:{snapshot.WorldId} Profile:{snapshot.ProfileId} Model:{snapshot.ModelName} Properties:{snapshot.PropertyOwnership?.Properties?.Count ?? 0} FirstProperty:{DescribeFirstProperty(snapshot.PropertyOwnership)}", 0);
+                    EntryPoint.WriteToConsole($"Co-op character startup snapshot loaded Profile:{snapshot.ProfileId} Model:{snapshot.ModelName}", 0);
                     return snapshot;
                 }
             }
@@ -77,11 +77,9 @@ namespace LosSantosRED.lsr.Coop.Core
             string currentModel = ped.Model.Name;
             if (string.Equals(currentModel, snapshot.ModelName, StringComparison.OrdinalIgnoreCase))
             {
-                EntryPoint.WriteToConsole($"Co-op character startup model already applied Model:{currentModel}", 0);
                 return true;
             }
 
-            EntryPoint.WriteToConsole($"Co-op character startup applying model Before:{currentModel} Saved:{snapshot.ModelName}", 0);
             try
             {
                 SafeStatePed(ped, true);
@@ -89,7 +87,6 @@ namespace LosSantosRED.lsr.Coop.Core
                 GameFiber.Yield();
                 Ped changedPed = GetLocalPed();
                 SafeStatePed(changedPed, false);
-                EntryPoint.WriteToConsole($"Co-op character startup applying model After:{(changedPed == null ? "missing" : changedPed.Model.Name)} Saved:{snapshot.ModelName}", 0);
                 return changedPed != null && string.Equals(changedPed.Model.Name, snapshot.ModelName, StringComparison.OrdinalIgnoreCase);
             }
             catch (Exception ex)
@@ -121,7 +118,6 @@ namespace LosSantosRED.lsr.Coop.Core
                 player.CurrentModelVariation = NativeHelper.GetPedVariation(ped);
             }
 
-            EntryPoint.WriteToConsole($"Co-op character startup appearance apply Result:{applied} Model:{ped.Model.Name}", 0);
             return applied;
         }
 
@@ -160,11 +156,6 @@ namespace LosSantosRED.lsr.Coop.Core
             CoopPropertyHydrationResult propertyHydration = null;
             if (snapshot.PropertyOwnership != null)
             {
-                string blockedReason;
-                CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
-                int residenceCount = placesOfInterest?.PossibleLocations?.Residences?.Count ?? 0;
-                Residence targetResidence = placesOfInterest?.PossibleLocations?.Residences?.FirstOrDefault(x => string.Equals(x?.Name, "0605 Apartment 4F", StringComparison.OrdinalIgnoreCase));
-                EntryPoint.WriteToConsole($"Co-op property hydration start Profile:{snapshot.ProfileId} StartupMode:{startupMode} LocalActiveHost:{CoopStartupBridge.IsLocalActiveHost} WorldSet:{world != null} PlacesSet:{placesOfInterest != null} Residences:{residenceCount} TargetResidenceFound:{targetResidence != null} TargetOwnedBefore:{targetResidence?.IsOwned} TargetRentedBefore:{targetResidence?.IsRented} SnapshotCount:{snapshot.PropertyOwnership.Properties?.Count ?? 0} FirstProperty:{DescribeFirstProperty(snapshot.PropertyOwnership)}", 0);
                 propertyHydration = new CoopPropertyOwnershipAdapter().TryApplySnapshotToPlayer(player, snapshot.PropertyOwnership, placesOfInterest, modItems, settings, world);
             }
 
@@ -585,7 +576,6 @@ namespace LosSantosRED.lsr.Coop.Core
             string properties = GetValue(values, "Properties");
             if (string.IsNullOrWhiteSpace(snapshotId) && string.IsNullOrWhiteSpace(properties))
             {
-                EntryPoint.WriteToConsole($"Co-op property startup parse skipped Profile:{profileId} Reason:NoPropertySnapshotPayload", 0);
                 return null;
             }
 
@@ -630,7 +620,6 @@ namespace LosSantosRED.lsr.Coop.Core
                 });
             }
 
-            EntryPoint.WriteToConsole($"Co-op property startup parse Profile:{profileId} Count:{snapshot.Properties.Count} FirstProperty:{DescribeFirstProperty(snapshot)}", 0);
             return snapshot;
         }
 

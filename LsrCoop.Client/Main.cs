@@ -60,6 +60,7 @@ namespace LsrCoop.Client
         private bool characterCreationRequestSent;
         private DateTimeOffset characterCreateRequiredUtc;
         private bool clientTickSubscribed;
+        private string lastLoggedStartupModeKey;
         private DateTimeOffset lastCharacterCreatedBridgePollUtc;
         private DateTimeOffset lastGameplayBridgePollUtc;
         private readonly HashSet<string> processedCharacterCreationNonces = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
@@ -544,7 +545,6 @@ namespace LsrCoop.Client
 
             if (string.Equals(eventType, "GameplayActionCommitted", StringComparison.OrdinalIgnoreCase))
             {
-                LogOwnedVehicleCommitForwarding(payloadJson, profileId);
                 API.SendCustomEvent(GameplayActionCommittedEventHash, new object[] { payloadJson, eventType ?? string.Empty, nonce ?? string.Empty, profileId ?? string.Empty });
                 Logger.Info($"[LsrCoop.Client] gameplay commit sent: profile={profileId}");
                 return true;
@@ -573,29 +573,6 @@ namespace LsrCoop.Client
 
             Logger.Info($"[LsrCoop.Client] gameplay bridge ignored; unknown type={eventType}");
             return true;
-        }
-
-        private void LogOwnedVehicleCommitForwarding(string payloadJson, string profileId)
-        {
-            CoopStorePurchaseCommitDto commit = Deserialize<CoopStorePurchaseCommitDto>(payloadJson);
-            CoopOwnedVehicleSnapshot snapshot = commit?.OwnedVehicleSnapshot;
-            if (snapshot == null)
-            {
-                return;
-            }
-
-            CoopOwnedVehicleRecord firstVehicle = snapshot.Vehicles?.FirstOrDefault();
-            Logger.Info($"[LsrCoop.Client] owned vehicle commit forwarded: profile={profileId}, type={commit.Request?.ActionType}, action={GetRequestParameter(commit.Request, "VehicleAction")}, count={snapshot.Vehicles?.Count ?? 0}, firstVehicle={firstVehicle?.VehicleId ?? "none"}, firstPlate={firstVehicle?.PlateNumber ?? "none"}, firstModel={firstVehicle?.ModelName ?? firstVehicle?.ModelHash ?? "none"}");
-        }
-
-        private string GetRequestParameter(CoopGameplayActionRequestDto request, string key)
-        {
-            if (request?.Parameters == null || !request.Parameters.TryGetValue(key, out string value))
-            {
-                return string.Empty;
-            }
-
-            return value ?? string.Empty;
         }
 
         private string GetPedModelName(Ped ped)
@@ -670,7 +647,7 @@ namespace LsrCoop.Client
                 WriteAtomicBridgeFile(folder, CharacterSnapshotBridgeFileName, lines, nonce);
             }
 
-            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, ownedVehicles={ownedVehicles?.Vehicles?.Count ?? 0}, properties={propertyOwnership?.Properties?.Count ?? 0}, firstProperty={DescribeFirstProperty(propertyOwnership)}, firstPropertyLine={DescribeFirstPropertyLine(serializedProperties)}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, currentGang={gangReputation?.CurrentGangId ?? "none"}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(gangReputation, "AMBIENT_GANG_MEXICAN"))}, dateTimeLastWantedEnded={criminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}");
+            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, ownedVehicles={ownedVehicles?.Vehicles?.Count ?? 0}, properties={propertyOwnership?.Properties?.Count ?? 0}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}, gangReputation={gangReputation?.Reputations?.Count ?? 0}");
         }
 
         private void OnAppearanceChanged(CustomEventReceivedArgs args)
@@ -2077,7 +2054,14 @@ namespace LsrCoop.Client
                     : localCharacterReadyForSimulation
                         ? "ClientMode"
                         : "Blocked";
-            Logger.Info($"[LsrCoop.Client] startup bridge state: mode={selectedMode}, localProfile={localProfileId}, activeHost={assignedActiveHostProfileId}, isLocalActiveHost={isLocalActiveHost}, characterReady={localCharacterReadyForSimulation}, reason={reason}, session={bridgeSessionId}");
+            string logKey = $"{selectedMode}|{localProfileId}|{assignedActiveHostProfileId}|{localCharacterReadyForSimulation}";
+            if (string.Equals(lastLoggedStartupModeKey, logKey, StringComparison.Ordinal))
+            {
+                return;
+            }
+
+            lastLoggedStartupModeKey = logKey;
+            Logger.Info($"[LsrCoop.Client] startup mode selected: {selectedMode}, localProfile={localProfileId}, activeHost={assignedActiveHostProfileId}, reason={reason}");
         }
 
         private string[] GetBridgeStateFolders()

@@ -1003,7 +1003,9 @@ public class Residence : GameLocation, ILocationSetupable, IRestableLocation, II
 
     private void LogCoopResidenceDiagnostic(string phase)
     {
-        if (!CoopStartupBridge.IsCoopEnabled || !string.Equals(Name, CoopDiagnosticResidenceName, StringComparison.OrdinalIgnoreCase))
+        if (!CoopStartupBridge.IsCoopEnabled
+            || Settings?.SettingsManager?.DebugSettings?.LogCoopPersistenceDiagnostics != true
+            || !string.Equals(Name, CoopDiagnosticResidenceName, StringComparison.OrdinalIgnoreCase))
         {
             return;
         }

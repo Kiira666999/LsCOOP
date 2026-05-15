@@ -42,7 +42,6 @@ namespace LosSantosRED.lsr.Coop.Core
             LastAllowedTaskRun.Clear();
             NextDelayLog.Clear();
 
-            EntryPoint.WriteToConsole("Co-op FullSimulation spawn warmup started DurationSeconds:15 StaggerSeconds:15", 5);
             GameFiber.StartNew(delegate
             {
                 try
@@ -127,9 +126,6 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             loggedFirstLocationDispatch = true;
-            EntryPoint.WriteToConsole("Co-op FullSimulation spawn warmup first location dispatch allowed "
-                + "s:" + (ElapsedMilliseconds / 1000).ToString(CultureInfo.InvariantCulture)
-                + " Location:" + Safe(locationName), 5);
         }
 
         public static void OnVendorDispatchAllowed(string locationName)
@@ -140,9 +136,6 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             loggedFirstVendorDispatch = true;
-            EntryPoint.WriteToConsole("Co-op FullSimulation spawn warmup first vendor dispatch allowed "
-                + "s:" + (ElapsedMilliseconds / 1000).ToString(CultureInfo.InvariantCulture)
-                + " Location:" + Safe(locationName), 5);
         }
 
         public static void LogLocationDispatchDeferred(int remaining)
@@ -172,25 +165,18 @@ namespace LosSantosRED.lsr.Coop.Core
         {
             if (IsInWarmup)
             {
-                int remaining = WarmupRemainingSeconds;
-                if (remaining == 10 || remaining == 5)
-                {
-                    EntryPoint.WriteToConsole("Co-op FullSimulation spawn warmup remaining Seconds:" + remaining.ToString(CultureInfo.InvariantCulture), 5);
-                }
                 return;
             }
 
             if (!loggedWarmupEnd && IsInStagger)
             {
                 loggedWarmupEnd = true;
-                EntryPoint.WriteToConsole("Co-op FullSimulation spawn warmup ended; staggered location dispatch active Seconds:15", 5);
                 return;
             }
 
             if (!loggedStaggerEnd && IsActive && ElapsedMilliseconds >= WarmupMilliseconds + StaggerMilliseconds)
             {
                 loggedStaggerEnd = true;
-                EntryPoint.WriteToConsole("Co-op FullSimulation spawn warmup stagger ended; normal spawn task timing resumed", 5);
             }
         }
 
@@ -203,10 +189,6 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             NextDelayLog[taskName] = Game.GameTime + 5000;
-            EntryPoint.WriteToConsole("Co-op FullSimulation spawn warmup delayed "
-                + "Task:" + taskName
-                + " Reason:" + reason
-                + " RemainingSeconds:" + WarmupRemainingSeconds.ToString(CultureInfo.InvariantCulture), 5);
         }
 
         private static bool ShouldApply()

@@ -152,7 +152,6 @@ namespace LosSantosRED.lsr
             SetTaskGroups();
             GameFiber.Yield();
             CoopFullSimulationStartupWarmup.Begin();
-            CoopFullSimulationEntityDiagnostics.Begin(World);
             GameFiber.Yield();
             StartCoreLogic();
             GameFiber.Yield();
@@ -384,7 +383,6 @@ namespace LosSantosRED.lsr
 
         private void RunWorldCreateNewPedestrians()
         {
-            CoopFullSimulationEntityDiagnostics.RecordTaskTick("World.CreateNewPedestrians");
             if (!CoopFullSimulationStartupWarmup.ShouldRunEntityRegistrationTask("World.CreateNewPedestrians"))
             {
                 return;
@@ -394,7 +392,6 @@ namespace LosSantosRED.lsr
 
         private void RunWorldCreateNewVehicles()
         {
-            CoopFullSimulationEntityDiagnostics.RecordTaskTick("World.CreateNewVehicles");
             if (!CoopFullSimulationStartupWarmup.ShouldRunEntityRegistrationTask("World.CreateNewVehicles"))
             {
                 return;
@@ -404,7 +401,6 @@ namespace LosSantosRED.lsr
 
         private void RunWorldActivateNearLocations()
         {
-            CoopFullSimulationEntityDiagnostics.RecordTaskTick("World.ActiveNearLocations");
             if (!CoopFullSimulationStartupWarmup.ShouldRunLocationActivationTask())
             {
                 return;
@@ -414,7 +410,6 @@ namespace LosSantosRED.lsr
 
         private void RunDispatcherDispatch()
         {
-            CoopFullSimulationEntityDiagnostics.RecordTaskTick("Dispatcher.Dispatch");
             if (!CoopFullSimulationStartupWarmup.ShouldRunDispatcherTask())
             {
                 return;
@@ -486,9 +481,14 @@ namespace LosSantosRED.lsr
 
         private void LogCoopStartupSelection(string reason)
         {
+            if (!CoopStartupBridge.IsCoopEnabled)
+            {
+                return;
+            }
+
             string blockedReason;
             CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
-            EntryPoint.WriteToConsole($"Co-op startup selected Mode:{startupMode} LocalProfile:{CoopStartupBridge.LocalProfileId} ActiveHost:{CoopStartupBridge.ActiveHostProfileId} IsLocalActiveHost:{CoopStartupBridge.IsLocalActiveHost} CharacterReady:{CoopStartupBridge.IsCharacterReadyForSimulation} Reason:{reason} BlockedReason:{blockedReason}", 0);
+            EntryPoint.WriteToConsole($"Co-op startup mode selected: {startupMode} LocalProfile:{CoopStartupBridge.LocalProfileId} ActiveHost:{CoopStartupBridge.ActiveHostProfileId} Reason:{reason}", 0);
         }
         private void StartCoreLogic()
         {

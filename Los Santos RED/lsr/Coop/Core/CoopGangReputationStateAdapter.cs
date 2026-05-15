@@ -140,6 +140,7 @@ namespace LosSantosRED.lsr.Coop.Core
         {
             string profileKey = snapshot.ProfileId.ToString();
             lastPublishedReputationsByProfile.TryGetValue(profileKey, out Dictionary<string, int> previous);
+            List<string> changedGangIds = new List<string>();
             foreach (CoopGangReputationRecord record in snapshot.Reputations.Where(x => !string.IsNullOrWhiteSpace(x.GangId)))
             {
                 int oldReputation = 0;
@@ -155,11 +156,10 @@ namespace LosSantosRED.lsr.Coop.Core
                     continue;
                 }
 
-                string gangName = gang?.ShortName ?? gang?.FullName ?? record.GangId;
-                EntryPoint.WriteToConsole($"Co-op gang reputation captured Gang:{record.GangId} Name:{gangName} Old:{(hasOld ? oldReputation.ToString() : "unknown")} New:{record.Reputation}", 5);
+                changedGangIds.Add(record.GangId);
             }
 
-            EntryPoint.WriteToConsole($"Co-op gang reputation snapshot captured Profile:{snapshot.ProfileId} Records:{snapshot.Reputations.Count} CurrentGang:{snapshot.CurrentGangId ?? "none"}", 5);
+            EntryPoint.WriteToConsole($"Co-op gang reputation snapshot captured Profile:{snapshot.ProfileId} Records:{snapshot.Reputations.Count} Changed:{changedGangIds.Count} ChangedGangs:{(changedGangIds.Count == 0 ? "none" : string.Join("|", changedGangIds.Take(8)))} CurrentGang:{snapshot.CurrentGangId ?? "none"}", 5);
         }
 
         private static string CreateSignature(CoopGangReputationState snapshot)

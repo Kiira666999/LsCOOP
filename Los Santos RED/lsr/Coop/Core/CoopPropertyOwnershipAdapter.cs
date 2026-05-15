@@ -32,10 +32,8 @@ namespace LosSantosRED.lsr.Coop.Core
             {
                 CoopPropertyOwnershipRecord record = CreateRecord(property);
                 snapshot.Properties.Add(record);
-                EntryPoint.WriteToConsole($"Co-op property snapshot record Profile:{profileId} PropertyId:{record.PropertyId} Name:{record.Name} Owned:{record.IsOwned} Rented:{record.IsRented}", 5);
             }
 
-            EntryPoint.WriteToConsole($"Co-op property snapshot captured Profile:{profileId} Count:{snapshot.Properties.Count}", 5);
             return snapshot;
         }
 
@@ -57,8 +55,6 @@ namespace LosSantosRED.lsr.Coop.Core
                 return result;
             }
 
-            LogResidenceState("before", player, placesOfInterest, world, snapshot);
-
             GameSave gameSave = new GameSave();
             foreach (CoopPropertyOwnershipRecord record in snapshot.Properties)
             {
@@ -75,12 +71,10 @@ namespace LosSantosRED.lsr.Coop.Core
                 return result;
             }
 
-            EntryPoint.WriteToConsole($"Co-op property hydration loading Profile:{snapshot.ProfileId} SavedLocations:{gameSave.SavedGameLocations.Count} FirstSaved:{DescribeSavedLocation(gameSave.SavedGameLocations.FirstOrDefault())} Calling:GameSave.LoadOwnedProperties", 0);
             player.Properties?.Reset();
             gameSave.LoadOwnedProperties(player, placesOfInterest, modItems, settings, world);
             result.HydratedCount = player.Properties?.PropertyList?.Count ?? 0;
             result.Applied = result.HydratedCount > 0;
-            LogResidenceState("after", player, placesOfInterest, world, snapshot);
             EntryPoint.WriteToConsole($"Co-op property hydration Profile:{snapshot.ProfileId} SnapshotCount:{snapshot.Properties.Count} HydratedCount:{result.HydratedCount} Skipped:{result.SkippedCount}", 0);
             return result;
         }
@@ -170,7 +164,6 @@ namespace LosSantosRED.lsr.Coop.Core
                 return null;
             }
 
-            EntryPoint.WriteToConsole($"Co-op property hydration queued PropertyId:{record.PropertyId} Name:{record.Name} Type:{record.PropertyType} Owned:{record.IsOwned} Rented:{record.IsRented} RentedOut:{record.IsRentedOut} SaveType:{savedLocation.GetType().Name} SaveName:{savedLocation.Name} SaveSource:{(hadSerializedSaveData ? "Xml" : "Fallback")}", 0);
             return savedLocation;
         }
 

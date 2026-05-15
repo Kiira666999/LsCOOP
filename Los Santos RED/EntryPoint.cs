@@ -110,7 +110,6 @@ public static class EntryPoint
     {
         string blockedReason;
         CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
-        WriteToConsole($"Co-op startup request Mode:{startupMode} LocalProfile:{CoopStartupBridge.LocalProfileId} ActiveHost:{CoopStartupBridge.ActiveHostProfileId} IsLocalActiveHost:{CoopStartupBridge.IsLocalActiveHost} CharacterReady:{CoopStartupBridge.IsCharacterReadyForSimulation} BlockedReason:{blockedReason}", 0);
         if (startupMode == CoopStartupMode.BootstrapOnly)
         {
             if (ModController?.IsBootstrapOnly == true)

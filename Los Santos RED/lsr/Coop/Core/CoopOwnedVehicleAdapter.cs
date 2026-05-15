@@ -39,10 +39,8 @@ namespace LosSantosRED.lsr.Coop.Core
 
                 CoopOwnedVehicleRecord record = CreateRecord(vehicle);
                 snapshot.Vehicles.Add(record);
-                EntryPoint.WriteToConsole($"Co-op owned vehicle snapshot record Profile:{profileId} VehicleId:{record.VehicleId} Plate:{record.PlateNumber} Model:{record.ModelName}/{record.ModelHash}", 5);
             }
 
-            EntryPoint.WriteToConsole($"Co-op owned vehicle snapshot captured Profile:{profileId} Count:{snapshot.Vehicles.Count}", 5);
             return snapshot;
         }
 
@@ -200,7 +198,6 @@ namespace LosSantosRED.lsr.Coop.Core
                 return null;
             }
 
-            EntryPoint.WriteToConsole($"Co-op owned vehicle hydration queued VehicleId:{record.VehicleId} Plate:{record.PlateNumber} Model:{record.ModelName}/{record.ModelHash}", 5);
             return saveStatus;
         }
 

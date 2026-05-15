@@ -205,12 +205,6 @@ namespace LsrCoop.Server
                 return;
             }
 
-            if (commit.OwnedVehicleSnapshot != null)
-            {
-                CoopOwnedVehicleRecord firstVehicle = commit.OwnedVehicleSnapshot.Vehicles?.FirstOrDefault();
-                Logger.Info($"[LsrCoop.Server] owned vehicle snapshot deserialized: profile={request.SourceProfileId}, request={request.RequestId}, type={request.ActionType}, action={GetParameter(request, "VehicleAction")}, count={commit.OwnedVehicleSnapshot.Vehicles?.Count ?? 0}, firstVehicle={firstVehicle?.VehicleId ?? "none"}, firstPlate={firstVehicle?.PlateNumber ?? "none"}, firstModel={firstVehicle?.ModelName ?? firstVehicle?.ModelHash ?? "none"}");
-            }
-
             if (!string.Equals(request.WorldId, worldProfileStoreService.WorldId, StringComparison.OrdinalIgnoreCase))
             {
                 Logger.Warning($"[LsrCoop.Server] rejected gameplay action from {requester.ProfileId}: wrong world {request.WorldId}");
@@ -727,8 +721,6 @@ namespace LsrCoop.Server
                 return;
             }
 
-            Logger.Info($"[LsrCoop.Server] gang reputation snapshot received: profile={profile.ProfileId}, records={snapshot.Reputations.Count}, allDefault={incomingAllDefault}, incomingVagos={DescribeGangReputationRecord(incomingVagos)}, savedVagosBefore={DescribeGangReputationRecord(existingVagos)}");
-
             GangReputationMergeResult mergeResult = MergeGangReputationSnapshot(profile.GangReputation, snapshot);
             if (!mergeResult.HasChanges)
             {
@@ -740,13 +732,13 @@ namespace LsrCoop.Server
                 return;
             }
 
-            int changedRecordCount = LogGangReputationChanges(profile.GangReputation, mergeResult.MergedState);
+            string changedRecords = SummarizeGangReputationChanges(profile.GangReputation, mergeResult.MergedState, out int changedRecordCount);
             profile.GangReputation = mergeResult.MergedState;
             ignoredEmptyGangSnapshotProfiles.Remove(profile.ProfileId);
             ignoredDefaultGangSnapshotProfiles.Remove(profile.ProfileId);
             worldProfileStoreService.Save();
 
-            Logger.Info($"[LsrCoop.Server] gang reputation {mergeResult.Action}: profile={profile.ProfileId}, recordsSaved={profile.GangReputation.Reputations?.Count ?? 0}, recordsChanged={changedRecordCount}, preservedDefaultOverwrites={mergeResult.PreservedDefaultOverwriteCount}, currentGang={profile.GangReputation.CurrentGangId ?? "none"}, savedVagosAfter={DescribeGangReputationRecord(FindGangReputationRecord(profile.GangReputation, "AMBIENT_GANG_MEXICAN"))}");
+            Logger.Info($"[LsrCoop.Server] gang reputation {mergeResult.Action}: profile={profile.ProfileId}, recordsSaved={profile.GangReputation.Reputations?.Count ?? 0}, recordsChanged={changedRecordCount}, changedGangs={changedRecords}, preservedDefaultOverwrites={mergeResult.PreservedDefaultOverwriteCount}, currentGang={profile.GangReputation.CurrentGangId ?? "none"}, savedVagosAfter={DescribeGangReputationRecord(FindGangReputationRecord(profile.GangReputation, "AMBIENT_GANG_MEXICAN"))}");
         }
 
         private static GangReputationMergeResult MergeGangReputationSnapshot(CoopGangReputationStateDto existing, CoopGangReputationStateDto incoming)
@@ -924,7 +916,7 @@ namespace LsrCoop.Server
             public int RemovedCount { get; set; }
         }
 
-        private int LogGangReputationChanges(CoopGangReputationStateDto existing, CoopGangReputationStateDto incoming)
+        private string SummarizeGangReputationChanges(CoopGangReputationStateDto existing, CoopGangReputationStateDto incoming, out int changedCount)
         {
             Dictionary<string, CoopGangReputationRecordDto> oldValues = existing?.Reputations?
                 .Where(x => !string.IsNullOrWhiteSpace(x.GangId))
@@ -932,11 +924,12 @@ namespace LsrCoop.Server
                 .ToDictionary(x => x.Key, x => x.Last(), StringComparer.OrdinalIgnoreCase)
                 ?? new Dictionary<string, CoopGangReputationRecordDto>(StringComparer.OrdinalIgnoreCase);
 
-            int changedCount = 0;
+            changedCount = 0;
+            List<string> changedGangIds = new List<string>();
             foreach (CoopGangReputationRecordDto record in incoming.Reputations.Where(x => !string.IsNullOrWhiteSpace(x.GangId)))
             {
                 CoopGangReputationRecordDto oldRecord;
-                bool hasOld = oldValues.TryGetValue(record.GangId, out oldRecord);
+                oldValues.TryGetValue(record.GangId, out oldRecord);
                 string changes = DescribeGangReputationChanges(oldRecord, record);
                 if (string.IsNullOrWhiteSpace(changes))
                 {
@@ -944,11 +937,12 @@ namespace LsrCoop.Server
                 }
 
                 changedCount++;
-                string gangName = string.IsNullOrWhiteSpace(record.GangName) ? record.GangId : record.GangName;
-                Logger.Info($"[LsrCoop.Server] gang reputation record: profile={incoming.ProfileId}, gang={record.GangId}, name={gangName}, oldRep={(hasOld ? oldRecord.Reputation.ToString() : "unknown")}, newRep={record.Reputation}, changes={changes}");
+                changedGangIds.Add(record.GangId);
             }
 
-            return changedCount;
+            return changedGangIds.Count == 0
+                ? "none"
+                : string.Join("|", changedGangIds.Take(8));
         }
 
         private static string DescribeGangReputationChanges(CoopGangReputationRecordDto oldRecord, CoopGangReputationRecordDto newRecord)

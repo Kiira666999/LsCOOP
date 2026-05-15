@@ -327,7 +327,8 @@ namespace LosSantosRED.lsr
 
         private void LogCoopExpirationDiagnostics(string stage, int wantedLevel, DateTime dateTimeLastWantedEnded, string clearReason)
         {
-            if (!CoopStartupBridge.IsCoopEnabled)
+            if (!CoopStartupBridge.IsCoopEnabled
+                || Settings?.SettingsManager?.DebugSettings?.LogCoopPersistenceDiagnostics != true)
             {
                 return;
             }

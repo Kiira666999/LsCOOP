@@ -112,7 +112,7 @@ namespace LsrCoop.Server
                 JsonSerializer.Serialize(status.Profile.OwnedVehicles),
                 JsonSerializer.Serialize(status.Profile.PropertyOwnership)
             });
-            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}, ownedVehicles={(status.Profile.OwnedVehicles?.Vehicles?.Count ?? 0)}, properties={(status.Profile.PropertyOwnership?.Properties?.Count ?? 0)}, firstProperty={DescribeFirstProperty(status.Profile.PropertyOwnership)}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}, gangReputation={(status.Profile.GangReputation?.Reputations?.Count ?? 0)}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(status.Profile.GangReputation, "AMBIENT_GANG_MEXICAN"))}");
+            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}, ownedVehicles={(status.Profile.OwnedVehicles?.Vehicles?.Count ?? 0)}, properties={(status.Profile.PropertyOwnership?.Properties?.Count ?? 0)}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}, gangReputation={(status.Profile.GangReputation?.Reputations?.Count ?? 0)}");
         }
 
         public CoopClientStatus AcknowledgeCharacterSnapshot(Client client, string worldId, string profileId, string reason, out bool readinessChanged)
