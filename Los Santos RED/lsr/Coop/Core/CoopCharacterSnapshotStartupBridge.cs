@@ -23,6 +23,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public CoopPropertyOwnershipSnapshot PropertyOwnership { get; set; }
         public CoopCriminalHistoryState CriminalHistory { get; set; }
         public CoopGangReputationState GangReputation { get; set; }
+        public CoopLastPositionState LastPosition { get; set; }
     }
 
     public static class CoopCharacterSnapshotStartupBridge
@@ -31,16 +32,19 @@ namespace LosSantosRED.lsr.Coop.Core
         private const string RequiredBridgeVersion = "1";
         private const string RequiredTransportMode = "RAGECOOP";
         private const int SafePedHealth = 200;
+        private const float MaxAbsLastPositionCoordinate = 10000.0f;
+        private const float MinLastPositionZ = -500.0f;
+        private const float MaxLastPositionZ = 3000.0f;
 
         public static CoopCharacterStartupSnapshot TryReadReadySnapshot()
         {
+            string blockedReason;
+            CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
             if (!CoopStartupBridge.IsCoopEnabled || !CoopStartupBridge.IsCharacterReadyForSimulation)
             {
                 return null;
             }
 
-            string blockedReason;
-            CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
             if (startupMode != CoopStartupMode.FullSimulation && startupMode != CoopStartupMode.ClientMode)
             {
                 return null;
@@ -175,6 +179,56 @@ namespace LosSantosRED.lsr.Coop.Core
             return appliedInventoryMoney || weaponHydration?.Applied == true || ownedVehicleHydration?.Applied == true || propertyHydration?.Applied == true || appliedCriminalHistory || appliedGangReputation;
         }
 
+        public static bool ApplyLastPositionAfterPlayerSetup(CoopCharacterStartupSnapshot snapshot, Mod.Player player)
+        {
+            if (snapshot == null)
+            {
+                return false;
+            }
+
+            if (snapshot.LastPosition == null)
+            {
+                EntryPoint.WriteToConsole($"Co-op last position fallback Profile:{snapshot.ProfileId} Reason:MissingLastPosition", 0);
+                return false;
+            }
+
+            if (!TryValidateLastPosition(snapshot.LastPosition, out string reason))
+            {
+                EntryPoint.WriteToConsole($"Co-op last position fallback Profile:{snapshot.ProfileId} Reason:{reason}", 0);
+                return false;
+            }
+
+            Ped ped = player?.Character;
+            if (ped == null || !ped.Exists())
+            {
+                ped = GetLocalPed();
+            }
+
+            if (ped == null || !ped.Exists())
+            {
+                EntryPoint.WriteToConsole($"Co-op last position fallback Profile:{snapshot.ProfileId} Reason:LocalPedMissing", 0);
+                return false;
+            }
+
+            try
+            {
+                SafeStatePed(ped, true);
+                NativeFunction.Natives.REQUEST_COLLISION_AT_COORD(snapshot.LastPosition.X, snapshot.LastPosition.Y, snapshot.LastPosition.Z);
+                ped.Position = new Vector3(snapshot.LastPosition.X, snapshot.LastPosition.Y, snapshot.LastPosition.Z);
+                ped.Heading = NormalizeHeading(snapshot.LastPosition.Heading);
+                GameFiber.Yield();
+                SafeStatePed(GetLocalPed(), false);
+                EntryPoint.WriteToConsole($"Co-op last position restored Profile:{snapshot.ProfileId} X:{FormatFloat(snapshot.LastPosition.X)} Y:{FormatFloat(snapshot.LastPosition.Y)} Z:{FormatFloat(snapshot.LastPosition.Z)} Heading:{FormatFloat(snapshot.LastPosition.Heading)}", 0);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                SafeStatePed(GetLocalPed(), false);
+                EntryPoint.WriteToConsole($"Co-op last position fallback Profile:{snapshot.ProfileId} Reason:RestoreFailed Error:{ex.Message}", 0);
+                return false;
+            }
+        }
+
         public static void HydrateLocalCharacter(LocalCoopCharacter localCharacter, CoopCharacterStartupSnapshot snapshot)
         {
             if (localCharacter == null || snapshot == null)
@@ -218,6 +272,12 @@ namespace LosSantosRED.lsr.Coop.Core
                     return null;
                 }
 
+                CoopLastPositionState lastPosition = ParseLastPosition(values, worldId, profileId);
+                if (lastPosition != null)
+                {
+                    EntryPoint.WriteToConsole($"Co-op last position parsed Profile:{profileId} X:{FormatFloat(lastPosition.X)} Y:{FormatFloat(lastPosition.Y)} Z:{FormatFloat(lastPosition.Z)} Heading:{FormatFloat(lastPosition.Heading)}", 0);
+                }
+
                 return new CoopCharacterStartupSnapshot
                 {
                     WorldId = worldId,
@@ -235,6 +295,7 @@ namespace LosSantosRED.lsr.Coop.Core
                     PropertyOwnership = ParseProperties(values, worldId, profileId),
                     CriminalHistory = ParseCriminalHistory(values, worldId, profileId),
                     GangReputation = ParseGangReputation(values, worldId, profileId),
+                    LastPosition = lastPosition,
                 };
             }
             catch (Exception ex)
@@ -419,6 +480,40 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             return state;
+        }
+
+        private static CoopLastPositionState ParseLastPosition(Dictionary<string, string> values, string worldId, string profileId)
+        {
+            string x = GetValue(values, "LastPositionX");
+            string y = GetValue(values, "LastPositionY");
+            string z = GetValue(values, "LastPositionZ");
+            string heading = GetValue(values, "LastPositionHeading");
+            string updatedUtc = GetValue(values, "LastPositionUpdatedUtc");
+            string updatedUtcUnixMilliseconds = GetValue(values, "LastPositionUpdatedUtcUnixMilliseconds");
+            string source = GetValue(values, "LastPositionSource");
+            if (string.IsNullOrWhiteSpace(x)
+                && string.IsNullOrWhiteSpace(y)
+                && string.IsNullOrWhiteSpace(z)
+                && string.IsNullOrWhiteSpace(heading)
+                && string.IsNullOrWhiteSpace(updatedUtc)
+                && string.IsNullOrWhiteSpace(updatedUtcUnixMilliseconds)
+                && string.IsNullOrWhiteSpace(source))
+            {
+                return null;
+            }
+
+            return new CoopLastPositionState
+            {
+                WorldId = new CoopWorldId(worldId),
+                ProfileId = new CoopProfileId(profileId),
+                CharacterId = new CoopCharacterId(GetValue(values, "CharacterId")),
+                X = ParseFloat(x),
+                Y = ParseFloat(y),
+                Z = ParseFloat(z),
+                Heading = ParseFloat(heading),
+                UpdatedUtc = ParseLastPositionUpdatedUtc(updatedUtcUnixMilliseconds, updatedUtc),
+                Source = source,
+            };
         }
 
         private static CoopGangReputationState ParseGangReputation(Dictionary<string, string> values, string worldId, string profileId)
@@ -661,6 +756,23 @@ namespace LosSantosRED.lsr.Coop.Core
                 : DateTimeOffset.MinValue;
         }
 
+        private static DateTimeOffset ParseLastPositionUpdatedUtc(string unixMillisecondsValue, string isoValue)
+        {
+            long unixMilliseconds;
+            if (long.TryParse(unixMillisecondsValue, NumberStyles.Integer, CultureInfo.InvariantCulture, out unixMilliseconds) && unixMilliseconds > 0)
+            {
+                try
+                {
+                    return DateTimeOffset.FromUnixTimeMilliseconds(unixMilliseconds);
+                }
+                catch
+                {
+                }
+            }
+
+            return ParseDateTimeOffset(isoValue);
+        }
+
         private static DateTime ParseOptionalDateTime(string value)
         {
             DateTime parsed;
@@ -672,6 +784,55 @@ namespace LosSantosRED.lsr.Coop.Core
         private static bool IsTrue(string value)
         {
             return string.Equals(value, "true", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private static bool TryValidateLastPosition(CoopLastPositionState position, out string reason)
+        {
+            reason = string.Empty;
+            if (position == null)
+            {
+                reason = "MissingLastPosition";
+                return false;
+            }
+
+            if (IsInvalidFloat(position.X) || IsInvalidFloat(position.Y) || IsInvalidFloat(position.Z) || IsInvalidFloat(position.Heading))
+            {
+                reason = "NaNOrInfiniteCoordinate";
+                return false;
+            }
+
+            if (Math.Abs(position.X) < 0.01f && Math.Abs(position.Y) < 0.01f && Math.Abs(position.Z) < 0.01f)
+            {
+                reason = "ZeroCoordinate";
+                return false;
+            }
+
+            if (Math.Abs(position.X) > MaxAbsLastPositionCoordinate
+                || Math.Abs(position.Y) > MaxAbsLastPositionCoordinate
+                || position.Z < MinLastPositionZ
+                || position.Z > MaxLastPositionZ)
+            {
+                reason = $"OutOfWorldBounds:{FormatFloat(position.X)},{FormatFloat(position.Y)},{FormatFloat(position.Z)}";
+                return false;
+            }
+
+            return true;
+        }
+
+        private static bool IsInvalidFloat(float value)
+        {
+            return float.IsNaN(value) || float.IsInfinity(value);
+        }
+
+        private static float NormalizeHeading(float heading)
+        {
+            float normalized = heading % 360.0f;
+            return normalized < 0.0f ? normalized + 360.0f : normalized;
+        }
+
+        private static string FormatFloat(float value)
+        {
+            return value.ToString("0.###", CultureInfo.InvariantCulture);
         }
 
         private static string UnescapePart(string value)

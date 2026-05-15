@@ -2,24 +2,26 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-14T13:15:51.1387633+00:00",
-  "UpdatedUtc": "2026-05-15T15:51:36.0998222+00:00",
+  "UpdatedUtc": "2026-05-15T18:42:43.3513189+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
-    "AdminIds": [],
+    "AdminIds": [
+      "Kiira"
+    ],
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-15T15:51:36.0998366+00:00"
+    "UpdatedUtc": "2026-05-15T18:42:43.3513355+00:00"
   },
   "Profiles": [
     {
       "ProfileId": "Kiira",
       "ClientId": "Kiira",
       "DisplayName": "Kiira",
-      "Role": "TrustedHost",
+      "Role": "Admin,TrustedHost",
       "CreatedUtc": "2026-05-14T13:15:58.9246961+00:00",
-      "LastSeenUtc": "2026-05-15T15:36:24.7373074+00:00",
+      "LastSeenUtc": "2026-05-15T18:42:43.183422+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -155,7 +157,7 @@
         "UpdatedUtc": "2026-05-14T13:16:22.4013702+00:00"
       },
       "InventoryMoney": {
-        "SnapshotId": "96ceff9362454816a19b3d693d0da5b2",
+        "SnapshotId": "7ad63e1c1505482fb17538ad7b76f168",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
@@ -1601,10 +1603,10 @@
           }
         ],
         "BankAccounts": [],
-        "SnapshotUtc": "2026-05-15T15:16:45.9898126+00:00"
+        "SnapshotUtc": "2026-05-15T17:48:51.2812958+00:00"
       },
       "Weapons": {
-        "SnapshotId": "b5ce3ce4cc35493cb2e1b04981652c99",
+        "SnapshotId": "edb097250c5341d68deda20277000386",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
@@ -1626,7 +1628,7 @@
             "IsEquipped": false
           }
         ],
-        "SnapshotUtc": "2026-05-15T15:16:45.9898126+00:00"
+        "SnapshotUtc": "2026-05-15T17:48:51.2833165+00:00"
       },
       "OwnedVehicles": {
         "SnapshotId": "7bbc9534c5a342c48de1f00843b837be",
@@ -2469,65 +2471,52 @@
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "HasHistory": true,
-        "LastSeenX": 259.0079,
-        "LastSeenY": -1456.393,
-        "LastSeenZ": 28.88459,
-        "WantedLevel": 2,
-        "Crimes": [
-          {
-            "CrimeId": "DrivingAgainstTraffic",
-            "CrimeName": "Driving Against Traffic",
-            "Instances": 2,
-            "ResultingWantedLevel": 1,
-            "Priority": 42,
-            "ResultsInLethalForce": false
-          },
-          {
-            "CrimeId": "RunningARedLight",
-            "CrimeName": "Running a Red Light",
-            "Instances": 2,
-            "ResultingWantedLevel": 1,
-            "Priority": 45,
-            "ResultsInLethalForce": false
-          },
-          {
-            "CrimeId": "ResistingArrest",
-            "CrimeName": "Resisting Arrest",
-            "Instances": 3,
-            "ResultingWantedLevel": 2,
-            "Priority": 21,
-            "ResultsInLethalForce": false
-          }
-        ],
+        "HasHistory": false,
+        "LastSeenX": 0,
+        "LastSeenY": 0,
+        "LastSeenZ": 0,
+        "WantedLevel": 0,
+        "Crimes": [],
         "DateTimeLastWantedEnded": "2009-06-06T12:14:25+00:00",
-        "UpdatedUtc": "2026-05-15T15:33:25.7946571+00:00",
-        "ClearReason": ""
+        "UpdatedUtc": "2026-05-15T17:51:36.1552877+00:00",
+        "ClearReason": "ExpiredCalendarTime"
       },
       "DeathArrestState": {
-        "StateId": "e1f3f5754fb54ff895e0d91e61288766",
+        "StateId": "aa70832e6b2b41afbd0b2db8fb171ad8",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "ActionType": "ApplyDeathState",
-        "OutcomeType": "HospitalRespawn",
-        "RespawnLocationName": "Central LS Medical Center",
-        "PositionX": 338.208,
-        "PositionY": -1396.154,
-        "PositionZ": 32.50927,
-        "Heading": 77.07101,
-        "HospitalFee": 55000,
+        "OutcomeType": "RespawnAtCurrentLocation",
+        "RespawnLocationName": "",
+        "PositionX": 102.0178,
+        "PositionY": -1412.535,
+        "PositionZ": 29.17168,
+        "Heading": 0,
+        "HospitalFee": 0,
         "HospitalBillPastDue": 0,
-        "HospitalDuration": 11,
+        "HospitalDuration": 0,
         "BailFee": 0,
         "BailFeePastDue": 0,
         "BailDuration": 0,
         "TodayPayment": 0,
-        "TimesDied": 0,
+        "TimesDied": 1,
         "HadIllegalWeapons": false,
         "HadIllegalItems": false,
-        "ReleaseDate": "2009-07-08T07:00:00Z",
-        "OccurredUtc": "2026-05-15T15:16:45.9898126+00:00"
+        "ReleaseDate": "2009-06-06T10:11:19Z",
+        "OccurredUtc": "2026-05-15T17:48:51.285312+00:00"
+      },
+      "LastPosition": {
+        "WorldId": "lsrcoop-default-world",
+        "ProfileId": "Kiira",
+        "CharacterId": "Kiira",
+        "SessionId": "6eba1af0a70d4dc8824677f07bcdb7b0",
+        "X": -624.88696,
+        "Y": 115.87493,
+        "Z": 57.999313,
+        "Heading": 102.38918,
+        "UpdatedUtcUnixMilliseconds": 1778870563114,
+        "Source": "Periodic"
       },
       "LongTermLsrRecords": []
     }

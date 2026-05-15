@@ -17,6 +17,9 @@ namespace LsrCoop.Server
         private readonly List<ConnectionEventSubscription> connectionSubscriptions = new List<ConnectionEventSubscription>();
         private readonly HashSet<string> ignoredEmptyGangSnapshotProfiles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private readonly HashSet<string> ignoredDefaultGangSnapshotProfiles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        private const float MaxAbsLastPositionCoordinate = 10000.0f;
+        private const float MinLastPositionZ = -500.0f;
+        private const float MaxLastPositionZ = 3000.0f;
 
         private EventRouter eventRouter;
         private RoleConfigService roleConfigService;
@@ -172,6 +175,7 @@ namespace LsrCoop.Server
             API.RegisterCustomEventHandler(EventRouter.PvpCrimeReportedEventHash, OnPvpCrimeReported);
             API.RegisterCustomEventHandler(EventRouter.CriminalJusticeSnapshotCommittedEventHash, OnCriminalJusticeSnapshotCommitted);
             API.RegisterCustomEventHandler(EventRouter.GangReputationSnapshotCommittedEventHash, OnGangReputationSnapshotCommitted);
+            API.RegisterCustomEventHandler(EventRouter.LastPositionCommittedEventHash, OnLastPositionCommitted);
             API.RegisterCustomEventHandler(EventRouter.BridgeDiagnosticsReportEventHash, OnBridgeDiagnosticsReported);
         }
 
@@ -267,6 +271,65 @@ namespace LsrCoop.Server
             }
 
             status.BridgeDiagnostics = report;
+        }
+
+        private void OnLastPositionCommitted(CustomEventReceivedArgs args)
+        {
+            CoopClientStatus requester = playerRegistrationService.RegisterClient(args?.Client, "last-position");
+            if (requester == null)
+            {
+                return;
+            }
+
+            CoopLastPositionStateDto incoming = Deserialize<CoopLastPositionStateDto>(GetArg(args, 0));
+            if (incoming == null)
+            {
+                Logger.Warning($"[LsrCoop.Server] invalid last position skipped: profile={requester.ProfileId}, reason=empty payload");
+                return;
+            }
+
+            if (!string.Equals(incoming.WorldId, worldProfileStoreService.WorldId, StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Warning($"[LsrCoop.Server] invalid last position skipped: profile={requester.ProfileId}, reason=wrong world {incoming.WorldId}");
+                return;
+            }
+
+            if (!string.Equals(incoming.ProfileId, requester.ProfileId, StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Warning($"[LsrCoop.Server] invalid last position skipped: profile={requester.ProfileId}, reason=profile mismatch {incoming.ProfileId}");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(incoming.SessionId))
+            {
+                Logger.Warning($"[LsrCoop.Server] invalid last position skipped: profile={requester.ProfileId}, reason=missing session");
+                return;
+            }
+
+            string diagnosticsSessionId = requester.BridgeDiagnostics?.SessionId;
+            if (!string.IsNullOrWhiteSpace(diagnosticsSessionId)
+                && !string.Equals(diagnosticsSessionId, incoming.SessionId, StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Warning($"[LsrCoop.Server] invalid last position skipped: profile={requester.ProfileId}, reason=session mismatch incoming={incoming.SessionId}, current={diagnosticsSessionId}");
+                return;
+            }
+
+            CoopPlayerProfile profile = worldProfileStoreService.GetProfile(incoming.ProfileId);
+            if (profile == null || profile.Character == null)
+            {
+                Logger.Warning($"[LsrCoop.Server] invalid last position skipped: profile={requester.ProfileId}, reason=missing character profile");
+                return;
+            }
+
+            if (!TryPrepareLastPosition(profile, incoming, out CoopLastPositionStateDto normalized, out string reason))
+            {
+                LogLastPositionSkip(requester.ProfileId, reason);
+                return;
+            }
+
+            profile.LastPosition = normalized;
+            worldProfileStoreService.Save();
+            LogLastPositionSaved(profile);
         }
 
         private void OnGameplayActionCommitted(CustomEventReceivedArgs args)
@@ -414,6 +477,7 @@ namespace LsrCoop.Server
                     profile.DeathArrestState.WorldId = worldProfileStoreService.WorldId;
                     profile.DeathArrestState.ProfileId = profile.ProfileId;
                     profile.DeathArrestState.CharacterId = string.IsNullOrWhiteSpace(profile.DeathArrestState.CharacterId) ? profile.ProfileId : profile.DeathArrestState.CharacterId;
+                    TryApplyLastPositionFromDeathArrest(profile, profile.DeathArrestState);
                     worldProfileStoreService.Save();
 
                     int moneyAfterCommit = profile.InventoryMoney?.TotalMoney ?? moneyBeforeCommit;
@@ -627,6 +691,193 @@ namespace LsrCoop.Server
             }
 
             return incomingUtc >= currentUtc.Value;
+        }
+
+        private void TryApplyLastPositionFromDeathArrest(CoopPlayerProfile profile, CoopDeathArrestStateDto state)
+        {
+            if (profile == null || state == null)
+            {
+                return;
+            }
+
+            string source = string.Equals(state.ActionType, "ApplyArrestState", StringComparison.OrdinalIgnoreCase)
+                ? "ArrestOutcome"
+                : "DeathOutcome";
+            CoopLastPositionStateDto incoming = new CoopLastPositionStateDto
+            {
+                WorldId = worldProfileStoreService.WorldId,
+                ProfileId = profile.ProfileId,
+                CharacterId = string.IsNullOrWhiteSpace(state.CharacterId) ? profile.ProfileId : state.CharacterId,
+                SessionId = profile.LastPosition?.SessionId,
+                X = state.PositionX,
+                Y = state.PositionY,
+                Z = state.PositionZ,
+                Heading = state.Heading,
+                UpdatedUtcUnixMilliseconds = ToUnixMilliseconds(state.OccurredUtc == default ? DateTimeOffset.UtcNow : state.OccurredUtc),
+                Source = source,
+            };
+
+            if (!TryPrepareLastPosition(profile, incoming, out CoopLastPositionStateDto normalized, out string reason))
+            {
+                Logger.Info($"[LsrCoop.Server] death/arrest position skipped: profile={profile.ProfileId}, source={source}, reason={reason}");
+                return;
+            }
+
+            profile.LastPosition = normalized;
+            LogLastPositionSaved(profile);
+        }
+
+        private bool TryPrepareLastPosition(CoopPlayerProfile profile, CoopLastPositionStateDto incoming, out CoopLastPositionStateDto normalized, out string reason)
+        {
+            normalized = null;
+            reason = string.Empty;
+            if (profile == null)
+            {
+                reason = "missing profile";
+                return false;
+            }
+
+            if (incoming == null)
+            {
+                reason = "missing payload";
+                return false;
+            }
+
+            if (!TryValidateLastPositionCoordinates(incoming.X, incoming.Y, incoming.Z, incoming.Heading, out reason))
+            {
+                return false;
+            }
+
+            if (!TryGetLastPositionUpdatedUtc(incoming, out DateTimeOffset updatedUtc))
+            {
+                reason = "invalid timestamp";
+                return false;
+            }
+
+            if (updatedUtc > DateTimeOffset.UtcNow.AddMinutes(5))
+            {
+                reason = $"future timestamp {updatedUtc:O}";
+                return false;
+            }
+
+            DateTimeOffset? currentUpdatedUtc = TryGetLastPositionUpdatedUtc(profile.LastPosition, out DateTimeOffset currentUtc)
+                ? currentUtc
+                : (DateTimeOffset?)null;
+            if (!IsNewerOrSame(updatedUtc, currentUpdatedUtc))
+            {
+                reason = $"stale timestamp incoming={updatedUtc:O}, current={currentUpdatedUtc:O}";
+                return false;
+            }
+
+            normalized = new CoopLastPositionStateDto
+            {
+                WorldId = worldProfileStoreService.WorldId,
+                ProfileId = profile.ProfileId,
+                CharacterId = string.IsNullOrWhiteSpace(incoming.CharacterId) ? profile.Character?.CharacterId ?? profile.ProfileId : incoming.CharacterId,
+                SessionId = incoming.SessionId ?? string.Empty,
+                X = incoming.X,
+                Y = incoming.Y,
+                Z = incoming.Z,
+                Heading = NormalizeHeading(incoming.Heading),
+                UpdatedUtcUnixMilliseconds = ToUnixMilliseconds(updatedUtc),
+                Source = NormalizeLastPositionSource(incoming.Source),
+            };
+            return true;
+        }
+
+        private void LogLastPositionSaved(CoopPlayerProfile profile)
+        {
+            if (profile?.LastPosition == null)
+            {
+                return;
+            }
+
+            TryGetLastPositionUpdatedUtc(profile.LastPosition, out DateTimeOffset updatedUtc);
+            Logger.Info($"[LsrCoop.Server] last position saved: profile={profile.ProfileId}, source={profile.LastPosition.Source}, x={FormatLastPositionFloat(profile.LastPosition.X)}, y={FormatLastPositionFloat(profile.LastPosition.Y)}, z={FormatLastPositionFloat(profile.LastPosition.Z)}, heading={FormatLastPositionFloat(profile.LastPosition.Heading)}, updatedUtc={updatedUtc:O}");
+        }
+
+        private void LogLastPositionSkip(string profileId, string reason)
+        {
+            if (string.Equals(reason, "invalid timestamp", StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Info($"[LsrCoop.Server] invalid last position skipped: profile={profileId}, reason=invalid timestamp");
+                return;
+            }
+
+            Logger.Info($"[LsrCoop.Server] stale/invalid position skipped: profile={profileId}, reason={reason}");
+        }
+
+        private static bool TryGetLastPositionUpdatedUtc(CoopLastPositionStateDto position, out DateTimeOffset updatedUtc)
+        {
+            updatedUtc = default;
+            if (position == null || position.UpdatedUtcUnixMilliseconds <= 0)
+            {
+                return false;
+            }
+
+            try
+            {
+                updatedUtc = DateTimeOffset.FromUnixTimeMilliseconds(position.UpdatedUtcUnixMilliseconds);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private static long ToUnixMilliseconds(DateTimeOffset value)
+        {
+            return value.ToUniversalTime().ToUnixTimeMilliseconds();
+        }
+
+        private static bool TryValidateLastPositionCoordinates(float x, float y, float z, float heading, out string reason)
+        {
+            reason = string.Empty;
+            if (IsInvalidFloat(x) || IsInvalidFloat(y) || IsInvalidFloat(z) || IsInvalidFloat(heading))
+            {
+                reason = "NaN or infinite coordinate";
+                return false;
+            }
+
+            if (Math.Abs(x) < 0.01f && Math.Abs(y) < 0.01f && Math.Abs(z) < 0.01f)
+            {
+                reason = "zero coordinate";
+                return false;
+            }
+
+            if (Math.Abs(x) > MaxAbsLastPositionCoordinate
+                || Math.Abs(y) > MaxAbsLastPositionCoordinate
+                || z < MinLastPositionZ
+                || z > MaxLastPositionZ)
+            {
+                reason = $"out of world bounds x={FormatLastPositionFloat(x)}, y={FormatLastPositionFloat(y)}, z={FormatLastPositionFloat(z)}";
+                return false;
+            }
+
+            return true;
+        }
+
+        private static bool IsInvalidFloat(float value)
+        {
+            return float.IsNaN(value) || float.IsInfinity(value);
+        }
+
+        private static float NormalizeHeading(float heading)
+        {
+            float normalized = heading % 360.0f;
+            return normalized < 0.0f ? normalized + 360.0f : normalized;
+        }
+
+        private static string NormalizeLastPositionSource(string source)
+        {
+            source = string.IsNullOrWhiteSpace(source) ? "Unknown" : source.Trim();
+            return source.Length <= 64 ? source : source.Substring(0, 64);
+        }
+
+        private static string FormatLastPositionFloat(float value)
+        {
+            return value.ToString("0.###", CultureInfo.InvariantCulture);
         }
 
         private string GetParameter(CoopGameplayActionRequestDto request, string key)

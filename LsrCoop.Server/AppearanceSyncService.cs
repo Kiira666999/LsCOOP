@@ -98,7 +98,9 @@ namespace LsrCoop.Server
                 JsonSerializer.Serialize(profile.Weapons),
                 JsonSerializer.Serialize(profile.CriminalHistory),
                 JsonSerializer.Serialize(profile.GangReputation),
-                JsonSerializer.Serialize(profile.OwnedVehicles)
+                JsonSerializer.Serialize(profile.OwnedVehicles),
+                JsonSerializer.Serialize(profile.PropertyOwnership),
+                JsonSerializer.Serialize(profile.LastPosition)
             });
         }
 

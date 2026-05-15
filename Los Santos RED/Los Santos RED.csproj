@@ -157,6 +157,7 @@
     <Compile Include="lsr\Coop\Core\CoopInventoryMoneyAdapter.cs" />
     <Compile Include="lsr\Coop\Core\CoopInventoryMoneySnapshot.cs" />
     <Compile Include="lsr\Coop\Core\CoopInventoryMoneySyncResult.cs" />
+    <Compile Include="lsr\Coop\Core\CoopLastPositionState.cs" />
     <Compile Include="lsr\Coop\Core\CoopOwnedVehicleAdapter.cs" />
     <Compile Include="lsr\Coop\Core\CoopOwnedVehicleRecord.cs" />
     <Compile Include="lsr\Coop\Core\CoopOwnedVehicleSnapshot.cs" />

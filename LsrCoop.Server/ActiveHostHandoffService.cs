@@ -93,6 +93,7 @@ namespace LsrCoop.Server
                     GangReputation = profile.GangReputation,
                     CriminalHistory = profile.CriminalHistory,
                     DeathArrestState = profile.DeathArrestState,
+                    LastPosition = profile.LastPosition,
                     LongTermLsrRecords = profile.LongTermLsrRecords?.ToList() ?? new System.Collections.Generic.List<string>(),
                 });
             }

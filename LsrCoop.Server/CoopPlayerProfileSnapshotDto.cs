@@ -17,6 +17,7 @@ namespace LsrCoop.Server
         public CoopGangReputationStateDto GangReputation { get; set; }
         public CoopCriminalHistoryStateDto CriminalHistory { get; set; }
         public CoopDeathArrestStateDto DeathArrestState { get; set; }
+        public CoopLastPositionStateDto LastPosition { get; set; }
         public List<string> LongTermLsrRecords { get; set; } = new List<string>();
     }
 }

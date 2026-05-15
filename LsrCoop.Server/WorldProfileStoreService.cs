@@ -166,6 +166,7 @@ namespace LsrCoop.Server
             NormalizeGangReputation(profile);
             NormalizeCriminalHistory(profile);
             NormalizeDeathArrest(profile);
+            NormalizeLastPosition(profile);
         }
 
         private void NormalizeCharacter(CoopPlayerProfile profile)
@@ -268,6 +269,20 @@ namespace LsrCoop.Server
             profile.DeathArrestState.WorldId = Store.WorldId;
             profile.DeathArrestState.ProfileId = profile.ProfileId;
             profile.DeathArrestState.CharacterId = string.IsNullOrWhiteSpace(profile.DeathArrestState.CharacterId) ? profile.ProfileId : profile.DeathArrestState.CharacterId;
+        }
+
+        private void NormalizeLastPosition(CoopPlayerProfile profile)
+        {
+            if (profile.LastPosition == null)
+            {
+                return;
+            }
+
+            profile.LastPosition.WorldId = Store.WorldId;
+            profile.LastPosition.ProfileId = profile.ProfileId;
+            profile.LastPosition.CharacterId = string.IsNullOrWhiteSpace(profile.LastPosition.CharacterId) ? profile.ProfileId : profile.LastPosition.CharacterId;
+            profile.LastPosition.Source = string.IsNullOrWhiteSpace(profile.LastPosition.Source) ? "Unknown" : profile.LastPosition.Source;
+            profile.LastPosition.UpdatedUtcUnixMilliseconds = profile.LastPosition.UpdatedUtcUnixMilliseconds <= 0 ? DateTimeOffset.UtcNow.ToUnixTimeMilliseconds() : profile.LastPosition.UpdatedUtcUnixMilliseconds;
         }
     }
 }

@@ -149,6 +149,8 @@ namespace LosSantosRED.lsr
                 GameFiber.Yield();
             }
 
+            CoopCharacterSnapshotStartupBridge.ApplyLastPositionAfterPlayerSetup(startupSnapshot, Player);
+            GameFiber.Yield();
             SetTaskGroups();
             GameFiber.Yield();
             CoopFullSimulationStartupWarmup.Begin();
@@ -256,6 +258,7 @@ namespace LosSantosRED.lsr
             Player.PedSwap = PedSwap;
             PedSwap.Setup();
             PedSwap.ApplyAliasForCurrentModelIfNeeded(startupSnapshot, "ClientMode.AfterPedSwapSetup");
+            CoopCharacterSnapshotStartupBridge.ApplyLastPositionAfterPlayerSetup(startupSnapshot, Player);
             NativeFunction.Natives.FREEZE_ENTITY_POSITION(Game.LocalPlayer.Character, false);
             Game.FadeScreenIn(500, true);
             Game.DisplayNotification("LSR co-op client mode");

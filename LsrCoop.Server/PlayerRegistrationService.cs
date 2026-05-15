@@ -110,9 +110,10 @@ namespace LsrCoop.Server
                 JsonSerializer.Serialize(status.Profile.CriminalHistory),
                 JsonSerializer.Serialize(status.Profile.GangReputation),
                 JsonSerializer.Serialize(status.Profile.OwnedVehicles),
-                JsonSerializer.Serialize(status.Profile.PropertyOwnership)
+                JsonSerializer.Serialize(status.Profile.PropertyOwnership),
+                JsonSerializer.Serialize(status.Profile.LastPosition)
             });
-            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}, inventory={(status.Profile.InventoryMoney?.InventoryItems?.Count ?? 0)}, weapons={(status.Profile.Weapons?.Weapons?.Count ?? 0)}, ownedVehicles={(status.Profile.OwnedVehicles?.Vehicles?.Count ?? 0)}, properties={(status.Profile.PropertyOwnership?.Properties?.Count ?? 0)}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}, gangReputation={(status.Profile.GangReputation?.Reputations?.Count ?? 0)}");
+            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}, inventory={(status.Profile.InventoryMoney?.InventoryItems?.Count ?? 0)}, weapons={(status.Profile.Weapons?.Weapons?.Count ?? 0)}, ownedVehicles={(status.Profile.OwnedVehicles?.Vehicles?.Count ?? 0)}, properties={(status.Profile.PropertyOwnership?.Properties?.Count ?? 0)}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}, gangReputation={(status.Profile.GangReputation?.Reputations?.Count ?? 0)}, lastPosition={(status.Profile.LastPosition == null ? "none" : FormatLastPosition(status.Profile.LastPosition))}");
         }
 
         public CoopClientStatus AcknowledgeCharacterSnapshot(Client client, string worldId, string profileId, string reason, out bool readinessChanged)
@@ -239,6 +240,16 @@ namespace LsrCoop.Server
         public string GetClientName(Client client)
         {
             return string.IsNullOrWhiteSpace(client?.Username) ? "unknown" : client.Username;
+        }
+
+        private static string FormatLastPosition(CoopLastPositionStateDto position)
+        {
+            if (position == null)
+            {
+                return "none";
+            }
+
+            return $"{position.X:0.###},{position.Y:0.###},{position.Z:0.###}@{position.Heading:0.#}";
         }
 
     }
