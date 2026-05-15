@@ -21,6 +21,8 @@ namespace LsrCoop.Server
             this.info = info;
         }
 
+        public string LastHandoffReason { get; private set; }
+
         public void EvaluateAndSync(string reason)
         {
             string previousHostId = activeHostService.ActiveHostId;
@@ -45,6 +47,7 @@ namespace LsrCoop.Server
 
         public void BroadcastWorldSnapshot(string reason)
         {
+            LastHandoffReason = reason ?? string.Empty;
             CoopWorldSnapshotDto snapshot = CreateWorldSnapshot(reason);
             eventRouter.Broadcast(playerRegistrationService.ConnectedClients, EventRouter.WorldSnapshotEventHash, new object[] { JsonSerializer.Serialize(snapshot) });
             info?.Invoke($"[LsrCoop.Server] world snapshot broadcast: world={snapshot.WorldId}, profiles={snapshot.Profiles.Count}, activeHost={snapshot.ActiveHostProfileId ?? "none"}, reason={reason}");

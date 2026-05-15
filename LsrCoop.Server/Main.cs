@@ -26,12 +26,14 @@ namespace LsrCoop.Server
         private ActiveHostService activeHostService;
         private ActiveHostHandoffService activeHostHandoffService;
         private AppearanceSyncService appearanceSyncService;
+        private CoopDiagnosticsCommandService diagnosticsCommandService;
 
         public override void OnStart()
         {
             Logger.Info("[LsrCoop.Server] loaded");
             InitializeServices();
             RegisterConnectionHooks();
+            RegisterDiagnosticsCommandHooks();
             RegisterCustomEventStubs();
             playerRegistrationService.RefreshConnectedClients(API?.GetAllClients());
             activeHostHandoffService.EvaluateAndSync("resource-start");
@@ -57,6 +59,7 @@ namespace LsrCoop.Server
             activeHostService = new ActiveHostService(roleConfigService, compatibilityService, eventRouter, Logger.Info);
             activeHostHandoffService = new ActiveHostHandoffService(worldProfileStoreService, playerRegistrationService, activeHostService, eventRouter, Logger.Info);
             appearanceSyncService = new AppearanceSyncService(worldProfileStoreService, roleConfigService, eventRouter, () => playerRegistrationService.ConnectedClients, Logger.Info, Logger.Warning);
+            diagnosticsCommandService = new CoopDiagnosticsCommandService(worldProfileStoreService, playerRegistrationService, roleConfigService, activeHostService, () => activeHostHandoffService.LastHandoffReason, Logger.Info, Logger.Warning);
         }
 
         private void RegisterConnectionHooks()
@@ -73,6 +76,74 @@ namespace LsrCoop.Server
             TrySubscribeConnectionEvent(events, "OnPlayerReady", OnClientReady);
             TrySubscribeConnectionEvent(events, "OnPlayerConnected", OnClientReady);
             TrySubscribeConnectionEvent(events, "OnPlayerDisconnected", OnClientDisconnected);
+        }
+
+        private void RegisterDiagnosticsCommandHooks()
+        {
+            if (TryRegisterDiagnosticsCommand())
+            {
+                return;
+            }
+
+            object events = API?.Events;
+            if (events == null)
+            {
+                Logger.Warning("[LsrCoop.Server] diagnostics command hooks unavailable: API events unavailable");
+                return;
+            }
+
+            if (TrySubscribeConnectionEvent(events, "OnCommandReceived", OnDiagnosticsCommandReceived))
+            {
+                Logger.Info("[LsrCoop.Server] diagnostics command hook registered: OnCommandReceived fallback");
+                return;
+            }
+
+            if (TrySubscribeConnectionEvent(events, "OnChatMessage", OnDiagnosticsChatMessage))
+            {
+                Logger.Info("[LsrCoop.Server] diagnostics command hook registered: OnChatMessage fallback");
+                return;
+            }
+
+            Logger.Warning("[LsrCoop.Server] diagnostics command hooks unavailable: RegisterCommand, OnCommandReceived, and OnChatMessage were not found");
+        }
+
+        private bool TryRegisterDiagnosticsCommand()
+        {
+            object api = API;
+            if (api == null || diagnosticsCommandService == null)
+            {
+                return false;
+            }
+
+            try
+            {
+                MethodInfo registerCommand = api.GetType()
+                    .GetMethods()
+                    .Where(x => x.Name == "RegisterCommand")
+                    .FirstOrDefault(x =>
+                    {
+                        ParameterInfo[] parameters = x.GetParameters();
+                        return parameters.Length == 2
+                            && parameters[0].ParameterType == typeof(string)
+                            && typeof(Delegate).IsAssignableFrom(parameters[1].ParameterType);
+                    });
+
+                if (registerCommand == null)
+                {
+                    return false;
+                }
+
+                Type callbackType = registerCommand.GetParameters()[1].ParameterType;
+                Delegate callback = CreateEventDelegate(callbackType, payload => diagnosticsCommandService.TryHandleRegisteredCommand(payload));
+                registerCommand.Invoke(api, new object[] { "coop", callback });
+                Logger.Info("[LsrCoop.Server] diagnostics command registered: /coop");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Logger.Warning($"[LsrCoop.Server] failed to register diagnostics command /coop: {ex.Message}");
+                return false;
+            }
         }
 
         private void UnregisterConnectionHooks()
@@ -1025,6 +1096,16 @@ namespace LsrCoop.Server
             }
 
             activeHostHandoffService.EvaluateAndSync("client-disconnected");
+        }
+
+        private void OnDiagnosticsCommandReceived(object eventPayload)
+        {
+            diagnosticsCommandService?.TryHandleCommandEvent(eventPayload);
+        }
+
+        private void OnDiagnosticsChatMessage(object eventPayload)
+        {
+            diagnosticsCommandService?.TryHandleChatMessage(eventPayload);
         }
 
         private CoopGameplayActionResultDto CreateGameplayActionResult(CoopGameplayActionRequestDto request, bool accepted, bool requiresResync, string reason)

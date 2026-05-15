@@ -2,7 +2,7 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-14T13:15:51.1387633+00:00",
-  "UpdatedUtc": "2026-05-15T15:36:24.7657086+00:00",
+  "UpdatedUtc": "2026-05-15T15:51:36.0998222+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -10,7 +10,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-15T15:36:24.7657118+00:00"
+    "UpdatedUtc": "2026-05-15T15:51:36.0998366+00:00"
   },
   "Profiles": [
     {
