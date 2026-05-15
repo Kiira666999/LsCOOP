@@ -109,6 +109,7 @@ namespace LosSantosRED.lsr.Coop.Core
             CoopGameplayActionResult result = AuthorityService.CreateAcceptedResult(request, "Accepted by active host");
             CoopInventoryMoneySnapshot moneySnapshot = InventoryMoneyAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId);
             CoopPropertyOwnershipSnapshot propertySnapshot = PropertyOwnershipAdapter.CaptureFromPlayer(modPlayer, request.SourceProfileId, request.SourceCharacterId, request.WorldId);
+            LogPropertyOwnershipSnapshotBeforeBridge(request, propertySnapshot);
 
             CoopGameplayFileBridge.PublishGameplayCommit(new CoopStorePurchaseCommit
             {
@@ -477,6 +478,17 @@ namespace LosSantosRED.lsr.Coop.Core
 
             CoopOwnedVehicleRecord firstVehicle = snapshot.Vehicles?.FirstOrDefault();
             EntryPoint.WriteToConsole($"Co-op owned vehicle snapshot before bridge Type:{request?.ActionType} Action:{GetParameter(request, "VehicleAction")} Profile:{request?.SourceProfileId} Count:{snapshot.Vehicles?.Count ?? 0} FirstVehicle:{firstVehicle?.VehicleId ?? "none"} FirstPlate:{firstVehicle?.PlateNumber ?? "none"} FirstModel:{firstVehicle?.ModelName ?? firstVehicle?.ModelHash ?? "none"}", 0);
+        }
+
+        private static void LogPropertyOwnershipSnapshotBeforeBridge(CoopGameplayActionRequest request, CoopPropertyOwnershipSnapshot snapshot)
+        {
+            if (!CoopStartupBridge.IsCoopEnabled || snapshot == null)
+            {
+                return;
+            }
+
+            CoopPropertyOwnershipRecord firstProperty = snapshot.Properties?.FirstOrDefault();
+            EntryPoint.WriteToConsole($"Co-op property ownership snapshot before bridge Type:{request?.ActionType} Action:{GetParameter(request, "PropertyAction")} Profile:{request?.SourceProfileId} Count:{snapshot.Properties?.Count ?? 0} FirstProperty:{firstProperty?.PropertyId ?? "none"} FirstName:{firstProperty?.Name ?? "none"}", 0);
         }
 
         private class PendingPurchaseState

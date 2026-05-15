@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Runtime;
+using System.Runtime.CompilerServices;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Serialization;
 using System.Security.Policy;
@@ -25,6 +26,7 @@ using System.Xml.Serialization;
 
 public class Residence : GameLocation, ILocationSetupable, IRestableLocation, IInventoryableLocation, IOutfitableLocation, ICraftable, IPayoutDisbursable
 {
+    private const string CoopDiagnosticResidenceName = "0605 Apartment 4F";
     private UIMenu OfferSubMenu;
     private UIMenuNumericScrollerItem<int> RestMenuItem;
     private UIMenuItem InventoryMenuItem;
@@ -111,6 +113,7 @@ public class Residence : GameLocation, ILocationSetupable, IRestableLocation, II
         Settings = settings;
         Weapons = weapons;
         Time = time;
+        LogCoopResidenceDiagnostic("OnInteractFromApartment");
         if (IsLocationClosed())
         {
             return;
@@ -136,6 +139,7 @@ public class Residence : GameLocation, ILocationSetupable, IRestableLocation, II
     }
     public override void OnInteract()
     {
+        LogCoopResidenceDiagnostic("OnInteract");
         if (IsLocationClosed())
         {
             return;
@@ -379,6 +383,7 @@ public class Residence : GameLocation, ILocationSetupable, IRestableLocation, II
     }
     private void GenerateResidenceMenu(bool isInside)
     {
+        LogCoopResidenceDiagnostic($"GenerateResidenceMenu IsInside:{isInside}");
         InteractionMenu.Clear();
         AddInquireItems();
         AddInteractionItems(isInside);
@@ -399,6 +404,7 @@ public class Residence : GameLocation, ILocationSetupable, IRestableLocation, II
     //}
     private void AddInquireItems()
     {
+        LogCoopResidenceDiagnostic($"AddInquireItems CanBuy:{CanBuy} CanRent:{CanRent}");
         if ((!IsOwned && CanBuy) || (!IsRented && CanRent))
         {
             OfferSubMenu = MenuPool.AddSubMenu(InteractionMenu, "Make an Offer");
@@ -456,6 +462,7 @@ public class Residence : GameLocation, ILocationSetupable, IRestableLocation, II
     }
     private void AddInteractionItems(bool isInside)
     {
+        LogCoopResidenceDiagnostic($"AddInteractionItems IsInside:{isInside}");
         if(!IsOwned && !IsRented)
         {
             return;
@@ -993,5 +1000,17 @@ public class Residence : GameLocation, ILocationSetupable, IRestableLocation, II
         CashStorage.StoredCash = 0;
         SimpleInventory.RemoveAllItems();
     }
-}
 
+    private void LogCoopResidenceDiagnostic(string phase)
+    {
+        if (!CoopStartupBridge.IsCoopEnabled || !string.Equals(Name, CoopDiagnosticResidenceName, StringComparison.OrdinalIgnoreCase))
+        {
+            return;
+        }
+
+        bool propertyListContainsThis = Player?.Properties?.PropertyList?.Contains(this) == true;
+        bool propertyListContainsName = Player?.Properties?.PropertyList?.Any(x => string.Equals(x?.Name, Name, StringComparison.OrdinalIgnoreCase)) == true;
+        int propertyListCount = Player?.Properties?.PropertyList?.Count ?? 0;
+        EntryPoint.WriteToConsole($"Co-op residence diagnostic Phase:{phase} Name:{Name} Object:{RuntimeHelpers.GetHashCode(this)} Owned:{IsOwned} Rented:{IsRented} RentedOut:{IsRentedOut} OwnedOrRented:{IsOwnedOrRented} CanBuy:{CanBuy} CanRent:{CanRent} InteriorSet:{ResidenceInterior != null} CashStorageSet:{CashStorage != null} PlayerPropertyListCount:{propertyListCount} PropertyListContainsThis:{propertyListContainsThis} PropertyListContainsName:{propertyListContainsName}", 0);
+    }
+}

@@ -16,7 +16,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public CoopWorldId WorldId { get; set; }
         public CoopProfileId ProfileId { get; set; }
         public CoopCharacterId CharacterId { get; set; }
-        public List<CoopPropertyOwnershipRecord> Properties { get; private set; }
+        public List<CoopPropertyOwnershipRecord> Properties { get; set; }
         public DateTimeOffset SnapshotUtc { get; set; }
     }
 }

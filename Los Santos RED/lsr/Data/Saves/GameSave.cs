@@ -611,7 +611,7 @@ namespace LosSantosRED.lsr.Data
                 player.Licenses.PilotsLicense = new PilotsLicense() { ExpirationDate = PilotsLicense.ExpirationDate, IssueDate = PilotsLicense.IssueDate, IssueStateID = DriversLicense.IssueStateID, IsFixedWingEndorsed = PilotsLicense.IsFixedWingEndorsed, IsRotaryEndorsed = PilotsLicense.IsRotaryEndorsed, IsLighterThanAirEndorsed = PilotsLicense.IsLighterThanAirEndorsed };
             }
         }
-        private void LoadOwnedProperties(IInventoryable player, IPlacesOfInterest placesOfInterest, IModItems modItems, ISettingsProvideable settings, IEntityProvideable world)
+        public void LoadOwnedProperties(IInventoryable player, IPlacesOfInterest placesOfInterest, IModItems modItems, ISettingsProvideable settings, IEntityProvideable world)
         {
             foreach (SavedGameLocation savedLocation in SavedGameLocations)
             {

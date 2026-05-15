@@ -2,7 +2,7 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-14T13:15:51.1387633+00:00",
-  "UpdatedUtc": "2026-05-15T11:34:40.5260761+00:00",
+  "UpdatedUtc": "2026-05-15T12:44:48.3124773+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -12,7 +12,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-15T11:34:40.5260856+00:00"
+    "UpdatedUtc": "2026-05-15T12:44:48.3124904+00:00"
   },
   "Profiles": [
     {
@@ -21,7 +21,7 @@
       "DisplayName": "Kiira",
       "Role": "Admin,TrustedHost",
       "CreatedUtc": "2026-05-14T13:15:58.9246961+00:00",
-      "LastSeenUtc": "2026-05-15T11:34:40.4842298+00:00",
+      "LastSeenUtc": "2026-05-15T12:44:48.3124751+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -157,13 +157,13 @@
         "UpdatedUtc": "2026-05-14T13:16:22.4013702+00:00"
       },
       "InventoryMoney": {
-        "SnapshotId": "b7e362763e5e4b4ebd59324c8f662712",
+        "SnapshotId": "3cb6ddb9b96241d6ba82455739fadcf4",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "OnHandCash": 44000,
+        "OnHandCash": 2846000,
         "TotalAccountMoney": 0,
-        "TotalMoney": 44000,
+        "TotalMoney": 2846000,
         "InventoryItems": [
           {
             "ItemName": "Carton of Milk",
@@ -1931,10 +1931,10 @@
           }
         ],
         "BankAccounts": [],
-        "SnapshotUtc": "2026-05-15T11:30:12.8581279+00:00"
+        "SnapshotUtc": "2026-05-15T12:44:09.3311546+00:00"
       },
       "Weapons": {
-        "SnapshotId": "632396e60f5042b49ceafe8741ddb5e8",
+        "SnapshotId": "776eb12bfb4c452f997bbdf3c6b0a8c6",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
@@ -1988,7 +1988,7 @@
             "IsEquipped": false
           }
         ],
-        "SnapshotUtc": "2026-05-15T11:34:40.0269764+00:00"
+        "SnapshotUtc": "2026-05-15T12:44:32.0899224+00:00"
       },
       "OwnedVehicles": {
         "SnapshotId": "7bbc9534c5a342c48de1f00843b837be",
@@ -2035,7 +2035,49 @@
         ],
         "SnapshotUtc": "2026-05-15T11:33:50.5328993+00:00"
       },
-      "PropertyOwnership": null,
+      "PropertyOwnership": {
+        "SnapshotId": "48a5b68664c34064955d0cadf15df3c8",
+        "WorldId": "lsrcoop-default-world",
+        "ProfileId": "Kiira",
+        "CharacterId": "Kiira",
+        "Properties": [
+          {
+            "PropertyId": "Residence:Elgin House Apartment 23E:-37.543:170.325:95.359",
+            "Name": "Elgin House Apartment 23E",
+            "PropertyType": "Residence",
+            "IsOwned": true,
+            "IsRented": false,
+            "IsRentedOut": false,
+            "EntranceX": -37.54279,
+            "EntranceY": 170.3245,
+            "EntranceZ": 95.35922,
+            "CurrentSalesPrice": 0,
+            "PayoutDate": "0001-01-01T00:00:00Z",
+            "DateOfLastPayout": "0001-01-01T00:00:00Z",
+            "RentalPaymentDate": "0001-01-01T00:00:00Z",
+            "DateOfLastRentalPayment": "0001-01-01T00:00:00Z",
+            "SavedGameLocationXml": "\u003CSavedGameLocation xmlns:xsd=\u0022http://www.w3.org/2001/XMLSchema\u0022 xmlns:xsi=\u0022http://www.w3.org/2001/XMLSchema-instance\u0022 xsi:type=\u0022SavedResidence\u0022\u003E\u003CName\u003EElgin House Apartment 23E\u003C/Name\u003E\u003CCurrentSalesPrice\u003E0\u003C/CurrentSalesPrice\u003E\u003CEntrancePosition\u003E\u003CX\u003E0\u003C/X\u003E\u003CY\u003E0\u003C/Y\u003E\u003CZ\u003E0\u003C/Z\u003E\u003C/EntrancePosition\u003E\u003CPayoutDate\u003E0001-01-01T00:00:00\u003C/PayoutDate\u003E\u003CDateOfLastPayout\u003E0001-01-01T00:00:00\u003C/DateOfLastPayout\u003E\u003CIsRentedByPlayer\u003Efalse\u003C/IsRentedByPlayer\u003E\u003CIsOwnedByPlayer\u003Etrue\u003C/IsOwnedByPlayer\u003E\u003CRentalPaymentDate\u003E0001-01-01T00:00:00\u003C/RentalPaymentDate\u003E\u003CDateOfLastRentalPayment\u003E0001-01-01T00:00:00\u003C/DateOfLastRentalPayment\u003E\u003CWeaponInventory /\u003E\u003CInventoryItems /\u003E\u003CIsRentedOut\u003Efalse\u003C/IsRentedOut\u003E\u003CStoredCash\u003E0\u003C/StoredCash\u003E\u003C/SavedGameLocation\u003E"
+          },
+          {
+            "PropertyId": "Residence:2, Melanoma St:-1057.657:-1540.677:5.049",
+            "Name": "2, Melanoma St",
+            "PropertyType": "Residence",
+            "IsOwned": true,
+            "IsRented": false,
+            "IsRentedOut": false,
+            "EntranceX": -1057.657,
+            "EntranceY": -1540.677,
+            "EntranceZ": 5.049273,
+            "CurrentSalesPrice": 0,
+            "PayoutDate": "0001-01-01T00:00:00Z",
+            "DateOfLastPayout": "0001-01-01T00:00:00Z",
+            "RentalPaymentDate": "0001-01-01T00:00:00Z",
+            "DateOfLastRentalPayment": "0001-01-01T00:00:00Z",
+            "SavedGameLocationXml": "\u003CSavedGameLocation xmlns:xsd=\u0022http://www.w3.org/2001/XMLSchema\u0022 xmlns:xsi=\u0022http://www.w3.org/2001/XMLSchema-instance\u0022 xsi:type=\u0022SavedResidence\u0022\u003E\u003CName\u003E2, Melanoma St\u003C/Name\u003E\u003CCurrentSalesPrice\u003E0\u003C/CurrentSalesPrice\u003E\u003CEntrancePosition\u003E\u003CX\u003E0\u003C/X\u003E\u003CY\u003E0\u003C/Y\u003E\u003CZ\u003E0\u003C/Z\u003E\u003C/EntrancePosition\u003E\u003CPayoutDate\u003E0001-01-01T00:00:00\u003C/PayoutDate\u003E\u003CDateOfLastPayout\u003E0001-01-01T00:00:00\u003C/DateOfLastPayout\u003E\u003CIsRentedByPlayer\u003Efalse\u003C/IsRentedByPlayer\u003E\u003CIsOwnedByPlayer\u003Etrue\u003C/IsOwnedByPlayer\u003E\u003CRentalPaymentDate\u003E0001-01-01T00:00:00\u003C/RentalPaymentDate\u003E\u003CDateOfLastRentalPayment\u003E0001-01-01T00:00:00\u003C/DateOfLastRentalPayment\u003E\u003CWeaponInventory /\u003E\u003CInventoryItems /\u003E\u003CIsRentedOut\u003Efalse\u003C/IsRentedOut\u003E\u003CStoredCash\u003E0\u003C/StoredCash\u003E\u003C/SavedGameLocation\u003E"
+          }
+        ],
+        "SnapshotUtc": "2026-05-15T12:44:09.332147+00:00"
+      },
       "GangReputation": {
         "StateId": "b682199c27d844c8b3e7d2147e3007c5",
         "WorldId": "lsrcoop-default-world",
@@ -2831,17 +2873,17 @@
         "ClearReason": ""
       },
       "DeathArrestState": {
-        "StateId": "a12c4780e9c245219f924e5494d7ea06",
+        "StateId": "f8e05569a24c410cb10b0625c363ebc5",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "ActionType": "ApplyDeathState",
         "OutcomeType": "RespawnAtCurrentLocation",
         "RespawnLocationName": "",
-        "PositionX": -1177.028,
-        "PositionY": -1418.684,
-        "PositionZ": 4.110731,
-        "Heading": 341.663,
+        "PositionX": 11.20874,
+        "PositionY": 60.92809,
+        "PositionZ": 72.03088,
+        "Heading": 0,
         "HospitalFee": 0,
         "HospitalBillPastDue": 0,
         "HospitalDuration": 0,
@@ -2849,11 +2891,11 @@
         "BailFeePastDue": 0,
         "BailDuration": 0,
         "TodayPayment": 0,
-        "TimesDied": 2,
+        "TimesDied": 1,
         "HadIllegalWeapons": false,
         "HadIllegalItems": false,
-        "ReleaseDate": "2009-06-06T10:14:20Z",
-        "OccurredUtc": "2026-05-14T19:17:47.9232793+00:00"
+        "ReleaseDate": "2009-06-06T10:39:06Z",
+        "OccurredUtc": "2026-05-15T11:51:38.8038947+00:00"
       },
       "LongTermLsrRecords": []
     }

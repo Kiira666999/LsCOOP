@@ -3,6 +3,7 @@ using RageCoop.Server;
 using RageCoop.Server.Scripting;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
@@ -276,11 +277,26 @@ namespace LsrCoop.Server
 
             if (commit.PropertyOwnershipSnapshot != null)
             {
-                profile.PropertyOwnership = commit.PropertyOwnershipSnapshot;
-                profile.PropertyOwnership.WorldId = worldProfileStoreService.WorldId;
-                profile.PropertyOwnership.ProfileId = profile.ProfileId;
-                profile.PropertyOwnership.CharacterId = string.IsNullOrWhiteSpace(profile.PropertyOwnership.CharacterId) ? profile.ProfileId : profile.PropertyOwnership.CharacterId;
-                worldProfileStoreService.Save();
+                if (ShouldSkipPropertyOwnershipSnapshot(request, commit.PropertyOwnershipSnapshot, profile))
+                {
+                    CoopPropertyOwnershipRecord preservedProperty = profile.PropertyOwnership?.Properties?.FirstOrDefault();
+                    Logger.Info($"[LsrCoop.Server] empty property ownership clear skipped: profile={profile.ProfileId}, request={request.RequestId}, action={GetParameter(request, "PropertyAction")}, preservedCount={profile.PropertyOwnership?.Properties?.Count ?? 0}, firstProperty={preservedProperty?.PropertyId ?? "none"}, firstName={preservedProperty?.Name ?? "none"}");
+                }
+                else if (IsNewerOrSame(commit.PropertyOwnershipSnapshot.SnapshotUtc, profile.PropertyOwnership?.SnapshotUtc))
+                {
+                    PropertyOwnershipMergeSummary mergeSummary;
+                    profile.PropertyOwnership = MergePropertyOwnershipSnapshot(request, commit.PropertyOwnershipSnapshot, profile, out mergeSummary);
+                    profile.PropertyOwnership.WorldId = worldProfileStoreService.WorldId;
+                    profile.PropertyOwnership.ProfileId = profile.ProfileId;
+                    profile.PropertyOwnership.CharacterId = string.IsNullOrWhiteSpace(profile.PropertyOwnership.CharacterId) ? profile.ProfileId : profile.PropertyOwnership.CharacterId;
+                    worldProfileStoreService.Save();
+                    CoopPropertyOwnershipRecord firstProperty = profile.PropertyOwnership.Properties?.FirstOrDefault();
+                    Logger.Info($"[LsrCoop.Server] property ownership snapshot saved: profile={profile.ProfileId}, request={request.RequestId}, action={mergeSummary.ActionName}, incomingCount={mergeSummary.IncomingCount}, existingCount={mergeSummary.ExistingCount}, count={profile.PropertyOwnership.Properties?.Count ?? 0}, mergedCount={mergeSummary.MergedCount}, updatedCount={mergeSummary.UpdatedCount}, addedCount={mergeSummary.AddedCount}, preservedCount={mergeSummary.PreservedCount}, removedCount={mergeSummary.RemovedCount}, firstProperty={firstProperty?.PropertyId ?? "none"}, firstName={firstProperty?.Name ?? "none"}");
+                }
+                else
+                {
+                    Logger.Info($"[LsrCoop.Server] stale property ownership snapshot skipped: profile={profile.ProfileId}, request={request.RequestId}, incoming={commit.PropertyOwnershipSnapshot.SnapshotUtc:O}, current={profile.PropertyOwnership?.SnapshotUtc:O}");
+                }
             }
 
             if (commit.OwnedVehicleSnapshot != null)
@@ -334,6 +350,170 @@ namespace LsrCoop.Server
             bool incomingEmpty = snapshot?.Vehicles == null || snapshot.Vehicles.Count == 0;
             bool hasSavedVehicles = profile?.OwnedVehicles?.Vehicles?.Count > 0;
             return isClearOwnership && incomingEmpty && hasSavedVehicles;
+        }
+
+        private bool ShouldSkipPropertyOwnershipSnapshot(CoopGameplayActionRequestDto request, CoopPropertyOwnershipSnapshot snapshot, CoopPlayerProfile profile)
+        {
+            bool incomingEmpty = snapshot?.Properties == null || snapshot.Properties.Count == 0;
+            bool hasSavedProperties = profile?.PropertyOwnership?.Properties?.Count > 0;
+            bool isExplicitClear = IsExplicitPropertyRemovalAction(request);
+
+            return incomingEmpty && hasSavedProperties && !isExplicitClear;
+        }
+
+        private CoopPropertyOwnershipSnapshot MergePropertyOwnershipSnapshot(CoopGameplayActionRequestDto request, CoopPropertyOwnershipSnapshot incomingSnapshot, CoopPlayerProfile profile, out PropertyOwnershipMergeSummary summary)
+        {
+            List<CoopPropertyOwnershipRecord> existingProperties = profile?.PropertyOwnership?.Properties ?? new List<CoopPropertyOwnershipRecord>();
+            List<CoopPropertyOwnershipRecord> incomingProperties = incomingSnapshot?.Properties ?? new List<CoopPropertyOwnershipRecord>();
+            bool isRemovalAction = IsExplicitPropertyRemovalAction(request);
+
+            summary = new PropertyOwnershipMergeSummary
+            {
+                ActionName = GetParameter(request, "PropertyAction"),
+                ExistingCount = existingProperties.Count,
+                IncomingCount = incomingProperties.Count,
+            };
+
+            CoopPropertyOwnershipSnapshot mergedSnapshot = new CoopPropertyOwnershipSnapshot
+            {
+                SnapshotId = incomingSnapshot?.SnapshotId,
+                WorldId = incomingSnapshot?.WorldId ?? worldProfileStoreService.WorldId,
+                ProfileId = profile?.ProfileId ?? incomingSnapshot?.ProfileId,
+                CharacterId = string.IsNullOrWhiteSpace(incomingSnapshot?.CharacterId) ? profile?.ProfileId : incomingSnapshot.CharacterId,
+                SnapshotUtc = incomingSnapshot?.SnapshotUtc ?? DateTimeOffset.UtcNow,
+                Properties = new List<CoopPropertyOwnershipRecord>(),
+            };
+
+            Dictionary<string, CoopPropertyOwnershipRecord> mergedByKey = new Dictionary<string, CoopPropertyOwnershipRecord>(StringComparer.OrdinalIgnoreCase);
+            HashSet<string> existingKeys = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            HashSet<string> updatedKeys = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            HashSet<string> removedKeys = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            foreach (CoopPropertyOwnershipRecord existingProperty in existingProperties.Where(x => x != null))
+            {
+                string key = GetPropertyOwnershipKey(existingProperty);
+                if (string.IsNullOrWhiteSpace(key))
+                {
+                    continue;
+                }
+
+                existingKeys.Add(key);
+                if (isRemovalAction && IsRequestTargetProperty(request, existingProperty))
+                {
+                    removedKeys.Add(key);
+                    continue;
+                }
+
+                if (!mergedByKey.ContainsKey(key))
+                {
+                    mergedByKey[key] = existingProperty;
+                }
+            }
+
+            foreach (CoopPropertyOwnershipRecord incomingProperty in incomingProperties.Where(x => x != null))
+            {
+                string key = GetPropertyOwnershipKey(incomingProperty);
+                if (string.IsNullOrWhiteSpace(key))
+                {
+                    continue;
+                }
+
+                if (isRemovalAction && IsRequestTargetProperty(request, incomingProperty))
+                {
+                    removedKeys.Add(key);
+                    mergedByKey.Remove(key);
+                    continue;
+                }
+
+                if (mergedByKey.ContainsKey(key))
+                {
+                    updatedKeys.Add(key);
+                    mergedByKey[key] = incomingProperty;
+                }
+                else
+                {
+                    mergedByKey[key] = incomingProperty;
+                    if (!existingKeys.Contains(key))
+                    {
+                        summary.AddedCount++;
+                    }
+                }
+            }
+
+            mergedSnapshot.Properties = mergedByKey.Values.ToList();
+            summary.UpdatedCount = updatedKeys.Count;
+            summary.RemovedCount = removedKeys.Count;
+            summary.PreservedCount = existingKeys.Count(x => mergedByKey.ContainsKey(x) && !updatedKeys.Contains(x));
+            summary.MergedCount = mergedSnapshot.Properties.Count;
+            return mergedSnapshot;
+        }
+
+        private bool IsExplicitPropertyRemovalAction(CoopGameplayActionRequestDto request)
+        {
+            if (!string.Equals(request?.ActionType, "PurchaseProperty", StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
+            string propertyAction = GetParameter(request, "PropertyAction");
+            return string.Equals(propertyAction, "Sell", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(propertyAction, "StopRenting", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(propertyAction, "ClearOwnership", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(propertyAction, "RemoveOwnership", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private bool IsRequestTargetProperty(CoopGameplayActionRequestDto request, CoopPropertyOwnershipRecord property)
+        {
+            if (request == null || property == null)
+            {
+                return false;
+            }
+
+            string requestPropertyId = GetParameter(request, "PropertyId");
+            if (!string.IsNullOrWhiteSpace(requestPropertyId)
+                && string.Equals(requestPropertyId, property.PropertyId, StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+
+            string requestName = GetParameter(request, "PropertyName");
+            if (string.IsNullOrWhiteSpace(requestName)
+                || !string.Equals(requestName, property.Name, StringComparison.OrdinalIgnoreCase))
+            {
+                return false;
+            }
+
+            string requestType = GetParameter(request, "PropertyType");
+            return string.IsNullOrWhiteSpace(requestType)
+                || string.Equals(requestType, property.PropertyType, StringComparison.OrdinalIgnoreCase);
+        }
+
+        private string GetPropertyOwnershipKey(CoopPropertyOwnershipRecord property)
+        {
+            if (property == null)
+            {
+                return string.Empty;
+            }
+
+            if (!string.IsNullOrWhiteSpace(property.PropertyId))
+            {
+                return "id:" + property.PropertyId.Trim();
+            }
+
+            return string.Join("|", new[]
+            {
+                "fallback",
+                property.PropertyType ?? string.Empty,
+                property.Name ?? string.Empty,
+                FormatPropertyCoordinate(property.EntranceX),
+                FormatPropertyCoordinate(property.EntranceY),
+                FormatPropertyCoordinate(property.EntranceZ),
+            });
+        }
+
+        private string FormatPropertyCoordinate(float value)
+        {
+            return value.ToString("0.###", CultureInfo.InvariantCulture);
         }
 
         private bool IsNewerOrSame(DateTimeOffset incomingUtc, DateTimeOffset? currentUtc)
@@ -730,6 +910,18 @@ namespace LsrCoop.Server
             public int PreservedDefaultOverwriteCount { get; set; }
             public bool HasChanges { get; set; }
             public string Action { get; set; }
+        }
+
+        private class PropertyOwnershipMergeSummary
+        {
+            public string ActionName { get; set; }
+            public int IncomingCount { get; set; }
+            public int ExistingCount { get; set; }
+            public int MergedCount { get; set; }
+            public int UpdatedCount { get; set; }
+            public int AddedCount { get; set; }
+            public int PreservedCount { get; set; }
+            public int RemovedCount { get; set; }
         }
 
         private int LogGangReputationChanges(CoopGangReputationStateDto existing, CoopGangReputationStateDto incoming)

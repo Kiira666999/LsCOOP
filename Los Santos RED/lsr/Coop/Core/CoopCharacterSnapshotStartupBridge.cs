@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 
 namespace LosSantosRED.lsr.Coop.Core
 {
@@ -19,6 +20,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public CoopInventoryMoneySnapshot InventoryMoney { get; set; }
         public CoopWeaponSnapshot Weapons { get; set; }
         public CoopOwnedVehicleSnapshot OwnedVehicles { get; set; }
+        public CoopPropertyOwnershipSnapshot PropertyOwnership { get; set; }
         public CoopCriminalHistoryState CriminalHistory { get; set; }
         public CoopGangReputationState GangReputation { get; set; }
     }
@@ -49,7 +51,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 CoopCharacterStartupSnapshot snapshot = TryReadSnapshot(path);
                 if (snapshot != null)
                 {
-                    EntryPoint.WriteToConsole($"Co-op character startup snapshot loaded World:{snapshot.WorldId} Profile:{snapshot.ProfileId} Model:{snapshot.ModelName}", 0);
+                    EntryPoint.WriteToConsole($"Co-op character startup snapshot loaded World:{snapshot.WorldId} Profile:{snapshot.ProfileId} Model:{snapshot.ModelName} Properties:{snapshot.PropertyOwnership?.Properties?.Count ?? 0} FirstProperty:{DescribeFirstProperty(snapshot.PropertyOwnership)}", 0);
                     return snapshot;
                 }
             }
@@ -155,6 +157,17 @@ namespace LosSantosRED.lsr.Coop.Core
                 }
             }
 
+            CoopPropertyHydrationResult propertyHydration = null;
+            if (snapshot.PropertyOwnership != null)
+            {
+                string blockedReason;
+                CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
+                int residenceCount = placesOfInterest?.PossibleLocations?.Residences?.Count ?? 0;
+                Residence targetResidence = placesOfInterest?.PossibleLocations?.Residences?.FirstOrDefault(x => string.Equals(x?.Name, "0605 Apartment 4F", StringComparison.OrdinalIgnoreCase));
+                EntryPoint.WriteToConsole($"Co-op property hydration start Profile:{snapshot.ProfileId} StartupMode:{startupMode} LocalActiveHost:{CoopStartupBridge.IsLocalActiveHost} WorldSet:{world != null} PlacesSet:{placesOfInterest != null} Residences:{residenceCount} TargetResidenceFound:{targetResidence != null} TargetOwnedBefore:{targetResidence?.IsOwned} TargetRentedBefore:{targetResidence?.IsRented} SnapshotCount:{snapshot.PropertyOwnership.Properties?.Count ?? 0} FirstProperty:{DescribeFirstProperty(snapshot.PropertyOwnership)}", 0);
+                propertyHydration = new CoopPropertyOwnershipAdapter().TryApplySnapshotToPlayer(player, snapshot.PropertyOwnership, placesOfInterest, modItems, settings, world);
+            }
+
             bool appliedCriminalHistory = false;
             if (snapshot.CriminalHistory != null)
             {
@@ -167,8 +180,8 @@ namespace LosSantosRED.lsr.Coop.Core
                 appliedGangReputation = CoopGangReputationStateAdapter.Current.TryApplyPersistentStateToPlayer(player, snapshot.GangReputation);
             }
 
-            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Money:{snapshot.InventoryMoney?.TotalMoney ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} WeaponsHydrated:{weaponHydration?.HydratedCount ?? 0} WeaponsExisting:{weaponHydration?.ExistingCount ?? 0} WeaponsSkippedDuplicate:{weaponHydration?.SkippedDuplicateCount ?? 0} OwnedVehicles:{snapshot.OwnedVehicles?.Vehicles?.Count ?? 0} OwnedVehiclesHydrated:{ownedVehicleHydration?.HydratedCount ?? 0} OwnedVehiclesSkipped:{ownedVehicleHydration?.SkippedCount ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0} GangReputation:{appliedGangReputation} GangRecords:{snapshot.GangReputation?.Reputations?.Count ?? 0} DateTimeLastWantedEnded:{snapshot.CriminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}", 0);
-            return appliedInventoryMoney || weaponHydration?.Applied == true || ownedVehicleHydration?.Applied == true || appliedCriminalHistory || appliedGangReputation;
+            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Money:{snapshot.InventoryMoney?.TotalMoney ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} WeaponsHydrated:{weaponHydration?.HydratedCount ?? 0} WeaponsExisting:{weaponHydration?.ExistingCount ?? 0} WeaponsSkippedDuplicate:{weaponHydration?.SkippedDuplicateCount ?? 0} OwnedVehicles:{snapshot.OwnedVehicles?.Vehicles?.Count ?? 0} OwnedVehiclesHydrated:{ownedVehicleHydration?.HydratedCount ?? 0} OwnedVehiclesSkipped:{ownedVehicleHydration?.SkippedCount ?? 0} Properties:{snapshot.PropertyOwnership?.Properties?.Count ?? 0} PropertiesHydrated:{propertyHydration?.HydratedCount ?? 0} PropertiesSkipped:{propertyHydration?.SkippedCount ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0} GangReputation:{appliedGangReputation} GangRecords:{snapshot.GangReputation?.Reputations?.Count ?? 0} DateTimeLastWantedEnded:{snapshot.CriminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}", 0);
+            return appliedInventoryMoney || weaponHydration?.Applied == true || ownedVehicleHydration?.Applied == true || propertyHydration?.Applied == true || appliedCriminalHistory || appliedGangReputation;
         }
 
         public static void HydrateLocalCharacter(LocalCoopCharacter localCharacter, CoopCharacterStartupSnapshot snapshot)
@@ -226,6 +239,7 @@ namespace LosSantosRED.lsr.Coop.Core
                     InventoryMoney = ParseInventoryMoney(values, worldId, profileId),
                     Weapons = ParseWeapons(values, worldId, profileId),
                     OwnedVehicles = ParseOwnedVehicles(values, worldId, profileId),
+                    PropertyOwnership = ParseProperties(values, worldId, profileId),
                     CriminalHistory = ParseCriminalHistory(values, worldId, profileId),
                     GangReputation = ParseGangReputation(values, worldId, profileId),
                 };
@@ -362,6 +376,14 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             return snapshot;
+        }
+
+        private static string DescribeFirstProperty(CoopPropertyOwnershipSnapshot snapshot)
+        {
+            CoopPropertyOwnershipRecord property = snapshot?.Properties?.FirstOrDefault();
+            return property == null
+                ? "none"
+                : $"{property.PropertyId}|name={property.Name}|type={property.PropertyType}|owned={property.IsOwned}|rented={property.IsRented}|rentedOut={property.IsRentedOut}";
         }
 
         private static CoopCriminalHistoryState ParseCriminalHistory(Dictionary<string, string> values, string worldId, string profileId)
@@ -554,6 +576,61 @@ namespace LosSantosRED.lsr.Coop.Core
                 });
             }
 
+            return snapshot;
+        }
+
+        private static CoopPropertyOwnershipSnapshot ParseProperties(Dictionary<string, string> values, string worldId, string profileId)
+        {
+            string snapshotId = GetValue(values, "PropertyOwnershipSnapshotId");
+            string properties = GetValue(values, "Properties");
+            if (string.IsNullOrWhiteSpace(snapshotId) && string.IsNullOrWhiteSpace(properties))
+            {
+                EntryPoint.WriteToConsole($"Co-op property startup parse skipped Profile:{profileId} Reason:NoPropertySnapshotPayload", 0);
+                return null;
+            }
+
+            CoopPropertyOwnershipSnapshot snapshot = new CoopPropertyOwnershipSnapshot
+            {
+                SnapshotId = string.IsNullOrWhiteSpace(snapshotId) ? Guid.NewGuid().ToString("N") : snapshotId,
+                WorldId = new CoopWorldId(worldId),
+                ProfileId = new CoopProfileId(profileId),
+                CharacterId = new CoopCharacterId(GetValue(values, "CharacterId")),
+                SnapshotUtc = ParseDateTimeOffset(GetValue(values, "PropertyOwnershipSnapshotUtc")),
+            };
+
+            int entryIndex = 0;
+            foreach (string entry in SplitEntries(properties))
+            {
+                entryIndex++;
+                string[] parts = entry.Split(',');
+                if (parts.Length < 15)
+                {
+                    string preview = entry.Length > 160 ? entry.Substring(0, 160) + "..." : entry;
+                    EntryPoint.WriteToConsole($"Co-op property startup parse skipped Profile:{profileId} Entry:{entryIndex} Reason:MalformedPropertyEntry Parts:{parts.Length} Preview:{preview}", 0);
+                    continue;
+                }
+
+                snapshot.Properties.Add(new CoopPropertyOwnershipRecord
+                {
+                    PropertyId = UnescapePart(parts[0]),
+                    Name = UnescapePart(parts[1]),
+                    PropertyType = UnescapePart(parts[2]),
+                    IsOwned = IsTrue(parts[3]),
+                    IsRented = IsTrue(parts[4]),
+                    IsRentedOut = IsTrue(parts[5]),
+                    EntranceX = ParseFloat(parts[6]),
+                    EntranceY = ParseFloat(parts[7]),
+                    EntranceZ = ParseFloat(parts[8]),
+                    CurrentSalesPrice = ParseInt(parts[9]),
+                    PayoutDate = ParseOptionalDateTime(parts[10]),
+                    DateOfLastPayout = ParseOptionalDateTime(parts[11]),
+                    RentalPaymentDate = ParseOptionalDateTime(parts[12]),
+                    DateOfLastRentalPayment = ParseOptionalDateTime(parts[13]),
+                    SavedGameLocationXml = UnescapePart(parts[14]),
+                });
+            }
+
+            EntryPoint.WriteToConsole($"Co-op property startup parse Profile:{profileId} Count:{snapshot.Properties.Count} FirstProperty:{DescribeFirstProperty(snapshot)}", 0);
             return snapshot;
         }
 

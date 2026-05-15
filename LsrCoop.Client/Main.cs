@@ -261,7 +261,7 @@ namespace LsrCoop.Client
                 ApplyAppearanceIfLocal(snapshot.WorldId, profile.ProfileId, profile.Character?.Appearance);
                 if (string.Equals(profile.ProfileId, localProfileId, StringComparison.OrdinalIgnoreCase))
                 {
-                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character, profile.InventoryMoney, profile.Weapons, profile.OwnedVehicles, profile.CriminalHistory, profile.GangReputation);
+                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character, profile.InventoryMoney, profile.Weapons, profile.OwnedVehicles, profile.PropertyOwnership, profile.CriminalHistory, profile.GangReputation);
                 }
             }
 
@@ -291,19 +291,21 @@ namespace LsrCoop.Client
             CoopCriminalHistoryStateDto criminalHistory = Deserialize<CoopCriminalHistoryStateDto>(GetArg(args, 5));
             CoopGangReputationStateDto gangReputation = Deserialize<CoopGangReputationStateDto>(GetArg(args, 6));
             CoopOwnedVehicleSnapshot ownedVehicles = Deserialize<CoopOwnedVehicleSnapshot>(GetArg(args, 7));
+            CoopPropertyOwnershipSnapshot propertyOwnership = Deserialize<CoopPropertyOwnershipSnapshot>(GetArg(args, 8));
+            Logger.Info($"[LsrCoop.Client] character snapshot property payload received: world={worldId}, profile={profileId}, properties={propertyOwnership?.Properties?.Count ?? 0}, firstProperty={DescribeFirstProperty(propertyOwnership)}");
             ApplyAppearanceIfLocal(worldId, profileId, snapshot?.Appearance);
             if (string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase))
             {
                 localCharacterReadyForSimulation = snapshot != null;
                 if (localCharacterReadyForSimulation)
                 {
-                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot, inventoryMoney, weapons, ownedVehicles, criminalHistory, gangReputation);
+                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot, inventoryMoney, weapons, ownedVehicles, propertyOwnership, criminalHistory, gangReputation);
                     ExitCharacterCreationSafeState();
                 }
                 UpdateCurrentBridgeState();
                 SendCharacterSnapshotAck(worldId, profileId);
             }
-            Logger.Info($"[LsrCoop.Client] character snapshot received: world={worldId}, profile={profileId}, ownedVehicles={ownedVehicles?.Vehicles?.Count ?? 0}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(gangReputation, "AMBIENT_GANG_MEXICAN"))}");
+            Logger.Info($"[LsrCoop.Client] character snapshot received: world={worldId}, profile={profileId}, ownedVehicles={ownedVehicles?.Vehicles?.Count ?? 0}, properties={propertyOwnership?.Properties?.Count ?? 0}, firstProperty={DescribeFirstProperty(propertyOwnership)}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(gangReputation, "AMBIENT_GANG_MEXICAN"))}");
         }
 
         private void EnterCharacterCreationSafeState(string worldId, string profileId)
@@ -607,7 +609,7 @@ namespace LsrCoop.Client
             return modelHash.ToString();
         }
 
-        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot, CoopInventoryMoneySnapshot inventoryMoney = null, CoopWeaponSnapshot weapons = null, CoopOwnedVehicleSnapshot ownedVehicles = null, CoopCriminalHistoryStateDto criminalHistory = null, CoopGangReputationStateDto gangReputation = null)
+        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot, CoopInventoryMoneySnapshot inventoryMoney = null, CoopWeaponSnapshot weapons = null, CoopOwnedVehicleSnapshot ownedVehicles = null, CoopPropertyOwnershipSnapshot propertyOwnership = null, CoopCriminalHistoryStateDto criminalHistory = null, CoopGangReputationStateDto gangReputation = null)
         {
             if (snapshot == null || string.IsNullOrWhiteSpace(worldId) || string.IsNullOrWhiteSpace(profileId))
             {
@@ -617,6 +619,7 @@ namespace LsrCoop.Client
             string modelName = !string.IsNullOrWhiteSpace(snapshot.ModelName)
                 ? snapshot.ModelName
                 : snapshot.Appearance?.ModelName ?? string.Empty;
+            string serializedProperties = SerializeProperties(propertyOwnership?.Properties);
             string nonce = Guid.NewGuid().ToString("N");
             string[] lines =
             {
@@ -643,6 +646,9 @@ namespace LsrCoop.Client
                 $"OwnedVehicleSnapshotId={EscapeBridgeValue(ownedVehicles?.SnapshotId ?? string.Empty)}",
                 $"OwnedVehicleSnapshotUtc={EscapeBridgeValue(FormatDateTime(ownedVehicles?.SnapshotUtc))}",
                 $"OwnedVehicles={EscapeBridgeValue(SerializeOwnedVehicles(ownedVehicles?.Vehicles))}",
+                $"PropertyOwnershipSnapshotId={EscapeBridgeValue(propertyOwnership?.SnapshotId ?? string.Empty)}",
+                $"PropertyOwnershipSnapshotUtc={EscapeBridgeValue(FormatDateTime(propertyOwnership?.SnapshotUtc))}",
+                $"Properties={EscapeBridgeValue(serializedProperties)}",
                 $"CriminalHistoryHasHistory={EscapeBridgeValue((criminalHistory?.HasHistory == true).ToString().ToLowerInvariant())}",
                 $"CriminalHistoryLastSeenX={EscapeBridgeValue(criminalHistory?.LastSeenX.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
                 $"CriminalHistoryLastSeenY={EscapeBridgeValue(criminalHistory?.LastSeenY.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
@@ -664,7 +670,7 @@ namespace LsrCoop.Client
                 WriteAtomicBridgeFile(folder, CharacterSnapshotBridgeFileName, lines, nonce);
             }
 
-            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, ownedVehicles={ownedVehicles?.Vehicles?.Count ?? 0}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, currentGang={gangReputation?.CurrentGangId ?? "none"}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(gangReputation, "AMBIENT_GANG_MEXICAN"))}, dateTimeLastWantedEnded={criminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}");
+            Logger.Info($"[LsrCoop.Client] character snapshot bridge written: world={worldId}, profile={profileId}, model={modelName}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, ownedVehicles={ownedVehicles?.Vehicles?.Count ?? 0}, properties={propertyOwnership?.Properties?.Count ?? 0}, firstProperty={DescribeFirstProperty(propertyOwnership)}, firstPropertyLine={DescribeFirstPropertyLine(serializedProperties)}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, currentGang={gangReputation?.CurrentGangId ?? "none"}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(gangReputation, "AMBIENT_GANG_MEXICAN"))}, dateTimeLastWantedEnded={criminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}");
         }
 
         private void OnAppearanceChanged(CustomEventReceivedArgs args)
@@ -1320,6 +1326,7 @@ namespace LsrCoop.Client
                     DateOfLastPayout = GetDateTime(property, "DateOfLastPayout"),
                     RentalPaymentDate = GetDateTime(property, "RentalPaymentDate"),
                     DateOfLastRentalPayment = GetDateTime(property, "DateOfLastRentalPayment"),
+                    SavedGameLocationXml = GetString(property, "SavedGameLocationXml"),
                 });
             }
 
@@ -1754,6 +1761,52 @@ namespace LsrCoop.Client
                 EscapeListPart(vehicle.ImpoundedLocation),
                 vehicle.StoredCash.ToString(CultureInfo.InvariantCulture)
             })));
+        }
+
+        private string SerializeProperties(IEnumerable<CoopPropertyOwnershipRecord> properties)
+        {
+            if (properties == null)
+            {
+                return string.Empty;
+            }
+
+            return string.Join(";", properties.Select(property => string.Join(",", new[]
+            {
+                EscapeListPart(property.PropertyId),
+                EscapeListPart(property.Name),
+                EscapeListPart(property.PropertyType),
+                property.IsOwned.ToString().ToLowerInvariant(),
+                property.IsRented.ToString().ToLowerInvariant(),
+                property.IsRentedOut.ToString().ToLowerInvariant(),
+                property.EntranceX.ToString(CultureInfo.InvariantCulture),
+                property.EntranceY.ToString(CultureInfo.InvariantCulture),
+                property.EntranceZ.ToString(CultureInfo.InvariantCulture),
+                property.CurrentSalesPrice.ToString(CultureInfo.InvariantCulture),
+                property.PayoutDate.ToString("O", CultureInfo.InvariantCulture),
+                property.DateOfLastPayout.ToString("O", CultureInfo.InvariantCulture),
+                property.RentalPaymentDate.ToString("O", CultureInfo.InvariantCulture),
+                property.DateOfLastRentalPayment.ToString("O", CultureInfo.InvariantCulture),
+                EscapeListPart(property.SavedGameLocationXml)
+            })));
+        }
+
+        private string DescribeFirstProperty(CoopPropertyOwnershipSnapshot snapshot)
+        {
+            CoopPropertyOwnershipRecord property = snapshot?.Properties?.FirstOrDefault();
+            return property == null
+                ? "none"
+                : $"{property.PropertyId}|name={property.Name}|type={property.PropertyType}|owned={property.IsOwned}|rented={property.IsRented}|rentedOut={property.IsRentedOut}";
+        }
+
+        private string DescribeFirstPropertyLine(string serializedProperties)
+        {
+            if (string.IsNullOrWhiteSpace(serializedProperties))
+            {
+                return "empty";
+            }
+
+            string first = serializedProperties.Split(';').FirstOrDefault() ?? string.Empty;
+            return first.Length > 240 ? first.Substring(0, 240) + "..." : first;
         }
 
         private string SerializeCriminalHistoryCrimes(IEnumerable<CoopCriminalHistoryCrimeRecordDto> crimes)

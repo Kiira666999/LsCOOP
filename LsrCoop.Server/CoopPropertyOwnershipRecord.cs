@@ -18,5 +18,6 @@ namespace LsrCoop.Server
         public DateTime DateOfLastPayout { get; set; }
         public DateTime RentalPaymentDate { get; set; }
         public DateTime DateOfLastRentalPayment { get; set; }
+        public string SavedGameLocationXml { get; set; }
     }
 }

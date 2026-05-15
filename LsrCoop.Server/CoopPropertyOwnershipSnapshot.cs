@@ -14,7 +14,7 @@ namespace LsrCoop.Server
         public string WorldId { get; set; }
         public string ProfileId { get; set; }
         public string CharacterId { get; set; }
-        public List<CoopPropertyOwnershipRecord> Properties { get; private set; }
+        public List<CoopPropertyOwnershipRecord> Properties { get; set; }
         public DateTimeOffset SnapshotUtc { get; set; }
     }
 }

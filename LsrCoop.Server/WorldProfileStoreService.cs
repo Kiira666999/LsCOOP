@@ -229,6 +229,7 @@ namespace LsrCoop.Server
             profile.PropertyOwnership.WorldId = Store.WorldId;
             profile.PropertyOwnership.ProfileId = profile.ProfileId;
             profile.PropertyOwnership.CharacterId = string.IsNullOrWhiteSpace(profile.PropertyOwnership.CharacterId) ? profile.ProfileId : profile.PropertyOwnership.CharacterId;
+            profile.PropertyOwnership.Properties = profile.PropertyOwnership.Properties ?? new List<CoopPropertyOwnershipRecord>();
         }
 
         private void NormalizeGangReputation(CoopPlayerProfile profile)

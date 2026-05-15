@@ -109,9 +109,10 @@ namespace LsrCoop.Server
                 JsonSerializer.Serialize(status.Profile.Weapons),
                 JsonSerializer.Serialize(status.Profile.CriminalHistory),
                 JsonSerializer.Serialize(status.Profile.GangReputation),
-                JsonSerializer.Serialize(status.Profile.OwnedVehicles)
+                JsonSerializer.Serialize(status.Profile.OwnedVehicles),
+                JsonSerializer.Serialize(status.Profile.PropertyOwnership)
             });
-            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}, ownedVehicles={(status.Profile.OwnedVehicles?.Vehicles?.Count ?? 0)}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}, gangReputation={(status.Profile.GangReputation?.Reputations?.Count ?? 0)}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(status.Profile.GangReputation, "AMBIENT_GANG_MEXICAN"))}");
+            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}, ownedVehicles={(status.Profile.OwnedVehicles?.Vehicles?.Count ?? 0)}, properties={(status.Profile.PropertyOwnership?.Properties?.Count ?? 0)}, firstProperty={DescribeFirstProperty(status.Profile.PropertyOwnership)}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}, gangReputation={(status.Profile.GangReputation?.Reputations?.Count ?? 0)}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(status.Profile.GangReputation, "AMBIENT_GANG_MEXICAN"))}");
         }
 
         public CoopClientStatus AcknowledgeCharacterSnapshot(Client client, string worldId, string profileId, string reason, out bool readinessChanged)
@@ -252,6 +253,14 @@ namespace LsrCoop.Server
             return record == null
                 ? "missing"
                 : $"{record.GangId}:rep={record.Reputation},hurt={record.MembersHurt},killed={record.MembersKilled}";
+        }
+
+        private static string DescribeFirstProperty(CoopPropertyOwnershipSnapshot snapshot)
+        {
+            CoopPropertyOwnershipRecord property = snapshot?.Properties?.FirstOrDefault();
+            return property == null
+                ? "none"
+                : $"{property.PropertyId}|name={property.Name}|type={property.PropertyType}|owned={property.IsOwned}|rented={property.IsRented}|rentedOut={property.IsRentedOut}";
         }
     }
 }
