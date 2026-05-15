@@ -28,6 +28,7 @@ namespace LsrCoop.Server
         public static readonly int PvpCrimeAssignedEventHash = CustomEvents.Hash("lsrcoop.crime.pvp.assigned");
         public static readonly int CriminalJusticeSnapshotCommittedEventHash = CustomEvents.Hash("lsrcoop.criminalJustice.snapshot.committed");
         public static readonly int GangReputationSnapshotCommittedEventHash = CustomEvents.Hash("lsrcoop.gangReputation.snapshot.committed");
+        public static readonly int BridgeDiagnosticsReportEventHash = CustomEvents.Hash("lsrcoop.bridge.diagnostics");
 
         private readonly Action<string> warning;
 

@@ -212,7 +212,7 @@ namespace LosSantosRED.lsr.Coop.Core
             }
             catch (Exception ex)
             {
-                EntryPoint.WriteToConsole($"Co-op property save data serialize skipped Error:{ex.Message}", 0);
+                CoopPersistenceDiagnostics.WriteVerbose($"Co-op property save data serialize skipped Error:{ex.Message}");
                 return string.Empty;
             }
         }

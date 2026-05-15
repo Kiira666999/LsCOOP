@@ -50,7 +50,6 @@ namespace LosSantosRED.lsr.Coop.Core
                 WeaponSnapshot = weaponSnapshot,
                 OwnedVehicleSnapshot = ownedVehicleSnapshot,
             });
-            EntryPoint.WriteToConsole($"Co-op purchase commit Item:{GetParameter(request, "ItemName")} Price:{GetIntParameter(request, "TotalPrice")} MoneyCaptured:{snapshot?.TotalMoney ?? 0} ServerProfile:{request.SourceProfileId} WeaponsSaved:{weaponSnapshot?.Weapons?.Count ?? 0}", 0);
         }
 
         public static bool TryBeginPurchaseProperty(GameLocation property, ILocationInteractable player, int amount, string propertyAction, out CoopGameplayActionRequest request, out string blockedReason)
@@ -292,7 +291,6 @@ namespace LosSantosRED.lsr.Coop.Core
             int price = GetIntParameter(request, "TotalPrice");
             bool isStealing = string.Equals(GetParameter(request, "IsStealing"), "True", StringComparison.OrdinalIgnoreCase);
             bool useAccounts = !string.Equals(GetParameter(request, "UseAccounts"), "False", StringComparison.OrdinalIgnoreCase);
-            int moneyBefore = beforeSnapshot?.TotalMoney ?? 0;
             int liveMoneyAfter = modPlayer?.BankAccounts?.GetMoney(true) ?? snapshot.TotalMoney;
             string itemName = GetParameter(request, "ItemName");
 
@@ -303,7 +301,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 {
                     snapshot = reconciledSnapshot;
                     ApplyMoneySnapshotToPlayer(modPlayer, snapshot, "PurchaseReconciliation");
-                    CoopPersistenceDiagnostics.WriteVerbose($"Co-op purchase money fallback applied Item:{itemName} Price:{price} MoneyBefore:{moneyBefore} LiveBeforeFallback:{liveMoneyAfter} LiveAfterFallback:{modPlayer?.BankAccounts?.GetMoney(true) ?? snapshot.TotalMoney} CapturedSnapshot:{snapshot.TotalMoney}");
+                    CoopPersistenceDiagnostics.WriteVerbose($"Co-op purchase money fallback applied Item:{itemName} Price:{price} LiveBeforeFallback:{liveMoneyAfter} LiveAfterFallback:{modPlayer?.BankAccounts?.GetMoney(true) ?? snapshot.TotalMoney} CapturedSnapshot:{snapshot.TotalMoney}");
                 }
             }
 

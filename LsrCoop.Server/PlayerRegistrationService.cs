@@ -241,26 +241,5 @@ namespace LsrCoop.Server
             return string.IsNullOrWhiteSpace(client?.Username) ? "unknown" : client.Username;
         }
 
-        private static CoopGangReputationRecordDto FindGangReputationRecord(CoopGangReputationStateDto state, string gangId)
-        {
-            return state?.Reputations?
-                .Where(x => string.Equals(x?.GangId, gangId, StringComparison.OrdinalIgnoreCase))
-                .LastOrDefault();
-        }
-
-        private static string DescribeGangReputationRecord(CoopGangReputationRecordDto record)
-        {
-            return record == null
-                ? "missing"
-                : $"{record.GangId}:rep={record.Reputation},hurt={record.MembersHurt},killed={record.MembersKilled}";
-        }
-
-        private static string DescribeFirstProperty(CoopPropertyOwnershipSnapshot snapshot)
-        {
-            CoopPropertyOwnershipRecord property = snapshot?.Properties?.FirstOrDefault();
-            return property == null
-                ? "none"
-                : $"{property.PropertyId}|name={property.Name}|type={property.PropertyType}|owned={property.IsOwned}|rented={property.IsRented}|rentedOut={property.IsRentedOut}";
-        }
     }
 }

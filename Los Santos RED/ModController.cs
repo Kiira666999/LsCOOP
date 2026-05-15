@@ -488,7 +488,7 @@ namespace LosSantosRED.lsr
 
             string blockedReason;
             CoopStartupMode startupMode = CoopStartupBridge.GetStartupMode(out blockedReason);
-            EntryPoint.WriteToConsole($"Co-op startup mode selected: {startupMode} LocalProfile:{CoopStartupBridge.LocalProfileId} ActiveHost:{CoopStartupBridge.ActiveHostProfileId} Reason:{reason}", 0);
+            CoopPersistenceDiagnostics.WriteVerbose($"Co-op startup mode selected: {startupMode} LocalProfile:{CoopStartupBridge.LocalProfileId} ActiveHost:{CoopStartupBridge.ActiveHostProfileId} Reason:{reason}");
         }
         private void StartCoreLogic()
         {

@@ -171,6 +171,16 @@ namespace LsrCoop.Server
                         ReplyLast(client, tokens[1]);
                         return true;
 
+                    case "bridge":
+                        if (tokens.Count > 2)
+                        {
+                            Reply(client, "[LsrCoop.Server] usage: /coop bridge [profileId]");
+                            return true;
+                        }
+
+                        ReplyBridge(client, tokens.Count == 2 ? tokens[1] : senderProfileId);
+                        return true;
+
                     default:
                         ReplyUsage(client);
                         return true;
@@ -360,6 +370,37 @@ namespace LsrCoop.Server
             Reply(client, $"[LsrCoop.Server] last persistence summary for {Clean(profile.ProfileId)} is not tracked yet; follow-up needed for /coop last");
         }
 
+        private void ReplyBridge(Client client, string profileId)
+        {
+            CoopPlayerProfile profile = GetProfileOrReply(client, profileId);
+            if (profile == null)
+            {
+                return;
+            }
+
+            CoopClientStatus status = GetStatus(profile.ProfileId);
+            CoopBridgeDiagnosticsReportDto report = status?.BridgeDiagnostics;
+            if (report == null)
+            {
+                Reply(client, $"[LsrCoop.Server] bridge diagnostics unavailable: profile={Clean(profile.ProfileId)} connected={(status?.Client != null)}");
+                return;
+            }
+
+            Reply(client, "[LsrCoop.Server] "
+                + $"bridge profile={Clean(profile.ProfileId)} "
+                + $"process={report.ProcessId} "
+                + $"session={Clean(report.SessionId)} "
+                + $"startup={report.StartupStateFiles} "
+                + $"characterCreated={report.CharacterCreatedFiles} "
+                + $"characterSnapshot={report.CharacterSnapshotFiles} "
+                + $"gameplayOut={report.PendingGameplayOutFiles} "
+                + $"gameplayIn={report.PendingGameplayInFiles} "
+                + $"tmp={report.TempFiles} "
+                + $"staleDeleted={report.DeletedStaleFiles} "
+                + $"cleanupFailed={report.CleanupFailedFiles} "
+                + $"lastCleanup={Clean(report.LastCleanupUtc)}");
+        }
+
         private CoopPlayerProfile GetProfileOrReply(Client client, string profileId)
         {
             CoopPlayerProfile profile = worldProfileStoreService.GetProfile(profileId);
@@ -433,7 +474,7 @@ namespace LsrCoop.Server
 
         private void ReplyUsage(Client client)
         {
-            Reply(client, "[LsrCoop.Server] usage: /coop status | profile [profileId] | vehicles <profileId> | properties <profileId> | criminal <profileId> | gangs <profileId> | gang <profileId> <gangIdOrName> | last <profileId>");
+            Reply(client, "[LsrCoop.Server] usage: /coop status | profile [profileId] | vehicles <profileId> | properties <profileId> | criminal <profileId> | gangs <profileId> | gang <profileId> <gangIdOrName> | last <profileId> | bridge [profileId]");
         }
 
         private void ReplyLines(Client client, IEnumerable<string> lines)

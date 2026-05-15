@@ -99,6 +99,11 @@ namespace LosSantosRED.lsr.Coop.Core
             string nonce = Guid.NewGuid().ToString("N");
             string[] lines =
             {
+                "BridgeVersion=1",
+                "TransportMode=RAGECOOP",
+                "Direction=LSR_TO_RAGECOOP",
+                $"ProcessId={Process.GetCurrentProcess().Id}",
+                $"SessionId={Escape(CoopStartupBridge.BridgeSessionId)}",
                 $"WorldId={Escape(CoopStartupBridge.WorldId ?? string.Empty)}",
                 $"ProfileId={Escape(profileId)}",
                 $"CharacterId={Escape(string.IsNullOrWhiteSpace(profileId) ? player.PlayerName : profileId)}",
@@ -126,7 +131,18 @@ namespace LosSantosRED.lsr.Coop.Core
                 Directory.CreateDirectory(folder);
                 string targetPath = Path.Combine(folder, CharacterCreatedFileName);
                 string tempPath = targetPath + "." + nonce + ".tmp";
-                File.WriteAllLines(tempPath, lines);
+                using (FileStream stream = new FileStream(tempPath, FileMode.Create, FileAccess.Write, FileShare.None))
+                using (StreamWriter writer = new StreamWriter(stream))
+                {
+                    foreach (string line in lines ?? new string[0])
+                    {
+                        writer.WriteLine(line);
+                    }
+
+                    writer.Flush();
+                    stream.Flush();
+                }
+
                 if (File.Exists(targetPath))
                 {
                     try

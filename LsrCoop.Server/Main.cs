@@ -71,8 +71,6 @@ namespace LsrCoop.Server
                 return;
             }
 
-            string eventNames = string.Join(", ", events.GetType().GetEvents().Select(x => x.Name));
-            Logger.Info($"[LsrCoop.Server] connection hook stubs available: {eventNames}");
             TrySubscribeConnectionEvent(events, "OnPlayerReady", OnClientReady);
             TrySubscribeConnectionEvent(events, "OnPlayerConnected", OnClientReady);
             TrySubscribeConnectionEvent(events, "OnPlayerDisconnected", OnClientDisconnected);
@@ -174,16 +172,13 @@ namespace LsrCoop.Server
             API.RegisterCustomEventHandler(EventRouter.PvpCrimeReportedEventHash, OnPvpCrimeReported);
             API.RegisterCustomEventHandler(EventRouter.CriminalJusticeSnapshotCommittedEventHash, OnCriminalJusticeSnapshotCommitted);
             API.RegisterCustomEventHandler(EventRouter.GangReputationSnapshotCommittedEventHash, OnGangReputationSnapshotCommitted);
-            Logger.Info("[LsrCoop.Server] custom event stubs registered");
+            API.RegisterCustomEventHandler(EventRouter.BridgeDiagnosticsReportEventHash, OnBridgeDiagnosticsReported);
         }
 
         private void OnPingReceived(CustomEventReceivedArgs args)
         {
             CoopClientStatus status = playerRegistrationService.RegisterClient(args?.Client, "ping");
             playerRegistrationService.SendRegistrationState(status, "ping");
-            string source = playerRegistrationService.GetClientName(args?.Client);
-            string message = args?.Args != null && args.Args.Length > 0 ? args.Args[0]?.ToString() : string.Empty;
-            Logger.Info($"[LsrCoop.Server] ping from {source}: {message}");
             eventRouter.Send(args?.Client, EventRouter.PongEventHash, new object[] { "server-pong" });
         }
 
@@ -248,6 +243,30 @@ namespace LsrCoop.Server
         {
             CoopClientStatus requester = playerRegistrationService.RegisterClient(args?.Client, "appearance-change-request");
             appearanceSyncService.HandleAppearanceChange(requester, Deserialize<CoopAppearanceChangeRequest>(GetArg(args, 0)));
+        }
+
+        private void OnBridgeDiagnosticsReported(CustomEventReceivedArgs args)
+        {
+            CoopClientStatus status = playerRegistrationService.RegisterClient(args?.Client, "bridge-diagnostics");
+            if (status == null)
+            {
+                return;
+            }
+
+            CoopBridgeDiagnosticsReportDto report = Deserialize<CoopBridgeDiagnosticsReportDto>(GetArg(args, 0));
+            if (report == null)
+            {
+                return;
+            }
+
+            if (!string.Equals(report.WorldId, worldProfileStoreService.WorldId, StringComparison.OrdinalIgnoreCase)
+                || !string.Equals(report.ProfileId, status.ProfileId, StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected bridge diagnostics from {status.ProfileId}: world={report.WorldId}, profile={report.ProfileId}");
+                return;
+            }
+
+            status.BridgeDiagnostics = report;
         }
 
         private void OnGameplayActionCommitted(CustomEventReceivedArgs args)
@@ -724,6 +743,18 @@ namespace LsrCoop.Server
             snapshot.CriminalHistory.ProfileId = profile.ProfileId;
             snapshot.CriminalHistory.CharacterId = string.IsNullOrWhiteSpace(snapshot.CriminalHistory.CharacterId) ? profile.ProfileId : snapshot.CriminalHistory.CharacterId;
             snapshot.CriminalHistory.Crimes = snapshot.CriminalHistory.Crimes ?? new List<CoopCriminalHistoryCrimeRecordDto>();
+            DateTimeOffset incomingUpdatedUtc = snapshot.CriminalHistory.UpdatedUtc == default ? snapshot.SnapshotUtc : snapshot.CriminalHistory.UpdatedUtc;
+            if (!IsNewerOrSame(incomingUpdatedUtc, profile.CriminalHistory?.UpdatedUtc))
+            {
+                Logger.Info($"[LsrCoop.Server] stale criminal history snapshot skipped: profile={profile.ProfileId}, incoming={incomingUpdatedUtc:O}, current={profile.CriminalHistory?.UpdatedUtc:O}");
+                return;
+            }
+
+            if (snapshot.CriminalHistory.UpdatedUtc == default)
+            {
+                snapshot.CriminalHistory.UpdatedUtc = incomingUpdatedUtc == default ? DateTimeOffset.UtcNow : incomingUpdatedUtc;
+            }
+
             int incomingCrimeCount = snapshot.CriminalHistory.Crimes.Count;
             int existingCrimeCount = profile.CriminalHistory?.Crimes?.Count ?? 0;
             bool incomingHasHistory = snapshot.CriminalHistory.HasHistory || incomingCrimeCount > 0 || snapshot.CriminalHistory.WantedLevel > 0;
@@ -788,6 +819,17 @@ namespace LsrCoop.Server
             snapshot.ProfileId = profile.ProfileId;
             snapshot.CharacterId = string.IsNullOrWhiteSpace(snapshot.CharacterId) ? profile.ProfileId : snapshot.CharacterId;
             snapshot.Reputations = snapshot.Reputations ?? new List<CoopGangReputationRecordDto>();
+            if (!IsNewerOrSame(snapshot.UpdatedUtc, profile.GangReputation?.UpdatedUtc))
+            {
+                Logger.Info($"[LsrCoop.Server] stale gang reputation snapshot skipped: profile={profile.ProfileId}, incoming={snapshot.UpdatedUtc:O}, current={profile.GangReputation?.UpdatedUtc:O}");
+                return;
+            }
+
+            if (snapshot.UpdatedUtc == default)
+            {
+                snapshot.UpdatedUtc = DateTimeOffset.UtcNow;
+            }
+
             bool incomingAllDefault = IsAllDefaultGangSnapshot(snapshot);
             if (snapshot.Reputations.Count == 0)
             {
@@ -1165,7 +1207,6 @@ namespace LsrCoop.Server
                 Delegate eventHandler = CreateEventDelegate(eventInfo.EventHandlerType, handler);
                 eventInfo.AddEventHandler(events, eventHandler);
                 connectionSubscriptions.Add(new ConnectionEventSubscription(events, eventInfo, eventHandler));
-                Logger.Info($"[LsrCoop.Server] connection hook registered: {eventName}");
                 return true;
             }
             catch (Exception ex)

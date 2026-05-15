@@ -197,7 +197,9 @@ namespace LosSantosRED.lsr.Coop.Core
                 Dictionary<string, string> values = ReadKeyValues(path);
                 if (!string.Equals(GetValue(values, "BridgeVersion"), RequiredBridgeVersion, StringComparison.Ordinal)
                     || !string.Equals(GetValue(values, "TransportMode"), RequiredTransportMode, StringComparison.OrdinalIgnoreCase)
-                    || !IsCurrentProcess(GetValue(values, "ProcessId")))
+                    || !string.Equals(GetValue(values, "Direction"), "RAGECOOP_TO_LSR", StringComparison.OrdinalIgnoreCase)
+                    || !IsCurrentProcess(GetValue(values, "ProcessId"))
+                    || !IsCurrentSession(GetValue(values, "SessionId")))
                 {
                     return null;
                 }
@@ -686,6 +688,12 @@ namespace LosSantosRED.lsr.Coop.Core
         {
             int processId;
             return int.TryParse(value, out processId) && processId == Process.GetCurrentProcess().Id;
+        }
+
+        private static bool IsCurrentSession(string value)
+        {
+            return !string.IsNullOrWhiteSpace(value)
+                && string.Equals(value, CoopStartupBridge.BridgeSessionId, StringComparison.OrdinalIgnoreCase);
         }
 
         private static IEnumerable<string> GetSnapshotBridgePaths()

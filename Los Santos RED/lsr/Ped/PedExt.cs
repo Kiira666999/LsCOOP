@@ -924,21 +924,17 @@ public class PedExt : IComplexTaskable, ISeatAssignable
     }
     public virtual void OnItemPurchased(ILocationInteractable player, ModItem modItem, int numberPurchased, int moneySpent)
     {
-        int preMoney = Money;
         Money += Math.Abs(moneySpent);
         ItemDesires.OnItemsSoldToPlayer(modItem, numberPurchased);
-        EntryPoint.WriteToConsole($"OnItemPurchased moneySpent:{moneySpent} PreMoney: {preMoney} PostMoney: {Money}");
     }
     public virtual void OnItemSold(ILocationInteractable player, ModItem modItem, int numberPurchased, int moneySpent)
     {
-        int preMoney = Money;
         Money -= Math.Abs(moneySpent);
         if (Money < 0)
         {
             Money = 0;
         }
         ItemDesires.OnItemsBoughtFromPlayer(modItem, numberPurchased);
-        EntryPoint.WriteToConsole($"OnItemSold moneySpent:{moneySpent} PreMoney: {preMoney} PostMoney: {Money}");
     }
     public virtual void SetupTransactionItems(ShopMenu shopMenu, bool matchWithMenu)
     {

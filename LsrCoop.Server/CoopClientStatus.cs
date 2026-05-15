@@ -19,6 +19,7 @@ namespace LsrCoop.Server
         public string LsrVersion { get; set; }
         public string ConfigVersion { get; set; }
         public bool RequiredResourceLoaded { get; set; }
+        public CoopBridgeDiagnosticsReportDto BridgeDiagnostics { get; set; }
         public CoopClientReadinessState ReadinessState { get; set; } = CoopClientReadinessState.Connected;
         public bool CharacterSnapshotSent { get; set; }
         public bool CharacterSnapshotAcknowledged { get; set; }

@@ -119,14 +119,28 @@ namespace LosSantosRED.lsr.Coop.Core
                 return;
             }
 
-            if (!IsCurrentProcess(values) || !IsValidBridgeFile(values))
+            if (!IsCurrentProcess(values) || !IsCurrentSession(values) || !IsValidBridgeFile(values))
             {
+                TryDelete(path);
                 return;
             }
 
             string worldId = GetValue(values, "WorldId");
-            if (!string.IsNullOrWhiteSpace(worldId) && !string.Equals(worldId, CoopStartupBridge.WorldId, StringComparison.OrdinalIgnoreCase))
+            if (string.IsNullOrWhiteSpace(worldId) || !string.Equals(worldId, CoopStartupBridge.WorldId, StringComparison.OrdinalIgnoreCase))
             {
+                TryDelete(path);
+                return;
+            }
+
+            string bridgeProfileId = GetValue(values, "LocalProfileId");
+            if (string.IsNullOrWhiteSpace(bridgeProfileId))
+            {
+                bridgeProfileId = GetValue(values, "ProfileId");
+            }
+
+            if (string.IsNullOrWhiteSpace(bridgeProfileId) || !string.Equals(bridgeProfileId, CoopStartupBridge.LocalProfileId, StringComparison.OrdinalIgnoreCase))
+            {
+                TryDelete(path);
                 return;
             }
 
@@ -207,10 +221,18 @@ namespace LosSantosRED.lsr.Coop.Core
             return int.TryParse(GetValue(values, "ProcessId"), out processId) && processId == Process.GetCurrentProcess().Id;
         }
 
+        private static bool IsCurrentSession(Dictionary<string, string> values)
+        {
+            string sessionId = GetValue(values, "SessionId");
+            return !string.IsNullOrWhiteSpace(sessionId)
+                && string.Equals(sessionId, CoopStartupBridge.BridgeSessionId, StringComparison.OrdinalIgnoreCase);
+        }
+
         private static bool IsValidBridgeFile(Dictionary<string, string> values)
         {
             return string.Equals(GetValue(values, "BridgeVersion"), BridgeVersion, StringComparison.Ordinal)
-                && string.Equals(GetValue(values, "TransportMode"), TransportMode, StringComparison.OrdinalIgnoreCase);
+                && string.Equals(GetValue(values, "TransportMode"), TransportMode, StringComparison.OrdinalIgnoreCase)
+                && string.Equals(GetValue(values, "Direction"), "RAGECOOP_TO_LSR", StringComparison.OrdinalIgnoreCase);
         }
 
         private static Dictionary<string, string> ReadBridgeKeyValues(string path)
@@ -259,7 +281,18 @@ namespace LosSantosRED.lsr.Coop.Core
                 Directory.CreateDirectory(folder);
                 string targetPath = Path.Combine(folder, fileName);
                 string tempPath = targetPath + "." + nonce + ".tmp";
-                File.WriteAllLines(tempPath, lines);
+                using (FileStream stream = new FileStream(tempPath, FileMode.Create, FileAccess.Write, FileShare.None))
+                using (StreamWriter writer = new StreamWriter(stream))
+                {
+                    foreach (string line in lines ?? new string[0])
+                    {
+                        writer.WriteLine(line);
+                    }
+
+                    writer.Flush();
+                    stream.Flush();
+                }
+
                 File.Move(tempPath, targetPath);
             }
             catch
