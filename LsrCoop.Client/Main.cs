@@ -2,6 +2,7 @@ using RageCoop.Core.Scripting;
 using RageCoop.Client.Scripting;
 using GTA;
 using GTA.Native;
+using LsrCoop.Shared;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,13 +22,15 @@ namespace LsrCoop.Client
         private const string BridgeVersion = "1";
         private const string StartupBridgeVersion = "2";
         private const string TransportMode = "RAGECOOP";
-        private const string StartupStateFileName = "LsrCoopStartupState.txt";
-        private const string CharacterCreatedBridgeFileName = "LsrCoopCharacterCreated.txt";
-        private const string CharacterSnapshotBridgeFileName = "LsrCoopCharacterSnapshot.txt";
-        private const string GameplayOutboundBridgeSearchPattern = "LsrCoopGameplayOut.*.txt";
-        private const string GameplayInboundBridgeSearchPattern = "LsrCoopGameplayIn.*.txt";
-        private const string GameplayInboundBridgeFilePrefix = "LsrCoopGameplayIn.";
+        private const string StartupStateFileName = CoopBridgePaths.StartupStateFileName;
+        private const string CharacterCreatedBridgeFileName = CoopBridgePaths.CharacterCreatedFileName;
+        private const string CharacterSnapshotBridgeFileName = CoopBridgePaths.CharacterSnapshotFileName;
+        private const string GameplayOutboundBridgeSearchPattern = CoopBridgePaths.GameplayOutboundSearchPattern;
+        private const string GameplayInboundBridgeSearchPattern = CoopBridgePaths.GameplayInboundSearchPattern;
+        private const string GameplayInboundBridgeFilePrefix = CoopBridgePaths.GameplayInboundFilePrefix;
         private static readonly TimeSpan StaleBridgeTempAge = TimeSpan.FromMinutes(5);
+        private static readonly TimeSpan StaleBridgeFinalAge = TimeSpan.FromMinutes(15);
+        private static readonly TimeSpan BridgeCleanupInterval = TimeSpan.FromMinutes(5);
         private static readonly TimeSpan PassivePositionSaveInterval = TimeSpan.FromSeconds(60);
         private const float MaxAbsLastPositionCoordinate = 10000.0f;
         private const float MinLastPositionZ = -500.0f;
@@ -62,6 +65,8 @@ namespace LsrCoop.Client
         private readonly CoopAppearanceCaptureService appearanceCaptureService = new CoopAppearanceCaptureService();
         private readonly CoopAppearanceApplyService appearanceApplyService = new CoopAppearanceApplyService();
         private readonly Dictionary<string, PvpVictimDamageState> pvpVictimDamageStates = new Dictionary<string, PvpVictimDamageState>(StringComparer.OrdinalIgnoreCase);
+        private readonly object pendingClientEventLock = new object();
+        private readonly Queue<PendingClientEvent> pendingClientEvents = new Queue<PendingClientEvent>();
         private CoopWorldSnapshotDto latestWorldSnapshot;
         private string localWorldId;
         private string localProfileId;
@@ -78,8 +83,7 @@ namespace LsrCoop.Client
         private readonly HashSet<string> processedGameplayBridgeNonces = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private readonly HashSet<string> acknowledgedCharacterSnapshotSignatures = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private readonly HashSet<string> loggedBridgeSkipReasons = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-        private int bridgeCleanupDeletedFiles;
-        private int bridgeCleanupFailedFiles;
+        private BridgeCleanupSummary lastBridgeCleanupSummary = new BridgeCleanupSummary();
         private DateTimeOffset lastBridgeCleanupUtc;
         private DateTimeOffset lastPassivePositionSaveUtc;
 
@@ -148,10 +152,51 @@ namespace LsrCoop.Client
 
         private void OnClientTick()
         {
+            ProcessPendingClientEvents();
             PollCharacterCreationBridge();
             PollGameplayBridge();
+            TryRunPeriodicBridgeCleanup();
             DetectPlayerOnPlayerViolence();
             TrySendPassiveLastPosition();
+        }
+
+        private void EnqueueClientEvent(string eventName, Action action)
+        {
+            if (action == null)
+            {
+                return;
+            }
+
+            lock (pendingClientEventLock)
+            {
+                pendingClientEvents.Enqueue(new PendingClientEvent(eventName, action));
+            }
+        }
+
+        private void ProcessPendingClientEvents()
+        {
+            while (true)
+            {
+                PendingClientEvent pending;
+                lock (pendingClientEventLock)
+                {
+                    if (pendingClientEvents.Count == 0)
+                    {
+                        return;
+                    }
+
+                    pending = pendingClientEvents.Dequeue();
+                }
+
+                try
+                {
+                    pending.Action();
+                }
+                catch (Exception ex)
+                {
+                    Logger.Info($"[LsrCoop.Client] queued client event failed: event={pending.Name}, error={ex.Message}");
+                }
+            }
         }
 
         private void SendLoadPing()
@@ -193,6 +238,11 @@ namespace LsrCoop.Client
             string requiredBuild = GetArg(args, 1);
             string requiredConfig = GetArg(args, 2);
             string requiredLsr = GetArg(args, 3);
+            EnqueueClientEvent("compatibility status", () => ProcessCompatibilityStatus(state, requiredBuild, requiredConfig, requiredLsr));
+        }
+
+        private void ProcessCompatibilityStatus(string state, string requiredBuild, string requiredConfig, string requiredLsr)
+        {
             Logger.Info($"[LsrCoop.Client] compatibility status: {state}, requiredBuild={requiredBuild}, requiredConfig={requiredConfig}, requiredLsr={requiredLsr}");
         }
 
@@ -202,6 +252,11 @@ namespace LsrCoop.Client
             string profileId = GetArg(args, 1);
             string role = GetArg(args, 4);
             string compatibility = GetArg(args, 5);
+            EnqueueClientEvent("player registered", () => ProcessPlayerRegistered(worldId, profileId, role, compatibility));
+        }
+
+        private void ProcessPlayerRegistered(string worldId, string profileId, string role, string compatibility)
+        {
             if (!string.Equals(localProfileId, profileId, StringComparison.OrdinalIgnoreCase))
             {
                 localCharacterReadyForSimulation = false;
@@ -227,6 +282,11 @@ namespace LsrCoop.Client
         {
             string worldId = GetArg(args, 0);
             string activeHostProfileId = GetArg(args, 1);
+            EnqueueClientEvent("active host assigned", () => ProcessActiveHostAssigned(worldId, activeHostProfileId));
+        }
+
+        private void ProcessActiveHostAssigned(string worldId, string activeHostProfileId)
+        {
             this.activeHostProfileId = activeHostProfileId;
             UpdateBridgeActiveHost(worldId, activeHostProfileId);
             Logger.Info($"[LsrCoop.Client] active host assigned: world={worldId}, profile={activeHostProfileId}");
@@ -235,16 +295,27 @@ namespace LsrCoop.Client
         private void OnActiveHostReleased(CustomEventReceivedArgs args)
         {
             string worldId = GetArg(args, 0);
+            string releasedProfileId = GetArg(args, 1);
+            EnqueueClientEvent("active host released", () => ProcessActiveHostReleased(worldId, releasedProfileId));
+        }
+
+        private void ProcessActiveHostReleased(string worldId, string releasedProfileId)
+        {
             TrySendLastPosition("ActiveHostReleased", true);
             activeHostProfileId = string.Empty;
             pvpVictimDamageStates.Clear();
             UpdateBridgeWaiting(worldId);
-            Logger.Info($"[LsrCoop.Client] active host released: world={worldId}, profile={GetArg(args, 1)}");
+            Logger.Info($"[LsrCoop.Client] active host released: world={worldId}, profile={releasedProfileId}");
         }
 
         private void OnActiveHostUnavailable(CustomEventReceivedArgs args)
         {
             string worldId = GetArg(args, 0);
+            EnqueueClientEvent("active host unavailable", () => ProcessActiveHostUnavailable(worldId));
+        }
+
+        private void ProcessActiveHostUnavailable(string worldId)
+        {
             activeHostProfileId = string.Empty;
             pvpVictimDamageStates.Clear();
             UpdateBridgeWaiting(worldId);
@@ -259,6 +330,12 @@ namespace LsrCoop.Client
                 return;
             }
 
+            Logger.Info($"[LsrCoop.Client] world snapshot queued: world={snapshot.WorldId}, profiles={snapshot.Profiles?.Count ?? 0}, reason={snapshot.Reason}");
+            EnqueueClientEvent("world snapshot", () => ProcessWorldSnapshot(snapshot));
+        }
+
+        private void ProcessWorldSnapshot(CoopWorldSnapshotDto snapshot)
+        {
             latestWorldSnapshot = snapshot;
             localWorldId = string.IsNullOrWhiteSpace(snapshot.WorldId) ? localWorldId : snapshot.WorldId;
             activeHostProfileId = snapshot.ActiveHostProfileId ?? string.Empty;
@@ -283,6 +360,7 @@ namespace LsrCoop.Client
                         Logger.Info($"[LsrCoop.Client] client received last position: profile={profile.ProfileId}, x={FormatFloat(profile.LastPosition.X)}, y={FormatFloat(profile.LastPosition.Y)}, z={FormatFloat(profile.LastPosition.Z)}, heading={FormatFloat(profile.LastPosition.Heading)}");
                     }
                     WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character, profile.InventoryMoney, profile.Weapons, profile.OwnedVehicles, profile.PropertyOwnership, profile.CriminalHistory, profile.GangReputation, profile.LastPosition);
+                    Logger.Info($"[LsrCoop.Client] world snapshot bridge written from tick: world={snapshot.WorldId}, profile={profile.ProfileId}");
                 }
             }
 
@@ -295,6 +373,11 @@ namespace LsrCoop.Client
         {
             string worldId = GetArg(args, 0);
             string profileId = GetArg(args, 1);
+            EnqueueClientEvent("character create required", () => ProcessCharacterCreateRequired(worldId, profileId));
+        }
+
+        private void ProcessCharacterCreateRequired(string worldId, string profileId)
+        {
             if (string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase))
             {
                 localCharacterReadyForSimulation = false;
@@ -324,6 +407,47 @@ namespace LsrCoop.Client
             CoopOwnedVehicleSnapshot ownedVehicles = Deserialize<CoopOwnedVehicleSnapshot>(ownedVehiclesJson);
             CoopPropertyOwnershipSnapshot propertyOwnership = Deserialize<CoopPropertyOwnershipSnapshot>(propertyOwnershipJson);
             CoopLastPositionStateDto lastPosition = Deserialize<CoopLastPositionStateDto>(lastPositionJson);
+            EnqueueClientEvent("character snapshot", () => ProcessCharacterSnapshot(
+                worldId,
+                profileId,
+                characterJson,
+                inventoryMoneyJson,
+                weaponsJson,
+                criminalHistoryJson,
+                gangReputationJson,
+                ownedVehiclesJson,
+                propertyOwnershipJson,
+                lastPositionJson,
+                snapshot,
+                inventoryMoney,
+                weapons,
+                criminalHistory,
+                gangReputation,
+                ownedVehicles,
+                propertyOwnership,
+                lastPosition));
+        }
+
+        private void ProcessCharacterSnapshot(
+            string worldId,
+            string profileId,
+            string characterJson,
+            string inventoryMoneyJson,
+            string weaponsJson,
+            string criminalHistoryJson,
+            string gangReputationJson,
+            string ownedVehiclesJson,
+            string propertyOwnershipJson,
+            string lastPositionJson,
+            CoopCharacterSnapshot snapshot,
+            CoopInventoryMoneySnapshot inventoryMoney,
+            CoopWeaponSnapshot weapons,
+            CoopCriminalHistoryStateDto criminalHistory,
+            CoopGangReputationStateDto gangReputation,
+            CoopOwnedVehicleSnapshot ownedVehicles,
+            CoopPropertyOwnershipSnapshot propertyOwnership,
+            CoopLastPositionStateDto lastPosition)
+        {
             if (lastPosition != null)
             {
                 Logger.Info($"[LsrCoop.Client] client received last position: profile={profileId}, x={FormatFloat(lastPosition.X)}, y={FormatFloat(lastPosition.Y)}, z={FormatFloat(lastPosition.Z)}, heading={FormatFloat(lastPosition.Heading)}");
@@ -474,6 +598,7 @@ namespace LsrCoop.Client
 
             if (!TryReadBridgeKeyValues(path, out Dictionary<string, string> values))
             {
+                TryDeleteMalformedBridgeFile(path, "character bridge malformed");
                 return;
             }
 
@@ -484,13 +609,13 @@ namespace LsrCoop.Client
                 || !IsExpectedBridgeDirection(values, "LSR_TO_RAGECOOP")
                 || !IsCurrentWorldProfileBridgeFile(values))
             {
-                TryDeleteBridgeFile(path, "character bridge stale", true);
+                TryDeleteMalformedBridgeFile(path, "character bridge stale");
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(nonce))
             {
-                TryDeleteBridgeFile(path, "character bridge missing nonce", true);
+                TryDeleteMalformedBridgeFile(path, "character bridge missing nonce");
                 return;
             }
 
@@ -535,13 +660,14 @@ namespace LsrCoop.Client
 
             if (!TryReadBridgeKeyValues(path, out Dictionary<string, string> values))
             {
+                TryDeleteMalformedBridgeFile(path, "gameplay bridge malformed");
                 return;
             }
 
             string nonce = GetBridgeValue(values, "Nonce");
             if (string.IsNullOrWhiteSpace(nonce))
             {
-                TryDeleteBridgeFile(path, "gameplay bridge missing nonce", true);
+                TryDeleteMalformedBridgeFile(path, "gameplay bridge missing nonce");
                 return;
             }
 
@@ -573,13 +699,13 @@ namespace LsrCoop.Client
             string payloadJson = GetBridgeValue(values, "PayloadJson");
             if (string.IsNullOrWhiteSpace(eventType))
             {
-                TryDeleteBridgeFile(path, "gameplay bridge missing event type", true);
+                TryDeleteMalformedBridgeFile(path, "gameplay bridge missing event type");
                 return;
             }
 
             if (!IsJsonPayloadValid(payloadJson))
             {
-                TryDeleteBridgeFile(path, "gameplay bridge malformed JSON", true);
+                TryDeleteMalformedBridgeFile(path, "gameplay bridge malformed JSON");
                 return;
             }
 
@@ -870,10 +996,7 @@ namespace LsrCoop.Client
                 $"Nonce={EscapeBridgeValue(nonce)}",
             };
 
-            foreach (string folder in GetDistinctBridgeStateFolders())
-            {
-                WriteAtomicBridgeFile(folder, CharacterSnapshotBridgeFileName, lines, nonce);
-            }
+            WriteAtomicBridgeFile(CoopBridgePaths.CharacterFolder, CharacterSnapshotBridgeFileName, lines, nonce);
 
             if (lastPosition != null)
             {
@@ -889,6 +1012,11 @@ namespace LsrCoop.Client
                 return;
             }
 
+            EnqueueClientEvent("appearance changed", () => ProcessAppearanceChanged(changed));
+        }
+
+        private void ProcessAppearanceChanged(CoopAppearanceChanged changed)
+        {
             ApplyAppearanceIfLocal(changed.WorldId, changed.ProfileId, changed.Appearance);
             Logger.Info($"[LsrCoop.Client] appearance changed: world={changed.WorldId}, profile={changed.ProfileId}, source={changed.SourceProfileId}");
         }
@@ -901,6 +1029,11 @@ namespace LsrCoop.Client
                 return;
             }
 
+            EnqueueClientEvent("gameplay action result", () => ProcessGameplayActionResult(result));
+        }
+
+        private void ProcessGameplayActionResult(CoopGameplayActionResultDto result)
+        {
             WriteGameplayInboundBridgeFile("GameplayActionResult", new Dictionary<string, string>
             {
                 ["WorldId"] = result.WorldId ?? localWorldId ?? string.Empty,
@@ -1008,7 +1141,17 @@ namespace LsrCoop.Client
         private void OnPvpCrimeAssigned(CustomEventReceivedArgs args)
         {
             CoopPvpCrimeReportDto report = Deserialize<CoopPvpCrimeReportDto>(GetArg(args, 0));
-            if (report == null || !string.Equals(localProfileId, activeHostProfileId, StringComparison.OrdinalIgnoreCase))
+            if (report == null)
+            {
+                return;
+            }
+
+            EnqueueClientEvent("pvp crime assigned", () => ProcessPvpCrimeAssigned(report));
+        }
+
+        private void ProcessPvpCrimeAssigned(CoopPvpCrimeReportDto report)
+        {
+            if (!string.Equals(localProfileId, activeHostProfileId, StringComparison.OrdinalIgnoreCase))
             {
                 return;
             }
@@ -1752,59 +1895,102 @@ namespace LsrCoop.Client
 
         private IEnumerable<string> GetCharacterCreationBridgePaths()
         {
-            foreach (string folder in GetDistinctBridgeStateFolders())
-            {
-                yield return Path.Combine(folder, CharacterCreatedBridgeFileName);
-            }
+            yield return CoopBridgePaths.CharacterCreatedPath;
         }
 
         private IEnumerable<string> GetGameplayOutboundBridgePaths()
         {
-            foreach (string folder in GetDistinctBridgeStateFolders())
+            foreach (string path in SafeEnumerateBridgeFiles(CoopBridgePaths.GameplayOutboundFolder, GameplayOutboundBridgeSearchPattern))
             {
-                foreach (string path in SafeEnumerateBridgeFiles(folder, GameplayOutboundBridgeSearchPattern))
-                {
-                    yield return path;
-                }
+                yield return path;
             }
         }
 
         private void CleanupBridgeFiles(bool includeIdentityCleanup)
         {
-            int deleted = 0;
-            int failed = 0;
-            foreach (string folder in GetDistinctBridgeStateFolders())
-            {
-                if (string.IsNullOrWhiteSpace(folder) || !Directory.Exists(folder))
-                {
-                    continue;
-                }
+            BridgeCleanupSummary summary = new BridgeCleanupSummary();
+            CleanupCurrentBridgeFiles(includeIdentityCleanup, summary);
+            CleanupLegacyBridgeFiles(summary);
+            lastBridgeCleanupSummary = summary;
+            lastBridgeCleanupUtc = DateTimeOffset.UtcNow;
+            Logger.Info($"[LsrCoop.Client] bridge cleanup: root={CoopBridgePaths.BridgeRootPath}, tmpDeleted={summary.DeletedTempFiles}, staleDeleted={summary.DeletedStaleFiles}, malformedDeleted={summary.DeletedMalformedFiles}, legacyDetected={summary.LegacyFilesDetected}, legacyDeleted={summary.DeletedLegacyFiles}, pendingKept={summary.KeptPendingFiles}, failed={summary.FailedFiles}, identityKnown={HasKnownBridgeIdentity()}");
+        }
 
-                foreach (string path in SafeEnumerateBridgeFiles(folder, "LsrCoop*.tmp"))
+        private void TryRunPeriodicBridgeCleanup()
+        {
+            if (lastBridgeCleanupUtc != default && DateTimeOffset.UtcNow - lastBridgeCleanupUtc < BridgeCleanupInterval)
+            {
+                return;
+            }
+
+            CleanupBridgeFiles(true);
+            ReportBridgeDiagnostics();
+        }
+
+        private void CleanupCurrentBridgeFiles(bool includeIdentityCleanup, BridgeCleanupSummary summary)
+        {
+            foreach (string folder in CoopBridgePaths.GetCurrentBridgeFolders())
+            {
+                foreach (string path in SafeEnumerateBridgeFiles(folder, CoopBridgePaths.BridgeTempSearchPattern))
                 {
                     if (IsOldBridgeTempFile(path))
                     {
-                        TryDeleteBridgeFile(path, "stale temp", true, ref deleted, ref failed);
+                        TryDeleteBridgeFile(path, "stale temp", summary, BridgeCleanupDeleteKind.Temp);
                     }
-                }
-
-                foreach (string path in GetBridgeCleanupFinalPaths(folder))
-                {
-                    if (ShouldDeleteBridgeFile(path, includeIdentityCleanup, out string reason))
+                    else
                     {
-                        TryDeleteBridgeFile(path, reason, true, ref deleted, ref failed);
+                        summary.KeptPendingFiles++;
                     }
                 }
             }
 
-            lastBridgeCleanupUtc = DateTimeOffset.UtcNow;
-            if (deleted > 0 || failed > 0)
+            foreach (string path in GetCurrentBridgeFinalPaths())
             {
-                Logger.Info($"[LsrCoop.Client] bridge cleanup: deleted={deleted}, failed={failed}, identityKnown={HasKnownBridgeIdentity()}");
+                if (ShouldDeleteBridgeFile(path, includeIdentityCleanup, out string reason, out BridgeCleanupDeleteKind deleteKind))
+                {
+                    TryDeleteBridgeFile(path, reason, summary, deleteKind);
+                }
+                else
+                {
+                    summary.KeptPendingFiles++;
+                }
             }
         }
 
-        private IEnumerable<string> GetBridgeCleanupFinalPaths(string folder)
+        private void CleanupLegacyBridgeFiles(BridgeCleanupSummary summary)
+        {
+            foreach (string folder in CoopBridgePaths.GetLegacyBridgeFolders())
+            {
+                foreach (string path in GetLegacyBridgeFiles(folder))
+                {
+                    summary.LegacyFilesDetected++;
+                    TryDeleteBridgeFile(path, "legacy bridge file", summary, BridgeCleanupDeleteKind.Legacy);
+                }
+            }
+        }
+
+        private IEnumerable<string> GetCurrentBridgeFinalPaths()
+        {
+            foreach (string path in new[] { CoopBridgePaths.StartupStatePath, CoopBridgePaths.CharacterCreatedPath, CoopBridgePaths.CharacterSnapshotPath })
+            {
+                if (File.Exists(path))
+                {
+                    yield return path;
+                }
+            }
+
+            foreach (string path in SafeEnumerateBridgeFiles(CoopBridgePaths.GameplayOutboundFolder, GameplayOutboundBridgeSearchPattern))
+            {
+                yield return path;
+            }
+
+            foreach (string path in SafeEnumerateBridgeFiles(CoopBridgePaths.GameplayInboundFolder, GameplayInboundBridgeSearchPattern))
+            {
+                yield return path;
+            }
+        }
+
+        private IEnumerable<string> GetLegacyBridgeFiles(string folder)
         {
             foreach (string fileName in new[] { StartupStateFileName, CharacterCreatedBridgeFileName, CharacterSnapshotBridgeFileName })
             {
@@ -1824,14 +2010,21 @@ namespace LsrCoop.Client
             {
                 yield return path;
             }
+
+            foreach (string path in SafeEnumerateBridgeFiles(folder, CoopBridgePaths.BridgeTempSearchPattern))
+            {
+                yield return path;
+            }
         }
 
-        private bool ShouldDeleteBridgeFile(string path, bool includeIdentityCleanup, out string reason)
+        private bool ShouldDeleteBridgeFile(string path, bool includeIdentityCleanup, out string reason, out BridgeCleanupDeleteKind deleteKind)
         {
             reason = string.Empty;
+            deleteKind = BridgeCleanupDeleteKind.Malformed;
             if (!TryReadBridgeKeyValues(path, out Dictionary<string, string> values))
             {
-                return false;
+                reason = "malformed";
+                return true;
             }
 
             string fileName = Path.GetFileName(path);
@@ -1852,12 +2045,14 @@ namespace LsrCoop.Client
                 || !string.Equals(GetBridgeValue(values, "TransportMode"), TransportMode, StringComparison.OrdinalIgnoreCase))
             {
                 reason = "invalid header";
+                deleteKind = BridgeCleanupDeleteKind.Malformed;
                 return true;
             }
 
             if (!IsCurrentProcessId(values))
             {
                 reason = "old process";
+                deleteKind = BridgeCleanupDeleteKind.Malformed;
                 return true;
             }
 
@@ -1866,6 +2061,7 @@ namespace LsrCoop.Client
                 || !string.Equals(sessionId, bridgeSessionId, StringComparison.OrdinalIgnoreCase))
             {
                 reason = "wrong session";
+                deleteKind = BridgeCleanupDeleteKind.Malformed;
                 return true;
             }
 
@@ -1880,6 +2076,7 @@ namespace LsrCoop.Client
                 && (string.IsNullOrWhiteSpace(worldId) || !string.Equals(worldId, localWorldId, StringComparison.OrdinalIgnoreCase)))
             {
                 reason = "wrong world";
+                deleteKind = BridgeCleanupDeleteKind.Malformed;
                 return true;
             }
 
@@ -1887,10 +2084,24 @@ namespace LsrCoop.Client
                 && (string.IsNullOrWhiteSpace(profileId) || !string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase)))
             {
                 reason = "wrong profile";
+                deleteKind = BridgeCleanupDeleteKind.Malformed;
+                return true;
+            }
+
+            if (!IsCurrentSingleStateBridgeFile(fileName) && IsOldBridgeFinalFile(path))
+            {
+                reason = "stale final";
+                deleteKind = BridgeCleanupDeleteKind.Stale;
                 return true;
             }
 
             return false;
+        }
+
+        private bool IsCurrentSingleStateBridgeFile(string fileName)
+        {
+            return string.Equals(fileName, StartupStateFileName, StringComparison.OrdinalIgnoreCase)
+                || string.Equals(fileName, CharacterSnapshotBridgeFileName, StringComparison.OrdinalIgnoreCase);
         }
 
         private bool TryReadBridgeKeyValues(string path, out Dictionary<string, string> values)
@@ -1918,6 +2129,20 @@ namespace LsrCoop.Client
             catch (Exception ex)
             {
                 LogBridgeSkipOnce("temp stat failed", path, ex.Message);
+                return false;
+            }
+        }
+
+        private bool IsOldBridgeFinalFile(string path)
+        {
+            try
+            {
+                FileInfo file = new FileInfo(path);
+                return file.Exists && DateTimeOffset.UtcNow - new DateTimeOffset(file.LastWriteTimeUtc, TimeSpan.Zero) > StaleBridgeFinalAge;
+            }
+            catch (Exception ex)
+            {
+                LogBridgeSkipOnce("final stat failed", path, ex.Message);
                 return false;
             }
         }
@@ -1953,14 +2178,20 @@ namespace LsrCoop.Client
                 ProfileId = localProfileId ?? string.Empty,
                 ProcessId = Process.GetCurrentProcess().Id,
                 SessionId = bridgeSessionId,
+                BridgeRootPath = CoopBridgePaths.BridgeRootPath,
                 StartupStateFiles = CountBridgeFiles(StartupStateFileName),
                 CharacterCreatedFiles = CountBridgeFiles(CharacterCreatedBridgeFileName),
                 CharacterSnapshotFiles = CountBridgeFiles(CharacterSnapshotBridgeFileName),
                 PendingGameplayOutFiles = CountBridgeFiles(GameplayOutboundBridgeSearchPattern),
                 PendingGameplayInFiles = CountBridgeFiles(GameplayInboundBridgeSearchPattern),
-                TempFiles = CountBridgeFiles("LsrCoop*.tmp"),
-                DeletedStaleFiles = bridgeCleanupDeletedFiles,
-                CleanupFailedFiles = bridgeCleanupFailedFiles,
+                TempFiles = CountBridgeFiles(CoopBridgePaths.BridgeTempSearchPattern),
+                DeletedTempFiles = lastBridgeCleanupSummary.DeletedTempFiles,
+                DeletedStaleFiles = lastBridgeCleanupSummary.DeletedStaleFiles,
+                DeletedMalformedFiles = lastBridgeCleanupSummary.DeletedMalformedFiles,
+                DeletedLegacyFiles = lastBridgeCleanupSummary.DeletedLegacyFiles,
+                LegacyFilesDetected = lastBridgeCleanupSummary.LegacyFilesDetected,
+                KeptPendingFiles = lastBridgeCleanupSummary.KeptPendingFiles,
+                CleanupFailedFiles = lastBridgeCleanupSummary.FailedFiles,
                 LastCleanupUtc = lastBridgeCleanupUtc == default ? string.Empty : lastBridgeCleanupUtc.UtcDateTime.ToString("O"),
             };
 
@@ -1970,7 +2201,7 @@ namespace LsrCoop.Client
         private int CountBridgeFiles(string pattern)
         {
             HashSet<string> paths = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            foreach (string folder in GetDistinctBridgeStateFolders())
+            foreach (string folder in CoopBridgePaths.GetCurrentBridgeFolders())
             {
                 foreach (string path in SafeEnumerateBridgeFiles(folder, pattern))
                 {
@@ -2093,10 +2324,7 @@ namespace LsrCoop.Client
                 lines.Add($"{pair.Key}={EscapeBridgeValue(pair.Value)}");
             }
 
-            foreach (string folder in GetDistinctBridgeStateFolders())
-            {
-                WriteAtomicBridgeFile(folder, GameplayInboundBridgeFilePrefix + nonce + ".txt", lines.ToArray(), nonce);
-            }
+            WriteAtomicBridgeFile(CoopBridgePaths.GameplayInboundFolder, GameplayInboundBridgeFilePrefix + nonce + ".txt", lines.ToArray(), nonce);
         }
 
         private string SerializeComponents(IEnumerable<CoopPedComponentState> components)
@@ -2411,7 +2639,7 @@ namespace LsrCoop.Client
 
         private void TryDeleteStaleGameplayBridgeFile(string path, Dictionary<string, string> values, string reason)
         {
-            TryDeleteBridgeFile(path, $"stale gameplay bridge {reason}", true);
+            TryDeleteMalformedBridgeFile(path, $"stale gameplay bridge {reason}");
         }
 
         private bool IsCurrentProcessId(Dictionary<string, string> values)
@@ -2432,12 +2660,68 @@ namespace LsrCoop.Client
 
         private bool TryDeleteBridgeFile(string path, string reason, bool countAsCleanup)
         {
-            int deleted = 0;
-            int failed = 0;
-            return TryDeleteBridgeFile(path, reason, countAsCleanup, ref deleted, ref failed);
+            if (countAsCleanup)
+            {
+                return TryDeleteMalformedBridgeFile(path, reason);
+            }
+
+            return TryDeleteBridgeFileNoSummary(path, reason);
         }
 
-        private bool TryDeleteBridgeFile(string path, string reason, bool countAsCleanup, ref int deleted, ref int failed)
+        private bool TryDeleteMalformedBridgeFile(string path, string reason)
+        {
+            if (TryDeleteBridgeFileNoSummary(path, reason))
+            {
+                LogBridgeSkipOnce(reason, path, string.Empty);
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool TryDeleteBridgeFile(string path, string reason, BridgeCleanupSummary summary, BridgeCleanupDeleteKind deleteKind)
+        {
+            if (summary == null)
+            {
+                return TryDeleteBridgeFileNoSummary(path, reason);
+            }
+
+            try
+            {
+                if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
+                {
+                    return false;
+                }
+
+                File.Delete(path);
+                switch (deleteKind)
+                {
+                    case BridgeCleanupDeleteKind.Temp:
+                        summary.DeletedTempFiles++;
+                        break;
+                    case BridgeCleanupDeleteKind.Stale:
+                        summary.DeletedStaleFiles++;
+                        break;
+                    case BridgeCleanupDeleteKind.Legacy:
+                        summary.DeletedLegacyFiles++;
+                        break;
+                    default:
+                        summary.DeletedMalformedFiles++;
+                        break;
+                }
+
+                LogBridgeSkipOnce(reason, path, string.Empty);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                summary.FailedFiles++;
+                LogBridgeSkipOnce("delete failed", path, ex.Message);
+                return false;
+            }
+        }
+
+        private bool TryDeleteBridgeFileNoSummary(string path, string reason)
         {
             if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
             {
@@ -2447,23 +2731,10 @@ namespace LsrCoop.Client
             try
             {
                 File.Delete(path);
-                if (countAsCleanup)
-                {
-                    deleted++;
-                    bridgeCleanupDeletedFiles++;
-                    LogBridgeSkipOnce(reason, path, string.Empty);
-                }
-
                 return true;
             }
             catch (Exception ex)
             {
-                if (countAsCleanup)
-                {
-                    failed++;
-                    bridgeCleanupFailedFiles++;
-                }
-
                 LogBridgeSkipOnce("delete failed", path, ex.Message);
                 return false;
             }
@@ -2509,6 +2780,37 @@ namespace LsrCoop.Client
             public DateTimeOffset LastReportedUtc { get; set; }
         }
 
+        private sealed class PendingClientEvent
+        {
+            public PendingClientEvent(string name, Action action)
+            {
+                Name = string.IsNullOrWhiteSpace(name) ? "unknown" : name;
+                Action = action;
+            }
+
+            public string Name { get; }
+            public Action Action { get; }
+        }
+
+        private enum BridgeCleanupDeleteKind
+        {
+            Temp,
+            Stale,
+            Malformed,
+            Legacy,
+        }
+
+        private sealed class BridgeCleanupSummary
+        {
+            public int DeletedTempFiles { get; set; }
+            public int DeletedStaleFiles { get; set; }
+            public int DeletedMalformedFiles { get; set; }
+            public int DeletedLegacyFiles { get; set; }
+            public int LegacyFilesDetected { get; set; }
+            public int KeptPendingFiles { get; set; }
+            public int FailedFiles { get; set; }
+        }
+
         private void WriteBridgeState(bool isCoopEnabled, bool hasActiveHostAssigned, string worldId, string localProfileId, string activeHostProfileId, bool isCharacterReadyForSimulation)
         {
             string[] lines =
@@ -2529,48 +2831,8 @@ namespace LsrCoop.Client
                 $"ActiveHostProfileId={activeHostProfileId ?? string.Empty}",
             };
 
-            foreach (string folder in GetDistinctBridgeStateFolders())
-            {
-                WriteAtomicBridgeFile(folder, StartupStateFileName, lines, Guid.NewGuid().ToString("N"));
-            }
+            WriteAtomicBridgeFile(CoopBridgePaths.StartupFolder, StartupStateFileName, lines, Guid.NewGuid().ToString("N"));
         }
 
-        private IEnumerable<string> GetDistinctBridgeStateFolders()
-        {
-            HashSet<string> folders = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
-            foreach (string folder in GetBridgeStateFolders())
-            {
-                if (string.IsNullOrWhiteSpace(folder))
-                {
-                    continue;
-                }
-
-                string fullPath;
-                try
-                {
-                    fullPath = Path.GetFullPath(folder);
-                }
-                catch
-                {
-                    fullPath = folder;
-                }
-
-                if (folders.Add(fullPath))
-                {
-                    yield return fullPath;
-                }
-            }
-        }
-
-        private string[] GetBridgeStateFolders()
-        {
-            return new[]
-            {
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins", "LosSantosRED"),
-                Path.Combine(Directory.GetCurrentDirectory(), "Plugins", "LosSantosRED"),
-                AppDomain.CurrentDomain.BaseDirectory,
-                Directory.GetCurrentDirectory(),
-            };
-        }
     }
 }

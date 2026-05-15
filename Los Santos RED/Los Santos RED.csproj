@@ -122,6 +122,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\LsrCoop.Shared\CoopBridgePaths.cs">
+      <Link>lsr\Coop\Shared\CoopBridgePaths.cs</Link>
+    </Compile>
     <Compile Include="lsr\Coop\Core\CoopAppearanceCaptureService.cs" />
     <Compile Include="lsr\Coop\Core\CoopAppearanceApplyService.cs" />
     <Compile Include="lsr\Coop\Core\CoopAppearanceChangeRequest.cs" />

@@ -388,6 +388,7 @@ namespace LsrCoop.Server
 
             Reply(client, "[LsrCoop.Server] "
                 + $"bridge profile={Clean(profile.ProfileId)} "
+                + $"root={Clean(report.BridgeRootPath)} "
                 + $"process={report.ProcessId} "
                 + $"session={Clean(report.SessionId)} "
                 + $"startup={report.StartupStateFiles} "
@@ -396,7 +397,12 @@ namespace LsrCoop.Server
                 + $"gameplayOut={report.PendingGameplayOutFiles} "
                 + $"gameplayIn={report.PendingGameplayInFiles} "
                 + $"tmp={report.TempFiles} "
+                + $"tmpDeleted={report.DeletedTempFiles} "
                 + $"staleDeleted={report.DeletedStaleFiles} "
+                + $"malformedDeleted={report.DeletedMalformedFiles} "
+                + $"legacyDetected={report.LegacyFilesDetected} "
+                + $"legacyDeleted={report.DeletedLegacyFiles} "
+                + $"pendingKept={report.KeptPendingFiles} "
                 + $"cleanupFailed={report.CleanupFailedFiles} "
                 + $"lastCleanup={Clean(report.LastCleanupUtc)}");
         }

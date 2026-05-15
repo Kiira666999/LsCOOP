@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using LsrCoop.Shared;
 using Rage;
 using Rage.Native;
 
@@ -8,7 +9,6 @@ namespace LosSantosRED.lsr.Coop.Core
 {
     public static class CoopCharacterCreationBridge
     {
-        private const string CharacterCreatedFileName = "LsrCoopCharacterCreated.txt";
         private const int StablePedTimeoutMilliseconds = 3000;
         private const int StablePedTickMilliseconds = 100;
         private const int RequiredStableMilliseconds = 1200;
@@ -113,10 +113,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 $"Nonce={Escape(nonce)}",
             };
 
-            foreach (string folder in GetBridgeFolders())
-            {
-                WriteAtomic(folder, lines, nonce);
-            }
+            WriteAtomic(CoopBridgePaths.CharacterFolder, lines, nonce);
         }
 
         private static void WriteAtomic(string folder, string[] lines, string nonce)
@@ -129,7 +126,7 @@ namespace LosSantosRED.lsr.Coop.Core
             try
             {
                 Directory.CreateDirectory(folder);
-                string targetPath = Path.Combine(folder, CharacterCreatedFileName);
+                string targetPath = Path.Combine(folder, CoopBridgePaths.CharacterCreatedFileName);
                 string tempPath = targetPath + "." + nonce + ".tmp";
                 using (FileStream stream = new FileStream(tempPath, FileMode.Create, FileAccess.Write, FileShare.None))
                 using (StreamWriter writer = new StreamWriter(stream))
@@ -161,17 +158,6 @@ namespace LosSantosRED.lsr.Coop.Core
             catch
             {
             }
-        }
-
-        private static string[] GetBridgeFolders()
-        {
-            return new[]
-            {
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins", "LosSantosRED"),
-                Path.Combine(Directory.GetCurrentDirectory(), "Plugins", "LosSantosRED"),
-                AppDomain.CurrentDomain.BaseDirectory,
-                Directory.GetCurrentDirectory(),
-            };
         }
 
         private static string Escape(string value)

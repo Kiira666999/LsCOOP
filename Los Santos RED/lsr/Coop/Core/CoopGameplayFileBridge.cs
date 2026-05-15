@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using LsrCoop.Shared;
 
 namespace LosSantosRED.lsr.Coop.Core
 {
@@ -14,9 +15,6 @@ namespace LosSantosRED.lsr.Coop.Core
     {
         private const string BridgeVersion = "1";
         private const string TransportMode = "RAGECOOP";
-        private const string OutboundFilePrefix = "LsrCoopGameplayOut.";
-        private const string InboundFilePrefix = "LsrCoopGameplayIn.";
-        private const string FileExtension = ".txt";
         private static readonly HashSet<string> ProcessedInboundNonces = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         private static DateTimeOffset nextInboundPollUtc = DateTimeOffset.MinValue;
 
@@ -107,8 +105,9 @@ namespace LosSantosRED.lsr.Coop.Core
             {
                 values = ReadBridgeKeyValues(path);
             }
-            catch
+            catch (Exception ex)
             {
+                DeleteRejectedInbound(path, "malformed", ex.Message);
                 return;
             }
 
@@ -121,14 +120,14 @@ namespace LosSantosRED.lsr.Coop.Core
 
             if (!IsCurrentProcess(values) || !IsCurrentSession(values) || !IsValidBridgeFile(values))
             {
-                TryDelete(path);
+                DeleteRejectedInbound(path, "invalid process/session/header", string.Empty);
                 return;
             }
 
             string worldId = GetValue(values, "WorldId");
             if (string.IsNullOrWhiteSpace(worldId) || !string.Equals(worldId, CoopStartupBridge.WorldId, StringComparison.OrdinalIgnoreCase))
             {
-                TryDelete(path);
+                DeleteRejectedInbound(path, "wrong world", string.Empty);
                 return;
             }
 
@@ -140,7 +139,7 @@ namespace LosSantosRED.lsr.Coop.Core
 
             if (string.IsNullOrWhiteSpace(bridgeProfileId) || !string.Equals(bridgeProfileId, CoopStartupBridge.LocalProfileId, StringComparison.OrdinalIgnoreCase))
             {
-                TryDelete(path);
+                DeleteRejectedInbound(path, "wrong profile", string.Empty);
                 return;
             }
 
@@ -166,6 +165,11 @@ namespace LosSantosRED.lsr.Coop.Core
                     IsTrue(GetValue(values, "WasShot")),
                     IsTrue(GetValue(values, "WasMeleeAttacked")),
                     IsTrue(GetValue(values, "WasHitByVehicle")));
+            }
+            else
+            {
+                DeleteRejectedInbound(path, "unknown event type", eventType);
+                return;
             }
 
             if (handled)
@@ -193,25 +197,36 @@ namespace LosSantosRED.lsr.Coop.Core
                 $"PayloadJson={Escape(payloadJson)}",
             };
 
-            foreach (string folder in GetBridgeFolders())
-            {
-                WriteAtomic(folder, OutboundFilePrefix + nonce + FileExtension, lines, nonce);
-            }
+            WriteAtomic(CoopBridgePaths.GameplayOutboundFolder, CoopBridgePaths.GameplayOutboundFilePrefix + nonce + CoopBridgePaths.BridgeFileExtension, lines, nonce);
         }
 
         private static IEnumerable<string> GetInboundPaths()
         {
-            foreach (string folder in GetBridgeFolders())
+            string folder = CoopBridgePaths.GameplayInboundFolder;
+            if (string.IsNullOrWhiteSpace(folder) || !Directory.Exists(folder))
             {
-                if (string.IsNullOrWhiteSpace(folder) || !Directory.Exists(folder))
-                {
-                    continue;
-                }
+                yield break;
+            }
 
-                foreach (string path in Directory.GetFiles(folder, InboundFilePrefix + "*" + FileExtension))
+            foreach (string path in Directory.GetFiles(folder, CoopBridgePaths.GameplayInboundSearchPattern))
+            {
+                yield return path;
+            }
+        }
+
+        private static void DeleteRejectedInbound(string path, string reason, string detail)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(path) && File.Exists(path))
                 {
-                    yield return path;
+                    File.Delete(path);
+                    string suffix = string.IsNullOrWhiteSpace(detail) ? string.Empty : $" Detail:{detail}";
+                    EntryPoint.WriteToConsole($"Co-op gameplay inbound bridge file deleted Reason:{reason} File:{Path.GetFileName(path)}{suffix}", 0);
                 }
+            }
+            catch
+            {
             }
         }
 
@@ -309,17 +324,6 @@ namespace LosSantosRED.lsr.Coop.Core
             catch
             {
             }
-        }
-
-        private static string[] GetBridgeFolders()
-        {
-            return new[]
-            {
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins", "LosSantosRED"),
-                Path.Combine(Directory.GetCurrentDirectory(), "Plugins", "LosSantosRED"),
-                AppDomain.CurrentDomain.BaseDirectory,
-                Directory.GetCurrentDirectory(),
-            };
         }
 
         private static string Escape(string value)

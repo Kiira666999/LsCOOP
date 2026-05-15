@@ -1,12 +1,12 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using LsrCoop.Shared;
 
 namespace LosSantosRED.lsr.Coop.Core
 {
     public static class CoopStartupBridge
     {
-        private const string StateFileName = "LsrCoopStartupState.txt";
         private const string RequiredBridgeVersion = "2";
         private const string RequiredTransportMode = "RAGECOOP";
 
@@ -157,13 +157,21 @@ namespace LosSantosRED.lsr.Coop.Core
                 int parsedProcessId;
                 if (!int.TryParse(processId, out parsedProcessId) || parsedProcessId != Process.GetCurrentProcess().Id)
                 {
+                    DeleteRejectedStateFile(statePath, "old process");
                     SetDisabled();
                     return;
                 }
 
-                bool configured = IsTrue(GetValue(lines, "CoopModeEnabled"))
-                    && string.Equals(GetValue(lines, "BridgeVersion"), RequiredBridgeVersion, StringComparison.Ordinal)
+                bool validHeader = string.Equals(GetValue(lines, "BridgeVersion"), RequiredBridgeVersion, StringComparison.Ordinal)
                     && string.Equals(GetValue(lines, "TransportMode"), RequiredTransportMode, StringComparison.OrdinalIgnoreCase);
+                if (!validHeader)
+                {
+                    DeleteRejectedStateFile(statePath, "invalid header");
+                    SetDisabled();
+                    return;
+                }
+
+                bool configured = IsTrue(GetValue(lines, "CoopModeEnabled"));
                 bool enabled = configured && IsTrue(GetValue(lines, "IsCoopEnabled"));
                 if (!enabled)
                 {
@@ -190,6 +198,7 @@ namespace LosSantosRED.lsr.Coop.Core
             }
             catch
             {
+                DeleteRejectedStateFile(statePath, "malformed");
             }
         }
 
@@ -219,37 +228,22 @@ namespace LosSantosRED.lsr.Coop.Core
 
         private static string FindStateFilePath()
         {
-            foreach (string folder in GetStateFolders())
-            {
-                if (string.IsNullOrWhiteSpace(folder))
-                {
-                    continue;
-                }
+            return CoopBridgePaths.StartupStatePath;
+        }
 
-                string path = Path.Combine(folder, StateFileName);
-                if (File.Exists(path))
+        private static void DeleteRejectedStateFile(string path, string reason)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(path) && File.Exists(path))
                 {
-                    return path;
+                    File.Delete(path);
+                    EntryPoint.WriteToConsole($"Co-op startup bridge file deleted Reason:{reason} File:{Path.GetFileName(path)}", 0);
                 }
             }
-
-            return Path.Combine(GetPrimaryStateFolder(), StateFileName);
-        }
-
-        private static string[] GetStateFolders()
-        {
-            return new[]
+            catch
             {
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins", "LosSantosRED"),
-                Path.Combine(Directory.GetCurrentDirectory(), "Plugins", "LosSantosRED"),
-                AppDomain.CurrentDomain.BaseDirectory,
-                Directory.GetCurrentDirectory(),
-            };
-        }
-
-        private static string GetPrimaryStateFolder()
-        {
-            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins", "LosSantosRED");
+            }
         }
 
         private static string GetValue(string[] lines, string key)

@@ -11,7 +11,7 @@
 	<AnnounceSelf>false</AnnounceSelf>
 	<MasterServer>https://masterserver.ragecoop.com/</MasterServer>
 	<LogLevel>0</LogLevel>
-	<NpcStreamingDistance>500</NpcStreamingDistance>
+	<NpcStreamingDistance>1000</NpcStreamingDistance>
 	<PlayerStreamingDistance>-1</PlayerStreamingDistance>
 	<WeatherTimeSync>true</WeatherTimeSync>
 	<AllowedUsernameChars>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890-_</AllowedUsernameChars>
@@ -22,5 +22,5 @@
 	<AutoUpdate>false</AutoUpdate>
 	<KickGodMode>false</KickGodMode>
 	<KickSpamming>true</KickSpamming>
-	<SpamLimit>300</SpamLimit>
+	<SpamLimit>1500</SpamLimit>
 </Settings>

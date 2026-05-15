@@ -11,6 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\LsrCoop.Shared\CoopBridgePaths.cs" Link="Shared\CoopBridgePaths.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="ScriptHookVDotNet3">
       <HintPath>$(GtaVInstallPath)\ScriptHookVDotNet3.dll</HintPath>
       <Private>false</Private>

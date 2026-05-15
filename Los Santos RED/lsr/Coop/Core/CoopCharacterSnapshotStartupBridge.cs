@@ -1,5 +1,6 @@
 using LosSantosRED.lsr.Helper;
 using LosSantosRED.lsr.Interface;
+using LsrCoop.Shared;
 using Rage;
 using Rage.Native;
 using System;
@@ -28,7 +29,6 @@ namespace LosSantosRED.lsr.Coop.Core
 
     public static class CoopCharacterSnapshotStartupBridge
     {
-        private const string CharacterSnapshotBridgeFileName = "LsrCoopCharacterSnapshot.txt";
         private const string RequiredBridgeVersion = "1";
         private const string RequiredTransportMode = "RAGECOOP";
         private const int SafePedHealth = 200;
@@ -251,10 +251,21 @@ namespace LosSantosRED.lsr.Coop.Core
                 Dictionary<string, string> values = ReadKeyValues(path);
                 if (!string.Equals(GetValue(values, "BridgeVersion"), RequiredBridgeVersion, StringComparison.Ordinal)
                     || !string.Equals(GetValue(values, "TransportMode"), RequiredTransportMode, StringComparison.OrdinalIgnoreCase)
-                    || !string.Equals(GetValue(values, "Direction"), "RAGECOOP_TO_LSR", StringComparison.OrdinalIgnoreCase)
-                    || !IsCurrentProcess(GetValue(values, "ProcessId"))
-                    || !IsCurrentSession(GetValue(values, "SessionId")))
+                    || !string.Equals(GetValue(values, "Direction"), "RAGECOOP_TO_LSR", StringComparison.OrdinalIgnoreCase))
                 {
+                    DeleteRejectedSnapshotFile(path, "invalid header");
+                    return null;
+                }
+
+                if (!IsCurrentProcess(GetValue(values, "ProcessId")))
+                {
+                    DeleteRejectedSnapshotFile(path, "old process");
+                    return null;
+                }
+
+                if (!IsCurrentSession(GetValue(values, "SessionId")))
+                {
+                    DeleteRejectedSnapshotFile(path, "wrong session");
                     return null;
                 }
 
@@ -263,12 +274,14 @@ namespace LosSantosRED.lsr.Coop.Core
                 if (!string.Equals(worldId, CoopStartupBridge.WorldId, StringComparison.OrdinalIgnoreCase)
                     || !string.Equals(profileId, CoopStartupBridge.LocalProfileId, StringComparison.OrdinalIgnoreCase))
                 {
+                    DeleteRejectedSnapshotFile(path, "wrong world/profile");
                     return null;
                 }
 
                 string modelName = GetValue(values, "ModelName");
                 if (string.IsNullOrWhiteSpace(modelName))
                 {
+                    DeleteRejectedSnapshotFile(path, "missing model");
                     return null;
                 }
 
@@ -301,6 +314,7 @@ namespace LosSantosRED.lsr.Coop.Core
             catch (Exception ex)
             {
                 EntryPoint.WriteToConsole($"Co-op character startup snapshot read skipped Path:{path} Error:{ex.Message}", 0);
+                DeleteRejectedSnapshotFile(path, "malformed");
                 return null;
             }
         }
@@ -859,21 +873,22 @@ namespace LosSantosRED.lsr.Coop.Core
 
         private static IEnumerable<string> GetSnapshotBridgePaths()
         {
-            foreach (string folder in GetBridgeFolders())
-            {
-                yield return Path.Combine(folder, CharacterSnapshotBridgeFileName);
-            }
+            yield return CoopBridgePaths.CharacterSnapshotPath;
         }
 
-        private static string[] GetBridgeFolders()
+        private static void DeleteRejectedSnapshotFile(string path, string reason)
         {
-            return new[]
+            try
             {
-                Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins", "LosSantosRED"),
-                Path.Combine(Directory.GetCurrentDirectory(), "Plugins", "LosSantosRED"),
-                AppDomain.CurrentDomain.BaseDirectory,
-                Directory.GetCurrentDirectory(),
-            };
+                if (!string.IsNullOrWhiteSpace(path) && File.Exists(path))
+                {
+                    File.Delete(path);
+                    EntryPoint.WriteToConsole($"Co-op character snapshot bridge file deleted Reason:{reason} File:{Path.GetFileName(path)}", 0);
+                }
+            }
+            catch
+            {
+            }
         }
 
         private static Ped GetLocalPed()
