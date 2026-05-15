@@ -303,7 +303,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 {
                     snapshot = reconciledSnapshot;
                     ApplyMoneySnapshotToPlayer(modPlayer, snapshot, "PurchaseReconciliation");
-                    EntryPoint.WriteToConsole($"Co-op purchase money fallback applied Item:{itemName} Price:{price} MoneyBefore:{moneyBefore} LiveBeforeFallback:{liveMoneyAfter} LiveAfterFallback:{modPlayer?.BankAccounts?.GetMoney(true) ?? snapshot.TotalMoney} CapturedSnapshot:{snapshot.TotalMoney}", 5);
+                    CoopPersistenceDiagnostics.WriteVerbose($"Co-op purchase money fallback applied Item:{itemName} Price:{price} MoneyBefore:{moneyBefore} LiveBeforeFallback:{liveMoneyAfter} LiveAfterFallback:{modPlayer?.BankAccounts?.GetMoney(true) ?? snapshot.TotalMoney} CapturedSnapshot:{snapshot.TotalMoney}");
                 }
             }
 
@@ -410,7 +410,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 if (CoopStartupBridge.IsCoopEnabled)
                 {
                     player.BankAccounts.TrySetCashForCoopReconciliation(snapshot.OnHandCash, out int cashBefore, out int cashAfter, out string setCashResult);
-                    EntryPoint.WriteToConsole($"Co-op purchase money live cash update Reason:Rollback CashBefore:{cashBefore} TargetCash:{snapshot.OnHandCash} CashAfter:{cashAfter} CapturedSnapshot:{snapshot.TotalMoney} Result:{setCashResult}", 5);
+                    CoopPersistenceDiagnostics.WriteVerbose($"Co-op purchase money live cash update Reason:Rollback CashBefore:{cashBefore} TargetCash:{snapshot.OnHandCash} CashAfter:{cashAfter} CapturedSnapshot:{snapshot.TotalMoney} Result:{setCashResult}");
                 }
                 else
                 {

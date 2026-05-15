@@ -131,7 +131,7 @@ namespace LosSantosRED.lsr.Coop.Core
             bool appliedInventoryMoney = false;
             if (snapshot.InventoryMoney != null)
             {
-                appliedInventoryMoney = new CoopInventoryMoneyAdapter().TryApplySnapshotToPlayer(player, snapshot.InventoryMoney, modItems);
+                appliedInventoryMoney = new CoopInventoryMoneyAdapter().TryApplySnapshotToPlayer(player, snapshot.InventoryMoney, modItems, settings);
             }
 
             CoopWeaponHydrationResult weaponHydration = null;
@@ -149,7 +149,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 }
                 else
                 {
-                    EntryPoint.WriteToConsole($"Co-op owned vehicle hydration skipped Profile:{snapshot.ProfileId} Reason:ClientModeNotActiveHost SnapshotCount:{snapshot.OwnedVehicles.Vehicles?.Count ?? 0}", 0);
+                    CoopPersistenceDiagnostics.WriteVerbose($"Co-op owned vehicle hydration skipped Profile:{snapshot.ProfileId} Reason:ClientModeNotActiveHost SnapshotCount:{snapshot.OwnedVehicles.Vehicles?.Count ?? 0}", settings);
                 }
             }
 
@@ -367,14 +367,6 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             return snapshot;
-        }
-
-        private static string DescribeFirstProperty(CoopPropertyOwnershipSnapshot snapshot)
-        {
-            CoopPropertyOwnershipRecord property = snapshot?.Properties?.FirstOrDefault();
-            return property == null
-                ? "none"
-                : $"{property.PropertyId}|name={property.Name}|type={property.PropertyType}|owned={property.IsOwned}|rented={property.IsRented}|rentedOut={property.IsRentedOut}";
         }
 
         private static CoopCriminalHistoryState ParseCriminalHistory(Dictionary<string, string> values, string worldId, string profileId)

@@ -128,16 +128,18 @@ namespace LosSantosRED.lsr.Coop.Core
                 return false;
             }
 
-            CoopGangReputationRecord incomingVagos = FindGangReputationRecord(state, "AMBIENT_GANG_MEXICAN");
             player.RelationshipManager.GangRelationships.ApplyCoopState(state, gangs);
-            Gang vagosGang = gangs?.GetGang("AMBIENT_GANG_MEXICAN");
-            GangReputation appliedVagos = player.RelationshipManager.GangRelationships.GetReputation(vagosGang);
-            EntryPoint.WriteToConsole($"Co-op gang reputation hydrated Profile:{state.ProfileId} Records:{state.Reputations.Count} CurrentGang:{state.CurrentGangId ?? "none"} IncomingVagos:{DescribeGangReputationRecord(incomingVagos)} AppliedVagos:{DescribeGangReputation(appliedVagos)}; live gang combat/spawn state skipped", 5);
+            CoopPersistenceDiagnostics.WriteVerbose($"Co-op gang reputation hydrated Profile:{state.ProfileId} Records:{state.Reputations.Count} CurrentGang:{state.CurrentGangId ?? "none"}; live gang combat/spawn state skipped");
             return true;
         }
 
         private void LogCapturedChanges(CoopGangReputationState snapshot)
         {
+            if (!CoopPersistenceDiagnostics.IsVerboseEnabled())
+            {
+                return;
+            }
+
             string profileKey = snapshot.ProfileId.ToString();
             lastPublishedReputationsByProfile.TryGetValue(profileKey, out Dictionary<string, int> previous);
             List<string> changedGangIds = new List<string>();
@@ -159,7 +161,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 changedGangIds.Add(record.GangId);
             }
 
-            EntryPoint.WriteToConsole($"Co-op gang reputation snapshot captured Profile:{snapshot.ProfileId} Records:{snapshot.Reputations.Count} Changed:{changedGangIds.Count} ChangedGangs:{(changedGangIds.Count == 0 ? "none" : string.Join("|", changedGangIds.Take(8)))} CurrentGang:{snapshot.CurrentGangId ?? "none"}", 5);
+            CoopPersistenceDiagnostics.WriteVerbose($"Co-op gang reputation snapshot captured Profile:{snapshot.ProfileId} Records:{snapshot.Reputations.Count} Changed:{changedGangIds.Count} ChangedGangs:{(changedGangIds.Count == 0 ? "none" : string.Join("|", changedGangIds.Take(8)))} CurrentGang:{snapshot.CurrentGangId ?? "none"}");
         }
 
         private static string CreateSignature(CoopGangReputationState snapshot)
@@ -205,27 +207,6 @@ namespace LosSantosRED.lsr.Coop.Core
                 && !record.IsMember
                 && !record.IsEnemy
                 && record.TasksCompleted == 0;
-        }
-
-        private static CoopGangReputationRecord FindGangReputationRecord(CoopGangReputationState state, string gangId)
-        {
-            return state?.Reputations?
-                .Where(x => string.Equals(x?.GangId, gangId, StringComparison.OrdinalIgnoreCase))
-                .LastOrDefault();
-        }
-
-        private static string DescribeGangReputationRecord(CoopGangReputationRecord record)
-        {
-            return record == null
-                ? "missing"
-                : $"{record.GangId}:rep={record.Reputation},hurt={record.MembersHurt},killed={record.MembersKilled}";
-        }
-
-        private static string DescribeGangReputation(GangReputation record)
-        {
-            return record == null || record.Gang == null
-                ? "missing"
-                : $"{record.Gang.ID}:rep={record.ReputationLevel},hurt={record.MembersHurt},killed={record.MembersKilled}";
         }
 
         private static string GetCurrentWorldId()

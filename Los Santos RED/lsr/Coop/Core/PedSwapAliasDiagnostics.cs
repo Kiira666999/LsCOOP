@@ -63,4 +63,27 @@ namespace LosSantosRED.lsr.Coop.Core
         public bool HasSetPlayerOffsetRun { get; set; }
         public string CurrentModelPlayerIs { get; set; }
     }
+
+    internal static class CoopPersistenceDiagnostics
+    {
+        public static bool IsVerboseEnabled(ISettingsProvideable settings = null)
+        {
+            if (!CoopStartupBridge.IsCoopEnabled)
+            {
+                return false;
+            }
+
+            global::DebugSettings debugSettings = settings?.SettingsManager?.DebugSettings
+                ?? EntryPoint.ModController?.ModDataFileManager?.Settings?.SettingsManager?.DebugSettings;
+            return debugSettings?.LogCoopPersistenceDiagnostics == true;
+        }
+
+        public static void WriteVerbose(string message, ISettingsProvideable settings = null)
+        {
+            if (IsVerboseEnabled(settings))
+            {
+                EntryPoint.WriteToConsole(message, 5);
+            }
+        }
+    }
 }

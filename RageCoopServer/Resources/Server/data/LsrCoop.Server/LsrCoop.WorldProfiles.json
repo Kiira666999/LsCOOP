@@ -2,26 +2,24 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-14T13:15:51.1387633+00:00",
-  "UpdatedUtc": "2026-05-15T15:00:40.5164505+00:00",
+  "UpdatedUtc": "2026-05-15T15:36:24.7657086+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
-    "AdminIds": [
-      "Kiira"
-    ],
+    "AdminIds": [],
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-15T15:00:40.5164607+00:00"
+    "UpdatedUtc": "2026-05-15T15:36:24.7657118+00:00"
   },
   "Profiles": [
     {
       "ProfileId": "Kiira",
       "ClientId": "Kiira",
       "DisplayName": "Kiira",
-      "Role": "Admin,TrustedHost",
+      "Role": "TrustedHost",
       "CreatedUtc": "2026-05-14T13:15:58.9246961+00:00",
-      "LastSeenUtc": "2026-05-15T15:00:40.5164483+00:00",
+      "LastSeenUtc": "2026-05-15T15:36:24.7373074+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -157,13 +155,13 @@
         "UpdatedUtc": "2026-05-14T13:16:22.4013702+00:00"
       },
       "InventoryMoney": {
-        "SnapshotId": "f775e703a4b34b6b867bf941a58ebff9",
+        "SnapshotId": "96ceff9362454816a19b3d693d0da5b2",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "OnHandCash": 491880,
+        "OnHandCash": 18065,
         "TotalAccountMoney": 0,
-        "TotalMoney": 491880,
+        "TotalMoney": 18065,
         "InventoryItems": [
           {
             "ItemName": "Carton of Milk",
@@ -1603,10 +1601,10 @@
           }
         ],
         "BankAccounts": [],
-        "SnapshotUtc": "2026-05-15T14:59:11.7415388+00:00"
+        "SnapshotUtc": "2026-05-15T15:16:45.9898126+00:00"
       },
       "Weapons": {
-        "SnapshotId": "122f8879814740ffadd1b4277d5407d6",
+        "SnapshotId": "b5ce3ce4cc35493cb2e1b04981652c99",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
@@ -1628,7 +1626,7 @@
             "IsEquipped": false
           }
         ],
-        "SnapshotUtc": "2026-05-15T14:59:53.6598151+00:00"
+        "SnapshotUtc": "2026-05-15T15:16:45.9898126+00:00"
       },
       "OwnedVehicles": {
         "SnapshotId": "7bbc9534c5a342c48de1f00843b837be",
@@ -1753,7 +1751,7 @@
         "SnapshotUtc": "2026-05-15T12:49:35.8441888+00:00"
       },
       "GangReputation": {
-        "StateId": "8252d22c20bc4e3da952e777401f5eeb",
+        "StateId": "380d35ff28fc4d329ac6905e22a23e26",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
@@ -1853,8 +1851,8 @@
             "GangId": "AMBIENT_GANG_Customers",
             "GangName": "Customers",
             "Reputation": 0,
-            "MembersHurt": 0,
-            "MembersKilled": 0,
+            "MembersHurt": 1,
+            "MembersKilled": 1,
             "MembersCarJacked": 0,
             "MembersHurtInTerritory": 0,
             "MembersKilledInTerritory": 0,
@@ -1912,12 +1910,12 @@
           {
             "GangId": "AMBIENT_GANG_FAMILY",
             "GangName": "Families",
-            "Reputation": 0,
-            "MembersHurt": 3,
-            "MembersKilled": 4,
+            "Reputation": -3037,
+            "MembersHurt": 7,
+            "MembersKilled": 5,
             "MembersCarJacked": 0,
-            "MembersHurtInTerritory": 3,
-            "MembersKilledInTerritory": 4,
+            "MembersHurtInTerritory": 7,
+            "MembersKilledInTerritory": 5,
             "MembersCarJackedInTerritory": 0,
             "PlayerDebt": 0,
             "IsMember": false,
@@ -2197,7 +2195,7 @@
           {
             "GangId": "AMBIENT_GANG_MEXICAN",
             "GangName": "Vagos",
-            "Reputation": -995,
+            "Reputation": -979,
             "MembersHurt": 3,
             "MembersKilled": 4,
             "MembersCarJacked": 0,
@@ -2347,8 +2345,8 @@
           {
             "GangId": "AMBIENT_GANG_SLSTrappers",
             "GangName": "South LS Trappers",
-            "Reputation": 0,
-            "MembersHurt": 0,
+            "Reputation": -491,
+            "MembersHurt": 1,
             "MembersKilled": 0,
             "MembersCarJacked": 0,
             "MembersHurtInTerritory": 0,
@@ -2452,7 +2450,7 @@
           {
             "GangId": "AMBIENT_GANG_YARDIES",
             "GangName": "Yardies",
-            "Reputation": -2143,
+            "Reputation": -2131,
             "MembersHurt": 0,
             "MembersKilled": 1,
             "MembersCarJacked": 0,
@@ -2465,46 +2463,71 @@
             "TasksCompleted": 0
           }
         ],
-        "UpdatedUtc": "2026-05-15T14:54:20.7328345+00:00"
+        "UpdatedUtc": "2026-05-15T15:36:24.2620281+00:00"
       },
       "CriminalHistory": {
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "HasHistory": false,
-        "LastSeenX": 0,
-        "LastSeenY": 0,
-        "LastSeenZ": 0,
-        "WantedLevel": 0,
-        "Crimes": [],
-        "DateTimeLastWantedEnded": "2009-06-15T09:02:26+00:00",
-        "UpdatedUtc": "2026-05-15T14:59:05.9718901+00:00",
-        "ClearReason": "ArrestResolved"
+        "HasHistory": true,
+        "LastSeenX": 259.0079,
+        "LastSeenY": -1456.393,
+        "LastSeenZ": 28.88459,
+        "WantedLevel": 2,
+        "Crimes": [
+          {
+            "CrimeId": "DrivingAgainstTraffic",
+            "CrimeName": "Driving Against Traffic",
+            "Instances": 2,
+            "ResultingWantedLevel": 1,
+            "Priority": 42,
+            "ResultsInLethalForce": false
+          },
+          {
+            "CrimeId": "RunningARedLight",
+            "CrimeName": "Running a Red Light",
+            "Instances": 2,
+            "ResultingWantedLevel": 1,
+            "Priority": 45,
+            "ResultsInLethalForce": false
+          },
+          {
+            "CrimeId": "ResistingArrest",
+            "CrimeName": "Resisting Arrest",
+            "Instances": 3,
+            "ResultingWantedLevel": 2,
+            "Priority": 21,
+            "ResultsInLethalForce": false
+          }
+        ],
+        "DateTimeLastWantedEnded": "2009-06-06T12:14:25+00:00",
+        "UpdatedUtc": "2026-05-15T15:33:25.7946571+00:00",
+        "ClearReason": ""
       },
       "DeathArrestState": {
-        "StateId": "5fc2bcb873a848389092ffa7ecc6074f",
+        "StateId": "e1f3f5754fb54ff895e0d91e61288766",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "ActionType": "ApplyArrestState",
-        "OutcomeType": "PoliceSurrender",
-        "RespawnLocationName": "Davis Sheriff\u0027s Station",
-        "PositionX": 358.9726,
-        "PositionY": -1582.881,
-        "PositionZ": 29.29195,
-        "Heading": 323.5287,
-        "HospitalFee": 0,
+        "ActionType": "ApplyDeathState",
+        "OutcomeType": "HospitalRespawn",
+        "RespawnLocationName": "Central LS Medical Center",
+        "PositionX": 338.208,
+        "PositionY": -1396.154,
+        "PositionZ": 32.50927,
+        "Heading": 77.07101,
+        "HospitalFee": 55000,
         "HospitalBillPastDue": 0,
-        "HospitalDuration": 0,
-        "BailFee": 4000,
+        "HospitalDuration": 11,
+        "BailFee": 0,
         "BailFeePastDue": 0,
-        "BailDuration": 4,
-        "TodayPayment": 4000,
+        "BailDuration": 0,
+        "TodayPayment": 0,
         "TimesDied": 0,
         "HadIllegalWeapons": false,
         "HadIllegalItems": false,
-        "ReleaseDate": "2009-06-19T07:00:00Z",
-        "OccurredUtc": "2026-05-15T14:59:11.7435423+00:00"
+        "ReleaseDate": "2009-07-08T07:00:00Z",
+        "OccurredUtc": "2026-05-15T15:16:45.9898126+00:00"
       },
       "LongTermLsrRecords": []
     }

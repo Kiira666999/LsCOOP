@@ -25,7 +25,7 @@ namespace LosSantosRED.lsr.Coop.Core
 
             if (player?.VehicleOwnership?.OwnedVehicles == null)
             {
-                EntryPoint.WriteToConsole($"Co-op owned vehicle snapshot capture skipped Profile:{profileId} Reason:MissingPlayerVehicleOwnership", 5);
+                CoopPersistenceDiagnostics.WriteVerbose($"Co-op owned vehicle snapshot capture skipped Profile:{profileId} Reason:MissingPlayerVehicleOwnership");
                 return snapshot;
             }
 
@@ -33,7 +33,7 @@ namespace LosSantosRED.lsr.Coop.Core
             {
                 if (vehicle?.Vehicle.Exists() != true)
                 {
-                    EntryPoint.WriteToConsole($"Co-op owned vehicle snapshot skipped Profile:{profileId} Reason:MissingVehicleEntity", 5);
+                    CoopPersistenceDiagnostics.WriteVerbose($"Co-op owned vehicle snapshot skipped Profile:{profileId} Reason:MissingVehicleEntity");
                     continue;
                 }
 
@@ -81,7 +81,7 @@ namespace LosSantosRED.lsr.Coop.Core
 
             result.HydratedCount = player.VehicleOwnership?.OwnedVehicles?.Count ?? 0;
             result.Applied = result.HydratedCount > 0 || gameSave.OwnedVehicleVariations.Count > 0;
-            EntryPoint.WriteToConsole($"Co-op owned vehicle hydration Profile:{snapshot.ProfileId} SnapshotCount:{snapshot.Vehicles?.Count ?? 0} HydratedCount:{result.HydratedCount} Skipped:{result.SkippedCount}", 0);
+            CoopPersistenceDiagnostics.WriteVerbose($"Co-op owned vehicle hydration Profile:{snapshot.ProfileId} SnapshotCount:{snapshot.Vehicles?.Count ?? 0} HydratedCount:{result.HydratedCount} Skipped:{result.SkippedCount}", settings);
             return result;
         }
 
@@ -236,7 +236,7 @@ namespace LosSantosRED.lsr.Coop.Core
             }
             catch (Exception ex)
             {
-                EntryPoint.WriteToConsole($"Co-op owned vehicle save status serialize skipped Error:{ex.Message}", 0);
+                CoopPersistenceDiagnostics.WriteVerbose($"Co-op owned vehicle save status serialize skipped Error:{ex.Message}");
                 return string.Empty;
             }
         }
@@ -258,7 +258,7 @@ namespace LosSantosRED.lsr.Coop.Core
             }
             catch (Exception ex)
             {
-                EntryPoint.WriteToConsole($"Co-op owned vehicle save status deserialize skipped Error:{ex.Message}", 0);
+                CoopPersistenceDiagnostics.WriteVerbose($"Co-op owned vehicle save status deserialize skipped Error:{ex.Message}");
                 return null;
             }
         }

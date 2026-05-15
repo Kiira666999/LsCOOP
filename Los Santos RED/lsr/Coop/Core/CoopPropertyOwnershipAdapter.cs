@@ -12,8 +12,6 @@ namespace LosSantosRED.lsr.Coop.Core
 {
     public class CoopPropertyOwnershipAdapter
     {
-        private const string DiagnosticResidenceName = "0605 Apartment 4F";
-
         public CoopPropertyOwnershipSnapshot CaptureFromPlayer(Mod.Player player, CoopProfileId profileId, CoopCharacterId characterId, CoopWorldId worldId)
         {
             CoopPropertyOwnershipSnapshot snapshot = new CoopPropertyOwnershipSnapshot
@@ -75,7 +73,7 @@ namespace LosSantosRED.lsr.Coop.Core
             gameSave.LoadOwnedProperties(player, placesOfInterest, modItems, settings, world);
             result.HydratedCount = player.Properties?.PropertyList?.Count ?? 0;
             result.Applied = result.HydratedCount > 0;
-            EntryPoint.WriteToConsole($"Co-op property hydration Profile:{snapshot.ProfileId} SnapshotCount:{snapshot.Properties.Count} HydratedCount:{result.HydratedCount} Skipped:{result.SkippedCount}", 0);
+            CoopPersistenceDiagnostics.WriteVerbose($"Co-op property hydration Profile:{snapshot.ProfileId} SnapshotCount:{snapshot.Properties.Count} HydratedCount:{result.HydratedCount} Skipped:{result.SkippedCount}", settings);
             return result;
         }
 
@@ -236,7 +234,7 @@ namespace LosSantosRED.lsr.Coop.Core
             }
             catch (Exception ex)
             {
-                EntryPoint.WriteToConsole($"Co-op property save data deserialize skipped Error:{ex.Message}", 0);
+                CoopPersistenceDiagnostics.WriteVerbose($"Co-op property save data deserialize skipped Error:{ex.Message}");
                 return null;
             }
         }
@@ -244,30 +242,6 @@ namespace LosSantosRED.lsr.Coop.Core
         private string GetPropertyId(GameLocation property)
         {
             return $"{property.GetType().Name}:{property.Name}:{property.EntrancePosition.X:0.###}:{property.EntrancePosition.Y:0.###}:{property.EntrancePosition.Z:0.###}";
-        }
-
-        private void LogResidenceState(string phase, Mod.Player player, IPlacesOfInterest placesOfInterest, IEntityProvideable world, CoopPropertyOwnershipSnapshot snapshot)
-        {
-            int residenceCount = placesOfInterest?.PossibleLocations?.Residences?.Count ?? 0;
-            Residence targetResidence = placesOfInterest?.PossibleLocations?.Residences?.FirstOrDefault(x => string.Equals(x?.Name, DiagnosticResidenceName, StringComparison.OrdinalIgnoreCase));
-            int propertyListCount = player?.Properties?.PropertyList?.Count ?? 0;
-            bool propertyListContainsTarget = player?.Properties?.PropertyList?.Any(x => string.Equals(x?.Name, DiagnosticResidenceName, StringComparison.OrdinalIgnoreCase)) == true;
-            EntryPoint.WriteToConsole($"Co-op property hydration {phase} Profile:{snapshot?.ProfileId} WorldSet:{world != null} MPMap:{world?.IsMPMapLoaded} PlacesSet:{placesOfInterest != null} Residences:{residenceCount} Target:{DiagnosticResidenceName} TargetFound:{targetResidence != null} TargetOwned:{targetResidence?.IsOwned} TargetRented:{targetResidence?.IsRented} TargetRentedOut:{targetResidence?.IsRentedOut} TargetInventorySet:{targetResidence?.SimpleInventory != null} TargetWeaponStorageSet:{targetResidence?.WeaponStorage != null} TargetCashStorageSet:{targetResidence?.CashStorage != null} PlayerPropertyListCount:{propertyListCount} PlayerPropertyListContainsTarget:{propertyListContainsTarget}", 0);
-        }
-
-        private string DescribeSavedLocation(SavedGameLocation savedLocation)
-        {
-            if (savedLocation == null)
-            {
-                return "none";
-            }
-
-            if (savedLocation is SavedResidence savedResidence)
-            {
-                return $"{savedLocation.GetType().Name}|name={savedLocation.Name}|owned={savedResidence.IsOwnedByPlayer}|rented={savedResidence.IsRentedByPlayer}";
-            }
-
-            return $"{savedLocation.GetType().Name}|name={savedLocation.Name}|entrance={savedLocation.EntrancePosition}";
         }
     }
 

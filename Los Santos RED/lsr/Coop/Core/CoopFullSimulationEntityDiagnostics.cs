@@ -79,7 +79,8 @@ namespace LosSantosRED.lsr.Coop.Core
             string blockedReason;
             return CoopStartupBridge.IsCoopEnabled
                 && CoopStartupBridge.IsLocalActiveHost
-                && CoopStartupBridge.GetStartupMode(out blockedReason) == CoopStartupMode.FullSimulation;
+                && CoopStartupBridge.GetStartupMode(out blockedReason) == CoopStartupMode.FullSimulation
+                && CoopPersistenceDiagnostics.IsVerboseEnabled();
         }
 
         private static void LogSnapshot(Mod.World world, int elapsedSeconds)

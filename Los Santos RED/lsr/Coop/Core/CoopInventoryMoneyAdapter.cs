@@ -91,7 +91,7 @@ namespace LosSantosRED.lsr.Coop.Core
             return true;
         }
 
-        public bool TryApplySnapshotToPlayer(Mod.Player player, CoopInventoryMoneySnapshot snapshot, IModItems modItems)
+        public bool TryApplySnapshotToPlayer(Mod.Player player, CoopInventoryMoneySnapshot snapshot, IModItems modItems, ISettingsProvideable settings = null)
         {
             if (player == null || snapshot == null)
             {
@@ -103,7 +103,7 @@ namespace LosSantosRED.lsr.Coop.Core
                 if (CoopStartupBridge.IsCoopEnabled)
                 {
                     player.BankAccounts.TrySetCashForCoopReconciliation(snapshot.OnHandCash, out int cashBefore, out int cashAfter, out string setCashResult);
-                    EntryPoint.WriteToConsole($"Co-op inventory money snapshot live cash update CashBefore:{cashBefore} TargetCash:{snapshot.OnHandCash} CashAfter:{cashAfter} CapturedSnapshot:{snapshot.TotalMoney} Result:{setCashResult}", 0);
+                    CoopPersistenceDiagnostics.WriteVerbose($"Co-op inventory money snapshot live cash update CashBefore:{cashBefore} TargetCash:{snapshot.OnHandCash} CashAfter:{cashAfter} CapturedSnapshot:{snapshot.TotalMoney} Result:{setCashResult}", settings);
                 }
                 else
                 {

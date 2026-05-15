@@ -27,7 +27,7 @@ namespace LosSantosRED.lsr.Coop.Core
 
             CoopCriminalJusticeStateSnapshot snapshot = CaptureFromPlayer(localPlayer, GetCurrentProfileId(), GetCurrentCharacterId(GetCurrentProfileId()), GetCurrentWorldId());
             CoopGameplayFileBridge.PublishCriminalJusticeSnapshot(snapshot);
-            EntryPoint.WriteToConsole($"Co-op criminal history captured Profile:{snapshot.ProfileId} HasHistory:{snapshot.CriminalHistory?.HasHistory == true} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0} Wanted:{snapshot.CriminalHistory?.WantedLevel ?? 0} DateTimeLastWantedEnded:{snapshot.CriminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty} ClearReason:{snapshot.CriminalHistory?.ClearReason ?? string.Empty}; live wanted/search state not persisted", 5);
+            CoopPersistenceDiagnostics.WriteVerbose($"Co-op criminal history captured Profile:{snapshot.ProfileId} HasHistory:{snapshot.CriminalHistory?.HasHistory == true} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0} Wanted:{snapshot.CriminalHistory?.WantedLevel ?? 0} DateTimeLastWantedEnded:{snapshot.CriminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty} ClearReason:{snapshot.CriminalHistory?.ClearReason ?? string.Empty}; live wanted/search state not persisted");
         }
 
         public CoopCriminalJusticeStateSnapshot CaptureFromPlayer(Mod.Player player, string profileId, string characterId, string worldId)

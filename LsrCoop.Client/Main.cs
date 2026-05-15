@@ -293,7 +293,6 @@ namespace LsrCoop.Client
             CoopGangReputationStateDto gangReputation = Deserialize<CoopGangReputationStateDto>(GetArg(args, 6));
             CoopOwnedVehicleSnapshot ownedVehicles = Deserialize<CoopOwnedVehicleSnapshot>(GetArg(args, 7));
             CoopPropertyOwnershipSnapshot propertyOwnership = Deserialize<CoopPropertyOwnershipSnapshot>(GetArg(args, 8));
-            Logger.Info($"[LsrCoop.Client] character snapshot property payload received: world={worldId}, profile={profileId}, properties={propertyOwnership?.Properties?.Count ?? 0}, firstProperty={DescribeFirstProperty(propertyOwnership)}");
             ApplyAppearanceIfLocal(worldId, profileId, snapshot?.Appearance);
             if (string.Equals(profileId, localProfileId, StringComparison.OrdinalIgnoreCase))
             {
@@ -304,9 +303,17 @@ namespace LsrCoop.Client
                     ExitCharacterCreationSafeState();
                 }
                 UpdateCurrentBridgeState();
-                SendCharacterSnapshotAck(worldId, profileId);
+                SendCharacterSnapshotAck(
+                    worldId,
+                    profileId,
+                    inventoryMoney?.InventoryItems?.Count ?? 0,
+                    weapons?.Weapons?.Count ?? 0,
+                    ownedVehicles?.Vehicles?.Count ?? 0,
+                    propertyOwnership?.Properties?.Count ?? 0,
+                    criminalHistory?.Crimes?.Count ?? 0,
+                    gangReputation?.Reputations?.Count ?? 0);
             }
-            Logger.Info($"[LsrCoop.Client] character snapshot received: world={worldId}, profile={profileId}, ownedVehicles={ownedVehicles?.Vehicles?.Count ?? 0}, properties={propertyOwnership?.Properties?.Count ?? 0}, firstProperty={DescribeFirstProperty(propertyOwnership)}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, vagos={DescribeGangReputationRecord(FindGangReputationRecord(gangReputation, "AMBIENT_GANG_MEXICAN"))}");
+            Logger.Info($"[LsrCoop.Client] character snapshot received: world={worldId}, profile={profileId}, model={snapshot?.ModelName ?? "none"}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, money={inventoryMoney?.TotalMoney ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, ownedVehicles={ownedVehicles?.Vehicles?.Count ?? 0}, properties={propertyOwnership?.Properties?.Count ?? 0}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}, gangReputation={gangReputation?.Reputations?.Count ?? 0}");
         }
 
         private void EnterCharacterCreationSafeState(string worldId, string profileId)
@@ -963,7 +970,15 @@ namespace LsrCoop.Client
             UpdateBridgeActiveHost(localWorldId, activeHostProfileId);
         }
 
-        private void SendCharacterSnapshotAck(string worldId, string profileId)
+        private void SendCharacterSnapshotAck(
+            string worldId,
+            string profileId,
+            int inventoryItems,
+            int weapons,
+            int ownedVehicles,
+            int properties,
+            int criminalHistory,
+            int gangReputation)
         {
             if (!API.IsOnServer)
             {
@@ -971,7 +986,7 @@ namespace LsrCoop.Client
             }
 
             API.SendCustomEvent(CharacterSnapshotAckEventHash, new object[] { worldId ?? string.Empty, profileId ?? string.Empty });
-            Logger.Info($"[LsrCoop.Client] character snapshot ack sent: world={worldId}, profile={profileId}");
+            Logger.Info($"[LsrCoop.Client] character snapshot ack sent: world={worldId}, profile={profileId}, inventoryItems={inventoryItems}, weapons={weapons}, ownedVehicles={ownedVehicles}, properties={properties}, criminalHistory={criminalHistory}, gangReputation={gangReputation}");
         }
 
         private void InvokeLsrBridge(string methodName, params object[] args)
@@ -1773,25 +1788,6 @@ namespace LsrCoop.Client
             })));
         }
 
-        private string DescribeFirstProperty(CoopPropertyOwnershipSnapshot snapshot)
-        {
-            CoopPropertyOwnershipRecord property = snapshot?.Properties?.FirstOrDefault();
-            return property == null
-                ? "none"
-                : $"{property.PropertyId}|name={property.Name}|type={property.PropertyType}|owned={property.IsOwned}|rented={property.IsRented}|rentedOut={property.IsRentedOut}";
-        }
-
-        private string DescribeFirstPropertyLine(string serializedProperties)
-        {
-            if (string.IsNullOrWhiteSpace(serializedProperties))
-            {
-                return "empty";
-            }
-
-            string first = serializedProperties.Split(';').FirstOrDefault() ?? string.Empty;
-            return first.Length > 240 ? first.Substring(0, 240) + "..." : first;
-        }
-
         private string SerializeCriminalHistoryCrimes(IEnumerable<CoopCriminalHistoryCrimeRecordDto> crimes)
         {
             if (crimes == null)
@@ -1833,20 +1829,6 @@ namespace LsrCoop.Client
                 record.IsEnemy.ToString().ToLowerInvariant(),
                 record.TasksCompleted.ToString(CultureInfo.InvariantCulture)
             })));
-        }
-
-        private CoopGangReputationRecordDto FindGangReputationRecord(CoopGangReputationStateDto state, string gangId)
-        {
-            return state?.Reputations?
-                .Where(x => string.Equals(x?.GangId, gangId, StringComparison.OrdinalIgnoreCase))
-                .LastOrDefault();
-        }
-
-        private string DescribeGangReputationRecord(CoopGangReputationRecordDto record)
-        {
-            return record == null
-                ? "missing"
-                : $"{record.GangId}:rep={record.Reputation},hurt={record.MembersHurt},killed={record.MembersKilled}";
         }
 
         private string FormatDateTime(DateTimeOffset? value)

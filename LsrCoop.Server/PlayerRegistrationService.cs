@@ -112,7 +112,7 @@ namespace LsrCoop.Server
                 JsonSerializer.Serialize(status.Profile.OwnedVehicles),
                 JsonSerializer.Serialize(status.Profile.PropertyOwnership)
             });
-            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}, ownedVehicles={(status.Profile.OwnedVehicles?.Vehicles?.Count ?? 0)}, properties={(status.Profile.PropertyOwnership?.Properties?.Count ?? 0)}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}, gangReputation={(status.Profile.GangReputation?.Reputations?.Count ?? 0)}");
+            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}, inventory={(status.Profile.InventoryMoney?.InventoryItems?.Count ?? 0)}, weapons={(status.Profile.Weapons?.Weapons?.Count ?? 0)}, ownedVehicles={(status.Profile.OwnedVehicles?.Vehicles?.Count ?? 0)}, properties={(status.Profile.PropertyOwnership?.Properties?.Count ?? 0)}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}, gangReputation={(status.Profile.GangReputation?.Reputations?.Count ?? 0)}");
         }
 
         public CoopClientStatus AcknowledgeCharacterSnapshot(Client client, string worldId, string profileId, string reason, out bool readinessChanged)
@@ -141,11 +141,11 @@ namespace LsrCoop.Server
             readinessChanged = !wasReady && status.CharacterReadyForSimulation;
             if (readinessChanged)
             {
-                info?.Invoke($"[LsrCoop.Server] character ready for simulation: {status.ProfileId} ({reason})");
+                info?.Invoke($"[LsrCoop.Server] character ready for simulation: {status.ProfileId} ({reason}); inventory={(status.Profile.InventoryMoney?.InventoryItems?.Count ?? 0)}, weapons={(status.Profile.Weapons?.Weapons?.Count ?? 0)}, ownedVehicles={(status.Profile.OwnedVehicles?.Vehicles?.Count ?? 0)}, properties={(status.Profile.PropertyOwnership?.Properties?.Count ?? 0)}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}, gangReputation={(status.Profile.GangReputation?.Reputations?.Count ?? 0)}");
             }
             else if (!wasAcknowledged)
             {
-                info?.Invoke($"[LsrCoop.Server] character snapshot acknowledged: {status.ProfileId} ({reason}); readiness={status.ReadinessState}");
+                info?.Invoke($"[LsrCoop.Server] character snapshot acknowledged: {status.ProfileId} ({reason}); readiness={status.ReadinessState}, inventory={(status.Profile.InventoryMoney?.InventoryItems?.Count ?? 0)}, weapons={(status.Profile.Weapons?.Weapons?.Count ?? 0)}, ownedVehicles={(status.Profile.OwnedVehicles?.Vehicles?.Count ?? 0)}, properties={(status.Profile.PropertyOwnership?.Properties?.Count ?? 0)}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}, gangReputation={(status.Profile.GangReputation?.Reputations?.Count ?? 0)}");
             }
             return status;
         }

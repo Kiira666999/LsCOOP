@@ -277,8 +277,7 @@ namespace LsrCoop.Server
             {
                 if (ShouldSkipPropertyOwnershipSnapshot(request, commit.PropertyOwnershipSnapshot, profile))
                 {
-                    CoopPropertyOwnershipRecord preservedProperty = profile.PropertyOwnership?.Properties?.FirstOrDefault();
-                    Logger.Info($"[LsrCoop.Server] empty property ownership clear skipped: profile={profile.ProfileId}, request={request.RequestId}, action={GetParameter(request, "PropertyAction")}, preservedCount={profile.PropertyOwnership?.Properties?.Count ?? 0}, firstProperty={preservedProperty?.PropertyId ?? "none"}, firstName={preservedProperty?.Name ?? "none"}");
+                    Logger.Info($"[LsrCoop.Server] empty property ownership clear skipped: profile={profile.ProfileId}, request={request.RequestId}, action={GetParameter(request, "PropertyAction")}, preservedCount={profile.PropertyOwnership?.Properties?.Count ?? 0}");
                 }
                 else if (IsNewerOrSame(commit.PropertyOwnershipSnapshot.SnapshotUtc, profile.PropertyOwnership?.SnapshotUtc))
                 {
@@ -288,8 +287,7 @@ namespace LsrCoop.Server
                     profile.PropertyOwnership.ProfileId = profile.ProfileId;
                     profile.PropertyOwnership.CharacterId = string.IsNullOrWhiteSpace(profile.PropertyOwnership.CharacterId) ? profile.ProfileId : profile.PropertyOwnership.CharacterId;
                     worldProfileStoreService.Save();
-                    CoopPropertyOwnershipRecord firstProperty = profile.PropertyOwnership.Properties?.FirstOrDefault();
-                    Logger.Info($"[LsrCoop.Server] property ownership snapshot saved: profile={profile.ProfileId}, request={request.RequestId}, action={mergeSummary.ActionName}, incomingCount={mergeSummary.IncomingCount}, existingCount={mergeSummary.ExistingCount}, count={profile.PropertyOwnership.Properties?.Count ?? 0}, mergedCount={mergeSummary.MergedCount}, updatedCount={mergeSummary.UpdatedCount}, addedCount={mergeSummary.AddedCount}, preservedCount={mergeSummary.PreservedCount}, removedCount={mergeSummary.RemovedCount}, firstProperty={firstProperty?.PropertyId ?? "none"}, firstName={firstProperty?.Name ?? "none"}");
+                    Logger.Info($"[LsrCoop.Server] property ownership snapshot saved: profile={profile.ProfileId}, request={request.RequestId}, action={mergeSummary.ActionName}, count={profile.PropertyOwnership.Properties?.Count ?? 0}, incoming={mergeSummary.IncomingCount}, existing={mergeSummary.ExistingCount}, added={mergeSummary.AddedCount}, updated={mergeSummary.UpdatedCount}, preserved={mergeSummary.PreservedCount}, removed={mergeSummary.RemovedCount}");
                 }
                 else
                 {
@@ -301,8 +299,7 @@ namespace LsrCoop.Server
             {
                 if (ShouldSkipOwnedVehicleSnapshot(request, commit.OwnedVehicleSnapshot, profile))
                 {
-                    CoopOwnedVehicleRecord preservedVehicle = profile.OwnedVehicles?.Vehicles?.FirstOrDefault();
-                    Logger.Info($"[LsrCoop.Server] empty owned vehicle clear skipped: profile={profile.ProfileId}, request={request.RequestId}, action={GetParameter(request, "VehicleAction")}, preservedCount={profile.OwnedVehicles?.Vehicles?.Count ?? 0}, firstVehicle={preservedVehicle?.VehicleId ?? "none"}, firstPlate={preservedVehicle?.PlateNumber ?? "none"}, firstModel={preservedVehicle?.ModelName ?? preservedVehicle?.ModelHash ?? "none"}");
+                    Logger.Info($"[LsrCoop.Server] empty owned vehicle clear skipped: profile={profile.ProfileId}, request={request.RequestId}, action={GetParameter(request, "VehicleAction")}, preservedCount={profile.OwnedVehicles?.Vehicles?.Count ?? 0}");
                 }
                 else if (IsNewerOrSame(commit.OwnedVehicleSnapshot.SnapshotUtc, profile.OwnedVehicles?.SnapshotUtc))
                 {
@@ -311,8 +308,7 @@ namespace LsrCoop.Server
                     profile.OwnedVehicles.ProfileId = profile.ProfileId;
                     profile.OwnedVehicles.CharacterId = string.IsNullOrWhiteSpace(profile.OwnedVehicles.CharacterId) ? profile.ProfileId : profile.OwnedVehicles.CharacterId;
                     worldProfileStoreService.Save();
-                    CoopOwnedVehicleRecord firstVehicle = profile.OwnedVehicles.Vehicles?.FirstOrDefault();
-                    Logger.Info($"[LsrCoop.Server] owned vehicle snapshot saved: profile={profile.ProfileId}, request={request.RequestId}, action={GetParameter(request, "VehicleAction")}, count={profile.OwnedVehicles.Vehicles?.Count ?? 0}, firstVehicle={firstVehicle?.VehicleId ?? "none"}, firstPlate={firstVehicle?.PlateNumber ?? "none"}, firstModel={firstVehicle?.ModelName ?? firstVehicle?.ModelHash ?? "none"}");
+                    Logger.Info($"[LsrCoop.Server] owned vehicle snapshot saved: profile={profile.ProfileId}, request={request.RequestId}, action={GetParameter(request, "VehicleAction")}, count={profile.OwnedVehicles.Vehicles?.Count ?? 0}");
                 }
                 else
                 {
@@ -335,7 +331,7 @@ namespace LsrCoop.Server
                     int weaponsAfterCommit = profile.Weapons?.Weapons?.Count ?? weaponsBeforeCommit;
                     int criminalHistoryCount = profile.CriminalHistory?.Crimes?.Count ?? 0;
                     string clearReason = profile.CriminalHistory?.ClearReason ?? string.Empty;
-                    Logger.Info($"[LsrCoop.Server] death/arrest state saved: event={profile.DeathArrestState.ActionType ?? request.ActionType}, profile={profile.ProfileId}, request={request.RequestId}, outcome={profile.DeathArrestState.OutcomeType ?? string.Empty}, moneyBefore={moneyBeforeCommit}, moneyAfter={moneyAfterCommit}, weapons={weaponsAfterCommit}, inventory={inventoryAfterCommit}, criminalHistory={criminalHistoryCount}, clearReason={(string.IsNullOrWhiteSpace(clearReason) ? "none" : clearReason)}, temporaryStatePersisted=false");
+                    Logger.Info($"[LsrCoop.Server] death/arrest state saved: event={profile.DeathArrestState.ActionType ?? request.ActionType}, profile={profile.ProfileId}, request={request.RequestId}, outcome={profile.DeathArrestState.OutcomeType ?? string.Empty}, money={moneyAfterCommit}, weapons={weaponsAfterCommit}, inventory={inventoryAfterCommit}, criminalHistory={criminalHistoryCount}, clearReason={(string.IsNullOrWhiteSpace(clearReason) ? "none" : clearReason)}, temporaryStatePersisted=false");
                 }
                 else
                 {
@@ -721,8 +717,6 @@ namespace LsrCoop.Server
             snapshot.ProfileId = profile.ProfileId;
             snapshot.CharacterId = string.IsNullOrWhiteSpace(snapshot.CharacterId) ? profile.ProfileId : snapshot.CharacterId;
             snapshot.Reputations = snapshot.Reputations ?? new List<CoopGangReputationRecordDto>();
-            CoopGangReputationRecordDto incomingVagos = FindGangReputationRecord(snapshot, "AMBIENT_GANG_MEXICAN");
-            CoopGangReputationRecordDto existingVagos = FindGangReputationRecord(profile.GangReputation, "AMBIENT_GANG_MEXICAN");
             bool incomingAllDefault = IsAllDefaultGangSnapshot(snapshot);
             if (snapshot.Reputations.Count == 0)
             {
@@ -744,7 +738,7 @@ namespace LsrCoop.Server
             {
                 if (mergeResult.PreservedDefaultOverwriteCount > 0 && ignoredDefaultGangSnapshotProfiles.Add(profile.ProfileId))
                 {
-                    Logger.Info($"[LsrCoop.Server] gang reputation snapshot rejected: profile={profile.ProfileId}, records={snapshot.Reputations.Count}, allDefault={incomingAllDefault}, preservedRecords={mergeResult.PreservedDefaultOverwriteCount}, incomingVagos={DescribeGangReputationRecord(incomingVagos)}, savedVagos={DescribeGangReputationRecord(existingVagos)}; default/no-op snapshot cannot overwrite saved non-default gang reputation");
+                    Logger.Info($"[LsrCoop.Server] gang reputation snapshot rejected: profile={profile.ProfileId}, records={snapshot.Reputations.Count}, allDefault={incomingAllDefault}, preservedRecords={mergeResult.PreservedDefaultOverwriteCount}; default/no-op snapshot cannot overwrite saved non-default gang reputation");
                 }
 
                 return;
@@ -756,7 +750,7 @@ namespace LsrCoop.Server
             ignoredDefaultGangSnapshotProfiles.Remove(profile.ProfileId);
             worldProfileStoreService.Save();
 
-            Logger.Info($"[LsrCoop.Server] gang reputation {mergeResult.Action}: profile={profile.ProfileId}, recordsSaved={profile.GangReputation.Reputations?.Count ?? 0}, recordsChanged={changedRecordCount}, changedGangs={changedRecords}, preservedDefaultOverwrites={mergeResult.PreservedDefaultOverwriteCount}, currentGang={profile.GangReputation.CurrentGangId ?? "none"}, savedVagosAfter={DescribeGangReputationRecord(FindGangReputationRecord(profile.GangReputation, "AMBIENT_GANG_MEXICAN"))}");
+            Logger.Info($"[LsrCoop.Server] gang reputation {mergeResult.Action}: profile={profile.ProfileId}, recordsSaved={profile.GangReputation.Reputations?.Count ?? 0}, recordsChanged={changedRecordCount}, changedGangs={changedRecords}, preservedDefaultOverwrites={mergeResult.PreservedDefaultOverwriteCount}, currentGang={profile.GangReputation.CurrentGangId ?? "none"}");
         }
 
         private static GangReputationMergeResult MergeGangReputationSnapshot(CoopGangReputationStateDto existing, CoopGangReputationStateDto incoming)
@@ -863,20 +857,6 @@ namespace LsrCoop.Server
             };
         }
 
-        private static CoopGangReputationRecordDto FindGangReputationRecord(CoopGangReputationStateDto state, string gangId)
-        {
-            return state?.Reputations?
-                .Where(x => string.Equals(x?.GangId, gangId, StringComparison.OrdinalIgnoreCase))
-                .LastOrDefault();
-        }
-
-        private static string DescribeGangReputationRecord(CoopGangReputationRecordDto record)
-        {
-            return record == null
-                ? "missing"
-                : $"{record.GangId}:rep={record.Reputation},hurt={record.MembersHurt},killed={record.MembersKilled}";
-        }
-
         private static bool IsAllDefaultGangSnapshot(CoopGangReputationStateDto state)
         {
             return state?.Reputations != null
@@ -948,8 +928,7 @@ namespace LsrCoop.Server
             {
                 CoopGangReputationRecordDto oldRecord;
                 oldValues.TryGetValue(record.GangId, out oldRecord);
-                string changes = DescribeGangReputationChanges(oldRecord, record);
-                if (string.IsNullOrWhiteSpace(changes))
+                if (!HasMeaningfulGangReputationChange(oldRecord, record))
                 {
                     continue;
                 }
@@ -963,62 +942,29 @@ namespace LsrCoop.Server
                 : string.Join("|", changedGangIds.Take(8));
         }
 
-        private static string DescribeGangReputationChanges(CoopGangReputationRecordDto oldRecord, CoopGangReputationRecordDto newRecord)
+        private static bool HasMeaningfulGangReputationChange(CoopGangReputationRecordDto oldRecord, CoopGangReputationRecordDto newRecord)
         {
             if (newRecord == null)
             {
-                return string.Empty;
+                return false;
             }
 
             if (oldRecord == null)
             {
-                if (newRecord.Reputation == 0
-                    && newRecord.MembersHurt == 0
-                    && newRecord.MembersKilled == 0
-                    && newRecord.MembersCarJacked == 0
-                    && newRecord.MembersHurtInTerritory == 0
-                    && newRecord.MembersKilledInTerritory == 0
-                    && newRecord.MembersCarJackedInTerritory == 0
-                    && newRecord.PlayerDebt == 0
-                    && !newRecord.IsMember
-                    && !newRecord.IsEnemy
-                    && newRecord.TasksCompleted == 0)
-                {
-                    return string.Empty;
-                }
-
-                return "newPersistentRecord";
+                return IsPersistentGangReputationRecord(newRecord);
             }
 
-            List<string> changes = new List<string>();
-            AddChange(changes, "rep", oldRecord.Reputation, newRecord.Reputation);
-            AddChange(changes, "hurt", oldRecord.MembersHurt, newRecord.MembersHurt);
-            AddChange(changes, "killed", oldRecord.MembersKilled, newRecord.MembersKilled);
-            AddChange(changes, "carjacked", oldRecord.MembersCarJacked, newRecord.MembersCarJacked);
-            AddChange(changes, "hurtTerritory", oldRecord.MembersHurtInTerritory, newRecord.MembersHurtInTerritory);
-            AddChange(changes, "killedTerritory", oldRecord.MembersKilledInTerritory, newRecord.MembersKilledInTerritory);
-            AddChange(changes, "carjackedTerritory", oldRecord.MembersCarJackedInTerritory, newRecord.MembersCarJackedInTerritory);
-            AddChange(changes, "debt", oldRecord.PlayerDebt, newRecord.PlayerDebt);
-            AddChange(changes, "tasks", oldRecord.TasksCompleted, newRecord.TasksCompleted);
-            AddChange(changes, "member", oldRecord.IsMember, newRecord.IsMember);
-            AddChange(changes, "enemy", oldRecord.IsEnemy, newRecord.IsEnemy);
-            return string.Join(";", changes);
-        }
-
-        private static void AddChange(List<string> changes, string name, int oldValue, int newValue)
-        {
-            if (oldValue != newValue)
-            {
-                changes.Add($"{name}:{oldValue}->{newValue}");
-            }
-        }
-
-        private static void AddChange(List<string> changes, string name, bool oldValue, bool newValue)
-        {
-            if (oldValue != newValue)
-            {
-                changes.Add($"{name}:{oldValue}->{newValue}");
-            }
+            return oldRecord.Reputation != newRecord.Reputation
+                || oldRecord.MembersHurt != newRecord.MembersHurt
+                || oldRecord.MembersKilled != newRecord.MembersKilled
+                || oldRecord.MembersCarJacked != newRecord.MembersCarJacked
+                || oldRecord.MembersHurtInTerritory != newRecord.MembersHurtInTerritory
+                || oldRecord.MembersKilledInTerritory != newRecord.MembersKilledInTerritory
+                || oldRecord.MembersCarJackedInTerritory != newRecord.MembersCarJackedInTerritory
+                || oldRecord.PlayerDebt != newRecord.PlayerDebt
+                || oldRecord.TasksCompleted != newRecord.TasksCompleted
+                || oldRecord.IsMember != newRecord.IsMember
+                || oldRecord.IsEnemy != newRecord.IsEnemy;
         }
 
         private static string CreateGangReputationSignature(CoopGangReputationStateDto state)
