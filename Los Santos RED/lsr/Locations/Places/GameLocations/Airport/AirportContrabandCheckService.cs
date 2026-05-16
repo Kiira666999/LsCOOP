@@ -15,6 +15,16 @@ public class AirportContrabandCheckService
     private const uint AirportContrabandIncidentMaxLifetimeMs = 300000;
     private const uint AirportContrabandIncidentResolvedCleanupDelayMs = 10000;
     private const uint AirportContrabandIncidentFarCleanupDelayMs = 60000;
+    private const float ExtremeWeaponDetectionChance = 99f;
+    private const float HeavyWeaponDetectionChance = 95f;
+    private const float LongGunDetectionChance = 88f;
+    private const float HandgunDetectionChance = 50f;
+    private const float DangerousMeleeDetectionChance = 25f;
+    private const int ExtremeWeaponSelectionPriority = 99;
+    private const int HeavyWeaponSelectionPriority = 95;
+    private const int LongGunSelectionPriority = 80;
+    private const int HandgunSelectionPriority = 55;
+    private const int DangerousMeleeSelectionPriority = 35;
 
     private readonly ILocationInteractable Player;
     private readonly IModItems ModItems;
@@ -74,7 +84,9 @@ public class AirportContrabandCheckService
 
         float itemRisk = itemRisks.Sum(x => x.Risk);
         float weaponRisk = weaponRisks.Sum(x => x.Risk);
-        float finalChance = Clamp(worldSettings.AirportContrabandBaseChance + itemRisk + weaponRisk, 0f, Math.Max(0f, worldSettings.AirportContrabandMaxChance));
+        WeaponDetectionFloor weaponFloor = GetWeaponDetectionFloor(weaponRisks);
+        float cappedChance = Clamp(worldSettings.AirportContrabandBaseChance + itemRisk + weaponRisk, 0f, Math.Max(0f, worldSettings.AirportContrabandMaxChance));
+        float finalChance = Clamp(Math.Max(cappedChance, weaponFloor.Chance), 0f, 100f);
         if (finalChance <= 0f)
         {
             EntryPoint.WriteToConsole($"Airport contraband check skipped: chance <= 0 items={itemCount} itemRisk={itemRisk:0} weapons={weaponCount} weaponRisk={weaponRisk:0} finalChance={finalChance:0}", 3);
@@ -83,20 +95,21 @@ public class AirportContrabandCheckService
 
         int roll = RandomItems.MyRand.Next(1, 101);
         bool caught = roll <= finalChance;
-        EntryPoint.WriteToConsole($"Airport contraband check: candidates={candidates.Count} items={itemCount} itemRisk={itemRisk:0} weapons={weaponCount} weaponRisk={weaponRisk:0} finalChance={finalChance:0} roll={roll} caught={caught}", 3);
+        EntryPoint.WriteToConsole($"Airport contraband check: candidates={candidates.Count} items={itemCount} itemRisk={itemRisk:0} weapons={weaponCount} weaponRisk={weaponRisk:0} weaponFloor={weaponFloor.Display} finalChance={finalChance:0} roll={roll} caught={caught}", 3);
 
         if (!caught)
         {
             return;
         }
 
-        ContrabandCandidate selectedCandidate = SelectWeightedCandidate(candidates);
+        SelectionResult selectionResult = SelectContrabandCandidate(candidates);
+        ContrabandCandidate selectedCandidate = selectionResult?.Candidate;
         if (selectedCandidate == null)
         {
             EntryPoint.WriteToConsole("Airport contraband check caught player but skipped arrest: no weighted candidate selected", 0);
             return;
         }
-        EntryPoint.WriteToConsole($"Airport contraband found: selected={selectedCandidate.DisplayName} category={selectedCandidate.Category} quantity={selectedCandidate.Quantity} weight={selectedCandidate.Weight:0.0} crime={selectedCandidate.CrimeID} topWeights={FormatTopCandidateWeights(candidates)}", 3);
+        EntryPoint.WriteToConsole($"Airport contraband found: selectedCategory={selectedCandidate.Category} selected={selectedCandidate.DisplayName} quantity={selectedCandidate.Quantity} selectedWeight={selectedCandidate.Weight:0.0} selectedCrime={selectedCandidate.CrimeID} weaponPriorityApplied={selectionResult.WeaponPriorityApplied} topWeapons={FormatTopCandidateWeights(candidates, true)} topItems={FormatTopCandidateWeights(candidates, false)}", 3);
 
         TriggerBust(selectedCandidate);
     }
@@ -167,7 +180,7 @@ public class AirportContrabandCheckService
             {
                 continue;
             }
-            weaponRisks.Add(new WeaponRiskEntry(weapon, risk, GetWeaponCrimeID(weapon)));
+            weaponRisks.Add(new WeaponRiskEntry(weapon, risk, GetWeaponCrimeID(weapon), GetWeaponPriority(weapon)));
         }
 
         return weaponRisks;
@@ -194,23 +207,92 @@ public class AirportContrabandCheckService
 
     private float GetWeaponSeverityFactor(WeaponInformation weapon)
     {
-        if (weapon.Category == WeaponCategory.Heavy || weapon.WeaponLevel >= 4)
+        AirportWeaponPriority priority = GetWeaponPriority(weapon);
+        if (priority == AirportWeaponPriority.ExtremeWeapon)
+        {
+            return 5.0f;
+        }
+        if (priority == AirportWeaponPriority.HeavyWeapon)
+        {
+            return 4.0f;
+        }
+        if (priority == AirportWeaponPriority.LongGun)
         {
             return 2.0f;
         }
-        if (weapon.WeaponLevel >= 3 || weapon.Category == WeaponCategory.AR || weapon.Category == WeaponCategory.LMG || weapon.Category == WeaponCategory.Sniper)
-        {
-            return 1.5f;
-        }
-        if (weapon.WeaponLevel >= 2 || weapon.Category == WeaponCategory.SMG || weapon.Category == WeaponCategory.Shotgun || weapon.Category == WeaponCategory.Throwable)
+        if (priority == AirportWeaponPriority.Handgun)
         {
             return 1.25f;
         }
-        if (weapon.Category == WeaponCategory.Melee)
+        if (priority == AirportWeaponPriority.DangerousMelee)
         {
-            return 0.5f;
+            return 0.6f;
         }
         return 1.0f;
+    }
+
+    private AirportWeaponPriority GetWeaponPriority(WeaponInformation weapon)
+    {
+        if (weapon == null)
+        {
+            return AirportWeaponPriority.None;
+        }
+        if (weapon.Category == WeaponCategory.Heavy && weapon.WeaponLevel >= 4)
+        {
+            return AirportWeaponPriority.ExtremeWeapon;
+        }
+        if (weapon.Category == WeaponCategory.Heavy || weapon.Category == WeaponCategory.LMG || weapon.Category == WeaponCategory.Sniper || weapon.Category == WeaponCategory.Throwable)
+        {
+            return AirportWeaponPriority.HeavyWeapon;
+        }
+        if (weapon.Category == WeaponCategory.AR || weapon.Category == WeaponCategory.Shotgun || weapon.Category == WeaponCategory.SMG)
+        {
+            return AirportWeaponPriority.LongGun;
+        }
+        if (weapon.Category == WeaponCategory.Pistol)
+        {
+            return AirportWeaponPriority.Handgun;
+        }
+        if (weapon.Category == WeaponCategory.Melee)
+        {
+            return AirportWeaponPriority.DangerousMelee;
+        }
+        return AirportWeaponPriority.OtherIllegalWeapon;
+    }
+
+    private WeaponDetectionFloor GetWeaponDetectionFloor(List<WeaponRiskEntry> weaponRisks)
+    {
+        AirportWeaponPriority priority = GetHighestWeaponPriority(weaponRisks);
+        if (priority == AirportWeaponPriority.ExtremeWeapon)
+        {
+            return new WeaponDetectionFloor(priority, ExtremeWeaponDetectionChance);
+        }
+        if (priority == AirportWeaponPriority.HeavyWeapon)
+        {
+            return new WeaponDetectionFloor(priority, HeavyWeaponDetectionChance);
+        }
+        if (priority == AirportWeaponPriority.LongGun)
+        {
+            return new WeaponDetectionFloor(priority, LongGunDetectionChance);
+        }
+        if (priority == AirportWeaponPriority.Handgun)
+        {
+            return new WeaponDetectionFloor(priority, HandgunDetectionChance);
+        }
+        if (priority == AirportWeaponPriority.DangerousMelee)
+        {
+            return new WeaponDetectionFloor(priority, DangerousMeleeDetectionChance);
+        }
+        return new WeaponDetectionFloor(AirportWeaponPriority.None, 0f);
+    }
+
+    private AirportWeaponPriority GetHighestWeaponPriority(List<WeaponRiskEntry> weaponRisks)
+    {
+        if (weaponRisks == null || !weaponRisks.Any())
+        {
+            return AirportWeaponPriority.None;
+        }
+        return weaponRisks.Where(x => x != null).Select(x => x.Priority).OrderByDescending(x => (int)x).FirstOrDefault();
     }
 
     private float GetItemSeverityFactor(ModItem item)
@@ -833,6 +915,58 @@ public class AirportContrabandCheckService
         return policeRespondable?.PoliceResponse?.CrimesReported?.Count ?? 0;
     }
 
+    private SelectionResult SelectContrabandCandidate(List<ContrabandCandidate> candidates)
+    {
+        SelectionResult prioritySelection = TrySelectWeaponPriorityCandidate(candidates, AirportWeaponPriority.ExtremeWeapon, ExtremeWeaponSelectionPriority);
+        if (prioritySelection != null)
+        {
+            return prioritySelection;
+        }
+
+        prioritySelection = TrySelectWeaponPriorityCandidate(candidates, AirportWeaponPriority.HeavyWeapon, HeavyWeaponSelectionPriority);
+        if (prioritySelection != null)
+        {
+            return prioritySelection;
+        }
+
+        prioritySelection = TrySelectWeaponPriorityCandidate(candidates, AirportWeaponPriority.LongGun, LongGunSelectionPriority);
+        if (prioritySelection != null)
+        {
+            return prioritySelection;
+        }
+
+        prioritySelection = TrySelectWeaponPriorityCandidate(candidates, AirportWeaponPriority.Handgun, HandgunSelectionPriority);
+        if (prioritySelection != null)
+        {
+            return prioritySelection;
+        }
+
+        prioritySelection = TrySelectWeaponPriorityCandidate(candidates, AirportWeaponPriority.DangerousMelee, DangerousMeleeSelectionPriority);
+        if (prioritySelection != null)
+        {
+            return prioritySelection;
+        }
+
+        return new SelectionResult(SelectWeightedCandidate(candidates), false);
+    }
+
+    private SelectionResult TrySelectWeaponPriorityCandidate(List<ContrabandCandidate> candidates, AirportWeaponPriority priority, int selectionChance)
+    {
+        List<ContrabandCandidate> priorityCandidates = candidates?.Where(x => x != null && x.Weight > 0f && x.WeaponPriority == priority).ToList();
+        if (priorityCandidates == null || !priorityCandidates.Any())
+        {
+            return null;
+        }
+
+        int priorityRoll = RandomItems.MyRand.Next(1, 101);
+        if (priorityRoll > selectionChance)
+        {
+            return null;
+        }
+
+        return new SelectionResult(SelectWeightedCandidate(priorityCandidates), true);
+    }
+
     private ContrabandCandidate SelectWeightedCandidate(List<ContrabandCandidate> candidates)
     {
         float totalWeight = candidates?.Where(x => x != null && x.Weight > 0f).Sum(x => x.Weight) ?? 0f;
@@ -854,9 +988,10 @@ public class AirportContrabandCheckService
         return candidates.LastOrDefault(x => x != null && x.Weight > 0f);
     }
 
-    private string FormatTopCandidateWeights(List<ContrabandCandidate> candidates)
+    private string FormatTopCandidateWeights(List<ContrabandCandidate> candidates, bool weaponsOnly)
     {
-        return string.Join(",", candidates.Where(x => x != null && x.Weight > 0f).OrderByDescending(x => x.Weight).Take(3).Select(x => $"{x.Name}:{x.Weight:0.0}"));
+        string output = string.Join(",", candidates.Where(x => x != null && x.Weight > 0f && x.IsWeapon == weaponsOnly).OrderByDescending(x => x.Weight).Take(3).Select(x => $"{x.Name}:{x.Weight:0.0}"));
+        return string.IsNullOrWhiteSpace(output) ? "None" : output;
     }
 
     private static float Clamp(float value, float min, float max)
@@ -918,16 +1053,18 @@ public class AirportContrabandCheckService
 
     private class WeaponRiskEntry
     {
-        public WeaponRiskEntry(WeaponInformation weapon, float risk, string crimeID)
+        public WeaponRiskEntry(WeaponInformation weapon, float risk, string crimeID, AirportWeaponPriority priority)
         {
             Weapon = weapon;
             Risk = risk;
             CrimeID = crimeID;
+            Priority = priority;
         }
 
         public WeaponInformation Weapon { get; }
         public float Risk { get; }
         public string CrimeID { get; }
+        public AirportWeaponPriority Priority { get; }
         public string DisplayName => Weapon == null ? "None" : $"{Weapon.ModelName} level={Weapon.WeaponLevel} category={Weapon.Category}";
     }
 
@@ -946,6 +1083,7 @@ public class AirportContrabandCheckService
         public int Quantity { get; private set; }
         public float Weight { get; private set; }
         public string CrimeID { get; private set; }
+        public AirportWeaponPriority WeaponPriority => WeaponRisk?.Priority ?? AirportWeaponPriority.None;
 
         public static ContrabandCandidate FromItem(ItemRiskEntry itemRisk)
         {
@@ -968,11 +1106,47 @@ public class AirportContrabandCheckService
                 WeaponRisk = weaponRisk,
                 Name = weaponRisk?.Weapon?.ModelName ?? "None",
                 DisplayName = weaponRisk?.DisplayName ?? "None",
-                Category = weaponRisk?.Weapon == null ? "Weapon" : $"Weapon:{weaponRisk.Weapon.Category}",
+                Category = weaponRisk == null ? "Weapon" : weaponRisk.Priority.ToString(),
                 Quantity = 1,
                 Weight = weaponRisk?.Risk ?? 0f,
                 CrimeID = weaponRisk?.CrimeID ?? "None",
             };
         }
+    }
+
+    private class SelectionResult
+    {
+        public SelectionResult(ContrabandCandidate candidate, bool weaponPriorityApplied)
+        {
+            Candidate = candidate;
+            WeaponPriorityApplied = weaponPriorityApplied;
+        }
+
+        public ContrabandCandidate Candidate { get; }
+        public bool WeaponPriorityApplied { get; }
+    }
+
+    private class WeaponDetectionFloor
+    {
+        public WeaponDetectionFloor(AirportWeaponPriority priority, float chance)
+        {
+            Priority = priority;
+            Chance = chance;
+        }
+
+        public AirportWeaponPriority Priority { get; }
+        public float Chance { get; }
+        public string Display => Priority == AirportWeaponPriority.None || Chance <= 0f ? "None" : $"{Priority}:{Chance:0}";
+    }
+
+    private enum AirportWeaponPriority
+    {
+        None = 0,
+        OtherIllegalWeapon = 1,
+        DangerousMelee = 2,
+        Handgun = 3,
+        LongGun = 4,
+        HeavyWeapon = 5,
+        ExtremeWeapon = 6,
     }
 }
