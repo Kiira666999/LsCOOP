@@ -397,6 +397,8 @@ public class Airport : GameLocation, ILocationSetupable
                 Time.SetDateTime(Time.CurrentDateTime.AddHours(flightTime));
                 GameFiber.Sleep(3000);//do the whole shebang ehre
                 Game.FadeScreenIn(1500, true);
+                AirportContrabandCheckService contrabandCheckService = new AirportContrabandCheckService(Player, ModItems, Settings, Time);
+                contrabandCheckService.RunCommercialFlightCheck();
             }
             catch (Exception ex)
             {

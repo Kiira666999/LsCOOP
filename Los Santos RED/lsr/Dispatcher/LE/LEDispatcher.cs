@@ -1,5 +1,6 @@
 ﻿using ExtensionsMethods;
 using LosSantosRED.lsr.Helper;
+using LosSantosRED.lsr.Coop.Core;
 using LosSantosRED.lsr.Interface;
 using LSR.Vehicles;
 using Rage;
@@ -7,6 +8,7 @@ using Rage.Native;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Text;
+using System.Globalization;
 using System.Linq;
 
 public class LEDispatcher
@@ -42,6 +44,8 @@ public class LEDispatcher
     private DispatchableVehicle VehicleType;
     private DispatchablePerson PersonType;
     private bool IsOffDutySpawn;
+    private uint GameTimeLastLoggedPoliceDispatchGateDiagnostics;
+    private uint GameTimeLastLoggedPoliceVehicleCleanupDiagnostics;
 
     private MarshalDispatcher MarshalDispatcher;
     private Vector3 RoadblockInitialPosition;
@@ -1154,6 +1158,14 @@ public class LEDispatcher
     {
         try
         {
+            PoliceVehicleDiagnosticsSnapshot beforeDiagnostics = null;
+            int markedNonPersistent = 0;
+            int deleteRequested = 0;
+            int actualDeleted = 0;
+            if (ShouldLogPoliceVehicleDiagnostics)
+            {
+                beforeDiagnostics = GetPoliceVehicleDiagnosticsSnapshot();
+            }
             int TotalPoliceCars = World.Vehicles.SpawnedPoliceVehiclesCount;
             int PossibleSpawnedPoliceCars = SpawnedCopVehicleLimit;
 
@@ -1172,12 +1184,14 @@ public class LEDispatcher
                         if (isNearLimit /*TotalPoliceCars >= 15*/ && PoliceCar.HasBeenEmptyFor >= 60000 && PoliceCar.Vehicle.Exists() && !PoliceCar.Vehicle.IsOnScreen && PoliceCar.Vehicle.IsPersistent)
                         {
                             PoliceCar.Vehicle.IsPersistent = false;
+                            markedNonPersistent++;
                             EntryPoint.WriteToConsole($"RemoveAbandonedPoliceVehicles 1 NONPERS isNearLimit{isNearLimit} TotalPoliceCars{TotalPoliceCars} PossibleSpawnedPoliceCars{PossibleSpawnedPoliceCars}");
                             GameFiber.Yield();
                         }
                         else if (isNearLimit /*TotalPoliceCars >= 10 */ && distanceTo >= 50f && PoliceCar.HasBeenEmptyFor >= 35000 && PoliceCar.Vehicle.IsPersistent)
                         {
                             PoliceCar.Vehicle.IsPersistent = false;
+                            markedNonPersistent++;
                             EntryPoint.WriteToConsole($"RemoveAbandonedPoliceVehicles 2 NONPERS isNearLimit{isNearLimit} TotalPoliceCars{TotalPoliceCars} PossibleSpawnedPoliceCars{PossibleSpawnedPoliceCars}");
                             GameFiber.Yield();
                         }
@@ -1193,11 +1207,17 @@ public class LEDispatcher
                                 OnHelicopterSpawnedOrRecalled();
                             }
                             PoliceCar.FullyDelete();
+                            deleteRequested++;
+                            if (!PoliceCar.Vehicle.Exists())
+                            {
+                                actualDeleted++;
+                            }
                             GameFiber.Yield();
                         }
                         else if (PoliceCar.DistanceChecker.IsMovingAway && distanceTo >= 125f && PoliceCar.HasBeenEmptyFor >= 20000 && PoliceCar.Vehicle.IsPersistent)//200f
                         {
                             PoliceCar.Vehicle.IsPersistent = false;
+                            markedNonPersistent++;
                             EntryPoint.WriteToConsole($"RemoveAbandonedPoliceVehicles 4 NONPERS isNearLimit{isNearLimit} TotalPoliceCars{TotalPoliceCars} PossibleSpawnedPoliceCars{PossibleSpawnedPoliceCars}");
                             GameFiber.Yield();
                         }
@@ -1228,12 +1248,14 @@ public class LEDispatcher
                         if (PoliceCar.DistanceChecker.IsMovingAway && distanceTo >= 225f && PoliceCar.HasBeenEmptyFor >= 15000)//300f//10000))//225f
                         {
                             PoliceCar.Vehicle.IsPersistent = false;
+                            markedNonPersistent++;
                             EntryPoint.WriteToConsole($"RemoveAbandonedPoliceVehicles 1 SPAWNED EMPTY NONPERS isNearLimit{isNearLimit} TotalPoliceCars{TotalPoliceCars} PossibleSpawnedPoliceCars{PossibleSpawnedPoliceCars}");
                             GameFiber.Yield();
                         }
                         else if (PoliceCar.DistanceChecker.IsMovingAway && distanceTo >= 300f && PoliceCar.HasBeenEmptyFor >= 10000)//375f//10000))
                         {
                             PoliceCar.Vehicle.IsPersistent = false;
+                            markedNonPersistent++;
                             EntryPoint.WriteToConsole($"RemoveAbandonedPoliceVehicles 2 SPAWNED EMPTY NONPERS isNearLimit{isNearLimit} TotalPoliceCars{TotalPoliceCars} PossibleSpawnedPoliceCars{PossibleSpawnedPoliceCars}");
                             GameFiber.Yield();
                         }
@@ -1245,6 +1267,7 @@ public class LEDispatcher
                 }
             }
             GameFiber.Yield();//TR 29
+            LogPoliceVehicleCleanupDiagnostics(beforeDiagnostics, markedNonPersistent, deleteRequested, actualDeleted);
         }
         catch (InvalidOperationException ex)
         {
@@ -1274,7 +1297,10 @@ public class LEDispatcher
     }
     private void HandleAmbientSpawns()
     {
-        if (!IsTimeToAmbientDispatch || !HasNeedToAmbientDispatch)
+        bool isTimeToAmbientDispatch = IsTimeToAmbientDispatch;
+        bool hasNeedToAmbientDispatch = HasNeedToAmbientDispatch;
+        LogPoliceDispatchGateDiagnostics(isTimeToAmbientDispatch, hasNeedToAmbientDispatch);
+        if (!isTimeToAmbientDispatch || !hasNeedToAmbientDispatch)
         {
             return;
         }
@@ -1342,6 +1368,137 @@ public class LEDispatcher
             //GameTimeAttemptedDispatch = Game.GameTime;
         }
         
+    }
+    private bool ShouldLogPoliceVehicleDiagnostics => CoopPersistenceDiagnostics.IsVerboseEnabled(Settings);
+    private void LogPoliceDispatchGateDiagnostics(bool isTimeToAmbientDispatch, bool hasNeedToAmbientDispatch)
+    {
+        if (!ShouldLogPoliceVehicleDiagnostics)
+        {
+            return;
+        }
+        bool pedGate = World.Pedestrians.TotalSpawnedAmbientPolice < SpawnedCopLimit;
+        bool vehicleGate = World.Vehicles.SpawnedAmbientPoliceVehiclesCount < SpawnedCopVehicleLimit;
+        bool spawnAllowed = isTimeToAmbientDispatch && hasNeedToAmbientDispatch;
+        bool isGateDenied = isTimeToAmbientDispatch && (!pedGate || !vehicleGate);
+        if (!isGateDenied && Game.GameTime - GameTimeLastLoggedPoliceDispatchGateDiagnostics < 5000)
+        {
+            return;
+        }
+        GameTimeLastLoggedPoliceDispatchGateDiagnostics = Game.GameTime;
+        PoliceVehicleDiagnosticsSnapshot snapshot = GetPoliceVehicleDiagnosticsSnapshot();
+        EntryPoint.WriteToConsole("Co-op police dispatch gate diag "
+            + "wanted:" + World.TotalWantedLevel.ToString(CultureInfo.InvariantCulture)
+            + " time:" + isTimeToAmbientDispatch
+            + " allowed:" + spawnAllowed
+            + " pedGate:" + pedGate
+            + " vehGate:" + vehicleGate
+            + " spawnedPeds:" + World.Pedestrians.TotalSpawnedAmbientPolice.ToString(CultureInfo.InvariantCulture)
+            + "/" + SpawnedCopLimit.ToString(CultureInfo.InvariantCulture)
+            + " spawnedVeh:" + World.Vehicles.SpawnedAmbientPoliceVehiclesCount.ToString(CultureInfo.InvariantCulture)
+            + "/" + SpawnedCopVehicleLimit.ToString(CultureInfo.InvariantCulture)
+            + " totalPoliceCars:" + World.Vehicles.SpawnedPoliceVehiclesCount.ToString(CultureInfo.InvariantCulture)
+            + " possiblePoliceCars:" + SpawnedCopVehicleLimit.ToString(CultureInfo.InvariantCulture)
+            + " " + snapshot.Format(), 5);
+    }
+    private void LogPoliceVehicleCleanupDiagnostics(PoliceVehicleDiagnosticsSnapshot beforeDiagnostics, int markedNonPersistent, int deleteRequested, int actualDeleted)
+    {
+        if (!ShouldLogPoliceVehicleDiagnostics || beforeDiagnostics == null)
+        {
+            return;
+        }
+        if (markedNonPersistent == 0 && deleteRequested == 0 && Game.GameTime - GameTimeLastLoggedPoliceVehicleCleanupDiagnostics < 10000)
+        {
+            return;
+        }
+        GameTimeLastLoggedPoliceVehicleCleanupDiagnostics = Game.GameTime;
+        PoliceVehicleDiagnosticsSnapshot afterDiagnostics = GetPoliceVehicleDiagnosticsSnapshot();
+        int removedFromTracking = Math.Max(0, beforeDiagnostics.Tracked - afterDiagnostics.Tracked);
+        EntryPoint.WriteToConsole("Co-op police vehicle cleanup diag "
+            + "wanted:" + World.TotalWantedLevel.ToString(CultureInfo.InvariantCulture)
+            + " markedNonPersistent:" + markedNonPersistent.ToString(CultureInfo.InvariantCulture)
+            + " deleteRequested:" + deleteRequested.ToString(CultureInfo.InvariantCulture)
+            + " actualDeleted:" + actualDeleted.ToString(CultureInfo.InvariantCulture)
+            + " removedFromTracking:" + removedFromTracking.ToString(CultureInfo.InvariantCulture)
+            + " before:" + beforeDiagnostics.Format()
+            + " after:" + afterDiagnostics.Format(), 5);
+    }
+    private PoliceVehicleDiagnosticsSnapshot GetPoliceVehicleDiagnosticsSnapshot()
+    {
+        PoliceVehicleDiagnosticsSnapshot snapshot = new PoliceVehicleDiagnosticsSnapshot();
+        List<PoliceVehicleExt> policeVehicles = World.Vehicles.PoliceVehicles.Where(x => x != null).ToList();
+        snapshot.Tracked = policeVehicles.Count;
+        snapshot.SpawnedAmbientTracked = World.Vehicles.SpawnedAmbientPoliceVehiclesCount;
+        snapshot.SpawnedTracked = World.Vehicles.SpawnedPoliceVehiclesCount;
+        foreach (PoliceVehicleExt policeVehicle in policeVehicles)
+        {
+            if (policeVehicle.Vehicle == null || !policeVehicle.Vehicle.Exists())
+            {
+                snapshot.NonExisting++;
+                continue;
+            }
+            snapshot.Existing++;
+            if (!policeVehicle.Vehicle.IsPersistent)
+            {
+                snapshot.NonPersistent++;
+            }
+            if (!HasAliveOccupants(policeVehicle))
+            {
+                snapshot.NoOccupants++;
+            }
+            if (policeVehicle.DistanceChecker.DistanceToPlayer >= 125f)
+            {
+                snapshot.FarAway++;
+            }
+        }
+        try
+        {
+            List<Vehicle> rageVehicles = Rage.World.GetAllVehicles().Where(x => x.Exists()).ToList();
+            snapshot.RageVehicles = rageVehicles.Count;
+            snapshot.RagePoliceVehicles = rageVehicles.Count(x => x.IsPoliceVehicle);
+        }
+        catch
+        {
+            snapshot.RageVehicles = -1;
+            snapshot.RagePoliceVehicles = -1;
+        }
+        return snapshot;
+    }
+    private bool HasAliveOccupants(PoliceVehicleExt policeVehicle)
+    {
+        try
+        {
+            return policeVehicle.Vehicle.Occupants.Any(x => x.Exists() && x.IsAlive);
+        }
+        catch
+        {
+            return false;
+        }
+    }
+    private class PoliceVehicleDiagnosticsSnapshot
+    {
+        public int Tracked { get; set; }
+        public int SpawnedTracked { get; set; }
+        public int SpawnedAmbientTracked { get; set; }
+        public int Existing { get; set; }
+        public int NonExisting { get; set; }
+        public int NonPersistent { get; set; }
+        public int NoOccupants { get; set; }
+        public int FarAway { get; set; }
+        public int RageVehicles { get; set; }
+        public int RagePoliceVehicles { get; set; }
+        public string Format()
+        {
+            return "tracked:" + Tracked.ToString(CultureInfo.InvariantCulture)
+                + " spawnedTracked:" + SpawnedTracked.ToString(CultureInfo.InvariantCulture)
+                + " ambientTracked:" + SpawnedAmbientTracked.ToString(CultureInfo.InvariantCulture)
+                + " existing:" + Existing.ToString(CultureInfo.InvariantCulture)
+                + " nonExisting:" + NonExisting.ToString(CultureInfo.InvariantCulture)
+                + " nonPersistent:" + NonPersistent.ToString(CultureInfo.InvariantCulture)
+                + " noOccupants:" + NoOccupants.ToString(CultureInfo.InvariantCulture)
+                + " farAway:" + FarAway.ToString(CultureInfo.InvariantCulture)
+                + " rageVeh:" + RageVehicles.ToString(CultureInfo.InvariantCulture)
+                + " ragePoliceVeh:" + RagePoliceVehicles.ToString(CultureInfo.InvariantCulture);
+        }
     }
     private void HandleRoadblockSpawns()
     {

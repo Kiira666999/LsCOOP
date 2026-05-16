@@ -2,7 +2,7 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-15T19:43:28.5561418+00:00",
-  "UpdatedUtc": "2026-05-15T22:34:25.9056831+00:00",
+  "UpdatedUtc": "2026-05-16T14:05:43.2319927+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -12,7 +12,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-15T22:34:25.9056892+00:00"
+    "UpdatedUtc": "2026-05-16T14:05:43.2320072+00:00"
   },
   "Profiles": [
     {
@@ -21,7 +21,7 @@
       "DisplayName": "Kiira",
       "Role": "Admin,TrustedHost",
       "CreatedUtc": "2026-05-15T19:43:38.6909114+00:00",
-      "LastSeenUtc": "2026-05-15T22:34:25.9056815+00:00",
+      "LastSeenUtc": "2026-05-16T14:05:43.086586+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -157,24 +157,49 @@
         "UpdatedUtc": "2026-05-15T19:44:14.8634276+00:00"
       },
       "InventoryMoney": {
-        "SnapshotId": "36252f2d44e0461ea00eb53277fc6d14",
+        "SnapshotId": "5ac1fef732074916b2e5831cee5a217f",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "OnHandCash": 45998,
+        "OnHandCash": 0,
         "TotalAccountMoney": 0,
-        "TotalMoney": 45998,
+        "TotalMoney": 0,
         "InventoryItems": [],
         "BankAccounts": [],
-        "SnapshotUtc": "2026-05-15T22:30:51.3741358+00:00"
+        "SnapshotUtc": "2026-05-15T22:48:34.7690262+00:00"
       },
       "Weapons": {
-        "SnapshotId": "f1120c379fdf45938adf53deb46a9fdb",
+        "SnapshotId": "8f1f74b8a7a24ffea443bd308629ad63",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "Weapons": [],
-        "SnapshotUtc": "2026-05-15T22:30:51.3761355+00:00"
+        "Weapons": [
+          {
+            "WeaponHash": "177293209",
+            "WeaponName": "177293209",
+            "Category": "",
+            "Ammo": 40,
+            "IsLegal": false,
+            "IsEquipped": false
+          },
+          {
+            "WeaponHash": "125959754",
+            "WeaponName": "125959754",
+            "Category": "",
+            "Ammo": 10,
+            "IsLegal": false,
+            "IsEquipped": false
+          },
+          {
+            "WeaponHash": "3686625920",
+            "WeaponName": "3686625920",
+            "Category": "",
+            "Ammo": 200,
+            "IsLegal": false,
+            "IsEquipped": false
+          }
+        ],
+        "SnapshotUtc": "2026-05-16T13:44:05.1539262+00:00"
       },
       "OwnedVehicles": {
         "SnapshotId": "c19f9cb06d6a4d1cbc1104b4cb4c0df2",
@@ -205,7 +230,7 @@
       },
       "PropertyOwnership": null,
       "GangReputation": {
-        "StateId": "61e7d2bedc5847bf9d9f8336c9183773",
+        "StateId": "9ff8597a5ce64f468b1c35ff7a7b63ed",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
@@ -259,7 +284,7 @@
           {
             "GangId": "AMBIENT_GANG_BALLAS",
             "GangName": "Ballas",
-            "Reputation": -1937,
+            "Reputation": -1931,
             "MembersHurt": 2,
             "MembersKilled": 5,
             "MembersCarJacked": 0,
@@ -364,7 +389,7 @@
           {
             "GangId": "AMBIENT_GANG_FAMILY",
             "GangName": "Families",
-            "Reputation": -2224,
+            "Reputation": -2268,
             "MembersHurt": 3,
             "MembersKilled": 6,
             "MembersCarJacked": 0,
@@ -380,8 +405,8 @@
             "GangId": "AMBIENT_GANG_FDizzyD",
             "GangName": "Dizzy-D",
             "Reputation": 0,
-            "MembersHurt": 0,
-            "MembersKilled": 0,
+            "MembersHurt": 1,
+            "MembersKilled": 1,
             "MembersCarJacked": 0,
             "MembersHurtInTerritory": 0,
             "MembersKilledInTerritory": 0,
@@ -409,7 +434,7 @@
           {
             "GangId": "AMBIENT_GANG_FIENDS",
             "GangName": "Fiends",
-            "Reputation": -1973,
+            "Reputation": -1967,
             "MembersHurt": 2,
             "MembersKilled": 1,
             "MembersCarJacked": 0,
@@ -784,7 +809,7 @@
           {
             "GangId": "AMBIENT_GANG_SHUSTLERS",
             "GangName": "South Central Hustlers",
-            "Reputation": -231,
+            "Reputation": -225,
             "MembersHurt": 0,
             "MembersKilled": 0,
             "MembersCarJacked": 1,
@@ -889,7 +914,7 @@
           {
             "GangId": "AMBIENT_GANG_WEICHENG",
             "GangName": "Triads",
-            "Reputation": -3893,
+            "Reputation": -4297,
             "MembersHurt": 3,
             "MembersKilled": 3,
             "MembersCarJacked": 0,
@@ -917,7 +942,7 @@
             "TasksCompleted": 0
           }
         ],
-        "UpdatedUtc": "2026-05-15T22:34:24.2109548+00:00"
+        "UpdatedUtc": "2026-05-15T22:51:37.9448023+00:00"
       },
       "CriminalHistory": {
         "WorldId": "lsrcoop-default-world",
@@ -929,45 +954,45 @@
         "LastSeenZ": 0,
         "WantedLevel": 0,
         "Crimes": [],
-        "DateTimeLastWantedEnded": "2009-06-17T10:30:48+00:00",
-        "UpdatedUtc": "2026-05-15T21:39:25.3067848+00:00",
+        "DateTimeLastWantedEnded": "2009-06-06T12:36:13+00:00",
+        "UpdatedUtc": "2026-05-15T22:48:29.1458189+00:00",
         "ClearReason": "DeathResolved"
       },
       "DeathArrestState": {
-        "StateId": "7a254cd47c3d4615b4541ba28576b349",
+        "StateId": "ac4fbafc16f3485296050be10b6e6460",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "ActionType": "ApplyDeathState",
-        "OutcomeType": "RespawnAtCurrentLocation",
-        "RespawnLocationName": "",
-        "PositionX": 253.3044,
-        "PositionY": -1006.467,
-        "PositionZ": 29.27811,
-        "Heading": 0,
-        "HospitalFee": 0,
-        "HospitalBillPastDue": 0,
-        "HospitalDuration": 0,
+        "OutcomeType": "HospitalRespawn",
+        "RespawnLocationName": "Central LS Medical Center",
+        "PositionX": 338.2065,
+        "PositionY": -1396.154,
+        "PositionZ": 32.50927,
+        "Heading": 77.07101,
+        "HospitalFee": 65000,
+        "HospitalBillPastDue": 19002,
+        "HospitalDuration": 13,
         "BailFee": 0,
         "BailFeePastDue": 0,
         "BailDuration": 0,
         "TodayPayment": 0,
-        "TimesDied": 1,
+        "TimesDied": 0,
         "HadIllegalWeapons": false,
         "HadIllegalItems": false,
-        "ReleaseDate": "2009-06-06T10:25:43Z",
-        "OccurredUtc": "2026-05-15T22:30:51.3761355+00:00"
+        "ReleaseDate": "2009-06-19T07:00:00Z",
+        "OccurredUtc": "2026-05-15T22:48:34.7690262+00:00"
       },
       "LastPosition": {
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "SessionId": "2aa537472b1245fe91a0b37327aef17d",
-        "X": 263.3291,
-        "Y": -972.20233,
-        "Z": 29.328999,
-        "Heading": 349.89722,
-        "UpdatedUtcUnixMilliseconds": 1778884454036,
+        "SessionId": "e6b6ff63b9a9461ebb18b10ca9ebb2f3",
+        "X": 4523.757,
+        "Y": -4498.871,
+        "Z": 4.2482057,
+        "Heading": 100.01835,
+        "UpdatedUtcUnixMilliseconds": 1778940342985,
         "Source": "Periodic"
       },
       "LongTermLsrRecords": []
