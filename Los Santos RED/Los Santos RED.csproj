@@ -503,6 +503,7 @@
     <Compile Include="lsr\Locations\Places\ILicensePlatePreviewable.cs" />
     <Compile Include="lsr\Locations\Places\ILocationImpoundable.cs" />
     <Compile Include="lsr\Locations\Places\GameLocations\Airport\Airport.cs" />
+    <Compile Include="lsr\Locations\Places\GameLocations\Airport\AirportContrabandCheckService.cs" />
     <Compile Include="lsr\Locations\Places\GameLocations\Airport\Carrier.cs" />
     <Compile Include="lsr\Locations\Places\GameLocations\Airport\CayoPericoAirport.cs" />
     <Compile Include="lsr\Locations\Places\GameLocations\Airport\AirportFlight.cs" />

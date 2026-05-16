@@ -53,8 +53,8 @@
     <ArsonPaymentMin>800</ArsonPaymentMin>
     <ArsonPaymentMax>1800</ArsonPaymentMax>
     <FightPercentage>65</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>5</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>FamiliesDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -160,8 +160,8 @@
     <ArsonPaymentMin>1500</ArsonPaymentMin>
     <ArsonPaymentMax>3500</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>5</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>FamiliesDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -270,8 +270,8 @@
     <ArsonPaymentMin>1000</ArsonPaymentMin>
     <ArsonPaymentMax>2200</ArsonPaymentMax>
     <FightPercentage>75</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>BallasDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -375,8 +375,8 @@
     <ArsonPaymentMin>1500</ArsonPaymentMin>
     <ArsonPaymentMax>3500</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>5</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>BallasDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -442,8 +442,8 @@
     <ArsonPaymentMin>1500</ArsonPaymentMin>
     <ArsonPaymentMax>3500</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>5</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>BallasDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -544,8 +544,8 @@
     <ArsonPaymentMin>1500</ArsonPaymentMin>
     <ArsonPaymentMax>3500</ArsonPaymentMax>
     <FightPercentage>80</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>TriadsDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -652,8 +652,8 @@
     <ArsonPaymentMin>2000</ArsonPaymentMin>
     <ArsonPaymentMax>4500</ArsonPaymentMax>
     <FightPercentage>75</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridMCDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -1192,8 +1192,8 @@
     <ArsonPaymentMin>1500</ArsonPaymentMin>
     <ArsonPaymentMax>3500</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>FamiliesDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -1301,8 +1301,8 @@
     <ArsonPaymentMin>3000</ArsonPaymentMin>
     <ArsonPaymentMax>7000</ArsonPaymentMax>
     <FightPercentage>75</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridMCDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -1413,8 +1413,8 @@
     <ArsonPaymentMin>3000</ArsonPaymentMin>
     <ArsonPaymentMax>7000</ArsonPaymentMax>
     <FightPercentage>80</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>18</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridMCDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -1524,8 +1524,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>80</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>VagosDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -1632,8 +1632,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>80</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>FamiliesDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -1741,8 +1741,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>80</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>BallasDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -1848,8 +1848,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>80</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>MarabuntaDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -1957,8 +1957,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>80</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>AztecasDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -2064,8 +2064,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>80</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>TriadsDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -2176,8 +2176,8 @@
     <ArsonPaymentMin>800</ArsonPaymentMin>
     <ArsonPaymentMax>1800</ArsonPaymentMax>
     <FightPercentage>80</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridRedneckDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>5</AmbientMemberMoneyMin>
@@ -2280,8 +2280,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>80</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>KhangpaeDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -2389,8 +2389,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>85</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridCokeDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>200</AmbientMemberMoneyMin>
@@ -2502,8 +2502,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>85</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridFishScaleDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>200</AmbientMemberMoneyMin>
@@ -2609,8 +2609,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>85</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridFishScaleDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>200</AmbientMemberMoneyMin>
@@ -2716,8 +2716,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>85</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridCokeDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>200</AmbientMemberMoneyMin>
@@ -2823,8 +2823,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>85</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridCokeDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>200</AmbientMemberMoneyMin>
@@ -3035,8 +3035,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>85</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>ArmenianDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -3143,8 +3143,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>75</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>YardiesDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -3259,8 +3259,8 @@
     <ArsonPaymentMin>800</ArsonPaymentMin>
     <ArsonPaymentMax>1800</ArsonPaymentMax>
     <FightPercentage>75</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridSPANKDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>20</AmbientMemberMoneyMin>
@@ -3366,8 +3366,8 @@
     <ArsonPaymentMin>3000</ArsonPaymentMin>
     <ArsonPaymentMax>7000</ArsonPaymentMax>
     <FightPercentage>80</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>18</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridHeroinDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -3474,8 +3474,8 @@
     <ArsonPaymentMin>2000</ArsonPaymentMin>
     <ArsonPaymentMax>4500</ArsonPaymentMax>
     <FightPercentage>75</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>KhangpaeDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -3603,11 +3603,11 @@
   </Gang>
   <Gang>
     <ID>AMBIENT_GANG_THUGS</ID>///newgang
-    <FullName>Street Gang 1</FullName><ShortName>Street Gang 1</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>TUG </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>ThugPeds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>LostSidearms</SideArmsID><LongGunsID>LostLongGuns</LongGunsID><VehiclesID>NorthHollandVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>30</FightPolicePercentage><AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage><DrugDealerPercentage>100</DrugDealerPercentage><DealerMenuGroup>SLSTDealer1</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>8</PercentageWithLongGuns><PercentageWithSidearms>30</PercentageWithSidearms><PercentageWithMelee>40</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
+    <FullName>Street Gang 1</FullName><ShortName>Street Gang 1</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>TUG </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>ThugPeds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>LostSidearms</SideArmsID><LongGunsID>LostLongGuns</LongGunsID><VehiclesID>NorthHollandVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>100</DrugDealerPercentage><DealerMenuGroup>SLSTDealer1</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>8</PercentageWithLongGuns><PercentageWithSidearms>30</PercentageWithSidearms><PercentageWithMelee>40</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
   <Gang>
     <ID>AMBIENT_GANG_THUGS2</ID>///hostilerhballas
-    <FullName>Street Gang 2</FullName><ShortName>Street Gang 2</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>RHB </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>Thug2Peds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>BallasSidearms</SideArmsID><LongGunsID>BallasLongGuns</LongGunsID><VehiclesID>RHBallasVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>30</FightPolicePercentage><AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage><DrugDealerPercentage>100</DrugDealerPercentage><DealerMenuGroup>BallasDealerMenu</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>6</PercentageWithLongGuns><PercentageWithSidearms>25</PercentageWithSidearms><PercentageWithMelee>0</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
+    <FullName>Street Gang 2</FullName><ShortName>Street Gang 2</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>RHB </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>Thug2Peds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>BallasSidearms</SideArmsID><LongGunsID>BallasLongGuns</LongGunsID><VehiclesID>RHBallasVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>100</DrugDealerPercentage><DealerMenuGroup>BallasDealerMenu</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>6</PercentageWithLongGuns><PercentageWithSidearms>25</PercentageWithSidearms><PercentageWithMelee>0</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
   <Gang>
     <ID>AMBIENT_GANG_THUGS3</ID>///hostilektbballas
-    <FullName>Street Gang 3</FullName><ShortName>Street Gang 3</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>KTB </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>Thug3Peds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>BallasSidearms</SideArmsID><LongGunsID>BallasLongGuns</LongGunsID><VehiclesID>KTBallasVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>30</FightPolicePercentage><AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage><DrugDealerPercentage>100</DrugDealerPercentage><DealerMenuGroup>BallasDealerMenu</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>6</PercentageWithLongGuns><PercentageWithSidearms>25</PercentageWithSidearms><PercentageWithMelee>0</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
+    <FullName>Street Gang 3</FullName><ShortName>Street Gang 3</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>KTB </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>Thug3Peds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>BallasSidearms</SideArmsID><LongGunsID>BallasLongGuns</LongGunsID><VehiclesID>KTBallasVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>100</DrugDealerPercentage><DealerMenuGroup>BallasDealerMenu</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>6</PercentageWithLongGuns><PercentageWithSidearms>25</PercentageWithSidearms><PercentageWithMelee>0</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
 </ArrayOfGang>
