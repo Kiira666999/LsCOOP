@@ -213,6 +213,7 @@
     <PoliceBribeWantedLevelScale>2500</PoliceBribeWantedLevelScale>
     <PoliceBribePoliceKilledMultiplier>15000</PoliceBribePoliceKilledMultiplier>
     <PoliceBribePoliceInjuredMultiplier>5000</PoliceBribePoliceInjuredMultiplier>
+    <PoliceBribeMajorCrimeMultiplier>1.0</PoliceBribeMajorCrimeMultiplier>
     <DeductBailFee>true</DeductBailFee>
     <PoliceBailWantedLevelScale>2000</PoliceBailWantedLevelScale>
     <PoliceBailPoliceKilledMultiplier>10000</PoliceBailPoliceKilledMultiplier>

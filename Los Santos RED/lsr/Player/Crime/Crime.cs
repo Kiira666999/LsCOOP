@@ -65,6 +65,7 @@ public class Crime
     public uint GracePeriod { get; set; } = 0;
 
     public bool RequiresRecognizingPlayer { get; set; } = false;
+    public bool AppliesMajorBribeModifier { get; set; } = false;
 
 
 

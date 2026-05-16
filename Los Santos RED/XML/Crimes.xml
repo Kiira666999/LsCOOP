@@ -23,6 +23,7 @@
     <TimeBetweenWarnings>1800000</TimeBetweenWarnings>
     <GracePeriod>0</GracePeriod>
     <RequiresRecognizingPlayer>false</RequiresRecognizingPlayer>
+    <AppliesMajorBribeModifier>true</AppliesMajorBribeModifier>
   </Crime>
   <Crime>
     <ID>TerroristActivity</ID>
@@ -48,6 +49,7 @@
     <TimeBetweenWarnings>1800000</TimeBetweenWarnings>
     <GracePeriod>0</GracePeriod>
     <RequiresRecognizingPlayer>false</RequiresRecognizingPlayer>
+    <AppliesMajorBribeModifier>true</AppliesMajorBribeModifier>
   </Crime>
   <Crime>
     <ID>FiringWeaponNearPolice</ID>
@@ -73,6 +75,7 @@
     <TimeBetweenWarnings>1800000</TimeBetweenWarnings>
     <GracePeriod>0</GracePeriod>
     <RequiresRecognizingPlayer>false</RequiresRecognizingPlayer>
+    <AppliesMajorBribeModifier>true</AppliesMajorBribeModifier>
   </Crime>
   <Crime>
     <ID>AimingWeaponAtPolice</ID>
@@ -98,6 +101,7 @@
     <TimeBetweenWarnings>1800000</TimeBetweenWarnings>
     <GracePeriod>0</GracePeriod>
     <RequiresRecognizingPlayer>false</RequiresRecognizingPlayer>
+    <AppliesMajorBribeModifier>true</AppliesMajorBribeModifier>
   </Crime>
   <Crime>
     <ID>HurtingPolice</ID>
@@ -123,6 +127,7 @@
     <TimeBetweenWarnings>1800000</TimeBetweenWarnings>
     <GracePeriod>0</GracePeriod>
     <RequiresRecognizingPlayer>false</RequiresRecognizingPlayer>
+    <AppliesMajorBribeModifier>true</AppliesMajorBribeModifier>
   </Crime>
   <Crime>
     <ID>CarryingBody</ID>
@@ -173,6 +178,7 @@
     <TimeBetweenWarnings>1800000</TimeBetweenWarnings>
     <GracePeriod>0</GracePeriod>
     <RequiresRecognizingPlayer>false</RequiresRecognizingPlayer>
+    <AppliesMajorBribeModifier>true</AppliesMajorBribeModifier>
   </Crime>
   <Crime>
     <ID>CivilianTrespassing</ID>
@@ -298,6 +304,7 @@
     <TimeBetweenWarnings>1800000</TimeBetweenWarnings>
     <GracePeriod>0</GracePeriod>
     <RequiresRecognizingPlayer>false</RequiresRecognizingPlayer>
+    <AppliesMajorBribeModifier>true</AppliesMajorBribeModifier>
   </Crime>
   <Crime>
     <ID>StolenArmedMilitaryVehicle</ID>
@@ -323,6 +330,7 @@
     <TimeBetweenWarnings>1800000</TimeBetweenWarnings>
     <GracePeriod>0</GracePeriod>
     <RequiresRecognizingPlayer>false</RequiresRecognizingPlayer>
+    <AppliesMajorBribeModifier>true</AppliesMajorBribeModifier>
   </Crime>
   <Crime>
     <ID>GotInAirVehicleDuringChase</ID>
@@ -423,6 +431,7 @@
     <TimeBetweenWarnings>1800000</TimeBetweenWarnings>
     <GracePeriod>0</GracePeriod>
     <RequiresRecognizingPlayer>false</RequiresRecognizingPlayer>
+    <AppliesMajorBribeModifier>true</AppliesMajorBribeModifier>
   </Crime>
   <Crime>
     <ID>KillingCivilians</ID>
@@ -448,6 +457,7 @@
     <TimeBetweenWarnings>1800000</TimeBetweenWarnings>
     <GracePeriod>0</GracePeriod>
     <RequiresRecognizingPlayer>false</RequiresRecognizingPlayer>
+    <AppliesMajorBribeModifier>true</AppliesMajorBribeModifier>
   </Crime>
   <Crime>
     <ID>ArmedRobbery</ID>
@@ -473,6 +483,7 @@
     <TimeBetweenWarnings>1800000</TimeBetweenWarnings>
     <GracePeriod>0</GracePeriod>
     <RequiresRecognizingPlayer>false</RequiresRecognizingPlayer>
+    <AppliesMajorBribeModifier>true</AppliesMajorBribeModifier>
   </Crime>
   <Crime>
     <ID>BankRobbery</ID>
@@ -498,6 +509,7 @@
     <TimeBetweenWarnings>1800000</TimeBetweenWarnings>
     <GracePeriod>0</GracePeriod>
     <RequiresRecognizingPlayer>false</RequiresRecognizingPlayer>
+    <AppliesMajorBribeModifier>true</AppliesMajorBribeModifier>
   </Crime>
   <Crime>
     <ID>Mugging</ID>

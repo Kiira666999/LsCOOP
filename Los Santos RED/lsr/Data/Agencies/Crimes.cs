@@ -113,15 +113,15 @@ public class Crimes : ICrimes
     private void SetupCrimes()
     {
 
-        TrespassingOnMilitaryBase = new Crime(StaticStrings.TrespassingOnMilitaryBaseCrimeID, "Trespassing on Military Installation", 6, true, 0, false, false, false);
-        StolenArmedMilitaryVehicle = new Crime(StaticStrings.StolenArmedMilitaryVehicleCrimeID,"Stealing Armed Military Vehicle",6,true,1,true, true, true);
-        KillingPolice = new Crime(StaticStrings.KillingPoliceCrimeID, "Police Fatality", 3, true, 2, true, true, true);// { CanViolateWithoutPerception = true };
-        TerroristActivity = new Crime(StaticStrings.TerroristActivityCrimeID, "Terrorist Activity", 3, true, 3, false, false, true) { CanReportBySound = true };
-        FiringWeaponNearPolice = new Crime(StaticStrings.FiringWeaponNearPoliceCrimeID, "Shots Fired Near Police", 3, true, 4, false, false, true) { CanReportBySound = true };
-        AimingWeaponAtPolice = new Crime(StaticStrings.AimingWeaponAtPoliceCrimeID, "Aiming Weapons At Police", 3, true, 5, false, false, true);
-        HurtingPolice = new Crime(StaticStrings.HurtingPoliceCrimeID, "Assaulting Police", 3, false, 6, true, false, true);// { CanViolateWithoutPerception = true };
-        BrandishingHeavyWeapon = new Crime(StaticStrings.BrandishingHeavyWeaponCrimeID, "Brandishing Heavy Weapon", 3, false, 7, true, true, true);
-        BankRobbery = new Crime(StaticStrings.BankRobberyCrimeID, "Bank Robbery", 4, false, 8, true, true, true);
+        TrespassingOnMilitaryBase = new Crime(StaticStrings.TrespassingOnMilitaryBaseCrimeID, "Trespassing on Military Installation", 6, true, 0, false, false, false) { AppliesMajorBribeModifier = true };
+        StolenArmedMilitaryVehicle = new Crime(StaticStrings.StolenArmedMilitaryVehicleCrimeID,"Stealing Armed Military Vehicle",6,true,1,true, true, true) { AppliesMajorBribeModifier = true };
+        KillingPolice = new Crime(StaticStrings.KillingPoliceCrimeID, "Police Fatality", 3, true, 2, true, true, true) { AppliesMajorBribeModifier = true };// { CanViolateWithoutPerception = true };
+        TerroristActivity = new Crime(StaticStrings.TerroristActivityCrimeID, "Terrorist Activity", 3, true, 3, false, false, true) { CanReportBySound = true, AppliesMajorBribeModifier = true };
+        FiringWeaponNearPolice = new Crime(StaticStrings.FiringWeaponNearPoliceCrimeID, "Shots Fired Near Police", 3, true, 4, false, false, true) { CanReportBySound = true, AppliesMajorBribeModifier = true };
+        AimingWeaponAtPolice = new Crime(StaticStrings.AimingWeaponAtPoliceCrimeID, "Aiming Weapons At Police", 3, true, 5, false, false, true) { AppliesMajorBribeModifier = true };
+        HurtingPolice = new Crime(StaticStrings.HurtingPoliceCrimeID, "Assaulting Police", 3, false, 6, true, false, true) { AppliesMajorBribeModifier = true };// { CanViolateWithoutPerception = true };
+        BrandishingHeavyWeapon = new Crime(StaticStrings.BrandishingHeavyWeaponCrimeID, "Brandishing Heavy Weapon", 3, false, 7, true, true, true) { AppliesMajorBribeModifier = true };
+        BankRobbery = new Crime(StaticStrings.BankRobberyCrimeID, "Bank Robbery", 4, false, 8, true, true, true) { AppliesMajorBribeModifier = true };
 
 
 
@@ -138,9 +138,9 @@ public class Crimes : ICrimes
 
         FiringWeapon = new Crime(StaticStrings.FiringWeaponCrimeID, "Firing Weapon", 2, false, 11, true, true, true) { CanReportBySound = true };
         FiringSilencedWeapon = new Crime(StaticStrings.FiringSilencedWeaponCrimeID, "Firing Weapon(!)", 2, false, 12, true, true, true) { MaxHearingDistance = 10f, CanReportBySound = true };
-        Kidnapping = new Crime(StaticStrings.KidnappingCrimeID, "Kidnapping", 2, false, 13, true, false, true);
-        KillingCivilians = new Crime(StaticStrings.KillingCiviliansCrimeID, "Civilian Fatality", 2, false, 14, true, true, true);
-        ArmedRobbery = new Crime(StaticStrings.ArmedRobberyCrimeID, "Armed Robbery", 2, false, 15, true, true, true);
+        Kidnapping = new Crime(StaticStrings.KidnappingCrimeID, "Kidnapping", 2, false, 13, true, false, true) { AppliesMajorBribeModifier = true };
+        KillingCivilians = new Crime(StaticStrings.KillingCiviliansCrimeID, "Civilian Fatality", 2, false, 14, true, true, true) { AppliesMajorBribeModifier = true };
+        ArmedRobbery = new Crime(StaticStrings.ArmedRobberyCrimeID, "Armed Robbery", 2, false, 15, true, true, true) { AppliesMajorBribeModifier = true };
         Mugging = new Crime(StaticStrings.MuggingCrimeID, "Mugging", 2, false, 12, true, true, true);
         AttemptingSuicide = new Crime(StaticStrings.AttemptingSuicideCrimeID, "Attempting Suicide", 2, false, 16, true, false, true);
         HitPedWithCar = new Crime(StaticStrings.HitPedWithCarCrimeID, "Pedestrian Hit and Run", 2, false, 17, true, true, true);

@@ -10,6 +10,7 @@ using RAGENativeUI;
 using RAGENativeUI.Elements;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -605,6 +606,47 @@ public class Respawning// : IRespawning
         RequiredBribeAmount += HighestWantedLevel * Settings.SettingsManager.RespawnSettings.PoliceBribeWantedLevelScale;//max wanted last life wil get reset when calling resetplayer
         RequiredBribeAmount += PoliceKilled * Settings.SettingsManager.RespawnSettings.PoliceBribePoliceKilledMultiplier;
         RequiredBribeAmount += PoliceInjured * Settings.SettingsManager.RespawnSettings.PoliceBribePoliceInjuredMultiplier;
+        ApplyMajorCrimeBribeModifier();
+    }
+    private void ApplyMajorCrimeBribeModifier()
+    {
+        float majorCrimeMultiplier = Settings.SettingsManager.RespawnSettings.PoliceBribeMajorCrimeMultiplier;
+        if (majorCrimeMultiplier <= 1.0f || RequiredBribeAmount <= 0)
+        {
+            return;
+        }
+
+        List<Crime> majorBribeCrimes = CurrentBribeCrimes()
+            .Where(x => x.AppliesMajorBribeModifier)
+            .GroupBy(x => x.ID)
+            .Select(x => x.First())
+            .OrderBy(x => x.Priority)
+            .ToList();
+        if (!majorBribeCrimes.Any())
+        {
+            return;
+        }
+
+        int requiredBribeBeforeModifier = RequiredBribeAmount;
+        RequiredBribeAmount = (int)Math.Ceiling(RequiredBribeAmount * majorCrimeMultiplier);
+        string crimeIDs = string.Join(",", majorBribeCrimes.Select(x => x.ID));
+        string multiplierDisplay = majorCrimeMultiplier.ToString("0.0##", CultureInfo.InvariantCulture);
+        EntryPoint.WriteToConsole($"Bribe major crime modifier applied: crimes={crimeIDs} multiplier={multiplierDisplay} before={requiredBribeBeforeModifier} after={RequiredBribeAmount}", 3);
+    }
+    private IEnumerable<Crime> CurrentBribeCrimes()
+    {
+        PoliceResponse policeResponse = Player?.PoliceResponse;
+        if (policeResponse == null)
+        {
+            return Enumerable.Empty<Crime>();
+        }
+
+        IEnumerable<CrimeEvent> observedCrimes = policeResponse.CrimesObserved ?? Enumerable.Empty<CrimeEvent>();
+        IEnumerable<CrimeEvent> reportedCrimes = policeResponse.CrimesReported ?? Enumerable.Empty<CrimeEvent>();
+        return observedCrimes
+            .Concat(reportedCrimes)
+            .Select(x => x?.AssociatedCrime)
+            .Where(x => x != null);
     }
     private void ResetPlayer(bool resetWanted, bool resetHealth, bool resetTimesDied, bool clearWeapons, bool clearCriminalHistory, bool clearInventory, bool clearIntoxication, bool resetGangRelationships, 
         bool clearVehicleOwnership,bool resetCellphone, bool clearActiveTasks, bool clearProperties, bool resetNeeds, bool resetGroup, bool resetLicenses, bool resetActivites, bool resetGracePeriod, 
