@@ -2,7 +2,7 @@
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
   "CreatedUtc": "2026-05-15T19:43:28.5561418+00:00",
-  "UpdatedUtc": "2026-05-16T16:35:58.3816862+00:00",
+  "UpdatedUtc": "2026-05-16T17:52:57.6649178+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
@@ -12,7 +12,7 @@
     "TrustedHostIds": [
       "Kiira"
     ],
-    "UpdatedUtc": "2026-05-16T16:35:58.3817029+00:00"
+    "UpdatedUtc": "2026-05-16T17:52:57.6649359+00:00"
   },
   "Profiles": [
     {
@@ -21,7 +21,7 @@
       "DisplayName": "Kiira",
       "Role": "Admin,TrustedHost",
       "CreatedUtc": "2026-05-15T19:43:38.6909114+00:00",
-      "LastSeenUtc": "2026-05-16T16:35:58.3816814+00:00",
+      "LastSeenUtc": "2026-05-16T17:52:57.6649135+00:00",
       "Character": {
         "CharacterId": "Kiira",
         "ProfileId": "Kiira",
@@ -157,13 +157,13 @@
         "UpdatedUtc": "2026-05-15T19:44:14.8634276+00:00"
       },
       "InventoryMoney": {
-        "SnapshotId": "2425c844d3d246d5bdf32706a3bad100",
+        "SnapshotId": "89ec238f24ed40068c55608602daa467",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "OnHandCash": 32750,
+        "OnHandCash": 15600,
         "TotalAccountMoney": 0,
-        "TotalMoney": 32750,
+        "TotalMoney": 15600,
         "InventoryItems": [
           {
             "ItemName": "TAG-HARD Flashlight",
@@ -1931,10 +1931,10 @@
           }
         ],
         "BankAccounts": [],
-        "SnapshotUtc": "2026-05-16T16:33:08.0978913+00:00"
+        "SnapshotUtc": "2026-05-16T17:49:46.8010269+00:00"
       },
       "Weapons": {
-        "SnapshotId": "0af998c5a3b94cdbb165dff788f21529",
+        "SnapshotId": "44542115e87e4e6689b48a742f6f2975",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
@@ -1972,7 +1972,7 @@
             "IsEquipped": false
           }
         ],
-        "SnapshotUtc": "2026-05-16T16:33:08.0978913+00:00"
+        "SnapshotUtc": "2026-05-16T17:49:46.8010269+00:00"
       },
       "OwnedVehicles": {
         "SnapshotId": "c19f9cb06d6a4d1cbc1104b4cb4c0df2",
@@ -2727,22 +2727,22 @@
         "LastSeenZ": 0,
         "WantedLevel": 0,
         "Crimes": [],
-        "DateTimeLastWantedEnded": "2009-06-13T01:31:39+00:00",
-        "UpdatedUtc": "2026-05-16T16:33:08.0798928+00:00",
+        "DateTimeLastWantedEnded": "2009-06-06T17:17:15+00:00",
+        "UpdatedUtc": "2026-05-16T17:49:46.7650212+00:00",
         "ClearReason": "BribePaid"
       },
       "DeathArrestState": {
-        "StateId": "931a45cc29e545f8be7c3c40313a32e5",
+        "StateId": "0e2e02e377504b62a33a3c2777db688f",
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
         "ActionType": "ApplyArrestState",
         "OutcomeType": "PoliceBribe",
         "RespawnLocationName": "",
-        "PositionX": 4524.121,
-        "PositionY": -4498.074,
-        "PositionZ": 4.23553,
-        "Heading": 298.5098,
+        "PositionX": -1043.273,
+        "PositionY": -2746.477,
+        "PositionZ": 21.3594,
+        "Heading": 329.6107,
         "HospitalFee": 0,
         "HospitalBillPastDue": 0,
         "HospitalDuration": 0,
@@ -2753,19 +2753,19 @@
         "TimesDied": 0,
         "HadIllegalWeapons": false,
         "HadIllegalItems": false,
-        "ReleaseDate": "2009-06-12T23:31:40Z",
-        "OccurredUtc": "2026-05-16T16:33:08.0978913+00:00"
+        "ReleaseDate": "2009-06-06T15:17:15Z",
+        "OccurredUtc": "2026-05-16T17:49:46.8010269+00:00"
       },
       "LastPosition": {
         "WorldId": "lsrcoop-default-world",
         "ProfileId": "Kiira",
         "CharacterId": "Kiira",
-        "SessionId": "ec8d2a415a5f4c1ca1e940e6843012f7",
-        "X": 1759.512,
-        "Y": 3298.777,
-        "Z": 41.955395,
-        "Heading": 144.95398,
-        "UpdatedUtcUnixMilliseconds": 1778949298331,
+        "SessionId": "f70829f8b045406b890ec27ce2a7f7b8",
+        "X": -1081.4688,
+        "Y": -2696.4104,
+        "Z": 20.169123,
+        "Heading": 41.474094,
+        "UpdatedUtcUnixMilliseconds": 1778953905918,
         "Source": "Periodic"
       },
       "LongTermLsrRecords": []

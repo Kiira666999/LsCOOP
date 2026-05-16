@@ -10,18 +10,38 @@ public class AirportContrabandCheckService
 {
     private const float DefaultFindPercentage = 85f;
     private const int ArrestContextWaitYields = 10;
+    private const float SearchActivityCopDistance = 20f;
+    private const float SearchActivityCopHeight = 5f;
+    private const uint AirportContrabandIncidentMaxLifetimeMs = 300000;
+    private const uint AirportContrabandIncidentResolvedCleanupDelayMs = 10000;
+    private const uint AirportContrabandIncidentFarCleanupDelayMs = 60000;
 
     private readonly ILocationInteractable Player;
     private readonly IModItems ModItems;
     private readonly ISettingsProvideable Settings;
     private readonly ITimeReportable Time;
+    private readonly Airport Airport;
+    private readonly IEntityProvideable World;
+    private readonly IAgencies Agencies;
+    private readonly IWeapons Weapons;
+    private readonly INameProvideable Names;
+    private readonly IShopMenus ShopMenus;
+    private readonly ICrimes Crimes;
+    private readonly List<Cop> SpawnedAirportCops = new List<Cop>();
 
-    public AirportContrabandCheckService(ILocationInteractable player, IModItems modItems, ISettingsProvideable settings, ITimeReportable time)
+    public AirportContrabandCheckService(ILocationInteractable player, IModItems modItems, ISettingsProvideable settings, ITimeReportable time, Airport airport, IEntityProvideable world, IAgencies agencies, IWeapons weapons, INameProvideable names, IShopMenus shopMenus, ICrimes crimes)
     {
         Player = player;
         ModItems = modItems;
         Settings = settings;
         Time = time;
+        Airport = airport;
+        World = world;
+        Agencies = agencies;
+        Weapons = weapons;
+        Names = names;
+        ShopMenus = shopMenus;
+        Crimes = crimes;
     }
 
     private WorldSettings WorldSettings => Settings?.SettingsManager?.WorldSettings;
@@ -78,7 +98,7 @@ public class AirportContrabandCheckService
         }
         EntryPoint.WriteToConsole($"Airport contraband found: selected={selectedCandidate.DisplayName} category={selectedCandidate.Category} quantity={selectedCandidate.Quantity} weight={selectedCandidate.Weight:0.0} crime={selectedCandidate.CrimeID} topWeights={FormatTopCandidateWeights(candidates)}", 3);
 
-        TriggerProcessedBust(selectedCandidate);
+        TriggerBust(selectedCandidate);
     }
 
     private List<ItemRiskEntry> GetItemRisks(WorldSettings worldSettings)
@@ -292,7 +312,22 @@ public class AirportContrabandCheckService
         return Clamp(ammo, 1, cap);
     }
 
-    private void TriggerProcessedBust(ContrabandCandidate selectedCandidate)
+    private void TriggerBust(ContrabandCandidate selectedCandidate)
+    {
+        string bustMode = WorldSettings?.AirportContrabandBustMode;
+        if (string.Equals(bustMode, "Processed", StringComparison.OrdinalIgnoreCase))
+        {
+            TriggerProcessedBust(selectedCandidate, "configured processed mode", false);
+            return;
+        }
+        if (!string.IsNullOrWhiteSpace(bustMode) && !string.Equals(bustMode, "SpawnSecurity", StringComparison.OrdinalIgnoreCase))
+        {
+            EntryPoint.WriteToConsole($"Airport contraband check unsupported bust mode '{bustMode}', using SpawnSecurity", 1);
+        }
+        TriggerSpawnSecurityBust(selectedCandidate);
+    }
+
+    private void TriggerSpawnSecurityBust(ContrabandCandidate selectedCandidate)
     {
         IPoliceRespondable policeRespondable = Player as IPoliceRespondable;
         if (policeRespondable == null)
@@ -300,9 +335,49 @@ public class AirportContrabandCheckService
             EntryPoint.WriteToConsole("Airport contraband check caught player but skipped arrest: player does not implement IPoliceRespondable", 0);
             return;
         }
-        if (!string.Equals(WorldSettings.AirportContrabandBustMode, "Processed", StringComparison.OrdinalIgnoreCase))
+        if (policeRespondable.IsBusted || policeRespondable.IsArrested)
         {
-            EntryPoint.WriteToConsole($"Airport contraband check unsupported bust mode '{WorldSettings.AirportContrabandBustMode}', using Processed", 1);
+            EntryPoint.WriteToConsole("Airport contraband check caught player but skipped arrest: player already busted or arrested", 3);
+            return;
+        }
+
+        bool requireCop = WorldSettings?.AirportContrabandRequireCopBeforeBustedMenu != false;
+        Cop searchCop = EnsureNearbyAirportCop(policeRespondable);
+        if (requireCop && searchCop == null)
+        {
+            HandleAirportSecuritySpawnFailure(selectedCandidate);
+            return;
+        }
+
+        EntryPoint.WriteToConsole($"Airport contraband security context ready: airport={Airport?.AirportID ?? "Unknown"} cop={searchCop?.Handle.ToString() ?? "None"} agency={searchCop?.AssignedAgency?.ID ?? "None"} spawned={SpawnedAirportCops.Count}", 3);
+        TriggerProcessedBust(selectedCandidate, "airport security spawn", requireCop);
+    }
+
+    private void HandleAirportSecuritySpawnFailure(ContrabandCandidate selectedCandidate)
+    {
+        EntryPoint.WriteToConsole($"Airport contraband check caught player but no valid airport police context was available: airport={Airport?.AirportID ?? "Unknown"} spawned={SpawnedAirportCops.Count}", 0);
+        CleanupSpawnedAirportCops(false);
+        if (WorldSettings?.AirportContrabandSkipIfSecuritySpawnFails == true)
+        {
+            EntryPoint.WriteToConsole("Airport contraband check skipped bust after airport police spawn failure", 1);
+            return;
+        }
+        if (WorldSettings?.AirportContrabandFallbackToProcessedIfSecurityFails == true)
+        {
+            EntryPoint.WriteToConsole("Airport contraband check falling back to processed bust after airport police spawn failure", 1);
+            TriggerProcessedBust(selectedCandidate, "airport security fallback", false);
+            return;
+        }
+        EntryPoint.WriteToConsole("Airport contraband check skipped bust after airport police spawn failure and no fallback was enabled", 1);
+    }
+
+    private void TriggerProcessedBust(ContrabandCandidate selectedCandidate, string source, bool requireNearbyCop)
+    {
+        IPoliceRespondable policeRespondable = Player as IPoliceRespondable;
+        if (policeRespondable == null)
+        {
+            EntryPoint.WriteToConsole("Airport contraband check caught player but skipped arrest: player does not implement IPoliceRespondable", 0);
+            return;
         }
         if (policeRespondable.IsBusted || policeRespondable.IsArrested)
         {
@@ -342,8 +417,373 @@ public class AirportContrabandCheckService
         }
 
         EntryPoint.WriteToConsole($"Airport contraband arrest charge: crime={arrestCharge?.AssociatedCrime?.ID ?? "None"} name={arrestCharge?.AssociatedCrime?.Name ?? "None"} talkAllowed={arrestCharge?.AssociatedCrime?.CanReleaseOnTalkItOut.ToString() ?? "False"} cleanSearchAllowed={arrestCharge?.AssociatedCrime?.CanReleaseOnCleanSearch.ToString() ?? "False"} citeAllowed={arrestCharge?.AssociatedCrime?.CanReleaseOnCite.ToString() ?? "False"} observed={GetObservedCrimeCount(policeRespondable)} reported={GetReportedCrimeCount(policeRespondable)} wanted={policeRespondable.WantedLevel}", 3);
+        if (requireNearbyCop && GetValidNearbySearchCop(policeRespondable) == null)
+        {
+            if (observedBefore == 0 && reportedBefore == 0 && wantedBefore == 0)
+            {
+                policeRespondable.PoliceResponse?.Reset();
+            }
+            EntryPoint.WriteToConsole($"Airport contraband check caught player but skipped arrest: nearby airport police context was lost before busted menu source={source}", 0);
+            CleanupSpawnedAirportCops(false);
+            return;
+        }
         policeRespondable.Arrest();
-        EntryPoint.WriteToConsole($"Airport contraband check arrest triggered observed={GetObservedCrimeCount(policeRespondable)} reported={GetReportedCrimeCount(policeRespondable)} wanted={policeRespondable.WantedLevel}", 3);
+        StartAirportContrabandIncidentCleanup(policeRespondable);
+        EntryPoint.WriteToConsole($"Airport contraband check arrest triggered source={source} observed={GetObservedCrimeCount(policeRespondable)} reported={GetReportedCrimeCount(policeRespondable)} wanted={policeRespondable.WantedLevel}", 3);
+    }
+
+    private Cop EnsureNearbyAirportCop(IPoliceRespondable policeRespondable)
+    {
+        UpdateNearbyAirportCops(policeRespondable);
+        Cop existingCop = GetValidNearbySearchCop(policeRespondable);
+        if (existingCop != null)
+        {
+            EntryPoint.WriteToConsole($"Airport contraband check using existing nearby cop: handle={existingCop.Handle} agency={existingCop.AssignedAgency?.ID ?? "None"}", 3);
+            return existingCop;
+        }
+
+        SpawnAirportCops(policeRespondable);
+        uint started = Game.GameTime;
+        uint timeout = WorldSettings?.AirportContrabandSecuritySpawnTimeoutMs ?? 5000;
+        while (EntryPoint.ModController.IsRunning && Game.GameTime - started <= timeout)
+        {
+            UpdateNearbyAirportCops(policeRespondable);
+            existingCop = GetValidNearbySearchCop(policeRespondable);
+            if (existingCop != null)
+            {
+                return existingCop;
+            }
+            GameFiber.Yield();
+        }
+        return null;
+    }
+
+    private void SpawnAirportCops(IPoliceRespondable policeRespondable)
+    {
+        if (World?.Pedestrians == null || Agencies == null || Weapons == null || Names == null || ShopMenus == null || Crimes == null)
+        {
+            EntryPoint.WriteToConsole("Airport contraband security spawn skipped: missing world or agency dependencies", 0);
+            return;
+        }
+
+        List<Agency> agencies = GetPreferredAirportAgencies(policeRespondable);
+        if (!agencies.Any())
+        {
+            EntryPoint.WriteToConsole("Airport contraband security spawn skipped: no law enforcement agencies available", 0);
+            return;
+        }
+
+        int spawnCount = GetAirportSecuritySpawnCount();
+        List<SpawnLocation> spawnLocations = GetAirportSecuritySpawnLocations(spawnCount);
+        for (int i = 0; i < spawnCount; i++)
+        {
+            SpawnLocation spawnLocation = spawnLocations[i % spawnLocations.Count];
+            Cop spawnedCop = null;
+            foreach (Agency agency in agencies)
+            {
+                spawnedCop = TrySpawnAirportCop(agency, spawnLocation);
+                if (spawnedCop != null)
+                {
+                    break;
+                }
+            }
+            if (spawnedCop == null)
+            {
+                EntryPoint.WriteToConsole($"Airport contraband security failed to spawn cop index={i} airport={Airport?.AirportID ?? "Unknown"}", 1);
+            }
+            GameFiber.Yield();
+        }
+    }
+
+    private Cop TrySpawnAirportCop(Agency agency, SpawnLocation spawnLocation)
+    {
+        if (agency == null || spawnLocation == null)
+        {
+            return null;
+        }
+
+        DispatchablePerson personType = null;
+        try
+        {
+            personType = agency.GetRandomPed(0, "");
+        }
+        catch (Exception ex)
+        {
+            EntryPoint.WriteToConsole($"Airport contraband security failed to pick agency ped: agency={agency.ID} error={ex.Message}", 1);
+        }
+        if (personType == null)
+        {
+            return null;
+        }
+
+        LESpawnTask spawnTask = new LESpawnTask(agency, spawnLocation, null, personType, Settings?.SettingsManager?.PoliceSettings?.AttachBlipsToAmbientPeds == true, Settings, Weapons, Names, false, World, ModItems, false, ShopMenus, Crimes)
+        {
+            AllowAnySpawn = true,
+            AllowBuddySpawn = false,
+            PlacePedOnGround = true,
+            DoPersistantEntityCheck = false,
+            ClearVehicleArea = false,
+        };
+        spawnTask.AttemptSpawn();
+        Cop spawnedCop = spawnTask.SpawnedCops.FirstOrDefault(x => x?.Pedestrian.Exists() == true);
+        if (spawnedCop == null)
+        {
+            return null;
+        }
+
+        spawnedCop.IsLocationSpawned = false;
+        spawnedCop.CanBeTasked = true;
+        spawnedCop.CanBeAmbientTasked = true;
+        spawnedCop.Pedestrian.IsPersistent = true;
+        if (!SpawnedAirportCops.Any(x => x.Handle == spawnedCop.Handle))
+        {
+            SpawnedAirportCops.Add(spawnedCop);
+        }
+        EntryPoint.WriteToConsole($"Airport contraband security spawned cop: airport={Airport?.AirportID ?? "Unknown"} handle={spawnedCop.Handle} agency={agency.ID} position={spawnedCop.Pedestrian.Position}", 3);
+        return spawnedCop;
+    }
+
+    private int GetAirportSecuritySpawnCount()
+    {
+        int min = Math.Max(1, WorldSettings?.AirportContrabandSecuritySpawnCountMin ?? 2);
+        int max = Math.Max(min, WorldSettings?.AirportContrabandSecuritySpawnCountMax ?? 4);
+        max = Math.Min(max, 8);
+        return RandomItems.MyRand.Next(min, max + 1);
+    }
+
+    private List<Agency> GetPreferredAirportAgencies(IPoliceRespondable policeRespondable)
+    {
+        List<string> agencyIDs = new List<string>();
+        string airportID = Airport?.AirportID?.ToUpperInvariant() ?? "";
+        if (airportID == "LSIX")
+        {
+            AddAgencyID(agencyIDs, "LSIAPD");
+        }
+        else if (airportID == "CPA")
+        {
+            AddAgencyID(agencyIDs, "CPAS");
+            AddAgencyID(agencyIDs, "CPPD");
+        }
+
+        AddAgencyID(agencyIDs, Airport?.AssignedAgency?.ID);
+        AddAgencyID(agencyIDs, policeRespondable?.CurrentLocation?.CurrentZone?.AssignedLEAgency?.ID);
+        AddAgencyID(agencyIDs, policeRespondable?.CurrentLocation?.CurrentZone?.AssignedSecondLEAgeny?.ID);
+
+        if (airportID == "LSIX")
+        {
+            AddAgencyID(agencyIDs, "LSPD");
+            AddAgencyID(agencyIDs, "LSSD");
+        }
+        else if (airportID == "CPA")
+        {
+            AddAgencyID(agencyIDs, "CPPD");
+            AddAgencyID(agencyIDs, "CPAS");
+        }
+        else
+        {
+            AddAgencyID(agencyIDs, "LSSD-BC");
+            AddAgencyID(agencyIDs, "LSSD");
+            AddAgencyID(agencyIDs, "LSPD");
+            AddAgencyID(agencyIDs, "SAHP");
+            AddAgencyID(agencyIDs, "NYSP");
+        }
+
+        List<Agency> agencies = new List<Agency>();
+        foreach (string agencyID in agencyIDs)
+        {
+            Agency agency = Agencies.GetAgency(agencyID);
+            if (agency != null && !agencies.Any(x => x.ID == agency.ID))
+            {
+                agencies.Add(agency);
+            }
+        }
+        if (!agencies.Any())
+        {
+            agencies.AddRange(Agencies.GetAgenciesByResponse(ResponseType.LawEnforcement).Where(x => x != null));
+        }
+        return agencies;
+    }
+
+    private void AddAgencyID(List<string> agencyIDs, string agencyID)
+    {
+        if (!string.IsNullOrWhiteSpace(agencyID) && !agencyIDs.Contains(agencyID))
+        {
+            agencyIDs.Add(agencyID);
+        }
+    }
+
+    private List<SpawnLocation> GetAirportSecuritySpawnLocations(int spawnCount)
+    {
+        List<AirportSecuritySpawnPoint> spawnPoints = GetFixedAirportSecuritySpawnPoints();
+        while (spawnPoints.Count < spawnCount)
+        {
+            spawnPoints.Add(GetGeneratedAirportSecuritySpawnPoint(spawnPoints.Count, spawnCount));
+        }
+        return spawnPoints.Take(spawnCount).Select(x => new SpawnLocation(x.Position) { SidewalkPosition = x.Position, Heading = x.Heading }).ToList();
+    }
+
+    private List<AirportSecuritySpawnPoint> GetFixedAirportSecuritySpawnPoints()
+    {
+        string airportID = Airport?.AirportID?.ToUpperInvariant() ?? "";
+        if (airportID == "LSIX")
+        {
+            return new List<AirportSecuritySpawnPoint>
+            {
+                new AirportSecuritySpawnPoint(new Vector3(-1046.1f, -2743.8f, 21.36f), 235f),
+                new AirportSecuritySpawnPoint(new Vector3(-1039.7f, -2748.7f, 21.36f), 55f),
+                new AirportSecuritySpawnPoint(new Vector3(-1048.0f, -2748.4f, 21.36f), 305f),
+                new AirportSecuritySpawnPoint(new Vector3(-1039.3f, -2742.2f, 21.36f), 140f),
+            };
+        }
+        if (airportID == "CPA")
+        {
+            return new List<AirportSecuritySpawnPoint>
+            {
+                new AirportSecuritySpawnPoint(new Vector3(4521.5f, -4500.0f, 4.24f), 300f),
+                new AirportSecuritySpawnPoint(new Vector3(4527.0f, -4499.2f, 4.24f), 235f),
+                new AirportSecuritySpawnPoint(new Vector3(4522.5f, -4494.8f, 4.24f), 160f),
+                new AirportSecuritySpawnPoint(new Vector3(4528.0f, -4495.5f, 4.24f), 210f),
+            };
+        }
+        return new List<AirportSecuritySpawnPoint>();
+    }
+
+    private AirportSecuritySpawnPoint GetGeneratedAirportSecuritySpawnPoint(int index, int total)
+    {
+        Vector3 center = Airport != null && Airport.ArrivalPosition != Vector3.Zero ? Airport.ArrivalPosition : Player.Position;
+        float radius = Clamp(WorldSettings?.AirportContrabandSecuritySpawnRadius ?? 20f, 4f, SearchActivityCopDistance);
+        float offsetRadius = Math.Min(6f + index, radius);
+        double angle = (Math.PI * 2d / Math.Max(1, total)) * index;
+        Vector3 position = new Vector3(center.X + (float)Math.Cos(angle) * offsetRadius, center.Y + (float)Math.Sin(angle) * offsetRadius, center.Z);
+        return new AirportSecuritySpawnPoint(position, GetHeadingToPlayer(position));
+    }
+
+    private float GetHeadingToPlayer(Vector3 position)
+    {
+        Vector3 playerPosition = Player?.Position ?? position;
+        double x = playerPosition.X - position.X;
+        double y = playerPosition.Y - position.Y;
+        double heading = 270d - Math.Atan2(y, x) * (180d / Math.PI);
+        while (heading < 0d)
+        {
+            heading += 360d;
+        }
+        while (heading >= 360d)
+        {
+            heading -= 360d;
+        }
+        return (float)heading;
+    }
+
+    private void UpdateNearbyAirportCops(IPoliceRespondable policeRespondable)
+    {
+        IPerceptable perceptable = Player as IPerceptable;
+        if (perceptable == null || policeRespondable == null || World?.Pedestrians == null)
+        {
+            return;
+        }
+        foreach (Cop cop in World.Pedestrians.PoliceList.Where(x => x?.Pedestrian.Exists() == true && x.Pedestrian.DistanceTo2D(Player.Character) <= 60f))
+        {
+            cop.Update(perceptable, policeRespondable, policeRespondable.Position, World);
+        }
+    }
+
+    private Cop GetValidNearbySearchCop(IPoliceRespondable policeRespondable)
+    {
+        if (policeRespondable?.Character == null || !policeRespondable.Character.Exists() || World?.Pedestrians == null)
+        {
+            return null;
+        }
+        return World.Pedestrians.PoliceList
+            .Where(x => IsValidSearchCop(x, policeRespondable))
+            .OrderBy(x => x.Pedestrian.DistanceTo2D(policeRespondable.Character))
+            .FirstOrDefault();
+    }
+
+    private bool IsValidSearchCop(Cop cop, IPoliceRespondable policeRespondable)
+    {
+        if (cop == null || policeRespondable?.Character == null || !policeRespondable.Character.Exists() || !cop.Pedestrian.Exists())
+        {
+            return false;
+        }
+        return cop.Pedestrian.IsAlive
+            && !cop.Pedestrian.IsDead
+            && !cop.IsInVehicle
+            && !cop.IsUnconscious
+            && !cop.IsInWrithe
+            && !cop.IsDead
+            && !cop.Pedestrian.IsRagdoll
+            && cop.Pedestrian.DistanceTo2D(policeRespondable.Character) <= SearchActivityCopDistance
+            && Math.Abs(cop.Pedestrian.Position.Z - policeRespondable.Position.Z) <= SearchActivityCopHeight;
+    }
+
+    private void StartAirportContrabandIncidentCleanup(IPoliceRespondable policeRespondable)
+    {
+        List<Cop> incidentCops = SpawnedAirportCops.Where(x => x?.Pedestrian.Exists() == true).ToList();
+        if (!incidentCops.Any())
+        {
+            return;
+        }
+        Vector3 incidentPosition = Player.Position;
+        GameFiber.StartNew(delegate
+        {
+            try
+            {
+                uint started = Game.GameTime;
+                while (EntryPoint.ModController.IsRunning && Game.GameTime - started <= AirportContrabandIncidentMaxLifetimeMs)
+                {
+                    bool playerStillInIncident = policeRespondable != null && (policeRespondable.IsBusted || policeRespondable.IsArrested || policeRespondable.IsWanted);
+                    bool playerResolved = policeRespondable != null && !policeRespondable.IsBusted && !policeRespondable.IsArrested && policeRespondable.IsNotWanted;
+                    bool playerLeftArea = Player?.Character != null && Player.Character.Exists() && Player.Character.DistanceTo2D(incidentPosition) >= Math.Max(100f, (WorldSettings?.AirportContrabandSecuritySpawnRadius ?? 20f) * 5f);
+                    bool spawnedCopsFar = incidentCops.Where(x => x?.Pedestrian.Exists() == true).All(x => Player?.Character == null || !Player.Character.Exists() || x.Pedestrian.DistanceTo2D(Player.Character) >= 80f);
+                    if (playerResolved && Game.GameTime - started >= AirportContrabandIncidentResolvedCleanupDelayMs)
+                    {
+                        break;
+                    }
+                    if (!playerStillInIncident && playerLeftArea)
+                    {
+                        break;
+                    }
+                    if (playerStillInIncident && playerLeftArea && spawnedCopsFar && Game.GameTime - started >= AirportContrabandIncidentFarCleanupDelayMs)
+                    {
+                        break;
+                    }
+                    GameFiber.Sleep(1000);
+                }
+                CleanupSpawnedAirportCops(policeRespondable?.IsWanted == true);
+            }
+            catch (Exception ex)
+            {
+                EntryPoint.WriteToConsole($"Airport contraband security cleanup failed: {ex.Message} {ex.StackTrace}", 0);
+            }
+        }, "AirportContrabandSecurityCleanup");
+    }
+
+    private void CleanupSpawnedAirportCops(bool keepCloseWantedCops)
+    {
+        if (!SpawnedAirportCops.Any())
+        {
+            return;
+        }
+        List<uint> spawnedHandles = SpawnedAirportCops.Select(x => x.Handle).ToList();
+        foreach (Cop cop in SpawnedAirportCops.ToList())
+        {
+            if (cop == null || !cop.Pedestrian.Exists())
+            {
+                continue;
+            }
+            bool closeToPlayer = Player?.Character != null && Player.Character.Exists() && cop.Pedestrian.DistanceTo2D(Player.Character) <= 80f;
+            if (keepCloseWantedCops && closeToPlayer && cop.Pedestrian.IsAlive)
+            {
+                cop.Pedestrian.IsPersistent = false;
+                continue;
+            }
+            cop.DeleteBlip();
+            cop.Pedestrian.Delete();
+            EntryPoint.PersistentPedsDeleted++;
+        }
+        World?.Pedestrians?.Police?.RemoveAll(x => x != null && spawnedHandles.Contains(x.Handle) && !x.Pedestrian.Exists());
+        SpawnedAirportCops.Clear();
     }
 
     private bool AddSelectedContrabandViolation(IPoliceRespondable policeRespondable, ContrabandCandidate selectedCandidate)
@@ -443,6 +883,18 @@ public class AirportContrabandCheckService
             return max;
         }
         return value;
+    }
+
+    private class AirportSecuritySpawnPoint
+    {
+        public AirportSecuritySpawnPoint(Vector3 position, float heading)
+        {
+            Position = position;
+            Heading = heading;
+        }
+
+        public Vector3 Position { get; }
+        public float Heading { get; }
     }
 
     private class ItemRiskEntry

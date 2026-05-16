@@ -25,6 +25,7 @@ public class Airport : GameLocation, ILocationSetupable
 {
     private protected List<Carrier> Carriers = new List<Carrier>();
     private protected IPlacesOfInterest PlacesOfInterest;
+    private protected IAgencies Agencies;
     private bool IsFlyingToLocation;
    
     public Airport() : base()
@@ -61,6 +62,7 @@ public class Airport : GameLocation, ILocationSetupable
         IPlacesOfInterest placesOfInterest, IIssuableWeapons issuableWeapons, IHeads heads, IDispatchablePeople dispatchablePeople, ModDataFileManager modDataFileManager)
     {
         PlacesOfInterest = placesOfInterest;
+        Agencies = agencies;
         base.StoreData(shopMenus, agencies, gangs, zones, jurisdictions, gangTerritories, names, crimes, PedGroups, world, streets, locationTypes, settings, plateTypes, associations, 
             contacts, interiors, player, modItems, weapons, time, placesOfInterest, issuableWeapons, heads, dispatchablePeople, modDataFileManager);
     }
@@ -397,7 +399,7 @@ public class Airport : GameLocation, ILocationSetupable
                 Time.SetDateTime(Time.CurrentDateTime.AddHours(flightTime));
                 GameFiber.Sleep(3000);//do the whole shebang ehre
                 Game.FadeScreenIn(1500, true);
-                AirportContrabandCheckService contrabandCheckService = new AirportContrabandCheckService(Player, ModItems, Settings, Time);
+                AirportContrabandCheckService contrabandCheckService = new AirportContrabandCheckService(Player, ModItems, Settings, Time, destinationAiport, World, Agencies, Weapons, Names, ShopMenus, Crimes);
                 contrabandCheckService.RunCommercialFlightCheck();
             }
             catch (Exception ex)

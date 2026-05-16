@@ -1313,7 +1313,14 @@
     <AirportContrabandWeaponMultiplier>0.50</AirportContrabandWeaponMultiplier>
     <AirportContrabandThrowableAmmoCap>10</AirportContrabandThrowableAmmoCap>
     <AirportContrabandIncludePrivateFlights>false</AirportContrabandIncludePrivateFlights>
-    <AirportContrabandBustMode>Processed</AirportContrabandBustMode>
+    <AirportContrabandBustMode>SpawnSecurity</AirportContrabandBustMode>
+    <AirportContrabandSecuritySpawnCountMin>2</AirportContrabandSecuritySpawnCountMin>
+    <AirportContrabandSecuritySpawnCountMax>4</AirportContrabandSecuritySpawnCountMax>
+    <AirportContrabandSecuritySpawnRadius>20</AirportContrabandSecuritySpawnRadius>
+    <AirportContrabandSecuritySpawnTimeoutMs>5000</AirportContrabandSecuritySpawnTimeoutMs>
+    <AirportContrabandRequireCopBeforeBustedMenu>true</AirportContrabandRequireCopBeforeBustedMenu>
+    <AirportContrabandSkipIfSecuritySpawnFails>false</AirportContrabandSkipIfSecuritySpawnFails>
+    <AirportContrabandFallbackToProcessedIfSecurityFails>true</AirportContrabandFallbackToProcessedIfSecurityFails>
     <AllowSettingDistantSirens>true</AllowSettingDistantSirens>
     <DeadBodyAlertTimeout>25000</DeadBodyAlertTimeout>
     <UnconsciousBodyAlertTimeout>25000</UnconsciousBodyAlertTimeout>
