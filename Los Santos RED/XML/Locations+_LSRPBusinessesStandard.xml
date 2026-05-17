@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <PossibleLocations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <DeadDrops />
   <ScrapYards />
@@ -24,7 +24,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -134,7 +134,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -244,7 +244,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -354,7 +354,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -461,7 +461,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -571,7 +571,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -681,7 +681,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -784,7 +784,7 @@
       <ModItemPayoutAmount>350</ModItemPayoutAmount>
     </Business>
     <Business>///lsrp
-      <Name>Document Forgery</Name><FullName>Textile City, Document Forgery</FullName><Description /><IsEnabled>true</IsEnabled><IsTemporarilyClosed>false</IsTemporarilyClosed><BannerImagePath /><RemoveBanner>false</RemoveBanner><IsBlipEnabled>true</IsBlipEnabled><MapIcon>374</MapIcon><MapIconColorString>White</MapIconColorString><MapIconScale>0.5</MapIconScale><MapIconRadius>1</MapIconRadius><MapOpenIconAlpha>1</MapOpenIconAlpha><MapClosedIconAlpha>0.25</MapClosedIconAlpha><EntrancePosition><X>298.715</X><Y>-758.941</Y><Z>29.39268</Z></EntrancePosition><EntranceHeading>250.9668</EntranceHeading><OpenTime>0</OpenTime><CloseTime>24</CloseTime><InteriorID>246785</InteriorID><IsWalkup>false</IsWalkup><IsOnSPMap>true</IsOnSPMap><IsOnMPMap>true</IsOnMPMap><ShowsOnDirectory>false</ShowsOnDirectory><ShowsOnTaxi>true</ShowsOnTaxi><TypeName>Business</TypeName><SortOrder>999</SortOrder><ScannerFilePath /><ActivateCells>4</ActivateCells><ActivateDistance>225</ActivateDistance><DisableRegularInteract>false</DisableRegularInteract><CameraPosition><X>315.1307</X><Y>-765.52</Y><Z>35.17923</Z></CameraPosition><CameraDirection><X>-0.9482352</X><Y>0.316846</Y><Z>-0.02141672</Z></CameraDirection><CameraRotation><Pitch>-1.227182</Pitch><Roll>8.539695E-06</Roll><Yaw>71.52332</Yaw></CameraRotation><CanInteractWhenWanted>false</CanInteractWhenWanted><ShowsMarker>true</ShowsMarker><VendorLocations /><ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage><VendorPersonnelID>VendorPeds</VendorPersonnelID><VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID><VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID><VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID><VendorMeleePercent>20</VendorMeleePercent><VendorSidearmPercent>5</VendorSidearmPercent><VendorLongGunPercent>2</VendorLongGunPercent><VendorMoneyMin>-1</VendorMoneyMin><VendorMoneyMax>-1</VendorMoneyMax><VendorFightPercentage>-1</VendorFightPercentage><VendorCallPolicePercentage>-1</VendorCallPolicePercentage><VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage><VendorFightPolicePercentage>-1</VendorFightPolicePercentage><VendorCowerPercentage>-1</VendorCowerPercentage><VendorSurrenderPercentage>-1</VendorSurrenderPercentage><VehiclePreviewCameraPosition><X>0</X><Y>0</Y><Z>0</Z></VehiclePreviewCameraPosition><VehiclePreviewCameraDirection><X>0</X><Y>0</Y><Z>0</Z></VehiclePreviewCameraDirection><VehiclePreviewCameraRotation><Pitch>0</Pitch><Roll>0</Roll><Yaw>0</Yaw></VehiclePreviewCameraRotation><VehicleDeliveryLocations /><RegisterCashMin>250</RegisterCashMin><RegisterCashMax>1550</RegisterCashMax><NoEntryCam>false</NoEntryCam><MinPriceRefreshHours>0</MinPriceRefreshHours><MaxPriceRefreshHours>0</MaxPriceRefreshHours><MinRestockHours>0</MinRestockHours><MaxRestockHours>0</MaxRestockHours><CloseRange>10</CloseRange><RacketeeringAmountMin>500</RacketeeringAmountMin><RacketeeringAmountMax>1000</RacketeeringAmountMax><IgnoreEntranceInteract>false</IgnoreEntranceInteract><PurchasePrice>96500</PurchasePrice><PayoutFrequency>7</PayoutFrequency><PayoutMin>0</PayoutMin><PayoutMax>0</PayoutMax><SalesPrice>45000</SalesPrice><MaxSalesPrice>0</MaxSalesPrice><IsOwnable>false</IsOwnable><GrowthPercentage>20</GrowthPercentage><ButtonPromptText>Inquire About Document Forgery</ButtonPromptText><PossibleModItemPayouts><string>Drivers License</string></PossibleModItemPayouts><ModItemPayoutAmount>10</ModItemPayoutAmount></Business>
+      <Name>Document Forgery</Name><FullName>Textile City, Document Forgery</FullName><Description /><IsEnabled>true</IsEnabled><IsTemporarilyClosed>false</IsTemporarilyClosed><BannerImagePath /><RemoveBanner>false</RemoveBanner><IsBlipEnabled>false</IsBlipEnabled><MapIcon>374</MapIcon><MapIconColorString>White</MapIconColorString><MapIconScale>0.5</MapIconScale><MapIconRadius>1</MapIconRadius><MapOpenIconAlpha>1</MapOpenIconAlpha><MapClosedIconAlpha>0.25</MapClosedIconAlpha><EntrancePosition><X>298.715</X><Y>-758.941</Y><Z>29.39268</Z></EntrancePosition><EntranceHeading>250.9668</EntranceHeading><OpenTime>0</OpenTime><CloseTime>24</CloseTime><InteriorID>246785</InteriorID><IsWalkup>false</IsWalkup><IsOnSPMap>true</IsOnSPMap><IsOnMPMap>true</IsOnMPMap><ShowsOnDirectory>false</ShowsOnDirectory><ShowsOnTaxi>true</ShowsOnTaxi><TypeName>Business</TypeName><SortOrder>999</SortOrder><ScannerFilePath /><ActivateCells>4</ActivateCells><ActivateDistance>225</ActivateDistance><DisableRegularInteract>false</DisableRegularInteract><CameraPosition><X>315.1307</X><Y>-765.52</Y><Z>35.17923</Z></CameraPosition><CameraDirection><X>-0.9482352</X><Y>0.316846</Y><Z>-0.02141672</Z></CameraDirection><CameraRotation><Pitch>-1.227182</Pitch><Roll>8.539695E-06</Roll><Yaw>71.52332</Yaw></CameraRotation><CanInteractWhenWanted>false</CanInteractWhenWanted><ShowsMarker>true</ShowsMarker><VendorLocations /><ExtaVendorSpawnPercentage>70</ExtaVendorSpawnPercentage><VendorPersonnelID>VendorPeds</VendorPersonnelID><VendorMeleeWeaponsID>VendorMeleeWeapons</VendorMeleeWeaponsID><VendorSidearmWeaponsID>VendorSidearms</VendorSidearmWeaponsID><VendorLongGunWeaponsID>VendorLongGuns</VendorLongGunWeaponsID><VendorMeleePercent>20</VendorMeleePercent><VendorSidearmPercent>5</VendorSidearmPercent><VendorLongGunPercent>2</VendorLongGunPercent><VendorMoneyMin>-1</VendorMoneyMin><VendorMoneyMax>-1</VendorMoneyMax><VendorFightPercentage>-1</VendorFightPercentage><VendorCallPolicePercentage>-1</VendorCallPolicePercentage><VendorCallPoliceForSeriousCrimesPercentage>-1</VendorCallPoliceForSeriousCrimesPercentage><VendorFightPolicePercentage>-1</VendorFightPolicePercentage><VendorCowerPercentage>-1</VendorCowerPercentage><VendorSurrenderPercentage>-1</VendorSurrenderPercentage><VehiclePreviewCameraPosition><X>0</X><Y>0</Y><Z>0</Z></VehiclePreviewCameraPosition><VehiclePreviewCameraDirection><X>0</X><Y>0</Y><Z>0</Z></VehiclePreviewCameraDirection><VehiclePreviewCameraRotation><Pitch>0</Pitch><Roll>0</Roll><Yaw>0</Yaw></VehiclePreviewCameraRotation><VehicleDeliveryLocations /><RegisterCashMin>250</RegisterCashMin><RegisterCashMax>1550</RegisterCashMax><NoEntryCam>false</NoEntryCam><MinPriceRefreshHours>0</MinPriceRefreshHours><MaxPriceRefreshHours>0</MaxPriceRefreshHours><MinRestockHours>0</MinRestockHours><MaxRestockHours>0</MaxRestockHours><CloseRange>10</CloseRange><RacketeeringAmountMin>500</RacketeeringAmountMin><RacketeeringAmountMax>1000</RacketeeringAmountMax><IgnoreEntranceInteract>false</IgnoreEntranceInteract><PurchasePrice>96500</PurchasePrice><PayoutFrequency>7</PayoutFrequency><PayoutMin>0</PayoutMin><PayoutMax>0</PayoutMax><SalesPrice>45000</SalesPrice><MaxSalesPrice>0</MaxSalesPrice><IsOwnable>false</IsOwnable><GrowthPercentage>20</GrowthPercentage><ButtonPromptText>Inquire About Document Forgery</ButtonPromptText><PossibleModItemPayouts><string>Drivers License</string></PossibleModItemPayouts><ModItemPayoutAmount>10</ModItemPayoutAmount></Business>
     <Business>
       <Name>Cocaine Lockup</Name>
       <FullName>Paleto Bay, Cocaine Lockup</FullName>
@@ -793,7 +793,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>

@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version='1.0' encoding='utf-8'?>
 <PossibleLocations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <DeadDrops />
   <ScrapYards />
@@ -11,7 +11,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>310</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -111,7 +111,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>310</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -211,7 +211,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>310</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -314,7 +314,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\varrios.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -687,7 +687,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\varrios.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -1057,7 +1057,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\caf.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -1605,7 +1605,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\families.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -2022,7 +2022,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\families.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -2339,7 +2339,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\ballas.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -2800,7 +2800,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\ballas.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -3261,7 +3261,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\dtf.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -3616,7 +3616,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\vagos.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -3961,7 +3961,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\vagos.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4276,7 +4276,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\ballas.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4621,7 +4621,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\messina.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4859,7 +4859,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\southernrebels.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -5148,7 +5148,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\saigon.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>Purple</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -5458,7 +5458,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\southernrebels.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -5724,7 +5724,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\angelsofdeath.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -5980,7 +5980,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\angelsofdeath.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -6392,7 +6392,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\angelsofdeath.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -6700,7 +6700,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\lspdmain.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>60</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -6984,7 +6984,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\elrubio.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>858</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.6</MapIconScale>
@@ -7259,7 +7259,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>67</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -7541,7 +7541,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\petrovic.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -7825,7 +7825,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\southcentralhustlers.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -8230,7 +8230,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\southcentralhustlers.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -8609,7 +8609,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\uptownriders.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>348</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -8853,7 +8853,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\uptownriders.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>348</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.7</MapIconScale>
@@ -9097,7 +9097,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\lostmc.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -9354,7 +9354,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\triad.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -9617,7 +9617,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\kkangpae.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -9880,7 +9880,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\triad.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -10145,7 +10145,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath>gangs\yardies.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -10778,7 +10778,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>794</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -10902,7 +10902,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>680</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -11226,7 +11226,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>680</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -11388,7 +11388,7 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
       <MapIcon>680</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
