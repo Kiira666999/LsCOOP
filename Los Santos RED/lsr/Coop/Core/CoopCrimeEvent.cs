@@ -24,6 +24,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public string CrimeId { get; set; }
         public string CrimeName { get; set; }
         public bool IsPlayerOnPlayerViolence { get; set; }
+        public bool IsRemoteActorCrime { get; set; }
         public bool WasKilled { get; set; }
         public bool WasShot { get; set; }
         public bool WasMeleeAttacked { get; set; }
@@ -39,6 +40,8 @@ namespace LosSantosRED.lsr.Coop.Core
         public bool AlwaysAddInstance { get; set; }
         public string SourceClientId { get; set; }
         public DateTimeOffset TimestampUtc { get; set; }
+        public int WantedLevelBefore { get; set; }
+        public int WantedLevelAfter { get; set; }
         public bool HadLongTermCriminalHistoryBefore { get; set; }
         public bool HasLongTermCriminalHistoryAfter { get; set; }
         public bool CreatedLongTermCriminalHistory { get; set; }

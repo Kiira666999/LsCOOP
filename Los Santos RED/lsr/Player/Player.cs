@@ -1876,6 +1876,7 @@ namespace Mod
             CrimeSceneDescription description = new CrimeSceneDescription(!IsInVehicle, isObservedByPolice, Location, HaveDescription) { InteriorSeen = isForPlayer ? CurrentLocation.CurrentInterior : null, VehicleSeen = VehicleObserved, WeaponSeen = WeaponObserved, Speed = Game.LocalPlayer.Character.Speed };
             coopCrimeEvent.CrimeSceneDescription = description;
             PoliceResponse.AddCrime(crimeObserved, description, isForPlayer, alwaysAddInstance);
+            coopCrimeEvent.WantedLevelAfter = WantedLevel;
             if (CoopStartupBridge.IsCoopEnabled)
             {
                 bool hasLongTermCriminalHistoryAfter = CriminalHistory.HasHistory;

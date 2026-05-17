@@ -55,6 +55,8 @@ namespace LosSantosRED.lsr.Coop.Core
                 IsForPlayer = isForPlayer,
                 AlwaysAddInstance = alwaysAddInstance,
                 SourceClientId = actorContext.SourceClientId,
+                WantedLevelBefore = player?.WantedLevel ?? 0,
+                WantedLevelAfter = player?.WantedLevel ?? 0,
             };
         }
 
@@ -274,6 +276,12 @@ namespace LosSantosRED.lsr.Coop.Core
                 return;
             }
 
+            if (!crimeEvent.IsForPlayer && !crimeEvent.IsRemoteActorCrime)
+            {
+                CoopPersistenceDiagnostics.WriteVerbose($"Co-op non-player crime report skipped Crime:{crimeEvent.CrimeId} IsForPlayer:{crimeEvent.IsForPlayer} ObservedByPolice:{crimeEvent.IsObservedByPolice} WantedBefore:{crimeEvent.WantedLevelBefore} WantedAfter:{crimeEvent.WantedLevelAfter}");
+                return;
+            }
+
             CoopGameplayActionRequest request = new CoopGameplayActionRequest
             {
                 ActionType = CoopGameplayActionType.CommitCrime,
@@ -288,6 +296,7 @@ namespace LosSantosRED.lsr.Coop.Core
             request.Parameters["CrimeId"] = crimeEvent.CrimeId ?? string.Empty;
             request.Parameters["CrimeName"] = crimeEvent.CrimeName ?? string.Empty;
             request.Parameters["ResultingWantedLevel"] = crimeEvent.Crime.ResultingWantedLevel.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            request.Parameters["RemoteActorCrime"] = crimeEvent.IsRemoteActorCrime.ToString();
             request.Parameters["IsObservedByPolice"] = crimeEvent.IsObservedByPolice.ToString();
             request.Parameters["IsForPlayer"] = crimeEvent.IsForPlayer.ToString();
             request.Parameters["AlwaysAddInstance"] = crimeEvent.AlwaysAddInstance.ToString();
