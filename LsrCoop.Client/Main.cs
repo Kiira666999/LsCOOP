@@ -32,6 +32,8 @@ namespace LsrCoop.Client
         private static readonly TimeSpan StaleBridgeFinalAge = TimeSpan.FromMinutes(15);
         private static readonly TimeSpan BridgeCleanupInterval = TimeSpan.FromMinutes(5);
         private static readonly TimeSpan PassivePositionSaveInterval = TimeSpan.FromSeconds(60);
+        private static readonly TimeSpan RemoteActorRegistryBridgeInterval = TimeSpan.FromMilliseconds(500);
+        private static readonly TimeSpan RemoteActorRegistryLogInterval = TimeSpan.FromSeconds(10);
         private const float MaxAbsLastPositionCoordinate = 10000.0f;
         private const float MinLastPositionZ = -500.0f;
         private const float MaxLastPositionZ = 3000.0f;
@@ -86,6 +88,8 @@ namespace LsrCoop.Client
         private BridgeCleanupSummary lastBridgeCleanupSummary = new BridgeCleanupSummary();
         private DateTimeOffset lastBridgeCleanupUtc;
         private DateTimeOffset lastPassivePositionSaveUtc;
+        private DateTimeOffset lastRemoteActorRegistryBridgeUtc;
+        private DateTimeOffset lastRemoteActorRegistryLogUtc;
 
         public Main()
         {
@@ -157,6 +161,7 @@ namespace LsrCoop.Client
             PollGameplayBridge();
             TryRunPeriodicBridgeCleanup();
             DetectPlayerOnPlayerViolence();
+            TryWriteRemoteActorRegistrySnapshot();
             TrySendPassiveLastPosition();
         }
 
@@ -1104,6 +1109,127 @@ namespace LsrCoop.Client
             state.Health = remotePed.Health;
             state.Armor = remotePed.Armor;
             state.IsDead = remotePed.IsDead;
+        }
+
+        private void TryWriteRemoteActorRegistrySnapshot()
+        {
+            DateTimeOffset now = DateTimeOffset.UtcNow;
+            if (now - lastRemoteActorRegistryBridgeUtc < RemoteActorRegistryBridgeInterval)
+            {
+                return;
+            }
+
+            lastRemoteActorRegistryBridgeUtc = now;
+            if (!IsLocalActiveHostForRegistry())
+            {
+                return;
+            }
+
+            Ped localPed = Game.Player?.Character;
+            int localPedHandle = localPed != null && localPed.Exists() ? localPed.Handle : 0;
+            int localVehicleHandle = GetCurrentVehicleHandle(localPed);
+            List<string> actors = new List<string>();
+            foreach (object remotePlayer in API.Players.Values)
+            {
+                string remoteProfileId = GetString(remotePlayer, "Username");
+                if (string.IsNullOrWhiteSpace(remoteProfileId) || string.Equals(remoteProfileId, localProfileId, StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
+                Ped remotePed = GetRemotePlayerPed(remotePlayer);
+                if (remotePed == null || !remotePed.Exists())
+                {
+                    continue;
+                }
+
+                if (remotePed.Handle == localPedHandle)
+                {
+                    continue;
+                }
+
+                actors.Add(SerializeRemoteActor(remotePlayer, remoteProfileId, remotePed, now));
+            }
+
+            WriteGameplayInboundBridgeFile("UpdateRemoteActorRegistry", new Dictionary<string, string>
+            {
+                ["WorldId"] = localWorldId ?? string.Empty,
+                ["ProfileId"] = localProfileId ?? string.Empty,
+                ["LocalPedHandle"] = localPedHandle.ToString(CultureInfo.InvariantCulture),
+                ["LocalVehicleHandle"] = localVehicleHandle.ToString(CultureInfo.InvariantCulture),
+                ["ActorCount"] = actors.Count.ToString(CultureInfo.InvariantCulture),
+                ["Actors"] = string.Join(";", actors),
+            });
+
+            if (now - lastRemoteActorRegistryLogUtc >= RemoteActorRegistryLogInterval)
+            {
+                lastRemoteActorRegistryLogUtc = now;
+                Logger.Info($"[LsrCoop.Client] remote actor registry bridge updated: count={actors.Count}");
+            }
+        }
+
+        private bool IsLocalActiveHostForRegistry()
+        {
+            return API.IsOnServer
+                && localCharacterReadyForSimulation
+                && !string.IsNullOrWhiteSpace(localWorldId)
+                && !string.IsNullOrWhiteSpace(localProfileId)
+                && !string.IsNullOrWhiteSpace(activeHostProfileId)
+                && string.Equals(localProfileId, activeHostProfileId, StringComparison.OrdinalIgnoreCase);
+        }
+
+        private string SerializeRemoteActor(object remotePlayer, string remoteProfileId, Ped remotePed, DateTimeOffset updatedUtc)
+        {
+            string characterId = GetRemoteCharacterId(remoteProfileId);
+            string rageCoopPlayerId = GetRemoteRageCoopPlayerId(remotePlayer, remoteProfileId);
+            int vehicleHandle = GetCurrentVehicleHandle(remotePed);
+            return string.Join("|", new[]
+            {
+                EscapeListPart(remoteProfileId),
+                EscapeListPart(characterId),
+                EscapeListPart(rageCoopPlayerId),
+                remotePed.Handle.ToString(CultureInfo.InvariantCulture),
+                vehicleHandle.ToString(CultureInfo.InvariantCulture),
+                remotePed.Position.X.ToString(CultureInfo.InvariantCulture),
+                remotePed.Position.Y.ToString(CultureInfo.InvariantCulture),
+                remotePed.Position.Z.ToString(CultureInfo.InvariantCulture),
+                updatedUtc.ToString("O", CultureInfo.InvariantCulture),
+            });
+        }
+
+        private string GetRemoteCharacterId(string profileId)
+        {
+            CoopPlayerProfileSnapshotDto profile = latestWorldSnapshot?.Profiles?
+                .FirstOrDefault(x => string.Equals(x.ProfileId, profileId, StringComparison.OrdinalIgnoreCase));
+            string characterId = profile?.Character?.CharacterId;
+            return string.IsNullOrWhiteSpace(characterId) ? profileId ?? string.Empty : characterId;
+        }
+
+        private string GetRemoteRageCoopPlayerId(object remotePlayer, string fallback)
+        {
+            object id = GetPropertyValue(remotePlayer, "Id")
+                ?? GetPropertyValue(remotePlayer, "ID")
+                ?? GetPropertyValue(remotePlayer, "NetId")
+                ?? GetPropertyValue(remotePlayer, "NetworkId");
+            string value = id?.ToString();
+            return string.IsNullOrWhiteSpace(value) ? fallback ?? string.Empty : value;
+        }
+
+        private int GetCurrentVehicleHandle(Ped ped)
+        {
+            try
+            {
+                if (ped == null || !ped.Exists() || !Function.Call<bool>(Hash.IS_PED_IN_ANY_VEHICLE, ped.Handle, false))
+                {
+                    return 0;
+                }
+
+                return Function.Call<int>(Hash.GET_VEHICLE_PED_IS_IN, ped.Handle, false);
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         private CoopPvpCrimeReportDto CreatePvpCrimeReport(string victimProfileId, Ped victimPed, bool wasKilled)

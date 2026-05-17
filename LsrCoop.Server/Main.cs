@@ -388,6 +388,13 @@ namespace LsrCoop.Server
                 return;
             }
 
+            bool remoteActorCrime = IsRemoteActorCrimeCommit(request);
+            int remoteActorCriminalHistoryCount = 0;
+            if (remoteActorCrime)
+            {
+                remoteActorCriminalHistoryCount = ApplyRemoteActorCrimeCommit(request, profile, requester.ProfileId);
+            }
+
             int moneyBeforeCommit = profile.InventoryMoney?.TotalMoney ?? 0;
             int inventoryBeforeCommit = profile.InventoryMoney?.InventoryItems?.Count ?? 0;
             int weaponsBeforeCommit = profile.Weapons?.Weapons?.Count ?? 0;
@@ -495,7 +502,11 @@ namespace LsrCoop.Server
 
             CoopGameplayActionResultDto accepted = CreateGameplayActionResult(request, true, false, "Committed by active host");
             SendGameplayActionResult(requester, accepted);
-            if (string.Equals(request.ActionType, "CommitCrime", StringComparison.OrdinalIgnoreCase))
+            if (remoteActorCrime)
+            {
+                Logger.Info($"[LsrCoop.Server] remote actor crime committed: crime={GetParameter(request, "CrimeId")} ({GetParameter(request, "CrimeName")}), sourceProfile={request.SourceProfileId}, requestedBy={requester.ProfileId}, victimType={GetParameter(request, "VictimType")}, criminalHistoryCrimes={remoteActorCriminalHistoryCount}, temporaryStatePersisted=false; active chase/search/witness/roadblock/live combat state skipped");
+            }
+            else if (string.Equals(request.ActionType, "CommitCrime", StringComparison.OrdinalIgnoreCase))
             {
                 Logger.Info($"[LsrCoop.Server] active-host crime committed: crime={GetParameter(request, "CrimeId")} ({GetParameter(request, "CrimeName")}), profile={request.SourceProfileId}, character={request.SourceCharacterId}, longTermHistoryCreated={GetParameter(request, "CreatedLongTermCriminalHistory")}, longTermHistoryCrimes={GetParameter(request, "LongTermCriminalHistoryCrimeCount")}, temporaryStatePersisted={GetParameter(request, "TemporaryStatePersisted")}; active chase/search/witness/roadblock/live combat state skipped");
             }
@@ -888,6 +899,95 @@ namespace LsrCoop.Server
             }
 
             return value ?? string.Empty;
+        }
+
+        private bool IsRemoteActorCrimeCommit(CoopGameplayActionRequestDto request)
+        {
+            return string.Equals(request?.ActionType, "CommitCrime", StringComparison.OrdinalIgnoreCase)
+                && IsTrueParameter(request, "RemoteActorCrime");
+        }
+
+        private int ApplyRemoteActorCrimeCommit(CoopGameplayActionRequestDto request, CoopPlayerProfile profile, string requestedByProfileId)
+        {
+            if (request == null || profile == null)
+            {
+                return profile?.CriminalHistory?.Crimes?.Count ?? 0;
+            }
+
+            string crimeId = GetParameter(request, "CrimeId");
+            if (string.IsNullOrWhiteSpace(crimeId))
+            {
+                Logger.Warning($"[LsrCoop.Server] remote actor crime skipped: sourceProfile={request.SourceProfileId}, requestedBy={requestedByProfileId}, reason=missing crime id");
+                return profile.CriminalHistory?.Crimes?.Count ?? 0;
+            }
+
+            if (profile.CriminalHistory == null)
+            {
+                profile.CriminalHistory = new CoopCriminalHistoryStateDto
+                {
+                    WorldId = worldProfileStoreService.WorldId,
+                    ProfileId = profile.ProfileId,
+                    CharacterId = string.IsNullOrWhiteSpace(request.SourceCharacterId) ? profile.ProfileId : request.SourceCharacterId,
+                    Crimes = new List<CoopCriminalHistoryCrimeRecordDto>(),
+                };
+            }
+
+            CoopCriminalHistoryStateDto history = profile.CriminalHistory;
+            history.WorldId = worldProfileStoreService.WorldId;
+            history.ProfileId = profile.ProfileId;
+            history.CharacterId = string.IsNullOrWhiteSpace(history.CharacterId) ? profile.ProfileId : history.CharacterId;
+            history.Crimes = history.Crimes ?? new List<CoopCriminalHistoryCrimeRecordDto>();
+            history.HasHistory = true;
+            history.WantedLevel = Math.Max(history.WantedLevel, ParseIntParameter(request, "ResultingWantedLevel"));
+            history.LastSeenX = ParseFloatParameter(request, "PositionX");
+            history.LastSeenY = ParseFloatParameter(request, "PositionY");
+            history.LastSeenZ = ParseFloatParameter(request, "PositionZ");
+            history.ClearReason = string.Empty;
+            history.UpdatedUtc = request.RequestedUtc == default ? DateTimeOffset.UtcNow : request.RequestedUtc;
+
+            CoopCriminalHistoryCrimeRecordDto crime = history.Crimes.FirstOrDefault(x => string.Equals(x?.CrimeId, crimeId, StringComparison.OrdinalIgnoreCase));
+            if (crime == null)
+            {
+                crime = new CoopCriminalHistoryCrimeRecordDto
+                {
+                    CrimeId = crimeId,
+                    CrimeName = GetParameter(request, "CrimeName"),
+                    Instances = 1,
+                    ResultingWantedLevel = ParseIntParameter(request, "ResultingWantedLevel"),
+                    Priority = ParseIntParameter(request, "CrimePriority"),
+                    ResultsInLethalForce = IsTrueParameter(request, "ResultsInLethalForce"),
+                };
+                history.Crimes.Add(crime);
+            }
+            else
+            {
+                crime.CrimeName = string.IsNullOrWhiteSpace(crime.CrimeName) ? GetParameter(request, "CrimeName") : crime.CrimeName;
+                crime.Instances = Math.Max(1, crime.Instances) + 1;
+                crime.ResultingWantedLevel = Math.Max(crime.ResultingWantedLevel, ParseIntParameter(request, "ResultingWantedLevel"));
+                crime.Priority = crime.Priority == 0 ? ParseIntParameter(request, "CrimePriority") : crime.Priority;
+                crime.ResultsInLethalForce = crime.ResultsInLethalForce || IsTrueParameter(request, "ResultsInLethalForce");
+            }
+
+            worldProfileStoreService.Save();
+            return history.Crimes.Count;
+        }
+
+        private bool IsTrueParameter(CoopGameplayActionRequestDto request, string key)
+        {
+            string value = GetParameter(request, key);
+            return string.Equals(value, "true", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private int ParseIntParameter(CoopGameplayActionRequestDto request, string key)
+        {
+            int parsed;
+            return int.TryParse(GetParameter(request, key), NumberStyles.Integer, CultureInfo.InvariantCulture, out parsed) ? parsed : 0;
+        }
+
+        private float ParseFloatParameter(CoopGameplayActionRequestDto request, string key)
+        {
+            float parsed;
+            return float.TryParse(GetParameter(request, key), NumberStyles.Float, CultureInfo.InvariantCulture, out parsed) ? parsed : 0.0f;
         }
 
         private void OnPvpCrimeReported(CustomEventReceivedArgs args)

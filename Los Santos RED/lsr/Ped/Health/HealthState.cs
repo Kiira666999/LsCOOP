@@ -1,5 +1,6 @@
 ﻿using ExtensionsMethods;
 using LosSantosRED.lsr;
+using LosSantosRED.lsr.Coop.Core;
 using LosSantosRED.lsr.Interface;
 using Rage;
 using Rage.Native;
@@ -298,6 +299,10 @@ public class HealthState
                 MyPed.HasBeenHurtByPlayer = true;
                 CurrentPlayer.Violations.DamageViolations.AddKilled(MyPed, WasShot, WasMeleeAttacked, WasHitByVehicle);
             }
+            else if (CoopCrimeRoutingService.Current.TryReportRemotePedVictimCrime(MyPed, unchecked((int)MyPed.KillerHandle), true, WasShot, WasMeleeAttacked, WasHitByVehicle))
+            {
+                return;
+            }
             else if (MyPed.KillerHandle != 0)
             {
                 EntryPoint.WriteToConsole($"PED KILLED ANOTHER PED Killer:{MyPed.KillerHandle} Killed: {MyPed.Handle}");
@@ -318,6 +323,10 @@ public class HealthState
                     CurrentPlayer.Violations.DamageViolations.AddInjured(MyPed, WasShot, WasMeleeAttacked, WasHitByVehicle);
                 }
                 EntryPoint.WriteToConsole($"YOU DAMAGED {MyPed.Handle} H1:{Health} H2:{CurrentHealth} HX:{Health - CurrentHealth} A1:{Armor} A2:{CurrentArmor} AX:{Armor - CurrentArmor}");
+            }
+            else if (!Settings.SettingsManager.ViolationSettings.TreatAsCop && !MyPed.HasBeenHurtByPlayer && Health - CurrentHealth + Armor - CurrentArmor > 5)
+            {
+                CoopCrimeRoutingService.Current.TryReportRemotePedVictimDamage(MyPed, WasShot, WasMeleeAttacked, WasHitByVehicle);
             }
         }
     }

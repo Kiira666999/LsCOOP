@@ -175,6 +175,8 @@
     <Compile Include="lsr\Coop\Core\CoopPropertyOwnershipRecord.cs" />
     <Compile Include="lsr\Coop\Core\CoopPropertyOwnershipSnapshot.cs" />
     <Compile Include="lsr\Coop\Core\CoopProfileId.cs" />
+    <Compile Include="lsr\Coop\Core\CoopRemoteActorRegistry.cs" />
+    <Compile Include="lsr\Coop\Core\CoopRemoteActorState.cs" />
     <Compile Include="lsr\Coop\Core\CoopRoleConfig.cs" />
     <Compile Include="lsr\Coop\Core\CoopRuntimeServices.cs" />
     <Compile Include="lsr\Coop\Core\CoopSaveService.cs" />
