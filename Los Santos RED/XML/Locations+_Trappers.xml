@@ -1,4 +1,4 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <PossibleLocations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <DeadDrops />
   <ScrapYards />
@@ -14,6 +14,9 @@
       <BannerImagePath>gangs\families.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_gangden_the_families_den_223_165_1601_309_34_884</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -1097,6 +1100,9 @@
       <BannerImagePath>gangs\vagos.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_gangden_vagos_trap_house_295_676_1971_918_22_904</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -2450,6 +2456,9 @@
       <BannerImagePath>gangs\families.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_gangden_south_los_santos_trappers_den_348_431_1839_3_28_336</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -2795,6 +2804,9 @@
       <BannerImagePath>gangs\ballas.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_gangden_east_los_santos_trappers_den_1261_161_1615_992_54_743</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -3139,6 +3151,9 @@
       <BannerImagePath>gangs\dwayne.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_gangden_dwayne_forge_s_house_60_5_1529_553_34_235</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -3510,6 +3525,9 @@
       <BannerImagePath>gangs\dizzyd.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_gangden_dizzy_d_s_house_223_753_1704_104_29_287</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4031,6 +4049,9 @@
       <BannerImagePath>gangs\caesars.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_gangden_caesars_s_house_291_47_2086_735_17_395</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4402,6 +4423,9 @@
       <BannerImagePath>gangs\yardies.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_gangden_little_jacob_s_house_471_762_1562_126_32_792</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4806,6 +4830,9 @@
       <BannerImagePath>gangs\kkangpae.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_gangden_hyun_su_s_appartment_827_538_696_907_28_057</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -5309,6 +5336,9 @@
       <BannerImagePath />
       <RemoveBanner>true</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_gangden_long_yang_s_appartment_265_999_739_387_34_417</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -5845,6 +5875,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_gangden_professionals_den_967_69_1867_115_31_448</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -6901,6 +6934,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_strawberry_leroy_s_electrical_66_396_1468_005_29_291</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>411</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -7013,6 +7049,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_test_city_test_forgery_262_653_999_882_99_009</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>439</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -7126,6 +7165,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_davis_corner_194_708_1764_108_29_336</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>438</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -7239,6 +7281,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_davis_stash_house_277_922_1768_024_28_718</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>411</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -7351,6 +7396,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_davis_growhouse_129_313_1855_219_24_902</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>140</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -7463,6 +7511,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_strawberry_safehouse_495_682_1339_949_29_315</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>310</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -7575,6 +7626,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_rancho_safehouse_479_596_1736_329_29_151</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>310</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -7687,6 +7741,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_rancho_cookhouse_239_004_2023_464_18_321</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>375</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -7799,6 +7856,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_chamberlain_hills_growhouse_141_964_1693_067_36_167</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>140</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -7911,6 +7971,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_vespucci_beach_dealer_crew_1103_234_1636_672_4_602</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>439</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -8024,6 +8087,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_vespucci_beach_stash_house_1155_952_1574_757_8_345</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>411</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -8136,6 +8202,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_vespucci_beach_corner_1138_356_1589_81_4_397</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>438</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -8248,6 +8317,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_vespucci_beach_growhouse_1320_89_1167_356_4_844</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>140</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -8360,6 +8432,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_mission_row_crack_den_261_745_1109_525_29_641</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>310</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -8471,6 +8546,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_little_seoul_safehouse_689_816_1154_848_10_813</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>310</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -8583,6 +8661,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_little_seoul_dealer_crew_804_168_960_237_17_603</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>310</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -8696,6 +8777,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_little_seoul_corner_762_275_889_4_20_827</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>438</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -8808,6 +8892,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_little_seoul_stash_house_718_726_898_567_20_379</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>411</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -8920,6 +9007,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_mission_row_safehouse_474_175_635_313_25_648</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>310</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -9032,6 +9122,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_mission_row_laundromat_316_236_1098_913_29_402</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>411</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -9144,6 +9237,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_business_mission_row_gem_s_jewelry_335_622_874_036_29_292</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>411</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.4</MapIconScale>
@@ -9284,6 +9380,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_ballas_grove_street_dealer_101_822_1898_585_21_075</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -9497,6 +9596,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_families_chamberlain_hills_dealer_155_07_1643_2_36_851</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -9710,6 +9812,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_families_pillbox_hill_dealer_41_076_1030_614_37_186</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -9923,6 +10028,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_rancho_dealer_421_493_2057_723_22_308</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -10136,6 +10244,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_south_ls_trappers_dealer_korra_54_973_1226_416_28_735</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -10349,6 +10460,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_east_ls_trappers_dealer_annie_446_142_1232_824_29_936</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -10562,6 +10676,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_little_seoul_khangpae_dealer_1_827_118_565_656_30_276</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -10775,6 +10892,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_little_seoul_dealer_886_726_772_421_16_032</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -10988,6 +11108,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_little_seoul_yardies_dealer_674_875_880_577_24_459</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -11201,6 +11324,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_khangpae_dealer_chung_hee_801_46_888_339_20_857</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -11414,6 +11540,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_triads_dealer_pillbox_hill_123_434_1040_294_29_207</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -11627,6 +11756,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_triads_dealer_fu_kang_275_633_757_548_43_606</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -11840,6 +11972,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_downtown_dealer_1_321_466_598_75_33_553</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -12053,6 +12188,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_textile_city_dealer_308_893_621_655_35_556</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -12266,6 +12404,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_alta_dealer_291_039_218_503_61_57</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -12479,6 +12620,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_vespucci_dealer_1218_405_1049_956_8_395</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -12692,6 +12836,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_la_mesa_dealer_992_98_1528_209_30_883</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -12905,6 +13052,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_lsia_dealer_696_919_2113_764_6_104</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -13118,6 +13268,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_richman_dealer_1539_296_128_123_56_78</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -13331,6 +13484,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_families_dealer_leroy_172_556_1669_225_29_773</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -13544,6 +13700,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_ballas_dealer_terrance_226_174_1759_722_28_688</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -13757,6 +13916,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_vagos_dealer_alphonse_600_18_1867_024_24_718</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -13970,6 +14132,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_vagos_dealer_gustavo_988_909_1665_369_37_138</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -14183,6 +14348,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_trappers_illicitmarketplace_yardies_dealer_badman_430_852_1112_263_43_069</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>514</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>

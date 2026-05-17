@@ -366,6 +366,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugs_illicitmarketplace_weed_supplier_206_249_1708_623_32_664</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>496</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -509,6 +512,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugs_illicitmarketplace_weed_supplier_3169_156_1095_74_20_852</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>496</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -652,6 +658,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugs_illicitmarketplace_weed_supplier_421_12_2058_441_22_281</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>496</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -783,6 +792,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugs_illicitmarketplace_cocaine_supplier_1_1593_315_5212_957_3_995</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>497</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -926,6 +938,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugs_illicitmarketplace_cocaine_supplier_2_1556_829_2170_239_77_485</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>497</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -1069,6 +1084,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugs_illicitmarketplace_meth_supplier_3427_06_3753_008_30_465</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>499</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -1180,6 +1198,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugs_illicitmarketplace_chemical_supplier_2527_671_2640_715_37_945</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>499</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>

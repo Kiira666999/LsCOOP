@@ -175,6 +175,7 @@ namespace LsrCoop.Server
             API.RegisterCustomEventHandler(EventRouter.PvpCrimeReportedEventHash, OnPvpCrimeReported);
             API.RegisterCustomEventHandler(EventRouter.CriminalJusticeSnapshotCommittedEventHash, OnCriminalJusticeSnapshotCommitted);
             API.RegisterCustomEventHandler(EventRouter.GangReputationSnapshotCommittedEventHash, OnGangReputationSnapshotCommitted);
+            API.RegisterCustomEventHandler(EventRouter.LocationDiscoverySnapshotCommittedEventHash, OnLocationDiscoverySnapshotCommitted);
             API.RegisterCustomEventHandler(EventRouter.LastPositionCommittedEventHash, OnLastPositionCommitted);
             API.RegisterCustomEventHandler(EventRouter.BridgeDiagnosticsReportEventHash, OnBridgeDiagnosticsReported);
         }
@@ -1215,6 +1216,95 @@ namespace LsrCoop.Server
             worldProfileStoreService.Save();
 
             Logger.Info($"[LsrCoop.Server] gang reputation {mergeResult.Action}: profile={profile.ProfileId}, recordsSaved={profile.GangReputation.Reputations?.Count ?? 0}, recordsChanged={changedRecordCount}, changedGangs={changedRecords}, preservedDefaultOverwrites={mergeResult.PreservedDefaultOverwriteCount}, currentGang={profile.GangReputation.CurrentGangId ?? "none"}");
+        }
+
+        private void OnLocationDiscoverySnapshotCommitted(CustomEventReceivedArgs args)
+        {
+            CoopClientStatus requester = playerRegistrationService.RegisterClient(args?.Client, "location-discovery-snapshot");
+            if (requester == null)
+            {
+                return;
+            }
+
+            string payloadJson = GetArg(args, 0);
+            string eventType = GetArg(args, 1);
+            string nonce = GetArg(args, 2);
+            string sourceProfile = GetArg(args, 3);
+            if (!TryDeserializeEventPayload(payloadJson, eventType, nonce, sourceProfile, out CoopLocationDiscoveryStateDto snapshot))
+            {
+                return;
+            }
+
+            if (snapshot == null)
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected location discovery snapshot from {requester.ProfileId}: empty payload");
+                return;
+            }
+
+            if (!string.Equals(snapshot.WorldId, worldProfileStoreService.WorldId, StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected location discovery snapshot from {requester.ProfileId}: wrong world {snapshot.WorldId}");
+                return;
+            }
+
+            if (!string.Equals(snapshot.ProfileId, requester.ProfileId, StringComparison.OrdinalIgnoreCase)
+                && !activeHostService.IsActiveHost(requester.ProfileId))
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected location discovery snapshot from {requester.ProfileId}: profile mismatch {snapshot.ProfileId}");
+                return;
+            }
+
+            CoopPlayerProfile profile = worldProfileStoreService.GetProfile(snapshot.ProfileId);
+            if (profile == null)
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected location discovery snapshot from {requester.ProfileId}: missing profile");
+                return;
+            }
+
+            List<string> incomingIds = snapshot.DiscoveredLocationIds?
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .Select(x => x.Trim())
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToList() ?? new List<string>();
+
+            if (!incomingIds.Any())
+            {
+                return;
+            }
+
+            HashSet<string> mergedIds = new HashSet<string>(
+                profile.LocationDiscovery?.DiscoveredLocationIds?.Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => x.Trim()) ?? Enumerable.Empty<string>(),
+                StringComparer.OrdinalIgnoreCase);
+
+            int addedCount = 0;
+            foreach (string locationId in incomingIds)
+            {
+                if (mergedIds.Add(locationId))
+                {
+                    addedCount++;
+                }
+            }
+
+            if (addedCount == 0)
+            {
+                return;
+            }
+
+            DateTimeOffset updatedUtc = snapshot.UpdatedUtc == default ? DateTimeOffset.UtcNow : snapshot.UpdatedUtc;
+            profile.LocationDiscovery = new CoopLocationDiscoveryStateDto
+            {
+                StateId = !string.IsNullOrWhiteSpace(profile.LocationDiscovery?.StateId)
+                    ? profile.LocationDiscovery.StateId
+                    : !string.IsNullOrWhiteSpace(snapshot.StateId) ? snapshot.StateId : Guid.NewGuid().ToString("N"),
+                WorldId = worldProfileStoreService.WorldId,
+                ProfileId = profile.ProfileId,
+                CharacterId = string.IsNullOrWhiteSpace(snapshot.CharacterId) ? profile.ProfileId : snapshot.CharacterId,
+                UpdatedUtc = updatedUtc,
+                DiscoveredLocationIds = mergedIds.OrderBy(x => x, StringComparer.OrdinalIgnoreCase).ToList(),
+            };
+
+            worldProfileStoreService.Save();
+            Logger.Info($"[LsrCoop.Server] location discovery saved: profile={profile.ProfileId}, added={addedCount}, total={profile.LocationDiscovery.DiscoveredLocationIds.Count}");
         }
 
         private static GangReputationMergeResult MergeGangReputationSnapshot(CoopGangReputationStateDto existing, CoopGangReputationStateDto incoming)

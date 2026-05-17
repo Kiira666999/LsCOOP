@@ -16,7 +16,7 @@ namespace LosSantosRED.lsr.Interface
         //GameSave GetSave_Obsolete(ISaveable player);
 
         void DeleteSave(GameSave gs);
-        void Save(ISaveable saveable, IWeapons weapons, ITimeControllable time, IPlacesOfInterest placesOfInterest, IModItems modItems, int saveNumber);
+        void Save(ISaveable saveable, IWeapons weapons, ITimeControllable time, IPlacesOfInterest placesOfInterest, IModItems modItems, ISettingsProvideable settings, int saveNumber);
         void DeleteSave();
         bool IsPlaying(GameSave gs);
         void OnChangedPlayer();

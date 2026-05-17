@@ -13,6 +13,9 @@
       <BannerImagePath>gangs\japmc.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpjapbiker_gangden_bosozoku_clubhouse_1191_949_1268_953_35_318</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -339,6 +342,9 @@
       <BannerImagePath>gangs\japmc.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpjapbiker_gangden_bosozoku_clubhouse_2205_747_373_905_13_32</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>

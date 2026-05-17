@@ -24,6 +24,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugbusinesses_business_paleto_blvd_counterfeit_factory_28_8_6468_393_31_526</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -136,6 +139,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugbusinesses_business_alta_st_weed_farm_324_416_1356_305_31_296</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -246,6 +252,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugbusinesses_business_route_68_meth_lab_557_463_2665_888_42_183</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -356,6 +365,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugbusinesses_business_east_joshua_weapons_factory_2521_741_4124_269_38_631</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -471,6 +483,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugbusinesses_business_la_mesa_weed_farm_939_67_1490_042_30_159</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -581,6 +596,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugbusinesses_business_west_eclipse_cocaine_lockup_1981_808_241_498_34_986</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -691,6 +709,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugbusinesses_business_mirror_park_counterfeit_factory_794_08_102_894_82_032</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -803,6 +824,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpdrugbusinesses_business_pyrite_ave_meth_lab_156_233_6292_748_31_678</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>

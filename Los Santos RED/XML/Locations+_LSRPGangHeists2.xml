@@ -1,4 +1,4 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <PossibleLocations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <DeadDrops />
   <ScrapYards />
@@ -1891,6 +1891,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgangheists2_landmark_cargoship_344_435_4062_832_17</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>911</MapIcon>
       <MapIconColorString>Red</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -1993,6 +1996,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgangheists2_landmark_vehicle_cargoship_449_603_2657_805_10_079</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>911</MapIcon>
       <MapIconColorString>Red</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -2494,6 +2500,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgangheists2_morgue_la_mesa_weed_farm_683_387_789_708_24_557</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>850</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -2590,6 +2599,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgangheists2_morgue_grapeseed_weed_farm_1960_964_5184_949_47_937</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>850</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -2686,6 +2698,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgangheists2_morgue_del_perro_weed_farm_1584_724_838_847_10_139</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>850</MapIcon>
       <MapIconColorString>Green</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>

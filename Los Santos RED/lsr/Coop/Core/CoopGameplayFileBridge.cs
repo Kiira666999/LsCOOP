@@ -85,6 +85,16 @@ namespace LosSantosRED.lsr.Coop.Core
             WriteOutbound("GangReputationSnapshotCommitted", snapshot.WorldId.ToString(), snapshot.ProfileId.ToString(), SimpleJson.Serialize(snapshot));
         }
 
+        public static void PublishLocationDiscoveryState(CoopLocationDiscoveryState state)
+        {
+            if (!CoopStartupBridge.IsCoopEnabled || state == null || state.ProfileId.IsEmpty)
+            {
+                return;
+            }
+
+            WriteOutbound("LocationDiscoverySnapshotCommitted", state.WorldId.ToString(), state.ProfileId.ToString(), SimpleJson.Serialize(state));
+        }
+
         private static bool IsActiveHostRemoteActorCrimeCommit(CoopStorePurchaseCommit commit)
         {
             string remoteActorCrime;

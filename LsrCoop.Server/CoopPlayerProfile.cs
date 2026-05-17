@@ -17,6 +17,7 @@ namespace LsrCoop.Server
         public CoopOwnedVehicleSnapshot OwnedVehicles { get; set; }
         public CoopPropertyOwnershipSnapshot PropertyOwnership { get; set; }
         public CoopGangReputationStateDto GangReputation { get; set; }
+        public CoopLocationDiscoveryStateDto LocationDiscovery { get; set; }
         public CoopCriminalHistoryStateDto CriminalHistory { get; set; }
         public CoopDeathArrestStateDto DeathArrestState { get; set; }
         public CoopLastPositionStateDto LastPosition { get; set; }

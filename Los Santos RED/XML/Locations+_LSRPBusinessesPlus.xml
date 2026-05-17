@@ -24,6 +24,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpbusinessesplus_business_smoke_tree_chemistry_lab_2392_845_3320_468_48_457</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -133,6 +136,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpbusinessesplus_business_68_bypass_chemistry_lab_524_644_3080_557_40_913</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -242,6 +248,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpbusinessesplus_business_harmony_chemistry_lab_367_07_2571_595_44_529</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -351,6 +360,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpbusinessesplus_business_el_burro_chemistry_lab_1401_701_1490_305_59_78</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -460,6 +472,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpbusinessesplus_business_east_joshua_chemistry_lab_2487_72_3726_22_43_922</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -569,6 +584,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpbusinessesplus_business_sandy_chemistry_lab_1932_913_3804_908_32_91</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -678,6 +696,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpbusinessesplus_business_chopshop_947_337_1548_16_30_842</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>374</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>

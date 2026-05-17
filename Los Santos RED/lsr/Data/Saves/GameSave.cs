@@ -82,6 +82,7 @@ namespace LosSantosRED.lsr.Data
         public List<InventorySave> InventoryItems { get; set; } = new List<InventorySave>();
         public List<VehicleSaveStatus> OwnedVehicleVariations { get; set; } = new List<VehicleSaveStatus>();
         public List<SavedGameLocation> SavedGameLocations { get; set; } = new List<SavedGameLocation>();
+        public List<string> DiscoveredLocationIDs { get; set; } = new List<string>();
         public CellPhoneSave CellPhoneSave { get; set; } = new CellPhoneSave();
 
         public List<GangLoanSave> GangLoanSaves { get; set; } = new List<GangLoanSave>();
@@ -102,7 +103,7 @@ namespace LosSantosRED.lsr.Data
 
 
         //Save
-        public void Save(ISaveable player, IWeapons weapons, ITimeReportable time, IPlacesOfInterest placesOfInterest, IModItems modItems)
+        public void Save(ISaveable player, IWeapons weapons, ITimeReportable time, IPlacesOfInterest placesOfInterest, IModItems modItems, ISettingsProvideable settings)
         {
             SaveDemographics(player);
             SaveMoney(player);
@@ -118,6 +119,7 @@ namespace LosSantosRED.lsr.Data
             SaveAgencies(player);
             SaveCellPhone(player); 
             SaveOwnedProperties(player);
+            SaveDiscoveredLocations(placesOfInterest, settings);
         }
         private void SaveOwnedProperties(ISaveable player)
         {
@@ -127,6 +129,20 @@ namespace LosSantosRED.lsr.Data
                 SavedGameLocation myLocation = gameLocation.GetSaveData();
                 SavedGameLocations.Add(myLocation);
             }
+        }
+        private void SaveDiscoveredLocations(IPlacesOfInterest placesOfInterest, ISettingsProvideable settings)
+        {
+            if (!ShouldPersistLocationDiscovery(settings) || placesOfInterest == null)
+            {
+                return;
+            }
+
+            DiscoveredLocationIDs = placesOfInterest.AllLocations()
+                .Where(x => x != null && x.IsDiscovered && x.IsDiscoverable && !x.IsBlipEnabled && !string.IsNullOrWhiteSpace(x.LocationID))
+                .Select(x => x.LocationID.Trim())
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
+                .ToList();
         }
         private void SaveDemographics(ISaveable player)
         {
@@ -330,6 +346,7 @@ namespace LosSantosRED.lsr.Data
                 //LoadBusinesses(player, placesOfInterest, modItems, settings);//LEGACY TO BE REMOVED
 
                 LoadOwnedProperties(player, placesOfInterest, modItems, settings, world);
+                LoadDiscoveredLocations(placesOfInterest, settings);
                 GameFiber.Sleep(1000);
                 Game.FadeScreenIn(1500, true);
                 player.DisplayPlayerNotification();
@@ -617,6 +634,27 @@ namespace LosSantosRED.lsr.Data
             {
                 savedLocation.LoadSavedData(player, placesOfInterest, modItems, settings, world);
             }
+        }
+        private void LoadDiscoveredLocations(IPlacesOfInterest placesOfInterest, ISettingsProvideable settings)
+        {
+            if (!ShouldPersistLocationDiscovery(settings) || placesOfInterest == null || DiscoveredLocationIDs == null || !DiscoveredLocationIDs.Any())
+            {
+                return;
+            }
+
+            HashSet<string> discoveredIDs = new HashSet<string>(DiscoveredLocationIDs.Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => x.Trim()), StringComparer.OrdinalIgnoreCase);
+            foreach (GameLocation location in placesOfInterest.AllLocations().Where(x => x != null && x.IsDiscoverable && !x.IsBlipEnabled && !string.IsNullOrWhiteSpace(x.LocationID)))
+            {
+                if (discoveredIDs.Contains(location.LocationID.Trim()))
+                {
+                    location.IsDiscovered = true;
+                }
+            }
+        }
+        private bool ShouldPersistLocationDiscovery(ISettingsProvideable settings)
+        {
+            return settings?.SettingsManager?.WorldSettings?.EnableLocationDiscovery == true
+                && settings.SettingsManager.WorldSettings.PersistDiscoveredLocations;
         }
         private void LoadDebt (IInventoryable player)
         {

@@ -1,4 +1,4 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <PossibleLocations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <DeadDrops />
   <ScrapYards />
@@ -12,6 +12,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_bodyexport_triads_human_trafficking_warehouse_596_449_427_302_24_744</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>310</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -112,6 +115,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_bodyexport_human_trafficking_market_1510_509_6325_991_24_607</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>310</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -212,6 +218,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_bodyexport_human_trafficking_market_322_836_1005_722_29_298</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>310</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -315,6 +324,9 @@
       <BannerImagePath>gangs\varrios.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_ortega_s_varrios_los_aztecas_den_20_823_3030_155_41_686</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -688,6 +700,9 @@
       <BannerImagePath>gangs\varrios.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_varrios_los_aztecas_operation_152_474_2281_025_93_943</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -1058,6 +1073,9 @@
       <BannerImagePath>gangs\caf.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_cougar_ave_families_headquarters_1550_349_284_208_48_28</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -1606,6 +1624,9 @@
       <BannerImagePath>gangs\families.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_highrise_families_den_414_819_217_615_59_91</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -2023,6 +2044,9 @@
       <BannerImagePath>gangs\families.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_the_families_den_327_121_1258_609_32_105</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -2340,6 +2364,9 @@
       <BannerImagePath>gangs\ballas.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_kilo_tray_ballas_den_54_07_66_636_67_631</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -2801,6 +2828,9 @@
       <BannerImagePath>gangs\ballas.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_kilo_tray_ballas_den_489_529_1714_125_29_707</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -3262,6 +3292,9 @@
       <BannerImagePath>gangs\dtf.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_fiends_hangout_486_618_630_22_25_096</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -3617,6 +3650,9 @@
       <BannerImagePath>gangs\vagos.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_vagos_vespucci_hideout_1120_46_1624_931_4_398</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -3962,6 +3998,9 @@
       <BannerImagePath>gangs\vagos.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_vagos_east_ls_hideout_1379_197_1514_989_58_436</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4277,6 +4316,9 @@
       <BannerImagePath>gangs\ballas.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_rolling_heights_ballas_den_1161_267_1099_954_2_219</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4622,6 +4664,9 @@
       <BannerImagePath>gangs\messina.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_messina_yacht_2036_866_1033_69_5_882</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4860,6 +4905,9 @@
       <BannerImagePath>gangs\southernrebels.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_southern_rebels_den_35_584_2871_657_59_61</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -5149,6 +5197,9 @@
       <BannerImagePath>gangs\saigon.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_saigon_boyz_hangout_383_729_152_819_65_531</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>Purple</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -5459,6 +5510,9 @@
       <BannerImagePath>gangs\southernrebels.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_southern_rebels_den_2513_221_4108_676_38_607</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -5725,6 +5779,9 @@
       <BannerImagePath>gangs\angelsofdeath.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_angels_of_death_clubhouse_1134_569_2682_927_18_508</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -5981,6 +6038,9 @@
       <BannerImagePath>gangs\angelsofdeath.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_angels_of_death_clubhouse_1997_318_3039_494_47_027</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -6393,6 +6453,9 @@
       <BannerImagePath>gangs\angelsofdeath.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_angels_of_death_clubhouse_1135_007_789_136_57_601</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -6701,6 +6764,9 @@
       <BannerImagePath>gangs\lspdmain.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_corrupt_cops_hangout_1662_694_54_6_168_312</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>60</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -6985,6 +7051,9 @@
       <BannerImagePath>gangs\elrubio.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_el_rubio_cartel_1211_361_1857_39_78_967</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>858</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.6</MapIconScale>
@@ -7260,6 +7329,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_heist_safehouse_739_167_970_038_24_647</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>67</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -7542,6 +7614,9 @@
       <BannerImagePath>gangs\petrovic.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_petrovic_family_hangout_1240_045_3322_122_6_029</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -7826,6 +7901,9 @@
       <BannerImagePath>gangs\southcentralhustlers.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_hustlers_den_486_214_1529_755_29_467</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -8231,6 +8309,9 @@
       <BannerImagePath>gangs\southcentralhustlers.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_hustlers_den_766_574_1317_648_27_275</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -8610,6 +8691,9 @@
       <BannerImagePath>gangs\uptownriders.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_uptown_riders_mc_164_138_1292_752_31_316</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>348</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -8854,6 +8938,9 @@
       <BannerImagePath>gangs\uptownriders.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_uptown_riders_mc_2173_884_4282_192_49_123</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>348</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.7</MapIconScale>
@@ -9098,6 +9185,9 @@
       <BannerImagePath>gangs\lostmc.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_lost_den_118_884_6639_941_31_871</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -9355,6 +9445,9 @@
       <BannerImagePath>gangs\triad.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_triad_warehouse_1371_02_460_636_34_478</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -9618,6 +9711,9 @@
       <BannerImagePath>gangs\kkangpae.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_kkangpae_warehouse_1373_907_638_086_28_673</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -9881,6 +9977,9 @@
       <BannerImagePath>gangs\triad.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_triad_den_598_677_419_3_24_745</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -10146,6 +10245,9 @@
       <BannerImagePath>gangs\yardies.png</BannerImagePath>
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gangden_yardies_chill_spot_1471_839_920_135_10_025</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>378</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -10779,6 +10881,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_vehicleexporter_ortega_s_exports_161_538_2286_469_94_129</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>794</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -10903,6 +11008,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gamblingden_cougar_casino_1565_634_230_933_49_468</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>680</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -11227,6 +11335,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gamblingden_backroom_casino_174_094_1289_48_31_296</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>680</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -11389,6 +11500,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgosa_gamblingden_backroom_gambling_den_9_679_6654_19_31_698</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>680</MapIcon>
       <MapIconColorString>White</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>

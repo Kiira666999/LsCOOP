@@ -47,6 +47,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrplegaldrugs_morgue_pharmacist_strawberry_93_539_1600_443_30_895</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>850</MapIcon>
       <MapIconColorString>Blue</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -261,6 +264,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrplegaldrugs_morgue_pharmacist_harmony_588_539_2782_321_43_481</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>850</MapIcon>
       <MapIconColorString>Blue</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -521,6 +527,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrplegaldrugs_illicitmarketplace_shady_pharmacist_341_628_1683_228_27_298</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>51</MapIcon>
       <MapIconColorString>Red</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -642,6 +651,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrplegaldrugs_illicitmarketplace_shady_pharmacist_1169_395_1574_599_34_697</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>51</MapIcon>
       <MapIconColorString>Red</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -763,6 +775,9 @@
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
       <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrplegaldrugs_illicitmarketplace_shady_pharmacist_321_855_558_383_28_744</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>51</MapIcon>
       <MapIconColorString>Red</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>

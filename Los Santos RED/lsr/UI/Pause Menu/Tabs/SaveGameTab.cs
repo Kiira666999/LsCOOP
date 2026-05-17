@@ -72,7 +72,7 @@ public class SaveGameTab
             {
                 TabView.Visible = false;
                 Game.IsPaused = false;
-                GameSaves.Save(Saveable, Weapons, Time, PlacesOfInterest, ModItems, GameSaves.NextSaveGameNumber);
+                GameSaves.Save(Saveable, Weapons, Time, PlacesOfInterest, ModItems, Settings, GameSaves.NextSaveGameNumber);
             }
         };
         saveListItems.Add(createNew);
@@ -97,7 +97,7 @@ public class SaveGameTab
                             Game.IsPaused = false;
                             int saveNumber = gs.SaveNumber;
                             GameSaves.DeleteSave(gs);
-                            GameSaves.Save(Saveable, Weapons, Time, PlacesOfInterest, ModItems, saveNumber);
+                            GameSaves.Save(Saveable, Weapons, Time, PlacesOfInterest, ModItems, Settings, saveNumber);
                         }
                     };
                 }
@@ -120,7 +120,7 @@ public class SaveGameTab
                         {
                             TabView.Visible = false;
                             Game.IsPaused = false;
-                            GameSaves.Save(Saveable, Weapons, Time, PlacesOfInterest, ModItems, result);
+                            GameSaves.Save(Saveable, Weapons, Time, PlacesOfInterest, ModItems, Settings, result);
                         }
                     };
                 }

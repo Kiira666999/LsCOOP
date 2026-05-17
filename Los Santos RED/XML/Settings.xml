@@ -1300,6 +1300,10 @@
     <LowerPedSpawnsAtHigherWantedLevels_Wanted9Multiplier>0.1</LowerPedSpawnsAtHigherWantedLevels_Wanted9Multiplier>
     <LowerPedSpawnsAtHigherWantedLevels_Wanted10Multiplier>0.1</LowerPedSpawnsAtHigherWantedLevels_Wanted10Multiplier>
     <ShowAllBlipsOnMap>true</ShowAllBlipsOnMap>
+    <EnableLocationDiscovery>true</EnableLocationDiscovery>
+    <LocationDiscoveryDistance>75</LocationDiscoveryDistance>
+    <PersistDiscoveredLocations>true</PersistDiscoveredLocations>
+    <NotifyOnLocationDiscovered>true</NotifyOnLocationDiscovered>
     <ShowMarkersOnLocationEntrances>false</ShowMarkersOnLocationEntrances>
     <HotelsUsesRooms>true</HotelsUsesRooms>
     <AllowPoliceBackupBlip>true</AllowPoliceBackupBlip>
