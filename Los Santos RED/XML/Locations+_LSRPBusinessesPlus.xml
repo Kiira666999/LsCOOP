@@ -42,7 +42,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -151,7 +151,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -260,7 +260,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -369,7 +369,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -478,7 +478,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -587,7 +587,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -696,7 +696,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>

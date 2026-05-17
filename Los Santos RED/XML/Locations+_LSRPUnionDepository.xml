@@ -49,7 +49,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Bank</TypeName>
       <SortOrder>999</SortOrder>

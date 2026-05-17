@@ -1,4 +1,4 @@
-﻿<PossibleLocations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<PossibleLocations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <DeadDrops />
   <ScrapYards />
   <BodyExports />
@@ -42,7 +42,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -154,7 +154,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -264,7 +264,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -374,7 +374,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -489,7 +489,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -599,7 +599,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -709,7 +709,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
@@ -821,7 +821,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Business</TypeName>
       <SortOrder>999</SortOrder>
