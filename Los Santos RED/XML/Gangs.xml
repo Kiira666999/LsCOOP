@@ -53,8 +53,8 @@
     <ArsonPaymentMin>3000</ArsonPaymentMin>
     <ArsonPaymentMax>7000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>18</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridMCDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -159,8 +159,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>VagosDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -264,8 +264,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>FamiliesDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -369,8 +369,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>BallasDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -474,8 +474,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>MarabuntaDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -580,8 +580,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>AztecasDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -685,8 +685,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>TriadsDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -790,8 +790,8 @@
     <ArsonPaymentMin>800</ArsonPaymentMin>
     <ArsonPaymentMax>1800</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridRedneckDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>5</AmbientMemberMoneyMin>
@@ -895,8 +895,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>KhangpaeDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -1001,8 +1001,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridCokeDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>200</AmbientMemberMoneyMin>
@@ -1107,8 +1107,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridCokeDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>200</AmbientMemberMoneyMin>
@@ -1213,8 +1213,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridCokeDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>200</AmbientMemberMoneyMin>
@@ -1319,8 +1319,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridCokeDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>200</AmbientMemberMoneyMin>
@@ -1426,8 +1426,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridCokeDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>200</AmbientMemberMoneyMin>
@@ -1636,8 +1636,8 @@
     <ArsonPaymentMin>6000</ArsonPaymentMin>
     <ArsonPaymentMax>14000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>20</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>ArmenianDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -1741,8 +1741,8 @@
     <ArsonPaymentMin>2500</ArsonPaymentMin>
     <ArsonPaymentMax>6000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>YardiesDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
@@ -1848,8 +1848,8 @@
     <ArsonPaymentMin>800</ArsonPaymentMin>
     <ArsonPaymentMax>1800</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>8</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridSPANKDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>20</AmbientMemberMoneyMin>
@@ -1954,8 +1954,8 @@
     <ArsonPaymentMin>3000</ArsonPaymentMin>
     <ArsonPaymentMax>7000</ArsonPaymentMax>
     <FightPercentage>70</FightPercentage>
-    <FightPolicePercentage>30</FightPolicePercentage>
-    <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
+    <FightPolicePercentage>18</FightPolicePercentage>
+    <AlwaysFightPolicePercentage>2</AlwaysFightPolicePercentage>
     <DrugDealerPercentage>100</DrugDealerPercentage>
     <DealerMenuGroup>HybridHeroinDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>

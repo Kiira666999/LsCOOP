@@ -65,6 +65,24 @@ public class WorldSettings : ISettingsDefaultable
     public float AirportsOwnedPlanesLocalDistance { get; set; }
     [Description("If enabled, airports will require you to have a valid pilots license to take off.")]
     public bool AirportsRequireLicenseForPrivateFlights { get; set; }
+    [Description("If enabled, commercial airport flights can trigger a contraband security check after arrival.")]
+    public bool EnableAirportContrabandChecks { get; set; }
+    [Description("Base chance for an airport contraband check to catch the player.")]
+    public float AirportContrabandBaseChance { get; set; }
+    [Description("Maximum final chance for an airport contraband check to catch the player.")]
+    public float AirportContrabandMaxChance { get; set; }
+    [Description("Multiplier applied to illicit item police search chance during airport contraband checks.")]
+    public float AirportContrabandIllicitItemMultiplier { get; set; }
+    [Description("Multiplier applied to illicit item quantity growth during airport contraband checks.")]
+    public float AirportContrabandDrugQuantityMultiplier { get; set; }
+    [Description("Multiplier applied to illegal weapon police search chance during airport contraband checks.")]
+    public float AirportContrabandWeaponMultiplier { get; set; }
+    [Description("Maximum throwable ammo count considered by airport contraband checks.")]
+    public int AirportContrabandThrowableAmmoCap { get; set; }
+    [Description("Reserved for future use. V1 only checks commercial plane tickets.")]
+    public bool AirportContrabandIncludePrivateFlights { get; set; }
+    [Description("Airport contraband bust mode. V1 supports Processed only.")]
+    public string AirportContrabandBustMode { get; set; }
     public bool AllowSettingDistantSirens { get; set; }
     public uint DeadBodyAlertTimeout { get; set; }
     public uint UnconsciousBodyAlertTimeout { get; set; }
@@ -146,6 +164,15 @@ public class WorldSettings : ISettingsDefaultable
         AirportsRequireOwnedPlanesLocal = true;
         AirportsOwnedPlanesLocalDistance = 1000f;
         AirportsRequireLicenseForPrivateFlights = true;
+        EnableAirportContrabandChecks = false;
+        AirportContrabandBaseChance = 0f;
+        AirportContrabandMaxChance = 75f;
+        AirportContrabandIllicitItemMultiplier = 0.25f;
+        AirportContrabandDrugQuantityMultiplier = 0.20f;
+        AirportContrabandWeaponMultiplier = 0.50f;
+        AirportContrabandThrowableAmmoCap = 10;
+        AirportContrabandIncludePrivateFlights = false;
+        AirportContrabandBustMode = "Processed";
         AllowSettingDistantSirens = true;
         OutOfStateRandomVehiclePlatesPercent = 90f;
         DeadBodyAlertTimeout = 25000;

@@ -1305,6 +1305,15 @@
     <AirportsRequireOwnedPlanesLocal>true</AirportsRequireOwnedPlanesLocal>
     <AirportsOwnedPlanesLocalDistance>1000</AirportsOwnedPlanesLocalDistance>
     <AirportsRequireLicenseForPrivateFlights>true</AirportsRequireLicenseForPrivateFlights>
+    <EnableAirportContrabandChecks>true</EnableAirportContrabandChecks>
+    <AirportContrabandBaseChance>0</AirportContrabandBaseChance>
+    <AirportContrabandMaxChance>75</AirportContrabandMaxChance>
+    <AirportContrabandIllicitItemMultiplier>0.25</AirportContrabandIllicitItemMultiplier>
+    <AirportContrabandDrugQuantityMultiplier>0.20</AirportContrabandDrugQuantityMultiplier>
+    <AirportContrabandWeaponMultiplier>0.50</AirportContrabandWeaponMultiplier>
+    <AirportContrabandThrowableAmmoCap>10</AirportContrabandThrowableAmmoCap>
+    <AirportContrabandIncludePrivateFlights>false</AirportContrabandIncludePrivateFlights>
+    <AirportContrabandBustMode>Processed</AirportContrabandBustMode>
     <AllowSettingDistantSirens>true</AllowSettingDistantSirens>
     <DeadBodyAlertTimeout>25000</DeadBodyAlertTimeout>
     <UnconsciousBodyAlertTimeout>25000</UnconsciousBodyAlertTimeout>

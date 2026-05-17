@@ -1,10 +1,12 @@
 ﻿using ExtensionsMethods;
+using LosSantosRED.lsr.Coop.Core;
 using LosSantosRED.lsr.Interface;
 using LSR.Vehicles;
 using Rage;
 using Rage.Native;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using static DispatchScannerFiles;
@@ -158,7 +160,18 @@ public class Vehicles
     {
         CivilianVehicles.RemoveAll(x => !x.Vehicle.Exists());
         GameFiber.Yield();//TR 29
-        PoliceVehicles.RemoveAll(x => !x.Vehicle.Exists());
+        int policeTrackedBefore = PoliceVehicles.Count;
+        int policeExistingBefore = PoliceVehicles.Count(x => x.Vehicle.Exists());
+        int policeRemoved = PoliceVehicles.RemoveAll(x => !x.Vehicle.Exists());
+        if (policeRemoved > 0 && CoopPersistenceDiagnostics.IsVerboseEnabled(Settings))
+        {
+            EntryPoint.WriteToConsole("Co-op police vehicle prune diag "
+                + "removedFromTracking:" + policeRemoved.ToString(CultureInfo.InvariantCulture)
+                + " beforeTracked:" + policeTrackedBefore.ToString(CultureInfo.InvariantCulture)
+                + " beforeExisting:" + policeExistingBefore.ToString(CultureInfo.InvariantCulture)
+                + " beforeNonExisting:" + (policeTrackedBefore - policeExistingBefore).ToString(CultureInfo.InvariantCulture)
+                + " afterTracked:" + PoliceVehicles.Count.ToString(CultureInfo.InvariantCulture), 5);
+        }
         GameFiber.Yield();//TR 29
         EMSVehicles.RemoveAll(x => !x.Vehicle.Exists());
         GameFiber.Yield();//TR 29
