@@ -161,6 +161,8 @@
     <Compile Include="lsr\Coop\Core\CoopInventoryMoneySnapshot.cs" />
     <Compile Include="lsr\Coop\Core\CoopInventoryMoneySyncResult.cs" />
     <Compile Include="lsr\Coop\Core\CoopLastPositionState.cs" />
+    <Compile Include="lsr\Coop\Core\CoopLocationDiscoveryState.cs" />
+    <Compile Include="lsr\Coop\Core\CoopLocationDiscoveryStateAdapter.cs" />
     <Compile Include="lsr\Coop\Core\CoopOwnedVehicleAdapter.cs" />
     <Compile Include="lsr\Coop\Core\CoopOwnedVehicleRecord.cs" />
     <Compile Include="lsr\Coop\Core\CoopOwnedVehicleSnapshot.cs" />
@@ -175,6 +177,8 @@
     <Compile Include="lsr\Coop\Core\CoopPropertyOwnershipRecord.cs" />
     <Compile Include="lsr\Coop\Core\CoopPropertyOwnershipSnapshot.cs" />
     <Compile Include="lsr\Coop\Core\CoopProfileId.cs" />
+    <Compile Include="lsr\Coop\Core\CoopRemoteActorRegistry.cs" />
+    <Compile Include="lsr\Coop\Core\CoopRemoteActorState.cs" />
     <Compile Include="lsr\Coop\Core\CoopRoleConfig.cs" />
     <Compile Include="lsr\Coop\Core\CoopRuntimeServices.cs" />
     <Compile Include="lsr\Coop\Core\CoopSaveService.cs" />

@@ -175,6 +175,7 @@ namespace LsrCoop.Server
             API.RegisterCustomEventHandler(EventRouter.PvpCrimeReportedEventHash, OnPvpCrimeReported);
             API.RegisterCustomEventHandler(EventRouter.CriminalJusticeSnapshotCommittedEventHash, OnCriminalJusticeSnapshotCommitted);
             API.RegisterCustomEventHandler(EventRouter.GangReputationSnapshotCommittedEventHash, OnGangReputationSnapshotCommitted);
+            API.RegisterCustomEventHandler(EventRouter.LocationDiscoverySnapshotCommittedEventHash, OnLocationDiscoverySnapshotCommitted);
             API.RegisterCustomEventHandler(EventRouter.LastPositionCommittedEventHash, OnLastPositionCommitted);
             API.RegisterCustomEventHandler(EventRouter.BridgeDiagnosticsReportEventHash, OnBridgeDiagnosticsReported);
         }
@@ -388,6 +389,13 @@ namespace LsrCoop.Server
                 return;
             }
 
+            bool remoteActorCrime = IsRemoteActorCrimeCommit(request);
+            int remoteActorCriminalHistoryCount = 0;
+            if (remoteActorCrime)
+            {
+                remoteActorCriminalHistoryCount = ApplyRemoteActorCrimeCommit(request, profile, requester.ProfileId);
+            }
+
             int moneyBeforeCommit = profile.InventoryMoney?.TotalMoney ?? 0;
             int inventoryBeforeCommit = profile.InventoryMoney?.InventoryItems?.Count ?? 0;
             int weaponsBeforeCommit = profile.Weapons?.Weapons?.Count ?? 0;
@@ -495,7 +503,11 @@ namespace LsrCoop.Server
 
             CoopGameplayActionResultDto accepted = CreateGameplayActionResult(request, true, false, "Committed by active host");
             SendGameplayActionResult(requester, accepted);
-            if (string.Equals(request.ActionType, "CommitCrime", StringComparison.OrdinalIgnoreCase))
+            if (remoteActorCrime)
+            {
+                Logger.Info($"[LsrCoop.Server] remote actor crime committed: crime={GetParameter(request, "CrimeId")} ({GetParameter(request, "CrimeName")}), sourceProfile={request.SourceProfileId}, requestedBy={requester.ProfileId}, victimType={GetParameter(request, "VictimType")}, criminalHistoryCrimes={remoteActorCriminalHistoryCount}, temporaryStatePersisted=false; active chase/search/witness/roadblock/live combat state skipped");
+            }
+            else if (string.Equals(request.ActionType, "CommitCrime", StringComparison.OrdinalIgnoreCase))
             {
                 Logger.Info($"[LsrCoop.Server] active-host crime committed: crime={GetParameter(request, "CrimeId")} ({GetParameter(request, "CrimeName")}), profile={request.SourceProfileId}, character={request.SourceCharacterId}, longTermHistoryCreated={GetParameter(request, "CreatedLongTermCriminalHistory")}, longTermHistoryCrimes={GetParameter(request, "LongTermCriminalHistoryCrimeCount")}, temporaryStatePersisted={GetParameter(request, "TemporaryStatePersisted")}; active chase/search/witness/roadblock/live combat state skipped");
             }
@@ -890,6 +902,95 @@ namespace LsrCoop.Server
             return value ?? string.Empty;
         }
 
+        private bool IsRemoteActorCrimeCommit(CoopGameplayActionRequestDto request)
+        {
+            return string.Equals(request?.ActionType, "CommitCrime", StringComparison.OrdinalIgnoreCase)
+                && IsTrueParameter(request, "RemoteActorCrime");
+        }
+
+        private int ApplyRemoteActorCrimeCommit(CoopGameplayActionRequestDto request, CoopPlayerProfile profile, string requestedByProfileId)
+        {
+            if (request == null || profile == null)
+            {
+                return profile?.CriminalHistory?.Crimes?.Count ?? 0;
+            }
+
+            string crimeId = GetParameter(request, "CrimeId");
+            if (string.IsNullOrWhiteSpace(crimeId))
+            {
+                Logger.Warning($"[LsrCoop.Server] remote actor crime skipped: sourceProfile={request.SourceProfileId}, requestedBy={requestedByProfileId}, reason=missing crime id");
+                return profile.CriminalHistory?.Crimes?.Count ?? 0;
+            }
+
+            if (profile.CriminalHistory == null)
+            {
+                profile.CriminalHistory = new CoopCriminalHistoryStateDto
+                {
+                    WorldId = worldProfileStoreService.WorldId,
+                    ProfileId = profile.ProfileId,
+                    CharacterId = string.IsNullOrWhiteSpace(request.SourceCharacterId) ? profile.ProfileId : request.SourceCharacterId,
+                    Crimes = new List<CoopCriminalHistoryCrimeRecordDto>(),
+                };
+            }
+
+            CoopCriminalHistoryStateDto history = profile.CriminalHistory;
+            history.WorldId = worldProfileStoreService.WorldId;
+            history.ProfileId = profile.ProfileId;
+            history.CharacterId = string.IsNullOrWhiteSpace(history.CharacterId) ? profile.ProfileId : history.CharacterId;
+            history.Crimes = history.Crimes ?? new List<CoopCriminalHistoryCrimeRecordDto>();
+            history.HasHistory = true;
+            history.WantedLevel = Math.Max(history.WantedLevel, ParseIntParameter(request, "ResultingWantedLevel"));
+            history.LastSeenX = ParseFloatParameter(request, "PositionX");
+            history.LastSeenY = ParseFloatParameter(request, "PositionY");
+            history.LastSeenZ = ParseFloatParameter(request, "PositionZ");
+            history.ClearReason = string.Empty;
+            history.UpdatedUtc = request.RequestedUtc == default ? DateTimeOffset.UtcNow : request.RequestedUtc;
+
+            CoopCriminalHistoryCrimeRecordDto crime = history.Crimes.FirstOrDefault(x => string.Equals(x?.CrimeId, crimeId, StringComparison.OrdinalIgnoreCase));
+            if (crime == null)
+            {
+                crime = new CoopCriminalHistoryCrimeRecordDto
+                {
+                    CrimeId = crimeId,
+                    CrimeName = GetParameter(request, "CrimeName"),
+                    Instances = 1,
+                    ResultingWantedLevel = ParseIntParameter(request, "ResultingWantedLevel"),
+                    Priority = ParseIntParameter(request, "CrimePriority"),
+                    ResultsInLethalForce = IsTrueParameter(request, "ResultsInLethalForce"),
+                };
+                history.Crimes.Add(crime);
+            }
+            else
+            {
+                crime.CrimeName = string.IsNullOrWhiteSpace(crime.CrimeName) ? GetParameter(request, "CrimeName") : crime.CrimeName;
+                crime.Instances = Math.Max(1, crime.Instances) + 1;
+                crime.ResultingWantedLevel = Math.Max(crime.ResultingWantedLevel, ParseIntParameter(request, "ResultingWantedLevel"));
+                crime.Priority = crime.Priority == 0 ? ParseIntParameter(request, "CrimePriority") : crime.Priority;
+                crime.ResultsInLethalForce = crime.ResultsInLethalForce || IsTrueParameter(request, "ResultsInLethalForce");
+            }
+
+            worldProfileStoreService.Save();
+            return history.Crimes.Count;
+        }
+
+        private bool IsTrueParameter(CoopGameplayActionRequestDto request, string key)
+        {
+            string value = GetParameter(request, key);
+            return string.Equals(value, "true", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private int ParseIntParameter(CoopGameplayActionRequestDto request, string key)
+        {
+            int parsed;
+            return int.TryParse(GetParameter(request, key), NumberStyles.Integer, CultureInfo.InvariantCulture, out parsed) ? parsed : 0;
+        }
+
+        private float ParseFloatParameter(CoopGameplayActionRequestDto request, string key)
+        {
+            float parsed;
+            return float.TryParse(GetParameter(request, key), NumberStyles.Float, CultureInfo.InvariantCulture, out parsed) ? parsed : 0.0f;
+        }
+
         private void OnPvpCrimeReported(CustomEventReceivedArgs args)
         {
             CoopClientStatus requester = playerRegistrationService.RegisterClient(args?.Client, "pvp-crime-report");
@@ -1115,6 +1216,95 @@ namespace LsrCoop.Server
             worldProfileStoreService.Save();
 
             Logger.Info($"[LsrCoop.Server] gang reputation {mergeResult.Action}: profile={profile.ProfileId}, recordsSaved={profile.GangReputation.Reputations?.Count ?? 0}, recordsChanged={changedRecordCount}, changedGangs={changedRecords}, preservedDefaultOverwrites={mergeResult.PreservedDefaultOverwriteCount}, currentGang={profile.GangReputation.CurrentGangId ?? "none"}");
+        }
+
+        private void OnLocationDiscoverySnapshotCommitted(CustomEventReceivedArgs args)
+        {
+            CoopClientStatus requester = playerRegistrationService.RegisterClient(args?.Client, "location-discovery-snapshot");
+            if (requester == null)
+            {
+                return;
+            }
+
+            string payloadJson = GetArg(args, 0);
+            string eventType = GetArg(args, 1);
+            string nonce = GetArg(args, 2);
+            string sourceProfile = GetArg(args, 3);
+            if (!TryDeserializeEventPayload(payloadJson, eventType, nonce, sourceProfile, out CoopLocationDiscoveryStateDto snapshot))
+            {
+                return;
+            }
+
+            if (snapshot == null)
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected location discovery snapshot from {requester.ProfileId}: empty payload");
+                return;
+            }
+
+            if (!string.Equals(snapshot.WorldId, worldProfileStoreService.WorldId, StringComparison.OrdinalIgnoreCase))
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected location discovery snapshot from {requester.ProfileId}: wrong world {snapshot.WorldId}");
+                return;
+            }
+
+            if (!string.Equals(snapshot.ProfileId, requester.ProfileId, StringComparison.OrdinalIgnoreCase)
+                && !activeHostService.IsActiveHost(requester.ProfileId))
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected location discovery snapshot from {requester.ProfileId}: profile mismatch {snapshot.ProfileId}");
+                return;
+            }
+
+            CoopPlayerProfile profile = worldProfileStoreService.GetProfile(snapshot.ProfileId);
+            if (profile == null)
+            {
+                Logger.Warning($"[LsrCoop.Server] rejected location discovery snapshot from {requester.ProfileId}: missing profile");
+                return;
+            }
+
+            List<string> incomingIds = snapshot.DiscoveredLocationIds?
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .Select(x => x.Trim())
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .ToList() ?? new List<string>();
+
+            if (!incomingIds.Any())
+            {
+                return;
+            }
+
+            HashSet<string> mergedIds = new HashSet<string>(
+                profile.LocationDiscovery?.DiscoveredLocationIds?.Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => x.Trim()) ?? Enumerable.Empty<string>(),
+                StringComparer.OrdinalIgnoreCase);
+
+            int addedCount = 0;
+            foreach (string locationId in incomingIds)
+            {
+                if (mergedIds.Add(locationId))
+                {
+                    addedCount++;
+                }
+            }
+
+            if (addedCount == 0)
+            {
+                return;
+            }
+
+            DateTimeOffset updatedUtc = snapshot.UpdatedUtc == default ? DateTimeOffset.UtcNow : snapshot.UpdatedUtc;
+            profile.LocationDiscovery = new CoopLocationDiscoveryStateDto
+            {
+                StateId = !string.IsNullOrWhiteSpace(profile.LocationDiscovery?.StateId)
+                    ? profile.LocationDiscovery.StateId
+                    : !string.IsNullOrWhiteSpace(snapshot.StateId) ? snapshot.StateId : Guid.NewGuid().ToString("N"),
+                WorldId = worldProfileStoreService.WorldId,
+                ProfileId = profile.ProfileId,
+                CharacterId = string.IsNullOrWhiteSpace(snapshot.CharacterId) ? profile.ProfileId : snapshot.CharacterId,
+                UpdatedUtc = updatedUtc,
+                DiscoveredLocationIds = mergedIds.OrderBy(x => x, StringComparer.OrdinalIgnoreCase).ToList(),
+            };
+
+            worldProfileStoreService.Save();
+            Logger.Info($"[LsrCoop.Server] location discovery saved: profile={profile.ProfileId}, added={addedCount}, total={profile.LocationDiscovery.DiscoveredLocationIds.Count}");
         }
 
         private static GangReputationMergeResult MergeGangReputationSnapshot(CoopGangReputationStateDto existing, CoopGangReputationStateDto incoming)

@@ -111,9 +111,10 @@ namespace LsrCoop.Server
                 JsonSerializer.Serialize(status.Profile.GangReputation),
                 JsonSerializer.Serialize(status.Profile.OwnedVehicles),
                 JsonSerializer.Serialize(status.Profile.PropertyOwnership),
-                JsonSerializer.Serialize(status.Profile.LastPosition)
+                JsonSerializer.Serialize(status.Profile.LastPosition),
+                JsonSerializer.Serialize(status.Profile.LocationDiscovery)
             });
-            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}, inventory={(status.Profile.InventoryMoney?.InventoryItems?.Count ?? 0)}, weapons={(status.Profile.Weapons?.Weapons?.Count ?? 0)}, ownedVehicles={(status.Profile.OwnedVehicles?.Vehicles?.Count ?? 0)}, properties={(status.Profile.PropertyOwnership?.Properties?.Count ?? 0)}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}, gangReputation={(status.Profile.GangReputation?.Reputations?.Count ?? 0)}, lastPosition={(status.Profile.LastPosition == null ? "none" : FormatLastPosition(status.Profile.LastPosition))}");
+            info?.Invoke($"[LsrCoop.Server] character snapshot sent: {status.Profile.ProfileId} ({reason}); readiness={status.ReadinessState}, inventory={(status.Profile.InventoryMoney?.InventoryItems?.Count ?? 0)}, weapons={(status.Profile.Weapons?.Weapons?.Count ?? 0)}, ownedVehicles={(status.Profile.OwnedVehicles?.Vehicles?.Count ?? 0)}, properties={(status.Profile.PropertyOwnership?.Properties?.Count ?? 0)}, criminalHistory={(status.Profile.CriminalHistory?.Crimes?.Count ?? 0)}, gangReputation={(status.Profile.GangReputation?.Reputations?.Count ?? 0)}, discoveredLocations={(status.Profile.LocationDiscovery?.DiscoveredLocationIds?.Count ?? 0)}, lastPosition={(status.Profile.LastPosition == null ? "none" : FormatLastPosition(status.Profile.LastPosition))}");
         }
 
         public CoopClientStatus AcknowledgeCharacterSnapshot(Client client, string worldId, string profileId, string reason, out bool readinessChanged)

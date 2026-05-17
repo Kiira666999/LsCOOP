@@ -38,13 +38,13 @@ public class GameSaves : IGameSaves
             DefaultConfig();
         }
     }
-    public void Save(ISaveable player, IWeapons weapons, ITimeControllable time, IPlacesOfInterest placesOfInterest, IModItems modItems, int saveNumber)
+    public void Save(ISaveable player, IWeapons weapons, ITimeControllable time, IPlacesOfInterest placesOfInterest, IModItems modItems, ISettingsProvideable settings, int saveNumber)
     {
         //EntryPoint.WriteToConsoleTestLong($"NEW SAVE GAME save number {saveNumber}");
         GameSave mySave = new GameSave();
         mySave.SaveNumber = saveNumber;
         GameSaveList.Add(mySave);
-        mySave.Save(player, weapons, time, placesOfInterest, modItems);
+        mySave.Save(player, weapons, time, placesOfInterest, modItems, settings);
         Serialization.SerializeParams(GameSaveList, ConfigFileName);
         PlayingSave = mySave;
     }

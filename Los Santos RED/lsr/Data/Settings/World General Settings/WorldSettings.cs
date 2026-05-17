@@ -52,6 +52,14 @@ public class WorldSettings : ISettingsDefaultable
     public float LowerPedSpawnsAtHigherWantedLevels_Wanted10Multiplier { get; set; }
     [Description("If enabled, ALL static blips will be added to the map.")]
     public bool ShowAllBlipsOnMap { get; set; }
+    [Description("If enabled, XML locations with IsDiscoverable=true, LocationID set, and IsBlipEnabled=false become permanently visible after the player passes nearby.")]
+    public bool EnableLocationDiscovery { get; set; }
+    [Description("Default discovery distance for discoverable hidden locations. Individual XML locations can override this with DiscoveryDistance.")]
+    public float LocationDiscoveryDistance { get; set; }
+    [Description("If enabled, discovered hidden location LocationIDs are saved and restored.")]
+    public bool PersistDiscoveredLocations { get; set; }
+    [Description("If enabled, a notification is shown when a hidden discoverable location is discovered.")]
+    public bool NotifyOnLocationDiscovered { get; set; }
     [Description("If enabled, there will be a 3D entrance marker around location entrances. Performance Intensive")]
     public bool ShowMarkersOnLocationEntrances { get; set; }
     [Description("If enabled, hotels will use specific rooms (if available).")]
@@ -81,8 +89,22 @@ public class WorldSettings : ISettingsDefaultable
     public int AirportContrabandThrowableAmmoCap { get; set; }
     [Description("Reserved for future use. V1 only checks commercial plane tickets.")]
     public bool AirportContrabandIncludePrivateFlights { get; set; }
-    [Description("Airport contraband bust mode. V1 supports Processed only.")]
+    [Description("Airport contraband bust mode. Supported values: SpawnSecurity, Processed.")]
     public string AirportContrabandBustMode { get; set; }
+    [Description("Minimum number of airport police officers spawned for contraband busts.")]
+    public int AirportContrabandSecuritySpawnCountMin { get; set; }
+    [Description("Maximum number of airport police officers spawned for contraband busts.")]
+    public int AirportContrabandSecuritySpawnCountMax { get; set; }
+    [Description("Maximum distance from the player where airport police may be spawned for contraband busts.")]
+    public float AirportContrabandSecuritySpawnRadius { get; set; }
+    [Description("Milliseconds to wait for a valid nearby airport police officer before opening the busted menu.")]
+    public uint AirportContrabandSecuritySpawnTimeoutMs { get; set; }
+    [Description("If enabled, airport contraband will not open the busted menu until a valid nearby LSR Cop exists.")]
+    public bool AirportContrabandRequireCopBeforeBustedMenu { get; set; }
+    [Description("If enabled, skip airport contraband busts when airport police cannot be spawned or found.")]
+    public bool AirportContrabandSkipIfSecuritySpawnFails { get; set; }
+    [Description("If enabled, fall back to processed airport contraband busts only when airport police cannot be spawned or found.")]
+    public bool AirportContrabandFallbackToProcessedIfSecurityFails { get; set; }
     public bool AllowSettingDistantSirens { get; set; }
     public uint DeadBodyAlertTimeout { get; set; }
     public uint UnconsciousBodyAlertTimeout { get; set; }
@@ -160,6 +182,10 @@ public class WorldSettings : ISettingsDefaultable
         AllowPoliceBackupBlip = true;
 
         ShowAllBlipsOnMap = true;
+        EnableLocationDiscovery = false;
+        LocationDiscoveryDistance = 75f;
+        PersistDiscoveredLocations = true;
+        NotifyOnLocationDiscovered = false;
 
         AirportsRequireOwnedPlanesLocal = true;
         AirportsOwnedPlanesLocalDistance = 1000f;
@@ -172,7 +198,14 @@ public class WorldSettings : ISettingsDefaultable
         AirportContrabandWeaponMultiplier = 0.50f;
         AirportContrabandThrowableAmmoCap = 10;
         AirportContrabandIncludePrivateFlights = false;
-        AirportContrabandBustMode = "Processed";
+        AirportContrabandBustMode = "SpawnSecurity";
+        AirportContrabandSecuritySpawnCountMin = 2;
+        AirportContrabandSecuritySpawnCountMax = 4;
+        AirportContrabandSecuritySpawnRadius = 20f;
+        AirportContrabandSecuritySpawnTimeoutMs = 5000;
+        AirportContrabandRequireCopBeforeBustedMenu = true;
+        AirportContrabandSkipIfSecuritySpawnFails = false;
+        AirportContrabandFallbackToProcessedIfSecurityFails = true;
         AllowSettingDistantSirens = true;
         OutOfStateRandomVehiclePlatesPercent = 90f;
         DeadBodyAlertTimeout = 25000;

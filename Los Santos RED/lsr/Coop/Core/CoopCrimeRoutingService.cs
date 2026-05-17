@@ -1,6 +1,9 @@
 using LSR.Vehicles;
 using Rage;
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using LosSantosRED.lsr;
 using LosSantosRED.lsr.Interface;
 
@@ -11,9 +14,11 @@ namespace LosSantosRED.lsr.Coop.Core
         public static CoopCrimeRoutingService Current { get; } = new CoopCrimeRoutingService();
 
         private readonly CoopActionAuthorityService authorityService = new CoopActionAuthorityService();
+        private static readonly TimeSpan RemoteActorCrimeCooldown = TimeSpan.FromSeconds(2);
         private global::Mod.Player localPlayer;
         private ICrimes crimes;
         private bool suppressNextLocalCrimeCommit;
+        private readonly Dictionary<string, DateTimeOffset> remoteActorCrimeCooldowns = new Dictionary<string, DateTimeOffset>(StringComparer.OrdinalIgnoreCase);
 
         public event Action<CoopCrimeEvent> CrimeRoutedToActiveHost;
         public event Action<CoopCrimeEvent> CrimeAppliedOnActiveHost;
@@ -32,6 +37,44 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             return Current.ReportPlayerOnPlayerViolence(offenderProfileId, victimProfileId, offenderPedHandle, victimPedHandle, wasKilled, wasShot, wasMeleeAttacked, wasHitByVehicle, false);
+        }
+
+        public bool TryReportRemotePedVictimCrime(global::PedExt victimPed, int offenderHandle, bool wasKilled, bool wasShot, bool wasMeleeAttacked, bool wasHitByVehicle)
+        {
+            if (!CanReportRemoteActorCrime(victimPed))
+            {
+                return false;
+            }
+
+            int localPedHandle;
+            int localVehicleHandle;
+            GetLocalActorHandles(out localPedHandle, out localVehicleHandle);
+            CoopRemoteActorState offender;
+            if (!CoopRemoteActorRegistry.Current.TryResolveHandle(offenderHandle, localPedHandle, localVehicleHandle, out offender))
+            {
+                return false;
+            }
+
+            return ReportRemotePedVictimCrime(offender, victimPed, wasKilled, wasShot, wasMeleeAttacked, wasHitByVehicle);
+        }
+
+        public bool TryReportRemotePedVictimDamage(global::PedExt victimPed, bool wasShot, bool wasMeleeAttacked, bool wasHitByVehicle)
+        {
+            if (!CanReportRemoteActorCrime(victimPed))
+            {
+                return false;
+            }
+
+            int localPedHandle;
+            int localVehicleHandle;
+            GetLocalActorHandles(out localPedHandle, out localVehicleHandle);
+            CoopRemoteActorState offender;
+            if (!CoopRemoteActorRegistry.Current.TryResolveDamageSource(victimPed.Pedestrian, localPedHandle, localVehicleHandle, out offender))
+            {
+                return false;
+            }
+
+            return ReportRemotePedVictimCrime(offender, victimPed, false, wasShot, wasMeleeAttacked, wasHitByVehicle);
         }
 
         public CoopCrimeEvent CreateLocalCrimeEvent(global::Mod.Player player, global::Crime crime, bool isObservedByPolice, Vector3 location, VehicleExt vehicleObserved, global::WeaponInformation weaponObserved, bool haveDescription, bool announceCrime, bool isForPlayer, bool alwaysAddInstance)
@@ -58,6 +101,150 @@ namespace LosSantosRED.lsr.Coop.Core
                 WantedLevelBefore = player?.WantedLevel ?? 0,
                 WantedLevelAfter = player?.WantedLevel ?? 0,
             };
+        }
+
+        private bool CanReportRemoteActorCrime(global::PedExt victimPed)
+        {
+            return CoopStartupBridge.IsCoopEnabled
+                && CoopStartupBridge.IsLocalActiveHost
+                && localPlayer != null
+                && crimes != null
+                && victimPed != null
+                && victimPed.Pedestrian.Exists();
+        }
+
+        private bool ReportRemotePedVictimCrime(CoopRemoteActorState offender, global::PedExt victimPed, bool wasKilled, bool wasShot, bool wasMeleeAttacked, bool wasHitByVehicle)
+        {
+            if (offender == null || string.IsNullOrWhiteSpace(offender.ProfileId))
+            {
+                return false;
+            }
+
+            Crime crime = ResolvePedVictimCrime(victimPed, wasKilled);
+            if (crime == null)
+            {
+                return false;
+            }
+
+            if (ShouldSuppressRemoteActorCrime(offender.ProfileId, unchecked((int)victimPed.Handle), crime.ID))
+            {
+                return true;
+            }
+
+            CoopCrimeEvent crimeEvent = CreateRemotePedVictimCrimeEvent(offender, victimPed, crime, wasKilled, wasShot, wasMeleeAttacked, wasHitByVehicle);
+            PublishActiveHostCrimeCommit(crimeEvent);
+            CrimeAppliedOnActiveHost?.Invoke(crimeEvent);
+            EntryPoint.WriteToConsole($"Co-op remote actor crime attributed Crime:{crimeEvent.CrimeId} Offender:{crimeEvent.OffenderProfileId} Victim:{crimeEvent.VictimType} VictimHandle:{crimeEvent.VictimContext?.VictimPedHandle ?? 0} TemporaryStatePersisted:{crimeEvent.TemporaryStatePersisted}", 0);
+            return true;
+        }
+
+        private CoopCrimeEvent CreateRemotePedVictimCrimeEvent(CoopRemoteActorState offender, global::PedExt victimPed, Crime crime, bool wasKilled, bool wasShot, bool wasMeleeAttacked, bool wasHitByVehicle)
+        {
+            string offenderProfileId = offender.ProfileId;
+            string offenderCharacterId = string.IsNullOrWhiteSpace(offender.CharacterId) ? GetCurrentCharacterId(offenderProfileId) : offender.CharacterId;
+            Vector3 victimPosition = victimPed.Pedestrian.Exists() ? victimPed.Pedestrian.Position : offender.Position;
+            string victimType = victimPed.IsCop ? "Police" : "Civilian";
+            CoopCrimeActorContext actorContext = new CoopCrimeActorContext
+            {
+                OffenderProfileId = new CoopProfileId(offenderProfileId),
+                OffenderCharacterId = new CoopCharacterId(offenderCharacterId),
+                ActorPedHandle = offender.PedHandle,
+                ActorVehicle = null,
+                ActorVehicleExt = null,
+                Position = offender.Position,
+                SourceClientId = offenderProfileId,
+                IsLocalActor = false,
+                IsActiveHostActor = false,
+            };
+            CoopCrimeVictimContext victimContext = new CoopCrimeVictimContext
+            {
+                VictimPed = victimPed.Pedestrian,
+                VictimEntity = victimPed.Pedestrian,
+                VictimPedHandle = unchecked((int)victimPed.Handle),
+                Position = victimPosition,
+                IsCoopPlayer = false,
+                IsLocalVictim = false,
+            };
+
+            return new CoopCrimeEvent
+            {
+                WorldId = GetCurrentWorldId(),
+                OffenderProfileId = actorContext.OffenderProfileId,
+                OffenderCharacterId = actorContext.OffenderCharacterId,
+                ActorContext = actorContext,
+                VictimContext = victimContext,
+                Crime = crime,
+                CrimeId = crime.ID,
+                CrimeName = crime.Name,
+                IsRemoteActorCrime = true,
+                VictimType = victimType,
+                WasKilled = wasKilled,
+                WasShot = wasShot,
+                WasMeleeAttacked = wasMeleeAttacked,
+                WasHitByVehicle = wasHitByVehicle,
+                IsObservedByPolice = false,
+                Position = victimPosition,
+                HaveDescription = false,
+                AnnounceCrime = false,
+                IsForPlayer = false,
+                AlwaysAddInstance = true,
+                SourceClientId = offenderProfileId,
+                TemporaryStatePersisted = false,
+                HasLongTermCriminalHistoryAfter = true,
+            };
+        }
+
+        private Crime ResolvePedVictimCrime(global::PedExt victimPed, bool wasKilled)
+        {
+            if (victimPed?.IsCop == true)
+            {
+                return crimes?.GetCrime(wasKilled ? StaticStrings.KillingPoliceCrimeID : StaticStrings.HurtingPoliceCrimeID);
+            }
+
+            return crimes?.GetCrime(wasKilled ? StaticStrings.KillingCiviliansCrimeID : StaticStrings.HurtingCiviliansCrimeID);
+        }
+
+        private bool ShouldSuppressRemoteActorCrime(string offenderProfileId, int victimHandle, string crimeId)
+        {
+            DateTimeOffset now = DateTimeOffset.UtcNow;
+            string key = $"{offenderProfileId}|{victimHandle.ToString(CultureInfo.InvariantCulture)}|{crimeId}";
+            DateTimeOffset lastUtc;
+            if (remoteActorCrimeCooldowns.TryGetValue(key, out lastUtc) && now - lastUtc < RemoteActorCrimeCooldown)
+            {
+                return true;
+            }
+
+            remoteActorCrimeCooldowns[key] = now;
+            foreach (string staleKey in remoteActorCrimeCooldowns.Where(x => now - x.Value > TimeSpan.FromSeconds(15)).Select(x => x.Key).ToList())
+            {
+                remoteActorCrimeCooldowns.Remove(staleKey);
+            }
+
+            return false;
+        }
+
+        private void GetLocalActorHandles(out int localPedHandle, out int localVehicleHandle)
+        {
+            localPedHandle = 0;
+            localVehicleHandle = 0;
+            try
+            {
+                Ped localPed = localPlayer?.Character;
+                if (localPed == null || !localPed.Exists())
+                {
+                    return;
+                }
+
+                localPedHandle = (int)localPed.Handle.Value;
+                if (localPed.IsInAnyVehicle(false) && localPed.CurrentVehicle.Exists())
+                {
+                    localVehicleHandle = (int)localPed.CurrentVehicle.Handle.Value;
+                }
+            }
+            catch
+            {
+                localVehicleHandle = 0;
+            }
         }
 
         public bool ReportPlayerOnPlayerViolence(string offenderProfileId, string victimProfileId, int offenderPedHandle, int victimPedHandle, bool wasKilled, bool wasShot, bool wasMeleeAttacked, bool wasHitByVehicle, bool isLocalOffender)
@@ -296,7 +483,18 @@ namespace LosSantosRED.lsr.Coop.Core
             request.Parameters["CrimeId"] = crimeEvent.CrimeId ?? string.Empty;
             request.Parameters["CrimeName"] = crimeEvent.CrimeName ?? string.Empty;
             request.Parameters["ResultingWantedLevel"] = crimeEvent.Crime.ResultingWantedLevel.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            request.Parameters["CrimePriority"] = crimeEvent.Crime.Priority.ToString(System.Globalization.CultureInfo.InvariantCulture);
+            request.Parameters["ResultsInLethalForce"] = crimeEvent.Crime.ResultsInLethalForce.ToString();
             request.Parameters["RemoteActorCrime"] = crimeEvent.IsRemoteActorCrime.ToString();
+            request.Parameters["RequestedByProfileId"] = GetCurrentProfileId();
+            request.Parameters["VictimType"] = crimeEvent.VictimType ?? string.Empty;
+            request.Parameters["OffenderPedHandle"] = (crimeEvent.ActorContext?.ActorPedHandle ?? 0).ToString(System.Globalization.CultureInfo.InvariantCulture);
+            request.Parameters["OffenderVehicleHandle"] = (crimeEvent.ActorContext?.ActorVehicle == null ? 0 : (int)crimeEvent.ActorContext.ActorVehicle.Handle.Value).ToString(System.Globalization.CultureInfo.InvariantCulture);
+            request.Parameters["VictimPedHandle"] = (crimeEvent.VictimContext?.VictimPedHandle ?? 0).ToString(System.Globalization.CultureInfo.InvariantCulture);
+            request.Parameters["WasKilled"] = crimeEvent.WasKilled.ToString();
+            request.Parameters["WasShot"] = crimeEvent.WasShot.ToString();
+            request.Parameters["WasMeleeAttacked"] = crimeEvent.WasMeleeAttacked.ToString();
+            request.Parameters["WasHitByVehicle"] = crimeEvent.WasHitByVehicle.ToString();
             request.Parameters["IsObservedByPolice"] = crimeEvent.IsObservedByPolice.ToString();
             request.Parameters["IsForPlayer"] = crimeEvent.IsForPlayer.ToString();
             request.Parameters["AlwaysAddInstance"] = crimeEvent.AlwaysAddInstance.ToString();

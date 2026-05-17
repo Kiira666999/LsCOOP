@@ -100,7 +100,8 @@ namespace LsrCoop.Server
                 JsonSerializer.Serialize(profile.GangReputation),
                 JsonSerializer.Serialize(profile.OwnedVehicles),
                 JsonSerializer.Serialize(profile.PropertyOwnership),
-                JsonSerializer.Serialize(profile.LastPosition)
+                JsonSerializer.Serialize(profile.LastPosition),
+                JsonSerializer.Serialize(profile.LocationDiscovery)
             });
         }
 

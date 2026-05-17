@@ -123,6 +123,11 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
     public string BannerImagePath { get; set; } = "";
     public bool RemoveBanner { get; set; } = false;
     public virtual bool IsBlipEnabled { get; set; } = true;
+    public string LocationID { get; set; } = "";
+    public bool IsDiscoverable { get; set; } = false;
+    public float DiscoveryDistance { get; set; } = -1f;
+    [XmlIgnore]
+    public bool IsDiscovered { get; set; } = false;
     public virtual int MapIcon { get; set; } = (int)BlipSprite.PointOfInterest;
     public virtual Color MapIconColor => Color.FromName(MapIconColorString);
     public virtual string MapIconColorString { get; set; } = "White";
@@ -399,7 +404,7 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
         {
             LoadInterior(isOpen);
         }
-        if (!ShouldAlwaysHaveBlip && IsBlipEnabled)
+        if (!ShouldAlwaysHaveBlip && ShouldCreateBlipOnActivate(settings))
         {
             ActivateBlip(time, world);
         }
@@ -1142,38 +1147,45 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
     public void CheckActivation(IEntityProvideable world, IInteriors interiors, ISettingsProvideable settings, ICrimes crimes, IWeapons weapons, ITimeReportable time)
     {
         World = world;
-        if (CheckIsNearby(EntryPoint.FocusCellX, EntryPoint.FocusCellY, ActivateCells) && IsEnabled && IsCorrectMap(World.IsMPMapLoaded))// ((World.IsMPMapLoaded && IsOnMPMap) || (!World.IsMPMapLoaded && IsOnSPMap)))
+        bool isEnabledOnCurrentMap = IsEnabled && IsCorrectMap(World.IsMPMapLoaded);
+        if (CheckIsNearby(EntryPoint.FocusCellX, EntryPoint.FocusCellY, ActivateCells) && isEnabledOnCurrentMap)// ((World.IsMPMapLoaded && IsOnMPMap) || (!World.IsMPMapLoaded && IsOnSPMap)))
         {
+            bool wasDiscovered = TryDiscover(settings);
             if (!IsActivated)
             {
                 Activate(interiors, settings, crimes, weapons, time, World);
                 //EntryPoint.WriteToConsole($"Activated {Name}");
                 GameFiber.Yield();
             }
+            if (wasDiscovered)
+            {
+                DisplayLocationDiscoveredNotification(settings);
+                EnsureDiscoveredBlipVisible(settings, time, World);
+            }
         }
         else
         {
             if (IsActivated)
             {
-                Deactivate(!settings.SettingsManager.WorldSettings.ShowAllBlipsOnMap);
+                Deactivate(ShouldDeleteBlipOnDeactivate(settings));
                 GameFiber.Yield();
             }
         }
         if (settings.SettingsManager.WorldSettings.ShowAllBlipsOnMap)
         {
-            if (!IsActivated && IsEnabled && IsBlipEnabled && !Blip.Exists() && IsSameState(EntryPoint.FocusZone?.GameState) && IsCorrectMap(World.IsMPMapLoaded))//(EntryPoint.FocusZone == null || EntryPoint.FocusZone.State == StateLocation))
+            if (IsEnabled && ShouldHaveGlobalBlip(settings) && !Blip.Exists() && IsSameState(EntryPoint.FocusZone?.GameState) && IsCorrectMap(World.IsMPMapLoaded))//(EntryPoint.FocusZone == null || EntryPoint.FocusZone.State == StateLocation))
             {
                 ActivateBlip(time, World);
                 // EntryPoint.WriteToConsole($"Activated BLIP {Name} State:{GameState?.StateID} MyState:{EntryPoint.FocusZone?.GameState.StateID}");
             }
-            else if ((!IsEnabled && Blip.Exists()) || (IsEnabled && IsBlipEnabled && Blip.Exists() && !IsSameState(EntryPoint.FocusZone?.GameState)))
+            else if ((!IsEnabled && Blip.Exists()) || (IsEnabled && ShouldHaveGlobalBlip(settings) && Blip.Exists() && !IsSameState(EntryPoint.FocusZone?.GameState)))
             {
                 DeactivateBlip();
                 // EntryPoint.WriteToConsole($"DeactivateBlip BLIP {Name} State:{GameState?.StateID} MyState:{EntryPoint.FocusZone?.GameState.StateID}");
             }
             else
             {
-                if (IsEnabled && IsBlipEnabled)
+                if (IsEnabled && ShouldHaveGlobalBlip(settings))
                 {
                     UpdateBlip(time);
                 }
@@ -1181,11 +1193,106 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
         }
         else
         {
-            if (!IsActivated && Blip.Exists())
+            if (ShouldShowDiscoveredBlip(settings) && IsEnabled && IsCorrectMap(World.IsMPMapLoaded) && IsSameState(EntryPoint.FocusZone?.GameState))
+            {
+                if (!Blip.Exists())
+                {
+                    ActivateBlip(time, World);
+                }
+                else
+                {
+                    UpdateBlip(time);
+                }
+            }
+            else if (!IsActivated && Blip.Exists())
             {
                 DeactivateBlip();
             }
         }
+    }
+    private void EnsureDiscoveredBlipVisible(ISettingsProvideable settings, ITimeReportable time, IEntityProvideable world)
+    {
+        if (!ShouldShowDiscoveredBlip(settings) || !IsEnabled || world == null || !IsCorrectMap(world.IsMPMapLoaded) || !IsSameState(EntryPoint.FocusZone?.GameState))
+        {
+            return;
+        }
+
+        if (!Blip.Exists())
+        {
+            ActivateBlip(time, world);
+        }
+        else
+        {
+            UpdateBlip(time);
+        }
+    }
+    private bool ShouldCreateBlipOnActivate(ISettingsProvideable settings) => IsBlipEnabled || ShouldShowDiscoveredBlip(settings);
+    private bool ShouldDeleteBlipOnDeactivate(ISettingsProvideable settings) => !(settings?.SettingsManager?.WorldSettings?.ShowAllBlipsOnMap == true) && !ShouldShowDiscoveredBlip(settings);
+    private bool ShouldHaveGlobalBlip(ISettingsProvideable settings) => IsBlipEnabled || ShouldShowDiscoveredBlip(settings);
+    private bool ShouldShowDiscoveredBlip(ISettingsProvideable settings) => IsDiscoveryCandidate(settings) && IsDiscovered;
+    private bool IsDiscoveryCandidate(ISettingsProvideable settings)
+    {
+        return settings?.SettingsManager?.WorldSettings?.EnableLocationDiscovery == true
+            && IsDiscoverable
+            && !IsBlipEnabled
+            && !string.IsNullOrWhiteSpace(LocationID);
+    }
+    private float GetEffectiveDiscoveryDistance(ISettingsProvideable settings)
+    {
+        if (DiscoveryDistance > 0.0f)
+        {
+            return DiscoveryDistance;
+        }
+        return settings?.SettingsManager?.WorldSettings?.LocationDiscoveryDistance > 0.0f
+            ? settings.SettingsManager.WorldSettings.LocationDiscoveryDistance
+            : 75.0f;
+    }
+    private bool TryDiscover(ISettingsProvideable settings)
+    {
+        if (IsDiscovered || !IsDiscoveryCandidate(settings))
+        {
+            return false;
+        }
+
+        Ped localPed = Game.LocalPlayer?.Character;
+        if (localPed == null || !localPed.Exists())
+        {
+            return false;
+        }
+
+        if (localPed.DistanceTo2D(EntrancePosition) > GetEffectiveDiscoveryDistance(settings))
+        {
+            return false;
+        }
+
+        IsDiscovered = true;
+        EntryPoint.WriteToConsole($"Location discovered: Name:{GetDiscoveryDisplayName()} Type:{TypeName} ID:{LocationID}");
+        if (settings?.SettingsManager?.WorldSettings?.PersistDiscoveredLocations == true)
+        {
+            CoopLocationDiscoveryStateAdapter.Current.NotifyLocationDiscovered(this);
+        }
+        return true;
+    }
+    private void DisplayLocationDiscoveredNotification(ISettingsProvideable settings)
+    {
+        if (settings?.SettingsManager?.WorldSettings?.NotifyOnLocationDiscovered != true)
+        {
+            return;
+        }
+
+        Game.DisplayNotification("CHAR_BLANK_ENTRY", "CHAR_BLANK_ENTRY", "~g~Location Discovered", $"~y~{GetDiscoveryDisplayName()}", $"Type: ~o~{TypeName}~s~~n~Blip added to map.");
+    }
+    private string GetDiscoveryDisplayName()
+    {
+        if (!string.IsNullOrWhiteSpace(FullName))
+        {
+            return FullName;
+        }
+        if (!string.IsNullOrWhiteSpace(Name))
+        {
+            return Name;
+        }
+        return TypeName;
     }
     public void CreateInteractionMenu()
     {

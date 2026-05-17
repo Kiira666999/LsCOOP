@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <PossibleLocations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <DeadDrops />
   <ScrapYards />
@@ -4460,7 +4460,10 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgangheists_morgue_ballas_garage_137_276_1897_219_23_42</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>850</MapIcon>
       <MapIconColorString>Purple</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4479,7 +4482,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Stash Garage</TypeName>
       <SortOrder>999</SortOrder>
@@ -4556,7 +4559,10 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgangheists_morgue_kt_ballas_garage_236_39_101_011_93_929</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>850</MapIcon>
       <MapIconColorString>Purple</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4575,7 +4581,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Stash Garage</TypeName>
       <SortOrder>999</SortOrder>
@@ -4652,7 +4658,10 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgangheists_morgue_armenian_warehouse_252_806_2591_162_6_001</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>842</MapIcon>
       <MapIconColorString>Pink</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4671,7 +4680,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Warehouse</TypeName>
       <SortOrder>999</SortOrder>
@@ -4748,7 +4757,10 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgangheists_morgue_petrovic_warehouse_683_423_2678_6_354</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>842</MapIcon>
       <MapIconColorString>Pink</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4767,7 +4779,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Warehouse</TypeName>
       <SortOrder>999</SortOrder>
@@ -4844,7 +4856,10 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgangheists_morgue_little_seoul_warehouse_683_292_876_144_24_499</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>842</MapIcon>
       <MapIconColorString>Pink</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4863,7 +4878,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Warehouse</TypeName>
       <SortOrder>999</SortOrder>
@@ -4940,7 +4955,10 @@
       <IsTemporarilyClosed>false</IsTemporarilyClosed>
       <BannerImagePath />
       <RemoveBanner>false</RemoveBanner>
-      <IsBlipEnabled>true</IsBlipEnabled>
+      <IsBlipEnabled>false</IsBlipEnabled>
+      <LocationID>lsrdisc_locations_lsrpgangheists_morgue_rh_ballas_garage_1002_64_987_18_2_15</LocationID>
+      <IsDiscoverable>true</IsDiscoverable>
+      <DiscoveryDistance>75</DiscoveryDistance>
       <MapIcon>850</MapIcon>
       <MapIconColorString>Purple</MapIconColorString>
       <MapIconScale>0.5</MapIconScale>
@@ -4959,7 +4977,7 @@
       <IsWalkup>false</IsWalkup>
       <IsOnSPMap>true</IsOnSPMap>
       <IsOnMPMap>true</IsOnMPMap>
-      <ShowsOnDirectory>true</ShowsOnDirectory>
+      <ShowsOnDirectory>false</ShowsOnDirectory>
       <ShowsOnTaxi>true</ShowsOnTaxi>
       <TypeName>Stash Garage</TypeName>
       <SortOrder>999</SortOrder>

@@ -33,6 +33,8 @@ public class RespawnSettings : ISettingsDefaultable
     public int PoliceBribePoliceKilledMultiplier { get; set; }
     [Description("Additional bribe amount for each police officer injured.")]
     public int PoliceBribePoliceInjuredMultiplier { get; set; }
+    [Description("Multiplier applied once to police bribes when any current crime has AppliesMajorBribeModifier enabled. Use 1.0 to disable.")]
+    public float PoliceBribeMajorCrimeMultiplier { get; set; }
     //[Description("If enabled, the required minimum bribe amount will be shown in the menu.")]
     //public bool ShowRequiredBribeAmount { get; set; }
     //[Description("If enabled, the required minimum bribe amount will be shown in the menu when you are using a controller only.")]
@@ -130,6 +132,7 @@ public class RespawnSettings : ISettingsDefaultable
         PoliceBribeWantedLevelScale = 2500;
         PoliceBribePoliceKilledMultiplier = 15000;
         PoliceBribePoliceInjuredMultiplier = 5000;
+        PoliceBribeMajorCrimeMultiplier = 1.0f;
 
 
 

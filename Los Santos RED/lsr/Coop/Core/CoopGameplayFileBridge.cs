@@ -25,7 +25,13 @@ namespace LosSantosRED.lsr.Coop.Core
                 return;
             }
 
-            WriteOutbound("GameplayActionCommitted", commit.Request.WorldId.ToString(), commit.Request.SourceProfileId.ToString(), SimpleJson.Serialize(commit));
+            string bridgeProfileId = commit.Request.SourceProfileId.ToString();
+            if (IsActiveHostRemoteActorCrimeCommit(commit))
+            {
+                bridgeProfileId = CoopStartupBridge.LocalProfileId;
+            }
+
+            WriteOutbound("GameplayActionCommitted", commit.Request.WorldId.ToString(), bridgeProfileId, SimpleJson.Serialize(commit));
         }
 
         public static void PublishPvpCrimeReport(CoopCrimeEvent crimeEvent)
@@ -77,6 +83,26 @@ namespace LosSantosRED.lsr.Coop.Core
             }
 
             WriteOutbound("GangReputationSnapshotCommitted", snapshot.WorldId.ToString(), snapshot.ProfileId.ToString(), SimpleJson.Serialize(snapshot));
+        }
+
+        public static void PublishLocationDiscoveryState(CoopLocationDiscoveryState state)
+        {
+            if (!CoopStartupBridge.IsCoopEnabled || state == null || state.ProfileId.IsEmpty)
+            {
+                return;
+            }
+
+            WriteOutbound("LocationDiscoverySnapshotCommitted", state.WorldId.ToString(), state.ProfileId.ToString(), SimpleJson.Serialize(state));
+        }
+
+        private static bool IsActiveHostRemoteActorCrimeCommit(CoopStorePurchaseCommit commit)
+        {
+            string remoteActorCrime;
+            return CoopStartupBridge.IsLocalActiveHost
+                && commit?.Request?.ActionType == CoopGameplayActionType.CommitCrime
+                && commit.Request.Parameters != null
+                && commit.Request.Parameters.TryGetValue("RemoteActorCrime", out remoteActorCrime)
+                && string.Equals(remoteActorCrime, "True", StringComparison.OrdinalIgnoreCase);
         }
 
         public static void PollInbound()
@@ -165,6 +191,13 @@ namespace LosSantosRED.lsr.Coop.Core
                     IsTrue(GetValue(values, "WasShot")),
                     IsTrue(GetValue(values, "WasMeleeAttacked")),
                     IsTrue(GetValue(values, "WasHitByVehicle")));
+            }
+            else if (string.Equals(eventType, "UpdateRemoteActorRegistry", StringComparison.OrdinalIgnoreCase))
+            {
+                handled = CoopRemoteActorRegistry.Current.UpdateFromBridge(
+                    GetValue(values, "Actors"),
+                    GetInt(values, "LocalPedHandle"),
+                    GetInt(values, "LocalVehicleHandle"));
             }
             else
             {

@@ -22,5 +22,5 @@
 	<AutoUpdate>false</AutoUpdate>
 	<KickGodMode>false</KickGodMode>
 	<KickSpamming>true</KickSpamming>
-	<SpamLimit>1500</SpamLimit>
+	<SpamLimit>300</SpamLimit>
 </Settings>

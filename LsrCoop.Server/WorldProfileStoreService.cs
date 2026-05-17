@@ -164,6 +164,7 @@ namespace LsrCoop.Server
             NormalizeOwnedVehicles(profile);
             NormalizeProperties(profile);
             NormalizeGangReputation(profile);
+            NormalizeLocationDiscovery(profile);
             NormalizeCriminalHistory(profile);
             NormalizeDeathArrest(profile);
             NormalizeLastPosition(profile);
@@ -244,6 +245,19 @@ namespace LsrCoop.Server
             profile.GangReputation.ProfileId = profile.ProfileId;
             profile.GangReputation.CharacterId = string.IsNullOrWhiteSpace(profile.GangReputation.CharacterId) ? profile.ProfileId : profile.GangReputation.CharacterId;
             profile.GangReputation.Reputations = profile.GangReputation.Reputations ?? new List<CoopGangReputationRecordDto>();
+        }
+
+        private void NormalizeLocationDiscovery(CoopPlayerProfile profile)
+        {
+            if (profile.LocationDiscovery == null)
+            {
+                return;
+            }
+
+            profile.LocationDiscovery.WorldId = Store.WorldId;
+            profile.LocationDiscovery.ProfileId = profile.ProfileId;
+            profile.LocationDiscovery.CharacterId = string.IsNullOrWhiteSpace(profile.LocationDiscovery.CharacterId) ? profile.ProfileId : profile.LocationDiscovery.CharacterId;
+            profile.LocationDiscovery.DiscoveredLocationIds = profile.LocationDiscovery.DiscoveredLocationIds ?? new List<string>();
         }
 
         private void NormalizeCriminalHistory(CoopPlayerProfile profile)

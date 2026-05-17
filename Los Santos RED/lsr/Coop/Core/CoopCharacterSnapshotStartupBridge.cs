@@ -25,6 +25,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public CoopCriminalHistoryState CriminalHistory { get; set; }
         public CoopGangReputationState GangReputation { get; set; }
         public CoopLastPositionState LastPosition { get; set; }
+        public CoopLocationDiscoveryState LocationDiscovery { get; set; }
     }
 
     public static class CoopCharacterSnapshotStartupBridge
@@ -175,8 +176,14 @@ namespace LosSantosRED.lsr.Coop.Core
                 appliedGangReputation = CoopGangReputationStateAdapter.Current.TryApplyPersistentStateToPlayer(player, snapshot.GangReputation);
             }
 
-            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Money:{snapshot.InventoryMoney?.TotalMoney ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} WeaponsHydrated:{weaponHydration?.HydratedCount ?? 0} WeaponsExisting:{weaponHydration?.ExistingCount ?? 0} WeaponsSkippedDuplicate:{weaponHydration?.SkippedDuplicateCount ?? 0} OwnedVehicles:{snapshot.OwnedVehicles?.Vehicles?.Count ?? 0} OwnedVehiclesHydrated:{ownedVehicleHydration?.HydratedCount ?? 0} OwnedVehiclesSkipped:{ownedVehicleHydration?.SkippedCount ?? 0} Properties:{snapshot.PropertyOwnership?.Properties?.Count ?? 0} PropertiesHydrated:{propertyHydration?.HydratedCount ?? 0} PropertiesSkipped:{propertyHydration?.SkippedCount ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0} GangReputation:{appliedGangReputation} GangRecords:{snapshot.GangReputation?.Reputations?.Count ?? 0} DateTimeLastWantedEnded:{snapshot.CriminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}", 0);
-            return appliedInventoryMoney || weaponHydration?.Applied == true || ownedVehicleHydration?.Applied == true || propertyHydration?.Applied == true || appliedCriminalHistory || appliedGangReputation;
+            bool appliedLocationDiscovery = false;
+            if (snapshot.LocationDiscovery != null)
+            {
+                appliedLocationDiscovery = CoopLocationDiscoveryStateAdapter.Current.TryApplyPersistentStateToLocations(snapshot.LocationDiscovery, placesOfInterest, settings);
+            }
+
+            EntryPoint.WriteToConsole($"Co-op profile hydration apply InventoryMoney:{appliedInventoryMoney} Items:{snapshot.InventoryMoney?.InventoryItems?.Count ?? 0} BankAccounts:{snapshot.InventoryMoney?.BankAccounts?.Count ?? 0} Money:{snapshot.InventoryMoney?.TotalMoney ?? 0} Weapons:{snapshot.Weapons?.Weapons?.Count ?? 0} WeaponsHydrated:{weaponHydration?.HydratedCount ?? 0} WeaponsExisting:{weaponHydration?.ExistingCount ?? 0} WeaponsSkippedDuplicate:{weaponHydration?.SkippedDuplicateCount ?? 0} OwnedVehicles:{snapshot.OwnedVehicles?.Vehicles?.Count ?? 0} OwnedVehiclesHydrated:{ownedVehicleHydration?.HydratedCount ?? 0} OwnedVehiclesSkipped:{ownedVehicleHydration?.SkippedCount ?? 0} Properties:{snapshot.PropertyOwnership?.Properties?.Count ?? 0} PropertiesHydrated:{propertyHydration?.HydratedCount ?? 0} PropertiesSkipped:{propertyHydration?.SkippedCount ?? 0} CriminalHistory:{appliedCriminalHistory} Crimes:{snapshot.CriminalHistory?.Crimes?.Count ?? 0} GangReputation:{appliedGangReputation} GangRecords:{snapshot.GangReputation?.Reputations?.Count ?? 0} LocationDiscovery:{appliedLocationDiscovery} DiscoveredLocations:{snapshot.LocationDiscovery?.DiscoveredLocationIds?.Count ?? 0} DateTimeLastWantedEnded:{snapshot.CriminalHistory?.DateTimeLastWantedEnded.ToString("O") ?? string.Empty}", 0);
+            return appliedInventoryMoney || weaponHydration?.Applied == true || ownedVehicleHydration?.Applied == true || propertyHydration?.Applied == true || appliedCriminalHistory || appliedGangReputation || appliedLocationDiscovery;
         }
 
         public static bool ApplyLastPositionAfterPlayerSetup(CoopCharacterStartupSnapshot snapshot, Mod.Player player)
@@ -309,6 +316,7 @@ namespace LosSantosRED.lsr.Coop.Core
                     CriminalHistory = ParseCriminalHistory(values, worldId, profileId),
                     GangReputation = ParseGangReputation(values, worldId, profileId),
                     LastPosition = lastPosition,
+                    LocationDiscovery = ParseLocationDiscovery(values, worldId, profileId),
                 };
             }
             catch (Exception ex)
@@ -578,6 +586,36 @@ namespace LosSantosRED.lsr.Coop.Core
                     IsEnemy = IsTrue(parts[10 + offset]),
                     TasksCompleted = ParseInt(parts[11 + offset]),
                 });
+            }
+
+            return state;
+        }
+
+        private static CoopLocationDiscoveryState ParseLocationDiscovery(Dictionary<string, string> values, string worldId, string profileId)
+        {
+            string discoveredLocationIds = GetValue(values, "DiscoveredLocationIds");
+            string stateId = GetValue(values, "LocationDiscoveryStateId");
+            if (string.IsNullOrWhiteSpace(discoveredLocationIds) && string.IsNullOrWhiteSpace(stateId))
+            {
+                return null;
+            }
+
+            CoopLocationDiscoveryState state = new CoopLocationDiscoveryState
+            {
+                StateId = string.IsNullOrWhiteSpace(stateId) ? Guid.NewGuid().ToString("N") : stateId,
+                WorldId = new CoopWorldId(worldId),
+                ProfileId = new CoopProfileId(profileId),
+                CharacterId = new CoopCharacterId(GetValue(values, "CharacterId")),
+                UpdatedUtc = ParseDateTimeOffset(GetValue(values, "LocationDiscoveryUpdatedUtc")),
+            };
+
+            foreach (string entry in SplitEntries(discoveredLocationIds))
+            {
+                string locationId = UnescapePart(entry)?.Trim();
+                if (!string.IsNullOrWhiteSpace(locationId) && !state.DiscoveredLocationIds.Contains(locationId, StringComparer.OrdinalIgnoreCase))
+                {
+                    state.DiscoveredLocationIds.Add(locationId);
+                }
             }
 
             return state;

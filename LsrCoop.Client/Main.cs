@@ -32,6 +32,8 @@ namespace LsrCoop.Client
         private static readonly TimeSpan StaleBridgeFinalAge = TimeSpan.FromMinutes(15);
         private static readonly TimeSpan BridgeCleanupInterval = TimeSpan.FromMinutes(5);
         private static readonly TimeSpan PassivePositionSaveInterval = TimeSpan.FromSeconds(60);
+        private static readonly TimeSpan RemoteActorRegistryBridgeInterval = TimeSpan.FromMilliseconds(500);
+        private static readonly TimeSpan RemoteActorRegistryLogInterval = TimeSpan.FromSeconds(10);
         private const float MaxAbsLastPositionCoordinate = 10000.0f;
         private const float MinLastPositionZ = -500.0f;
         private const float MaxLastPositionZ = 3000.0f;
@@ -57,6 +59,7 @@ namespace LsrCoop.Client
         private static readonly int PvpCrimeAssignedEventHash = CustomEvents.Hash("lsrcoop.crime.pvp.assigned");
         private static readonly int CriminalJusticeSnapshotCommittedEventHash = CustomEvents.Hash("lsrcoop.criminalJustice.snapshot.committed");
         private static readonly int GangReputationSnapshotCommittedEventHash = CustomEvents.Hash("lsrcoop.gangReputation.snapshot.committed");
+        private static readonly int LocationDiscoverySnapshotCommittedEventHash = CustomEvents.Hash("lsrcoop.locationDiscovery.snapshot.committed");
         private static readonly int LastPositionCommittedEventHash = CustomEvents.Hash("lsrcoop.profile.lastPosition.committed");
         private static readonly int BridgeDiagnosticsReportEventHash = CustomEvents.Hash("lsrcoop.bridge.diagnostics");
 
@@ -86,6 +89,8 @@ namespace LsrCoop.Client
         private BridgeCleanupSummary lastBridgeCleanupSummary = new BridgeCleanupSummary();
         private DateTimeOffset lastBridgeCleanupUtc;
         private DateTimeOffset lastPassivePositionSaveUtc;
+        private DateTimeOffset lastRemoteActorRegistryBridgeUtc;
+        private DateTimeOffset lastRemoteActorRegistryLogUtc;
 
         public Main()
         {
@@ -157,6 +162,7 @@ namespace LsrCoop.Client
             PollGameplayBridge();
             TryRunPeriodicBridgeCleanup();
             DetectPlayerOnPlayerViolence();
+            TryWriteRemoteActorRegistrySnapshot();
             TrySendPassiveLastPosition();
         }
 
@@ -359,7 +365,7 @@ namespace LsrCoop.Client
                     {
                         Logger.Info($"[LsrCoop.Client] client received last position: profile={profile.ProfileId}, x={FormatFloat(profile.LastPosition.X)}, y={FormatFloat(profile.LastPosition.Y)}, z={FormatFloat(profile.LastPosition.Z)}, heading={FormatFloat(profile.LastPosition.Heading)}");
                     }
-                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character, profile.InventoryMoney, profile.Weapons, profile.OwnedVehicles, profile.PropertyOwnership, profile.CriminalHistory, profile.GangReputation, profile.LastPosition);
+                    WriteCharacterSnapshotBridge(snapshot.WorldId, profile.ProfileId, profile.Character, profile.InventoryMoney, profile.Weapons, profile.OwnedVehicles, profile.PropertyOwnership, profile.CriminalHistory, profile.GangReputation, profile.LastPosition, profile.LocationDiscovery);
                     Logger.Info($"[LsrCoop.Client] world snapshot bridge written from tick: world={snapshot.WorldId}, profile={profile.ProfileId}");
                 }
             }
@@ -399,6 +405,7 @@ namespace LsrCoop.Client
             string ownedVehiclesJson = GetArg(args, 7);
             string propertyOwnershipJson = GetArg(args, 8);
             string lastPositionJson = GetArg(args, 9);
+            string locationDiscoveryJson = GetArg(args, 10);
             CoopCharacterSnapshot snapshot = Deserialize<CoopCharacterSnapshot>(characterJson);
             CoopInventoryMoneySnapshot inventoryMoney = Deserialize<CoopInventoryMoneySnapshot>(inventoryMoneyJson);
             CoopWeaponSnapshot weapons = Deserialize<CoopWeaponSnapshot>(weaponsJson);
@@ -407,6 +414,7 @@ namespace LsrCoop.Client
             CoopOwnedVehicleSnapshot ownedVehicles = Deserialize<CoopOwnedVehicleSnapshot>(ownedVehiclesJson);
             CoopPropertyOwnershipSnapshot propertyOwnership = Deserialize<CoopPropertyOwnershipSnapshot>(propertyOwnershipJson);
             CoopLastPositionStateDto lastPosition = Deserialize<CoopLastPositionStateDto>(lastPositionJson);
+            CoopLocationDiscoveryStateDto locationDiscovery = Deserialize<CoopLocationDiscoveryStateDto>(locationDiscoveryJson);
             EnqueueClientEvent("character snapshot", () => ProcessCharacterSnapshot(
                 worldId,
                 profileId,
@@ -418,6 +426,7 @@ namespace LsrCoop.Client
                 ownedVehiclesJson,
                 propertyOwnershipJson,
                 lastPositionJson,
+                locationDiscoveryJson,
                 snapshot,
                 inventoryMoney,
                 weapons,
@@ -425,7 +434,8 @@ namespace LsrCoop.Client
                 gangReputation,
                 ownedVehicles,
                 propertyOwnership,
-                lastPosition));
+                lastPosition,
+                locationDiscovery));
         }
 
         private void ProcessCharacterSnapshot(
@@ -439,6 +449,7 @@ namespace LsrCoop.Client
             string ownedVehiclesJson,
             string propertyOwnershipJson,
             string lastPositionJson,
+            string locationDiscoveryJson,
             CoopCharacterSnapshot snapshot,
             CoopInventoryMoneySnapshot inventoryMoney,
             CoopWeaponSnapshot weapons,
@@ -446,7 +457,8 @@ namespace LsrCoop.Client
             CoopGangReputationStateDto gangReputation,
             CoopOwnedVehicleSnapshot ownedVehicles,
             CoopPropertyOwnershipSnapshot propertyOwnership,
-            CoopLastPositionStateDto lastPosition)
+            CoopLastPositionStateDto lastPosition,
+            CoopLocationDiscoveryStateDto locationDiscovery)
         {
             if (lastPosition != null)
             {
@@ -458,11 +470,11 @@ namespace LsrCoop.Client
                 localCharacterReadyForSimulation = snapshot != null;
                 if (localCharacterReadyForSimulation)
                 {
-                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot, inventoryMoney, weapons, ownedVehicles, propertyOwnership, criminalHistory, gangReputation, lastPosition);
+                    WriteCharacterSnapshotBridge(worldId, profileId, snapshot, inventoryMoney, weapons, ownedVehicles, propertyOwnership, criminalHistory, gangReputation, lastPosition, locationDiscovery);
                     ExitCharacterCreationSafeState();
                 }
                 UpdateCurrentBridgeState();
-                string ackSignature = CreateCharacterSnapshotAckSignature(worldId, profileId, characterJson, inventoryMoneyJson, weaponsJson, criminalHistoryJson, gangReputationJson, ownedVehiclesJson, propertyOwnershipJson, lastPositionJson);
+                string ackSignature = CreateCharacterSnapshotAckSignature(worldId, profileId, characterJson, inventoryMoneyJson, weaponsJson, criminalHistoryJson, gangReputationJson, ownedVehiclesJson, propertyOwnershipJson, lastPositionJson, locationDiscoveryJson);
                 if (acknowledgedCharacterSnapshotSignatures.Add(ackSignature))
                 {
                     SendCharacterSnapshotAck(
@@ -473,10 +485,11 @@ namespace LsrCoop.Client
                         ownedVehicles?.Vehicles?.Count ?? 0,
                         propertyOwnership?.Properties?.Count ?? 0,
                         criminalHistory?.Crimes?.Count ?? 0,
-                        gangReputation?.Reputations?.Count ?? 0);
+                        gangReputation?.Reputations?.Count ?? 0,
+                        locationDiscovery?.DiscoveredLocationIds?.Count ?? 0);
                 }
             }
-            Logger.Info($"[LsrCoop.Client] character snapshot received: world={worldId}, profile={profileId}, model={snapshot?.ModelName ?? "none"}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, money={inventoryMoney?.TotalMoney ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, ownedVehicles={ownedVehicles?.Vehicles?.Count ?? 0}, properties={propertyOwnership?.Properties?.Count ?? 0}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, lastPosition={(lastPosition == null ? "none" : FormatPosition(lastPosition.X, lastPosition.Y, lastPosition.Z, lastPosition.Heading))}");
+            Logger.Info($"[LsrCoop.Client] character snapshot received: world={worldId}, profile={profileId}, model={snapshot?.ModelName ?? "none"}, inventoryItems={inventoryMoney?.InventoryItems?.Count ?? 0}, money={inventoryMoney?.TotalMoney ?? 0}, weapons={weapons?.Weapons?.Count ?? 0}, ownedVehicles={ownedVehicles?.Vehicles?.Count ?? 0}, properties={propertyOwnership?.Properties?.Count ?? 0}, criminalHistory={criminalHistory?.Crimes?.Count ?? 0}, gangReputation={gangReputation?.Reputations?.Count ?? 0}, discoveredLocations={locationDiscovery?.DiscoveredLocationIds?.Count ?? 0}, lastPosition={(lastPosition == null ? "none" : FormatPosition(lastPosition.X, lastPosition.Y, lastPosition.Z, lastPosition.Heading))}");
         }
 
         private void EnterCharacterCreationSafeState(string worldId, string profileId)
@@ -749,6 +762,12 @@ namespace LsrCoop.Client
                 return true;
             }
 
+            if (string.Equals(eventType, "LocationDiscoverySnapshotCommitted", StringComparison.OrdinalIgnoreCase))
+            {
+                API.SendCustomEvent(LocationDiscoverySnapshotCommittedEventHash, new object[] { payloadJson, eventType ?? string.Empty, nonce ?? string.Empty, profileId ?? string.Empty });
+                return true;
+            }
+
             Logger.Info($"[LsrCoop.Client] gameplay bridge ignored; unknown type={eventType}");
             return true;
         }
@@ -931,7 +950,7 @@ namespace LsrCoop.Client
             }
         }
 
-        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot, CoopInventoryMoneySnapshot inventoryMoney = null, CoopWeaponSnapshot weapons = null, CoopOwnedVehicleSnapshot ownedVehicles = null, CoopPropertyOwnershipSnapshot propertyOwnership = null, CoopCriminalHistoryStateDto criminalHistory = null, CoopGangReputationStateDto gangReputation = null, CoopLastPositionStateDto lastPosition = null)
+        private void WriteCharacterSnapshotBridge(string worldId, string profileId, CoopCharacterSnapshot snapshot, CoopInventoryMoneySnapshot inventoryMoney = null, CoopWeaponSnapshot weapons = null, CoopOwnedVehicleSnapshot ownedVehicles = null, CoopPropertyOwnershipSnapshot propertyOwnership = null, CoopCriminalHistoryStateDto criminalHistory = null, CoopGangReputationStateDto gangReputation = null, CoopLastPositionStateDto lastPosition = null, CoopLocationDiscoveryStateDto locationDiscovery = null)
         {
             if (snapshot == null || string.IsNullOrWhiteSpace(worldId) || string.IsNullOrWhiteSpace(profileId))
             {
@@ -985,6 +1004,9 @@ namespace LsrCoop.Client
                 $"GangReputationCurrentGangId={EscapeBridgeValue(gangReputation?.CurrentGangId ?? string.Empty)}",
                 $"GangReputationUpdatedUtc={EscapeBridgeValue(FormatDateTime(gangReputation?.UpdatedUtc))}",
                 $"GangReputationRecords={EscapeBridgeValue(SerializeGangReputations(gangReputation?.Reputations))}",
+                $"LocationDiscoveryStateId={EscapeBridgeValue(locationDiscovery?.StateId ?? string.Empty)}",
+                $"LocationDiscoveryUpdatedUtc={EscapeBridgeValue(FormatDateTime(locationDiscovery?.UpdatedUtc))}",
+                $"DiscoveredLocationIds={EscapeBridgeValue(SerializeLocationIds(locationDiscovery?.DiscoveredLocationIds))}",
                 $"LastPositionX={EscapeBridgeValue(lastPosition?.X.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
                 $"LastPositionY={EscapeBridgeValue(lastPosition?.Y.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
                 $"LastPositionZ={EscapeBridgeValue(lastPosition?.Z.ToString(CultureInfo.InvariantCulture) ?? string.Empty)}",
@@ -1104,6 +1126,127 @@ namespace LsrCoop.Client
             state.Health = remotePed.Health;
             state.Armor = remotePed.Armor;
             state.IsDead = remotePed.IsDead;
+        }
+
+        private void TryWriteRemoteActorRegistrySnapshot()
+        {
+            DateTimeOffset now = DateTimeOffset.UtcNow;
+            if (now - lastRemoteActorRegistryBridgeUtc < RemoteActorRegistryBridgeInterval)
+            {
+                return;
+            }
+
+            lastRemoteActorRegistryBridgeUtc = now;
+            if (!IsLocalActiveHostForRegistry())
+            {
+                return;
+            }
+
+            Ped localPed = Game.Player?.Character;
+            int localPedHandle = localPed != null && localPed.Exists() ? localPed.Handle : 0;
+            int localVehicleHandle = GetCurrentVehicleHandle(localPed);
+            List<string> actors = new List<string>();
+            foreach (object remotePlayer in API.Players.Values)
+            {
+                string remoteProfileId = GetString(remotePlayer, "Username");
+                if (string.IsNullOrWhiteSpace(remoteProfileId) || string.Equals(remoteProfileId, localProfileId, StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
+                Ped remotePed = GetRemotePlayerPed(remotePlayer);
+                if (remotePed == null || !remotePed.Exists())
+                {
+                    continue;
+                }
+
+                if (remotePed.Handle == localPedHandle)
+                {
+                    continue;
+                }
+
+                actors.Add(SerializeRemoteActor(remotePlayer, remoteProfileId, remotePed, now));
+            }
+
+            WriteGameplayInboundBridgeFile("UpdateRemoteActorRegistry", new Dictionary<string, string>
+            {
+                ["WorldId"] = localWorldId ?? string.Empty,
+                ["ProfileId"] = localProfileId ?? string.Empty,
+                ["LocalPedHandle"] = localPedHandle.ToString(CultureInfo.InvariantCulture),
+                ["LocalVehicleHandle"] = localVehicleHandle.ToString(CultureInfo.InvariantCulture),
+                ["ActorCount"] = actors.Count.ToString(CultureInfo.InvariantCulture),
+                ["Actors"] = string.Join(";", actors),
+            });
+
+            if (now - lastRemoteActorRegistryLogUtc >= RemoteActorRegistryLogInterval)
+            {
+                lastRemoteActorRegistryLogUtc = now;
+                Logger.Info($"[LsrCoop.Client] remote actor registry bridge updated: count={actors.Count}");
+            }
+        }
+
+        private bool IsLocalActiveHostForRegistry()
+        {
+            return API.IsOnServer
+                && localCharacterReadyForSimulation
+                && !string.IsNullOrWhiteSpace(localWorldId)
+                && !string.IsNullOrWhiteSpace(localProfileId)
+                && !string.IsNullOrWhiteSpace(activeHostProfileId)
+                && string.Equals(localProfileId, activeHostProfileId, StringComparison.OrdinalIgnoreCase);
+        }
+
+        private string SerializeRemoteActor(object remotePlayer, string remoteProfileId, Ped remotePed, DateTimeOffset updatedUtc)
+        {
+            string characterId = GetRemoteCharacterId(remoteProfileId);
+            string rageCoopPlayerId = GetRemoteRageCoopPlayerId(remotePlayer, remoteProfileId);
+            int vehicleHandle = GetCurrentVehicleHandle(remotePed);
+            return string.Join("|", new[]
+            {
+                EscapeListPart(remoteProfileId),
+                EscapeListPart(characterId),
+                EscapeListPart(rageCoopPlayerId),
+                remotePed.Handle.ToString(CultureInfo.InvariantCulture),
+                vehicleHandle.ToString(CultureInfo.InvariantCulture),
+                remotePed.Position.X.ToString(CultureInfo.InvariantCulture),
+                remotePed.Position.Y.ToString(CultureInfo.InvariantCulture),
+                remotePed.Position.Z.ToString(CultureInfo.InvariantCulture),
+                updatedUtc.ToString("O", CultureInfo.InvariantCulture),
+            });
+        }
+
+        private string GetRemoteCharacterId(string profileId)
+        {
+            CoopPlayerProfileSnapshotDto profile = latestWorldSnapshot?.Profiles?
+                .FirstOrDefault(x => string.Equals(x.ProfileId, profileId, StringComparison.OrdinalIgnoreCase));
+            string characterId = profile?.Character?.CharacterId;
+            return string.IsNullOrWhiteSpace(characterId) ? profileId ?? string.Empty : characterId;
+        }
+
+        private string GetRemoteRageCoopPlayerId(object remotePlayer, string fallback)
+        {
+            object id = GetPropertyValue(remotePlayer, "Id")
+                ?? GetPropertyValue(remotePlayer, "ID")
+                ?? GetPropertyValue(remotePlayer, "NetId")
+                ?? GetPropertyValue(remotePlayer, "NetworkId");
+            string value = id?.ToString();
+            return string.IsNullOrWhiteSpace(value) ? fallback ?? string.Empty : value;
+        }
+
+        private int GetCurrentVehicleHandle(Ped ped)
+        {
+            try
+            {
+                if (ped == null || !ped.Exists() || !Function.Call<bool>(Hash.IS_PED_IN_ANY_VEHICLE, ped.Handle, false))
+                {
+                    return 0;
+                }
+
+                return Function.Call<int>(Hash.GET_VEHICLE_PED_IS_IN, ped.Handle, false);
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         private CoopPvpCrimeReportDto CreatePvpCrimeReport(string victimProfileId, Ped victimPed, bool wasKilled)
@@ -1336,7 +1479,8 @@ namespace LsrCoop.Client
             int ownedVehicles,
             int properties,
             int criminalHistory,
-            int gangReputation)
+            int gangReputation,
+            int discoveredLocations)
         {
             if (!API.IsOnServer)
             {
@@ -1344,7 +1488,7 @@ namespace LsrCoop.Client
             }
 
             API.SendCustomEvent(CharacterSnapshotAckEventHash, new object[] { worldId ?? string.Empty, profileId ?? string.Empty });
-            Logger.Info($"[LsrCoop.Client] character snapshot ack sent: world={worldId}, profile={profileId}, inventoryItems={inventoryItems}, weapons={weapons}, ownedVehicles={ownedVehicles}, properties={properties}, criminalHistory={criminalHistory}, gangReputation={gangReputation}");
+            Logger.Info($"[LsrCoop.Client] character snapshot ack sent: world={worldId}, profile={profileId}, inventoryItems={inventoryItems}, weapons={weapons}, ownedVehicles={ownedVehicles}, properties={properties}, criminalHistory={criminalHistory}, gangReputation={gangReputation}, discoveredLocations={discoveredLocations}");
         }
 
         private string CreateCharacterSnapshotAckSignature(
@@ -1357,7 +1501,8 @@ namespace LsrCoop.Client
             string gangReputationJson,
             string ownedVehiclesJson,
             string propertyOwnershipJson,
-            string lastPositionJson)
+            string lastPositionJson,
+            string locationDiscoveryJson)
         {
             return string.Join("|", new[]
             {
@@ -1371,6 +1516,7 @@ namespace LsrCoop.Client
                 ownedVehiclesJson ?? string.Empty,
                 propertyOwnershipJson ?? string.Empty,
                 lastPositionJson ?? string.Empty,
+                locationDiscoveryJson ?? string.Empty,
             });
         }
 
@@ -2503,6 +2649,21 @@ namespace LsrCoop.Client
                 record.IsEnemy.ToString().ToLowerInvariant(),
                 record.TasksCompleted.ToString(CultureInfo.InvariantCulture)
             })));
+        }
+
+        private string SerializeLocationIds(IEnumerable<string> locationIds)
+        {
+            if (locationIds == null)
+            {
+                return string.Empty;
+            }
+
+            return string.Join(";", locationIds
+                .Where(x => !string.IsNullOrWhiteSpace(x))
+                .Select(x => x.Trim())
+                .Distinct(StringComparer.OrdinalIgnoreCase)
+                .OrderBy(x => x, StringComparer.OrdinalIgnoreCase)
+                .Select(EscapeListPart));
         }
 
         private string FormatDateTime(DateTimeOffset? value)

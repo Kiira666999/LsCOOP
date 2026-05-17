@@ -91,6 +91,7 @@ namespace LsrCoop.Server
                     OwnedVehicles = profile.OwnedVehicles,
                     PropertyOwnership = profile.PropertyOwnership,
                     GangReputation = profile.GangReputation,
+                    LocationDiscovery = profile.LocationDiscovery,
                     CriminalHistory = profile.CriminalHistory,
                     DeathArrestState = profile.DeathArrestState,
                     LastPosition = profile.LastPosition,

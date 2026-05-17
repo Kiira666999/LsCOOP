@@ -25,6 +25,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public string CrimeName { get; set; }
         public bool IsPlayerOnPlayerViolence { get; set; }
         public bool IsRemoteActorCrime { get; set; }
+        public string VictimType { get; set; }
         public bool WasKilled { get; set; }
         public bool WasShot { get; set; }
         public bool WasMeleeAttacked { get; set; }
