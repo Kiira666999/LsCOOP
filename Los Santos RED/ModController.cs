@@ -34,6 +34,8 @@ namespace LosSantosRED.lsr
         private WeatherReporting Weather;
         private Mod.World World;
         private Mod.Crafting Crafting;
+        private const int AutoSaveRetryDelaySeconds = 30;
+        private bool AutoSaveLogicStarted;
         public LsrCoopCharacterManager CoopCharacterManager { get; private set; }
         public CoopPermissionService CoopPermissionService { get; private set; }
         public ModDataFileManager ModDataFileManager { get; private set; }
@@ -160,6 +162,8 @@ namespace LosSantosRED.lsr
             StartUILogic();
             GameFiber.Yield();
             StartInputLogic();
+            GameFiber.Yield();
+            StartAutoSaveLogic();
             GameFiber.Yield();
 #if DEBUG
             StartDebugLogic();
@@ -561,6 +565,87 @@ namespace LosSantosRED.lsr
                     Dispose();
                 }
             }, "Run Vanilla Manager Logic");
+        }
+        private void StartAutoSaveLogic()
+        {
+            if (AutoSaveLogicStarted || CoopStartupBridge.IsCoopEnabled)
+            {
+                return;
+            }
+
+            AutoSaveLogicStarted = true;
+            GameFiber.StartNew(delegate
+            {
+                DateTime nextAutoSaveUtc = DateTime.UtcNow.Add(GetAutoSaveInterval());
+                while (IsRunning && !IsBootstrapOnly && !IsClientMode)
+                {
+                    if (DateTime.UtcNow >= nextAutoSaveUtc)
+                    {
+                        nextAutoSaveUtc = TryRunAutoSave()
+                            ? DateTime.UtcNow.Add(GetAutoSaveInterval())
+                            : DateTime.UtcNow.AddSeconds(AutoSaveRetryDelaySeconds);
+                    }
+
+                    GameFiber.Sleep(1000);
+                }
+            }, "Run Auto Save Logic");
+        }
+        private bool TryRunAutoSave()
+        {
+            if (!CanRunAutoSave())
+            {
+                return false;
+            }
+
+            try
+            {
+                bool saved = ModDataFileManager.GameSaves.SaveActive(Player, ModDataFileManager.Weapons, Time, ModDataFileManager.PlacesOfInterest, ModDataFileManager.ModItems, ModDataFileManager.Settings);
+                if (saved)
+                {
+                    EntryPoint.WriteToConsole("Auto save completed", 0);
+                }
+                return saved;
+            }
+            catch (Exception e)
+            {
+                EntryPoint.WriteToConsole($"Auto save failed: {e.Message} : {e.StackTrace}", 0);
+                return true;
+            }
+        }
+        private bool CanRunAutoSave()
+        {
+            if (!IsRunning || IsBootstrapOnly || IsClientMode || CoopStartupBridge.IsCoopEnabled)
+            {
+                return false;
+            }
+            if (Player == null || Time == null || ModDataFileManager?.GameSaves == null || ModDataFileManager?.Settings?.SettingsManager?.WorldSettings == null)
+            {
+                return false;
+            }
+            if (!ModDataFileManager.Settings.SettingsManager.WorldSettings.AutoSaveEnabled || !ModDataFileManager.GameSaves.HasActiveSave)
+            {
+                return false;
+            }
+            if (Game.IsPaused || Player.IsDisplayingCustomMenus || Player.IsShowingActionWheel || !Player.IsNotShowingFrontEndMenus)
+            {
+                return false;
+            }
+            if (!Player.IsAliveAndFree || Player.IsArrested || Player.IsIncapacitated || Player.IsWanted || Player.IsInSearchMode || Player.Character == null || !Player.Character.Exists())
+            {
+                return false;
+            }
+
+            return true;
+        }
+        private TimeSpan GetAutoSaveInterval()
+        {
+            int intervalMinutes = ModDataFileManager?.Settings?.SettingsManager?.WorldSettings?.AutoSaveIntervalMinutes ?? 10;
+            if (intervalMinutes < 1)
+            {
+                intervalMinutes = 1;
+            }
+
+            return TimeSpan.FromMinutes(intervalMinutes);
         }
         private void StartUILogic()
         {

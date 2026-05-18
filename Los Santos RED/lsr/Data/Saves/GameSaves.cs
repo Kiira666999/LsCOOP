@@ -15,6 +15,7 @@ public class GameSaves : IGameSaves
     }
     public List<GameSave> GameSaveList { get; private set; } = new List<GameSave>();
     public int NextSaveGameNumber => GameSaveList.Count + 1;
+    public bool HasActiveSave => GetActiveSave() != null;
     public void ReadConfig(string configName)
     {
         string fileName = string.IsNullOrEmpty(configName) ? "SaveGames*.xml" : $"SaveGames_{configName}.xml";
@@ -47,6 +48,19 @@ public class GameSaves : IGameSaves
         mySave.Save(player, weapons, time, placesOfInterest, modItems, settings);
         Serialization.SerializeParams(GameSaveList, ConfigFileName);
         PlayingSave = mySave;
+    }
+    public bool SaveActive(ISaveable player, IWeapons weapons, ITimeControllable time, IPlacesOfInterest placesOfInterest, IModItems modItems, ISettingsProvideable settings)
+    {
+        GameSave activeSave = GetActiveSave();
+        if (activeSave == null)
+        {
+            return false;
+        }
+
+        activeSave.Save(player, weapons, time, placesOfInterest, modItems, settings);
+        Serialization.SerializeParams(GameSaveList, ConfigFileName);
+        PlayingSave = activeSave;
+        return true;
     }
     public void Load(GameSave gameSave, IWeapons weapons, IPedSwap pedSwap, IInventoryable player, ISettingsProvideable settings, IEntityProvideable world, IGangs gangs, ITimeControllable time, IPlacesOfInterest placesOfInterest,
         IModItems modItems, IAgencies agencies, IContacts contacts, IInteractionable interactionable)
@@ -81,6 +95,21 @@ public class GameSaves : IGameSaves
     public void OnChangedPlayer()
     {
         PlayingSave = null;
+    }
+    private GameSave GetActiveSave()
+    {
+        if (PlayingSave == null || GameSaveList == null || !GameSaveList.Any())
+        {
+            return null;
+        }
+
+        GameSave activeSave = GameSaveList.FirstOrDefault(x => ReferenceEquals(x, PlayingSave));
+        if (activeSave != null)
+        {
+            return activeSave;
+        }
+
+        return GameSaveList.FirstOrDefault(x => x.SaveNumber == PlayingSave.SaveNumber);
     }
     private void DefaultConfig()
     {

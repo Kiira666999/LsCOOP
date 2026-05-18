@@ -128,11 +128,18 @@ public class CityHall : GameLocation
     }
     private void GenerateVehicleRegistrationMenu()
     {
-        if (Player.Character.LastVehicle == null)
+        Vehicle lastVehicle = Player.Character.LastVehicle;
+        if (lastVehicle == null || !lastVehicle.Exists())
         {
             return;
         }
-        VehicleExt lastVehicleExt = new VehicleExt(Player.Character.LastVehicle, Settings);
+        VehicleExt lastVehicleExt = World.Vehicles.GetVehicleExt(lastVehicle);
+        if (lastVehicleExt == null)
+        {
+            lastVehicleExt = new VehicleExt(lastVehicle, Settings);
+            lastVehicleExt.Setup();
+            lastVehicleExt.AddVehicleToList(World);
+        }
         VehicleRegistrationMenu = MenuPool.AddSubMenu(InteractionMenu, "Register a vehicle.");
         VehicleRegistrationMenu.OnMenuOpen += (sender) =>
         {

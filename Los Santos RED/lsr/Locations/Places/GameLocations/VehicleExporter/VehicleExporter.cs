@@ -198,6 +198,7 @@ public class VehicleExporter : GameLocation
             string CarName = veh.GetCarName();
             bool CanExport = false;
             bool IsDamaged = false;
+            bool IsRegisteredToPlayer = veh.IsOwnedByPlayer;
             int ExportAmount = 0;
             MenuItem menuItem = Menu.Items.FirstOrDefault(x => x.ModItemName == vehicleItem.Name);
             ExportedVehicle exportedStats = null;
@@ -223,6 +224,10 @@ public class VehicleExporter : GameLocation
                 IsDamaged = true;
                 CanExport = false;
             }
+            if (!IsRegisteredToPlayer)
+            {
+                CanExport = false;
+            }
             UIMenuItem vehicleCrusherItem = new UIMenuItem(CarName, veh.GetCarDescription()) { RightLabel = ExportAmount.ToString("C0") };
             MenuLookups.Add(new MenuVehicleMap(menuItem,vehicleCrusherItem, veh));
             if (!CanExport)
@@ -233,6 +238,10 @@ public class VehicleExporter : GameLocation
             if(IsDamaged)
             {
                 vehicleCrusherItem.Description += "~n~~r~TOO DAMAGED TO EXPORT~s~";
+            }
+            if (menuItem != null && !IsRegisteredToPlayer)
+            {
+                vehicleCrusherItem.Description += "~n~~r~REGISTRATION REQUIRED~s~~n~Forge documents and register this vehicle at City Hall before exporting it.";
             }
             if(hasTimeRestriction && !CanExport)
             {
@@ -274,6 +283,19 @@ public class VehicleExporter : GameLocation
         {
             PlayErrorSound();
             DisplayMessage("~r~Exporting Failed", "We are unable to complete this export.");
+            return;
+        }
+        if (!toExport.IsOwnedByPlayer)
+        {
+            PlayErrorSound();
+            DisplayMessage("~r~Registration Required", "Im gonna need to see the papers for this !.");
+            return;
+        }
+        Player.VehicleOwnership.RemoveOwnershipOfVehicle(toExport);
+        if (toExport.IsOwnedByPlayer)
+        {
+            PlayErrorSound();
+            DisplayMessage("~r~Exporting Failed", "We are unable to update vehicle ownership.");
             return;
         }
         Game.FadeScreenOut(1000, true);

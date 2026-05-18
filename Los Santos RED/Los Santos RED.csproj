@@ -145,6 +145,7 @@
     <Compile Include="lsr\Coop\Core\CoopCriminalHistoryState.cs" />
     <Compile Include="lsr\Coop\Core\CoopCriminalJusticeStateAdapter.cs" />
     <Compile Include="lsr\Coop\Core\CoopCriminalJusticeStateSnapshot.cs" />
+    <Compile Include="lsr\Coop\Core\CoopCalendarPolicy.cs" />
     <Compile Include="lsr\Coop\Core\CoopDeathArrestBridge.cs" />
     <Compile Include="lsr\Coop\Core\CoopDeathArrestState.cs" />
     <Compile Include="lsr\Coop\Core\CoopEventEnvelope.cs" />

@@ -443,12 +443,22 @@ public class Respawning// : IRespawning
         {
             Player.Inventory.RemoveIllicitInventoryItems();
         }
-        EntryPoint.WriteToConsole($"PRE 1: {Time.CurrentDateTime} {HospitalDuration} {HospitalDischargeDate}");
+        DateTime hospitalStartDate = Time.CurrentDateTime;
+        CoopCalendarSkipDecision hospitalSkipDecision = CoopCalendarPolicy.EvaluateGlobalTimeSkip(CoopProfileTimeSkipReason.Hospital, hospitalStartDate, HospitalDischargeDate);
+        EntryPoint.WriteToConsole($"PRE 1: {Time.CurrentDateTime} {HospitalDuration} {HospitalDischargeDate} GlobalSkipAllowed:{hospitalSkipDecision.CanApplyGlobalTimeSkip} Reason:{hospitalSkipDecision.Reason}");
 
 
 
         GameFiber.Sleep(4000);
-        Time.SetDateTime(HospitalDischargeDate);
+        CoopProfileTimeSkipResult hospitalTimeSkipResult = null;
+        if (hospitalSkipDecision.CanApplyGlobalTimeSkip)
+        {
+            Time.SetDateTime(HospitalDischargeDate);
+        }
+        else
+        {
+            hospitalTimeSkipResult = CoopProfileTimeSkipService.Apply(Player, hospitalStartDate, HospitalDischargeDate, CoopProfileTimeSkipReason.Hospital, hospitalSkipDecision);
+        }
         Player.HumanState.SetRandom();
         FadeIn();
         if (Settings.SettingsManager.RespawnSettings.DeductHospitalFee)
@@ -462,7 +472,7 @@ public class Respawning// : IRespawning
         ShowImpoundDisplay();
         GameTimeLastDischargedFromHospital = Game.GameTime;
         CoopDeathArrestBridge.CompleteDeathState(Player, respawnableLocation, "HospitalRespawn", HospitalFee, HospitalBillPastDue, HospitalDuration, HospitalDischargeDate, TimesDied);
-        EntryPoint.WriteToConsole($"POST 1: {Time.CurrentDateTime} {HospitalDuration} {HospitalDischargeDate}");
+        EntryPoint.WriteToConsole($"POST 1: {Time.CurrentDateTime} {HospitalDuration} {HospitalDischargeDate} GlobalSkipAllowed:{hospitalSkipDecision.CanApplyGlobalTimeSkip} ProfileTimeSkipApplied:{hospitalTimeSkipResult?.Applied == true} ProcessedDueSystems:{hospitalTimeSkipResult?.ProcessedDueSystems ?? 0} DeferredDueSystems:{hospitalTimeSkipResult?.DeferredDueSystems ?? 0}");
     }
     private void LoseOnHandCash()
     {
@@ -495,8 +505,18 @@ public class Respawning// : IRespawning
             HasIllegalItems = Player.Inventory.GetIllicitItems()?.Any() == true;
             Player.Inventory.RemoveIllicitInventoryItems();
         }
-        EntryPoint.WriteToConsole($"PRE 1: {Time.CurrentDateTime} {BailDuration}");
-        Time.SetDateTime(BailPostingTime);
+        DateTime jailStartDate = Time.CurrentDateTime;
+        CoopCalendarSkipDecision jailSkipDecision = CoopCalendarPolicy.EvaluateGlobalTimeSkip(CoopProfileTimeSkipReason.Jail, jailStartDate, BailPostingTime);
+        EntryPoint.WriteToConsole($"PRE 1: {Time.CurrentDateTime} {BailDuration} {BailPostingTime} GlobalSkipAllowed:{jailSkipDecision.CanApplyGlobalTimeSkip} Reason:{jailSkipDecision.Reason}");
+        CoopProfileTimeSkipResult jailTimeSkipResult = null;
+        if (jailSkipDecision.CanApplyGlobalTimeSkip)
+        {
+            Time.SetDateTime(BailPostingTime);
+        }
+        else
+        {
+            jailTimeSkipResult = CoopProfileTimeSkipService.Apply(Player, jailStartDate, BailPostingTime, CoopProfileTimeSkipReason.Jail, jailSkipDecision);
+        }
         GameFiber.Sleep(4000);
         Player.HumanState.SetRandom();
         FadeIn();
@@ -508,7 +528,7 @@ public class Respawning// : IRespawning
         ShowImpoundDisplay();
         GameTimeLastSurrenderedToPolice = Game.GameTime;
         CoopDeathArrestBridge.CompleteArrestState(Player, respawnableLocation, "PoliceSurrender", BailFee, BailFeePastDue, BailDuration, TodaysPayment, HasIllegalWeapons, HasIllegalItems, BailPostingTime);
-        EntryPoint.WriteToConsole($"POST 1: {Time.CurrentDateTime} {BailDuration}");
+        EntryPoint.WriteToConsole($"POST 1: {Time.CurrentDateTime} {BailDuration} {BailPostingTime} GlobalSkipAllowed:{jailSkipDecision.CanApplyGlobalTimeSkip} ProfileTimeSkipApplied:{jailTimeSkipResult?.Applied == true} ProcessedDueSystems:{jailTimeSkipResult?.ProcessedDueSystems ?? 0} DeferredDueSystems:{jailTimeSkipResult?.DeferredDueSystems ?? 0}");
     }
     private void ShowImpoundDisplay()
     {

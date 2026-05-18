@@ -1303,6 +1303,8 @@
     <EnableLocationDiscovery>true</EnableLocationDiscovery>
     <LocationDiscoveryDistance>75</LocationDiscoveryDistance>
     <PersistDiscoveredLocations>true</PersistDiscoveredLocations>
+    <AutoSaveEnabled>false</AutoSaveEnabled>
+    <AutoSaveIntervalMinutes>10</AutoSaveIntervalMinutes>
     <NotifyOnLocationDiscovered>true</NotifyOnLocationDiscovered>
     <ShowMarkersOnLocationEntrances>false</ShowMarkersOnLocationEntrances>
     <HotelsUsesRooms>true</HotelsUsesRooms>

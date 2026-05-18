@@ -1,6 +1,6 @@
 {
   "ConfigVersion": "1",
   "WorldId": "lsrcoop-default-world",
-  "AdminIds": ["Kiira"],
-  "TrustedHostIds": ["Kiira"]
+  "AdminIds": ["Kiira","Liight"],
+  "TrustedHostIds": ["Kiira","Liight"]
 }

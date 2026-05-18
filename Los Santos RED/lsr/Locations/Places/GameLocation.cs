@@ -32,6 +32,7 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
     protected ICrimes Crimes;
     protected INameProvideable Names;
     protected IShopMenus ShopMenus;
+    protected IPlacesOfInterest PlacesOfInterestData;
     protected IPlateTypes PlateTypes;
     protected IOrganizations Associations;
     protected ModDataFileManager ModDataFileManager;
@@ -518,6 +519,7 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
         IDispatchablePeople dispatchablePeople, ModDataFileManager modDataFileManager)
     {
         ShopMenus = shopMenus;
+        PlacesOfInterestData = placesOfInterest;
         World = world;
         Crimes = crimes;
         Names = names;

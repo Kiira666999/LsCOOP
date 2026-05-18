@@ -22,6 +22,8 @@ namespace LosSantosRED.lsr.Coop.Core
         public static string ActiveHostProfileId { get; private set; } = string.Empty;
         public static string LocalRole { get; private set; } = string.Empty;
         public static string BridgeSessionId { get; private set; } = string.Empty;
+        public static int ConnectedCharacterReadyProfileCount { get; private set; }
+        public static bool AllowGlobalTimeSkip { get; private set; } = true;
         public static bool IsLocalAdmin => HasRole(LocalRole, "Admin");
 
         public static void SetDisabled()
@@ -38,7 +40,14 @@ namespace LosSantosRED.lsr.Coop.Core
             ActiveHostProfileId = string.Empty;
             LocalRole = string.Empty;
             BridgeSessionId = string.Empty;
+            ConnectedCharacterReadyProfileCount = 0;
+            AllowGlobalTimeSkip = true;
             CoopRuntimeServices.ResetToDisabled();
+        }
+
+        public static void RefreshRuntimeState()
+        {
+            RefreshFromStateFile();
         }
 
         public static void SetBridgeSessionId(string sessionId)
@@ -64,6 +73,8 @@ namespace LosSantosRED.lsr.Coop.Core
             LocalProfileId = localProfileId ?? string.Empty;
             IsCharacterReadyForSimulation = isCharacterReadyForSimulation;
             IsCharacterCreationRequired = !IsCharacterReadyForSimulation && !string.IsNullOrWhiteSpace(LocalProfileId);
+            ConnectedCharacterReadyProfileCount = Math.Max(ConnectedCharacterReadyProfileCount, isCharacterReadyForSimulation ? 1 : 0);
+            AllowGlobalTimeSkip = false;
             IsLocalActiveHost = HasActiveHostAssigned && !string.IsNullOrWhiteSpace(LocalProfileId) && string.Equals(LocalProfileId, ActiveHostProfileId, System.StringComparison.OrdinalIgnoreCase);
             RefreshStartupMode();
         }
@@ -87,6 +98,8 @@ namespace LosSantosRED.lsr.Coop.Core
             }
             IsLocalActiveHost = !string.IsNullOrWhiteSpace(LocalProfileId) && string.Equals(LocalProfileId, ActiveHostProfileId, System.StringComparison.OrdinalIgnoreCase);
             IsCharacterCreationRequired = !IsCharacterReadyForSimulation && !string.IsNullOrWhiteSpace(LocalProfileId);
+            ConnectedCharacterReadyProfileCount = Math.Max(ConnectedCharacterReadyProfileCount, isCharacterReadyForSimulation ? 1 : 0);
+            AllowGlobalTimeSkip = false;
             RefreshStartupMode();
         }
 
@@ -98,6 +111,7 @@ namespace LosSantosRED.lsr.Coop.Core
             IsLocalActiveHost = false;
             WorldId = worldId ?? WorldId;
             ActiveHostProfileId = string.Empty;
+            AllowGlobalTimeSkip = false;
             RefreshStartupMode();
         }
 
@@ -189,6 +203,8 @@ namespace LosSantosRED.lsr.Coop.Core
                 ActiveHostProfileId = GetValue(lines, "ActiveHostProfileId") ?? string.Empty;
                 LocalRole = GetValue(lines, "LocalRole") ?? string.Empty;
                 BridgeSessionId = GetValue(lines, "SessionId") ?? string.Empty;
+                ConnectedCharacterReadyProfileCount = GetInt(lines, "ConnectedCharacterReadyProfileCount");
+                AllowGlobalTimeSkip = IsTrue(GetValue(lines, "AllowGlobalTimeSkip"));
                 IsLocalActiveHost = HasActiveHostAssigned && !string.IsNullOrWhiteSpace(LocalProfileId) && string.Equals(LocalProfileId, ActiveHostProfileId, StringComparison.OrdinalIgnoreCase);
                 if (!IsCharacterReadyForSimulation && !string.IsNullOrWhiteSpace(LocalProfileId))
                 {
@@ -263,6 +279,12 @@ namespace LosSantosRED.lsr.Coop.Core
         private static bool IsTrue(string value)
         {
             return string.Equals(value, "true", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private static int GetInt(string[] lines, string key)
+        {
+            int value;
+            return int.TryParse(GetValue(lines, key), out value) ? value : 0;
         }
 
         private static bool HasRole(string roles, string role)

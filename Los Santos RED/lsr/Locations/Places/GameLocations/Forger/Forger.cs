@@ -25,6 +25,7 @@ public class Forger : GameLocation
     private UIMenu MarkedCashSubMenu;
     private UIMenu ForgeDocumentSubMenu;
     private Dictionary<UIMenuItem, VehicleExt> MenuLookup;
+    private const float DocumentForgeryExportPriceMultiplier = 0.5f;
     
     public Forger(Vector3 _EntrancePosition, float _EntranceHeading, string _Name, string _Description) : base(_EntrancePosition, _EntranceHeading, _Name, _Description)
     {
@@ -325,7 +326,7 @@ public class Forger : GameLocation
                 continue;
             }
             string CarName = veh.GetCarName();
-            int cost = (int)(Settings.SettingsManager.VehicleTheftSettings.BaseCost * veh.GetDocumentForgeryMultiplier());
+            int cost = GetDocumentForgeryCost(veh, vehicleItem);
             UIMenuItem menuItem = new UIMenuItem(CarName, $"Forge documents for the car.");
             menuItem.RightLabel = cost.ToString("C0");
             menuItem.Activated += (sender, args) =>
@@ -350,6 +351,31 @@ public class Forger : GameLocation
             MenuLookup.Add(menuItem, veh);
             ForgeDocumentSubMenu.AddItem(menuItem);
         }
+    }
+
+    private int GetDocumentForgeryCost(VehicleExt vehicle, VehicleItem vehicleItem)
+    {
+        int exportPrice = GetHighestExportPrice(vehicleItem);
+        if (exportPrice > 0)
+        {
+            return (int)Math.Ceiling(exportPrice * DocumentForgeryExportPriceMultiplier);
+        }
+        return (int)(Settings.SettingsManager.VehicleTheftSettings.BaseCost * vehicle.GetDocumentForgeryMultiplier());
+    }
+
+    private int GetHighestExportPrice(VehicleItem vehicleItem)
+    {
+        if (vehicleItem == null || PlacesOfInterestData?.PossibleLocations?.VehicleExporters == null)
+        {
+            return 0;
+        }
+        return PlacesOfInterestData.PossibleLocations.VehicleExporters
+            .Where(x => x?.IsEnabled == true && x.Menu?.Items != null && x.IsCorrectMap(World.IsMPMapLoaded) && x.IsSameState(EntryPoint.FocusZone?.GameState))
+            .SelectMany(x => x.Menu.Items)
+            .Where(x => x != null && x.ModItemName == vehicleItem.Name && x.SalesPrice > 0)
+            .Select(x => x.SalesPrice)
+            .DefaultIfEmpty(0)
+            .Max();
     }
 
     private void ForgeDocumentSubMenu_OnMenuClose(UIMenu sender)

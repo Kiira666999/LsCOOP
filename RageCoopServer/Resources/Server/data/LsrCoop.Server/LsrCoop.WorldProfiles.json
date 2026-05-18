@@ -1,34 +1,36 @@
 {
   "StoreVersion": "1",
   "WorldId": "lsrcoop-default-world",
-  "CreatedUtc": "2026-05-15T19:43:28.5561418+00:00",
-  "UpdatedUtc": "2026-05-16T14:05:43.2319927+00:00",
+  "CreatedUtc": "2026-05-18T02:12:57.6431981+00:00",
+  "UpdatedUtc": "2026-05-18T04:30:10.2539631+00:00",
   "Roles": {
     "ConfigVersion": "1",
     "WorldId": "lsrcoop-default-world",
     "AdminIds": [
-      "Kiira"
+      "Kiira",
+      "Liight"
     ],
     "TrustedHostIds": [
-      "Kiira"
+      "Kiira",
+      "Liight"
     ],
-    "UpdatedUtc": "2026-05-16T14:05:43.2320072+00:00"
+    "UpdatedUtc": "2026-05-18T04:30:10.2539707+00:00"
   },
   "Profiles": [
     {
-      "ProfileId": "Kiira",
-      "ClientId": "Kiira",
-      "DisplayName": "Kiira",
+      "ProfileId": "Liight",
+      "ClientId": "Liight",
+      "DisplayName": "Liight",
       "Role": "Admin,TrustedHost",
-      "CreatedUtc": "2026-05-15T19:43:38.6909114+00:00",
-      "LastSeenUtc": "2026-05-16T14:05:43.086586+00:00",
+      "CreatedUtc": "2026-05-18T02:13:00.9873177+00:00",
+      "LastSeenUtc": "2026-05-18T04:30:10.2539622+00:00",
       "Character": {
-        "CharacterId": "Kiira",
-        "ProfileId": "Kiira",
-        "DisplayName": "Kai Scott",
-        "ModelName": "IG_CLAY",
+        "CharacterId": "Liight",
+        "ProfileId": "Liight",
+        "DisplayName": "Grant Stephens",
+        "ModelName": "mp_m_freemode_01",
         "Appearance": {
-          "ModelName": "IG_CLAY",
+          "ModelName": "mp_m_freemode_01",
           "Components": [
             {
               "ComponentId": 0,
@@ -44,31 +46,31 @@
             },
             {
               "ComponentId": 2,
-              "DrawableId": 0,
+              "DrawableId": 80,
               "TextureId": 0,
               "PaletteId": 0
             },
             {
               "ComponentId": 3,
-              "DrawableId": 0,
+              "DrawableId": 3,
               "TextureId": 0,
               "PaletteId": 0
             },
             {
               "ComponentId": 4,
-              "DrawableId": 0,
+              "DrawableId": 42,
               "TextureId": 0,
               "PaletteId": 0
             },
             {
               "ComponentId": 5,
-              "DrawableId": 0,
+              "DrawableId": 44,
               "TextureId": 0,
               "PaletteId": 0
             },
             {
               "ComponentId": 6,
-              "DrawableId": 0,
+              "DrawableId": 8,
               "TextureId": 0,
               "PaletteId": 0
             },
@@ -80,7 +82,7 @@
             },
             {
               "ComponentId": 8,
-              "DrawableId": 0,
+              "DrawableId": 96,
               "TextureId": 0,
               "PaletteId": 0
             },
@@ -98,8 +100,8 @@
             },
             {
               "ComponentId": 11,
-              "DrawableId": 0,
-              "TextureId": 0,
+              "DrawableId": 141,
+              "TextureId": 5,
               "PaletteId": 0
             }
           ],
@@ -112,9 +114,9 @@
             },
             {
               "PropId": 1,
-              "DrawableId": -1,
-              "TextureId": 0,
-              "IsCleared": true
+              "DrawableId": 5,
+              "TextureId": 10,
+              "IsCleared": false
             },
             {
               "PropId": 2,
@@ -154,86 +156,84 @@
             }
           ]
         },
-        "UpdatedUtc": "2026-05-15T19:44:14.8634276+00:00"
+        "UpdatedUtc": "2026-05-18T02:16:55.9280929+00:00"
       },
       "InventoryMoney": {
-        "SnapshotId": "5ac1fef732074916b2e5831cee5a217f",
+        "SnapshotId": "a43bd1143dc940959fa96600370eafc5",
         "WorldId": "lsrcoop-default-world",
-        "ProfileId": "Kiira",
-        "CharacterId": "Kiira",
-        "OnHandCash": 0,
+        "ProfileId": "Liight",
+        "CharacterId": "Liight",
+        "OnHandCash": 2230,
         "TotalAccountMoney": 0,
-        "TotalMoney": 0,
-        "InventoryItems": [],
+        "TotalMoney": 2230,
+        "InventoryItems": [
+          {
+            "ItemName": "Dealer phone",
+            "RemainingPercent": 1
+          },
+          {
+            "ItemName": "Crack",
+            "RemainingPercent": 47
+          },
+          {
+            "ItemName": "Medium Baggie",
+            "RemainingPercent": 25
+          },
+          {
+            "ItemName": "Large Baggie",
+            "RemainingPercent": 25
+          },
+          {
+            "ItemName": "1G Crack",
+            "RemainingPercent": 18
+          },
+          {
+            "ItemName": "5G Crack",
+            "RemainingPercent": 7
+          }
+        ],
         "BankAccounts": [],
-        "SnapshotUtc": "2026-05-15T22:48:34.7690262+00:00"
+        "SnapshotUtc": "2026-05-18T04:25:13.847513+00:00"
       },
       "Weapons": {
-        "SnapshotId": "8f1f74b8a7a24ffea443bd308629ad63",
+        "SnapshotId": "6b82ac2453da45909d7e8163df826b78",
         "WorldId": "lsrcoop-default-world",
-        "ProfileId": "Kiira",
-        "CharacterId": "Kiira",
+        "ProfileId": "Liight",
+        "CharacterId": "Liight",
         "Weapons": [
           {
-            "WeaponHash": "177293209",
-            "WeaponName": "177293209",
+            "WeaponHash": "2343591895",
+            "WeaponName": "Flashlight",
             "Category": "",
-            "Ammo": 40,
+            "Ammo": 0,
             "IsLegal": false,
             "IsEquipped": false
           },
           {
-            "WeaponHash": "125959754",
-            "WeaponName": "125959754",
+            "WeaponHash": "2982836145",
+            "WeaponName": "RPG",
             "Category": "",
-            "Ammo": 10,
-            "IsLegal": false,
-            "IsEquipped": false
-          },
-          {
-            "WeaponHash": "3686625920",
-            "WeaponName": "3686625920",
-            "Category": "",
-            "Ammo": 200,
+            "Ammo": 5,
             "IsLegal": false,
             "IsEquipped": false
           }
         ],
-        "SnapshotUtc": "2026-05-16T13:44:05.1539262+00:00"
+        "SnapshotUtc": "2026-05-18T04:25:13.847513+00:00"
       },
       "OwnedVehicles": {
-        "SnapshotId": "c19f9cb06d6a4d1cbc1104b4cb4c0df2",
+        "SnapshotId": "587397f1d0a648b3a7129dbfee4d79b5",
         "WorldId": "lsrcoop-default-world",
-        "ProfileId": "Kiira",
-        "CharacterId": "Kiira",
-        "Vehicles": [
-          {
-            "VehicleId": "2537130571:61FWL273:41474",
-            "ModelHash": "2537130571",
-            "ModelName": "SEVEN70",
-            "VehicleSaveStatusXml": "\u003CVehicleSaveStatus xmlns:xsd=\u0022http://www.w3.org/2001/XMLSchema\u0022 xmlns:xsi=\u0022http://www.w3.org/2001/XMLSchema-instance\u0022\u003E\u003CModelName /\u003E\u003CModelHash\u003E2537130571\u003C/ModelHash\u003E\u003CLastPosition\u003E\u003CX\u003E-1181.271\u003C/X\u003E\u003CY\u003E-1342.37732\u003C/Y\u003E\u003CZ\u003E4.14793\u003C/Z\u003E\u003C/LastPosition\u003E\u003CLastHeading\u003E120.1834\u003C/LastHeading\u003E\u003CVehicleVariation\u003E\u003CPrimaryColor\u003E76\u003C/PrimaryColor\u003E\u003CSecondaryColor\u003E3\u003C/SecondaryColor\u003E\u003CIsPrimaryColorCustom\u003Efalse\u003C/IsPrimaryColorCustom\u003E\u003CCustomPrimaryColor /\u003E\u003CIsSecondaryColorCustom\u003Efalse\u003C/IsSecondaryColorCustom\u003E\u003CCustomSecondaryColor /\u003E\u003CPearlescentColor\u003E46\u003C/PearlescentColor\u003E\u003CWheelColor\u003E156\u003C/WheelColor\u003E\u003CMod1PaintType\u003E0\u003C/Mod1PaintType\u003E\u003CMod1Color\u003E0\u003C/Mod1Color\u003E\u003CMod1PearlescentColor\u003E0\u003C/Mod1PearlescentColor\u003E\u003CMod2PaintType\u003E0\u003C/Mod2PaintType\u003E\u003CMod2Color\u003E0\u003C/Mod2Color\u003E\u003CLivery\u003E-1\u003C/Livery\u003E\u003CLivery2\u003E-1\u003C/Livery2\u003E\u003CLicensePlate\u003E\u003CPlateNumber\u003E61FWL273\u003C/PlateNumber\u003E\u003CIsWanted\u003Efalse\u003C/IsWanted\u003E\u003CPlateType\u003E0\u003C/PlateType\u003E\u003COriginalModelHash\u003E2537130571\u003C/OriginalModelHash\u003E\u003C/LicensePlate\u003E\u003CWheelType\u003E7\u003C/WheelType\u003E\u003CWindowTint\u003E-1\u003C/WindowTint\u003E\u003CHasCustomWheels\u003Efalse\u003C/HasCustomWheels\u003E\u003CVehicleExtras\u003E\u003CVehicleExtra\u003E\u003CID\u003E0\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E1\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E2\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E3\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E4\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E5\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E6\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E7\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E8\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E9\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E10\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E11\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E12\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E13\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E14\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003CVehicleExtra\u003E\u003CID\u003E15\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleExtra\u003E\u003C/VehicleExtras\u003E\u003CVehicleToggles\u003E\u003CVehicleToggle\u003E\u003CID\u003E17\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleToggle\u003E\u003CVehicleToggle\u003E\u003CID\u003E18\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleToggle\u003E\u003CVehicleToggle\u003E\u003CID\u003E19\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleToggle\u003E\u003CVehicleToggle\u003E\u003CID\u003E20\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleToggle\u003E\u003CVehicleToggle\u003E\u003CID\u003E21\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleToggle\u003E\u003CVehicleToggle\u003E\u003CID\u003E22\u003C/ID\u003E\u003CIsTurnedOn\u003Efalse\u003C/IsTurnedOn\u003E\u003C/VehicleToggle\u003E\u003C/VehicleToggles\u003E\u003CVehicleMods\u003E\u003CVehicleMod\u003E\u003CID\u003E0\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E1\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E2\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E3\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E4\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E5\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E6\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E7\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E8\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E9\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E10\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E11\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E12\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E13\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E14\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E15\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E16\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E23\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E24\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E25\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E26\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E27\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E28\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E29\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E30\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E31\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E32\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E33\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E34\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E35\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E36\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E37\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E38\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E39\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E40\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E41\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E42\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E43\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E44\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E45\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E46\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E47\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E48\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E49\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003CVehicleMod\u003E\u003CID\u003E50\u003C/ID\u003E\u003COutput\u003E-1\u003C/Output\u003E\u003C/VehicleMod\u003E\u003C/VehicleMods\u003E\u003CVehicleNeons\u003E\u003CVehicleNeon\u003E\u003CID\u003E0\u003C/ID\u003E\u003CIsEnabled\u003Efalse\u003C/IsEnabled\u003E\u003C/VehicleNeon\u003E\u003CVehicleNeon\u003E\u003CID\u003E1\u003C/ID\u003E\u003CIsEnabled\u003Efalse\u003C/IsEnabled\u003E\u003C/VehicleNeon\u003E\u003CVehicleNeon\u003E\u003CID\u003E2\u003C/ID\u003E\u003CIsEnabled\u003Efalse\u003C/IsEnabled\u003E\u003C/VehicleNeon\u003E\u003CVehicleNeon\u003E\u003CID\u003E3\u003C/ID\u003E\u003CIsEnabled\u003Efalse\u003C/IsEnabled\u003E\u003C/VehicleNeon\u003E\u003C/VehicleNeons\u003E\u003CFuelLevel\u003E60\u003C/FuelLevel\u003E\u003CDirtLevel\u003E2\u003C/DirtLevel\u003E\u003CHasInvicibleTires\u003Efalse\u003C/HasInvicibleTires\u003E\u003CIsTireSmokeColorCustom\u003Etrue\u003C/IsTireSmokeColorCustom\u003E\u003CTireSmokeColorR\u003E255\u003C/TireSmokeColorR\u003E\u003CTireSmokeColorG\u003E255\u003C/TireSmokeColorG\u003E\u003CTireSmokeColorB\u003E255\u003C/TireSmokeColorB\u003E\u003CNeonColorR\u003E255\u003C/NeonColorR\u003E\u003CNeonColorG\u003E0\u003C/NeonColorG\u003E\u003CNeonColorB\u003E255\u003C/NeonColorB\u003E\u003CInteriorColor\u003E0\u003C/InteriorColor\u003E\u003CDashboardColor\u003E0\u003C/DashboardColor\u003E\u003CXenonLightColor\u003E255\u003C/XenonLightColor\u003E\u003CCanTiresBurst\u003Efalse\u003C/CanTiresBurst\u003E\u003C/VehicleVariation\u003E\u003CWeaponInventory /\u003E\u003CInventoryItems /\u003E\u003CIsImpounded\u003Efalse\u003C/IsImpounded\u003E\u003CDateTimeImpounded\u003E0001-01-01T00:00:00\u003C/DateTimeImpounded\u003E\u003CTimesImpounded\u003E0\u003C/TimesImpounded\u003E\u003CStoredCash\u003E0\u003C/StoredCash\u003E\u003C/VehicleSaveStatus\u003E",
-            "PlateNumber": "61FWL273",
-            "PlateType": 0,
-            "PlateIsWanted": false,
-            "PositionX": -1181.271,
-            "PositionY": -1342.377,
-            "PositionZ": 4.14793,
-            "Heading": 120.1834,
-            "IsImpounded": false,
-            "DateTimeImpounded": "0001-01-01T00:00:00Z",
-            "TimesImpounded": 0,
-            "ImpoundedLocation": null,
-            "StoredCash": 0
-          }
-        ],
-        "SnapshotUtc": "2026-05-15T19:46:53.5408712+00:00"
+        "ProfileId": "Liight",
+        "CharacterId": "Liight",
+        "Vehicles": [],
+        "SnapshotUtc": "2026-05-18T02:17:14.8187512+00:00"
       },
       "PropertyOwnership": null,
       "GangReputation": {
-        "StateId": "9ff8597a5ce64f468b1c35ff7a7b63ed",
+        "StateId": "91ea0ecf2b4b4c378ffd8b72dad027a7",
         "WorldId": "lsrcoop-default-world",
-        "ProfileId": "Kiira",
-        "CharacterId": "Kiira",
+        "ProfileId": "Liight",
+        "CharacterId": "Liight",
         "CurrentGangId": null,
         "Reputations": [
           {
@@ -284,12 +284,12 @@
           {
             "GangId": "AMBIENT_GANG_BALLAS",
             "GangName": "Ballas",
-            "Reputation": -1931,
-            "MembersHurt": 2,
-            "MembersKilled": 5,
+            "Reputation": 0,
+            "MembersHurt": 0,
+            "MembersKilled": 0,
             "MembersCarJacked": 0,
-            "MembersHurtInTerritory": 2,
-            "MembersKilledInTerritory": 5,
+            "MembersHurtInTerritory": 0,
+            "MembersKilledInTerritory": 0,
             "MembersCarJackedInTerritory": 0,
             "PlayerDebt": 0,
             "IsMember": false,
@@ -389,12 +389,12 @@
           {
             "GangId": "AMBIENT_GANG_FAMILY",
             "GangName": "Families",
-            "Reputation": -2268,
-            "MembersHurt": 3,
-            "MembersKilled": 6,
+            "Reputation": 0,
+            "MembersHurt": 0,
+            "MembersKilled": 0,
             "MembersCarJacked": 0,
-            "MembersHurtInTerritory": 3,
-            "MembersKilledInTerritory": 3,
+            "MembersHurtInTerritory": 0,
+            "MembersKilledInTerritory": 0,
             "MembersCarJackedInTerritory": 0,
             "PlayerDebt": 0,
             "IsMember": false,
@@ -405,8 +405,8 @@
             "GangId": "AMBIENT_GANG_FDizzyD",
             "GangName": "Dizzy-D",
             "Reputation": 0,
-            "MembersHurt": 1,
-            "MembersKilled": 1,
+            "MembersHurt": 0,
+            "MembersKilled": 0,
             "MembersCarJacked": 0,
             "MembersHurtInTerritory": 0,
             "MembersKilledInTerritory": 0,
@@ -434,12 +434,12 @@
           {
             "GangId": "AMBIENT_GANG_FIENDS",
             "GangName": "Fiends",
-            "Reputation": -1967,
-            "MembersHurt": 2,
-            "MembersKilled": 1,
+            "Reputation": 0,
+            "MembersHurt": 0,
+            "MembersKilled": 0,
             "MembersCarJacked": 0,
-            "MembersHurtInTerritory": 2,
-            "MembersKilledInTerritory": 1,
+            "MembersHurtInTerritory": 0,
+            "MembersKilledInTerritory": 0,
             "MembersCarJackedInTerritory": 0,
             "PlayerDebt": 0,
             "IsMember": false,
@@ -481,7 +481,7 @@
             "GangName": "Rednecks",
             "Reputation": 0,
             "MembersHurt": 0,
-            "MembersKilled": 0,
+            "MembersKilled": 1,
             "MembersCarJacked": 0,
             "MembersHurtInTerritory": 0,
             "MembersKilledInTerritory": 0,
@@ -809,10 +809,10 @@
           {
             "GangId": "AMBIENT_GANG_SHUSTLERS",
             "GangName": "South Central Hustlers",
-            "Reputation": -225,
+            "Reputation": 0,
             "MembersHurt": 0,
             "MembersKilled": 0,
-            "MembersCarJacked": 1,
+            "MembersCarJacked": 0,
             "MembersHurtInTerritory": 0,
             "MembersKilledInTerritory": 0,
             "MembersCarJackedInTerritory": 0,
@@ -825,8 +825,8 @@
             "GangId": "AMBIENT_GANG_SLSTrappers",
             "GangName": "South LS Trappers",
             "Reputation": 0,
-            "MembersHurt": 2,
-            "MembersKilled": 2,
+            "MembersHurt": 0,
+            "MembersKilled": 0,
             "MembersCarJacked": 0,
             "MembersHurtInTerritory": 0,
             "MembersKilledInTerritory": 0,
@@ -899,7 +899,7 @@
           {
             "GangId": "AMBIENT_GANG_UPTOWNRIDERS",
             "GangName": "Uptown Riders",
-            "Reputation": 0,
+            "Reputation": 3722,
             "MembersHurt": 0,
             "MembersKilled": 0,
             "MembersCarJacked": 0,
@@ -914,12 +914,12 @@
           {
             "GangId": "AMBIENT_GANG_WEICHENG",
             "GangName": "Triads",
-            "Reputation": -4297,
-            "MembersHurt": 3,
-            "MembersKilled": 3,
+            "Reputation": 0,
+            "MembersHurt": 0,
+            "MembersKilled": 0,
             "MembersCarJacked": 0,
-            "MembersHurtInTerritory": 2,
-            "MembersKilledInTerritory": 2,
+            "MembersHurtInTerritory": 0,
+            "MembersKilledInTerritory": 0,
             "MembersCarJackedInTerritory": 0,
             "PlayerDebt": 0,
             "IsMember": false,
@@ -942,57 +942,105 @@
             "TasksCompleted": 0
           }
         ],
-        "UpdatedUtc": "2026-05-15T22:51:37.9448023+00:00"
+        "UpdatedUtc": "2026-05-18T04:28:53.4868788+00:00"
+      },
+      "LocationDiscovery": {
+        "StateId": "e775d9b2b372417da5c0a00cd55af07e",
+        "WorldId": "lsrcoop-default-world",
+        "ProfileId": "Liight",
+        "CharacterId": "Liight",
+        "DiscoveredLocationIds": [
+          "lsrdisc_locations_business_davis_meth_lab_143_224_1656_096_29_489_2",
+          "lsrdisc_locations_business_mirror_park_marijuana_lockup_1138_891_322_386_67_146_2",
+          "lsrdisc_locations_gangden_triad_den_101_686_819_38_31_315",
+          "lsrdisc_locations_gunstore_guns_2_232_552_1311_643_31_296",
+          "lsrdisc_locations_illicitmarketplace_dealer_hangout_1_423_803_185_627_80_8",
+          "lsrdisc_locations_lsrpbusinessesstandard_business_davis_meth_lab_143_224_1656_096_29_489",
+          "lsrdisc_locations_lsrpbusinessesstandard_business_mirror_park_marijuana_lockup_1138_891_322_386_67_146",
+          "lsrdisc_locations_lsrpdrugbusinesses_business_alta_st_weed_farm_324_416_1356_305_31_296",
+          "lsrdisc_locations_lsrpextrastores_vehicleexporter_benny_s_chop_shop_206_54_1341_63_34_894",
+          "lsrdisc_locations_lsrpgangheists_morgue_little_seoul_warehouse_683_292_876_144_24_499",
+          "lsrdisc_locations_lsrpgosa_bodyexport_human_trafficking_market_322_836_1005_722_29_298",
+          "lsrdisc_locations_lsrpgosa_gamblingden_backroom_casino_174_094_1289_48_31_296",
+          "lsrdisc_locations_lsrpgosa_gangden_angels_of_death_clubhouse_1135_007_789_136_57_601",
+          "lsrdisc_locations_lsrpgosa_gangden_heist_safehouse_739_167_970_038_24_647",
+          "lsrdisc_locations_lsrpgosa_gangden_kilo_tray_ballas_den_54_07_66_636_67_631",
+          "lsrdisc_locations_lsrpgosa_gangden_the_families_den_327_121_1258_609_32_105",
+          "lsrdisc_locations_lsrpgosa_gangden_triad_warehouse_1371_02_460_636_34_478",
+          "lsrdisc_locations_lsrpgosa_gangden_uptown_riders_mc_164_138_1292_752_31_316",
+          "lsrdisc_locations_lsrplegaldrugs_morgue_pharmacist_strawberry_93_539_1600_443_30_895",
+          "lsrdisc_locations_lsrpuniondepository_bank_union_depository_3_344_706_51_45_973",
+          "lsrdisc_locations_trappers_business_little_seoul_corner_762_275_889_4_20_827",
+          "lsrdisc_locations_trappers_business_little_seoul_dealer_crew_804_168_960_237_17_603",
+          "lsrdisc_locations_trappers_business_little_seoul_safehouse_689_816_1154_848_10_813",
+          "lsrdisc_locations_trappers_business_little_seoul_stash_house_718_726_898_567_20_379",
+          "lsrdisc_locations_trappers_business_mission_row_crack_den_261_745_1109_525_29_641",
+          "lsrdisc_locations_trappers_business_mission_row_gem_s_jewelry_335_622_874_036_29_292",
+          "lsrdisc_locations_trappers_business_strawberry_leroy_s_electrical_66_396_1468_005_29_291",
+          "lsrdisc_locations_trappers_business_test_city_test_forgery_262_653_999_882_99_009",
+          "lsrdisc_locations_trappers_gangden_dwayne_forge_s_house_60_5_1529_553_34_235",
+          "lsrdisc_locations_trappers_illicitmarketplace_downtown_dealer_1_321_466_598_75_33_553",
+          "lsrdisc_locations_trappers_illicitmarketplace_east_ls_trappers_dealer_annie_446_142_1232_824_29_936",
+          "lsrdisc_locations_trappers_illicitmarketplace_families_dealer_leroy_172_556_1669_225_29_773",
+          "lsrdisc_locations_trappers_illicitmarketplace_families_pillbox_hill_dealer_41_076_1030_614_37_186",
+          "lsrdisc_locations_trappers_illicitmarketplace_khangpae_dealer_chung_hee_801_46_888_339_20_857",
+          "lsrdisc_locations_trappers_illicitmarketplace_little_seoul_dealer_886_726_772_421_16_032",
+          "lsrdisc_locations_trappers_illicitmarketplace_little_seoul_yardies_dealer_674_875_880_577_24_459",
+          "lsrdisc_locations_trappers_illicitmarketplace_triads_dealer_pillbox_hill_123_434_1040_294_29_207",
+          "lsrdisc_locations_trappers_illicitmarketplace_yardies_dealer_badman_430_852_1112_263_43_069",
+          "lsrdisc_locations_vehicleexporter_national_transport_845_354_951_534_26_521"
+        ],
+        "UpdatedUtc": "2026-05-18T04:24:01.3812986+00:00"
       },
       "CriminalHistory": {
         "WorldId": "lsrcoop-default-world",
-        "ProfileId": "Kiira",
-        "CharacterId": "Kiira",
+        "ProfileId": "Liight",
+        "CharacterId": "Liight",
         "HasHistory": false,
         "LastSeenX": 0,
         "LastSeenY": 0,
         "LastSeenZ": 0,
         "WantedLevel": 0,
         "Crimes": [],
-        "DateTimeLastWantedEnded": "2009-06-06T12:36:13+00:00",
-        "UpdatedUtc": "2026-05-15T22:48:29.1458189+00:00",
-        "ClearReason": "DeathResolved"
+        "DateTimeLastWantedEnded": "2009-06-26T15:00:40+00:00",
+        "UpdatedUtc": "2026-05-18T03:15:18.0571383+00:00",
+        "ClearReason": "FinePaid"
       },
       "DeathArrestState": {
-        "StateId": "ac4fbafc16f3485296050be10b6e6460",
+        "StateId": "742a6457f8bd470f8de78da5997c8a65",
         "WorldId": "lsrcoop-default-world",
-        "ProfileId": "Kiira",
-        "CharacterId": "Kiira",
+        "ProfileId": "Liight",
+        "CharacterId": "Liight",
         "ActionType": "ApplyDeathState",
-        "OutcomeType": "HospitalRespawn",
-        "RespawnLocationName": "Central LS Medical Center",
-        "PositionX": 338.2065,
-        "PositionY": -1396.154,
-        "PositionZ": 32.50927,
-        "Heading": 77.07101,
-        "HospitalFee": 65000,
-        "HospitalBillPastDue": 19002,
-        "HospitalDuration": 13,
+        "OutcomeType": "RespawnAtCurrentLocation",
+        "RespawnLocationName": "",
+        "PositionX": -170.6404,
+        "PositionY": -881.0903,
+        "PositionZ": 29.27045,
+        "Heading": 0,
+        "HospitalFee": 0,
+        "HospitalBillPastDue": 0,
+        "HospitalDuration": 0,
         "BailFee": 0,
         "BailFeePastDue": 0,
         "BailDuration": 0,
         "TodayPayment": 0,
-        "TimesDied": 0,
+        "TimesDied": 2,
         "HadIllegalWeapons": false,
         "HadIllegalItems": false,
-        "ReleaseDate": "2009-06-19T07:00:00Z",
-        "OccurredUtc": "2026-05-15T22:48:34.7690262+00:00"
+        "ReleaseDate": "2009-06-27T10:35:15Z",
+        "OccurredUtc": "2026-05-18T04:25:13.8495142+00:00"
       },
       "LastPosition": {
         "WorldId": "lsrcoop-default-world",
-        "ProfileId": "Kiira",
-        "CharacterId": "Kiira",
-        "SessionId": "e6b6ff63b9a9461ebb18b10ca9ebb2f3",
-        "X": 4523.757,
-        "Y": -4498.871,
-        "Z": 4.2482057,
-        "Heading": 100.01835,
-        "UpdatedUtcUnixMilliseconds": 1778940342985,
+        "ProfileId": "Liight",
+        "CharacterId": "Liight",
+        "SessionId": "198fed687b9b400289f809339f6b6050",
+        "X": -40.30685,
+        "Y": -972.42255,
+        "Z": 28.641438,
+        "Heading": 72.00176,
+        "UpdatedUtcUnixMilliseconds": 1779078609384,
         "Source": "Periodic"
       },
       "LongTermLsrRecords": []

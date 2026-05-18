@@ -8,6 +8,7 @@ namespace LosSantosRED.lsr.Interface
     {
         List<GameSave> GameSaveList { get; }
         int NextSaveGameNumber { get; }
+        bool HasActiveSave { get; }
 
         //void SaveSamePlayer_Obsolete(ISaveable player, IWeapons weapons, ITimeReportable time, IPlacesOfInterest placesOfInterest, IModItems modItems);
         //void DeleteSave_Obsolete(string playerName, string modelName);
@@ -17,6 +18,7 @@ namespace LosSantosRED.lsr.Interface
 
         void DeleteSave(GameSave gs);
         void Save(ISaveable saveable, IWeapons weapons, ITimeControllable time, IPlacesOfInterest placesOfInterest, IModItems modItems, ISettingsProvideable settings, int saveNumber);
+        bool SaveActive(ISaveable saveable, IWeapons weapons, ITimeControllable time, IPlacesOfInterest placesOfInterest, IModItems modItems, ISettingsProvideable settings);
         void DeleteSave();
         bool IsPlaying(GameSave gs);
         void OnChangedPlayer();

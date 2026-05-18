@@ -58,6 +58,10 @@ public class WorldSettings : ISettingsDefaultable
     public float LocationDiscoveryDistance { get; set; }
     [Description("If enabled, discovered hidden location LocationIDs are saved and restored.")]
     public bool PersistDiscoveredLocations { get; set; }
+    [Description("If enabled, non-co-op Los Santos RED periodically overwrites the active save slot using the existing save system.")]
+    public bool AutoSaveEnabled { get; set; }
+    [Description("Real-world minutes between non-co-op autosaves. Only applies when AutoSaveEnabled is true.")]
+    public int AutoSaveIntervalMinutes { get; set; }
     [Description("If enabled, a notification is shown when a hidden discoverable location is discovered.")]
     public bool NotifyOnLocationDiscovered { get; set; }
     [Description("If enabled, there will be a 3D entrance marker around location entrances. Performance Intensive")]
@@ -185,6 +189,8 @@ public class WorldSettings : ISettingsDefaultable
         EnableLocationDiscovery = false;
         LocationDiscoveryDistance = 75f;
         PersistDiscoveredLocations = true;
+        AutoSaveEnabled = false;
+        AutoSaveIntervalMinutes = 10;
         NotifyOnLocationDiscovered = false;
 
         AirportsRequireOwnedPlanesLocal = true;

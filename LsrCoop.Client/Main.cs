@@ -76,6 +76,8 @@ namespace LsrCoop.Client
         private string localRole;
         private string activeHostProfileId;
         private bool localCharacterReadyForSimulation;
+        private int connectedCharacterReadyProfileCount;
+        private bool allowGlobalTimeSkip;
         private bool characterCreationRequired;
         private bool characterCreationRequestSent;
         private DateTimeOffset characterCreateRequiredUtc;
@@ -345,6 +347,8 @@ namespace LsrCoop.Client
             latestWorldSnapshot = snapshot;
             localWorldId = string.IsNullOrWhiteSpace(snapshot.WorldId) ? localWorldId : snapshot.WorldId;
             activeHostProfileId = snapshot.ActiveHostProfileId ?? string.Empty;
+            connectedCharacterReadyProfileCount = Math.Max(0, snapshot.ConnectedCharacterReadyProfileCount);
+            allowGlobalTimeSkip = snapshot.AllowGlobalTimeSkip && connectedCharacterReadyProfileCount <= 1;
             pvpVictimDamageStates.Clear();
 
             if (string.IsNullOrWhiteSpace(activeHostProfileId))
@@ -371,7 +375,7 @@ namespace LsrCoop.Client
             }
 
             CleanupBridgeFiles(true);
-            Logger.Info($"[LsrCoop.Client] world snapshot received: world={snapshot.WorldId}, profiles={snapshot.Profiles?.Count ?? 0}, activeHost={activeHostProfileId}, reason={snapshot.Reason}");
+            Logger.Info($"[LsrCoop.Client] world snapshot received: world={snapshot.WorldId}, profiles={snapshot.Profiles?.Count ?? 0}, activeHost={activeHostProfileId}, readyProfiles={connectedCharacterReadyProfileCount}, allowGlobalTimeSkip={allowGlobalTimeSkip}, reason={snapshot.Reason}");
             ReportBridgeDiagnostics();
         }
 
@@ -1456,6 +1460,8 @@ namespace LsrCoop.Client
             activeHostProfileId = string.Empty;
             localRole = string.Empty;
             localCharacterReadyForSimulation = false;
+            connectedCharacterReadyProfileCount = 0;
+            allowGlobalTimeSkip = true;
             WriteBridgeState(false, false, string.Empty, string.Empty, string.Empty, false);
             InvokeLsrBridge("SetDisabled");
         }
@@ -2990,6 +2996,8 @@ namespace LsrCoop.Client
                 $"LocalProfileId={localProfileId ?? string.Empty}",
                 $"LocalRole={localRole ?? string.Empty}",
                 $"ActiveHostProfileId={activeHostProfileId ?? string.Empty}",
+                $"ConnectedCharacterReadyProfileCount={connectedCharacterReadyProfileCount.ToString(CultureInfo.InvariantCulture)}",
+                $"AllowGlobalTimeSkip={allowGlobalTimeSkip.ToString().ToLowerInvariant()}",
             };
 
             WriteAtomicBridgeFile(CoopBridgePaths.StartupFolder, StartupStateFileName, lines, Guid.NewGuid().ToString("N"));

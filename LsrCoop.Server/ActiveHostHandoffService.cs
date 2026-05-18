@@ -11,6 +11,9 @@ namespace LsrCoop.Server
         private readonly ActiveHostService activeHostService;
         private readonly EventRouter eventRouter;
         private readonly Action<string> info;
+        private bool hasCalendarPolicySnapshot;
+        private int lastConnectedCharacterReadyProfileCount;
+        private bool lastAllowGlobalTimeSkip;
 
         public ActiveHostHandoffService(WorldProfileStoreService worldProfileStoreService, PlayerRegistrationService playerRegistrationService, ActiveHostService activeHostService, EventRouter eventRouter, Action<string> info)
         {
@@ -27,10 +30,16 @@ namespace LsrCoop.Server
         {
             string previousHostId = activeHostService.ActiveHostId;
             activeHostService.Evaluate(reason, playerRegistrationService.ClientStatuses);
-            if (!SameHost(previousHostId, activeHostService.ActiveHostId))
+            bool activeHostChanged = !SameHost(previousHostId, activeHostService.ActiveHostId);
+            bool calendarPolicyChanged = HasCalendarPolicyChanged();
+            if (activeHostChanged)
             {
                 SavePersistentState(reason);
                 DiscardTemporaryLiveState(reason);
+                BroadcastWorldSnapshot(reason);
+            }
+            else if (calendarPolicyChanged)
+            {
                 BroadcastWorldSnapshot(reason);
             }
         }
@@ -49,8 +58,9 @@ namespace LsrCoop.Server
         {
             LastHandoffReason = reason ?? string.Empty;
             CoopWorldSnapshotDto snapshot = CreateWorldSnapshot(reason);
+            RememberCalendarPolicy(snapshot);
             eventRouter.Broadcast(playerRegistrationService.ConnectedClients, EventRouter.WorldSnapshotEventHash, new object[] { JsonSerializer.Serialize(snapshot) });
-            info?.Invoke($"[LsrCoop.Server] world snapshot broadcast: world={snapshot.WorldId}, profiles={snapshot.Profiles.Count}, activeHost={snapshot.ActiveHostProfileId ?? "none"}, reason={reason}");
+            info?.Invoke($"[LsrCoop.Server] world snapshot broadcast: world={snapshot.WorldId}, profiles={snapshot.Profiles.Count}, activeHost={snapshot.ActiveHostProfileId ?? "none"}, readyProfiles={snapshot.ConnectedCharacterReadyProfileCount}, allowGlobalTimeSkip={snapshot.AllowGlobalTimeSkip}, reason={reason}");
         }
 
         private void SavePersistentState(string reason)
@@ -66,6 +76,7 @@ namespace LsrCoop.Server
 
         private CoopWorldSnapshotDto CreateWorldSnapshot(string reason)
         {
+            int connectedReadyProfiles = CountConnectedCharacterReadyProfiles();
             CoopWorldSnapshotDto snapshot = new CoopWorldSnapshotDto
             {
                 StoreVersion = worldProfileStoreService.Store?.StoreVersion ?? "1",
@@ -73,6 +84,8 @@ namespace LsrCoop.Server
                 ActiveHostProfileId = activeHostService.ActiveHostId ?? string.Empty,
                 Reason = reason ?? string.Empty,
                 Roles = worldProfileStoreService.Store?.Roles,
+                ConnectedCharacterReadyProfileCount = connectedReadyProfiles,
+                AllowGlobalTimeSkip = connectedReadyProfiles <= 1,
                 WorldFlags = worldProfileStoreService.Store?.WorldFlags?.ToList() ?? new System.Collections.Generic.List<string>(),
                 LongTermLsrRecords = worldProfileStoreService.Store?.LongTermLsrRecords?.ToList() ?? new System.Collections.Generic.List<string>(),
             };
@@ -100,6 +113,31 @@ namespace LsrCoop.Server
             }
 
             return snapshot;
+        }
+
+        private bool HasCalendarPolicyChanged()
+        {
+            int connectedReadyProfiles = CountConnectedCharacterReadyProfiles();
+            bool allowGlobalTimeSkip = connectedReadyProfiles <= 1;
+            return hasCalendarPolicySnapshot
+                && (connectedReadyProfiles != lastConnectedCharacterReadyProfileCount || allowGlobalTimeSkip != lastAllowGlobalTimeSkip);
+        }
+
+        private int CountConnectedCharacterReadyProfiles()
+        {
+            return playerRegistrationService.ClientStatuses.Values.Count(x => x?.Client != null && x.CharacterReadyForSimulation);
+        }
+
+        private void RememberCalendarPolicy(CoopWorldSnapshotDto snapshot)
+        {
+            if (snapshot == null)
+            {
+                return;
+            }
+
+            hasCalendarPolicySnapshot = true;
+            lastConnectedCharacterReadyProfileCount = snapshot.ConnectedCharacterReadyProfileCount;
+            lastAllowGlobalTimeSkip = snapshot.AllowGlobalTimeSkip;
         }
 
         private bool SameHost(string left, string right)
