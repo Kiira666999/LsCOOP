@@ -127,5 +127,16 @@
       <FullNumber>3235552356</FullNumber>
       <Number>5552356</Number>
     </TaxiServiceContact>
+    <TaxiServiceContact>
+      <Name>Private Hire LTD</Name>
+      <Index>0</Index>
+      <Active>true</Active>
+      <DialTimeout>3000</DialTimeout>
+      <RandomizeDialTimeout>true</RandomizeDialTimeout>
+      <IconName>CHAR_PA_MALE</IconName>
+      <IsDefault>true</IsDefault>
+      <FullNumber>08100001066</FullNumber>
+      <Number>1066</Number>
+    </TaxiServiceContact>
   </TaxiServiceContacts>
 </PossibleContacts>

@@ -1,0 +1,36 @@
+<PossibleOrganizations xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <GeneralOrganizations />
+  <TaxiFirms>
+    <TaxiFirm>
+      <ID>PrivateHireLTD</ID>
+      <FullName>Private Hire LTD.</FullName>
+      <ShortName>Private Hire Cars</ShortName>
+      <MemberName>Personal Driver</MemberName>
+      <Description>Taking you from A to B</Description>
+      <BannerImagePath>stores\privatehireltd.png</BannerImagePath>
+      <ContactName>Private Hire LTD</ContactName>
+      <ColorPrefix>~y~</ColorPrefix>
+      <ColorString>Yellow</ColorString>
+      <LicensePlatePrefix>LTD </LicensePlatePrefix>
+      <HeadDataGroupID>AllHeads</HeadDataGroupID>
+      <PersonnelID>PrivateHirePeds</PersonnelID>
+      <LessLethalWeaponsID>MeleeWeapons</LessLethalWeaponsID>
+      <SideArmsID>TaxiSidearms</SideArmsID>
+      <LongGunsID>TaxiLongGuns</LongGunsID>
+      <VehiclesID>PrivateHireVehicles</VehiclesID>
+      <IsDefault>true</IsDefault>
+      <BaseFare>100</BaseFare>
+      <PricePerMile>40</PricePerMile>
+      <FastSpeedFee>28</FastSpeedFee>
+      <CrazySpeedFee>300</CrazySpeedFee>
+      <FightPercentage>35</FightPercentage>
+      <FightPolicePercentage>5</FightPolicePercentage>
+      <AlwaysFightPolicePercentage>1</AlwaysFightPolicePercentage>
+      <CallPolicePercentage>35</CallPolicePercentage>
+      <CallPoliceForSeriousCrimesPercentage>70</CallPoliceForSeriousCrimesPercentage>
+      <PercentageWithLongGuns>5</PercentageWithLongGuns>
+      <PercentageWithSidearms>30</PercentageWithSidearms>
+      <PercentageWithMelee>10</PercentageWithMelee>
+    </TaxiFirm>
+  </TaxiFirms>
+</PossibleOrganizations>

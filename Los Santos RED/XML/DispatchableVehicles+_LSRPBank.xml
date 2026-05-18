@@ -1,0 +1,38 @@
+<ArrayOfDispatchableVehicleGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DispatchableVehicleGroup>
+    <DispatchableVehicleGroupID>BankVehicles</DispatchableVehicleGroupID>
+    <DispatchableVehicles>
+      <DispatchableVehicle>
+        <ModelName>Washington</ModelName>
+        <RequiredPedGroup />
+        <GroupName />
+        <MinOccupants>1</MinOccupants>
+        <MaxOccupants>4</MaxOccupants>
+        <AmbientSpawnChance>10</AmbientSpawnChance>
+        <WantedSpawnChance>10</WantedSpawnChance>
+        <MinWantedLevelSpawn>0</MinWantedLevelSpawn>
+        <MaxWantedLevelSpawn>6</MaxWantedLevelSpawn>
+        <AdditionalSpawnChanceOffRoad>0</AdditionalSpawnChanceOffRoad>
+        <RequiredPrimaryColorID>-1</RequiredPrimaryColorID>
+        <RequiredSecondaryColorID>-1</RequiredSecondaryColorID>
+        <RequiredInteriorColorID>-1</RequiredInteriorColorID>
+        <RequiredDashColorID>-1</RequiredDashColorID>
+        <RequiredWheelColorID>-1</RequiredWheelColorID>
+        <RequiredLiveries />
+        <VehicleExtras />
+        <VehicleMods />
+        <MaxRandomDirtLevel>5</MaxRandomDirtLevel>
+        <ForcedPlateType>-1</ForcedPlateType>
+        <RequiresDLC>false</RequiresDLC>
+        <FirstPassengerIndex>0</FirstPassengerIndex>
+        <RequiredGroupIsDriverOnly>false</RequiredGroupIsDriverOnly>
+        <MatchDashColorToBaseColor>false</MatchDashColorToBaseColor>
+        <MatchInteriorColorToBaseColor>false</MatchInteriorColorToBaseColor>
+        <WheelType>-1</WheelType>
+        <SetRandomCustomization>false</SetRandomCustomization>
+        <RandomCustomizationPercentage>0</RandomCustomizationPercentage>
+      </DispatchableVehicle>
+	  </DispatchableVehicles>
+    <DispatchbleVehicleGroupType>Other</DispatchbleVehicleGroupType>
+  </DispatchableVehicleGroup>
+</ArrayOfDispatchableVehicleGroup>
