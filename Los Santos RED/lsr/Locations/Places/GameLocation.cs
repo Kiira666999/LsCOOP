@@ -495,6 +495,12 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
         return toreturn;
 
     }
+    public bool ShouldShowOnDirectory(ISettingsProvideable settings)
+    {
+        return ShowsOnDirectory
+            || settings?.SettingsManager?.WorldSettings?.ShowAllLocationsOnDirectory == true
+            || ShouldShowDiscoveredOnDirectory(settings);
+    }
     public virtual string TaxiInfo(int currentHour, float distanceTo, TaxiFirm taxiFirm)
     {
         string toReturn = Description;
@@ -1232,6 +1238,7 @@ public class GameLocation : ILocationDispatchable, IPayoutDisbursable
     private bool ShouldDeleteBlipOnDeactivate(ISettingsProvideable settings) => !(settings?.SettingsManager?.WorldSettings?.ShowAllBlipsOnMap == true) && !ShouldShowDiscoveredBlip(settings);
     private bool ShouldHaveGlobalBlip(ISettingsProvideable settings) => IsBlipEnabled || ShouldShowDiscoveredBlip(settings);
     private bool ShouldShowDiscoveredBlip(ISettingsProvideable settings) => IsDiscoveryCandidate(settings) && IsDiscovered;
+    private bool ShouldShowDiscoveredOnDirectory(ISettingsProvideable settings) => IsDiscoveryCandidate(settings) && IsDiscovered;
     private bool IsDiscoveryCandidate(ISettingsProvideable settings)
     {
         return settings?.SettingsManager?.WorldSettings?.EnableLocationDiscovery == true
