@@ -49,6 +49,15 @@ public class GangRelationships
             GangReputations.Add(new GangReputation(gang, Player));
             existingGangIds.Add(gang.ID);
         }
+
+        ApplyDenAccessFromCurrentRelationships();
+    }
+    private void ApplyDenAccessFromCurrentRelationships()
+    {
+        foreach (GangReputation gangReputation in GangReputations.Where(x => x?.Gang != null))
+        {
+            Player.SetDenStatus(gangReputation.Gang, gangReputation.IsMember || gangReputation.GangRelationship == GangRespect.Friendly);
+        }
     }
     public void Update()
     {

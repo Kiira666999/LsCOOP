@@ -54,7 +54,7 @@
     <FightPercentage>40</FightPercentage>
     <FightPolicePercentage>1</FightPolicePercentage>
     <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
-    <DrugDealerPercentage>100</DrugDealerPercentage>
+    <DrugDealerPercentage>30</DrugDealerPercentage>
     <DealerMenuGroup>SLSTDealer1</DealerMenuGroup>
     <AmbientMemberMoneyMin>1</AmbientMemberMoneyMin>
     <AmbientMemberMoneyMax>10</AmbientMemberMoneyMax>
@@ -160,7 +160,7 @@
     <FightPercentage>40</FightPercentage>
     <FightPolicePercentage>1</FightPolicePercentage>
     <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
-    <DrugDealerPercentage>100</DrugDealerPercentage>
+    <DrugDealerPercentage>30</DrugDealerPercentage>
     <DealerMenuGroup>ELSTDealer1</DealerMenuGroup>
     <AmbientMemberMoneyMin>1</AmbientMemberMoneyMin>
     <AmbientMemberMoneyMax>10</AmbientMemberMoneyMax>
@@ -266,7 +266,7 @@
     <FightPercentage>1</FightPercentage>
     <FightPolicePercentage>0</FightPolicePercentage>
     <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
-    <DrugDealerPercentage>100</DrugDealerPercentage>
+    <DrugDealerPercentage>30</DrugDealerPercentage>
     <DealerMenuGroup>Customer</DealerMenuGroup>
     <AmbientMemberMoneyMin>1</AmbientMemberMoneyMin>
     <AmbientMemberMoneyMax>50</AmbientMemberMoneyMax>
@@ -369,7 +369,7 @@
     <FightPercentage>80</FightPercentage>
     <FightPolicePercentage>1</FightPolicePercentage>
     <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
-    <DrugDealerPercentage>100</DrugDealerPercentage>
+    <DrugDealerPercentage>30</DrugDealerPercentage>
     <DealerMenuGroup>DwayneForge</DealerMenuGroup>
     <AmbientMemberMoneyMin>1</AmbientMemberMoneyMin>
     <AmbientMemberMoneyMax>30</AmbientMemberMoneyMax>
@@ -475,7 +475,7 @@
     <FightPercentage>80</FightPercentage>
     <FightPolicePercentage>1</FightPolicePercentage>
     <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
-    <DrugDealerPercentage>100</DrugDealerPercentage>
+    <DrugDealerPercentage>30</DrugDealerPercentage>
     <DealerMenuGroup>DizzyD</DealerMenuGroup>
     <AmbientMemberMoneyMin>1</AmbientMemberMoneyMin>
     <AmbientMemberMoneyMax>30</AmbientMemberMoneyMax>
@@ -581,7 +581,7 @@
     <FightPercentage>90</FightPercentage>
     <FightPolicePercentage>2</FightPolicePercentage>
     <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
-    <DrugDealerPercentage>100</DrugDealerPercentage>
+    <DrugDealerPercentage>30</DrugDealerPercentage>
     <DealerMenuGroup>Caesars</DealerMenuGroup>
     <AmbientMemberMoneyMin>1</AmbientMemberMoneyMin>
     <AmbientMemberMoneyMax>40</AmbientMemberMoneyMax>
@@ -687,7 +687,7 @@
     <FightPercentage>90</FightPercentage>
     <FightPolicePercentage>2</FightPolicePercentage>
     <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
-    <DrugDealerPercentage>100</DrugDealerPercentage>
+    <DrugDealerPercentage>30</DrugDealerPercentage>
     <DealerMenuGroup>LittleJacob</DealerMenuGroup>
     <AmbientMemberMoneyMin>1</AmbientMemberMoneyMin>
     <AmbientMemberMoneyMax>40</AmbientMemberMoneyMax>
@@ -793,7 +793,7 @@
     <FightPercentage>95</FightPercentage>
     <FightPolicePercentage>3</FightPolicePercentage>
     <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
-    <DrugDealerPercentage>100</DrugDealerPercentage>
+    <DrugDealerPercentage>30</DrugDealerPercentage>
     <DealerMenuGroup>HyunSu</DealerMenuGroup>
     <AmbientMemberMoneyMin>1</AmbientMemberMoneyMin>
     <AmbientMemberMoneyMax>50</AmbientMemberMoneyMax>
@@ -899,7 +899,7 @@
     <FightPercentage>95</FightPercentage>
     <FightPolicePercentage>4</FightPolicePercentage>
     <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
-    <DrugDealerPercentage>100</DrugDealerPercentage>
+    <DrugDealerPercentage>30</DrugDealerPercentage>
     <DealerMenuGroup>LongYang</DealerMenuGroup>
     <AmbientMemberMoneyMin>1</AmbientMemberMoneyMin>
     <AmbientMemberMoneyMax>60</AmbientMemberMoneyMax>
@@ -1005,7 +1005,7 @@
     <FightPercentage>100</FightPercentage>
     <FightPolicePercentage>10</FightPolicePercentage>
     <AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage>
-    <DrugDealerPercentage>100</DrugDealerPercentage>
+    <DrugDealerPercentage>30</DrugDealerPercentage>
     <DealerMenuGroup>Professionals</DealerMenuGroup>
     <AmbientMemberMoneyMin>1</AmbientMemberMoneyMin>
     <AmbientMemberMoneyMax>60</AmbientMemberMoneyMax>

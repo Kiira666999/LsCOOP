@@ -53,7 +53,7 @@
     <FightPercentage>70</FightPercentage>
     <FightPolicePercentage>30</FightPolicePercentage>
     <AlwaysFightPolicePercentage>5</AlwaysFightPolicePercentage>
-    <DrugDealerPercentage>100</DrugDealerPercentage>
+    <DrugDealerPercentage>30</DrugDealerPercentage>
     <DealerMenuGroup>CokeDealerMenu</DealerMenuGroup>
     <AmbientMemberMoneyMin>100</AmbientMemberMoneyMin>
     <AmbientMemberMoneyMax>400</AmbientMemberMoneyMax>
