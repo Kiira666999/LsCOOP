@@ -55,6 +55,7 @@ public class Respawning// : IRespawning
     private int TodaysPayment;
     private bool HasIllegalWeapons;
     private bool HasIllegalItems;
+    private bool HasRevokedCCWLicense;
 
     public Respawning(ITimeControllable time, IEntityProvideable world, IRespawnable currentPlayer, IWeapons weapons, IPlacesOfInterest placesOfInterest, ISettingsProvideable settings, IPoliceRespondable policeRespondable, ISeatAssignable seatAssignable, IModItems modItems)
     {
@@ -484,6 +485,7 @@ public class Respawning// : IRespawning
     public void SurrenderToPolice(ILocationRespawnable respawnableLocation)
     {
         FadeOut();
+        HasRevokedCCWLicense = false;
         if (respawnableLocation == null)
         {
             respawnableLocation = PlacesOfInterest.BustedRespawnLocations().ToList().OrderBy(x => Game.LocalPlayer.Character.Position.DistanceTo2D(x.EntrancePosition)).FirstOrDefault();
@@ -495,6 +497,7 @@ public class Respawning// : IRespawning
             RemoveIllegalWeapons();
         }    
         ImpoundNotification = ImpoundVehicles();
+        HasRevokedCCWLicense = RevokeCCWLicenseForCurrentArrest();
         SetCriminalHistoryClearReason("ArrestResolved");
         ResetPlayer(true, true, false, false, true, false, true,false, false, false, false, false,true, true, false, true, true, false,false, false, true, false);//if you pass clear weapons here it will just remover everything anwyays
         Player.PlayerTasks.OnStandardRespawn();
@@ -567,6 +570,50 @@ public class Respawning// : IRespawning
     private void RemoveIllegalWeapons()
     {
         Player.WeaponEquipment.RemoveIllegalWeapons(Player.Licenses.HasValidCCWLicense(Time));     
+    }
+    private bool RevokeCCWLicenseForCurrentArrest()
+    {
+        if (!Settings.SettingsManager.RespawnSettings.RevokeCCWLicenseOnSurrender || Player?.Licenses?.HasCCWLicense != true)
+        {
+            return false;
+        }
+
+        List<string> configuredCrimeIDs = Settings.SettingsManager.RespawnSettings.CCWLicenseRevocationCrimeIDs;
+        if (configuredCrimeIDs == null || !configuredCrimeIDs.Any())
+        {
+            return false;
+        }
+
+        HashSet<string> revocationCrimeIDs = new HashSet<string>(configuredCrimeIDs.Where(x => !string.IsNullOrWhiteSpace(x)), StringComparer.OrdinalIgnoreCase);
+        if (!revocationCrimeIDs.Any())
+        {
+            return false;
+        }
+
+        CrimeEvent revokingCrime = CurrentArrestCrimes()
+            .Where(x => x?.AssociatedCrime?.ID != null && revocationCrimeIDs.Contains(x.AssociatedCrime.ID))
+            .OrderBy(x => x.AssociatedCrime.Priority)
+            .FirstOrDefault();
+        if (revokingCrime == null)
+        {
+            return false;
+        }
+
+        Player.Licenses.CCWLicense = null;
+        EntryPoint.WriteToConsole($"CCW license revoked after surrender CrimeID:{revokingCrime.AssociatedCrime.ID} Crime:{revokingCrime.AssociatedCrime.Name}", 3);
+        return true;
+    }
+    private IEnumerable<CrimeEvent> CurrentArrestCrimes()
+    {
+        PoliceResponse policeResponse = Player?.PoliceResponse;
+        if (policeResponse == null)
+        {
+            return Enumerable.Empty<CrimeEvent>();
+        }
+
+        IEnumerable<CrimeEvent> observedCrimes = policeResponse.CrimesObserved ?? Enumerable.Empty<CrimeEvent>();
+        IEnumerable<CrimeEvent> reportedCrimes = policeResponse.CrimesReported ?? Enumerable.Empty<CrimeEvent>();
+        return observedCrimes.Concat(reportedCrimes);
     }
     private void FadeIn()
     {
@@ -819,6 +866,10 @@ public class Respawning// : IRespawning
         else if (HasIllegalWeapons)
         {
             BailReport += $"~n~~r~Illicit Weapons Removed~s~";
+        }
+        if (HasRevokedCCWLicense)
+        {
+            BailReport += $"~n~~r~CCW License Revoked~s~";
         }
 
         bool LesterHelp = RandomItems.RandomPercent(Settings.SettingsManager.RespawnSettings.LesterBailHelpPercent);

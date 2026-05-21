@@ -225,6 +225,19 @@
     <PoliceBailDurationCiviliansKilledMultiplier>2</PoliceBailDurationCiviliansKilledMultiplier>
     <ClearIllicitInventoryOnSurrender>true</ClearIllicitInventoryOnSurrender>
     <RemoveWeaponsOnSurrender>true</RemoveWeaponsOnSurrender>
+    <RevokeCCWLicenseOnSurrender>true</RevokeCCWLicenseOnSurrender>
+    <CCWLicenseRevocationCrimeIDs>
+      <string>KillingPolice</string>
+      <string>FiringWeaponNearPolice</string>
+      <string>AimingWeaponAtPolice</string>
+      <string>HurtingPolice</string>
+      <string>BrandishingHeavyWeapon</string>
+      <string>FiringWeapon</string>
+      <string>FiringSilencedWeapon</string>
+      <string>BrandishingWeapon</string>
+      <string>AssaultingWithDeadlyWeapon</string>
+      <string>DealingGuns</string>
+    </CCWLicenseRevocationCrimeIDs>
     <DeductHospitalFee>true</DeductHospitalFee>
     <HospitalStayDailyFee>5000</HospitalStayDailyFee>
     <HospitalStayMinDays>7</HospitalStayMinDays>

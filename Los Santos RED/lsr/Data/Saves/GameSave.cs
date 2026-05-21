@@ -297,7 +297,11 @@ namespace LosSantosRED.lsr.Data
             }
             if (player.Licenses.HasCCWLicense)
             {
-                CCWLicense = new CCWLicense() { ExpirationDate = player.Licenses.CCWLicense.ExpirationDate, IssueDate = player.Licenses.CCWLicense.IssueDate, IssueStateID = player.Licenses.DriversLicense.IssueStateID };
+                CCWLicense = new CCWLicense() { ExpirationDate = player.Licenses.CCWLicense.ExpirationDate, IssueDate = player.Licenses.CCWLicense.IssueDate, IssueStateID = player.Licenses.CCWLicense.IssueStateID };
+            }
+            else
+            {
+                CCWLicense = null;
             }
             if (player.Licenses.HasPilotsLicense)
             {

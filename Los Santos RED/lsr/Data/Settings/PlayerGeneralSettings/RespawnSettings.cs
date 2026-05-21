@@ -61,6 +61,10 @@ public class RespawnSettings : ISettingsDefaultable
     public bool ClearIllicitInventoryOnSurrender { get; set; }
     [Description("Remove weapons from player after surrendering")]
     public bool RemoveWeaponsOnSurrender { get; set; }
+    [Description("If enabled, the player's CCW license is revoked after surrendering to police when the arrest includes a configured crime.")]
+    public bool RevokeCCWLicenseOnSurrender { get; set; }
+    [Description("Crime IDs that revoke the player's CCW license when the player surrenders to police.")]
+    public List<string> CCWLicenseRevocationCrimeIDs { get; set; } = new List<string>();
     [Description("Deduct money on respawn at hospital")]
     public bool DeductHospitalFee { get; set; }
     [Description("Amount to deduct per day spent in the hospital")]
@@ -151,6 +155,20 @@ public class RespawnSettings : ISettingsDefaultable
         PermanentDeathMode = false;
         ClearIllicitInventoryOnDeath = true;
         ClearIllicitInventoryOnSurrender = true;
+        RevokeCCWLicenseOnSurrender = true;
+        CCWLicenseRevocationCrimeIDs = new List<string>()
+        {
+            StaticStrings.KillingPoliceCrimeID,
+            StaticStrings.FiringWeaponNearPoliceCrimeID,
+            StaticStrings.AimingWeaponAtPoliceCrimeID,
+            StaticStrings.HurtingPoliceCrimeID,
+            StaticStrings.BrandishingHeavyWeaponCrimeID,
+            StaticStrings.FiringWeaponCrimeID,
+            StaticStrings.FiringSilencedWeaponCrimeID,
+            StaticStrings.BrandishingWeaponCrimeID,
+            StaticStrings.AssaultingWithDeadlyWeaponCrimeID,
+            StaticStrings.DealingGunsCrimeID,
+        };
         AllowBookingSurrender = false;
         //ForceBooking = false;
         UseCustomCameraWhenBooking = true;

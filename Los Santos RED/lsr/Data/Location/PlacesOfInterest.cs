@@ -4792,7 +4792,7 @@ public class PlacesOfInterest : IPlacesOfInterest
             } },
             new GunStore(new Vector3(334.3036f, -1978.458f, 24.16728f), 49.9404f, "Guns #3", "Specializes in ~o~Sub-Machine Guns~s~","UndergroundWeaponShop3") {
                 IsEnabled = false,
-                MoneyToUnlock = 10000,
+                MoneyToUnlock = 200000,
                 ContactName = StaticStrings.UndergroundGunsContactName,
                 VendorPersonnelID = "GunshopPeds",
                 ParkingSpaces = new List<SpawnPlace>() {
@@ -4803,7 +4803,7 @@ public class PlacesOfInterest : IPlacesOfInterest
             } },
             new GunStore(new Vector3(-258.3577f, 6247.281f, 31.48922f), 314.4655f, "Guns #4", "Specializes in ~o~Assault Rifles~s~","UndergroundWeaponShop4") {
                 IsEnabled = false,
-                MoneyToUnlock = 20000, ContactName = StaticStrings.UndergroundGunsContactName,
+                MoneyToUnlock = 350000, ContactName = StaticStrings.UndergroundGunsContactName,
                 VendorPersonnelID = "GunshopPeds",
                 ParkingSpaces = new List<SpawnPlace>() {
                     new SpawnPlace(new Vector3(-258.1833f, 6250.695f, 31.48922f),25.17568f),
@@ -4813,7 +4813,7 @@ public class PlacesOfInterest : IPlacesOfInterest
                 } },
             new GunStore(new Vector3(1673.425f, 4957.921f, 42.34893f), 227.3988f, "Guns #5", "Specializes in ~o~Heavy Weapons~s~","UndergroundWeaponShop5") {
                 IsEnabled = false,
-                MoneyToUnlock = 35000,
+                MoneyToUnlock = 500000,
                 ContactName = StaticStrings.UndergroundGunsContactName,
                 VendorPersonnelID = "GunshopPeds",
                 ParkingSpaces = new List<SpawnPlace>() {
