@@ -17,6 +17,10 @@ public class CriminalHistorySettings : ISettingsDefaultable
     public float MinimumSearchRadius { get; set; }
     [Description("Additional radius added for each wanted level. Ex. At SearchRadiusIncrement = 400 a 3 star wanted level would result in a 1.2 km bolo/apb radius ")]
     public float SearchRadiusIncrement { get; set; }
+    [Description("Controls expiration behavior for APBs, defined as criminal history containing at least one crime with ResultsInLethalForce=true. Normal preserves existing behavior, Extended multiplies existing expiration timers, UntilResolved disables automatic expiration until a resolving clear path.")]
+    public ApbPersistenceMode ApbPersistenceMode { get; set; }
+    [Description("Multiplier applied to existing APB real-time and calendar-time expiration when ApbPersistenceMode is Extended.")]
+    public float ExtendedApbExpirationMultiplier { get; set; }
     public CriminalHistorySettings()
     {
         SetDefault();
@@ -28,6 +32,15 @@ public class CriminalHistorySettings : ISettingsDefaultable
         CreateBlip = true;
         MinimumSearchRadius = 400f;
         SearchRadiusIncrement = 400f;
+        ApbPersistenceMode = ApbPersistenceMode.UntilResolved;
+        ExtendedApbExpirationMultiplier = 5.0f;
     }
 
+}
+
+public enum ApbPersistenceMode
+{
+    Normal = 0,
+    Extended = 1,
+    UntilResolved = 2,
 }

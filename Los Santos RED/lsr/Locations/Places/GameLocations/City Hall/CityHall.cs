@@ -302,6 +302,7 @@ public class CityHall : GameLocation
                 {
                     Player.BankAccounts.GiveMoney(-1 * NameChangeFee, true);
                     Player.ChangeName(NewName);
+                    (Player as ITargetable)?.CriminalHistory?.ResolvePersistentApb("IdentityChanged");
                     ChangeNameMenu.Description = NameDescription();
                     PlaySuccessSound();
                     DisplayMessage("~g~Purchase", $"You have successfully changed your name to {NewName}");

@@ -135,6 +135,7 @@ public class UI : IMenuProvideable
     public void Dispose()
     {
         IsDisposed = true;
+        PlayerInfoMenu.Dispose();
         ActionPopUpMenu.Dispose();
         TimerBarController.Dispose();
         MarkerManager.Dispose();

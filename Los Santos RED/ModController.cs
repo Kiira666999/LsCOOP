@@ -10,6 +10,7 @@ using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Input;
 
@@ -40,6 +41,8 @@ namespace LosSantosRED.lsr
         public CoopPermissionService CoopPermissionService { get; private set; }
         public ModDataFileManager ModDataFileManager { get; private set; }
         private WeatherManager WeatherManager;
+        private int disposeStarted;
+        private int crashUnloadStarted;
 
         public ModController()
         {
@@ -56,6 +59,7 @@ namespace LosSantosRED.lsr
         public bool IsClientMode { get; private set; }
         public void Setup()
         {
+            ResetUnloadState();
             IsRunning = true;
             IsBootstrapOnly = false;
             IsClientMode = false;
@@ -186,6 +190,7 @@ namespace LosSantosRED.lsr
         }
         public void SetupBootstrapOnly()
         {
+            ResetUnloadState();
             IsRunning = true;
             IsBootstrapOnly = true;
             IsClientMode = false;
@@ -225,6 +230,7 @@ namespace LosSantosRED.lsr
         }
         public void SetupClientMode()
         {
+            ResetUnloadState();
             IsRunning = true;
             IsBootstrapOnly = false;
             IsClientMode = true;
@@ -270,6 +276,7 @@ namespace LosSantosRED.lsr
         }
         public void SetupFileOnly()
         {
+            ResetUnloadState();
             while (Game.IsLoading)
             {
                 GameFiber.Yield();
@@ -279,20 +286,27 @@ namespace LosSantosRED.lsr
         }
         public void Dispose(bool restoreInitialPedModel = true)
         {
+            if (Interlocked.Exchange(ref disposeStarted, 1) == 1)
+            {
+                EntryPoint.WriteToConsole("Dispose skipped because Los Santos RED unload is already running.", 0);
+                return;
+            }
+
             IsRunning = false;
             IsClientMode = false;
-            CoopFullSimulationEntityDiagnostics.End();
-            CoopFullSimulationStartupWarmup.End();
-            Player?.Dispose();
-            World?.Dispose();
-            PedSwap?.Dispose(restoreInitialPedModel);
-            Dispatcher?.Dispose();
-            VanillaManager?.Dispose();
-            UI?.Dispose();
-            Time?.Dispose();
-            Weather?.Dispose();
-            Debug?.Dispose();
-            WeatherManager?.Dispose();
+            IsBootstrapOnly = false;
+            DisposeComponent("CoopFullSimulationEntityDiagnostics", CoopFullSimulationEntityDiagnostics.End);
+            DisposeComponent("CoopFullSimulationStartupWarmup", CoopFullSimulationStartupWarmup.End);
+            DisposeComponent("UI", () => UI?.Dispose());
+            DisposeComponent("Player", () => Player?.Dispose());
+            DisposeComponent("World", () => World?.Dispose());
+            DisposeComponent("PedSwap", () => PedSwap?.Dispose(restoreInitialPedModel));
+            DisposeComponent("Dispatcher", () => Dispatcher?.Dispose());
+            DisposeComponent("VanillaManager", () => VanillaManager?.Dispose());
+            DisposeComponent("Time", () => Time?.Dispose());
+            DisposeComponent("Weather", () => Weather?.Dispose());
+            DisposeComponent("Debug", () => Debug?.Dispose());
+            DisposeComponent("WeatherManager", () => WeatherManager?.Dispose());
 
 
 
@@ -301,8 +315,30 @@ namespace LosSantosRED.lsr
         }
         public void CrashUnload()
         {
+            if (Interlocked.Exchange(ref crashUnloadStarted, 1) == 1)
+            {
+                EntryPoint.WriteToConsole("CrashUnload skipped because Los Santos RED crash unload is already running.", 0);
+                return;
+            }
+
             DisplayCrashMessage();
             Dispose();
+        }
+        private void ResetUnloadState()
+        {
+            disposeStarted = 0;
+            crashUnloadStarted = 0;
+        }
+        private void DisposeComponent(string name, Action disposeAction)
+        {
+            try
+            {
+                disposeAction?.Invoke();
+            }
+            catch (Exception ex)
+            {
+                EntryPoint.WriteToConsole($"Dispose {name} Error: {ex.Message} : {ex.StackTrace}", 0);
+            }
         }
         private void SetTaskGroups()
         {
@@ -515,8 +551,7 @@ namespace LosSantosRED.lsr
                     catch (Exception e)
                     {
                         EntryPoint.WriteToConsole("Error: " + e.Message + " : " + e.StackTrace, 0);
-                        DisplayCrashMessage();
-                        Dispose();
+                        CrashUnload();
                     }
                 }, $"Run Logic {modTaskGroup.Name}");
             } 
@@ -540,8 +575,7 @@ namespace LosSantosRED.lsr
                 catch (Exception e)
                 {
                     EntryPoint.WriteToConsole("Error: " + e.Message + " : " + e.StackTrace, 0);
-                    DisplayCrashMessage();
-                    Dispose();
+                    CrashUnload();
                 }
             }, "Run Input Logic");
 
@@ -561,8 +595,7 @@ namespace LosSantosRED.lsr
                 catch (Exception e)
                 {
                     EntryPoint.WriteToConsole("Error: " + e.Message + " : " + e.StackTrace, 0);
-                    DisplayCrashMessage();
-                    Dispose();
+                    CrashUnload();
                 }
             }, "Run Vanilla Manager Logic");
         }
@@ -669,8 +702,7 @@ namespace LosSantosRED.lsr
                 catch (Exception e)
                 {
                     EntryPoint.WriteToConsole("Error: " + e.Message + " : " + e.StackTrace, 0);
-                    DisplayCrashMessage();
-                    Dispose();
+                    CrashUnload();
                 }
             }, "Run UI Logic");
             GameFiber.StartNew(delegate
@@ -689,8 +721,7 @@ namespace LosSantosRED.lsr
                 catch (Exception e)
                 {
                     EntryPoint.WriteToConsole("Error: " + e.Message + " : " + e.StackTrace, 0);
-                    DisplayCrashMessage();
-                    Dispose();
+                    CrashUnload();
                 }
             }, "Run UI Logic 2");
             GameFiber.StartNew(delegate
@@ -711,8 +742,7 @@ namespace LosSantosRED.lsr
                 catch (Exception e)
                 {
                     EntryPoint.WriteToConsole("Error: " + e.Message + " : " + e.StackTrace, 0);
-                    DisplayCrashMessage();
-                    Dispose();
+                    CrashUnload();
                 }
             }, "Run UI Logic 3");
         }
@@ -733,9 +763,8 @@ namespace LosSantosRED.lsr
                 }
                 catch (Exception e)
                 {
-                    Game.DisplayNotification("CHAR_BLANK_ENTRY", "CHAR_BLANK_ENTRY", "~o~Error", "Los Santos ~r~RED", "Los Santos ~r~RED ~s~has crashed and needs to be restarted");
                     EntryPoint.WriteToConsole("Error: " + e.Message + " : " + e.StackTrace, 0);
-                    Dispose();
+                    CrashUnload();
                 }
             }, "Run Debug Logic");
         }

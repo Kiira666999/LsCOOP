@@ -9,8 +9,10 @@ using System.Linq;
 
 public class GroupManager
 {
+    private const string GangRecruitmentItemName = "Hire muscle";
     private int maxMembers => Settings.SettingsManager.GroupSettings.MaxGroupMembers;// 15;// Settings.SettingsManager.PlayerOtherSettings.UseVanillaGroup ? 7 : 15;
     private IGroupManageable Player;
+    private IInventoryable Inventoryable;
     private ISettingsProvideable Settings;
     private IEntityProvideable World;
     private IGangs Gangs;
@@ -30,9 +32,10 @@ public class GroupManager
     public bool NeverArmed { get; set; } = false;
     public bool AutoArmed { get; set; } = true;
 
-    public GroupManager(IGroupManageable player, ITargetable targetable, ISettingsProvideable settings, IEntityProvideable world, IGangs gangs, IWeapons weapons)
+    public GroupManager(IGroupManageable player, IInventoryable inventoryable, ITargetable targetable, ISettingsProvideable settings, IEntityProvideable world, IGangs gangs, IWeapons weapons)
     {
         Player = player;
+        Inventoryable = inventoryable;
         Settings = settings;
         World = world;
         Gangs = gangs;
@@ -123,7 +126,25 @@ public class GroupManager
     }
     public void TryRecruitLookedAtPed()
     {
-        Add(Player.CurrentLookedAtPed);
+        InventoryItem requiredItem = GetGangRecruitmentItem();
+        if (requiredItem == null)
+        {
+            Game.DisplayHelp($"Cannot Recruit: Requires {GangRecruitmentItemName}");
+            return;
+        }
+
+        GroupMember recruitedMember = Add(Player.CurrentLookedAtPed);
+        if (recruitedMember != null)
+        {
+            Inventoryable.Inventory.Remove(requiredItem.ModItem, 1);
+        }
+    }
+    private InventoryItem GetGangRecruitmentItem()
+    {
+        return Inventoryable?.Inventory?.ItemsList?
+            .Where(x => x?.ModItem != null && x.Amount > 0 && string.Equals(x.ModItem.Name, GangRecruitmentItemName, StringComparison.OrdinalIgnoreCase))
+            .OrderBy(x => x.RemainingPercent)
+            .FirstOrDefault();
     }
     public void UpdateAllTasking()
     {

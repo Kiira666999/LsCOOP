@@ -174,7 +174,7 @@ namespace Mod
                 gangTerritories, VehicleSeatDoorData, cellphones, vehicleRaces, this, DispatchableVehicles, DispatchablePeople, this);
             HealthManager = new HealthManager(this, Settings);
             ArmorManager = new ArmorManager(this, settings);
-            GroupManager = new GroupManager(this, this, Settings, World, gangs, Weapons);
+            GroupManager = new GroupManager(this, this, this, Settings, World, gangs, Weapons);
             MeleeManager = new MeleeManager(this, Settings);
             PlayerVoice = new PlayerVoice(this, Settings, Speeches);
             ClipsetManager = new ClipsetManager(this, Settings);

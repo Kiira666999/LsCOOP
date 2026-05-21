@@ -36,6 +36,10 @@ public class PlayerInfoMenu
 
     private ISettingsProvideable Settings;
     private ILocationTypes LocationTypes;
+    private bool isDisposed = true;
+    private bool isRawFrameRenderSubscribed;
+    private bool hasLoggedTextureDrawError;
+    private bool isTextureDrawingDisabled;
 
     public PlayerInfoMenu(IGangRelateable player, ITimeReportable time, IPlacesOfInterest placesOfInterest, IGangs gangs, IGangTerritories gangTerritories, IZones zones, 
         IStreets streets, IInteriors interiors, IEntityProvideable world, IShopMenus shopMenus, IModItems modItems, IWeapons weapons, ISettingsProvideable settings, ILocationTypes locationTypes)
@@ -57,6 +61,10 @@ public class PlayerInfoMenu
     }
     public void Setup()
     {
+        Dispose();
+        isDisposed = false;
+        hasLoggedTextureDrawError = false;
+        isTextureDrawingDisabled = false;
         tabView = new TabView("Los Santos ~r~RED~s~ Information");
         tabView.Tabs.Clear();
         tabView.ScrollTabs = true;
@@ -65,7 +73,7 @@ public class PlayerInfoMenu
             Game.IsPaused = false;
         };
 
-        Game.RawFrameRender += (s, e) => tabView.DrawTextures(e.Graphics);
+        SubscribeRawFrameRender();
 
 
         LocationsTab = new LocationsTab(Player, PlacesOfInterest, Time, Settings, tabView, World);
@@ -79,6 +87,10 @@ public class PlayerInfoMenu
     {
         try
         {
+            if (isDisposed || tabView == null)
+            {
+                return;
+            }
             if (!TabView.IsAnyPauseMenuVisible)
             {
                 if (!tabView.Visible)
@@ -102,14 +114,42 @@ public class PlayerInfoMenu
     }
     public void Update()
     {
+        if (isDisposed || tabView == null)
+        {
+            return;
+        }
         tabView.Update();
         if (tabView.Visible)
         {
             tabView.Money = Time.CurrentDateTime.ToString("ddd, dd MMM yyyy hh:mm tt");
         }
     }
+    public void Dispose()
+    {
+        if (isDisposed && !isRawFrameRenderSubscribed)
+        {
+            return;
+        }
+
+        bool wasVisible = tabView != null && tabView.Visible;
+        isDisposed = true;
+        UnsubscribeRawFrameRender();
+
+        if (tabView != null)
+        {
+            tabView.Visible = false;
+        }
+        if (wasVisible)
+        {
+            Game.IsPaused = false;
+        }
+    }
     private void UpdateMenu()
     {
+        if (isDisposed || tabView == null)
+        {
+            return;
+        }
         tabView.MoneySubtitle = Player.BankAccounts.TotalMoney.ToString("C0");
         tabView.Name = Player.PlayerName;
         tabView.Money = Time.CurrentTime;
@@ -124,5 +164,50 @@ public class PlayerInfoMenu
 
         tabView.RefreshIndex();
         tabView.ShowInstructionalButtons();
+    }
+    private void SubscribeRawFrameRender()
+    {
+        if (isRawFrameRenderSubscribed || isTextureDrawingDisabled)
+        {
+            return;
+        }
+        Game.RawFrameRender += OnRawFrameRender;
+        isRawFrameRenderSubscribed = true;
+    }
+    private void UnsubscribeRawFrameRender()
+    {
+        if (!isRawFrameRenderSubscribed)
+        {
+            return;
+        }
+        Game.RawFrameRender -= OnRawFrameRender;
+        isRawFrameRenderSubscribed = false;
+    }
+    private void OnRawFrameRender(object sender, GraphicsEventArgs e)
+    {
+        if (isDisposed || isTextureDrawingDisabled || tabView == null || !tabView.Visible)
+        {
+            return;
+        }
+
+        try
+        {
+            tabView.DrawTextures(e.Graphics);
+        }
+        catch (Exception ex)
+        {
+            if (!hasLoggedTextureDrawError)
+            {
+                hasLoggedTextureDrawError = true;
+                EntryPoint.WriteToConsole($"Player Info Menu Texture Draw Error: {ex.Message} STACKTRACE:{ex.StackTrace}", 0);
+            }
+            isTextureDrawingDisabled = true;
+            UnsubscribeRawFrameRender();
+            if (tabView != null)
+            {
+                tabView.Visible = false;
+            }
+            Game.IsPaused = false;
+        }
     }
 }

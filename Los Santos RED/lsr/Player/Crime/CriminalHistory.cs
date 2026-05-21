@@ -17,12 +17,15 @@ namespace LosSantosRED.lsr
     public class CriminalHistory
     {
         private BOLO CurrentHistory;
+        private BOLO ReactivatedPersistentApbHistory;
         private IPoliceRespondable Player;
         private ISettingsProvideable Settings;
         private ITimeReportable Time;
         private Blip CriminalHistoryBlip;
         private string NextCoopClearReason;
         private float PlayerDistanceToLastSeen = 9999f;
+        private bool HasLoggedApbExpirationExtended;
+        private bool HasLoggedApbExpirationSkipped;
         private Color blipColor => IsNearLastSeenLocation ? Color.Orange : Color.Yellow;
         public bool IsNearLastSeenLocation { get; set; }
         public bool IsWithinMarshalDistance => HasHistory && PlayerDistanceToLastSeen <= SearchRadius + Settings.SettingsManager.PoliceSettings.MarshalsAPBResponseExtraRadiusDistance;
@@ -32,10 +35,12 @@ namespace LosSantosRED.lsr
             Settings = settings;
             Time = time;
         }
+        private CriminalHistorySettings CriminalHistorySettings => Settings?.SettingsManager?.CriminalHistorySettings;
+        private ApbPersistenceMode CurrentApbPersistenceMode => CriminalHistorySettings?.ApbPersistenceMode ?? ApbPersistenceMode.Normal;
         private int LastWantedMaxLevel => CurrentHistory == null ? 0 : CurrentHistory.WantedLevel;
         private float SearchRadius => LastWantedMaxLevel > 0 ? LastWantedMaxLevel * Settings.SettingsManager.CriminalHistorySettings.SearchRadiusIncrement : Settings.SettingsManager.CriminalHistorySettings.MinimumSearchRadius;// 400f;
         public bool HasHistory => CurrentHistory != null;
-        public bool HasDeadlyHistory => CurrentHistory != null && CurrentHistory.Crimes.Any(x => x.AssociatedCrime.ResultsInLethalForce);
+        public bool HasDeadlyHistory => IsApb(CurrentHistory);
         public int MaxWantedLevel => LastWantedMaxLevel;
         public List<Crime> WantedCrimes => CurrentHistory?.Crimes.Select(x => x.AssociatedCrime).ToList();
         public void Dispose()
@@ -50,6 +55,9 @@ namespace LosSantosRED.lsr
             if (CrimesAssociated != null && PlaceLastSeen != Vector3.Zero && Player.PoliceResponse.HasPlayerBeenIdentified )
             {
                 CurrentHistory = new BOLO(PlaceLastSeen,  CrimesAssociated, Player.WantedLevel);
+                ReactivatedPersistentApbHistory = null;
+                ResetApbPersistenceDiagnostics();
+                LogApbPersistence($"created Source:Eluded IsAPB:{IsApb(CurrentHistory)} Mode:{CurrentApbPersistenceMode} DeadlyCrimes:{DeadlyCrimeNames(CurrentHistory)} Wanted:{CurrentHistory.WantedLevel}");
                 CoopCriminalJusticeStateAdapter.Current.NotifyLocalCriminalHistoryChanged();
             }
         }
@@ -77,12 +85,37 @@ namespace LosSantosRED.lsr
         }
         public void Clear(string clearReason)
         {
-            CurrentHistory = null;
             string appliedClearReason = clearReason ?? NextCoopClearReason ?? string.Empty;
+            if (ShouldPreservePersistentApbOnClear(appliedClearReason))
+            {
+                RestoreReactivatedPersistentApbIfNeeded();
+                NextCoopClearReason = string.Empty;
+                LogApbPersistence($"clear skipped Reason:{appliedClearReason} Mode:{CurrentApbPersistenceMode} DeadlyCrimes:{DeadlyCrimeNames(CurrentHistory)}");
+                CoopCriminalJusticeStateAdapter.Current.NotifyLocalCriminalHistoryChanged();
+                return;
+            }
+
+            if (HasPersistentApbToProtect)
+            {
+                LogApbPersistence($"clear allowed Reason:{appliedClearReason} Mode:{CurrentApbPersistenceMode} DeadlyCrimes:{DeadlyCrimeNames(CurrentHistory ?? ReactivatedPersistentApbHistory)}");
+            }
+
+            CurrentHistory = null;
+            ReactivatedPersistentApbHistory = null;
+            ResetApbPersistenceDiagnostics();
             NextCoopClearReason = appliedClearReason;
             CoopCriminalJusticeStateAdapter.Current.NotifyLocalCriminalHistoryChanged();
             NextCoopClearReason = string.Empty;
             EntryPoint.WriteToConsole($" PLAYER EVENT: Criminal History Clear Reason:{appliedClearReason}", 5);
+        }
+        public void ResolvePersistentApb(string clearReason)
+        {
+            if (!HasPersistentApbToProtect)
+            {
+                return;
+            }
+
+            Clear(clearReason);
         }
         public void AddCrime(Crime crime)
         {
@@ -90,36 +123,39 @@ namespace LosSantosRED.lsr
             if (CurrentHistory == null)
             {
                 CurrentHistory = new BOLO(Vector3.Zero,new List<CrimeEvent>() { new CrimeEvent(crime,null) }, crime.ResultingWantedLevel);
+                ResetApbPersistenceDiagnostics();
             }
             else
             {
                 if (!CurrentHistory.Crimes.Any(x => x.AssociatedCrime != null && x.AssociatedCrime.Name == crime.Name))
                 {
                     CurrentHistory.Crimes.Add(new CrimeEvent(crime, null));
+                    ResetApbPersistenceDiagnostics();
                 }
             }
             CoopCriminalJusticeStateAdapter.Current.NotifyLocalCriminalHistoryChanged();
         }
         public CoopCriminalHistoryState CreateCoopState(CoopWorldId worldId, CoopProfileId profileId, CoopCharacterId characterId)
         {
+            BOLO historyForState = CurrentHistory ?? ReactivatedPersistentApbHistory;
             CoopCriminalHistoryState state = new CoopCriminalHistoryState
             {
                 WorldId = worldId,
                 ProfileId = profileId,
                 CharacterId = characterId,
-                HasHistory = CurrentHistory != null,
-                WantedLevel = CurrentHistory?.WantedLevel ?? 0,
-                LastSeenX = CurrentHistory?.LastSeenLocation.X ?? 0.0f,
-                LastSeenY = CurrentHistory?.LastSeenLocation.Y ?? 0.0f,
-                LastSeenZ = CurrentHistory?.LastSeenLocation.Z ?? 0.0f,
-                DateTimeLastWantedEnded = ToCoopDateTimeOffset(GetCoopWantedEndedAnchor()),
+                HasHistory = historyForState != null,
+                WantedLevel = historyForState?.WantedLevel ?? 0,
+                LastSeenX = historyForState?.LastSeenLocation.X ?? 0.0f,
+                LastSeenY = historyForState?.LastSeenLocation.Y ?? 0.0f,
+                LastSeenZ = historyForState?.LastSeenLocation.Z ?? 0.0f,
+                DateTimeLastWantedEnded = ToCoopDateTimeOffset(GetCoopWantedEndedAnchor(historyForState)),
                 UpdatedUtc = DateTimeOffset.UtcNow,
-                ClearReason = CurrentHistory == null ? NextCoopClearReason ?? string.Empty : string.Empty,
+                ClearReason = historyForState == null ? NextCoopClearReason ?? string.Empty : string.Empty,
             };
 
-            if (CurrentHistory?.Crimes != null)
+            if (historyForState?.Crimes != null)
             {
-                foreach (CrimeEvent crimeEvent in CurrentHistory.Crimes.Where(x => x?.AssociatedCrime != null))
+                foreach (CrimeEvent crimeEvent in historyForState.Crimes.Where(x => x?.AssociatedCrime != null))
                 {
                     state.Crimes.Add(new CoopCriminalHistoryCrimeRecord
                     {
@@ -141,6 +177,8 @@ namespace LosSantosRED.lsr
             if (state == null || !state.HasHistory)
             {
                 CurrentHistory = null;
+                ReactivatedPersistentApbHistory = null;
+                ResetApbPersistenceDiagnostics();
                 return;
             }
 
@@ -159,6 +197,8 @@ namespace LosSantosRED.lsr
             DateTime restoredWantedEnded = ToDateTime(state.DateTimeLastWantedEnded);
             Player.PoliceResponse.RestoreCoopCriminalHistoryWantedEndedAnchor(restoredWantedEnded);
             CurrentHistory = new BOLO(new Vector3(state.LastSeenX, state.LastSeenY, state.LastSeenZ), restoredCrimes, state.WantedLevel);
+            ReactivatedPersistentApbHistory = null;
+            ResetApbPersistenceDiagnostics();
             LogCoopExpirationDiagnostics("Hydrate", state.WantedLevel, restoredWantedEnded, string.Empty);
         }
         public string PrintCriminalHistory()
@@ -204,21 +244,39 @@ namespace LosSantosRED.lsr
                     //EntryPoint.WriteToConsole("CRIMINAL HISTORY EVENT: Recognized Vehicle");
                 }
             }
-            if (Player.PoliceResponse.HasBeenNotWantedFor >= (Settings.SettingsManager.CriminalHistorySettings.RealTimeExpireWantedMultiplier * LastWantedMaxLevel))// 120000)
+            double expirationMultiplier = GetApbExpirationMultiplier(CurrentHistory);
+            if (IsPersistentApb(CurrentHistory))
             {
-                Clear("ExpiredRealTime");
-                //EntryPoint.WriteToConsole("CRIMINAL HISTORY EVENT: History Expired (Real Time)");
+                LogApbExpirationSkippedOnce();
             }
-            if (DateTime.Compare(Player.PoliceResponse.DateTimeLastWantedEnded.AddHours(LastWantedMaxLevel * Settings.SettingsManager.CriminalHistorySettings.CalendarTimeExpireWantedMultiplier), Time.CurrentDateTime) < 0)
+            else
             {
-                //EntryPoint.WriteToConsole($"POLICE RESPONSE: Lost Wanted ToExpire: {Player.PoliceResponse.DateTimeLastWantedEnded.AddHours(LastWantedMaxLevel * Settings.SettingsManager.CriminalHistorySettings.CalendarTimeExpireWantedMultiplier)} Current: {Time.CurrentDateTime}");
-                LogCoopExpirationDiagnostics("Clear", LastWantedMaxLevel, Player.PoliceResponse.DateTimeLastWantedEnded, "ExpiredCalendarTime");
-                Clear("ExpiredCalendarTime");
-                //EntryPoint.WriteToConsole("CRIMINAL HISTORY EVENT: History Expired (Calendar Time)");
-            }    
+                if (Player.PoliceResponse.HasBeenNotWantedFor >= (Settings.SettingsManager.CriminalHistorySettings.RealTimeExpireWantedMultiplier * LastWantedMaxLevel * expirationMultiplier))// 120000)
+                {
+                    Clear("ExpiredRealTime");
+                    return;
+                    //EntryPoint.WriteToConsole("CRIMINAL HISTORY EVENT: History Expired (Real Time)");
+                }
+
+                LogApbExpirationExtendedOnce(expirationMultiplier);
+                DateTime expirationTime = Player.PoliceResponse.DateTimeLastWantedEnded.AddHours(LastWantedMaxLevel * Settings.SettingsManager.CriminalHistorySettings.CalendarTimeExpireWantedMultiplier * expirationMultiplier);
+                if (DateTime.Compare(expirationTime, Time.CurrentDateTime) < 0)
+                {
+                    //EntryPoint.WriteToConsole($"POLICE RESPONSE: Lost Wanted ToExpire: {Player.PoliceResponse.DateTimeLastWantedEnded.AddHours(LastWantedMaxLevel * Settings.SettingsManager.CriminalHistorySettings.CalendarTimeExpireWantedMultiplier)} Current: {Time.CurrentDateTime}");
+                    LogCoopExpirationDiagnostics("Clear", LastWantedMaxLevel, Player.PoliceResponse.DateTimeLastWantedEnded, "ExpiredCalendarTime");
+                    Clear("ExpiredCalendarTime");
+                    return;
+                    //EntryPoint.WriteToConsole("CRIMINAL HISTORY EVENT: History Expired (Calendar Time)");
+                }
+            }
 
             if(Player.IsWanted && Player.PoliceResponse.WantedLevelHasBeenRadioedIn && HasHistory)
             {
+                if (IsPersistentApb(CurrentHistory))
+                {
+                    ReactivatedPersistentApbHistory = CloneHistory(CurrentHistory);
+                    LogApbPersistence($"reactivated into active wanted Mode:{CurrentApbPersistenceMode} DeadlyCrimes:{DeadlyCrimeNames(CurrentHistory)} Wanted:{CurrentHistory.WantedLevel}");
+                }
                 CurrentHistory = null;
             }
         }
@@ -309,10 +367,10 @@ namespace LosSantosRED.lsr
             return new DateTimeOffset(DateTime.SpecifyKind(value, DateTimeKind.Utc));
         }
 
-        private DateTime GetCoopWantedEndedAnchor()
+        private DateTime GetCoopWantedEndedAnchor(BOLO historyForState)
         {
             DateTime anchor = Player.PoliceResponse.DateTimeLastWantedEnded;
-            return CurrentHistory != null && anchor == DateTime.MinValue ? Time.CurrentDateTime : anchor;
+            return historyForState != null && anchor == DateTime.MinValue ? Time.CurrentDateTime : anchor;
         }
 
         private DateTime ToDateTime(DateTimeOffset value)
@@ -339,7 +397,125 @@ namespace LosSantosRED.lsr
             double remainingHours = expirationTime == DateTime.MinValue ? 0.0d : (expirationTime - Time.CurrentDateTime).TotalHours;
             EntryPoint.WriteToConsole($"Co-op criminal history expiration {stage} Wanted:{wantedLevel} DateTimeLastWantedEnded:{dateTimeLastWantedEnded:O} Expires:{expirationTime:O} Current:{Time.CurrentDateTime:O} RemainingHours:{remainingHours:0.00} ClearReason:{clearReason}", 5);
         }
-       
+
+        private bool IsApb(BOLO history)
+        {
+            return history?.Crimes != null && history.Crimes.Any(x => x?.AssociatedCrime?.ResultsInLethalForce == true);
+        }
+
+        private bool IsRecognizedApb(BOLO history)
+        {
+            return IsApb(history) && history.LastSeenLocation != Vector3.Zero;
+        }
+
+        private bool IsPersistentApb(BOLO history)
+        {
+            return CurrentApbPersistenceMode == ApbPersistenceMode.UntilResolved && IsRecognizedApb(history);
+        }
+
+        private bool HasPersistentApbToProtect => IsPersistentApb(CurrentHistory) || IsPersistentApb(ReactivatedPersistentApbHistory);
+
+        private bool ShouldPreservePersistentApbOnClear(string clearReason)
+        {
+            return HasPersistentApbToProtect && !IsPersistentApbClearAllowed(clearReason);
+        }
+
+        private bool IsPersistentApbClearAllowed(string clearReason)
+        {
+            if (string.IsNullOrWhiteSpace(clearReason))
+            {
+                return true;
+            }
+
+            return string.Equals(clearReason, "ArrestResolved", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(clearReason, "DeathResolved", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(clearReason, "IdentityChanged", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(clearReason, "ForgerIdentityChanged", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(clearReason, "AdminReset", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(clearReason, "DebugReset", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(clearReason, "NewPlayerReset", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private double GetApbExpirationMultiplier(BOLO history)
+        {
+            if (CurrentApbPersistenceMode != ApbPersistenceMode.Extended || !IsRecognizedApb(history))
+            {
+                return 1.0d;
+            }
+
+            float configuredMultiplier = CriminalHistorySettings?.ExtendedApbExpirationMultiplier ?? 1.0f;
+            return Math.Max(1.0d, configuredMultiplier);
+        }
+
+        private void RestoreReactivatedPersistentApbIfNeeded()
+        {
+            if (CurrentHistory == null && ReactivatedPersistentApbHistory != null)
+            {
+                CurrentHistory = CloneHistory(ReactivatedPersistentApbHistory);
+                ReactivatedPersistentApbHistory = null;
+                ResetApbPersistenceDiagnostics();
+            }
+        }
+
+        private BOLO CloneHistory(BOLO history)
+        {
+            if (history == null)
+            {
+                return null;
+            }
+
+            List<CrimeEvent> crimes = history.Crimes?
+                .Where(x => x?.AssociatedCrime != null)
+                .Select(x => new CrimeEvent(x.AssociatedCrime, x.CurrentInformation) { Instances = x.Instances })
+                .ToList() ?? new List<CrimeEvent>();
+            return new BOLO(history.LastSeenLocation, crimes, history.WantedLevel);
+        }
+
+        private void ResetApbPersistenceDiagnostics()
+        {
+            HasLoggedApbExpirationExtended = false;
+            HasLoggedApbExpirationSkipped = false;
+        }
+
+        private void LogApbExpirationSkippedOnce()
+        {
+            if (HasLoggedApbExpirationSkipped)
+            {
+                return;
+            }
+
+            HasLoggedApbExpirationSkipped = true;
+            LogApbPersistence($"expiry skipped Mode:{CurrentApbPersistenceMode} DeadlyCrimes:{DeadlyCrimeNames(CurrentHistory)} Wanted:{LastWantedMaxLevel}");
+        }
+
+        private void LogApbExpirationExtendedOnce(double expirationMultiplier)
+        {
+            if (HasLoggedApbExpirationExtended || expirationMultiplier <= 1.0d || !IsRecognizedApb(CurrentHistory))
+            {
+                return;
+            }
+
+            HasLoggedApbExpirationExtended = true;
+            LogApbPersistence($"expiry extended Mode:{CurrentApbPersistenceMode} Multiplier:{expirationMultiplier:0.##} DeadlyCrimes:{DeadlyCrimeNames(CurrentHistory)} Wanted:{LastWantedMaxLevel}");
+        }
+
+        private string DeadlyCrimeNames(BOLO history)
+        {
+            if (history?.Crimes == null)
+            {
+                return string.Empty;
+            }
+
+            return string.Join(",", history.Crimes
+                .Where(x => x?.AssociatedCrime?.ResultsInLethalForce == true)
+                .Select(x => x.AssociatedCrime.ID)
+                .Distinct());
+        }
+
+        private void LogApbPersistence(string message)
+        {
+            EntryPoint.WriteToConsole($"APB persistence {message}", 3);
+        }
 
     }
 

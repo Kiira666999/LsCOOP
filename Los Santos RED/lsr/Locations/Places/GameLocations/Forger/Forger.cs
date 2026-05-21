@@ -200,6 +200,7 @@ public class Forger : GameLocation
             Player.BankAccounts.GiveMoney(-1 * IdentificationPurchasePrice, false);
             Player.Licenses.DriversLicense = new DriversLicense();
             Player.Licenses.DriversLicense.IssueLicense(Time, 6, StateID);
+            (Player as ITargetable)?.CriminalHistory?.ResolvePersistentApb("ForgerIdentityChanged");
             PlaySuccessSound();
             buyIDMenu.Enabled = false;
             DisplayMessage("~g~Purchased", $"Thank you for your purchase. ID added to inventory.");
