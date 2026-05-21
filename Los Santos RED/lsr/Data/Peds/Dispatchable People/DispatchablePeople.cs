@@ -66,6 +66,7 @@ public class DispatchablePeople : IDispatchablePeople
     public List<DispatchablePerson> OtherPeds { get; private set; }
     public List<DispatchablePerson> TaxiDrivers { get; private set; }
     public List<DispatchablePerson> VendorPeds { get; private set; }
+    public List<DispatchablePerson> AmmunationPeds { get; private set; }
     public List<DispatchablePerson> IllicitMarketplacePeds { get; private set; }
     public List<DispatchablePerson> TellerPeds { get; private set; }
     public List<DispatchablePerson> BarPeds { get; private set; }
@@ -183,6 +184,18 @@ public class DispatchablePeople : IDispatchablePeople
             PeopleGroupLookup.RemoveAll(x => additivePossibleItems.Any(y=> y.DispatchablePersonGroupID == x.DispatchablePersonGroupID));
             PeopleGroupLookup.AddRange(additivePossibleItems);
         }
+        EnsureAmmunationPeds();
+    }
+    private void EnsureAmmunationPeds()
+    {
+        if (PeopleGroupLookup.Any(x => x.DispatchablePersonGroupID == "AmmunationPeds"))
+        {
+            return;
+        }
+        PeopleGroupLookup.Add(new DispatchablePersonGroup("AmmunationPeds", new List<DispatchablePerson>() {
+            new DispatchablePerson("s_m_y_ammucity_01", 100, 100),
+            new DispatchablePerson("s_m_m_ammucountry", 100, 100),
+        }));
     }
 
     private void DefaultConfig_FullExpandedJurisdiction()
@@ -1901,6 +1914,10 @@ public class DispatchablePeople : IDispatchablePeople
             new DispatchablePerson("s_m_m_strvend_01",100,100),
             new DispatchablePerson("s_m_m_linecook",100,100),
         };
+        AmmunationPeds = new List<DispatchablePerson>() {
+            new DispatchablePerson("s_m_y_ammucity_01",100,100),
+            new DispatchablePerson("s_m_m_ammucountry",100,100),
+        };
         TellerPeds = new List<DispatchablePerson>()
         {
             new DispatchablePerson("s_f_m_shop_high",100,100),
@@ -2028,6 +2045,7 @@ public class DispatchablePeople : IDispatchablePeople
         PeopleGroupLookup.Add(new DispatchablePersonGroup("VehicleRacePeds", VehicleRacePeds));
 
         PeopleGroupLookup.Add(new DispatchablePersonGroup("VendorPeds", VendorPeds));
+        PeopleGroupLookup.Add(new DispatchablePersonGroup("AmmunationPeds", AmmunationPeds));
         PeopleGroupLookup.Add(new DispatchablePersonGroup("IllicitMarketplacePeds", IllicitMarketplacePeds));
         PeopleGroupLookup.Add(new DispatchablePersonGroup("TellerPeds", TellerPeds));
         PeopleGroupLookup.Add(new DispatchablePersonGroup("BarPeds", BarPeds));
@@ -2772,6 +2790,7 @@ public class DispatchablePeople : IDispatchablePeople
         PeopleGroupLookup_Old.Add(new DispatchablePersonGroup("RegularPeds", RegularPeds));
         PeopleGroupLookup_Old.Add(new DispatchablePersonGroup("VehicleRacePeds", VehicleRacePeds));
         PeopleGroupLookup_Old.Add(new DispatchablePersonGroup("VendorPeds", VendorPeds));
+        PeopleGroupLookup_Old.Add(new DispatchablePersonGroup("AmmunationPeds", AmmunationPeds));
         PeopleGroupLookup_Old.Add(new DispatchablePersonGroup("IllicitMarketplacePeds", IllicitMarketplacePeds));
         PeopleGroupLookup_Old.Add(new DispatchablePersonGroup("TellerPeds", TellerPeds));
         PeopleGroupLookup_Old.Add(new DispatchablePersonGroup("BurgerShotPeds", BurgerShotPeds));
@@ -2951,6 +2970,7 @@ public class DispatchablePeople : IDispatchablePeople
         PeopleGroupLookup_Simple.Add(new DispatchablePersonGroup("RegularPeds", RegularPeds));
         PeopleGroupLookup_Simple.Add(new DispatchablePersonGroup("VehicleRacePeds", VehicleRacePeds));
         PeopleGroupLookup_Simple.Add(new DispatchablePersonGroup("VendorPeds", VendorPeds));
+        PeopleGroupLookup_Simple.Add(new DispatchablePersonGroup("AmmunationPeds", AmmunationPeds));
         PeopleGroupLookup_Simple.Add(new DispatchablePersonGroup("IllicitMarketplacePeds", IllicitMarketplacePeds));
         PeopleGroupLookup_Simple.Add(new DispatchablePersonGroup("TellerPeds", TellerPeds));
         PeopleGroupLookup_Simple.Add(new DispatchablePersonGroup("BurgerShotPeds", BurgerShotPeds));

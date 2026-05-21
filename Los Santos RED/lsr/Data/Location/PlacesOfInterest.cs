@@ -4742,13 +4742,36 @@ public class PlacesOfInterest : IPlacesOfInterest
             new Hotel(new Vector3(63.68047f, -261.8232f, 52.35384f), 335.7221f, "Cheep Motel", "POOL!","CheapHotelMenu"){OpenTime = 0, CloseTime = 24 },
         };
     }
+    private GunStore CreateAmmunationStore(Vector3 entrancePosition, float entranceHeading, string name, int interiorID, Vector3 vendorPosition, float vendorHeading)
+    {
+        return new GunStore(entrancePosition, entranceHeading, name, "Licensed firearm retailer", "AmmunationMenu")
+        {
+            IsEnabled = true,
+            IsBlipEnabled = true,
+            ShowsOnDirectory = true,
+            OpenTime = 0,
+            CloseTime = 24,
+            InteriorID = interiorID,
+            TypeName = "Ammu-Nation",
+            VendorPersonnelID = "AmmunationPeds",
+            RequiresCCWLicense = true,
+            VendorLocations = new List<SpawnPlace>() { new SpawnPlace(vendorPosition, vendorHeading) },
+        };
+    }
     private void DefaultConfig_GunStores()
     {
         GunStores = new List<GunStore>()
         {
-            new GunStore(new Vector3(1049.596f, -2428.15f, 30.30457f), 84.97017f, "Guns #1", "General shop","GunShop1") {
+            CreateAmmunationStore(new Vector3(842.7685f, -1024.539f, 28.34478f), 0.0f, "Ammu-Nation Vespucci Boulevard", -555, new Vector3(842.4074f, -1035.546f, 28.19486f), 0.0f),
+            CreateAmmunationStore(new Vector3(-662.6415f, -944.3256f, 21.97915f), 0.0f, "Ammu-Nation Lindsay Circus", -554, new Vector3(-661.3827f, -933.5659f, 21.82922f), 180.0f),
+            CreateAmmunationStore(new Vector3(243.8379f, -46.52324f, 70.09098f), 0.0f, "Ammu-Nation Vinewood Plaza", 29698, new Vector3(253.542f, -51.045f, 69.941f), 70.0f),
+            CreateAmmunationStore(new Vector3(810.2543f, -2157.617f, 29.61901f), 0.0f, "Ammu-Nation Cypress Flats", 80386, new Vector3(808.89f, -2159.02f, 29.61901f), 0.0f),
+            CreateAmmunationStore(new Vector3(17.747f, -1115.204f, 29.791f), 0.0f, "Ammu-Nation Pillbox Hill", 48130, new Vector3(23.089f, -1105.59f, 29.797f), 160.0f),
+            CreateAmmunationStore(new Vector3(1693.996f, 3759.481f, 34.70532f), 0.0f, "Ammu-Nation Sandy Shores", 35586, new Vector3(1692.01f, 3761.4f, 34.70532f), 225.0f),
+            new GunStore(new Vector3(1049.596f, -2428.15f, 30.30457f), 84.97017f, "Guns #1", "General shop","UndergroundWeaponShop1") {
                 IsEnabled = true,
                 ContactName = StaticStrings.UndergroundGunsContactName,
+                VendorPersonnelID = "GunshopPeds",
                 ParkingSpaces = new List<SpawnPlace>() {
                     new SpawnPlace(new Vector3(1044.326f, -2404.086f, 29.69204f),352.682f),
                     new SpawnPlace(new Vector3(1044.763f, -2397.967f, 29.08815f), 355.825f),
@@ -4756,9 +4779,10 @@ public class PlacesOfInterest : IPlacesOfInterest
                     new SpawnPlace(new Vector3(1061.272f, -2445.152f, 28.1964f), 89.23737f),
                     new SpawnPlace(new Vector3(1066.94f, -2463.334f, 27.96432f), 357.0727f),
                 } },
-            new GunStore(new Vector3(-232.552f, -1311.643f, 31.29598f), 3.180501f, "Guns #2", "Specializes in ~o~Pistols~s~","GunShop2") {
+            new GunStore(new Vector3(-232.552f, -1311.643f, 31.29598f), 3.180501f, "Guns #2", "Specializes in ~o~Pistols~s~","UndergroundWeaponShop2") {
                 IsEnabled = true,
                 ContactName = StaticStrings.UndergroundGunsContactName,
+                VendorPersonnelID = "GunshopPeds",
                 ParkingSpaces = new List<SpawnPlace>() {
                     new SpawnPlace(new Vector3(-233.4157f, -1306.795f, 31.31846f),89.50895f),
                     new SpawnPlace(new Vector3(-221.8178f, -1291.497f, 30.46753f), 38.83605f),
@@ -4766,29 +4790,32 @@ public class PlacesOfInterest : IPlacesOfInterest
                     new SpawnPlace(new Vector3(-198.912f, -1300.158f, 30.46804f), 260.0593f),
                     new SpawnPlace(new Vector3(-223.2236f, -1308.06f, 30.46892f), 89.06057f),
             } },
-            new GunStore(new Vector3(334.3036f, -1978.458f, 24.16728f), 49.9404f, "Guns #3", "Specializes in ~o~Sub-Machine Guns~s~","GunShop3") {
+            new GunStore(new Vector3(334.3036f, -1978.458f, 24.16728f), 49.9404f, "Guns #3", "Specializes in ~o~Sub-Machine Guns~s~","UndergroundWeaponShop3") {
                 IsEnabled = false,
                 MoneyToUnlock = 10000,
                 ContactName = StaticStrings.UndergroundGunsContactName,
+                VendorPersonnelID = "GunshopPeds",
                 ParkingSpaces = new List<SpawnPlace>() {
                     new SpawnPlace(new Vector3(322.9245f, -1981.151f, 23.22856f),305.8783f),
                     new SpawnPlace(new Vector3(317.3759f, -1986.411f, 21.63353f), 137.6388f),
                     new SpawnPlace(new Vector3(318.4567f, -2005.651f, 21.25648f), 205.8739f),
                     new SpawnPlace(new Vector3(308.2981f, -1978.542f, 21.6238f), 141.6945f),
             } },
-            new GunStore(new Vector3(-258.3577f, 6247.281f, 31.48922f), 314.4655f, "Guns #4", "Specializes in ~o~Assault Rifles~s~","GunShop4") {
+            new GunStore(new Vector3(-258.3577f, 6247.281f, 31.48922f), 314.4655f, "Guns #4", "Specializes in ~o~Assault Rifles~s~","UndergroundWeaponShop4") {
                 IsEnabled = false,
                 MoneyToUnlock = 20000, ContactName = StaticStrings.UndergroundGunsContactName,
+                VendorPersonnelID = "GunshopPeds",
                 ParkingSpaces = new List<SpawnPlace>() {
                     new SpawnPlace(new Vector3(-258.1833f, 6250.695f, 31.48922f),25.17568f),
                     new SpawnPlace(new Vector3(-256.5694f, 6265.761f, 30.58578f), 317.2921f),
                     new SpawnPlace(new Vector3(-267.765f, 6251.046f, 30.61459f), 312.4225f),
                     new SpawnPlace(new Vector3(-269.5155f, 6274.559f, 30.46577f), 136.3388f),
                 } },
-            new GunStore(new Vector3(1673.425f, 4957.921f, 42.34893f), 227.3988f, "Guns #5", "Specializes in ~o~Heavy Weapons~s~","GunShop5") {
+            new GunStore(new Vector3(1673.425f, 4957.921f, 42.34893f), 227.3988f, "Guns #5", "Specializes in ~o~Heavy Weapons~s~","UndergroundWeaponShop5") {
                 IsEnabled = false,
                 MoneyToUnlock = 35000,
                 ContactName = StaticStrings.UndergroundGunsContactName,
+                VendorPersonnelID = "GunshopPeds",
                 ParkingSpaces = new List<SpawnPlace>() {
                     new SpawnPlace(new Vector3(1661.471f, 4951.514f, 42.07043f),217.9459f),
                     new SpawnPlace(new Vector3(1659.542f, 4946.245f, 41.20879f), 224.609f),

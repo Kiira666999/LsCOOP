@@ -97,6 +97,7 @@ public class ShopMenus : IShopMenus
             }
 
         }
+        EnsureWeaponShopMenuAliases();
     }
 
 
@@ -349,7 +350,7 @@ public class ShopMenus : IShopMenus
             }
         }
 
-        List<string> gunMenus = new List<string>() { "FamiliesDenMenu", "BallasDenMenu", "VarriosDenMenu","GunShop1", "GunShop3" };
+        List<string> gunMenus = new List<string>() { "FamiliesDenMenu", "BallasDenMenu", "VarriosDenMenu", "UndergroundWeaponShop1", "UndergroundWeaponShop3", "GunShop1", "GunShop3" };
         foreach (ShopMenu shopMenu in fejPossibleShopMenus.ShopMenuList.Where(x => gunMenus.Contains(x.ID)))
         {
             shopMenu.Items.Add(new MenuItem("WIN 95", 450, 120) { Extras = new List<MenuItemExtra>() { new MenuItemExtra("Extended Clip",120), new MenuItemExtra("Suppressor",500), new MenuItemExtra("Flashlight",75) } });
@@ -5270,12 +5271,42 @@ public class ShopMenus : IShopMenus
         GunShop3();
         GunShop4();
         GunShop5();
+        EnsureWeaponShopMenuAliases();
+    }
+    private void EnsureWeaponShopMenuAliases()
+    {
+        AddShopMenuAlias("UndergroundWeaponShop1", "GunShop1", "Underground Weapons");
+        AddShopMenuAlias("UndergroundWeaponShop2", "GunShop2", "Underground Pistols");
+        AddShopMenuAlias("UndergroundWeaponShop3", "GunShop3", "Underground SMGs");
+        AddShopMenuAlias("UndergroundWeaponShop4", "GunShop4", "Underground Rifles");
+        AddShopMenuAlias("UndergroundWeaponShop5", "GunShop5", "Underground Heavy Weapons");
+        AddShopMenuAlias("GunShop1", "UndergroundWeaponShop1", "GunShop1");
+        AddShopMenuAlias("GunShop2", "UndergroundWeaponShop2", "GunShop2");
+        AddShopMenuAlias("GunShop3", "UndergroundWeaponShop3", "GunShop3");
+        AddShopMenuAlias("GunShop4", "UndergroundWeaponShop4", "GunShop4");
+        AddShopMenuAlias("GunShop5", "UndergroundWeaponShop5", "GunShop5");
+    }
+    private void AddShopMenuAlias(string aliasID, string sourceID, string aliasName)
+    {
+        if (PossibleShopMenus.ShopMenuList.Any(x => x.ID == aliasID))
+        {
+            return;
+        }
+        ShopMenu sourceMenu = PossibleShopMenus.ShopMenuList.FirstOrDefault(x => x.ID == sourceID);
+        if (sourceMenu == null)
+        {
+            return;
+        }
+        ShopMenu aliasMenu = sourceMenu.Copy();
+        aliasMenu.ID = aliasID;
+        aliasMenu.Name = aliasName;
+        PossibleShopMenus.ShopMenuList.Add(aliasMenu);
     }
     private void GunShop1()//general
     {
         PossibleShopMenus.ShopMenuList.AddRange(new List<ShopMenu>
         {
-                new ShopMenu("GunShop1","GunShop1",new List<MenuItem>() {
+                new ShopMenu("UndergroundWeaponShop1","Underground Weapons",new List<MenuItem>() {
                     new MenuItem("G.E.S. Baseball Bat",70),
                     new MenuItem("Flint Crowbar",35),
                     new MenuItem("ProLaps Five Iron Golf Club",150),
@@ -5443,7 +5474,7 @@ public class ShopMenus : IShopMenus
     {
         PossibleShopMenus.ShopMenuList.AddRange(new List<ShopMenu>
         {
-                new ShopMenu("GunShop2","GunShop2",new List<MenuItem>() {
+                new ShopMenu("UndergroundWeaponShop2","Underground Pistols",new List<MenuItem>() {
 
                     new MenuItem("Flint Hammer",25),
                     new MenuItem("Flint Hatchet",80),
@@ -5646,7 +5677,7 @@ public class ShopMenus : IShopMenus
     {
         PossibleShopMenus.ShopMenuList.AddRange(new List<ShopMenu>
         {
-                new ShopMenu("GunShop3","GunShop3",new List<MenuItem>() {
+                new ShopMenu("UndergroundWeaponShop3","Underground SMGs",new List<MenuItem>() {
                     new MenuItem("Combat Knife",120),
                     new MenuItem("Vom Feuer Machete",29),
                     new MenuItem("Switchblade",78),
@@ -5809,7 +5840,7 @@ public class ShopMenus : IShopMenus
     {
         PossibleShopMenus.ShopMenuList.AddRange(new List<ShopMenu>
         {
-                new ShopMenu("GunShop4","GunShop4",new List<MenuItem>() {
+                new ShopMenu("UndergroundWeaponShop4","Underground Rifles",new List<MenuItem>() {
                                     //ArmorHealth
                 new MenuItem("Light Body Armor",650),
                 new MenuItem("Medium Body Armor",1250),
@@ -6058,7 +6089,7 @@ public class ShopMenus : IShopMenus
     {
         PossibleShopMenus.ShopMenuList.AddRange(new List<ShopMenu>
         {
-                new ShopMenu("GunShop5","GunShop5",new List<MenuItem>() {
+                new ShopMenu("UndergroundWeaponShop5","Underground Heavy Weapons",new List<MenuItem>() {
                     
                                     //ArmorHealth
                 new MenuItem("Light Body Armor",650),

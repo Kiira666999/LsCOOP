@@ -43989,6 +43989,25 @@
     </DispatchablePeople>
   </DispatchablePersonGroup>
   <DispatchablePersonGroup>
+    <DispatchablePersonGroupID>AmmunationPeds</DispatchablePersonGroupID>
+    <DispatchablePeople>
+      <DispatchablePerson>
+        <ModelName>s_m_y_ammucity_01</ModelName>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>100</WantedSpawnChance>
+        <AccuracyMin>100</AccuracyMin>
+        <AccuracyMax>100</AccuracyMax>
+      </DispatchablePerson>
+      <DispatchablePerson>
+        <ModelName>s_m_m_ammucountry</ModelName>
+        <AmbientSpawnChance>100</AmbientSpawnChance>
+        <WantedSpawnChance>100</WantedSpawnChance>
+        <AccuracyMin>100</AccuracyMin>
+        <AccuracyMax>100</AccuracyMax>
+      </DispatchablePerson>
+    </DispatchablePeople>
+  </DispatchablePersonGroup>
+  <DispatchablePersonGroup>
     <DispatchablePersonGroupID>IllicitMarketplacePeds</DispatchablePersonGroupID>
     <DispatchablePeople>
       <DispatchablePerson>
