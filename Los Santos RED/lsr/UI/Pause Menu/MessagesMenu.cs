@@ -62,9 +62,9 @@ public class MessagesMenu
 
         LocationsTab = new LocationsTab(Player, PlacesOfInterest, Time, Settings, tabView, World);
         ContactsTab = new ContactsTab(Player, Gangs, tabView);
-        MessagesTab = new MessagesTab(Player, tabView);
-        PhoneRepliesTab = new PhoneRepliesTab(Player, tabView);
-        TextMessagesTab = new TextMessagesTab(Player, tabView);
+        MessagesTab = new MessagesTab(Player, tabView, PlacesOfInterest, World);
+        PhoneRepliesTab = new PhoneRepliesTab(Player, tabView, PlacesOfInterest, World);
+        TextMessagesTab = new TextMessagesTab(Player, tabView, PlacesOfInterest, World);
         ContactAddTab = new ContactsAddTab(Player, PlacesOfInterest, Time, Settings, tabView, Contacts, this);
 
         Tabs.Add(LocationsTab);

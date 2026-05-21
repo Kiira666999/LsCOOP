@@ -50,6 +50,7 @@ public class GangInteraction : IContactMenuInteraction
     private UIMenu GangHitSubMenu;
     private UIMenu GangAmbushSubMenu;
     private UIMenu GangTheftSubMenu;
+    private UIMenu GangMeetingBodyguardSubMenu;
     private UIMenu GangDeliverySubMenu;
     private IModItems ModItems;
     private UIMenuItem RequestBackupMenu;
@@ -226,6 +227,7 @@ public class GangInteraction : IContactMenuInteraction
         AddGangAmbushSubMenu();
         AddCopHitSubMenu();
         AddGangTheftSubMenu();
+        AddGangMeetingBodyguardSubMenu();
         GangMoneyPickup = new UIMenuItem("Money Pickup", "Pickup some cash from a dead drop for the gang and bring it back.") { RightLabel = $"~HUD_COLOUR_GREENDARK~{ActiveGang.PickupPaymentMin:C0}-{ActiveGang.PickupPaymentMax:C0}~s~" };
         GangMoneyPickup.Activated += (sender, selectedItem) =>
         {
@@ -643,6 +645,105 @@ public class GangInteraction : IContactMenuInteraction
         GangTheftSubMenu.AddItem(GangTheftTargets);
         GangTheftSubMenu.AddItem(GangTheftVehicles);
         GangTheftSubMenu.AddItem(GangTheftStart);
+    }
+
+    private void AddGangMeetingBodyguardSubMenu()
+    {
+        if (!HasPaymentRange(ActiveGang.MeetingBodyguardPaymentMin, ActiveGang.MeetingBodyguardPaymentMax))
+        {
+            return;
+        }
+
+        List<GangDisplay> meetingGangs = GetMeetingBodyguardGangDisplay();
+        List<GameLocation> meetingLocations = GetGangMeetingLocations();
+        if (!meetingGangs.Any() || !meetingLocations.Any())
+        {
+            return;
+        }
+
+        GangMeetingBodyguardSubMenu = MenuPool.AddSubMenu(JobsSubMenu, "Meeting Bodyguard");
+        JobsSubMenu.MenuItems[JobsSubMenu.MenuItems.Count() - 1].Description = $"Attend a gang meet and keep the sit-down under control.";
+        JobsSubMenu.MenuItems[JobsSubMenu.MenuItems.Count() - 1].RightLabel = $"~HUD_COLOUR_GREENDARK~{ActiveGang.MeetingBodyguardPaymentMin:C0}-{ActiveGang.MeetingBodyguardPaymentMax:C0}~s~";
+        GangMeetingBodyguardSubMenu.RemoveBanner();
+
+        UIMenuListScrollerItem<GangDisplay> MeetingGangMenu = new UIMenuListScrollerItem<GangDisplay>("Meeting Gang", GangDescription, meetingGangs);
+        UIMenuListScrollerItem<GameLocation> LocationMenu = new UIMenuListScrollerItem<GameLocation>("Location", "Select the location for the meet.", meetingLocations);
+        UIMenuItem GangMeetingBodyguardStart = new UIMenuItem("Start", "Start the task.") { RightLabel = $"~HUD_COLOUR_GREENDARK~{ActiveGang.MeetingBodyguardPaymentMin:C0}-{ActiveGang.MeetingBodyguardPaymentMax:C0}~s~" };
+        GangMeetingBodyguardStart.Activated += (sender, selectedItem) =>
+        {
+            Player.PlayerTasks.GangTasks.StartGangMeetingBodyguard(ActiveGang, GangContact, MeetingGangMenu.SelectedItem?.Gang, LocationMenu.SelectedItem);
+            sender.Visible = false;
+        };
+
+        GangMeetingBodyguardSubMenu.AddItem(MeetingGangMenu);
+        GangMeetingBodyguardSubMenu.AddItem(LocationMenu);
+        GangMeetingBodyguardSubMenu.AddItem(GangMeetingBodyguardStart);
+    }
+
+    private bool HasPaymentRange(int min, int max)
+    {
+        return max > 0 && max >= min;
+    }
+
+    private List<GameLocation> GetGangMeetingLocations()
+    {
+        return PlacesOfInterest.PossibleLocations.DrugMeetLocations()
+            .Where(x => x.IsCorrectMap(World.IsMPMapLoaded) && x.IsSameState(Player.CurrentLocation?.CurrentZone?.GameState))
+            .ToList();
+    }
+
+    private List<GangDisplay> GetMeetingBodyguardGangDisplay()
+    {
+        List<GangDisplay> toReturn = new List<GangDisplay>();
+        List<Gang> possibleGangs = Gangs.AllGangs
+            .Where(x => x != null
+                && x.ID != ActiveGang.ID
+                && x.Contact != null
+                && x.GetRandomPed(0, "") != null
+                && !IsExcludedGang(x))
+            .ToList();
+
+        foreach (Gang gang in possibleGangs.OrderByDescending(x => Player.RelationshipManager.GangRelationships.GetReputation(x)?.ReputationLevel))
+        {
+            GangReputation gr = Player.RelationshipManager.GangRelationships.GetReputation(gang);
+            if (gr != null && gr.IsMember)
+            {
+                continue;
+            }
+
+            string extra = "";
+            if (gr != null)
+            {
+                if (gr.IsEnemy)
+                {
+                    extra = "~r~";
+                }
+                else if (gr.GangRelationship == GangRespect.Hostile)
+                {
+                    extra = "~o~";
+                }
+                else if (gr.GangRelationship == GangRespect.Friendly)
+                {
+                    extra = "~g~";
+                }
+            }
+            toReturn.Add(new GangDisplay(gang, $"{extra}{gang.ShortName}~s~"));
+        }
+        return toReturn;
+    }
+
+    private bool IsExcludedGang(Gang gang)
+    {
+        string combined = NormalizeGangKey((gang.ID ?? "") + " " + (gang.FullName ?? "") + " " + (gang.ShortName ?? "") + " " + (gang.ContactName ?? ""));
+        return combined.Contains("corruptpolice")
+            || combined.Contains("corruptcop")
+            || combined.Contains("corruptbank")
+            || combined.Contains("customer");
+    }
+
+    private string NormalizeGangKey(string value)
+    {
+        return value.Replace(" ", "").Replace("_", "").Replace("-", "").ToLowerInvariant();
     }
 
     private void AddGangDeliverySubMenu()

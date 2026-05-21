@@ -12,11 +12,13 @@ public class PhoneRepliesTab : ITabbableMenu
 {
     private IGangRelateable Player;
     private TabView TabView;
+    private PhoneMessageLocationResolver PhoneMessageLocationResolver;
 
-    public PhoneRepliesTab(IGangRelateable player, TabView tabView)
+    public PhoneRepliesTab(IGangRelateable player, TabView tabView, IPlacesOfInterest placesOfInterest, IEntityProvideable world)
     {
         Player = player;
         TabView = tabView;
+        PhoneMessageLocationResolver = new PhoneMessageLocationResolver(player, placesOfInterest, world);
     }
 
     public void AddItems()
@@ -32,7 +34,16 @@ public class PhoneRepliesTab : ITabbableMenu
             //DescriptionText += $"~n~~n~Select to ~r~Delete Response~s~";
             string ListEntryItem = $"{text.ContactName} {TimeReceived}";
             string DescriptionHeaderText = $"{text.ContactName}";
+            GameLocation routeLocation = PhoneMessageLocationResolver.FindLocation(text.Message);
+            if (routeLocation != null)
+            {
+                DescriptionText += $"~n~~n~Select to set GPS to ~o~{routeLocation.Name}~s~";
+            }
             TabItem tItem = new TabTextItem(ListEntryItem, DescriptionHeaderText, DescriptionText);
+            if (routeLocation != null)
+            {
+                tItem.Activated += (s, e) => PhoneMessageLocationResolver.AddGPSRoute(routeLocation);
+            }
             //tItem.Activated += (s, e) =>
             //{
             //    if (text != null)

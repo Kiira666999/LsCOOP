@@ -136,7 +136,7 @@ namespace LosSantosRED.lsr.Player.ActiveTasks
                 {
                     break;
                 }
-                if (!HasArrivedNearMeetup && MeetingLocation.DistanceToPlayer <= 200f)
+                if (!HasArrivedNearMeetup && MeetingLocation.DistanceToPlayer <= 20f)
                 {
                     OnArrivedNearMeetup();
                 }
