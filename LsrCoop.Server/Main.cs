@@ -930,6 +930,7 @@ namespace LsrCoop.Server
                     ProfileId = profile.ProfileId,
                     CharacterId = string.IsNullOrWhiteSpace(request.SourceCharacterId) ? profile.ProfileId : request.SourceCharacterId,
                     Crimes = new List<CoopCriminalHistoryCrimeRecordDto>(),
+                    KnownVehiclePlates = new List<CoopCriminalHistoryVehiclePlateRecordDto>(),
                 };
             }
 
@@ -938,6 +939,7 @@ namespace LsrCoop.Server
             history.ProfileId = profile.ProfileId;
             history.CharacterId = string.IsNullOrWhiteSpace(history.CharacterId) ? profile.ProfileId : history.CharacterId;
             history.Crimes = history.Crimes ?? new List<CoopCriminalHistoryCrimeRecordDto>();
+            history.KnownVehiclePlates = history.KnownVehiclePlates ?? new List<CoopCriminalHistoryVehiclePlateRecordDto>();
             history.HasHistory = true;
             history.WantedLevel = Math.Max(history.WantedLevel, ParseIntParameter(request, "ResultingWantedLevel"));
             history.LastSeenX = ParseFloatParameter(request, "PositionX");
@@ -1095,6 +1097,7 @@ namespace LsrCoop.Server
             snapshot.CriminalHistory.ProfileId = profile.ProfileId;
             snapshot.CriminalHistory.CharacterId = string.IsNullOrWhiteSpace(snapshot.CriminalHistory.CharacterId) ? profile.ProfileId : snapshot.CriminalHistory.CharacterId;
             snapshot.CriminalHistory.Crimes = snapshot.CriminalHistory.Crimes ?? new List<CoopCriminalHistoryCrimeRecordDto>();
+            snapshot.CriminalHistory.KnownVehiclePlates = snapshot.CriminalHistory.KnownVehiclePlates ?? new List<CoopCriminalHistoryVehiclePlateRecordDto>();
             DateTimeOffset incomingUpdatedUtc = snapshot.CriminalHistory.UpdatedUtc == default ? snapshot.SnapshotUtc : snapshot.CriminalHistory.UpdatedUtc;
             if (!IsNewerOrSame(incomingUpdatedUtc, profile.CriminalHistory?.UpdatedUtc))
             {
@@ -1121,7 +1124,7 @@ namespace LsrCoop.Server
             profile.CriminalHistory = snapshot.CriminalHistory;
             worldProfileStoreService.Save();
 
-            Logger.Info($"[LsrCoop.Server] criminal history saved: profile={profile.ProfileId}, crimes={profile.CriminalHistory.Crimes?.Count ?? 0}, maxWanted={profile.CriminalHistory.WantedLevel}, dateTimeLastWantedEnded={profile.CriminalHistory.DateTimeLastWantedEnded:O}, clearReason={clearReason}; active wanted/search/chase state ignored");
+            Logger.Info($"[LsrCoop.Server] criminal history saved: profile={profile.ProfileId}, crimes={profile.CriminalHistory.Crimes?.Count ?? 0}, knownVehiclePlates={profile.CriminalHistory.KnownVehiclePlates?.Count ?? 0}, maxWanted={profile.CriminalHistory.WantedLevel}, dateTimeLastWantedEnded={profile.CriminalHistory.DateTimeLastWantedEnded:O}, clearReason={clearReason}; active wanted/search/chase state ignored");
         }
 
         private void OnGangReputationSnapshotCommitted(CustomEventReceivedArgs args)

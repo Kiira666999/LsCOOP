@@ -170,6 +170,10 @@ ILocationInteractable player, IModItems modItems, IWeapons weapons, ITimeControl
             EntryPoint.WriteToConsole("No gang, not adding loan options");
             return;
         }
+        if (!AssociatedGang.ShouldShowLoanMenu(Player))
+        {
+            return;
+        }
         LoanSubMenu = MenuPool.AddSubMenu(InteractionMenu, "Cash Loans");
         InteractionMenu.MenuItems[InteractionMenu.MenuItems.Count() - 1].Description = "Just front me some cash, I'll catch it up on the backend!";
         if (HasBannerImage)

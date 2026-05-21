@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfGang xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Gang>
     <ID>AMBIENT_GANG_LOST</ID>
@@ -79,24 +79,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>750</MinAmount>
+          <MaxAmount>4000</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>1500</MinAmount>
+          <MaxAmount>7000</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>2500</MinAmount>
+          <MaxAmount>11000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -185,24 +185,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
           <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MaxAmount>2500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>1000</MinAmount>
+          <MaxAmount>4500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>1500</MinAmount>
+          <MaxAmount>7000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -290,24 +290,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
           <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MaxAmount>2500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>1000</MinAmount>
+          <MaxAmount>4500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>1500</MinAmount>
+          <MaxAmount>7000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -395,24 +395,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
           <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MaxAmount>2500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>1000</MinAmount>
+          <MaxAmount>4500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>1500</MinAmount>
+          <MaxAmount>7000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -500,24 +500,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
           <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MaxAmount>2500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>1000</MinAmount>
+          <MaxAmount>4500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>1500</MinAmount>
+          <MaxAmount>7000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -606,24 +606,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
           <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MaxAmount>2500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>1000</MinAmount>
+          <MaxAmount>4500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>1500</MinAmount>
+          <MaxAmount>7000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -711,24 +711,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>2500</MinAmount>
+          <MaxAmount>12500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>5000</MinAmount>
+          <MaxAmount>22500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>8000</MinAmount>
+          <MaxAmount>35000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -816,24 +816,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>250</MinAmount>
+          <MaxAmount>1500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
           <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MaxAmount>2500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>750</MinAmount>
+          <MaxAmount>4000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -921,24 +921,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
           <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MaxAmount>2500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>1000</MinAmount>
+          <MaxAmount>4500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>1500</MinAmount>
+          <MaxAmount>7000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -1027,24 +1027,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>2500</MinAmount>
+          <MaxAmount>12500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>5000</MinAmount>
+          <MaxAmount>22500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>8000</MinAmount>
+          <MaxAmount>35000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -1133,24 +1133,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>2500</MinAmount>
+          <MaxAmount>12500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>5000</MinAmount>
+          <MaxAmount>22500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>8000</MinAmount>
+          <MaxAmount>35000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -1239,24 +1239,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>2500</MinAmount>
+          <MaxAmount>12500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>5000</MinAmount>
+          <MaxAmount>22500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>8000</MinAmount>
+          <MaxAmount>35000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -1345,24 +1345,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>2500</MinAmount>
+          <MaxAmount>12500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>5000</MinAmount>
+          <MaxAmount>22500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>8000</MinAmount>
+          <MaxAmount>35000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -1452,24 +1452,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>2500</MinAmount>
+          <MaxAmount>12500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>5000</MinAmount>
+          <MaxAmount>22500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>8000</MinAmount>
+          <MaxAmount>35000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -1557,24 +1557,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>5000</MinAmount>
+          <MaxAmount>20000</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>8000</MinAmount>
+          <MaxAmount>35000</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>12500</MinAmount>
+          <MaxAmount>50000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -1662,24 +1662,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>2500</MinAmount>
+          <MaxAmount>12500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>5000</MinAmount>
+          <MaxAmount>22500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>8000</MinAmount>
+          <MaxAmount>35000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -1767,24 +1767,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>750</MinAmount>
+          <MaxAmount>4000</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>1500</MinAmount>
+          <MaxAmount>7000</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>2500</MinAmount>
+          <MaxAmount>11000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -1874,24 +1874,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>250</MinAmount>
+          <MaxAmount>1500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
           <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MaxAmount>2500</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>750</MinAmount>
+          <MaxAmount>4000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>
@@ -1980,24 +1980,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.1</Rate>
+          <Rate>0.22</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>5000</MaxAmount>
+          <MinAmount>750</MinAmount>
+          <MaxAmount>4000</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.04</Rate>
+          <Rate>0.19</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>15000</MaxAmount>
+          <MinAmount>1500</MinAmount>
+          <MaxAmount>7000</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.02</Rate>
+          <Rate>0.16</Rate>
           <MaxPeriods>4</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>25000</MaxAmount>
+          <MinAmount>2500</MinAmount>
+          <MaxAmount>11000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>

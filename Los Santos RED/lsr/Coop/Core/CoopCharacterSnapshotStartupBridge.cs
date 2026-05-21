@@ -458,10 +458,12 @@ namespace LosSantosRED.lsr.Coop.Core
         {
             string hasHistory = GetValue(values, "CriminalHistoryHasHistory");
             string crimes = GetValue(values, "CriminalHistoryCrimes");
+            string knownVehiclePlates = GetValue(values, "CriminalHistoryKnownVehiclePlates");
             string wantedLevel = GetValue(values, "CriminalHistoryWantedLevel");
             string dateTimeLastWantedEnded = GetValue(values, "CriminalHistoryDateTimeLastWantedEnded");
             if (string.IsNullOrWhiteSpace(hasHistory)
                 && string.IsNullOrWhiteSpace(crimes)
+                && string.IsNullOrWhiteSpace(knownVehiclePlates)
                 && string.IsNullOrWhiteSpace(wantedLevel)
                 && string.IsNullOrWhiteSpace(dateTimeLastWantedEnded))
             {
@@ -498,6 +500,28 @@ namespace LosSantosRED.lsr.Coop.Core
                     ResultingWantedLevel = ParseInt(parts[3]),
                     Priority = ParseInt(parts[4]),
                     ResultsInLethalForce = IsTrue(parts[5]),
+                });
+            }
+
+            foreach (string entry in SplitEntries(knownVehiclePlates))
+            {
+                string[] parts = entry.Split(',');
+                if (parts.Length < 3)
+                {
+                    continue;
+                }
+
+                string plateNumber = UnescapePart(parts[0]);
+                if (string.IsNullOrWhiteSpace(plateNumber))
+                {
+                    continue;
+                }
+
+                state.KnownVehiclePlates.Add(new CoopCriminalHistoryVehiclePlateRecord
+                {
+                    PlateNumber = plateNumber.Trim().ToUpperInvariant(),
+                    PlateType = ParseInt(parts[1]),
+                    OriginalModelHash = ParseUInt(parts[2]),
                 });
             }
 
@@ -784,6 +808,12 @@ namespace LosSantosRED.lsr.Coop.Core
         {
             int parsed;
             return int.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out parsed) ? parsed : 0;
+        }
+
+        private static uint ParseUInt(string value)
+        {
+            uint parsed;
+            return uint.TryParse(value, NumberStyles.Integer, CultureInfo.InvariantCulture, out parsed) ? parsed : 0;
         }
 
         private static float ParseFloat(string value)

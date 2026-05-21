@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 public class LoanParameters
 {
     public List<LoanParameter> LoanParamterList = new List<LoanParameter>();
+    public bool HasAvailableLoanOffers => LoanParamterList != null && LoanParamterList.Any(x => x != null && x.MaxPeriods > 0 && x.MaxAmount > 0 && x.MaxAmount >= x.MinAmount);
     public LoanParameters()
     {
 

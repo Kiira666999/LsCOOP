@@ -271,6 +271,7 @@ namespace LsrCoop.Server
             profile.CriminalHistory.ProfileId = profile.ProfileId;
             profile.CriminalHistory.CharacterId = string.IsNullOrWhiteSpace(profile.CriminalHistory.CharacterId) ? profile.ProfileId : profile.CriminalHistory.CharacterId;
             profile.CriminalHistory.Crimes = profile.CriminalHistory.Crimes ?? new List<CoopCriminalHistoryCrimeRecordDto>();
+            profile.CriminalHistory.KnownVehiclePlates = profile.CriminalHistory.KnownVehiclePlates ?? new List<CoopCriminalHistoryVehiclePlateRecordDto>();
         }
 
         private void NormalizeDeathArrest(CoopPlayerProfile profile)

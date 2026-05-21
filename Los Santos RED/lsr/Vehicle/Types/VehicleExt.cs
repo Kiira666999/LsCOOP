@@ -105,7 +105,7 @@ namespace LSR.Vehicles
         {
             get
             {
-                if(!WasReportedStolen)
+                if(WasReportedStolen)
                 {
                     return false;
                 }

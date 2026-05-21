@@ -55,9 +55,10 @@ namespace LosSantosRED.lsr
             if (CrimesAssociated != null && PlaceLastSeen != Vector3.Zero && Player.PoliceResponse.HasPlayerBeenIdentified )
             {
                 CurrentHistory = new BOLO(PlaceLastSeen,  CrimesAssociated, Player.WantedLevel);
+                CaptureKnownVehiclePlates(CurrentHistory);
                 ReactivatedPersistentApbHistory = null;
                 ResetApbPersistenceDiagnostics();
-                LogApbPersistence($"created Source:Eluded IsAPB:{IsApb(CurrentHistory)} Mode:{CurrentApbPersistenceMode} DeadlyCrimes:{DeadlyCrimeNames(CurrentHistory)} Wanted:{CurrentHistory.WantedLevel}");
+                LogApbPersistence($"created Source:Eluded IsAPB:{IsApb(CurrentHistory)} Mode:{CurrentApbPersistenceMode} DeadlyCrimes:{DeadlyCrimeNames(CurrentHistory)} Wanted:{CurrentHistory.WantedLevel} KnownVehiclePlates:{CurrentHistory.KnownVehiclePlates.Count}");
                 CoopCriminalJusticeStateAdapter.Current.NotifyLocalCriminalHistoryChanged();
             }
         }
@@ -169,6 +170,19 @@ namespace LosSantosRED.lsr
                 }
             }
 
+            if (historyForState?.KnownVehiclePlates != null)
+            {
+                foreach (LicensePlate plate in historyForState.KnownVehiclePlates.Where(IsUsableKnownPlate))
+                {
+                    state.KnownVehiclePlates.Add(new CoopCriminalHistoryVehiclePlateRecord
+                    {
+                        PlateNumber = NormalizePlateNumber(plate.PlateNumber),
+                        PlateType = plate.PlateType,
+                        OriginalModelHash = plate.OriginalModelHash,
+                    });
+                }
+            }
+
             LogCoopExpirationDiagnostics("Capture", state.WantedLevel, ToDateTime(state.DateTimeLastWantedEnded), string.Empty);
             return state;
         }
@@ -197,6 +211,10 @@ namespace LosSantosRED.lsr
             DateTime restoredWantedEnded = ToDateTime(state.DateTimeLastWantedEnded);
             Player.PoliceResponse.RestoreCoopCriminalHistoryWantedEndedAnchor(restoredWantedEnded);
             CurrentHistory = new BOLO(new Vector3(state.LastSeenX, state.LastSeenY, state.LastSeenZ), restoredCrimes, state.WantedLevel);
+            foreach (CoopCriminalHistoryVehiclePlateRecord plateRecord in state.KnownVehiclePlates ?? Enumerable.Empty<CoopCriminalHistoryVehiclePlateRecord>())
+            {
+                AddKnownVehiclePlate(CurrentHistory, new LicensePlate(plateRecord.PlateNumber, plateRecord.PlateType, false, plateRecord.OriginalModelHash));
+            }
             ReactivatedPersistentApbHistory = null;
             ResetApbPersistenceDiagnostics();
             LogCoopExpirationDiagnostics("Hydrate", state.WantedLevel, restoredWantedEnded, string.Empty);
@@ -237,7 +255,7 @@ namespace LosSantosRED.lsr
                     GameFiber.Yield();//TR 05
                     //EntryPoint.WriteToConsole("CRIMINAL HISTORY EVENT: Near Last Location");
                 }
-                else if (Player.IsInVehicle && Player.CurrentVehicle != null && Player.CurrentVehicle.IsWanted)//.CopsRecognizeAsStolen)
+                else if (Player.IsInVehicle && Player.CurrentVehicle != null && (Player.CurrentVehicle.IsWanted || IsCurrentVehicleKnownToPersistentApb()))//.CopsRecognizeAsStolen)
                 {
                     ApplyLastWantedStats();
                     GameFiber.Yield();//TR 05
@@ -357,6 +375,70 @@ namespace LosSantosRED.lsr
             }
         }
 
+        private void CaptureKnownVehiclePlates(BOLO history)
+        {
+            if (!IsPersistentApb(history))
+            {
+                return;
+            }
+
+            foreach (VehicleExt seenVehicle in history.Crimes?
+                .Select(x => x?.CurrentInformation?.VehicleSeen)
+                .Where(x => x != null) ?? Enumerable.Empty<VehicleExt>())
+            {
+                AddKnownVehiclePlateFromVehicle(history, seenVehicle);
+            }
+
+            if (Player.CurrentVehicle?.HasBeenSeenByPoliceDuringWanted == true)
+            {
+                AddKnownVehiclePlateFromVehicle(history, Player.CurrentVehicle);
+            }
+        }
+
+        private void AddKnownVehiclePlateFromVehicle(BOLO history, VehicleExt vehicle)
+        {
+            if (vehicle == null)
+            {
+                return;
+            }
+
+            AddKnownVehiclePlate(history, vehicle.CarPlate);
+        }
+
+        private void AddKnownVehiclePlate(BOLO history, LicensePlate plate)
+        {
+            if (history == null || !IsUsableKnownPlate(plate))
+            {
+                return;
+            }
+
+            string plateNumber = NormalizePlateNumber(plate.PlateNumber);
+            if (history.KnownVehiclePlates.Any(x => string.Equals(NormalizePlateNumber(x?.PlateNumber), plateNumber, StringComparison.OrdinalIgnoreCase)))
+            {
+                return;
+            }
+
+            history.KnownVehiclePlates.Add(new LicensePlate(plateNumber, plate.PlateType, false, plate.OriginalModelHash));
+        }
+
+        private bool IsCurrentVehicleKnownToPersistentApb()
+        {
+            return IsPersistentApb(CurrentHistory)
+                && Player.CurrentVehicle?.CarPlate != null
+                && CurrentHistory.KnownVehiclePlates?.Any(x => string.Equals(NormalizePlateNumber(x?.PlateNumber), NormalizePlateNumber(Player.CurrentVehicle.CarPlate.PlateNumber), StringComparison.OrdinalIgnoreCase)) == true;
+        }
+
+        private static bool IsUsableKnownPlate(LicensePlate plate)
+        {
+            string plateNumber = NormalizePlateNumber(plate?.PlateNumber);
+            return !string.IsNullOrWhiteSpace(plateNumber) && !string.Equals(plateNumber, "UNKNOWN", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private static string NormalizePlateNumber(string plateNumber)
+        {
+            return string.IsNullOrWhiteSpace(plateNumber) ? string.Empty : plateNumber.Trim().ToUpperInvariant();
+        }
+
         private DateTimeOffset ToCoopDateTimeOffset(DateTime value)
         {
             if (value == DateTime.MinValue)
@@ -468,7 +550,12 @@ namespace LosSantosRED.lsr
                 .Where(x => x?.AssociatedCrime != null)
                 .Select(x => new CrimeEvent(x.AssociatedCrime, x.CurrentInformation) { Instances = x.Instances })
                 .ToList() ?? new List<CrimeEvent>();
-            return new BOLO(history.LastSeenLocation, crimes, history.WantedLevel);
+            BOLO clone = new BOLO(history.LastSeenLocation, crimes, history.WantedLevel);
+            foreach (LicensePlate plate in history.KnownVehiclePlates?.Where(IsUsableKnownPlate) ?? Enumerable.Empty<LicensePlate>())
+            {
+                AddKnownVehiclePlate(clone, plate);
+            }
+            return clone;
         }
 
         private void ResetApbPersistenceDiagnostics()

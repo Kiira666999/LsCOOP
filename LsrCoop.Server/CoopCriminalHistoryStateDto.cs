@@ -14,8 +14,16 @@ namespace LsrCoop.Server
         public float LastSeenZ { get; set; }
         public int WantedLevel { get; set; }
         public List<CoopCriminalHistoryCrimeRecordDto> Crimes { get; set; } = new List<CoopCriminalHistoryCrimeRecordDto>();
+        public List<CoopCriminalHistoryVehiclePlateRecordDto> KnownVehiclePlates { get; set; } = new List<CoopCriminalHistoryVehiclePlateRecordDto>();
         public DateTimeOffset DateTimeLastWantedEnded { get; set; }
         public DateTimeOffset UpdatedUtc { get; set; }
         public string ClearReason { get; set; }
+    }
+
+    public class CoopCriminalHistoryVehiclePlateRecordDto
+    {
+        public string PlateNumber { get; set; }
+        public int PlateType { get; set; }
+        public uint OriginalModelHash { get; set; }
     }
 }

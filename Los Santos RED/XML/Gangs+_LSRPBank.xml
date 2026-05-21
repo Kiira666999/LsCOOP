@@ -1,4 +1,4 @@
-<ArrayOfGang xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+﻿<ArrayOfGang xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 <Gang>
     <ID>AMBIENT_GANG_BANKTELLER</ID>
     <FullName>Corrupt Loans</FullName>
@@ -77,24 +77,24 @@
       <LoanParamterList>
         <LoanParameter>
           <ResepectLevel>Neutral</ResepectLevel>
-          <Rate>0.05</Rate>
+          <Rate>0.20</Rate>
           <MaxPeriods>8</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>1000000</MaxAmount>
+          <MinAmount>5000</MinAmount>
+          <MaxAmount>100000</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Friendly</ResepectLevel>
-          <Rate>0.05</Rate>
+          <Rate>0.20</Rate>
           <MaxPeriods>8</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>1000000</MaxAmount>
+          <MinAmount>5000</MinAmount>
+          <MaxAmount>100000</MaxAmount>
         </LoanParameter>
         <LoanParameter>
           <ResepectLevel>Member</ResepectLevel>
-          <Rate>0.05</Rate>
+          <Rate>0.20</Rate>
           <MaxPeriods>8</MaxPeriods>
-          <MinAmount>500</MinAmount>
-          <MaxAmount>1000000</MaxAmount>
+          <MinAmount>5000</MinAmount>
+          <MaxAmount>100000</MaxAmount>
         </LoanParameter>
       </LoanParamterList>
     </LoanParameters>

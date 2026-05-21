@@ -8,6 +8,7 @@ namespace LosSantosRED.lsr.Coop.Core
         public CoopCriminalHistoryState()
         {
             Crimes = new List<CoopCriminalHistoryCrimeRecord>();
+            KnownVehiclePlates = new List<CoopCriminalHistoryVehiclePlateRecord>();
             UpdatedUtc = DateTimeOffset.UtcNow;
         }
 
@@ -20,8 +21,16 @@ namespace LosSantosRED.lsr.Coop.Core
         public float LastSeenZ { get; set; }
         public int WantedLevel { get; set; }
         public List<CoopCriminalHistoryCrimeRecord> Crimes { get; private set; }
+        public List<CoopCriminalHistoryVehiclePlateRecord> KnownVehiclePlates { get; private set; }
         public DateTimeOffset DateTimeLastWantedEnded { get; set; }
         public DateTimeOffset UpdatedUtc { get; set; }
         public string ClearReason { get; set; }
+    }
+
+    public class CoopCriminalHistoryVehiclePlateRecord
+    {
+        public string PlateNumber { get; set; }
+        public int PlateType { get; set; }
+        public uint OriginalModelHash { get; set; }
     }
 }

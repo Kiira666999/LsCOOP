@@ -1,4 +1,5 @@
 ﻿using Rage;
+using LSR.Vehicles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ public class BOLO
 {
     public Vector3 LastSeenLocation { get; set; }
     public List<CrimeEvent> Crimes = new List<CrimeEvent>();
+    public List<LicensePlate> KnownVehiclePlates { get; set; } = new List<LicensePlate>();
     public BOLO(Vector3 lastSeenLocation, List<CrimeEvent> crimes, int wantedLevel)
     {
         LastSeenLocation = lastSeenLocation;

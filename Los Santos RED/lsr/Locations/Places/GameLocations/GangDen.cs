@@ -196,6 +196,10 @@ public class GangDen : GameLocation, IRestableLocation, IAssaultSpawnable
 
     private void CreateLoanMenuItems()
     {
+        if (AssociatedGang?.ShouldShowLoanMenu(Player) != true)
+        {
+            return;
+        }
         LoanSubMenu = MenuPool.AddSubMenu(InteractionMenu, "Cash Loans");
         InteractionMenu.MenuItems[InteractionMenu.MenuItems.Count() - 1].Description = "Just front me some cash, I'll catch it up on the backend!";
         if (HasBannerImage)

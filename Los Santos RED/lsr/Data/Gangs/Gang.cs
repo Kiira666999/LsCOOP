@@ -204,6 +204,7 @@ public class Gang : IPlatePrefixable, IGeneratesDispatchables
     public string ColorInitials => ColorPrefix + ShortName;
 
     public float PercentageWillRacePlayer { get; set; } = 55f;
+    public bool HasLoanOffers => LoanParameters?.HasAvailableLoanOffers == true;
 
     public bool CanSpawn(int wantedLevel) => wantedLevel >= MinWantedLevelSpawn && wantedLevel <= MaxWantedLevelSpawn;
     public DispatchablePerson GetRandomPed(int wantedLevel, string RequiredPedGroup)// List<string> RequiredModels)
@@ -366,11 +367,22 @@ public class Gang : IPlatePrefixable, IGeneratesDispatchables
     {
         return ShortName.ToString();
     }
+    public bool ShouldShowLoanMenu(ILocationInteractable player)
+    {
+        GangReputation gr = player?.RelationshipManager?.GangRelationships?.GetReputation(this);
+        return HasLoanOffers || (gr?.GangLoan != null && gr.GangLoan.DueAmount > 0);
+    }
     public void AddLoanItems(ILocationInteractable Player, UIMenu LoanSubMenu,GameLocation gameLocation, ITimeReportable time)
     {
 
         GangReputation gr = Player.RelationshipManager.GangRelationships.GetReputation(this);
         if (gr == null)
+        {
+            return;
+        }
+        bool hasLoanOffers = HasLoanOffers;
+        bool hasExistingLoan = gr.GangLoan != null && gr.GangLoan.DueAmount > 0;
+        if (!hasLoanOffers && !hasExistingLoan)
         {
             return;
         }
@@ -398,32 +410,35 @@ public class Gang : IPlatePrefixable, IGeneratesDispatchables
         };
         LoanSubMenu.AddItem(payVigMenuItem);
 
-        LoanParameter lp = LoanParameters.GetParameters(gr.GangRelationship);
-        setLoanValueMenuItem = new UIMenuNumericScrollerItem<int>("Loan Amount", $"Set the loan amount. ~n~Rate: {lp.Rate * 100f}% Per Week ~n~Max Duration: {lp.MaxPeriods} Weeks.~n~Max Amount: ${lp.MaxAmount}",
-            lp.MinAmount, lp.MaxAmount, 100)
-        { Formatter = v => "$" + v + "" };
-        setLoanValueMenuItem.Value = lp.MinAmount;
-        setLoanValueMenuItem.Activated += (sender, e) =>
+        if (hasLoanOffers)
         {
-            int maxValue2 = lp.MaxAmount;
-            if (int.TryParse(NativeHelper.GetKeyboardInput(setLoanValueMenuItem.Value.ToString()), out int eneteredAmount))
+            LoanParameter lp = LoanParameters.GetParameters(gr.GangRelationship);
+            setLoanValueMenuItem = new UIMenuNumericScrollerItem<int>("Loan Amount", $"Set the loan amount. ~n~Rate: {lp.Rate * 100f}% Per Week ~n~Max Duration: {lp.MaxPeriods} Weeks.~n~Max Amount: ${lp.MaxAmount}",
+                lp.MinAmount, lp.MaxAmount, 100)
+            { Formatter = v => "$" + v + "" };
+            setLoanValueMenuItem.Value = lp.MinAmount;
+            setLoanValueMenuItem.Activated += (sender, e) =>
             {
-                if (eneteredAmount <= lp.MaxAmount && eneteredAmount >= lp.MinAmount)
+                int maxValue2 = lp.MaxAmount;
+                if (int.TryParse(NativeHelper.GetKeyboardInput(setLoanValueMenuItem.Value.ToString()), out int eneteredAmount))
                 {
-                    setLoanValueMenuItem.Value = eneteredAmount;
+                    if (eneteredAmount <= lp.MaxAmount && eneteredAmount >= lp.MinAmount)
+                    {
+                        setLoanValueMenuItem.Value = eneteredAmount;
+                    }
                 }
-            }
-        };
-        LoanSubMenu.AddItem(setLoanValueMenuItem);      
-        takeLoanMenuItem = new UIMenuItem("Take Loan", "Take the loan for the current amount.");
-        takeLoanMenuItem.Activated += (sender, e) =>
-        {
-            if (TakeLoan(Player, gr, gameLocation, lp, time))
+            };
+            LoanSubMenu.AddItem(setLoanValueMenuItem);
+            takeLoanMenuItem = new UIMenuItem("Take Loan", "Take the loan for the current amount.");
+            takeLoanMenuItem.Activated += (sender, e) =>
             {
-                UpdateDebtMenus(gr);
-            }
-        };
-        LoanSubMenu.AddItem(takeLoanMenuItem);
+                if (TakeLoan(Player, gr, gameLocation, lp, time))
+                {
+                    UpdateDebtMenus(gr);
+                }
+            };
+            LoanSubMenu.AddItem(takeLoanMenuItem);
+        }
         UpdateDebtMenus(gr);
     }
     private bool TakeLoan(ILocationInteractable player, GangReputation gr, GameLocation gameLocation, LoanParameter loanParameter, ITimeReportable time)
@@ -437,8 +452,14 @@ public class Gang : IPlatePrefixable, IGeneratesDispatchables
     {
         if(gr.GangLoan != null && gr.GangLoan.DueAmount > 0)
         {
-            setLoanValueMenuItem.Enabled = false;
-            takeLoanMenuItem.Enabled = false;
+            if (setLoanValueMenuItem != null)
+            {
+                setLoanValueMenuItem.Enabled = false;
+            }
+            if (takeLoanMenuItem != null)
+            {
+                takeLoanMenuItem.Enabled = false;
+            }
             payoffDebtMenuItem.Enabled = true;
             payVigMenuItem.Enabled = true;
             payoffDebtMenuItem.Description = $"Payoff your current debt to the gang. ~n~{(gr.GangLoan == null ? "" : gr.GangLoan.ToString())}";
@@ -450,8 +471,14 @@ public class Gang : IPlatePrefixable, IGeneratesDispatchables
         }
         else
         {
-            setLoanValueMenuItem.Enabled = true;
-            takeLoanMenuItem.Enabled = true;
+            if (setLoanValueMenuItem != null)
+            {
+                setLoanValueMenuItem.Enabled = true;
+            }
+            if (takeLoanMenuItem != null)
+            {
+                takeLoanMenuItem.Enabled = true;
+            }
             payoffDebtMenuItem.Enabled = false;
             payVigMenuItem.Enabled = false;
             payVigMenuItem.Description = "";

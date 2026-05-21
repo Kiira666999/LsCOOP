@@ -1004,6 +1004,7 @@ namespace LsrCoop.Client
                 $"CriminalHistoryDateTimeLastWantedEnded={EscapeBridgeValue(FormatDateTime(criminalHistory?.DateTimeLastWantedEnded))}",
                 $"CriminalHistoryUpdatedUtc={EscapeBridgeValue(FormatDateTime(criminalHistory?.UpdatedUtc))}",
                 $"CriminalHistoryCrimes={EscapeBridgeValue(SerializeCriminalHistoryCrimes(criminalHistory?.Crimes))}",
+                $"CriminalHistoryKnownVehiclePlates={EscapeBridgeValue(SerializeCriminalHistoryKnownVehiclePlates(criminalHistory?.KnownVehiclePlates))}",
                 $"GangReputationStateId={EscapeBridgeValue(gangReputation?.StateId ?? string.Empty)}",
                 $"GangReputationCurrentGangId={EscapeBridgeValue(gangReputation?.CurrentGangId ?? string.Empty)}",
                 $"GangReputationUpdatedUtc={EscapeBridgeValue(FormatDateTime(gangReputation?.UpdatedUtc))}",
@@ -1665,6 +1666,16 @@ namespace LsrCoop.Client
                 });
             }
 
+            foreach (object plate in GetEnumerable(GetPropertyValue(state, "KnownVehiclePlates")))
+            {
+                dto.KnownVehiclePlates.Add(new CoopCriminalHistoryVehiclePlateRecordDto
+                {
+                    PlateNumber = GetString(plate, "PlateNumber"),
+                    PlateType = GetInt(plate, "PlateType"),
+                    OriginalModelHash = GetUInt(plate, "OriginalModelHash"),
+                });
+            }
+
             return dto;
         }
 
@@ -1998,6 +2009,12 @@ namespace LsrCoop.Client
         {
             object value = GetPropertyValue(source, propertyName);
             return value is int intValue ? intValue : 0;
+        }
+
+        private uint GetUInt(object source, string propertyName)
+        {
+            object value = GetPropertyValue(source, propertyName);
+            return value is uint uintValue ? uintValue : 0;
         }
 
         private float GetFloat(object source, string propertyName)
@@ -2630,6 +2647,23 @@ namespace LsrCoop.Client
                 crime.Priority.ToString(CultureInfo.InvariantCulture),
                 crime.ResultsInLethalForce.ToString().ToLowerInvariant()
             })));
+        }
+
+        private string SerializeCriminalHistoryKnownVehiclePlates(IEnumerable<CoopCriminalHistoryVehiclePlateRecordDto> plates)
+        {
+            if (plates == null)
+            {
+                return string.Empty;
+            }
+
+            return string.Join(";", plates
+                .Where(plate => !string.IsNullOrWhiteSpace(plate?.PlateNumber))
+                .Select(plate => string.Join(",", new[]
+                {
+                    EscapeListPart(plate.PlateNumber.Trim().ToUpperInvariant()),
+                    plate.PlateType.ToString(CultureInfo.InvariantCulture),
+                    plate.OriginalModelHash.ToString(CultureInfo.InvariantCulture)
+                })));
         }
 
         private string SerializeGangReputations(IEnumerable<CoopGangReputationRecordDto> records)
