@@ -48,6 +48,8 @@
     <CopHitPaymentMax>42000</CopHitPaymentMax>
     <AmbushPaymentMin>11000</AmbushPaymentMin>
     <AmbushPaymentMax>22000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>6500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>10000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3500</BriberyPaymentMin>
     <BriberyPaymentMax>8000</BriberyPaymentMax>
     <ArsonPaymentMin>3000</ArsonPaymentMin>
@@ -154,6 +156,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -259,6 +263,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -364,6 +370,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -469,6 +477,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -575,6 +585,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -680,6 +692,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -785,6 +799,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>1500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>3000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>600</BriberyPaymentMin>
     <BriberyPaymentMax>1400</BriberyPaymentMax>
     <ArsonPaymentMin>800</ArsonPaymentMin>
@@ -890,6 +906,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -996,6 +1014,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -1102,6 +1122,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -1208,6 +1230,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -1314,6 +1338,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -1421,6 +1447,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -1526,6 +1554,8 @@
     <CopHitPaymentMax>90000</CopHitPaymentMax>
     <AmbushPaymentMin>24000</AmbushPaymentMin>
     <AmbushPaymentMax>45000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>14000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>22000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>12000</BriberyPaymentMin>
     <BriberyPaymentMax>26000</BriberyPaymentMax>
     <ArsonPaymentMin>8000</ArsonPaymentMin>
@@ -1631,6 +1661,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -1736,6 +1768,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -1843,6 +1877,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>1500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>3000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>600</BriberyPaymentMin>
     <BriberyPaymentMax>1400</BriberyPaymentMax>
     <ArsonPaymentMin>800</ArsonPaymentMin>
@@ -1949,6 +1985,8 @@
     <CopHitPaymentMax>42000</CopHitPaymentMax>
     <AmbushPaymentMin>11000</AmbushPaymentMin>
     <AmbushPaymentMax>22000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>6500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>10000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3500</BriberyPaymentMin>
     <BriberyPaymentMax>8000</BriberyPaymentMax>
     <ArsonPaymentMin>3000</ArsonPaymentMin>

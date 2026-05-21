@@ -81,7 +81,13 @@ public class BurnerPhoneMessagesApp : BurnerPhoneApp
             }
             else
             {
-                PhoneContact phoneContact = Player.CellPhone.ContactList.Where(x => x.Name == Player.CellPhone.TextList.Where(y => y.Index == CurrentRow).FirstOrDefault()?.ContactName).FirstOrDefault();
+                PhoneText selectedText = Player.CellPhone.TextList.Where(y => y.Index == CurrentRow).FirstOrDefault();
+                if (Player.PlayerTasks.TryOpenGangJobOffer(selectedText))
+                {
+                    BurnerPhone.ClosePhone();
+                    return;
+                }
+                PhoneContact phoneContact = Player.CellPhone.ContactList.Where(x => x.Name == selectedText?.ContactName).FirstOrDefault();
                 if(phoneContact != null) 
                 {
                     BurnerPhone.ReturnHome(Index);
@@ -95,7 +101,9 @@ public class BurnerPhoneMessagesApp : BurnerPhoneApp
         {
             BurnerPhone.MoveFinger(5);
             BurnerPhone.PlayBackSound();
-            Player.CellPhone.DeleteText(Player.CellPhone.TextList.Where(x => x.Index == CurrentRow).FirstOrDefault());
+            PhoneText selectedText = Player.CellPhone.TextList.Where(x => x.Index == CurrentRow).FirstOrDefault();
+            Player.PlayerTasks.ClearGangJobOffer(selectedText);
+            Player.CellPhone.DeleteText(selectedText);
             Open(true);
             //Game.DisplaySubtitle($"DELETE MESSAGE {Player.CellPhone.TextList.Where(x => x.Index == CurrentRow).FirstOrDefault()?.ContactName}");
         }
@@ -123,7 +131,8 @@ public class BurnerPhoneMessagesApp : BurnerPhoneApp
         else
         {
             BurnerPhone.SetSoftKey((int)SoftKey.Left, SoftKeyIcon.Delete, Color.LightBlue);
-            BurnerPhone.SetSoftKey((int)SoftKey.Middle, SoftKeyIcon.Call, Color.LightGreen);
+            PhoneText selectedText = Player.CellPhone.TextList.Where(x => x.Index == CurrentRow).FirstOrDefault();
+            BurnerPhone.SetSoftKey((int)SoftKey.Middle, Player.PlayerTasks.IsPendingGangJobOfferText(selectedText) ? SoftKeyIcon.Select : SoftKeyIcon.Call, Color.LightGreen);
             BurnerPhone.SetSoftKey((int)SoftKey.Right, SoftKeyIcon.Back, Color.Red);
         }
     }

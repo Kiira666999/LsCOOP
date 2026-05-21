@@ -46,6 +46,8 @@
     <CopHitPaymentMax>4500</CopHitPaymentMax>
     <AmbushPaymentMin>3500</AmbushPaymentMin>
     <AmbushPaymentMax>5500</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>0</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>0</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>2500</BriberyPaymentMin>
     <BriberyPaymentMax>5000</BriberyPaymentMax>
     <ArsonPaymentMin>500</ArsonPaymentMin>

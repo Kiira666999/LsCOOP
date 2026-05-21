@@ -31,6 +31,7 @@ public class PlayerTasks
     public CorruptCopTasks CorruptCopTasks { get; private set; }
     public UndergroundGunsTasks UndergroundGunsTasks { get; private set; }
     public VehicleExporterTasks VehicleExporterTasks { get; private set; }
+    public GangJobOfferManager GangJobOffers { get; private set; }
     public List<PlayerTask> PlayerTaskList { get; set; } = new List<PlayerTask>();
     public PlayerTasks(ITaskAssignable player, ITimeControllable time, IGangs gangs, IPlacesOfInterest placesOfInterest, ISettingsProvideable settings, IEntityProvideable world, 
         ICrimes crimes, INameProvideable names, IWeapons weapons, IShopMenus shopMenus, IModItems modItems, IPedGroups pedGroups, IAgencies agencies, IGangTerritories gangTerritories, IZones zones)
@@ -50,6 +51,7 @@ public class PlayerTasks
         CorruptCopTasks = new CorruptCopTasks(Player, Time, Gangs, this, PlacesOfInterest, ActiveDrops, Settings, World, Crimes, Names, Weapons, ShopMenus);
         UndergroundGunsTasks = new UndergroundGunsTasks(Player, Time, Gangs, this, PlacesOfInterest, ActiveDrops, Settings, World, Crimes);
         VehicleExporterTasks = new VehicleExporterTasks(Player, Time, Gangs, this, PlacesOfInterest, ActiveDrops, Settings, World, Crimes, modItems);
+        GangJobOffers = new GangJobOfferManager(Player, this, Time, Gangs, PlacesOfInterest, Settings, World);
         PlayerTaskGroups = new List<IPlayerTaskGroup>
         {
             GangTasks,
@@ -80,6 +82,7 @@ public class PlayerTasks
                 SendExpiringSoonMessage(pt);
             }
         }
+        GangJobOffers.Update();
     }
     public void Reset()
     {
@@ -89,6 +92,7 @@ public class PlayerTasks
     {
         PlayerTaskList.Clear();
         LastContactTask.Clear();
+        GangJobOffers.Clear();
     }
     public void Dispose()
     {
@@ -102,6 +106,7 @@ public class PlayerTasks
             playerTaskGroup.Dispose();
         }
         LastContactTask.Clear();
+        GangJobOffers.Clear();
     }
     public void OnStandardRespawn()
     {
@@ -241,6 +246,18 @@ public class PlayerTasks
             return false;
         }
         return true;
+    }
+    public bool TryOpenGangJobOffer(PhoneText text)
+    {
+        return GangJobOffers.TryOpenOfferFromText(text);
+    }
+    public bool IsPendingGangJobOfferText(PhoneText text)
+    {
+        return GangJobOffers.IsPendingOfferText(text);
+    }
+    public void ClearGangJobOffer(PhoneText text)
+    {
+        GangJobOffers.ClearOfferFromText(text);
     }
     private bool RecentlyEndedTask(string contactName)
     {

@@ -345,6 +345,7 @@
     <Compile Include="lsr\Player\ActiveTasks\Gang\RivalGangAmbushTask.cs" />
     <Compile Include="lsr\Player\ActiveTasks\Gang\GangBriberyTask.cs" />
     <Compile Include="lsr\Player\ActiveTasks\Gang\Generic\DrugMeetTask.cs" />
+    <Compile Include="lsr\Player\ActiveTasks\Gang\Generic\GangMeetingBodyguardTask.cs" />
     <Compile Include="lsr\Player\ActiveTasks\Generic Contact\PayoffContactTask.cs" />
     <Compile Include="lsr\Player\ActiveTasks\PlayerTasks\GangRaidDefenseTask.cs" />
     <Compile Include="lsr\Player\Activity\ForceDoorActivity.cs" />
@@ -1015,6 +1016,7 @@
     <Compile Include="lsr\Player\ActiveTasks\Gang\GangDeliveryTask.cs" />
     <Compile Include="lsr\Player\ActiveTasks\Gang\GangPickupTask.cs" />
     <Compile Include="lsr\Player\ActiveTasks\Gang\GangPizzaDeliveryTask.cs" />
+    <Compile Include="lsr\Player\ActiveTasks\Gang\GangJobOfferManager.cs" />
     <Compile Include="lsr\Player\ActiveTasks\Gang\GangTasks.cs" />
     <Compile Include="lsr\Player\ActiveTasks\Gang\GangWheelmanTask.cs" />
     <Compile Include="lsr\Player\ActiveTasks\Gang\PayoffGangTask.cs" />

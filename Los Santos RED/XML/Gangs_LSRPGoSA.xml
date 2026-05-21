@@ -48,6 +48,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>1500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>3000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>600</BriberyPaymentMin>
     <BriberyPaymentMax>1400</BriberyPaymentMax>
     <ArsonPaymentMin>800</ArsonPaymentMin>
@@ -155,6 +157,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>3000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>5000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>1500</BriberyPaymentMin>
     <BriberyPaymentMax>3500</BriberyPaymentMax>
     <ArsonPaymentMin>1500</ArsonPaymentMin>
@@ -265,6 +269,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>1500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>3000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>700</BriberyPaymentMin>
     <BriberyPaymentMax>1600</BriberyPaymentMax>
     <ArsonPaymentMin>1000</ArsonPaymentMin>
@@ -370,6 +376,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>3000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>5000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>1500</BriberyPaymentMin>
     <BriberyPaymentMax>3500</BriberyPaymentMax>
     <ArsonPaymentMin>1500</ArsonPaymentMin>
@@ -462,6 +470,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>3000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>5000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>1500</BriberyPaymentMin>
     <BriberyPaymentMax>3500</BriberyPaymentMax>
     <ArsonPaymentMin>1500</ArsonPaymentMin>
@@ -564,6 +574,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>3000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>5000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>1500</BriberyPaymentMin>
     <BriberyPaymentMax>3500</BriberyPaymentMax>
     <ArsonPaymentMin>1500</ArsonPaymentMin>
@@ -672,6 +684,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>6000</AmbushPaymentMin>
     <AmbushPaymentMax>12000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>3500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>5500</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>1800</BriberyPaymentMin>
     <BriberyPaymentMax>4200</BriberyPaymentMax>
     <ArsonPaymentMin>2000</ArsonPaymentMin>
@@ -780,6 +794,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>34000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>0</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>0</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>18000</BriberyPaymentMin>
     <BriberyPaymentMax>45000</BriberyPaymentMax>
     <ArsonPaymentMin>0</ArsonPaymentMin>
@@ -883,6 +899,8 @@
     <CopHitPaymentMax>130000</CopHitPaymentMax>
     <AmbushPaymentMin>35000</AmbushPaymentMin>
     <AmbushPaymentMax>65000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>22000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>32000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>20000</BriberyPaymentMin>
     <BriberyPaymentMax>45000</BriberyPaymentMax>
     <ArsonPaymentMin>12000</ArsonPaymentMin>
@@ -999,6 +1017,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>0</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>0</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>8000</BriberyPaymentMin>
     <BriberyPaymentMax>18000</BriberyPaymentMax>
     <ArsonPaymentMin>0</ArsonPaymentMin>
@@ -1078,6 +1098,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -1188,6 +1210,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>3000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>5000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>1500</BriberyPaymentMin>
     <BriberyPaymentMax>3500</BriberyPaymentMax>
     <ArsonPaymentMin>1500</ArsonPaymentMin>
@@ -1297,6 +1321,8 @@
     <CopHitPaymentMax>42000</CopHitPaymentMax>
     <AmbushPaymentMin>11000</AmbushPaymentMin>
     <AmbushPaymentMax>22000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>6500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>10000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3500</BriberyPaymentMin>
     <BriberyPaymentMax>8000</BriberyPaymentMax>
     <ArsonPaymentMin>3000</ArsonPaymentMin>
@@ -1409,6 +1435,8 @@
     <CopHitPaymentMax>42000</CopHitPaymentMax>
     <AmbushPaymentMin>11000</AmbushPaymentMin>
     <AmbushPaymentMax>22000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>6500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>10000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3500</BriberyPaymentMin>
     <BriberyPaymentMax>8000</BriberyPaymentMax>
     <ArsonPaymentMin>3000</ArsonPaymentMin>
@@ -1520,6 +1548,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -1628,6 +1658,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -1737,6 +1769,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -1844,6 +1878,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -1953,6 +1989,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -2060,6 +2098,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -2172,6 +2212,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>1500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>3000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>600</BriberyPaymentMin>
     <BriberyPaymentMax>1400</BriberyPaymentMax>
     <ArsonPaymentMin>800</ArsonPaymentMin>
@@ -2276,6 +2318,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -2385,6 +2429,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -2498,6 +2544,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -2605,6 +2653,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -2712,6 +2762,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -2819,6 +2871,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -2924,6 +2978,8 @@
     <CopHitPaymentMax>90000</CopHitPaymentMax>
     <AmbushPaymentMin>24000</AmbushPaymentMin>
     <AmbushPaymentMax>45000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>14000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>22000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>12000</BriberyPaymentMin>
     <BriberyPaymentMax>26000</BriberyPaymentMax>
     <ArsonPaymentMin>8000</ArsonPaymentMin>
@@ -3031,6 +3087,8 @@
     <CopHitPaymentMax>70000</CopHitPaymentMax>
     <AmbushPaymentMin>18000</AmbushPaymentMin>
     <AmbushPaymentMax>35000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>10000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>16000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>9000</BriberyPaymentMin>
     <BriberyPaymentMax>20000</BriberyPaymentMax>
     <ArsonPaymentMin>6000</ArsonPaymentMin>
@@ -3139,6 +3197,8 @@
     <CopHitPaymentMax>38000</CopHitPaymentMax>
     <AmbushPaymentMin>9000</AmbushPaymentMin>
     <AmbushPaymentMax>18000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>5000</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>8000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3000</BriberyPaymentMin>
     <BriberyPaymentMax>7000</BriberyPaymentMax>
     <ArsonPaymentMin>2500</ArsonPaymentMin>
@@ -3255,6 +3315,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>1500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>3000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>600</BriberyPaymentMin>
     <BriberyPaymentMax>1400</BriberyPaymentMax>
     <ArsonPaymentMin>800</ArsonPaymentMin>
@@ -3362,6 +3424,8 @@
     <CopHitPaymentMax>42000</CopHitPaymentMax>
     <AmbushPaymentMin>11000</AmbushPaymentMin>
     <AmbushPaymentMax>22000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>6500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>10000</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>3500</BriberyPaymentMin>
     <BriberyPaymentMax>8000</BriberyPaymentMax>
     <ArsonPaymentMin>3000</ArsonPaymentMin>
@@ -3470,6 +3534,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>6000</AmbushPaymentMin>
     <AmbushPaymentMax>12000</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>3500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>5500</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>1800</BriberyPaymentMin>
     <BriberyPaymentMax>4200</BriberyPaymentMax>
     <ArsonPaymentMin>2000</ArsonPaymentMin>
@@ -3571,6 +3637,8 @@
     <CopHitPaymentMax>0</CopHitPaymentMax>
     <AmbushPaymentMin>0</AmbushPaymentMin>
     <AmbushPaymentMax>0</AmbushPaymentMax>
+    <MeetingBodyguardPaymentMin>2500</MeetingBodyguardPaymentMin>
+    <MeetingBodyguardPaymentMax>4500</MeetingBodyguardPaymentMax>
     <BriberyPaymentMin>6000</BriberyPaymentMin>
     <BriberyPaymentMax>15000</BriberyPaymentMax>
     <ArsonPaymentMin>0</ArsonPaymentMin>
@@ -3628,7 +3696,7 @@
   </Gang>
   <Gang>
     <ID>AMBIENT_GANG_THUGS</ID>///newgang
-    <FullName>Street Gang 1</FullName><ShortName>Street Gang 1</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>TUG </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>ThugPeds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>LostSidearms</SideArmsID><LongGunsID>LostLongGuns</LongGunsID><VehiclesID>NorthHollandVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>30</DrugDealerPercentage><DealerMenuGroup>SLSTDealer1</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>4</PercentageWithLongGuns><PercentageWithSidearms>30</PercentageWithSidearms><PercentageWithMelee>40</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons>
+    <FullName>Street Gang 1</FullName><ShortName>Street Gang 1</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>TUG </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>ThugPeds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>LostSidearms</SideArmsID><LongGunsID>LostLongGuns</LongGunsID><VehiclesID>NorthHollandVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><MeetingBodyguardPaymentMin>3000</MeetingBodyguardPaymentMin><MeetingBodyguardPaymentMax>5000</MeetingBodyguardPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>30</DrugDealerPercentage><DealerMenuGroup>SLSTDealer1</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>4</PercentageWithLongGuns><PercentageWithSidearms>30</PercentageWithSidearms><PercentageWithMelee>40</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons>
     <LoanParameters>
       <LoanParamterList>
         <LoanParameter>
@@ -3656,7 +3724,7 @@
     </LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
   <Gang>
     <ID>AMBIENT_GANG_THUGS2</ID>///hostilerhballas
-    <FullName>Street Gang 2</FullName><ShortName>Street Gang 2</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>RHB </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>Thug2Peds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>BallasSidearms</SideArmsID><LongGunsID>BallasLongGuns</LongGunsID><VehiclesID>RHBallasVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>30</DrugDealerPercentage><DealerMenuGroup>BallasDealerMenu</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>3</PercentageWithLongGuns><PercentageWithSidearms>25</PercentageWithSidearms><PercentageWithMelee>0</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons>
+    <FullName>Street Gang 2</FullName><ShortName>Street Gang 2</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>RHB </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>Thug2Peds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>BallasSidearms</SideArmsID><LongGunsID>BallasLongGuns</LongGunsID><VehiclesID>RHBallasVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><MeetingBodyguardPaymentMin>3000</MeetingBodyguardPaymentMin><MeetingBodyguardPaymentMax>5000</MeetingBodyguardPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>30</DrugDealerPercentage><DealerMenuGroup>BallasDealerMenu</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>3</PercentageWithLongGuns><PercentageWithSidearms>25</PercentageWithSidearms><PercentageWithMelee>0</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons>
     <LoanParameters>
       <LoanParamterList>
         <LoanParameter>
@@ -3684,7 +3752,7 @@
     </LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
   <Gang>
     <ID>AMBIENT_GANG_THUGS3</ID>///hostilektbballas
-    <FullName>Street Gang 3</FullName><ShortName>Street Gang 3</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>KTB </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>Thug3Peds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>BallasSidearms</SideArmsID><LongGunsID>BallasLongGuns</LongGunsID><VehiclesID>KTBallasVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>30</DrugDealerPercentage><DealerMenuGroup>BallasDealerMenu</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>3</PercentageWithLongGuns><PercentageWithSidearms>25</PercentageWithSidearms><PercentageWithMelee>0</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons>
+    <FullName>Street Gang 3</FullName><ShortName>Street Gang 3</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>KTB </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>Thug3Peds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>BallasSidearms</SideArmsID><LongGunsID>BallasLongGuns</LongGunsID><VehiclesID>KTBallasVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><MeetingBodyguardPaymentMin>3000</MeetingBodyguardPaymentMin><MeetingBodyguardPaymentMax>5000</MeetingBodyguardPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>30</DrugDealerPercentage><DealerMenuGroup>BallasDealerMenu</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>3</PercentageWithLongGuns><PercentageWithSidearms>25</PercentageWithSidearms><PercentageWithMelee>0</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons>
     <LoanParameters>
       <LoanParamterList>
         <LoanParameter>

@@ -322,7 +322,10 @@ public class CellPhone
                         NativeHelper.DisplayNotificationCustom(sc.IconName, sc.IconName, sc.ContactName, "~g~Text Received~s~", sc.Message, NotificationIconTypes.ChatBox, false);
                     }
                     PlayTexttone();
-                    AddContact(sc.PhoneContact, true);
+                    if (ShouldAddContactFromText(sc.PhoneContact))
+                    {
+                        AddContact(sc.PhoneContact, true);
+                    }
                 }
                 ScheduledTexts.RemoveAt(i);
                 return true;
@@ -419,6 +422,20 @@ public class CellPhone
             AddedTexts.Add(textA);
             ReIndexTexts();
 
+        }
+    }
+    public void AddTextWithoutAddingContact(PhoneContact phoneContact, string message, bool displayNotification)
+    {
+        if (phoneContact == null)
+        {
+            return;
+        }
+        bool alreadyAdded = AddedTexts.Any(x => x.ContactName == phoneContact.Name && x.Message == message && x.HourSent == Time.CurrentHour && x.MinuteSent == Time.CurrentMinute);
+        AddText(phoneContact.Name, phoneContact.IconName, message, Time.CurrentHour, Time.CurrentMinute, false, null);
+        if (!alreadyAdded && displayNotification)
+        {
+            NativeHelper.DisplayNotificationCustom(phoneContact.IconName, phoneContact.IconName, phoneContact.Name, "~g~Text Received~s~", message, NotificationIconTypes.ChatBox, false);
+            PlayTexttone();
         }
     }
     public void ReIndexTexts()
@@ -618,6 +635,20 @@ public class CellPhone
             return false;
         }
         return ScheduledTexts.Any(x => x.ContactName == phoneContact.Name) || ScheduledContacts.Any(x => x.ContactName == phoneContact.Name);
+    }
+    private bool ShouldAddContactFromText(PhoneContact phoneContact)
+    {
+        if (phoneContact == null)
+        {
+            return false;
+        }
+        Gang gang = Gangs.GetGangByContact(phoneContact.Name);
+        if (gang == null)
+        {
+            return true;
+        }
+        GangReputation reputation = Player.RelationshipManager.GangRelationships.GetReputation(gang);
+        return reputation != null && (reputation.IsMember || reputation.GangRelationship == GangRespect.Member || reputation.GangRelationship == GangRespect.Friendly);
     }
     public void ClearPendingTexts(PhoneContact phoneContact)
     {
