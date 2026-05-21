@@ -1084,7 +1084,9 @@ public class PedExt : IComplexTaskable, ISeatAssignable
         }
         Pedestrian.Money = 0;
         IsTrustingOfPlayer = RandomItems.RandomPercent(Settings.SettingsManager.CivilianSettings.PercentageTrustingOfPlayer);// Gang.PercentageTrustingOfPlayer);
-        Money = RandomItems.GetRandomNumberInt(CivilianMoneyMin(), CivilianMoneyMax());
+        int civilianMoneyMin = CivilianMoneyMin();
+        int civilianMoneyMax = Math.Max(civilianMoneyMin + 1, (int)(CivilianMoneyMax() * 0.3f));
+        Money = RandomItems.GetRandomNumberInt(civilianMoneyMin, civilianMoneyMax);
         WillFight = RandomItems.RandomPercent(CivilianFightPercentage());
         WillCallPolice = RandomItems.RandomPercent(CivilianCallPercentage());
         WillCallPoliceIntense = RandomItems.RandomPercent(CivilianSeriousCallPercentage());
