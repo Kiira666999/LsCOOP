@@ -63,7 +63,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>5</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>100</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>20</PercentageWithLongGuns>
+    <PercentageWithLongGuns>10</PercentageWithLongGuns>
     <PercentageWithSidearms>20</PercentageWithSidearms>
     <PercentageWithMelee>20</PercentageWithMelee>
     <VehicleSpawnPercentage>100</VehicleSpawnPercentage>

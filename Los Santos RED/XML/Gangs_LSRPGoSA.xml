@@ -65,7 +65,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>3</PercentageWithLongGuns>
+    <PercentageWithLongGuns>1.5</PercentageWithLongGuns>
     <PercentageWithSidearms>20</PercentageWithSidearms>
     <PercentageWithMelee>30</PercentageWithMelee>
     <VehicleSpawnPercentage>45</VehicleSpawnPercentage>
@@ -172,7 +172,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>8</PercentageWithLongGuns>
+    <PercentageWithLongGuns>4</PercentageWithLongGuns>
     <PercentageWithSidearms>35</PercentageWithSidearms>
     <PercentageWithMelee>25</PercentageWithMelee>
     <VehicleSpawnPercentage>55</VehicleSpawnPercentage>
@@ -282,7 +282,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>10</PercentageWithLongGuns>
+    <PercentageWithLongGuns>5</PercentageWithLongGuns>
     <PercentageWithSidearms>45</PercentageWithSidearms>
     <PercentageWithMelee>25</PercentageWithMelee>
     <VehicleSpawnPercentage>55</VehicleSpawnPercentage>
@@ -387,7 +387,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>5</PercentageWithLongGuns>
+    <PercentageWithLongGuns>2.5</PercentageWithLongGuns>
     <PercentageWithSidearms>30</PercentageWithSidearms>///cpks
     <PercentageWithMelee>25</PercentageWithMelee><VehicleSpawnPercentage>50</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>3500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs><string>AMBIENT_GANG_FIENDS</string><string>AMBIENT_GANG_SHUSTLERS</string><string>AMBIENT_GANG_HRFAMILY</string><string>AMBIENT_GANG_CAF</string></EnemyGangs></Gang>
   <Gang>
@@ -454,7 +454,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>5</PercentageWithLongGuns>
+    <PercentageWithLongGuns>2.5</PercentageWithLongGuns>
     <PercentageWithSidearms>30</PercentageWithSidearms>
     <PercentageWithMelee>25</PercentageWithMelee>
     <VehicleSpawnPercentage>50</VehicleSpawnPercentage>
@@ -556,7 +556,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>18</PercentageWithLongGuns>
+    <PercentageWithLongGuns>9</PercentageWithLongGuns>
     <PercentageWithSidearms>50</PercentageWithSidearms>
     <PercentageWithMelee>20</PercentageWithMelee>
     <VehicleSpawnPercentage>65</VehicleSpawnPercentage>
@@ -664,7 +664,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>20</PercentageWithLongGuns>
+    <PercentageWithLongGuns>10</PercentageWithLongGuns>
     <PercentageWithSidearms>50</PercentageWithSidearms>
     <PercentageWithMelee>35</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -772,7 +772,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>14</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>70</PercentageWithLongGuns>
+    <PercentageWithLongGuns>35</PercentageWithLongGuns>
     <PercentageWithSidearms>100</PercentageWithSidearms>
     <PercentageWithMelee>10</PercentageWithMelee>
     <VehicleSpawnPercentage>55</VehicleSpawnPercentage>
@@ -875,7 +875,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>16</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>80</PercentageWithLongGuns>
+    <PercentageWithLongGuns>40</PercentageWithLongGuns>
     <PercentageWithSidearms>100</PercentageWithSidearms>
     <PercentageWithMelee>20</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -991,7 +991,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>14</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>70</PercentageWithLongGuns>
+    <PercentageWithLongGuns>35</PercentageWithLongGuns>
     <PercentageWithSidearms>100</PercentageWithSidearms>
     <PercentageWithMelee>10</PercentageWithMelee>
     <VehicleSpawnPercentage>55</VehicleSpawnPercentage>
@@ -1094,7 +1094,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>12</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>62</PercentageWithLongGuns>
+    <PercentageWithLongGuns>31</PercentageWithLongGuns>
     <PercentageWithSidearms>100</PercentageWithSidearms>
     <PercentageWithMelee>15</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -1204,7 +1204,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>8</PercentageWithLongGuns>
+    <PercentageWithLongGuns>4</PercentageWithLongGuns>
     <PercentageWithSidearms>35</PercentageWithSidearms>
     <PercentageWithMelee>25</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -1313,7 +1313,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>20</PercentageWithLongGuns>
+    <PercentageWithLongGuns>10</PercentageWithLongGuns>
     <PercentageWithSidearms>50</PercentageWithSidearms>
     <PercentageWithMelee>30</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -1425,7 +1425,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>36</PercentageWithLongGuns>
+    <PercentageWithLongGuns>18</PercentageWithLongGuns>
     <PercentageWithSidearms>65</PercentageWithSidearms>
     <PercentageWithMelee>35</PercentageWithMelee>
     <VehicleSpawnPercentage>65</VehicleSpawnPercentage>
@@ -1536,7 +1536,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>12</PercentageWithLongGuns>
+    <PercentageWithLongGuns>6</PercentageWithLongGuns>
     <PercentageWithSidearms>40</PercentageWithSidearms>
     <PercentageWithMelee>25</PercentageWithMelee>
     <VehicleSpawnPercentage>65</VehicleSpawnPercentage>
@@ -1644,7 +1644,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>12</PercentageWithLongGuns>
+    <PercentageWithLongGuns>6</PercentageWithLongGuns>
     <PercentageWithSidearms>40</PercentageWithSidearms>
     <PercentageWithMelee>25</PercentageWithMelee>
     <VehicleSpawnPercentage>65</VehicleSpawnPercentage>
@@ -1753,7 +1753,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>12</PercentageWithLongGuns>
+    <PercentageWithLongGuns>6</PercentageWithLongGuns>
     <PercentageWithSidearms>40</PercentageWithSidearms>
     <PercentageWithMelee>25</PercentageWithMelee>
     <VehicleSpawnPercentage>65</VehicleSpawnPercentage>
@@ -1860,7 +1860,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>16</PercentageWithLongGuns>
+    <PercentageWithLongGuns>8</PercentageWithLongGuns>
     <PercentageWithSidearms>45</PercentageWithSidearms>
     <PercentageWithMelee>25</PercentageWithMelee>
     <VehicleSpawnPercentage>65</VehicleSpawnPercentage>
@@ -1969,7 +1969,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>18</PercentageWithLongGuns>
+    <PercentageWithLongGuns>9</PercentageWithLongGuns>
     <PercentageWithSidearms>50</PercentageWithSidearms>
     <PercentageWithMelee>25</PercentageWithMelee>
     <VehicleSpawnPercentage>65</VehicleSpawnPercentage>
@@ -2076,7 +2076,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>12</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>18</PercentageWithLongGuns>
+    <PercentageWithLongGuns>9</PercentageWithLongGuns>
     <PercentageWithSidearms>50</PercentageWithSidearms>
     <PercentageWithMelee>20</PercentageWithMelee>
     <VehicleSpawnPercentage>65</VehicleSpawnPercentage>
@@ -2188,7 +2188,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>35</PercentageWithLongGuns>
+    <PercentageWithLongGuns>17.5</PercentageWithLongGuns>
     <PercentageWithSidearms>60</PercentageWithSidearms>
     <PercentageWithMelee>35</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -2292,7 +2292,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>18</PercentageWithLongGuns>
+    <PercentageWithLongGuns>9</PercentageWithLongGuns>
     <PercentageWithSidearms>50</PercentageWithSidearms>
     <PercentageWithMelee>20</PercentageWithMelee>
     <VehicleSpawnPercentage>65</VehicleSpawnPercentage>
@@ -2401,7 +2401,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>12</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>42</PercentageWithLongGuns>
+    <PercentageWithLongGuns>21</PercentageWithLongGuns>
     <PercentageWithSidearms>100</PercentageWithSidearms>
     <PercentageWithMelee>10</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -2514,7 +2514,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>12</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>40</PercentageWithLongGuns>
+    <PercentageWithLongGuns>20</PercentageWithLongGuns>
     <PercentageWithSidearms>100</PercentageWithSidearms>
     <PercentageWithMelee>10</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -2621,7 +2621,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>12</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>40</PercentageWithLongGuns>
+    <PercentageWithLongGuns>20</PercentageWithLongGuns>
     <PercentageWithSidearms>100</PercentageWithSidearms>
     <PercentageWithMelee>10</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -2728,7 +2728,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>12</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>38</PercentageWithLongGuns>
+    <PercentageWithLongGuns>19</PercentageWithLongGuns>
     <PercentageWithSidearms>100</PercentageWithSidearms>
     <PercentageWithMelee>10</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -2835,7 +2835,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>12</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>38</PercentageWithLongGuns>
+    <PercentageWithLongGuns>19</PercentageWithLongGuns>
     <PercentageWithSidearms>100</PercentageWithSidearms>
     <PercentageWithMelee>10</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -2940,7 +2940,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>15</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>60</PercentageWithLongGuns>
+    <PercentageWithLongGuns>30</PercentageWithLongGuns>
     <PercentageWithSidearms>100</PercentageWithSidearms>
     <PercentageWithMelee>15</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -3047,7 +3047,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>12</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>42</PercentageWithLongGuns>
+    <PercentageWithLongGuns>21</PercentageWithLongGuns>
     <PercentageWithSidearms>100</PercentageWithSidearms>
     <PercentageWithMelee>15</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -3155,7 +3155,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>12</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>8</PercentageWithLongGuns>
+    <PercentageWithLongGuns>4</PercentageWithLongGuns>
     <PercentageWithSidearms>35</PercentageWithSidearms>
     <PercentageWithMelee>25</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -3271,7 +3271,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>8</PercentageWithLongGuns>
+    <PercentageWithLongGuns>4</PercentageWithLongGuns>
     <PercentageWithSidearms>35</PercentageWithSidearms>
     <PercentageWithMelee>25</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -3378,7 +3378,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>36</PercentageWithLongGuns>
+    <PercentageWithLongGuns>18</PercentageWithLongGuns>
     <PercentageWithSidearms>65</PercentageWithSidearms>
     <PercentageWithMelee>35</PercentageWithMelee>
     <VehicleSpawnPercentage>65</VehicleSpawnPercentage>
@@ -3486,7 +3486,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>18</PercentageWithLongGuns>
+    <PercentageWithLongGuns>9</PercentageWithLongGuns>
     <PercentageWithSidearms>45</PercentageWithSidearms>
     <PercentageWithMelee>30</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -3587,7 +3587,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>60</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>100</PercentageWithLongGuns>
+    <PercentageWithLongGuns>50</PercentageWithLongGuns>
     <PercentageWithSidearms>50</PercentageWithSidearms>
     <PercentageWithMelee>10</PercentageWithMelee>
     <VehicleSpawnPercentage>60</VehicleSpawnPercentage>
@@ -3603,11 +3603,11 @@
   </Gang>
   <Gang>
     <ID>AMBIENT_GANG_THUGS</ID>///newgang
-    <FullName>Street Gang 1</FullName><ShortName>Street Gang 1</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>TUG </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>ThugPeds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>LostSidearms</SideArmsID><LongGunsID>LostLongGuns</LongGunsID><VehiclesID>NorthHollandVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>30</DrugDealerPercentage><DealerMenuGroup>SLSTDealer1</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>8</PercentageWithLongGuns><PercentageWithSidearms>30</PercentageWithSidearms><PercentageWithMelee>40</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
+    <FullName>Street Gang 1</FullName><ShortName>Street Gang 1</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>TUG </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>ThugPeds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>LostSidearms</SideArmsID><LongGunsID>LostLongGuns</LongGunsID><VehiclesID>NorthHollandVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>30</DrugDealerPercentage><DealerMenuGroup>SLSTDealer1</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>4</PercentageWithLongGuns><PercentageWithSidearms>30</PercentageWithSidearms><PercentageWithMelee>40</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
   <Gang>
     <ID>AMBIENT_GANG_THUGS2</ID>///hostilerhballas
-    <FullName>Street Gang 2</FullName><ShortName>Street Gang 2</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>RHB </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>Thug2Peds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>BallasSidearms</SideArmsID><LongGunsID>BallasLongGuns</LongGunsID><VehiclesID>RHBallasVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>30</DrugDealerPercentage><DealerMenuGroup>BallasDealerMenu</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>6</PercentageWithLongGuns><PercentageWithSidearms>25</PercentageWithSidearms><PercentageWithMelee>0</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
+    <FullName>Street Gang 2</FullName><ShortName>Street Gang 2</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>RHB </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>Thug2Peds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>BallasSidearms</SideArmsID><LongGunsID>BallasLongGuns</LongGunsID><VehiclesID>RHBallasVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>30</DrugDealerPercentage><DealerMenuGroup>BallasDealerMenu</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>3</PercentageWithLongGuns><PercentageWithSidearms>25</PercentageWithSidearms><PercentageWithMelee>0</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
   <Gang>
     <ID>AMBIENT_GANG_THUGS3</ID>///hostilektbballas
-    <FullName>Street Gang 3</FullName><ShortName>Street Gang 3</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>KTB </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>Thug3Peds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>BallasSidearms</SideArmsID><LongGunsID>BallasLongGuns</LongGunsID><VehiclesID>KTBallasVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>30</DrugDealerPercentage><DealerMenuGroup>BallasDealerMenu</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>6</PercentageWithLongGuns><PercentageWithSidearms>25</PercentageWithSidearms><PercentageWithMelee>0</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
+    <FullName>Street Gang 3</FullName><ShortName>Street Gang 3</ShortName><MemberName>Gang Member</MemberName><ContactName>Street Gang</ContactName><DenName>Den</DenName><ColorPrefix>~w~</ColorPrefix><ColorString>White</ColorString><LicensePlatePrefix>KTB </LicensePlatePrefix><SpawnLimit>50</SpawnLimit><CanSpawnAnywhere>false</CanSpawnAnywhere><MinWantedLevelSpawn>0</MinWantedLevelSpawn><MaxWantedLevelSpawn>6</MaxWantedLevelSpawn><HeadDataGroupID /><PersonnelID>Thug3Peds</PersonnelID><MeleeWeaponsID>MeleeWeapons</MeleeWeaponsID><SideArmsID>BallasSidearms</SideArmsID><LongGunsID>BallasLongGuns</LongGunsID><VehiclesID>KTBallasVehicles</VehiclesID><MinimumRep>-5000</MinimumRep><MaximumRep>30000</MaximumRep><StartingRep>-500</StartingRep><HostileRepLevel>-1</HostileRepLevel><NeutralRepLevel>0</NeutralRepLevel><FriendlyRepLevel>5600</FriendlyRepLevel><MemberOfferRepLevel>8000</MemberOfferRepLevel><HitSquadRep>-9000</HitSquadRep><AddAmbientRep>false</AddAmbientRep><GameTimeToRecoverAmbientRep>18000</GameTimeToRecoverAmbientRep><PickupPaymentMin>700</PickupPaymentMin><PickupPaymentMax>1500</PickupPaymentMax><TheftPaymentMin>1800</TheftPaymentMin><TheftPaymentMax>4000</TheftPaymentMax><HitPaymentMin>6500</HitPaymentMin><HitPaymentMax>11000</HitPaymentMax><DeliveryPaymentMin>1800</DeliveryPaymentMin><DeliveryPaymentMax>4200</DeliveryPaymentMax><WheelmanPaymentMin>4000</WheelmanPaymentMin><WheelmanPaymentMax>8500</WheelmanPaymentMax><ImpoundTheftPaymentMin>0</ImpoundTheftPaymentMin><ImpoundTheftPaymentMax>0</ImpoundTheftPaymentMax><BodyDisposalPaymentMin>3500</BodyDisposalPaymentMin><BodyDisposalPaymentMax>7000</BodyDisposalPaymentMax><CopHitPaymentMin>0</CopHitPaymentMin><CopHitPaymentMax>0</CopHitPaymentMax><AmbushPaymentMin>0</AmbushPaymentMin><AmbushPaymentMax>0</AmbushPaymentMax><BriberyPaymentMin>1500</BriberyPaymentMin><BriberyPaymentMax>3500</BriberyPaymentMax><ArsonPaymentMin>1500</ArsonPaymentMin><ArsonPaymentMax>3500</ArsonPaymentMax><FightPercentage>100</FightPercentage><FightPolicePercentage>5</FightPolicePercentage><AlwaysFightPolicePercentage>0</AlwaysFightPolicePercentage><DrugDealerPercentage>30</DrugDealerPercentage><DealerMenuGroup>BallasDealerMenu</DealerMenuGroup><AmbientMemberMoneyMin>100</AmbientMemberMoneyMin><AmbientMemberMoneyMax>250</AmbientMemberMoneyMax><DealerMemberMoneyMin>400</DealerMemberMoneyMin><DealerMemberMoneyMax>1500</DealerMemberMoneyMax><CostToPayoffGangScalar>8</CostToPayoffGangScalar><RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory><RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar><PercentageTrustingOfPlayer>0</PercentageTrustingOfPlayer><PercentageWithLongGuns>3</PercentageWithLongGuns><PercentageWithSidearms>25</PercentageWithSidearms><PercentageWithMelee>0</PercentageWithMelee><VehicleSpawnPercentage>60</VehicleSpawnPercentage><PedestrianSpawnPercentageAroundDen>80</PedestrianSpawnPercentageAroundDen><MemberKickUpDays>7</MemberKickUpDays><MemberKickUpAmount>2500</MemberKickUpAmount><MemberKickUpMissLimit>3</MemberKickUpMissLimit><MembersGetFreeVehicles>true</MembersGetFreeVehicles><MembersGetFreeWeapons>false</MembersGetFreeWeapons><LoanParameters><LoanParamterList><LoanParameter><ResepectLevel>Neutral</ResepectLevel><Rate>0.1</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>5000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Friendly</ResepectLevel><Rate>0.04</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>15000</MaxAmount></LoanParameter><LoanParameter><ResepectLevel>Member</ResepectLevel><Rate>0.02</Rate><MaxPeriods>4</MaxPeriods><MinAmount>500</MinAmount><MaxAmount>25000</MaxAmount></LoanParameter></LoanParamterList></LoanParameters><GangClassification>Street</GangClassification><EnemyGangs /><PercentageWillRacePlayer>0</PercentageWillRacePlayer></Gang>
 </ArrayOfGang>

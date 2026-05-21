@@ -40,7 +40,7 @@ public class CityHall : GameLocation
     public override string TypeName { get; set; } = "City Hall";
     public override int MapIcon { get; set; } = (int)BlipSprite.GangAttackPackage;
     public override string ButtonPromptText { get; set; }
-    public int NameChangeFee { get; set; } = 500;
+    public int NameChangeFee { get; set; } = 25000;
     public int DriversLicenseFee { get; set; } = 150;
     public int CCWLicenseFee { get; set; } = 1500;
     public int PilotsLicenseFee { get; set; } = 2500;

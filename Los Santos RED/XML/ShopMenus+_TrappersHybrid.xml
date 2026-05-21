@@ -1708,8 +1708,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>1000</MaxPurchasePrice>
+          <MinPurchasePrice>1500</MinPurchasePrice>
+          <MaxPurchasePrice>2000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -1913,8 +1913,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>1000</MaxPurchasePrice>
+          <MinPurchasePrice>1500</MinPurchasePrice>
+          <MaxPurchasePrice>2000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -2118,8 +2118,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>900</MaxPurchasePrice>
+          <MinPurchasePrice>2250</MinPurchasePrice>
+          <MaxPurchasePrice>2750</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -2310,8 +2310,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>900</MaxPurchasePrice>
+          <MinPurchasePrice>2250</MinPurchasePrice>
+          <MaxPurchasePrice>2750</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -2523,8 +2523,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>1000</MaxPurchasePrice>
+          <MinPurchasePrice>1500</MinPurchasePrice>
+          <MaxPurchasePrice>2000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -2770,8 +2770,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>800</MaxPurchasePrice>
+          <MinPurchasePrice>3000</MinPurchasePrice>
+          <MaxPurchasePrice>3500</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -2962,8 +2962,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>700</MaxPurchasePrice>
+          <MinPurchasePrice>3750</MinPurchasePrice>
+          <MaxPurchasePrice>4250</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -3154,8 +3154,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>700</MaxPurchasePrice>
+          <MinPurchasePrice>3750</MinPurchasePrice>
+          <MaxPurchasePrice>4250</MaxPurchasePrice>
         </MenuItem>
         <ShopMenu>
           <ID>TriadsTrapDenMenu</ID>
@@ -3218,8 +3218,8 @@
               <IsFree>false</IsFree>
               <MinSalesPrice>0</MinSalesPrice>
               <MaxSalesPrice>0</MaxSalesPrice>
-              <MinPurchasePrice>100</MinPurchasePrice>
-              <MaxPurchasePrice>700</MaxPurchasePrice>
+              <MinPurchasePrice>3750</MinPurchasePrice>
+              <MaxPurchasePrice>4250</MaxPurchasePrice>
             </MenuItem>
             <MenuItem xsi:type="VariablePriceMenuItem">
               <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -3538,8 +3538,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>700</MaxPurchasePrice>
+          <MinPurchasePrice>3750</MinPurchasePrice>
+          <MaxPurchasePrice>4250</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -3940,8 +3940,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -6410,8 +6410,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>700</MaxPurchasePrice>
+          <MinPurchasePrice>3750</MinPurchasePrice>
+          <MaxPurchasePrice>4250</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -6739,8 +6739,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>900</MaxPurchasePrice>
+          <MinPurchasePrice>2250</MinPurchasePrice>
+          <MaxPurchasePrice>2750</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -6963,8 +6963,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>900</MaxPurchasePrice>
+          <MinPurchasePrice>2250</MinPurchasePrice>
+          <MaxPurchasePrice>2750</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -7229,8 +7229,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>900</MaxPurchasePrice>
+          <MinPurchasePrice>2250</MinPurchasePrice>
+          <MaxPurchasePrice>2750</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -7457,8 +7457,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>700</MaxPurchasePrice>
+          <MinPurchasePrice>3750</MinPurchasePrice>
+          <MaxPurchasePrice>4250</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -7826,8 +7826,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>900</MaxPurchasePrice>
+          <MinPurchasePrice>2250</MinPurchasePrice>
+          <MaxPurchasePrice>2750</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -8050,8 +8050,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>900</MaxPurchasePrice>
+          <MinPurchasePrice>2250</MinPurchasePrice>
+          <MaxPurchasePrice>2750</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -8278,8 +8278,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>1000</MaxPurchasePrice>
+          <MinPurchasePrice>1500</MinPurchasePrice>
+          <MaxPurchasePrice>2000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -8565,8 +8565,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>700</MaxPurchasePrice>
+          <MinPurchasePrice>3750</MinPurchasePrice>
+          <MaxPurchasePrice>4250</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -8885,8 +8885,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>900</MaxPurchasePrice>
+          <MinPurchasePrice>2250</MinPurchasePrice>
+          <MaxPurchasePrice>2750</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -9203,8 +9203,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>1000</MaxPurchasePrice>
+          <MinPurchasePrice>1500</MinPurchasePrice>
+          <MaxPurchasePrice>2000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -9492,8 +9492,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>1000</MaxPurchasePrice>
+          <MinPurchasePrice>1500</MinPurchasePrice>
+          <MaxPurchasePrice>2000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -9772,8 +9772,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>1000</MaxPurchasePrice>
+          <MinPurchasePrice>1500</MinPurchasePrice>
+          <MaxPurchasePrice>2000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -9945,8 +9945,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>900</MaxPurchasePrice>
+          <MinPurchasePrice>2250</MinPurchasePrice>
+          <MaxPurchasePrice>2750</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -10217,8 +10217,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>900</MaxPurchasePrice>
+          <MinPurchasePrice>2250</MinPurchasePrice>
+          <MaxPurchasePrice>2750</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -10510,8 +10510,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>700</MaxPurchasePrice>
+          <MinPurchasePrice>3750</MinPurchasePrice>
+          <MaxPurchasePrice>4250</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -10830,8 +10830,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -11165,8 +11165,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>700</MaxPurchasePrice>
+          <MinPurchasePrice>3750</MinPurchasePrice>
+          <MaxPurchasePrice>4250</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -11397,8 +11397,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>700</MaxPurchasePrice>
+          <MinPurchasePrice>3750</MinPurchasePrice>
+          <MaxPurchasePrice>4250</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -11717,8 +11717,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>900</MaxPurchasePrice>
+          <MinPurchasePrice>2250</MinPurchasePrice>
+          <MaxPurchasePrice>2750</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -12010,8 +12010,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -12456,8 +12456,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>700</MaxPurchasePrice>
+          <MinPurchasePrice>3750</MinPurchasePrice>
+          <MaxPurchasePrice>4250</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -12715,8 +12715,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>700</MaxPurchasePrice>
+          <MinPurchasePrice>3750</MinPurchasePrice>
+          <MaxPurchasePrice>4250</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -13033,8 +13033,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>900</MaxPurchasePrice>
+          <MinPurchasePrice>2250</MinPurchasePrice>
+          <MaxPurchasePrice>2750</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -13435,8 +13435,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>700</MaxPurchasePrice>
+          <MinPurchasePrice>3750</MinPurchasePrice>
+          <MaxPurchasePrice>4250</MaxPurchasePrice>
         </MenuItem>
         <MenuItem>
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -13711,8 +13711,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -14243,8 +14243,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -14817,8 +14817,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -15265,8 +15265,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -15753,8 +15753,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -16117,8 +16117,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -16540,8 +16540,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -16904,8 +16904,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -17373,8 +17373,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -17821,8 +17821,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -18286,8 +18286,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -18734,8 +18734,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -19203,8 +19203,8 @@
           <IsFree>false</IsFree>
           <MinSalesPrice>0</MinSalesPrice>
           <MaxSalesPrice>0</MaxSalesPrice>
-          <MinPurchasePrice>100</MinPurchasePrice>
-          <MaxPurchasePrice>600</MaxPurchasePrice>
+          <MinPurchasePrice>4500</MinPurchasePrice>
+          <MaxPurchasePrice>5000</MaxPurchasePrice>
         </MenuItem>
         <MenuItem xsi:type="VariablePriceMenuItem">
           <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>
@@ -32610,8 +32610,8 @@
                 <IsFree>false</IsFree>
                 <MinSalesPrice>0</MinSalesPrice>
                 <MaxSalesPrice>0</MaxSalesPrice>
-                <MinPurchasePrice>100</MinPurchasePrice>
-                <MaxPurchasePrice>600</MaxPurchasePrice>
+                <MinPurchasePrice>4500</MinPurchasePrice>
+                <MaxPurchasePrice>5000</MaxPurchasePrice>
               </MenuItem>
               <MenuItem xsi:type="VariablePriceMenuItem">
                 <NumberOfItemsSoldToPlayer>0</NumberOfItemsSoldToPlayer>

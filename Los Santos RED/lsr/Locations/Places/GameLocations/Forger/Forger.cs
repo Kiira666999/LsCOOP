@@ -45,7 +45,7 @@ public class Forger : GameLocation
     public int PoliceIdentificationSalesPrice { get; set; } = 550;
     public int IdentificationSalesPrice { get; set; } = 45;
 
-    public int IdentificationPurchasePrice { get; set; } = 450;
+    public int IdentificationPurchasePrice { get; set; } = 25000;
 
 
     public int MarkedBillsSalesPrice { get; set; } = 1500;
@@ -185,13 +185,9 @@ public class Forger : GameLocation
     {
         UIMenuItem buyIDMenu = new UIMenuItem("Buy ID", "Buy a clean ID.") { RightLabel = IdentificationPurchasePrice.ToString("C0") };
         IDSubMenu.AddItem(buyIDMenu);
-        if(Player.Licenses.HasValidDriversLicense(Time))
-        {
-            buyIDMenu.Enabled = false;
-        }
         buyIDMenu.Activated += (sender, e) =>
         {
-            if (Player.BankAccounts.GetMoney(false) <= IdentificationPurchasePrice)
+            if (Player.BankAccounts.GetMoney(false) < IdentificationPurchasePrice)
             {
                 PlayErrorSound();
                 DisplayMessage("~r~Cash Only", "You do not have enough cash on hand.");

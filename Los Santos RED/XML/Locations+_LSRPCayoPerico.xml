@@ -977,7 +977,7 @@
       <MaxSalesPrice>0</MaxSalesPrice>
       <IsOwnable>false</IsOwnable>
       <GrowthPercentage>20</GrowthPercentage>
-      <NameChangeFee>250</NameChangeFee>
+      <NameChangeFee>25000</NameChangeFee>
       <DriversLicenseFee>60</DriversLicenseFee>
       <CCWLicenseFee>760</CCWLicenseFee>
       <PilotsLicenseFee>1000</PilotsLicenseFee>
@@ -2620,7 +2620,7 @@
       <CleanPlateSalesPrice>200</CleanPlateSalesPrice>
       <PoliceIdentificationSalesPrice>550</PoliceIdentificationSalesPrice>
       <IdentificationSalesPrice>45</IdentificationSalesPrice>
-      <IdentificationPurchasePrice>450</IdentificationPurchasePrice>
+      <IdentificationPurchasePrice>25000</IdentificationPurchasePrice>
       <MarkedBillsSalesPrice>2500</MarkedBillsSalesPrice>
     </Forger>
   </Forgers>

@@ -64,7 +64,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>40</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>10</PercentageWithLongGuns>
+    <PercentageWithLongGuns>5</PercentageWithLongGuns>
     <PercentageWithSidearms>35</PercentageWithSidearms>
     <PercentageWithMelee>35</PercentageWithMelee>
     <VehicleSpawnPercentage>40</VehicleSpawnPercentage>
@@ -170,7 +170,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>40</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>10</PercentageWithLongGuns>
+    <PercentageWithLongGuns>5</PercentageWithLongGuns>
     <PercentageWithSidearms>35</PercentageWithSidearms>
     <PercentageWithMelee>35</PercentageWithMelee>
     <VehicleSpawnPercentage>40</VehicleSpawnPercentage>
@@ -276,7 +276,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>30</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>1</PercentageWithLongGuns>
+    <PercentageWithLongGuns>0.5</PercentageWithLongGuns>
     <PercentageWithSidearms>2</PercentageWithSidearms>
     <PercentageWithMelee>5</PercentageWithMelee>
     <VehicleSpawnPercentage>40</VehicleSpawnPercentage>
@@ -379,7 +379,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>40</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>28</PercentageWithLongGuns>
+    <PercentageWithLongGuns>14</PercentageWithLongGuns>
     <PercentageWithSidearms>45</PercentageWithSidearms>
     <PercentageWithMelee>30</PercentageWithMelee>
     <VehicleSpawnPercentage>40</VehicleSpawnPercentage>
@@ -485,7 +485,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>40</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>28</PercentageWithLongGuns>
+    <PercentageWithLongGuns>14</PercentageWithLongGuns>
     <PercentageWithSidearms>45</PercentageWithSidearms>
     <PercentageWithMelee>30</PercentageWithMelee>
     <VehicleSpawnPercentage>40</VehicleSpawnPercentage>
@@ -591,7 +591,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>40</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>35</PercentageWithLongGuns>
+    <PercentageWithLongGuns>17.5</PercentageWithLongGuns>
     <PercentageWithSidearms>50</PercentageWithSidearms>
     <PercentageWithMelee>20</PercentageWithMelee>
     <VehicleSpawnPercentage>40</VehicleSpawnPercentage>
@@ -697,7 +697,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>8</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>40</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>35</PercentageWithLongGuns>
+    <PercentageWithLongGuns>17.5</PercentageWithLongGuns>
     <PercentageWithSidearms>50</PercentageWithSidearms>
     <PercentageWithMelee>20</PercentageWithMelee>
     <VehicleSpawnPercentage>40</VehicleSpawnPercentage>
@@ -803,7 +803,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>40</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>45</PercentageWithLongGuns>
+    <PercentageWithLongGuns>22.5</PercentageWithLongGuns>
     <PercentageWithSidearms>55</PercentageWithSidearms>
     <PercentageWithMelee>20</PercentageWithMelee>
     <VehicleSpawnPercentage>40</VehicleSpawnPercentage>
@@ -909,7 +909,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>10</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>40</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>55</PercentageWithLongGuns>
+    <PercentageWithLongGuns>27.5</PercentageWithLongGuns>
     <PercentageWithSidearms>65</PercentageWithSidearms>
     <PercentageWithMelee>15</PercentageWithMelee>
     <VehicleSpawnPercentage>40</VehicleSpawnPercentage>
@@ -1015,7 +1015,7 @@
     <RemoveRepOnWantedInTerritory>true</RemoveRepOnWantedInTerritory>
     <RemoveRepOnWantedInTerritoryScalar>14</RemoveRepOnWantedInTerritoryScalar>
     <PercentageTrustingOfPlayer>40</PercentageTrustingOfPlayer>
-    <PercentageWithLongGuns>70</PercentageWithLongGuns>
+    <PercentageWithLongGuns>35</PercentageWithLongGuns>
     <PercentageWithSidearms>100</PercentageWithSidearms>
     <PercentageWithMelee>15</PercentageWithMelee>
     <VehicleSpawnPercentage>40</VehicleSpawnPercentage>
